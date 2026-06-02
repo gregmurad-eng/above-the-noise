@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-02</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a8169;
+    --card: #16110a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2113;
+    padding: 14px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .nav.bottom { border-bottom: none; border-top: 1px solid #2a2113; margin-top: 40px; }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: #4a4231; pointer-events: none; }
+  .masthead {
+    text-align: center;
+    padding: 48px 0 16px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .masthead h1 {
+    font-size: 2.9rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .masthead .tagline {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 6px;
+  }
+  .masthead .date {
+    color: var(--text);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border: 1px solid #2a2113;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 28px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: #0d0a06;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+  }
+  .player button:hover { background: #dbb95c; }
+  .player .meta { font-size: 0.85rem; color: var(--muted); }
+  .player .meta strong { color: var(--text); display: block; font-size: 0.95rem; }
+  .section-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    border-bottom: 1px solid #2a2113;
+    padding-bottom: 6px;
+    margin: 44px 0 18px;
+  }
+  h2.lead { font-size: 1.9rem; line-height: 1.25; margin: 0 0 6px; color: var(--text); font-weight: normal; }
+  .byline { color: var(--muted); font-size: 0.82rem; font-style: italic; margin-bottom: 20px; }
+  p { margin: 0 0 18px; }
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  a.inline:hover { border-bottom-style: solid; }
+  .analysis {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 0.95rem;
+  }
+  .analysis .lbl { color: var(--accent); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .brief { margin-bottom: 26px; }
+  .brief h3 { margin: 0 0 4px; font-size: 1.15rem; font-weight: normal; color: var(--text); }
+  .brief h3 a { color: var(--text); text-decoration: none; }
+  .brief h3 a:hover { color: var(--accent); }
+  .signal {
+    background: linear-gradient(180deg, #1a140b, #16110a);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .signal .lbl { color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; }
+  .signal p { font-size: 1.15rem; font-style: italic; margin: 14px 0 0; }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    padding: 30px 0 50px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav top">
+    <a href="2026-06-01.html">&larr; 2026-06-01</a>
+    <span class="disabled">2026-06-03 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tagline">The signal in today's AI &amp; tech, for builders</div>
+    <div class="date">Tuesday, June 2, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" aria-label="Play audio briefing">&#9654;</button>
+    <div class="meta">
+      <strong>Listen to today's edition</strong>
+      <span id="playStatus">~4 min &middot; spoken briefing</span>
+    </div>
+  </div>
+
+  <div class="section-label">Lead Story</div>
+  <h2 class="lead">Anthropic raises $65B at a $965B valuation — and files to go public</h2>
+  <div class="byline">The most valuable AI startup in the world, now headed for Wall Street</div>
+
+  <p>Anthropic has closed a <a class="inline" href="https://www.anthropic.com/news/series-h" target="_blank" rel="noopener">$65 billion Series H round at a $965 billion post-money valuation</a> — the largest single funding round ever raised by a private AI company, and the moment it overtook OpenAI as the most valuable AI startup on the planet. Days later, the company <a class="inline" href="https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/" target="_blank" rel="noopener">confidentially filed draft paperwork for an IPO</a>, with a public debut possible as soon as this fall.</p>
+
+  <p>The round was co-led by Altimeter, Dragoneer, Greenoaks, Sequoia, Capital Group, Coatue, and D1, with Baillie Gifford, Blackstone, Brookfield, DST Global, and Fidelity joining. Anthropic says the capital goes toward "safety and interpretability research," expanding compute for Claude, and scaling the partnerships its enterprise customers depend on. Sitting just under a trillion dollars, the company has now eclipsed the rival it was founded to differentiate itself from — and it did so while leaning publicly on its safety-first positioning rather than away from it.</p>
+
+  <p>The financing came packaged with something nearly as striking as the headline number: a <a class="inline" href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html" target="_blank" rel="noopener">$36 billion private-credit deal</a>, arranged by Apollo and Blackstone and backed by Broadcom, to buy Google TPU chips — reportedly the largest chip-financing debt transaction in history. The compute arms race is no longer being funded by equity alone; it is being levered.</p>
+
+  <div class="analysis">
+    <span class="lbl">Why it matters for builders</span>
+    A near-trillion-dollar valuation and a looming IPO mean Anthropic is now operating on public-market timelines and expectations. For anyone building on Claude, that cuts two ways: deeper pockets and more compute should mean faster model cadence and more reliable capacity — but public scrutiny tends to push pricing, margins, and roadmap discipline in directions that don't always favor the smallest developers. Watch whether enterprise terms and rate limits tighten as the IPO clock starts ticking. The era of frontier labs as venture-funded research shops is ending; they're becoming public companies with quarterly numbers to hit.
+  </div>
+
+  <div class="section-label">The Briefs</div>
+
+  <div class="brief">
+    <h3><a href="https://techstartups.com/2026/06/01/top-tech-news-today-june-1-2026/" target="_blank" rel="noopener">GitHub Copilot switches to token-based billing — and developers revolt</a></h3>
+    <p>As of June 1, GitHub Copilot moved from flat-rate subscriptions to token-based pricing across all plans. The backlash was instant: one developer reported their $29/month bill would balloon to roughly $750/month under the new model. If you ship with Copilot, audit your usage now before the meter does it for you.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.darkreading.com/cloud-security/8-minute-access-ai-aws-environment-breach" target="_blank" rel="noopener">An LLM agent ran a full cyberattack on its own — in under an hour</a></h3>
+    <p>Sysdig documented the first confirmed in-the-wild intrusion where an LLM agent handled post-exploitation autonomously: harvesting credentials, pivoting through AWS Secrets Manager, and exfiltrating a Postgres database with no human in the loop. Commands were composed in real time, adapting at every step. The defensive bar just moved.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://blog.mean.ceo/ai-product-launches-news-june-2026/" target="_blank" rel="noopener">Nvidia unveils the RTX Spark Superchip at Computex</a></h3>
+    <p>Nvidia is pushing past discrete GPUs into full AI-PC silicon, pairing Blackwell RTX graphics with Grace CPU tech for laptops and mini-PCs. Expect it in Windows devices from major OEMs — and expect on-device inference to keep eating workloads that used to round-trip to the cloud.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">Gemini 3.5 Flash becomes Google's default — everywhere</a></h3>
+    <p>Google made Gemini 3.5 Flash, a frontier-tier multimodal model, the default for Gemini and for AI Mode in Search globally. For builders, "default Flash" means the cheap, fast tier is now genuinely capable — worth re-benchmarking if you last priced Google's API months ago.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://techstartups.com/2026/06/01/top-tech-news-today-june-1-2026/" target="_blank" rel="noopener">Cognition's Devin raises $1B at a $26B valuation</a></h3>
+    <p>The autonomous-coding-agent space keeps minting megarounds. Devin's raise signals that "agent that writes and ships code" is now a category investors are betting billions on — and that the tools competing for your dev workflow are about to get a lot more aggressive.</p>
+  </div>
+
+  <div class="signal">
+    <span class="lbl">Today's Signal</span>
+    <p>The same week one AI lab crossed a trillion-dollar orbit, an AI agent breached a live AWS environment by itself in under an hour. Capability is compounding on both sides of the keyboard — build accordingly, and assume the attacker has the same tools you do.</p>
+  </div>
+
+  <nav class="nav bottom">
+    <a href="2026-06-01.html">&larr; 2026-06-01</a>
+    <span class="disabled">2026-06-03 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise &middot; A daily synthesis for Greg<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Tuesday, June second, twenty twenty-six. Here's the signal in today's A.I. and tech, for builders. \
+Our lead story. Anthropic has closed a sixty-five billion dollar Series H round at a nine hundred sixty-five billion dollar post-money valuation. That's the largest single funding round ever raised by a private A.I. company, and the moment Anthropic overtook OpenAI as the most valuable A.I. startup in the world. Just days later, the company confidentially filed draft paperwork for an I.P.O., with a public debut possible as soon as this fall. \
+The round was co-led by Altimeter, Dragoneer, Greenoaks, Sequoia, and others, with heavyweight institutions like Blackstone, Brookfield, and Fidelity joining in. Anthropic says the money will fund safety and interpretability research, expand compute for Claude, and scale the partnerships its enterprise customers depend on. Sitting just under a trillion dollars, it has now eclipsed the very rival it was founded to differentiate itself from. \
+And the financing came with a twist nearly as striking as the headline number. A thirty-six billion dollar private-credit deal, arranged by Apollo and Blackstone and backed by Broadcom, to buy Google T.P.U. chips. That's reportedly the largest chip-financing debt transaction in history. The compute arms race is no longer funded by equity alone. It is being levered. \
+Why does this matter for builders? A near-trillion-dollar valuation and a looming I.P.O. mean Anthropic is now operating on public-market timelines. For anyone building on Claude, that cuts two ways. Deeper pockets and more compute should mean faster model releases and more reliable capacity. But public scrutiny tends to push pricing, margins, and roadmaps in directions that don't always favor the smallest developers. Watch whether enterprise terms and rate limits tighten as the I.P.O. clock starts ticking. The era of frontier labs as venture-funded research shops is ending. They are becoming public companies with quarterly numbers to hit. \
+Now, the briefs. \
+First. GitHub Copilot has switched to token-based billing across all plans, and developers are revolting. One developer reported their twenty-nine-dollar-a-month bill would balloon to roughly seven hundred fifty dollars under the new model. If you ship with Copilot, audit your usage now, before the meter does it for you. \
+Second. Sysdig documented the first confirmed in-the-wild attack where a large language model agent handled post-exploitation entirely on its own. It harvested credentials, pivoted through A.W.S. Secrets Manager, and exfiltrated a database in under an hour, with no human in the loop. Commands were composed in real time, adapting at every step. The defensive bar just moved. \
+Third. Nvidia unveiled its R.T.X. Spark Superchip at Computex, pushing past discrete G.P.U.s into full A.I.-P.C. silicon for laptops and mini-P.C.s. Expect on-device inference to keep eating workloads that used to round-trip to the cloud. \
+Fourth. Google made Gemini three-point-five Flash its default model, both in the Gemini app and in A.I. Mode in Search, globally. The cheap, fast tier is now genuinely capable. If you last priced Google's A.P.I. months ago, it's worth re-benchmarking. \
+Fifth. Cognition's Devin raised one billion dollars at a twenty-six billion dollar valuation. The autonomous-coding-agent space keeps minting megarounds, and the tools competing for your dev workflow are about to get a lot more aggressive. \
+And today's signal. The same week one A.I. lab crossed a trillion-dollar orbit, an A.I. agent breached a live A.W.S. environment by itself in under an hour. Capability is compounding on both sides of the keyboard. Build accordingly, and assume the attacker has the same tools you do. \
+That's the noise, cut. See you tomorrow.";
+
+(function() {
+  const btn = document.getElementById('playBtn');
+  const status = document.getElementById('playStatus');
+  let speaking = false;
+  let chosenVoice = null;
+
+  function pickVoice() {
+    const voices = window.speechSynthesis.getVoices();
+    chosenVoice = voices.find(v => /daniel/i.test(v.name))
+      || voices.find(v => /alex/i.test(v.name))
+      || voices.find(v => v.lang && v.lang.indexOf('en') === 0)
+      || voices[0] || null;
+  }
+  pickVoice();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = pickVoice;
+  }
+
+  btn.addEventListener('click', function() {
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      speaking = false;
+      btn.innerHTML = '&#9654;';
+      status.textContent = '~4 min · spoken briefing';
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(S);
+    u.rate = 0.93;
+    if (chosenVoice) u.voice = chosenVoice;
+    u.onend = function() {
+      speaking = false;
+      btn.innerHTML = '&#9654;';
+      status.textContent = '~4 min · spoken briefing';
+    };
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+    speaking = true;
+    btn.innerHTML = '&#10073;&#10073;';
+    status.textContent = 'Playing… (tap to stop)';
+  });
+})();
+</script>
+</body>
+</html>
