@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-03</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--text);
+    font-family:Georgia, 'Times New Roman', serif;
+    margin:0; padding:0; line-height:1.7;
+  }
+  .wrap { max-width:720px; margin:0 auto; padding:32px 24px 64px; }
+  .masthead { text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1 {
+    font-size:2.6rem; letter-spacing:2px; margin:0;
+    color:var(--accent); font-weight:normal;
+  }
+  .masthead .tag { font-style:italic; color:var(--text); opacity:0.8; font-size:0.95rem; margin-top:6px; }
+  .masthead .date { letter-spacing:3px; font-size:0.85rem; text-transform:uppercase; margin-top:10px; opacity:0.7; }
+  nav {
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:0.9rem; padding:14px 0; border-bottom:1px solid rgba(201,168,76,0.25);
+  }
+  nav.bottom { border-bottom:none; border-top:1px solid rgba(201,168,76,0.25); margin-top:40px; }
+  nav a { color:var(--accent); text-decoration:none; }
+  nav a:hover { text-decoration:underline; }
+  nav .disabled { color:rgba(224,212,184,0.3); pointer-events:none; }
+  .player {
+    display:flex; align-items:center; gap:14px;
+    background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.3);
+    border-radius:8px; padding:12px 16px; margin:22px 0 30px;
+  }
+  .player button {
+    background:var(--accent); color:var(--bg); border:none;
+    font-family:Georgia, serif; font-size:0.9rem; font-weight:bold;
+    padding:8px 16px; border-radius:5px; cursor:pointer;
+  }
+  .player button:hover { opacity:0.85; }
+  .player .label { font-size:0.85rem; opacity:0.8; font-style:italic; }
+  h2.section {
+    color:var(--accent); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase;
+    border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:6px; margin:38px 0 16px;
+  }
+  h3.headline { font-size:1.55rem; margin:6px 0 14px; line-height:1.3; }
+  p { margin:0 0 16px; }
+  a.src { color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  a.src:hover { border-bottom-style:solid; }
+  .brief { margin-bottom:22px; }
+  .brief h4 { font-size:1.1rem; margin:0 0 6px; color:var(--text); }
+  .brief h4 a { color:var(--accent); text-decoration:none; }
+  .signal {
+    background:rgba(201,168,76,0.08); border-left:3px solid var(--accent);
+    padding:20px 22px; margin:24px 0; border-radius:0 6px 6px 0;
+  }
+  .signal .lead { color:var(--accent); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+  .analysis {
+    font-style:italic; opacity:0.92;
+    border-top:1px solid rgba(201,168,76,0.2); padding-top:14px; margin-top:10px;
+  }
+  footer { margin-top:48px; padding-top:18px; border-top:1px solid rgba(201,168,76,0.25);
+    font-size:0.78rem; opacity:0.6; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>ABOVE THE NOISE</h1>
+    <div class="tag">A daily signal on AI &amp; technology, for builders</div>
+    <div class="date">Wednesday · June 3, 2026</div>
+  </div>
+
+  <nav class="top">
+    <a href="2026-06-02.html">&larr; 2026-06-02</a>
+    <span class="disabled">2026-06-04 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="label" id="playLabel">~4 min · spoken edition</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="headline">Washington wants a 30-day look at frontier models — and is asking nicely</h3>
+
+  <p>President Trump on June 2 signed an executive order asking America's leading AI labs to voluntarily hand their most powerful new models to the federal government for testing up to 30 days before public release. The order leans on cooperation from the usual names — Anthropic, OpenAI, and Google — rather than compulsion, and it pointedly bars the government from standing up any mandatory licensing or pre-clearance regime. In other words: a request, not a rule.</p>
+
+  <p>The framing matters because the details have been a moving target. An earlier draft floated a 90-day review window; the final text cut that to 30. The White House had also been expected to sign weeks ago, then scrapped the plans amid worry that the order would slow American innovation while China presses on the frontier. The version that emerged is the cautious compromise — security review without the hard edge of a permitting system.</p>
+
+  <p>Beyond early access, the order directs federal agencies to build benchmarks for assessing the cyber capabilities of AI models, to stand up an "AI cybersecurity clearinghouse" for sharing vulnerability information, and to harden the government's own defenses. That cyber emphasis is the part most likely to outlast the headlines. A shared clearinghouse for model-discovered vulnerabilities is the kind of plumbing that, if it actually gets built, reshapes how disclosure works across the whole industry.</p>
+
+  <p>For builders, the near-term impact is muted — this binds frontier labs shipping the largest models, not the team wiring an API into a side project. But the direction of travel is worth tracking. Voluntary today tends to become expected tomorrow, and the benchmarks agencies are now tasked with writing will eventually shape what "safe enough to ship" means for everyone downstream.</p>
+
+  <p class="analysis">The tell here is the word "voluntary." This administration chose persuasion over a permitting regime precisely because it fears handing China a head start. That instinct — security review, but never at the cost of speed — is the governing logic of U.S. AI policy right now, and it explains why nearly every constraint arrives with an opt-out attached. <a class="src" href="https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html">CNBC</a> · <a class="src" href="https://www.npr.org/2026/06/02/nx-s1-5844347/ai-safety-trump-executive-order">NPR</a> · <a class="src" href="https://www.washingtonpost.com/technology/2026/06/02/trump-signs-order-designed-give-government-early-look-powerful-ai-models/">Washington Post</a></p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">Microsoft ships its own models at Build, loosening the OpenAI leash</a></h4>
+    <p>At Build in San Francisco, Microsoft unveiled MAI-Code-1-Flash (its first coding model) and MAI-Thinking-1 (a reasoning model), pitching both on efficiency and cost. Paired with Project Polaris — slated to replace GPT-4 inside GitHub Copilot by August — it's the clearest signal yet that Microsoft wants to own the model layer, not just rent it.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.anthropic.com/news/confidential-draft-s1-sec">Anthropic files confidentially for an IPO</a></h4>
+    <p>Anthropic submitted a draft S-1 to the SEC on June 1, less than a week after a $65B Series H pushed its valuation to $965B. Revenue run-rate is reportedly $47B, up from $10B a year ago. Share count and price aren't set — but the company has now stepped out ahead of OpenAI, which is readying a filing of its own.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.cnbc.com/2026/06/02/nvidias-new-pc-chips-are-ceos-bid-to-own-every-part-of-ai-stack.html">Nvidia pushes into the AI PC</a></h4>
+    <p>Nvidia unveiled a powerful Windows laptop chip, planting a flag in next-gen consumer machines built around on-device AI. Jensen Huang's bet: own every layer of the stack, from the datacenter down to the notebook on your desk.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-2-2026">Agent Mode becomes the default in Office — and the framework goes open</a></h4>
+    <p>Microsoft made Agent Mode the default across Word, Excel, and PowerPoint, and open-sourced the Windows Agent Framework 1.0 under MIT. Add Azure AI Foundry's new first-party support for Claude, DeepSeek, Llama, and Mistral, and the platform story is suddenly model-agnostic by design.</p>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <div class="lead">What to watch</div>
+    <p>Two things happened on the same day that rhyme: a frontier lab filed to go public at a near-trillion-dollar valuation, and the government asked to inspect frontier models before they ship. Capital and oversight are both arriving at the frontier at once — the surest sign that this stopped being a research story and became an infrastructure story.</p>
+    <p>For solo builders, the practical takeaway is downstream and friendlier: the platform layer is racing toward model-agnostic agents. Foundry running Claude and Llama side by side, an MIT-licensed agent framework, Agent Mode on by default — the cost of swapping models or wiring an agent into a real workflow keeps falling. The giants are fighting over the floor you get to build on.</p>
+  </div>
+
+  <nav class="bottom">
+    <a href="2026-06-02.html">&larr; 2026-06-02</a>
+    <span class="disabled">2026-06-04 &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Wednesday, June third, 2026. Today's lead: Washington wants a thirty-day look at frontier A-I models, and it's asking nicely. On June second, President Trump signed an executive order asking America's leading A-I labs to voluntarily hand their most powerful new models to the federal government for testing, up to thirty days before public release. The order leans on cooperation from the usual names — Anthropic, OpenAI, and Google — rather than compulsion. And it pointedly bars the government from standing up any mandatory licensing or pre-clearance regime. In other words: a request, not a rule. The details have been a moving target. An earlier draft floated a ninety-day review window; the final text cut that to thirty. The White House had also been expected to sign weeks ago, then scrapped the plans amid worry that the order would slow American innovation while China presses on the frontier. Beyond early access, the order directs agencies to build benchmarks for the cyber capabilities of A-I models, and to stand up an A-I cybersecurity clearinghouse for sharing vulnerability information. That cyber emphasis is the part most likely to outlast the headlines. For builders, the near-term impact is muted — this binds frontier labs shipping the largest models, not the team wiring an A-P-I into a side project. But voluntary today tends to become expected tomorrow. Now, the briefs. One. At its Build conference, Microsoft unveiled its own coding and reasoning models — M-A-I Code One Flash, and M-A-I Thinking One — and a project called Polaris that will replace G-P-T four inside GitHub Copilot by August. The clearest sign yet that Microsoft wants to own the model layer, not just rent it. Two. Anthropic filed confidentially for an I-P-O on June first, less than a week after a sixty-five billion dollar round pushed its valuation to nine hundred sixty-five billion. Revenue run-rate is reportedly forty-seven billion, up from ten billion a year ago. Three. Nvidia unveiled a powerful Windows laptop chip, planting a flag in next-generation A-I P-Cs. Jensen Huang's bet: own every layer of the stack. Four. Microsoft made Agent Mode the default across Word, Excel, and PowerPoint, and open-sourced its Windows Agent Framework under M-I-T. Pair that with Azure Foundry's new first-party support for Claude, Llama, DeepSeek, and Mistral, and the platform is suddenly model-agnostic by design. Today's signal. Two things happened on the same day that rhyme: a frontier lab filed to go public at a near-trillion-dollar valuation, and the government asked to inspect frontier models before they ship. Capital and oversight are both arriving at the frontier at once — the surest sign that this stopped being a research story and became an infrastructure story. For solo builders, the takeaway is friendlier: the platform layer is racing toward model-agnostic agents, and the cost of swapping models or wiring an agent into a real workflow keeps falling. The giants are fighting over the floor you get to build on. That's the signal for today. Build something.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) ||
+         vs.find(v => /Alex/i.test(v.name)) ||
+         vs.find(v => /en[-_]US|en[-_]GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const lbl = document.getElementById('playLabel');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false; btn.textContent = '▶ Listen'; lbl.textContent = '~4 min · spoken edition';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93; u.pitch = 1.0;
+  const v = pickVoice(); if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; lbl.textContent = '~4 min · spoken edition'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true; btn.textContent = '■ Stop'; lbl.textContent = 'Playing…';
+}
+if (typeof speechSynthesis !== 'undefined') { speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
