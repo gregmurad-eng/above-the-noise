@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-04</title>
+<style>
+  :root{
+    --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:Georgia, 'Times New Roman', serif;
+    line-height:1.65; font-size:18px;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 24px 64px;}
+  .nav{
+    display:flex; justify-content:space-between; align-items:center;
+    border-bottom:1px solid rgba(201,168,76,.3);
+    padding:16px 0; font-size:15px; letter-spacing:.02em;
+  }
+  .nav.bottom{border-top:1px solid rgba(201,168,76,.3); border-bottom:none; margin-top:48px;}
+  .nav a{color:var(--accent); text-decoration:none;}
+  .nav a:hover{text-decoration:underline;}
+  .nav .disabled{color:rgba(224,212,184,.32); pointer-events:none;}
+  header.masthead{text-align:center; padding:44px 0 20px; border-bottom:2px solid var(--accent); margin-bottom:8px;}
+  .masthead h1{
+    font-size:46px; margin:0; letter-spacing:.04em; color:var(--accent);
+    font-weight:normal; text-transform:uppercase;
+  }
+  .masthead .tag{font-style:italic; font-size:16px; color:rgba(224,212,184,.7); margin-top:8px;}
+  .masthead .date{font-size:14px; letter-spacing:.18em; text-transform:uppercase; margin-top:14px; color:rgba(224,212,184,.55);}
+  .player{
+    display:flex; align-items:center; gap:14px;
+    border:1px solid rgba(201,168,76,.3); border-radius:6px;
+    padding:12px 16px; margin:26px 0; background:rgba(201,168,76,.04);
+  }
+  .player button{
+    background:var(--accent); color:var(--bg); border:none; cursor:pointer;
+    font-family:inherit; font-size:15px; padding:8px 18px; border-radius:4px;
+  }
+  .player button:hover{opacity:.88;}
+  .player .label{font-size:14px; color:rgba(224,212,184,.7); font-style:italic;}
+  h2.section{
+    font-size:14px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent); border-bottom:1px solid rgba(201,168,76,.3);
+    padding-bottom:6px; margin:48px 0 18px;
+  }
+  h3.lead{font-size:30px; line-height:1.25; margin:10px 0 6px; color:#f0e6cc; font-weight:normal;}
+  .deck{font-style:italic; color:rgba(224,212,184,.78); margin-bottom:18px;}
+  p{margin:0 0 16px;}
+  a.src{color:var(--accent); text-decoration:none; border-bottom:1px dotted rgba(201,168,76,.5);}
+  a.src:hover{border-bottom-style:solid;}
+  .brief{margin-bottom:24px;}
+  .brief h4{font-size:20px; margin:0 0 4px; color:#f0e6cc; font-weight:normal;}
+  .brief .kicker{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:4px;}
+  .signal{
+    border:1px solid var(--accent); border-left:4px solid var(--accent);
+    border-radius:4px; padding:22px 26px; margin:20px 0;
+    background:rgba(201,168,76,.06);
+  }
+  .signal h3{margin:0 0 10px; color:var(--accent); font-size:22px; font-weight:normal;}
+  .analysis{border-left:3px solid rgba(201,168,76,.4); padding-left:18px; margin:18px 0; color:rgba(224,212,184,.9);}
+  .analysis .lbl{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:6px;}
+  footer{margin-top:40px; padding-top:18px; border-top:1px solid rgba(201,168,76,.3); font-size:13px; color:rgba(224,212,184,.5); font-style:italic; text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav top">
+    <a href="2026-06-03.html">&larr; 2026-06-03</a>
+    <span class="disabled">2026-06-05 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, for people who build.</div>
+    <div class="date">Thursday, June 4, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleSpeech()">▶ Listen</button>
+    <span class="label" id="playLabel">~4 min read aloud</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="lead">Washington Puts Frontier AI on a Pre-Release Watchlist</h3>
+  <div class="deck">Trump's new executive order asks model makers to hand the government a 30-day head start — and treats AI as a cyber weapon as much as a productivity engine.</div>
+
+  <p>On June 2, President Trump signed an executive order titled <a class="src" href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">"Promoting Advanced Artificial Intelligence Innovation and Security,"</a> the administration's most concrete move yet on frontier models. The headline mechanism is a voluntary one: developers are invited to give the federal government early access to their most capable models for up to 30 days before wider release, so national-security agencies can probe them for dangerous capabilities. It stops short of mandatory licensing, but it establishes — for the first time — a formal on-ramp between private labs and the security state.</p>
+
+  <p>The order's center of gravity is cybersecurity, not chatbots. It directs agencies to build <a class="src" href="https://federalnewsnetwork.com/cybersecurity/2026/06/ai-executive-order-sets-stage-for-new-cybersecurity-directives/">benchmarks for measuring a model's offensive cyber capability</a> and to stand up an "AI cybersecurity clearinghouse" — coordinated by Treasury with the NSA, CISA and the National Cyber Director — to share vulnerability intelligence between the government and willing AI companies and critical-infrastructure operators. The clearinghouse is supposed to form within 30 days.</p>
+
+  <p>According to <a class="src" href="https://www.npr.org/2026/06/02/nx-s1-5844347/ai-safety-trump-executive-order">reporting from NPR</a>, the order is the resolution of a months-long internal fight: national-security hawks worried that frontier models could supercharge attacks on power grids and pipelines, while innovation advocates feared a licensing regime that would freeze releases. The compromise leans voluntary and benchmark-driven rather than prescriptive. The trigger, by several accounts, was the spring debut of a cyber-capable system nicknamed "Mythos" and OpenAI's own GPT-5.5-Cyber, which made the abstract risk feel suddenly operational.</p>
+
+  <p>For solo builders, this is mostly upstream weather — but it's weather worth watching. A government channel for AI vulnerability disclosure normalizes the idea that models are dual-use infrastructure, and the benchmarks written this summer will shape what "responsible release" means for everyone downstream.</p>
+
+  <div class="analysis">
+    <span class="lbl">The Analysis</span>
+    <p>The genius of "voluntary" here is leverage without legislation. No lab is forced to submit a model, but once the biggest players opt in, sitting out becomes a signal in itself — the kind of thing enterprise buyers and cloud partners start asking about. Watch the benchmarks, not the press release: whoever defines how to measure a model's cyber-offense capability quietly defines the compliance surface that every API and open-weight release gets judged against next year.</p>
+  </div>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <span class="kicker">Big Tech</span>
+    <h4>Microsoft reframes Windows as an agent runtime</h4>
+    <p>At <a class="src" href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/">Build 2026</a> (June 2–4, San Francisco), Microsoft pitched Windows less as an OS for people running apps and more as a runtime for agents doing work on your behalf. It also unveiled seven in-house <a class="src" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">MAI models</a> — spanning reasoning, coding, image and speech — explicitly to lower costs and lean less on OpenAI.</p>
+  </div>
+
+  <div class="brief">
+    <span class="kicker">Builder Economics</span>
+    <h4>GitHub Copilot moves to usage-based billing</h4>
+    <p>As of June 1, all Copilot plans bill on <a class="src" href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">usage-based "AI Credits,"</a> code review now consumes Actions minutes, and there's a new "Copilot Max" tier. Teams running long multi-step agent sessions reported sharp cost surprises. If you lean on coding agents, recheck your monthly math this week.</p>
+  </div>
+
+  <div class="brief">
+    <span class="kicker">Pricing</span>
+    <h4>DeepSeek V4 Pro cuts flagship price 75%</h4>
+    <p>DeepSeek slashed the cost of its <a class="src" href="https://llm-stats.com/llm-updates">V4 Pro flagship by roughly 75%</a>, hardening its position as the low-cost option for agents, coding tools and long-context workloads. For budget-sensitive solo projects, the price-per-token floor just dropped again.</p>
+  </div>
+
+  <div class="brief">
+    <span class="kicker">Markets</span>
+    <h4>Anthropic confidentially files for IPO</h4>
+    <p>The maker of Claude <a class="src" href="https://llm-stats.com/llm-updates">confidentially filed for an IPO</a> following a reported $965B valuation, days after shipping Claude Opus 4.8. A public Anthropic would be the first pure-play frontier lab on the market — and a fresh data point for every founder pitching "AI-native."</p>
+  </div>
+
+  <div class="brief">
+    <span class="kicker">Models</span>
+    <h4>The 3.x families keep climbing</h4>
+    <p>Google's <a class="src" href="https://llm-stats.com/ai-news">Gemini 3.1 Pro</a> remains a benchmark mover, Alibaba's Qwen 3.7 Plus folds vision, language and code into one multimodal system, and OpenAI's GPT-5.6 is rumored to push multimodal and token efficiency. The mid-tier is where the real competition now lives.</p>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <h3>The question changed</h3>
+    <p>A line from this week's coverage stuck with me: <a class="src" href="https://blog.mean.ceo/ai-agents-news-june-2026/">"June 2026 looks like the month the market stopped asking, 'Are AI agents real?' and started asking, 'Which part of my company gets agentized first?'"</a></p>
+    <p>The data backs it up — <a class="src" href="https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/">55% of developers now use AI agents regularly,</a> and at the smallest shops Claude Code leads at 75% adoption. For a solo builder running seven projects, that's the whole edge: you're not a team of one anymore: you're a team of one plus however many agents you can keep pointed in the right direction. The constraint isn't capability now. It's orchestration.</p>
+  </div>
+
+  <nav class="nav bottom">
+    <a href="2026-06-03.html">&larr; 2026-06-03</a>
+    <span class="disabled">2026-06-05 &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Thursday, June fourth, twenty twenty-six. The signal in A.I. and tech, for people who build. Today's lead story: Washington puts frontier A.I. on a pre-release watchlist. On June second, President Trump signed an executive order titled Promoting Advanced Artificial Intelligence Innovation and Security. It's the administration's most concrete move yet on frontier models. The headline mechanism is voluntary. Developers are invited to give the federal government early access to their most capable models, for up to thirty days before wider release, so national security agencies can probe them for dangerous capabilities. It stops short of mandatory licensing, but it establishes, for the first time, a formal on-ramp between private labs and the security state. The order's center of gravity is cybersecurity, not chatbots. It directs agencies to build benchmarks for measuring a model's offensive cyber capability, and to stand up an A.I. cybersecurity clearinghouse, coordinated by Treasury with the N.S.A., CISA, and the National Cyber Director, to share vulnerability intelligence between the government and willing A.I. companies. The clearinghouse is supposed to form within thirty days. Reporting suggests the order resolves a months-long internal fight: national security hawks worried that frontier models could supercharge attacks on power grids and pipelines, while innovation advocates feared a licensing regime that would freeze releases. The compromise leans voluntary and benchmark-driven. The trigger was the spring debut of a cyber-capable system nicknamed Mythos, and OpenAI's own G.P.T. five-point-five Cyber, which made the abstract risk feel suddenly operational. Here's the analysis. The genius of voluntary, here, is leverage without legislation. No lab is forced to submit a model, but once the biggest players opt in, sitting out becomes a signal in itself. Watch the benchmarks, not the press release. Whoever defines how to measure a model's cyber-offense capability quietly defines the compliance surface that every release gets judged against next year. Now, the briefs. First: Microsoft reframes Windows as an agent runtime. At Build twenty twenty-six, Microsoft pitched Windows less as an operating system for people running apps, and more as a runtime for agents doing work on your behalf. It also unveiled seven in-house M.A.I. models, spanning reasoning, coding, image, and speech, explicitly to lower costs and lean less on OpenAI. Second: GitHub Copilot moves to usage-based billing. As of June first, all Copilot plans bill on usage-based A.I. credits, code review now consumes Actions minutes, and there's a new Copilot Max tier. Teams running long multi-step agent sessions reported sharp cost surprises. If you lean on coding agents, recheck your monthly math this week. Third: DeepSeek V four Pro cuts its flagship price by seventy-five percent, hardening its position as the low-cost option for agents, coding tools, and long-context workloads. Fourth: Anthropic, the maker of Claude, confidentially filed for an I.P.O. following a reported nine hundred sixty-five billion dollar valuation, days after shipping Claude Opus four-point-eight. Fifth: the three-point-x model families keep climbing. Google's Gemini three-point-one Pro remains a benchmark mover, Alibaba's Qwen three-point-seven Plus folds vision, language, and code into one system, and OpenAI's G.P.T. five-point-six is rumored to push multimodal and token efficiency. And finally, today's signal. The question changed. A line from this week's coverage stuck with me: June twenty twenty-six looks like the month the market stopped asking, are A.I. agents real, and started asking, which part of my company gets agentized first. The data backs it up. Fifty-five percent of developers now use A.I. agents regularly, and at the smallest shops, Claude Code leads at seventy-five percent adoption. For a solo builder running seven projects, that's the whole edge. You're not a team of one anymore. You're a team of one, plus however many agents you can keep pointed in the right direction. The constraint isn't capability now. It's orchestration. That's the signal for today. Content is A.I.-synthesized. Links point to original sources. Until tomorrow.";
+
+let speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/i.test(v.name)) || vs.find(v=>/Alex/i.test(v.name))
+    || vs.find(v=>/en-?(GB|US)/i.test(v.lang)) || vs[0];
+}
+function toggleSpeech(){
+  const btn=document.getElementById('playBtn');
+  const lbl=document.getElementById('playLabel');
+  if(speaking){ window.speechSynthesis.cancel(); return; }
+  const u=new SpeechSynthesisUtterance(S);
+  u.rate=0.93; u.pitch=1;
+  const v=pickVoice(); if(v) u.voice=v;
+  u.onstart=()=>{speaking=true; btn.textContent='■ Stop'; lbl.textContent='Playing…';};
+  u.onend=()=>{speaking=false; btn.textContent='▶ Listen'; lbl.textContent='~4 min read aloud';};
+  u.onerror=()=>{speaking=false; btn.textContent='▶ Listen'; lbl.textContent='~4 min read aloud';};
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged=pickVoice; }
+</script>
+</body>
+</html>
