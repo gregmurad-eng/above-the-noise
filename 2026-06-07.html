@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — June 7, 2026</title>
+<style>
+  body { background: #0d0a06; color: #e0d4b8; font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; line-height: 1.7; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 60px; }
+  .masthead { text-align: center; padding: 48px 0 18px; border-bottom: 1px solid #3a2f1c; }
+  .masthead h1 { color: #c9a84c; font-size: 2.4em; letter-spacing: 0.12em; margin: 0; font-weight: normal; text-transform: uppercase; }
+  .masthead .tagline { color: #8a7a55; font-style: italic; font-size: 0.95em; margin-top: 6px; }
+  .masthead .date { color: #c9a84c; font-size: 0.9em; letter-spacing: 0.2em; margin-top: 10px; text-transform: uppercase; }
+  .nav { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #3a2f1c; font-size: 0.9em; }
+  .nav a { color: #c9a84c; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: #5a4f38; cursor: default; }
+  .player { background: #161009; border: 1px solid #3a2f1c; border-radius: 6px; padding: 16px 20px; margin: 28px 0; display: flex; align-items: center; gap: 16px; }
+  .player button { background: #c9a84c; color: #0d0a06; border: none; border-radius: 4px; padding: 10px 22px; font-family: Georgia, serif; font-size: 1em; cursor: pointer; }
+  .player button:hover { background: #ddbc60; }
+  .player .plabel { color: #8a7a55; font-size: 0.9em; font-style: italic; }
+  h2 { color: #c9a84c; font-size: 1.5em; font-weight: normal; border-bottom: 1px solid #3a2f1c; padding-bottom: 8px; margin-top: 44px; letter-spacing: 0.05em; }
+  h3 { color: #ddbc60; font-size: 1.15em; font-weight: normal; margin-bottom: 4px; }
+  a { color: #c9a84c; }
+  .brief { margin-bottom: 26px; }
+  .brief .src { font-size: 0.85em; color: #8a7a55; }
+  .signal { background: #1a130a; border-left: 4px solid #c9a84c; padding: 20px 24px; margin: 36px 0; }
+  .signal h2 { margin-top: 0; border: none; padding-bottom: 0; }
+  .analysis { color: #b8a87f; font-style: italic; }
+  .footer { text-align: center; color: #8a7a55; font-size: 0.85em; padding-top: 30px; border-top: 1px solid #3a2f1c; margin-top: 50px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tagline">AI &amp; tech that matters, for people who build</div>
+    <div class="date">Sunday — June 7, 2026</div>
+  </div>
+
+  <div class="nav">
+    <a href="2026-06-06.html">&larr; 2026-06-06</a>
+    <span class="disabled">2026-06-08 &rarr;</span>
+  </div>
+
+  <div class="player">
+    <button id="playBtn" onclick="togglePlay()">&#9654; Listen</button>
+    <span class="plabel">~4 minute audio briefing &middot; synthesized voice</span>
+  </div>
+
+  <h2>Lead Story: Washington Drops the Biggest AI Bill Yet — and It Would Freeze the States</h2>
+  <p>Late Thursday, Representatives Jay Obernolte (R-CA) and Lori Trahan (D-MA) released a 269-page discussion draft of the <a href="https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act">Great American Artificial Intelligence Act</a> — the most comprehensive federal AI framework Congress has ever put on the table. The reaction over the weekend has been loud, polarized, and worth your attention, because this bill would reshape the regulatory ground every AI product stands on.</p>
+  <p>The headline provision is a <a href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/">three-year preemption of state AI laws</a> governing frontier model development. That freeze would catch California's AI bills and — most immediately — Colorado's Consumer Protections for Artificial Intelligence Act, the first comprehensive state AI law in the country, scheduled to take effect June 30, just 23 days from now. Colorado's law requires developers and deployers of high-risk AI systems to guard against algorithmic discrimination in employment, education, lending, healthcare, and housing. If the federal bill passes, those protections go on ice before they ever apply.</p>
+  <p>In exchange, the draft asks something of the biggest labs. Companies with more than $500 million in annual revenue would have to publish public Frontier AI Frameworks describing how they govern their most capable models, report critical safety incidents to the federal government, and open their cybersecurity mitigation plans to auditors. The bill also funds a $100-million-a-year Center for AI Standards and Innovation inside the Commerce Department and creates criminal penalties for using AI to impersonate government officials.</p>
+  <p>The political lines formed fast. Labor unions — the AFL-CIO, AFT, and the Association of Flight Attendants — issued a joint rejection calling the draft "a giveaway to the AI industry." Tech trade groups like ITI and NetChoice praised it. The White House had already signaled its position: a December executive order specifically targeted Colorado's law, and this draft is the legislative follow-through.</p>
+  <p class="analysis">Analysis: This is a discussion draft, not an introduced bill — the legislative road is long. But the practical takeaway for builders is binary and near-term. Either this framework advances and state rules freeze for three years, or it stalls and Colorado's law takes effect in roughly three weeks, meaning anyone with users in Colorado needs a compliance posture now. The disclosure requirements only bite at $500M+ revenue, so solo builders and small shops are spared direct obligations either way. The thing to watch is the vague "general applicability" carve-out for state laws — it's loose enough to litigate for a decade, which means uncertainty, not clarity, may be the bill's real legacy.</p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3>ChatGPT's memory gets a brain transplant</h3>
+    <p>OpenAI's <a href="https://openai.com/index/chatgpt-memory-dreaming/">Dreaming V3</a> memory architecture began reaching Plus and Pro users in the US on June 4. Instead of waiting for "remember this," it runs background synthesis after conversations — cataloguing preferences, projects, and time-sensitive context, and aging out stale facts. It's roughly 5x more compute-efficient, which is what makes free-tier rollout viable. Privacy researchers note that profile-building memory systems will face EU AI Act transparency scrutiny starting in August.</p>
+  </div>
+
+  <div class="brief">
+    <h3>Pentagon puts Gemini on classified networks</h3>
+    <p>The Defense Department <a href="https://www.nbcnews.com/tech/tech-news/pentagon-inks-deal-google-ai-services-rcna342661">signed a deal with Google</a> to run Gemini AI systems on classified networks. It's one of the clearest signals yet that frontier models are moving from government pilots into core national-security infrastructure — and it lands while OpenAI courts the EU with GPT-5.5-Cyber and Anthropic expands Project Glasswing across power, water, and healthcare sectors.</p>
+  </div>
+
+  <div class="brief">
+    <h3>SpaceX roadshow rolls toward the largest IPO in history</h3>
+    <p>SpaceX's investor roadshow <a href="https://www.fastcompany.com/91553827/look-biggest-ai-players-barreling-towards-huge-wall-street-debuts">launched June 4</a>, with pricing set for June 11 and Nasdaq trading under ticker SPCX opening June 12. At its $75B target the offering surpasses Saudi Aramco's 2019 record. Notably, 30% of the float goes directly to retail investors — triple the usual allocation. With Anthropic's confidential S-1 filed June 1 and OpenAI's expected within weeks, Goldman projects 2026 IPO proceeds near $160B — quadruple last year.</p>
+  </div>
+
+  <div class="brief">
+    <h3>Mid-June model watch: Sonnet 4.8 and GPT-5.6</h3>
+    <p>Developer communities are tracking <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-6-2026">two anticipated mid-June releases</a>: Claude Sonnet 4.8 (leaked via an npm source map whose earlier predictions proved accurate) and GPT-5.6 (benchmark leaks suggest 20–30% better token efficiency). Neither is confirmed. But if both ship at aggressive pricing, the unit economics of agentic workloads reset within two weeks. Treat it as a high-confidence rumor: plan for it, don't bet a roadmap on it.</p>
+  </div>
+
+  <div class="brief">
+    <h3>Arizona proposes a 45% power surcharge on data centers</h3>
+    <p>Arizona Public Service <a href="https://www.wsj.com/articles/arizona-utility-ai-data-center-rate-increase">proposed a 45% electricity-rate increase</a> targeted specifically at data centers — among the largest single-sector utility hikes in US history. Arizona, Texas, and Virginia have all seen grid stress from AI buildout. Expect copycat proposals; power, not chips, is becoming the binding constraint on AI economics.</p>
+  </div>
+
+  <div class="signal">
+    <h2>Today's Signal</h2>
+    <p>Regulation and unit economics are converging on the same two-week window. Colorado's AI law lands June 30 unless Congress freezes it; Sonnet 4.8 and GPT-5.6 are both rumored before then. For a solo builder running agentic workloads — Telegram bots, scrapers, daily pipelines — the smart move this week is the cheap one: keep model calls behind a config flag so you can swap models the day pricing shifts, and skim the Colorado law's "high-risk" definitions once. Ten minutes of reading now beats a compliance scramble later. The noise is IPOs and leaks; the signal is that both your costs and your rules may change before July.</p>
+  </div>
+
+  <div class="nav">
+    <a href="2026-06-06.html">&larr; 2026-06-06</a>
+    <span class="disabled">2026-06-08 &rarr;</span>
+  </div>
+
+  <div class="footer">
+    <p>Above The Noise &middot; Daily AI &amp; tech briefing<br>
+    Content is AI-synthesized. Links point to original sources.</p>
+  </div>
+
+</div>
+
+<script>
+const S = "Good morning. This is Above The Noise for Sunday, June 7th, 2026. Here's what matters. Our lead story: Congress has dropped the biggest AI bill yet. Late Thursday, Representatives Jay Obernolte and Lori Trahan released a 269 page discussion draft of the Great American Artificial Intelligence Act, the most comprehensive federal AI framework Congress has ever proposed. The headline provision is a three year freeze on state AI laws governing frontier model development. That would catch California's AI bills, and most immediately, Colorado's law, the first comprehensive state AI law in the country, scheduled to take effect June 30th, just three weeks away. In exchange, the bill asks the biggest labs, those with over 500 million dollars in revenue, to publish frameworks describing how they govern their most capable models, report safety incidents to the federal government, and open their security plans to auditors. The reaction split fast. Labor unions called it a giveaway to the AI industry. Tech trade groups praised it. For builders, the takeaway is binary: either this advances and state rules freeze for three years, or it stalls and Colorado's law takes effect this month. Either way, the rules of the road may change before July. Now the briefs. First: ChatGPT's memory got a major upgrade. OpenAI's Dreaming V3 architecture started rolling out June 4th. Instead of waiting to be told what to remember, it synthesizes your preferences and projects in the background after conversations end, and it ages out stale facts. It's five times more compute efficient, which means memory is coming to free users. Second: the Pentagon signed a deal with Google to run Gemini on classified networks. Frontier models are moving from government pilots into core national security infrastructure. Third: SpaceX's I P O roadshow is underway, with pricing June 11th and trading opening June 12th under the ticker S P C X. At 75 billion dollars, it would be the largest I P O in history. With Anthropic and OpenAI both filing as well, this year's I P O market could quadruple last year's. Fourth: keep an eye on mid June model releases. Claude Sonnet 4.8 and G P T 5.6 are both rumored within two weeks. Neither is confirmed, but if both ship at aggressive prices, the economics of agentic workloads reset overnight. Fifth: Arizona's largest utility proposed a 45 percent electricity surcharge specifically for data centers. Power, not chips, is becoming the real constraint on AI. And today's signal: regulation and pricing are converging on the same two week window. If you run agentic workloads, keep your model calls behind a config flag so you can swap the day pricing shifts, and spend ten minutes skimming Colorado's high risk definitions. The noise is I P Os and leaks. The signal is that your costs and your rules may both change before July. That's Above The Noise. Build something today.";
+
+let utterance = null;
+let playing = false;
+
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  return voices.find(v => v.name === "Daniel") ||
+         voices.find(v => v.name === "Alex") ||
+         voices.find(v => v.lang && v.lang.startsWith("en")) ||
+         voices[0];
+}
+
+function togglePlay() {
+  const btn = document.getElementById("playBtn");
+  if (playing) {
+    speechSynthesis.cancel();
+    playing = false;
+    btn.innerHTML = "&#9654; Listen";
+    return;
+  }
+  speechSynthesis.cancel();
+  utterance = new SpeechSynthesisUtterance(S);
+  utterance.rate = 0.93;
+  const v = pickVoice();
+  if (v) utterance.voice = v;
+  utterance.onend = function() { playing = false; btn.innerHTML = "&#9654; Listen"; };
+  speechSynthesis.speak(utterance);
+  playing = true;
+  btn.innerHTML = "&#9632; Stop";
+}
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
