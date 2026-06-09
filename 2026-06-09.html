@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-09</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text);
+    font-family:Georgia,'Times New Roman',serif; line-height:1.7;
+    -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 22px 60px; }
+  .nav{ display:flex; justify-content:space-between; align-items:center;
+    border-bottom:1px solid rgba(201,168,76,.28); padding:16px 0;
+    font-size:.92rem; letter-spacing:.02em; }
+  .nav.bottom{ border-bottom:none; border-top:1px solid rgba(201,168,76,.28);
+    margin-top:48px; }
+  .nav a{ color:var(--accent); text-decoration:none; }
+  .nav a:hover{ text-decoration:underline; }
+  .nav .disabled{ color:#5c5240; pointer-events:none; }
+  header.masthead{ text-align:center; padding:40px 0 24px; }
+  .masthead h1{ font-size:2.5rem; margin:0; letter-spacing:.04em;
+    color:var(--accent); font-weight:normal; }
+  .masthead .tag{ font-style:italic; color:#a89a78; margin-top:6px; font-size:1rem; }
+  .masthead .date{ margin-top:14px; font-size:.85rem; letter-spacing:.18em;
+    text-transform:uppercase; color:#8a7d5e; }
+  .player{ display:flex; align-items:center; gap:14px; justify-content:center;
+    border:1px solid rgba(201,168,76,.3); border-radius:6px;
+    padding:12px 16px; margin:26px 0 34px; background:rgba(201,168,76,.04); }
+  .player button{ background:var(--accent); color:var(--bg); border:none;
+    border-radius:4px; padding:9px 16px; font-family:inherit; font-size:.9rem;
+    cursor:pointer; letter-spacing:.03em; }
+  .player button:hover{ opacity:.88; }
+  .player button.secondary{ background:transparent; color:var(--accent);
+    border:1px solid rgba(201,168,76,.4); }
+  .player .status{ font-size:.82rem; color:#a89a78; font-style:italic; }
+  h2.section{ color:var(--accent); font-size:.82rem; letter-spacing:.22em;
+    text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,.25);
+    padding-bottom:8px; margin:42px 0 20px; font-weight:normal; }
+  article h3{ font-size:1.7rem; line-height:1.3; margin:0 0 6px; font-weight:normal; }
+  article .lead-sub{ font-style:italic; color:#a89a78; margin:0 0 20px; }
+  p{ margin:0 0 18px; }
+  a.inline{ color:var(--accent); }
+  .brief{ margin-bottom:22px; }
+  .brief h4{ margin:0 0 5px; font-size:1.12rem; font-weight:normal; color:#f0e6c8; }
+  .brief h4 .num{ color:var(--accent); margin-right:8px; }
+  .brief p{ margin:0; font-size:.98rem; }
+  .brief a{ color:var(--accent); }
+  .signal{ border:1px solid rgba(201,168,76,.4); border-left:4px solid var(--accent);
+    border-radius:6px; padding:22px 26px; margin:30px 0; background:rgba(201,168,76,.05); }
+  .signal .label{ color:var(--accent); font-size:.78rem; letter-spacing:.2em;
+    text-transform:uppercase; display:block; margin-bottom:10px; }
+  .signal p{ margin:0; font-size:1.05rem; }
+  footer{ margin-top:46px; padding-top:22px; border-top:1px solid rgba(201,168,76,.25);
+    font-size:.82rem; color:#8a7d5e; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav top">
+    <a href="2026-06-08.html">&larr; 2026-06-08</a>
+    <span class="disabled">2026-06-10 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">Signal over noise — daily AI &amp; tech for builders</div>
+    <div class="date">Tuesday · June 9, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="atn-play">▶ Listen</button>
+    <button id="atn-stop" class="secondary">■ Stop</button>
+    <span class="status" id="atn-status">~4 min read-aloud</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <article>
+    <h3>Apple bets the farm on Gemini — and rebuilds Siri from scratch</h3>
+    <p class="lead-sub">At WWDC 2026, the most independent company in tech quietly admitted it needed someone else's brain.</p>
+
+    <p>For three years the joke wrote itself: Siri, the assistant that launched the modern voice era, had become the one Apple users actively avoided. On Monday, Apple stopped laughing and did the thing it almost never does — it shipped someone else's model inside its own product. At <a class="inline" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/">WWDC 2026</a>, the company unveiled a completely rebuilt Siri powered by a custom Google Gemini model, woven into the next generation of Apple Foundation Models behind Apple Intelligence.</p>
+
+    <p>The new Siri is not a patch. It launches as a standalone app that works across iPhone, iPad, Mac, and Vision Pro, opening with an "Ask Siri" bar that looks unmistakably like ChatGPT, Claude, or Gemini — type a question, attach a PDF or image with the paperclip, get a real answer. Apple is also adding "visual intelligence," letting Siri reason about whatever is on your screen or in front of your camera, plus a "Spatial Reframing" feature that uses 3D modeling to re-shoot an existing photo from a different angle. The assistant ships this fall to non-developers as a free software update.</p>
+
+    <p>Read past the demos and the strategic story is the interesting one. Apple has spent a decade selling on-device privacy and vertical integration as moral and technical superiority. Partnering with Google — its chief rival in mobile and the company whose search default funds a meaningful slice of Apple's services revenue — to supply the literal intelligence layer of its flagship assistant is a remarkable concession. It says Apple concluded that losing the assistant race outright was a bigger risk than the optics of renting a competitor's model. The carve-outs tell their own story: Siri's AI features won't launch in Europe or China, where regulatory and geopolitical friction made the Gemini arrangement untenable.</p>
+
+    <p><strong>What it means for builders:</strong> the "build it all in-house" era of frontier AI is ending even at the company most associated with it. If Apple will white-label Gemini, the question for everyone smaller is no longer whether to depend on a frontier provider but how to architect around the one you choose — and how to stay portable when the relationship, the pricing, or the regulator changes. Watch closely how Apple exposes (or doesn't expose) this new Siri to third-party apps via App Intents; that surface is where the real platform opportunity for indie builders will live, far more than the keynote sizzle reel.</p>
+  </article>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><span class="num">01</span>Nvidia locks down Korea's memory supply</h4>
+    <p>During Jensen Huang's Seoul visit, Nvidia signed six deals with SK Hynix, Naver, SK Telecom, Hyundai, LG, and Doosan — including a multi-year pact with SK Hynix to co-develop next-gen AI memory. The message: compute is now a supply-chain game, and Nvidia is buying certainty years ahead. <a href="https://money.usnews.com/investing/news/articles/2026-06-07/nvidia-announces-deals-with-south-koreas-sk-hynix-naver-and-doosan-for-ai-data-centres">Details →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4><span class="num">02</span>Microsoft ships its own coding and reasoning models</h4>
+    <p>At Build, Microsoft introduced MAI-Code-1-Flash (description-to-source-code) and MAI-Thinking-1, a low-token-cost reasoning model — its clearest move yet to reduce dependence on OpenAI and undercut prices for developers. <a href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">Details →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4><span class="num">03</span>The release cadence keeps accelerating</h4>
+    <p>New frontier and open models are now landing roughly every two days: NVIDIA's Nemotron 3 Ultra 550B dropped June 4, alongside Google Gemma 4 and Alibaba Qwen3.7 Plus, with OpenAI's GPT-5.5 family in active rollout. Sixty models were added to public trackers in the last 90 days. <a href="https://llm-stats.com/llm-updates">Details →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4><span class="num">04</span>Anthropic pushes Claude Opus 4.7 to 1M context</h4>
+    <p>Anthropic's latest flagship posts an Intelligence Index of 57.3 with a 1-million-token context window — extending the trend of long-context reasoning becoming table stakes rather than a premium tier. <a href="https://llm-stats.com/llm-updates">Details →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4><span class="num">05</span>Lenovo: AI PCs go mainstream by 2027</h4>
+    <p>Lenovo CFO Winston Cheng says AI-enabled PCs hit mainstream adoption next year, fueled by sustained enterprise and government spend — a tailwind for builders shipping local-first and on-device AI tools. <a href="https://techstartups.com/2026/06/08/top-tech-news-today-june-8-2026/">Details →</a></p>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <span class="label">Today's Signal</span>
+    <p>When Apple — the patron saint of "we build it ourselves" — chooses to rent Gemini rather than lose the assistant race, the lesson for solo builders inverts. Your moat was never the model. It's the product surface, the workflow, and the trust you own around whichever brain you plug in. Build the parts a frontier lab will never bother to build for you.</p>
+  </div>
+
+  <nav class="nav bottom">
+    <a href="2026-06-08.html">&larr; 2026-06-08</a>
+    <span class="disabled">2026-06-10 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · June 9, 2026<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Tuesday, June ninth, twenty twenty-six. Today's lead story: Apple bets the farm on Gemini, and rebuilds Siri from scratch. For three years the joke wrote itself. Siri, the assistant that launched the modern voice era, had become the one Apple users actively avoided. On Monday, Apple stopped laughing, and did the thing it almost never does. It shipped someone else's model inside its own product. At W W D C twenty twenty-six, the company unveiled a completely rebuilt Siri, powered by a custom Google Gemini model, woven into the next generation of Apple Foundation Models behind Apple Intelligence. The new Siri is not a patch. It launches as a standalone app that works across iPhone, iPad, Mac, and Vision Pro. It opens with an Ask Siri bar that looks unmistakably like ChatGPT, Claude, or Gemini. Type a question, attach a P D F or image, get a real answer. Apple is also adding visual intelligence, letting Siri reason about whatever is on your screen or in front of your camera. The assistant ships this fall as a free software update. But read past the demos, and the strategic story is the interesting one. Apple has spent a decade selling on-device privacy and vertical integration as superiority. Partnering with Google, its chief rival, to supply the literal intelligence layer of its flagship assistant, is a remarkable concession. It says Apple concluded that losing the assistant race outright was a bigger risk than the optics of renting a competitor's model. The carve-outs tell their own story. Siri's A I features won't launch in Europe or China, where regulatory and geopolitical friction made the arrangement untenable. What it means for builders: the build-it-all-in-house era of frontier A I is ending, even at the company most associated with it. If Apple will white-label Gemini, the question for everyone smaller is no longer whether to depend on a frontier provider, but how to architect around the one you choose, and how to stay portable when the relationship, the pricing, or the regulator changes. Now, the briefs. One. Nvidia locks down Korea's memory supply. During Jensen Huang's Seoul visit, Nvidia signed six deals with SK Hynix, Naver, SK Telecom, Hyundai, L G, and Doosan, including a multi-year pact with SK Hynix to co-develop next-generation A I memory. The message: compute is now a supply-chain game, and Nvidia is buying certainty years ahead. Two. Microsoft ships its own coding and reasoning models. At Build, Microsoft introduced M A I Code One Flash, which turns written descriptions into source code, and M A I Thinking One, a low-cost reasoning model. It's Microsoft's clearest move yet to reduce dependence on OpenAI. Three. The release cadence keeps accelerating. New models are landing roughly every two days. Nvidia's Nemotron Three Ultra dropped June fourth, alongside Google Gemma Four and Alibaba Qwen three-point-seven Plus, with OpenAI's G P T five-point-five family in active rollout. Four. Anthropic pushes Claude Opus four-point-seven to one million tokens of context, extending the trend of long-context reasoning becoming table stakes rather than a premium tier. Five. Lenovo says A I P Cs go mainstream by twenty twenty-seven, fueled by sustained enterprise and government spending. A tailwind for builders shipping local-first and on-device tools. And finally, today's signal. When Apple, the patron saint of we-build-it-ourselves, chooses to rent Gemini rather than lose the assistant race, the lesson for solo builders inverts. Your moat was never the model. It's the product surface, the workflow, and the trust you own around whichever brain you plug in. Build the parts a frontier lab will never bother to build for you. That's the signal for today. Keep building above the noise.";
+
+(function(){
+  var playBtn=document.getElementById('atn-play');
+  var stopBtn=document.getElementById('atn-stop');
+  var status=document.getElementById('atn-status');
+  var synth=window.speechSynthesis;
+  function pickVoice(){
+    var vs=synth.getVoices()||[];
+    var pref=['Daniel','Alex'];
+    for(var i=0;i<pref.length;i++){
+      for(var j=0;j<vs.length;j++){
+        if(vs[j].name.indexOf(pref[i])!==-1) return vs[j];
+      }
+    }
+    for(var k=0;k<vs.length;k++){ if(vs[k].lang.indexOf('en')===0) return vs[k]; }
+    return vs[0]||null;
+  }
+  function speak(){
+    if(!synth){ status.textContent='Audio not supported'; return; }
+    synth.cancel();
+    var u=new SpeechSynthesisUtterance(S);
+    u.rate=0.93; u.pitch=1;
+    var v=pickVoice(); if(v) u.voice=v;
+    u.onstart=function(){ status.textContent='Playing…'; };
+    u.onend=function(){ status.textContent='~4 min read-aloud'; };
+    synth.speak(u);
+  }
+  playBtn.addEventListener('click',speak);
+  stopBtn.addEventListener('click',function(){ if(synth){synth.cancel(); status.textContent='Stopped';} });
+  if(synth && synth.onvoiceschanged!==undefined){ synth.onvoiceschanged=pickVoice; }
+})();
+</script>
+</body>
+</html>
