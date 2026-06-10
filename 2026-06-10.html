@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-10</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f66;
+    --line: #2a2417;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 22px 60px; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
+    margin: 6px 0 0;
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: var(--muted); pointer-events: none; }
+  .masthead { text-align: center; padding: 22px 0 10px; }
+  .masthead h1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .masthead .tag {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+  .masthead .date {
+    color: var(--text);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #15110a;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 22px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: #0d0a06;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 16px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .player button:hover { background: #d8b85a; }
+  .player .status { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+  h2 {
+    color: var(--accent);
+    font-weight: normal;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin-top: 40px;
+  }
+  .kicker {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    margin-bottom: -8px;
+    margin-top: 40px;
+  }
+  a.inline { color: var(--accent); }
+  .brief { margin: 22px 0; }
+  .brief h3 { margin: 0 0 4px; font-size: 1.12rem; color: var(--text); font-weight: bold; }
+  .brief p { margin: 0; }
+  .signal {
+    background: #15110a;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 36px 0;
+  }
+  .signal .label {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    margin: 0 0 8px;
+  }
+  .signal p { margin: 0; font-style: italic; }
+  footer {
+    margin-top: 50px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a href="2026-06-09.html">&larr; 2026-06-09</a>
+    <span class="disabled">2026-06-11 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, distilled for builders</div>
+    <div class="date">Wednesday, June 10, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="status" id="audioStatus">~4 min &middot; spoken edition</span>
+  </div>
+
+  <p class="kicker">Lead Story</p>
+  <h2>Apple cracks the walled garden: any AI can now be your iPhone's brain</h2>
+  <p>
+    At its WWDC 2026 keynote on June 8, Apple did something it has resisted for a decade — it opened
+    the front door. The headline was a rebuilt Siri running on a custom 1.2-trillion-parameter
+    <a class="inline" href="https://www.macrumors.com/guide/wwdc-2026-what-to-expect/">Gemini model licensed from Google</a>
+    for a reported ~$1 billion a year. But the part that actually reshapes the platform is quieter:
+    <strong>iOS 27 Extensions</strong>, a framework that lets third-party AI providers plug directly
+    into Siri, Writing Tools, and Image Playground through a dedicated App Store marketplace.
+  </p>
+  <p>
+    In practice, that means an iPhone owner can open Settings and set
+    <a class="inline" href="https://aiweekly.co/node/2611">Claude, ChatGPT, Gemini, or Grok</a>
+    as the default intelligence across Apple Intelligence system features — not just inside a single
+    chat app, but as the model Siri itself reaches for. Apple is ending the single-provider ChatGPT
+    arrangement it shipped in 2024 and replacing it with an open, competitive slot. For the first time,
+    Claude becomes a system-level option on the iPhone.
+  </p>
+  <p>
+    <strong>The analysis:</strong> For a solo builder, this is the most consequential distribution
+    shift in years. Apple just turned the most valuable real estate in consumer tech — the default
+    assistant on a billion-plus devices — into a contestable marketplace. The lesson from the
+    browser-default and search-default wars is that whoever owns the system-level slot owns the habit,
+    and Apple is now auctioning that slot feature by feature rather than company by company. The strategic
+    tell is that Apple licensed Gemini for the cloud backbone while simultaneously refusing to bet the
+    house on any one partner: Extensions is a hedge dressed as generosity. The same chips that make this
+    work (iPhone 15 Pro, iPhone 16 and newer) also draw the upgrade line, so the rollout doubles as a
+    hardware-refresh engine. Developer beta is out now, public beta lands in July, and the real thing
+    ships alongside the September iPhones. If you build anything that could ride an AI Extension — a
+    skill, an agent, a tool surface — the window to design for that slot opens this summer, not this fall.
+  </p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3>Anthropic ships Claude Fable 5 — a tamed version of a model it called too risky</h3>
+    <p>
+      On June 9, Anthropic released
+      <a class="inline" href="https://www.anthropic.com/news/claude-fable-5-mythos-5">Claude Fable 5</a>,
+      a Mythos-class frontier model made safe for general use. It can sustain days-long agentic work —
+      planning across stages, delegating to sub-agents, and checking its own output — and is
+      state-of-the-art on nearly every tested benchmark. Some sensitive queries are quietly routed to
+      Opus 4.8 instead. Priced at $10 / $50 per million input/output tokens, with the 90% prompt-caching
+      discount intact. <a class="inline" href="https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/">TechCrunch has the framing</a>.
+    </p>
+  </div>
+
+  <div class="brief">
+    <h3>Microsoft launches seven in-house MAI models and a superintelligence lab</h3>
+    <p>
+      Microsoft AI unveiled a family of
+      <a class="inline" href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/">seven new MAI models</a>
+      spanning image, voice, transcription, coding, and reasoning — its clearest move yet to
+      <a class="inline" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">lessen reliance on OpenAI and cut developer costs</a>,
+      paired with a stated push toward a superintelligence lab.
+    </p>
+  </div>
+
+  <div class="brief">
+    <h3>OpenAI's Daybreak turns frontier models loose on vulnerabilities</h3>
+    <p>
+      OpenAI launched
+      <a class="inline" href="https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html">Daybreak</a>,
+      a cybersecurity initiative built on three GPT-5.5 tiers — standard, a gated "Trusted Access for
+      Cyber" build for authorized defensive work, and a permissive GPT-5.5-Cyber for red-teaming and
+      pen-testing. It pairs model capability with Codex Security to find and patch flaws.
+    </p>
+  </div>
+
+  <div class="brief">
+    <h3>ChatGPT learns to "dream" — memory that updates itself over time</h3>
+    <p>
+      OpenAI rolled out a more scalable
+      <a class="inline" href="https://releasebot.io/updates/openai">memory system for ChatGPT</a>
+      that revises stored facts as time passes — turning "You're going to Singapore in July" into
+      "You went to Singapore in July 2026" once the trip ends, addressing the staleness problem that
+      has dogged long-lived assistants.
+    </p>
+  </div>
+
+  <div class="brief">
+    <h3>Chip stocks shed ~$1.3 trillion in the sector's worst day since 2020</h3>
+    <p>
+      A hot jobs report spiked interest-rate fears and Broadcom's outlook rattled the trade, knocking
+      roughly <a class="inline" href="https://www.crescendo.ai/news/latest-ai-news-and-updates">$1.3 trillion off AI and chip stocks</a>
+      on Friday — a reminder that the infrastructure layer underwriting this boom still trades on macro,
+      not just demand.
+    </p>
+  </div>
+
+  <div class="signal">
+    <p class="label">Today's Signal</p>
+    <p>
+      Two stories this week point the same direction: Apple turning its assistant slot into a marketplace,
+      and Microsoft building its own models to escape a single vendor. The platform owners are all hedging
+      against lock-in at once. For a solo builder, the takeaway isn't which model wins — it's that
+      portability just became a feature you can count on. Design your product to swap brains, not marry one.
+    </p>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-09.html">&larr; 2026-06-09</a>
+    <span class="disabled">2026-06-11 &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Wednesday, June tenth, twenty twenty-six. Here's the signal in A.I. and tech, distilled for builders. " +
+"Our lead story. Apple just cracked open its walled garden. At its World Wide Developers Conference keynote on June eighth, Apple did something it has resisted for a decade. It opened the front door. The headline was a rebuilt Siri running on a custom one-point-two-trillion-parameter Gemini model, licensed from Google for a reported one billion dollars a year. But the part that actually reshapes the platform is quieter. It's called iOS twenty-seven Extensions. It's a framework that lets third-party A.I. providers plug directly into Siri, Writing Tools, and Image Playground, through a dedicated App Store marketplace. " +
+"In practice, that means an iPhone owner can open Settings and set Claude, ChatGPT, Gemini, or Grok as the default intelligence across Apple Intelligence features. Not just inside a single chat app, but as the model Siri itself reaches for. For the first time, Claude becomes a system-level option on the iPhone. " +
+"Here's the analysis. For a solo builder, this is the most consequential distribution shift in years. Apple just turned the most valuable real estate in consumer tech, the default assistant on more than a billion devices, into a contestable marketplace. The lesson from the browser and search default wars is that whoever owns the system-level slot owns the habit. The strategic tell is that Apple licensed Gemini for the cloud backbone while refusing to bet the house on any one partner. Extensions is a hedge dressed as generosity. Developer beta is out now, public beta lands in July, and the real thing ships alongside the September iPhones. If you build anything that could ride an A.I. Extension, the window to design for that slot opens this summer, not this fall. " +
+"Now, the briefs. " +
+"First. Anthropic shipped Claude Fable Five on June ninth. It's a frontier model made safe for general use. It can sustain days-long agentic work, planning across stages, delegating to sub-agents, and checking its own output. It's state-of-the-art on nearly every tested benchmark, priced at ten and fifty dollars per million input and output tokens. " +
+"Second. Microsoft launched a family of seven in-house M.A.I. models, spanning image, voice, transcription, coding, and reasoning. It's the company's clearest move yet to lessen its reliance on OpenAI and cut developer costs, paired with a push toward a superintelligence lab. " +
+"Third. OpenAI launched Daybreak, a cybersecurity initiative built on three G.P.T. five-point-five tiers, ranging from standard safeguards to a permissive build for red-teaming and penetration testing. It pairs model capability with Codex Security to find and patch flaws. " +
+"Fourth. OpenAI rolled out a new memory system for ChatGPT that revises stored facts as time passes. It turns, you're going to Singapore in July, into, you went to Singapore in July twenty twenty-six, once the trip ends. " +
+"And fifth. A.I. and chip stocks shed roughly one-point-three trillion dollars on Friday, the sector's worst day since twenty twenty, after a hot jobs report spiked interest-rate fears. A reminder that the infrastructure layer still trades on macro, not just demand. " +
+"And finally, today's signal. Two stories this week point the same direction. Apple turning its assistant slot into a marketplace, and Microsoft building its own models to escape a single vendor. The platform owners are all hedging against lock-in at once. For a solo builder, the takeaway isn't which model wins. It's that portability just became a feature you can count on. Design your product to swap brains, not marry one. " +
+"That's the signal for today. This has been Above The Noise.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  const pref = ['Daniel', 'Alex'];
+  for (const name of pref) {
+    const v = vs.find(x => x.name.indexOf(name) !== -1);
+    if (v) return v;
+  }
+  return vs.find(x => x.lang && x.lang.indexOf('en') === 0) || vs[0] || null;
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const status = document.getElementById('audioStatus');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.innerHTML = '&#9654; Listen';
+    status.textContent = '~4 min · spoken edition';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = function () {
+    speaking = false;
+    btn.innerHTML = '&#9654; Listen';
+    status.textContent = '~4 min · spoken edition';
+  };
+  u.onstart = function () {
+    speaking = true;
+    btn.innerHTML = '&#10073;&#10073; Stop';
+    status.textContent = 'Playing…';
+  };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+if (typeof window.speechSynthesis !== 'undefined') {
+  window.speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
