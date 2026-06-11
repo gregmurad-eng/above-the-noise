@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-11</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 64px; }
+  .masthead {
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+    padding: 40px 0 24px;
+    margin-bottom: 8px;
+  }
+  .masthead h1 {
+    font-size: 46px;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .masthead .tagline {
+    font-style: italic;
+    font-size: 15px;
+    opacity: 0.8;
+    margin-top: 6px;
+  }
+  .masthead .date {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    opacity: 0.7;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  nav.bottom { border-bottom: none; border-top: 1px solid rgba(201,168,76,0.3); margin-top: 48px; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  nav .disabled { color: var(--text); opacity: 0.35; pointer-events: none; }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(201,168,76,0.07);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 28px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 9px 16px;
+    cursor: pointer;
+  }
+  .player button:hover { opacity: 0.9; }
+  .player .label { font-size: 13px; opacity: 0.8; font-style: italic; }
+  section { margin-top: 40px; }
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  h2 { font-size: 30px; line-height: 1.25; margin: 4px 0 18px; font-weight: normal; }
+  h3 { font-size: 20px; margin: 0 0 6px; font-weight: normal; color: var(--accent); }
+  p { margin: 0 0 16px; font-size: 18px; }
+  a.inline { color: var(--accent); }
+  .brief { border-top: 1px solid rgba(201,168,76,0.2); padding-top: 18px; margin-top: 22px; }
+  .brief p { font-size: 16px; }
+  .signal {
+    background: rgba(201,168,76,0.09);
+    border-left: 3px solid var(--accent);
+    padding: 22px 26px;
+    border-radius: 4px;
+    margin-top: 16px;
+  }
+  .signal p { font-size: 17px; margin-bottom: 0; font-style: italic; }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    font-size: 13px;
+    opacity: 0.6;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>ABOVE THE NOISE</h1>
+    <div class="tagline">The AI &amp; tech signal, distilled daily for builders</div>
+    <div class="date">Thursday, June 11, 2026</div>
+  </header>
+
+  <nav class="top">
+    <a href="2026-06-10.html">&larr; 2026-06-10</a>
+    <span class="disabled">2026-06-12 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="label">Audio edition &middot; ~4 min</span>
+  </div>
+
+  <section>
+    <div class="kicker">Lead Story</div>
+    <h2>Oracle's plunge is the market finally pricing the AI capital bill</h2>
+    <p>Oracle shares fell close to 9% as investors digested a number that no longer fit the spreadsheet: the company guided fiscal 2027 capital spending well above Wall Street estimates and said it would raise nearly $40 billion through a mix of debt and equity to keep building. For a stock that spent the past year as a darling of the AI-infrastructure trade, the reaction marked a turn — the market is no longer rewarding ambition for its own sake; it wants to see the cash come back out the other side.</p>
+    <p>The fundamentals underneath are staggering in both directions. Oracle is sitting on a backlog of remaining performance obligations north of $550 billion, the strongest evidence yet that demand for AI compute is real and contracted, not speculative. But servicing that backlog means roughly $50 billion of capex this fiscal year alone, plus more than $260 billion in additional data-center lease commitments stretching out over the coming years. Free cash flow has gone negative. One analyst, downgrading the stock to Hold, described the company bluntly as having transformed from a software vendor into an AI capacity-financing operation.</p>
+    <p>That phrase is the whole story. The hyperscaler land grab has quietly mutated into a financing race. Morgan Stanley now expects AI-related global debt issuance to more than double to nearly $570 billion this year, as the biggest players reach past their own balance sheets and equity markets to fund the buildout. OpenAI is chasing 10 gigawatts of capacity; China has floated a $295 billion national data-center plan. The constraint on frontier AI has moved up the stack — from talent, to chips, to power, and now to the cost of capital itself.</p>
+    <p><strong>What it means for builders:</strong> none of this changes your weekend sprint, but it shapes the ground you're building on. The compute you rent is being financed on debt that assumes years of strong demand. That's bullish for capacity and probably bearish for the steep price cuts we've grown used to — the providers carrying this debt need margin. If you're architecting anything that leans on a single provider's cheap inference staying cheap, build the abstraction layer now. The era of compute being priced like a loss-leader is ending, and the bond market just sent the memo. <a class="inline" href="https://finance.yahoo.com/video/oracle-shares-plunge-soaring-ai-032211658.html">(Yahoo Finance)</a></p>
+  </section>
+
+  <section>
+    <div class="kicker">The Briefs</div>
+
+    <div class="brief">
+      <h3>OpenAI crosses $25B in annualized revenue, eyes a 2026 IPO</h3>
+      <p>OpenAI has reportedly surpassed $25 billion in annualized revenue and is taking early steps toward a public listing, potentially as soon as late 2026. A debut at that scale would be the clearest signal yet that the generative-AI business has graduated from venture story to public-market reality. <a class="inline" href="https://techstartups.com/2026/06/10/top-tech-news-today-june-10-2026/">(Tech Startups)</a></p>
+    </div>
+
+    <div class="brief">
+      <h3>Microsoft ships seven in-house MAI models</h3>
+      <p>Microsoft unveiled a family of seven models built in-house, led by MAI-Thinking-1, a mid-sized reasoning model that matches frontier systems on software-engineering benchmarks, and MAI-Code-1-Flash, a 5B-active-parameter agentic coder tuned for GitHub Copilot and VS Code. The strategy: lessen reliance on OpenAI and cut costs for developers on the Microsoft stack. <a class="inline" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">(CNBC)</a></p>
+    </div>
+
+    <div class="brief">
+      <h3>A cooling startup borrows from nuclear reactors</h3>
+      <p>Ferveret, founded by MIT researchers, is developing a chip-cooling system inspired by nuclear-reactor thermal management, aiming to slash the energy and water that AI data centers burn keeping silicon cold. As power and water become the binding constraints on the buildout, cooling is quietly becoming a frontier of its own. <a class="inline" href="https://news.mit.edu/topic/artificial-intelligence2">(MIT News)</a></p>
+    </div>
+
+    <div class="brief">
+      <h3>Study: AI may dull our fake-news radar</h3>
+      <p>An MIT Media Lab study finds that leaning on AI to vet information can erode our own ability to spot falsehoods — much as GPS atrophied our sense of direction. A useful caution for anyone wiring an LLM into a product as the arbiter of what's true. <a class="inline" href="https://news.mit.edu/topic/artificial-intelligence2">(MIT News)</a></p>
+    </div>
+
+    <div class="brief">
+      <h3>Google brings Gemini to the 2026 World Cup</h3>
+      <p>Google is folding Gemini into the 2026 FIFA World Cup through a partnership with Argentina's national team and a slate of AI-powered fan features — a sign of how aggressively the big labs are pushing assistants into mainstream consumer moments. <a class="inline" href="https://techstartups.com/2026/06/10/top-tech-news-today-june-10-2026/">(Tech Startups)</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Today's Signal</div>
+    <div class="signal">
+      <p>The AI race stopped being about who has the best model and became about who can afford to keep the lights on. For a solo builder, that's oddly freeing: you're not competing on capital, so compete on the things capital can't buy — taste, speed, and knowing your users better than any hyperscaler ever will.</p>
+    </div>
+  </section>
+
+  <nav class="bottom">
+    <a href="2026-06-10.html">&larr; 2026-06-10</a>
+    <span class="disabled">2026-06-12 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise &middot; 2026-06-11<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Thursday, June eleventh, twenty twenty-six. Today's lead: Oracle's plunge is the market finally pricing the AI capital bill. Oracle shares fell close to nine percent as investors digested a number that no longer fit the spreadsheet. The company guided fiscal twenty twenty-seven capital spending well above Wall Street estimates, and said it would raise nearly forty billion dollars through a mix of debt and equity to keep building. For a stock that spent the past year as a darling of the AI-infrastructure trade, the reaction marked a turn. The market is no longer rewarding ambition for its own sake. It wants to see the cash come back out the other side. The fundamentals underneath are staggering in both directions. Oracle is sitting on a backlog north of five hundred fifty billion dollars, the strongest evidence yet that demand for AI compute is real and contracted, not speculative. But servicing that backlog means roughly fifty billion dollars of capital spending this year alone, plus more than two hundred sixty billion in additional data-center lease commitments. Free cash flow has gone negative. One analyst described the company bluntly as having transformed from a software vendor into an AI capacity-financing operation. That phrase is the whole story. The hyperscaler land grab has quietly mutated into a financing race. Morgan Stanley now expects AI-related global debt issuance to more than double, to nearly five hundred seventy billion dollars this year. OpenAI is chasing ten gigawatts of capacity. China has floated a two hundred ninety-five billion dollar national data-center plan. The constraint on frontier AI has moved up the stack, from talent, to chips, to power, and now to the cost of capital itself. What does it mean for builders? None of this changes your weekend sprint, but it shapes the ground you're building on. The compute you rent is being financed on debt that assumes years of strong demand. That's bullish for capacity, and probably bearish for the steep price cuts we've grown used to. The providers carrying this debt need margin. If you're architecting anything that leans on a single provider's cheap inference staying cheap, build the abstraction layer now. Now, the briefs. OpenAI has reportedly crossed twenty-five billion dollars in annualized revenue and is taking early steps toward a public listing, potentially as soon as late twenty twenty-six. Microsoft unveiled a family of seven in-house models, led by a mid-sized reasoning model and a lean agentic coder tuned for GitHub Copilot, aiming to cut costs and reduce its reliance on OpenAI. A startup called Ferveret, founded by MIT researchers, is building a chip-cooling system inspired by nuclear-reactor technology, to slash the energy and water AI data centers burn. And an MIT Media Lab study finds that leaning on AI to vet information can erode our own ability to spot falsehoods, much as GPS atrophied our sense of direction. Today's signal. The AI race stopped being about who has the best model, and became about who can afford to keep the lights on. For a solo builder, that's oddly freeing. You're not competing on capital, so compete on the things capital can't buy. Taste, speed, and knowing your users better than any hyperscaler ever will. That's the signal, above the noise. See you tomorrow.";
+
+let speaking = false;
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find(v => /Daniel/.test(v.name))
+      || voices.find(v => /Alex/.test(v.name))
+      || voices.find(v => v.lang && v.lang.indexOf('en') === 0)
+      || voices[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.textContent = '▶ Listen';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true;
+  btn.textContent = '❚❚ Stop';
+}
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
