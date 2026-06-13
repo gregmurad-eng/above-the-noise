@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-13</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.7; }
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 22px 60px; }
+  .nav{ display:flex; justify-content:space-between; align-items:center; font-size:.95rem; border-top:1px solid rgba(201,168,76,.3); border-bottom:1px solid rgba(201,168,76,.3); padding:10px 0; margin:14px 0; }
+  .nav a{ color:var(--accent); text-decoration:none; }
+  .nav a:hover{ text-decoration:underline; }
+  .nav .disabled{ color:#5a5443; pointer-events:none; }
+  .masthead{ text-align:center; padding:18px 0 6px; }
+  .masthead h1{ font-size:2.6rem; letter-spacing:1px; margin:0; color:var(--accent); }
+  .masthead .tag{ font-style:italic; color:#b6a884; margin-top:6px; font-size:1rem; }
+  .masthead .date{ font-size:.9rem; letter-spacing:3px; text-transform:uppercase; color:#8d8260; margin-top:10px; }
+  .player{ display:flex; align-items:center; gap:14px; background:rgba(201,168,76,.07); border:1px solid rgba(201,168,76,.25); border-radius:8px; padding:12px 16px; margin:18px 0; }
+  .player button{ background:var(--accent); color:#0d0a06; border:none; border-radius:6px; padding:8px 16px; font-family:inherit; font-size:.92rem; font-weight:bold; cursor:pointer; }
+  .player button:hover{ background:#dcbf63; }
+  .player .label{ font-size:.85rem; color:#b6a884; }
+  h2.section{ font-size:1rem; letter-spacing:2px; text-transform:uppercase; color:var(--accent); border-bottom:1px solid rgba(201,168,76,.3); padding-bottom:6px; margin:42px 0 18px; }
+  h3.head{ font-size:1.7rem; line-height:1.25; margin:0 0 12px; color:#f0e6c8; }
+  article p{ margin:0 0 16px; }
+  a.src{ color:var(--accent); }
+  .analysis{ border-left:3px solid var(--accent); padding:4px 0 4px 16px; margin:20px 0; font-style:italic; color:#cdbf99; }
+  .brief{ margin:0 0 22px; }
+  .brief h4{ margin:0 0 6px; font-size:1.15rem; color:#f0e6c8; }
+  .brief p{ margin:0; font-size:.98rem; }
+  .signal{ background:rgba(201,168,76,.08); border:1px solid var(--accent); border-radius:10px; padding:22px 24px; margin:30px 0; }
+  .signal h3{ margin:0 0 10px; color:var(--accent); font-size:1.3rem; }
+  .signal p{ margin:0; }
+  footer{ margin-top:50px; padding-top:18px; border-top:1px solid rgba(201,168,76,.3); font-size:.82rem; color:#8d8260; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a href="2026-06-12.html">&larr; 2026-06-12</a>
+    <span class="disabled">2026-06-14 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, distilled for builders</div>
+    <div class="date">Saturday &middot; June 13, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="label">Audio edition &middot; ~4 min</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <article>
+    <h3 class="head">All Three AI Frontier Chiefs Head to the G7</h3>
+    <p>For the first time, the leaders of OpenAI, Google DeepMind, and Anthropic will sit at the same international table. Sam Altman, Demis Hassabis, and Dario Amodei have all confirmed they will attend the G7 summit in &Eacute;vian-les-Bains, France, running June 15&ndash;17, where artificial intelligence is set to dominate the agenda (<a class="src" href="https://www.bloomberg.com/news/articles/2026-06-12/anthropic-openai-google-executives-plan-to-attend-g7-summit">Bloomberg</a>).</p>
+    <p>The optics are hard to miss. A year ago these three were mostly trading barbs over benchmarks and poaching researchers; now they are being treated as quasi-diplomatic actors, invited alongside heads of state to help shape how the wealthiest democracies coordinate on frontier models. The summit comes at a moment when governments have stopped treating AI as a someday problem and started writing rules with teeth (<a class="src" href="https://dataconomy.com/2026/06/12/ai-leaders-openai-google-deepmind-anthropic-g7-summit/">Dataconomy</a>).</p>
+    <p>Expect the conversation to center on three threads: a shared evaluation framework for dangerous-capability testing, compute and export coordination, and the perennial tension between open access and security. The companies arrive with leverage&mdash;they hold the models&mdash;but also exposure, since any voluntary commitments made on a stage like this become benchmarks they will be held to.</p>
+    <p>For builders, the meeting is less about the photo op and more about what gets standardized. If the G7 converges on a common pre-release review window or a shared incident-reporting format, that quietly becomes the global baseline every downstream API and deployment has to design around.</p>
+    <div class="analysis"><strong>The analysis:</strong> When the people who ship the models start co-writing the rules that govern them, regulatory capture and genuine safety coordination look almost identical from the outside. The thing to watch is not what they promise in &Eacute;vian, but whether the commitments come with verification anyone but the labs can run.</div>
+  </article>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>White House issues AI innovation &amp; security order</h4>
+    <p>A new executive order asks frontier developers to voluntarily share new models with the federal government up to 30 days before wider release, and directs national-security agencies to build an AI-cybersecurity clearinghouse (<a class="src" href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">White House</a>).</p>
+  </div>
+
+  <div class="brief">
+    <h4>Google unveils Gemini Omnia</h4>
+    <p>Google introduced Gemini Omnia, pitched as a model that can create from any input&mdash;starting with video&mdash;extending the any-to-any push that has defined this generation of frontier releases (<a class="src" href="https://llm-stats.com/ai-news">LLM-Stats</a>).</p>
+  </div>
+
+  <div class="brief">
+    <h4>Moonshot ships Kimi K2.7-Code</h4>
+    <p>Moonshot AI released Kimi K2.7-Code, claiming roughly 30% lower reasoning-token usage than K2.6 and offering it under a modified MIT license&mdash;a real cost lever for anyone running coding agents at scale (<a class="src" href="https://llm-stats.com/ai-news">LLM-Stats</a>).</p>
+  </div>
+
+  <div class="brief">
+    <h4>Apple opens Siri to multiple AI models</h4>
+    <p>Apple announced a Gemini-powered Siri and a multi-AI Extensions system that makes Claude selectable on the iPhone for the first time&mdash;a notable crack in the walled garden for assistant providers (<a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026">BuildFastWithAI</a>).</p>
+  </div>
+
+  <div class="brief">
+    <h4>Next wave already loading</h4>
+    <p>Gemini 3.5 Pro and Claude Sonnet 4.8 are both expected before the month is out, keeping the release cadence relentless after Claude Opus 4.8 took the top intelligence-index slot in late May (<a class="src" href="https://llm-stats.com/llm-updates">LLM-Stats</a>).</p>
+  </div>
+
+  <div class="signal">
+    <h3>Today's Signal</h3>
+    <p>The hands-off era of AI oversight is ending in real time. A federal executive order, Colorado's AI Act taking effect June 30, and California's frontier-AI transparency law are converging on the same demand: show your safety work before you ship. For solo builders, the lesson isn't to panic&mdash;it's that "move fast" is quietly being replaced by "document as you move." The teams that build evaluation and incident-logging into their workflow now will find compliance is a formality, not a fire drill (<a class="src" href="https://www.csmonitor.com/USA/Politics/2026/0610/artificial-intelligence-regulation-trump-congress">CSMonitor</a>).</p>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-12.html">&larr; 2026-06-12</a>
+    <span class="disabled">2026-06-14 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise &middot; June 13, 2026<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Saturday, June thirteenth, twenty twenty-six. Here's the signal in AI and tech, distilled for builders. Today's lead story: all three AI frontier chiefs are heading to the G7. For the first time, the leaders of OpenAI, Google DeepMind, and Anthropic will sit at the same international table. Sam Altman, Demis Hassabis, and Dario Amodei have all confirmed they'll attend the G7 summit in Evian-les-Bains, France, running June fifteenth through seventeenth, where artificial intelligence is set to dominate the agenda. The optics are hard to miss. A year ago these three were mostly trading barbs over benchmarks and poaching researchers. Now they're being treated as quasi-diplomatic actors, invited alongside heads of state to help shape how the wealthiest democracies coordinate on frontier models. Expect the conversation to center on three threads: a shared evaluation framework for dangerous-capability testing, compute and export coordination, and the perennial tension between open access and security. The companies arrive with leverage, because they hold the models, but also exposure, since any voluntary commitments made on a stage like this become benchmarks they'll be held to. For builders, the meeting is less about the photo op and more about what gets standardized. If the G7 converges on a common pre-release review window or a shared incident-reporting format, that quietly becomes the global baseline every downstream API has to design around. The analysis: when the people who ship the models start co-writing the rules that govern them, regulatory capture and genuine safety coordination look almost identical from the outside. The thing to watch is not what they promise in Evian, but whether the commitments come with verification anyone but the labs can run. Now, the briefs. First: the White House issued a new executive order asking frontier developers to voluntarily share new models with the federal government up to thirty days before wider release, and to build an AI-cybersecurity clearinghouse. Second: Google unveiled Gemini Omnia, a model pitched to create from any input, starting with video. Third: Moonshot AI shipped Kimi K2.7-Code, claiming roughly thirty percent lower reasoning-token usage than its predecessor, under a modified MIT license, a real cost lever for anyone running coding agents at scale. Fourth: Apple announced a Gemini-powered Siri and a multi-AI extensions system that makes Claude selectable on the iPhone for the first time, a notable crack in the walled garden. And fifth: Gemini three-point-five Pro and Claude Sonnet four-point-eight are both expected before the month is out, keeping the release cadence relentless. And today's signal: the hands-off era of AI oversight is ending in real time. A federal executive order, Colorado's AI Act taking effect June thirtieth, and California's frontier-AI transparency law are converging on the same demand: show your safety work before you ship. For solo builders, the lesson isn't to panic. It's that move fast is quietly being replaced by document as you move. The teams that build evaluation and incident-logging into their workflow now will find compliance is a formality, not a fire drill. That's the signal for today. Content is AI-synthesized, and all links point to original sources. See you tomorrow.";
+
+let speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/.test(v.name)) || vs.find(v=>/Alex/.test(v.name)) || vs.find(v=>/en[-_]?US|en[-_]?GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn = document.getElementById('playBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654; Listen'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice(); if(v) u.voice = v;
+  u.onend = ()=>{ speaking=false; btn.innerHTML='&#9654; Listen'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true; btn.innerHTML='&#9632; Stop';
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
