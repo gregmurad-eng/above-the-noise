@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-14</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif;
+         margin:0; padding:0; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:32px 22px 64px; }
+  .masthead { text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1 { font-size:2.6rem; letter-spacing:1px; margin:0; color:var(--accent); font-weight:normal; }
+  .masthead .tagline { font-style:italic; color:#b6a988; font-size:1rem; margin-top:6px; }
+  .masthead .date { letter-spacing:3px; text-transform:uppercase; font-size:.78rem; color:#9c8f6e; margin-top:10px; }
+  nav { display:flex; justify-content:space-between; align-items:center; font-size:.92rem;
+        padding:12px 0; border-bottom:1px solid #2a2418; }
+  nav.bottom { border-bottom:none; border-top:1px solid #2a2418; margin-top:40px; }
+  nav a { color:var(--accent); text-decoration:none; }
+  nav a:hover { text-decoration:underline; }
+  nav .disabled { color:#5a5240; cursor:default; }
+  .player { display:flex; align-items:center; gap:14px; background:#15110a; border:1px solid #2a2418;
+            border-radius:8px; padding:12px 16px; margin:22px 0; }
+  .player button { background:var(--accent); color:#0d0a06; border:none; border-radius:6px;
+                   padding:9px 16px; font-family:inherit; font-size:.9rem; cursor:pointer; font-weight:bold; }
+  .player button:hover { background:#dcbb5c; }
+  .player .label { font-size:.82rem; color:#9c8f6e; font-style:italic; }
+  h2.section { color:var(--accent); font-size:1.5rem; border-bottom:1px solid #2a2418;
+               padding-bottom:6px; margin-top:40px; font-weight:normal; }
+  .kicker { text-transform:uppercase; letter-spacing:2px; font-size:.72rem; color:#9c8f6e; margin-bottom:4px; }
+  .lead h3 { font-size:1.7rem; margin:6px 0 12px; color:var(--text); }
+  .brief { margin:22px 0; }
+  .brief h4 { margin:0 0 5px; font-size:1.12rem; color:var(--accent); font-weight:normal; }
+  .brief p { margin:0; }
+  a.src { color:var(--accent); }
+  .signal { background:#15110a; border-left:3px solid var(--accent); border-radius:0 8px 8px 0;
+            padding:18px 22px; margin:28px 0; }
+  .signal .kicker { color:var(--accent); }
+  .analysis { font-style:italic; color:#c4b894; border-left:2px solid #3a3320; padding-left:16px; margin:16px 0; }
+  footer { margin-top:46px; padding-top:18px; border-top:1px solid #2a2418; font-size:.78rem;
+           color:#7a7058; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tagline">The signal in AI &amp; tech, distilled daily for builders</div>
+    <div class="date">Sunday · 2026-06-14</div>
+  </header>
+
+  <nav class="top">
+    <a href="2026-06-13.html">&larr; 2026-06-13</a>
+    <span class="disabled">2026-06-15 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="label" id="playLabel">Audio briefing · ~4 min</span>
+  </div>
+
+  <section class="lead">
+    <div class="kicker">Lead Story</div>
+    <h3>Anthropic finally passes OpenAI in enterprise adoption — and a solo builder's stack just became the default</h3>
+    <p>The enterprise AI race quietly flipped this week. New market data reported by VentureBeat shows Anthropic reaching <strong>34.44% business adoption by April 2026</strong>, climbing from under 8% a year earlier, while OpenAI — which peaked near 36.5% in mid-2025 — has been slowly sliding ever since. For the first time, the company behind Claude is the one enterprises reach for by default, and the engine of that climb is agentic coding.</p>
+    <p>Claude Code is now described as the fastest-growing product in Anthropic's history. One analysis cited this week estimated that roughly <strong>4% of all public GitHub commits worldwide</strong> are being authored by Claude Code — double the share from a month earlier. The real-world numbers are striking: Uber's CTO said the company burned its entire 2026 AI budget in four months, with per-engineer API spend running $500–$2,000 a month, internal adoption jumping from 32% to 84%, and about 70% of committed code now AI-authored.</p>
+    <p>For a solo builder running half a dozen projects, this is the part worth internalizing. The tooling that lets a one-person shop ship like a team is no longer a fringe bet — it's the same stack Fortune 500 engineering orgs are standardizing on. The leverage gap between "I have an idea" and "it's in production" keeps shrinking, and the constraint moves from writing code to deciding what to build and keeping it under review.</p>
+    <p>But the lead is fragile. VentureBeat flags three threats that could erase it: escalating compute costs that make heavy usage expensive, pricing-model uncertainty as providers hunt for sustainable margins, and the sheer speed at which rivals ship. Uber's budget story is a feature and a warning at once — the productivity is real, and so is the bill.</p>
+    <div class="analysis">Analysis: Adoption share is a lagging signal; the leading signal is switching cost. Once an engineering org wires Claude Code into its commit pipeline, leaving means re-tooling muscle memory, not just swapping an API key. That's the moat Anthropic is actually building — and the reason the "fragile lead" framing may understate how sticky 34% really is. For builders, the move isn't loyalty to a vendor but designing workflows you can re-point if pricing turns.</p>
+    <p><a class="src" href="https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead">Read the full report at VentureBeat →</a></p>
+  </section>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>Gemini 3.5 Pro nears June GA with a 2M-token window</h4>
+    <p>Google's Gemini 3.5 Pro — announced at I/O on May 19 with Pichai's "give us until next month" — is closing in on general availability. Expected specs include a 2M-token input context (the largest of any production frontier model), Deep Think reasoning, and frontier multimodal. Flash, already out, is beating last-gen 3.1 Pro on Terminal-Bench 2.1 (76.2% vs 70.3%) and MCP Atlas. <a class="src" href="https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm">TechTimes →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>SpaceX prices the largest IPO in history</h4>
+    <p>SpaceX raised <strong>$75 billion</strong> selling 555M+ shares at $135, debuting on Nasdaq June 12 under ticker SPCX. Shares jumped 19% on day one to close near $161, valuing the company above $2 trillion and making it the sixth-largest US public company — and reportedly minting the world's first trillionaire. <a class="src" href="https://www.cnbc.com/2026/06/12/spacex-ipo-the-largest-in-history.html">CNBC →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Moonshot ships Kimi K2.7-Code with 30% leaner reasoning</h4>
+    <p>Moonshot AI released Kimi K2.7-Code, claiming a 30% reduction in reasoning-token usage versus K2.6 — a direct shot at the cost problem that's pinching heavy coding-agent users. Cheaper tokens per task is the metric to watch as agentic workflows scale. <a class="src" href="https://llm-stats.com/ai-news">LLM-Stats →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>JetBrains' Mellum2: a 12B MoE tuned for code</h4>
+    <p>JetBrains introduced Mellum2, a 12-billion-parameter Mixture-of-Experts model purpose-built for software development. The bet: smaller, dev-specialized models can rival general frontier models on coding tasks at a fraction of the inference cost. <a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-13-2026">BuildFastWithAI →</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Nvidia reopens China with the Vera CPU</h4>
+    <p>Nvidia is moving back into the China market with its new Vera CPU as US-China chip policy keeps shifting. Meanwhile the broader story is AI sliding from flashy demos into real business systems — agentic workflows in research, support, payments, and commerce kept under human review. <a class="src" href="https://techstartups.com/2026/06/12/top-tech-news-today-june-12-2026/">Tech Startups →</a></p>
+  </div>
+
+  <div class="signal">
+    <div class="kicker">Today's Signal</div>
+    <p>The week's thread isn't any single release — it's <strong>token economics</strong>. Kimi K2.7-Code cuts reasoning tokens 30%, JetBrains bets on a 12B specialist, and Uber's four-months-in-the-budget story shows where unchecked usage leads. The frontier-capability race is mature enough that the next edge is doing the same work for less. For a solo builder, the practical move: instrument your AI spend per project now, before one runaway agent loop quietly becomes your biggest line item.</p>
+  </div>
+
+  <nav class="bottom">
+    <a href="2026-06-13.html">&larr; 2026-06-13</a>
+    <span class="disabled">2026-06-15 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · 2026-06-14 · Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Sunday, June fourteenth, 2026. Today: Anthropic finally passes OpenAI in enterprise adoption, and the stack a solo builder already uses just became the corporate default. " +
+"Lead story. The enterprise A.I. race quietly flipped this week. New market data reported by VentureBeat shows Anthropic reaching thirty-four point four percent business adoption by April 2026, up from under eight percent a year earlier, while OpenAI, which peaked near thirty-six and a half percent in mid 2025, has been slowly sliding ever since. For the first time, the company behind Claude is the one enterprises reach for by default, and the engine of that climb is agentic coding. " +
+"Claude Code is now the fastest-growing product in Anthropic's history. One analysis this week estimated that roughly four percent of all public GitHub commits worldwide are being authored by Claude Code, double the share from a month earlier. The real-world numbers are striking. Uber's chief technology officer said the company burned its entire 2026 A.I. budget in four months, with per-engineer A.P.I. spend running five hundred to two thousand dollars a month, internal adoption jumping from thirty-two to eighty-four percent, and about seventy percent of committed code now A.I.-authored. " +
+"For a solo builder running half a dozen projects, here's the part worth internalizing. The tooling that lets a one-person shop ship like a team is no longer a fringe bet. It's the same stack Fortune 500 engineering orgs are standardizing on. The gap between, I have an idea, and, it's in production, keeps shrinking, and the constraint moves from writing code to deciding what to build and keeping it under review. " +
+"But the lead is fragile. VentureBeat flags three threats that could erase it: escalating compute costs, pricing-model uncertainty, and the sheer speed at which rivals ship. Uber's budget story is a feature and a warning at once. The productivity is real, and so is the bill. " +
+"Now, the briefs. " +
+"One. Google's Gemini three point five Pro is closing in on general availability this month, with an expected two-million-token context window, the largest of any production frontier model, plus Deep Think reasoning. Its Flash sibling is already beating last generation's Pro on key coding benchmarks. " +
+"Two. SpaceX priced the largest I.P.O. in history, raising seventy-five billion dollars and debuting on the Nasdaq June twelfth. Shares jumped nineteen percent on day one, valuing the company above two trillion dollars. " +
+"Three. Moonshot A.I. shipped Kimi K-two-point-seven Code, claiming a thirty percent cut in reasoning-token usage versus the prior version. A direct shot at the cost problem pinching heavy coding-agent users. " +
+"Four. JetBrains introduced Mellum two, a twelve-billion-parameter mixture-of-experts model purpose-built for software development. The bet: smaller, specialized models can rival frontier models on coding at a fraction of the cost. " +
+"Five. Nvidia is reopening the China market with its new Vera C.P.U., as U.S.-China chip policy keeps shifting, while A.I. broadly slides from flashy demos into real business systems kept under human review. " +
+"Today's signal. The week's real thread isn't any single release. It's token economics. Kimi cuts reasoning tokens thirty percent, JetBrains bets on a twelve-billion specialist, and Uber's four-months-in-the-budget story shows where unchecked usage leads. The capability race is mature enough that the next edge is doing the same work for less. The practical move for a solo builder: instrument your A.I. spend per project now, before one runaway agent loop quietly becomes your biggest line item. " +
+"That's the signal, above the noise. Content is A.I.-synthesized. See the original sources at the links. Back tomorrow.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) ||
+         vs.find(v => /en[-_]US|en[-_]GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const lbl = document.getElementById('playLabel');
+  if (speaking) { speechSynthesis.cancel(); speaking = false; btn.textContent = '▶ Listen'; lbl.textContent = 'Audio briefing · ~4 min'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93; const v = pickVoice(); if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; lbl.textContent = 'Audio briefing · ~4 min'; };
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  speaking = true; btn.textContent = '⏸ Stop'; lbl.textContent = 'Playing…';
+}
+if (typeof speechSynthesis !== 'undefined') { speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
