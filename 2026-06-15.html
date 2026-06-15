@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-15</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif;
+         margin:0; line-height:1.7; font-size:18px; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 22px 70px; }
+  .nav { display:flex; justify-content:space-between; align-items:center;
+         max-width:720px; margin:0 auto; padding:16px 22px; font-size:15px; letter-spacing:.5px; }
+  .nav a { color:var(--accent); text-decoration:none; }
+  .nav a:hover { text-decoration:underline; }
+  .nav .disabled { color:#5a5240; pointer-events:none; }
+  hr { border:none; border-top:1px solid #2a2418; margin:26px 0; }
+  .masthead { text-align:center; padding:34px 0 10px; border-bottom:2px solid var(--accent); }
+  .masthead h1 { font-size:40px; letter-spacing:3px; margin:0; color:var(--accent);
+                 text-transform:uppercase; font-weight:normal; }
+  .masthead .tag { font-style:italic; color:#a89868; font-size:15px; margin-top:8px; }
+  .masthead .date { font-size:14px; letter-spacing:2px; color:#8a7d56; margin-top:6px; }
+  h2 { color:var(--accent); font-size:15px; letter-spacing:2px; text-transform:uppercase;
+       border-bottom:1px solid #2a2418; padding-bottom:6px; margin-top:46px; font-weight:normal; }
+  h3 { font-size:27px; line-height:1.25; margin:14px 0 6px; }
+  .kicker { color:var(--accent); font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+  a.src { color:var(--accent); }
+  .brief { margin:24px 0; }
+  .brief h4 { font-size:20px; margin:0 0 4px; }
+  .brief h4 a { color:var(--text); text-decoration:none; border-bottom:1px solid #4a4230; }
+  .brief h4 a:hover { color:var(--accent); }
+  .signal { border:1px solid var(--accent); border-radius:6px; padding:22px 26px;
+            margin:40px 0; background:rgba(201,168,76,.06); }
+  .signal .lbl { color:var(--accent); font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+  .player { display:flex; align-items:center; gap:14px; border:1px solid #2a2418;
+            border-radius:6px; padding:12px 16px; margin:22px 0; }
+  .player button { background:var(--accent); color:var(--bg); border:none; border-radius:4px;
+            padding:9px 16px; font-family:inherit; font-size:15px; cursor:pointer; }
+  .player button:hover { opacity:.9; }
+  .player .status { font-size:14px; color:#a89868; font-style:italic; }
+  footer { text-align:center; color:#6a6048; font-size:13px; margin-top:50px;
+           border-top:1px solid #2a2418; padding-top:20px; }
+  .analysis { font-style:italic; color:#c2b487; border-left:2px solid var(--accent);
+              padding-left:18px; margin:18px 0; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="2026-06-14.html">&larr; 2026-06-14</a>
+  <span class="disabled">2026-06-16 &rarr;</span>
+</div>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The day's AI &amp; tech, filtered for builders</div>
+    <div class="date">MONDAY · 2026-06-15</div>
+  </div>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="status" id="audioStatus">~4 min read-aloud</span>
+  </div>
+
+  <h2>Lead Story</h2>
+  <div class="kicker">Builder Economics</div>
+  <h3>The free lunch on agentic compute ends today</h3>
+
+  <p>Starting today, June 15, Anthropic formally separates programmatic Claude usage from
+  its flat subscription plans. The company is reversing its April ban on third-party agent
+  tools and reintroducing them through a new monthly "Agent SDK" credit pool included on
+  every paid plan — but the same move ends the era in which a $20 or $100 subscription
+  quietly subsidized unlimited automated loops. From now on, when your scripts, bots, and
+  background agents call Claude programmatically, they draw down a metered credit balance
+  rather than riding for free on a human-seat subscription.</p>
+
+  <p>For anyone running always-on automation, this is the structural change of the week.
+  Interactive chat in the app stays flat-rate; it's the headless, machine-driven traffic —
+  the kind that powers Telegram bots, cron-scheduled digests, and orchestration dashboards —
+  that now has a price tag attached at the margin. Anthropic is framing it as a return of
+  capability (third-party agents are welcome again) traded against the reality that agentic
+  compute is expensive and was never sustainable as an unlimited subscription perk.</p>
+
+  <p>The change lands alongside a broader Claude developer push: Claude Code now supports
+  nested sub-agents up to five levels deep, smarter model-and-region routing, plugin search,
+  and tighter Chrome, VS Code, and terminal workflows. Opus 4.8 remains the flagship for
+  complex reasoning and agentic coding. The platform is getting more powerful for agent
+  builders at exactly the moment the metering model gets stricter — a deliberate pairing.</p>
+
+  <p>The practical takeaway: if you operate fleets of bots or scheduled jobs, audit what
+  actually needs frontier-model calls versus what can run on a cheaper tier or be cached.
+  The teams that win the next quarter won't be the ones with the most agents running — they'll
+  be the ones whose agents are frugal by design.</p>
+
+  <div class="analysis">Analysis: This is the inevitable correction to the "agents are free
+  if you have a subscription" loophole that solo builders have leaned on hard. It rewards
+  architecture discipline — prompt caching, model tiering, and tight loops — and penalizes
+  brute-force agent sprawl. The credit pool softens the blow, but the signal is clear: treat
+  model calls like cloud compute, with a budget and a dashboard, not like an all-you-can-eat
+  buffet. Builders who instrument their token spend now will be glad they did.</div>
+
+  <p><a class="src" href="https://codingwithai.com/news/claude-agent-sdk-credits-june-2026">
+  Source: Coding with AI — Anthropic brings back third-party agents with monthly SDK credits</a></p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm">Gemini 3.5 Pro nears GA — 2M tokens, Deep Think, and a 10x price tag</a></h4>
+    <p>Google's Gemini 3.5 Pro is in its final stretch toward general availability this month,
+    carrying a 2-million-token context window (~1.5M words) and a "Deep Think" reasoning mode.
+    The catch: roughly $15/$60 per million input/output tokens — about ten times Gemini 3.5 Flash —
+    with Deep Think gated to the $250/month Ultra tier.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://nvidianews.nvidia.com/news/sk-hynix-ai-factory">NVIDIA locks in memory supply through 2030 with SK hynix</a></h4>
+    <p>NVIDIA and SK hynix signed a multiyear pact (announced June 7) to co-develop next-gen
+    memory for Vera Rubin supercomputers, Vera CPUs, RTX Spark PCs, and Jetson Thor robotics.
+    Terms are undisclosed, but the deal effectively reserves HBM allocation for NVIDIA's roadmap —
+    and signals tighter, pricier RAM downstream for everyone else.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">NVIDIA's "Ising" brings open-source AI to quantum computing</a></h4>
+    <p>NVIDIA unveiled Ising, billed as the first open-source family of AI models purpose-built
+    to accelerate quantum computing workloads — an early bet on AI-assisted quantum design that's
+    worth watching even if it's far from production for most builders.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.techtimes.com/articles/318085/20260609/salesforce-puts-google-gemini-35-flash-inside-agentforce-june-15-release.htm">Salesforce drops Gemini 3.5 Flash into Agentforce today</a></h4>
+    <p>In its June 15 release, Salesforce embeds Gemini 3.5 Flash inside Agentforce — another
+    sign that the major platforms are racing to wire frontier models directly into enterprise
+    agent stacks rather than leaving customers to bolt them on.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">BMW i Ventures launches $300M fund for agentic and physical AI</a></h4>
+    <p>BMW i Ventures announced a $300M fund targeting early-stage through Series B startups in
+    agentic AI, physical AI, industrial software, advanced materials, and supply chain tech —
+    fresh capital chasing the "AI that acts in the world" thesis.</p>
+  </div>
+
+  <div class="signal">
+    <div class="lbl">Today's Signal</div>
+    <p style="margin-bottom:0">Agentic compute just stopped being free. The platforms are
+    simultaneously making agents more capable (deeper sub-agent nesting, bigger context windows)
+    and more metered (SDK credit pools, 10x premium tiers). The winning move for a solo builder
+    isn't running more agents — it's instrumenting the ones you have. Add a token budget, cache
+    aggressively, and route cheap work to cheap models. Frugality is now a feature.</p>
+  </div>
+
+  <footer>
+    Above The Noise · 2026-06-15<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Monday, June fifteenth, twenty twenty-six. Here's the day's AI and tech, filtered for builders. " +
+"Today's lead story: the free lunch on agentic compute ends today. Starting today, Anthropic formally separates programmatic Claude usage from its flat subscription plans. The company is reversing its April ban on third-party agent tools and bringing them back through a new monthly Agent SDK credit pool, included on every paid plan. But the same move ends the era in which a twenty or one hundred dollar subscription quietly subsidized unlimited automated loops. From now on, when your scripts, bots, and background agents call Claude programmatically, they draw down a metered credit balance instead of riding for free on a human seat. " +
+"For anyone running always-on automation, this is the structural change of the week. Interactive chat in the app stays flat rate. It's the headless, machine-driven traffic — the kind that powers Telegram bots, scheduled digests, and orchestration dashboards — that now has a price tag at the margin. Anthropic frames it as a return of capability, traded against the reality that agentic compute is expensive and was never sustainable as an unlimited perk. " +
+"The change lands alongside a broader developer push. Claude Code now supports nested sub-agents up to five levels deep, smarter model and region routing, plugin search, and tighter Chrome, VS Code, and terminal workflows. Opus four point eight remains the flagship for complex reasoning and agentic coding. The platform is getting more powerful for agent builders at exactly the moment the metering gets stricter. " +
+"The practical takeaway: if you run fleets of bots or scheduled jobs, audit what actually needs frontier-model calls versus what can run on a cheaper tier or be cached. The teams that win the next quarter won't be the ones with the most agents running. They'll be the ones whose agents are frugal by design. " +
+"Now, the briefs. " +
+"First. Google's Gemini three point five Pro is nearing general availability this month, with a two million token context window and a Deep Think reasoning mode. The catch is price — about fifteen and sixty dollars per million input and output tokens, roughly ten times Gemini Flash, with Deep Think gated to the two hundred fifty dollar Ultra tier. " +
+"Second. NVIDIA and SK hynix signed a multiyear memory pact, co-developing next-generation memory for Vera Rubin supercomputers, Vera CPUs, RTX Spark PCs, and Jetson Thor robotics. The deal effectively reserves high-bandwidth memory for NVIDIA's roadmap through twenty thirty, signaling tighter, pricier RAM downstream. " +
+"Third. NVIDIA unveiled Ising, billed as the first open-source family of AI models purpose-built to accelerate quantum computing — an early bet on AI-assisted quantum design. " +
+"Fourth. In its June fifteenth release, Salesforce embeds Gemini three point five Flash inside Agentforce, another sign that major platforms are racing to wire frontier models directly into enterprise agent stacks. " +
+"Fifth. BMW i Ventures launched a three hundred million dollar fund targeting startups in agentic AI, physical AI, industrial software, advanced materials, and supply chain tech. " +
+"And today's signal. Agentic compute just stopped being free. The platforms are simultaneously making agents more capable and more metered. The winning move for a solo builder isn't running more agents — it's instrumenting the ones you have. Add a token budget, cache aggressively, and route cheap work to cheap models. Frugality is now a feature. " +
+"That's the noise, filtered. Build something good today.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v => /daniel/i.test(v.name)) ||
+         vs.find(v => /alex/i.test(v.name)) ||
+         vs.find(v => /en[-_]?US|en[-_]?GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const st = document.getElementById('audioStatus');
+  if (speaking) { window.speechSynthesis.cancel(); return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93; u.pitch = 1.0;
+  const v = pickVoice(); if (v) u.voice = v;
+  u.onstart = () => { speaking = true; btn.textContent = '■ Stop'; st.textContent = 'Playing…'; };
+  u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; st.textContent = '~4 min read-aloud'; };
+  u.onerror = () => { speaking = false; btn.textContent = '▶ Listen'; st.textContent = 'Audio unavailable'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+if (typeof speechSynthesis !== 'undefined') { speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+
+</body>
+</html>
