@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-17</title>
+<style>
+  :root{
+    --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#9a8c6f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:Georgia,'Times New Roman',serif; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 22px 60px;}
+  .nav{
+    display:flex; justify-content:space-between; align-items:center;
+    border-bottom:1px solid rgba(201,168,76,.25);
+    padding:16px 0; font-size:.82rem; letter-spacing:.04em;
+  }
+  .nav .active{color:var(--accent); text-decoration:none;}
+  .nav .disabled{color:#4a4334; pointer-events:none;}
+  .masthead{text-align:center; padding:42px 0 14px;}
+  .masthead h1{
+    font-size:2.7rem; margin:0; color:var(--accent);
+    letter-spacing:.02em; font-weight:normal;
+  }
+  .masthead .tag{color:var(--muted); font-style:italic; font-size:.95rem; margin-top:6px;}
+  .masthead .date{color:var(--text); font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; margin-top:14px;}
+  .rule{border:0; border-top:1px solid rgba(201,168,76,.25); margin:26px 0;}
+  .player{
+    display:flex; align-items:center; gap:14px;
+    background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.2);
+    border-radius:6px; padding:12px 16px; margin:22px 0;
+  }
+  .player button{
+    background:var(--accent); color:#0d0a06; border:0; border-radius:4px;
+    padding:8px 16px; font-family:inherit; font-size:.85rem; cursor:pointer;
+    letter-spacing:.03em;
+  }
+  .player button:disabled{opacity:.5; cursor:default;}
+  .player .label{font-size:.82rem; color:var(--muted);}
+  h2.section{
+    color:var(--accent); font-size:.8rem; letter-spacing:.22em;
+    text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,.25);
+    padding-bottom:8px; margin:40px 0 18px;
+  }
+  h3.lead{font-size:1.7rem; line-height:1.3; margin:0 0 6px; color:var(--text); font-weight:normal;}
+  .byline{color:var(--muted); font-style:italic; font-size:.85rem; margin-bottom:18px;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+  .brief{margin-bottom:22px;}
+  .brief h4{margin:0 0 4px; font-size:1.08rem; color:var(--text); font-weight:normal;}
+  .brief .src{font-size:.78rem; color:var(--muted); letter-spacing:.05em; text-transform:uppercase;}
+  .signal{
+    background:rgba(201,168,76,.08); border-left:3px solid var(--accent);
+    padding:20px 24px; margin:30px 0; border-radius:0 6px 6px 0;
+  }
+  .signal .k{color:var(--accent); font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; display:block; margin-bottom:8px;}
+  footer{color:var(--muted); font-size:.78rem; text-align:center; margin-top:46px; line-height:1.6;}
+  .analysis{font-style:italic; color:#cdbf9c; border-top:1px dotted rgba(201,168,76,.25); padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="active" href="2026-06-16.html">&larr; 2026-06-16</a>
+    <span class="disabled">2026-06-18 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">A daily signal for builders, cut from the day's AI &amp; tech noise</div>
+    <div class="date">Wednesday, June 17, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn">▶ Listen</button>
+    <button id="stopBtn" disabled>■ Stop</button>
+    <span class="label">Audio edition · ~4 min · synthesized voice</span>
+  </div>
+
+  <hr class="rule">
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="lead">OpenAI Bets the Next Model War Is Won Before You Ever Ship It</h3>
+  <div class="byline">The frontier labs are racing on launches — but the real shift this week was about what happens the moment before release.</div>
+
+  <p>On June 16, OpenAI introduced <strong>Deployment Simulation</strong>, a pre-release system that replays a large corpus of past real conversations through a new candidate model before it ever reaches users. Instead of leaning on synthetic benchmarks and a frantic week of red-teaming, the lab now runs tomorrow's model against yesterday's actual traffic — watching where behavior drifts, where refusals creep in, and where a "smarter" model quietly gets worse at the boring things people rely on. It is, in effect, a regression test suite for intelligence.</p>
+
+  <p>The timing is not subtle. New AI models are now landing roughly every two days, and June 2026 has been a flood: NVIDIA's Nemotron 3 family, Google's Gemma 4 and Gemini 3.5 Pro, Alibaba's Qwen3.7, JetBrains' developer-tuned Mellum2, and Anthropic's new Claude release all shipped inside a few weeks. When cadence collapses to days, the bottleneck stops being whether you can train a better model and becomes whether you can trust it not to break the millions of workflows already wired to the old one. Deployment Simulation is OpenAI's answer: make the upgrade path boring and verifiable.</p>
+
+  <p>There's a business subtext too. OpenAI is reportedly preparing to file confidentially for an IPO — potentially as soon as September — at a roughly $730 billion private valuation, with Anthropic close behind after a round valuing it near $965 billion. Public markets reward reliability over fireworks. A lab that can promise enterprises "your integrations won't silently regress when we upgrade" is selling something a benchmark score never could: operational trust. Expect "we tested the new model against your real usage" to become a standard line in enterprise contracts.</p>
+
+  <p>For solo builders the lesson scales down cleanly. The moat is no longer the cleverest prompt; it's the test harness that tells you when a model swap quietly degrades your product. If you're piping a model into a devotional app, a fleet of Telegram bots, or a localhost mission-control dashboard, the question OpenAI just productized is the one worth stealing: <em>does the new model still do the old job?</em></p>
+
+  <p class="analysis">Analysis: The launch-a-day pace is starting to invert the industry's value chain. The scarce resource is shifting from raw capability to <em>change management</em> — the unglamorous tooling that makes swapping a brain underneath a live product safe. Whoever owns that layer owns the upgrade, and the upgrade is where the lock-in lives.</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>A bipartisan federal AI bill finally has text</h4>
+    <p>Reps. Jay Obernolte (R-CA) and Lori Trahan (D-MA) released a discussion draft of the <strong>Great American AI Act of 2026</strong>, the first serious attempt at a comprehensive U.S. federal framework. Four titles: frontier governance, workforce, cybersecurity, and R&amp;D. It collides with a White House push to centralize AI rules and override the current state-by-state patchwork. <a href="https://www.mcdonaldhopkins.com/insights/news/the-great-american-ai-act-what-businesses-need-to-know">Read more</a></p>
+    <span class="src">McDonald Hopkins</span>
+  </div>
+
+  <div class="brief">
+    <h4>Fake bug reports are now an attack vector on coding agents</h4>
+    <p>Researchers showed that poisoned error data — fake Sentry/Tenet-style reports fed through MCP-linked tooling — can trick AI coding agents into executing attacker-controlled code, because the agent mistakes the report for a trusted instruction. As autonomous agents touch your repo, the threat model now includes your error stream. <a href="https://www.cybernewscentre.com/cyber-update-fake-bug-reports-target-ai-coding-agents/">Read more</a></p>
+    <span class="src">Cyber News Centre</span>
+  </div>
+
+  <div class="brief">
+    <h4>The EU starts policing AI-generated content labels</h4>
+    <p>The European Commission published a <strong>Code of Practice on marking and labelling AI-generated content</strong> on June 10, ahead of the August 2 deadline for transparency and high-risk-system rules under the AI Act. Builders shipping into the EU have a real compliance clock now. <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">Read more</a></p>
+    <span class="src">European Commission</span>
+  </div>
+
+  <div class="brief">
+    <h4>The model firehose: a launch roughly every two days</h4>
+    <p>NVIDIA's Nemotron 3 Ultra, Google Gemma 4, Alibaba Qwen3.7 Plus, JetBrains' 12B MoE Mellum2 tuned for code, plus new Gemini and Claude releases all landed this month. The practical takeaway: pin your versions and test before you upgrade. <a href="https://llm-stats.com/ai-news">Read more</a></p>
+    <span class="src">LLM-Stats</span>
+  </div>
+
+  <div class="brief">
+    <h4>Both frontier labs are headed for the public markets</h4>
+    <p>OpenAI is reportedly preparing a confidential IPO filing at ~$730B, and Anthropic has submitted a draft registration after a round valuing it near $965B. The era of "AI lab as private moonshot" is ending; quarterly accountability is coming. <a href="https://openai.com/news/">Read more</a></p>
+    <span class="src">OpenAI / industry reports</span>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <span class="k">The thing to actually act on</span>
+    <p style="margin-bottom:0;">New research says <strong>9 in 10 security leaders</strong> are worried about AI-generated code, which now accounts for nearly half of enterprise code — yet most teams have no governance for what the AI ships. If you're a solo builder leaning on coding agents across several projects, you are the security team. This week's move: add a dependency-and-secrets review gate that a human signs off on before any agent-authored code touches production. The fake-bug-report attack proves the agent's inputs can't be trusted by default — so the human at the gate is the control. <a href="https://www.prnewswire.com/news-releases/new-research-reveals-9-in-10-security-leaders-concerned-about-ai-generated-code-risks-302788323.html">The research</a></p>
+  </div>
+
+  <hr class="rule">
+
+  <nav class="nav">
+    <a class="active" href="2026-06-16.html">&larr; 2026-06-16</a>
+    <span class="disabled">2026-06-18 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · Wednesday, June 17, 2026<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Wednesday, June seventeenth, twenty twenty-six. Here's today's signal, cut from the noise. " +
+"Today's lead. OpenAI is betting the next model war is won before you ever ship. On June sixteenth, the lab introduced Deployment Simulation, a system that replays a large body of past real conversations through a new candidate model before it ever reaches users. Instead of leaning on synthetic benchmarks and a frantic week of red-teaming, OpenAI now runs tomorrow's model against yesterday's actual traffic, watching where behavior drifts, where refusals creep in, and where a smarter model quietly gets worse at the boring things people rely on. It is, in effect, a regression test for intelligence. " +
+"The timing isn't subtle. New AI models are now landing roughly every two days. June has been a flood: NVIDIA's Nemotron three family, Google's Gemma four and Gemini three point five Pro, Alibaba's Qwen, JetBrains' developer-tuned Mellum two, and a new Claude release, all within weeks. When the cadence collapses to days, the bottleneck stops being whether you can train a better model and becomes whether you can trust it not to break the millions of workflows already wired to the old one. " +
+"There's a business subtext, too. OpenAI is reportedly preparing to file confidentially for an I-P-O, potentially as soon as September, at a roughly seven hundred thirty billion dollar valuation, with Anthropic close behind near nine hundred sixty-five billion. Public markets reward reliability over fireworks. A lab that can promise enterprises your integrations won't silently regress when we upgrade is selling operational trust, something a benchmark score never could. " +
+"For solo builders, the lesson scales down cleanly. The moat is no longer the cleverest prompt. It's the test harness that tells you when a model swap quietly degrades your product. The question OpenAI just productized is the one worth stealing: does the new model still do the old job? " +
+"Now, the briefs. One. A bipartisan federal A-I bill finally has text. The Great American A-I Act of twenty twenty-six covers frontier governance, workforce, cybersecurity, and research, and it collides with a White House push to centralize the rules. " +
+"Two. Fake bug reports are now an attack vector on coding agents. Poisoned error data can trick an agent into running attacker-controlled code, because it mistakes the report for a trusted instruction. Your error stream is now part of your threat model. " +
+"Three. The European Union has started policing A-I-generated content labels, with a new code of practice ahead of the August second deadline. If you ship into the E-U, you have a real compliance clock. " +
+"Four. The model firehose continues, a launch roughly every two days. Pin your versions and test before you upgrade. " +
+"Five. Both frontier labs are headed for the public markets. The era of the A-I lab as a private moonshot is ending. " +
+"And today's signal, the thing to actually act on. New research says nine in ten security leaders are worried about A-I-generated code, which is now nearly half of enterprise code, yet most teams have no governance for it. If you're a solo builder leaning on coding agents, you are the security team. This week's move: add a dependency and secrets review gate that a human signs off on before any agent-authored code touches production. The fake-bug-report attack proves the agent's inputs can't be trusted by default, so the human at the gate is the control. " +
+"That's the signal for today. Content is A-I synthesized. The links point to original sources. See you tomorrow.";
+
+const playBtn = document.getElementById('playBtn');
+const stopBtn = document.getElementById('stopBtn');
+let utter = null;
+
+function pickVoice(){
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v=>/daniel/i.test(v.name)) ||
+         vs.find(v=>/alex/i.test(v.name)) ||
+         vs.find(v=>/en[-_]?(US|GB)/i.test(v.lang)) || vs[0];
+}
+function speak(){
+  speechSynthesis.cancel();
+  utter = new SpeechSynthesisUtterance(S);
+  utter.rate = 0.93;
+  const v = pickVoice();
+  if(v) utter.voice = v;
+  utter.onend = reset;
+  playBtn.disabled = true; stopBtn.disabled = false;
+  speechSynthesis.speak(utter);
+}
+function reset(){ playBtn.disabled = false; stopBtn.disabled = true; }
+playBtn.addEventListener('click', speak);
+stopBtn.addEventListener('click', ()=>{ speechSynthesis.cancel(); reset(); });
+if(typeof speechSynthesis!=='undefined' && speechSynthesis.onvoiceschanged!==undefined){
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
