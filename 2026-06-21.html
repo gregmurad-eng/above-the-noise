@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-21</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:Georgia, 'Times New Roman', serif; line-height:1.65; }
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 22px 64px; }
+  .masthead{ text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1{ font-size:2.6rem; letter-spacing:2px; margin:0; color:var(--accent); font-variant:small-caps; }
+  .masthead .tag{ font-style:italic; font-size:0.98rem; opacity:0.8; margin-top:6px; }
+  .masthead .date{ font-size:0.9rem; letter-spacing:3px; text-transform:uppercase; margin-top:10px; opacity:0.7; }
+  nav{ display:flex; justify-content:space-between; align-items:center; font-size:0.92rem; padding:12px 0; border-bottom:1px solid rgba(201,168,76,0.3); }
+  nav.bottom{ border-bottom:none; border-top:1px solid rgba(201,168,76,0.3); margin-top:40px; }
+  nav a{ color:var(--accent); text-decoration:none; }
+  nav a:hover{ text-decoration:underline; }
+  nav .disabled{ color:#5a5240; cursor:default; }
+  .player{ display:flex; align-items:center; gap:14px; background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.25); border-radius:8px; padding:12px 16px; margin:22px 0; }
+  .player button{ background:var(--accent); color:var(--bg); border:none; border-radius:6px; padding:9px 16px; font-family:inherit; font-size:0.95rem; cursor:pointer; font-weight:bold; }
+  .player button:hover{ opacity:0.9; }
+  .player .label{ font-size:0.86rem; opacity:0.75; font-style:italic; }
+  h2.section{ color:var(--accent); font-size:0.82rem; letter-spacing:3px; text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:6px; margin:38px 0 16px; }
+  h3.head{ font-size:1.7rem; line-height:1.25; margin:0 0 6px; }
+  .byline{ font-style:italic; opacity:0.65; font-size:0.86rem; margin-bottom:16px; }
+  p{ margin:0 0 16px; }
+  a.src{ color:var(--accent); }
+  .analysis{ border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:20px 0; font-style:italic; opacity:0.92; }
+  .brief{ margin-bottom:20px; }
+  .brief h4{ font-size:1.12rem; margin:0 0 4px; color:var(--text); }
+  .brief h4 a{ color:var(--text); text-decoration:none; border-bottom:1px solid var(--accent); }
+  .signal{ background:rgba(201,168,76,0.1); border:1px solid var(--accent); border-radius:10px; padding:22px 24px; margin:30px 0; }
+  .signal h3{ color:var(--accent); margin:0 0 10px; font-size:1.2rem; }
+  footer{ margin-top:46px; padding-top:18px; border-top:1px solid rgba(201,168,76,0.3); font-size:0.8rem; opacity:0.6; text-align:center; font-style:italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">A daily dispatch on AI &amp; the building life</div>
+    <div class="date">Sunday, June 21, 2026</div>
+  </header>
+
+  <nav class="top">
+    <a href="2026-06-20.html">&larr; 2026-06-20</a>
+    <span class="disabled">2026-06-22 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="label">Today's edition, read aloud (~4 min)</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="head">Washington pulls Anthropic's top models offline — and quietly redraws who gets to use frontier AI</h3>
+  <div class="byline">The export-control era reaches the model itself</div>
+
+  <p>For a stretch of this week, two of the most capable models on the market simply went dark. Anthropic disabled access to its Fable 5 and Mythos 5 systems after receiving a U.S. government export-control directive ordering it to block foreign nationals from using them. What began as a narrower concern escalated fast: the White House flagged SK Telecom — South Korea's largest carrier and a reported $100 million Anthropic investor — as a security risk with access to Mythos 5, while Amazon researchers separately surfaced vulnerabilities in Fable 5. Within days, the response widened from revoking one partner's access to cutting off all foreign nationals from both models.</p>
+
+  <p>The episode lands against a freshly inked policy backdrop. A June 2 White House executive order established a process to assess the cyber capabilities of advanced AI and to designate certain systems as "covered frontier models" — language that turns model weights into something closer to controlled munitions than software. Anthropic's outage is the first time that framing has produced a visible, real-world shutoff of a commercial product mid-flight.</p>
+
+  <p>The company is signaling this is temporary. At a Seoul press conference, Anthropic's Managing Director of International, Chris Ciauri, said the firm is "very confident that in the coming days, the models will become available again" — the most specific timeline it has offered. Meanwhile, June 20 was set as the refund deadline for subscribers who paid for Fable 5 usage credits between June 9 and June 14, only to have the capability yanked out from under them.</p>
+
+  <div class="analysis">
+    The story that matters here isn't the outage — it's the precedent. We've spent years treating model access as a commercial relationship: you pay, you get tokens. This week reframed it as a geopolitical one, where availability can be revoked by a government directive overnight, retroactively, even for paying customers. For anyone building on a single frontier provider, that's a new line item in the risk column. The refund window is a footnote; the fact that a covered-model designation can dark out your production dependency without notice is the actual headline.
+  </div>
+
+  <p>For builders, the practical takeaway is uncomfortable but clarifying. The "just call the best model" era assumed the best model would always answer. It won't necessarily — not for reasons of uptime or rate limits, but for reasons of nationality, geography, and policy you don't control. Abstraction layers, model fallbacks, and provider diversity stop being nice-to-haves and start being continuity planning.</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.marketingprofs.com/opinions/2026/55065/ai-update-june-19-2026-ai-news-and-views-from-the-past-week" target="_blank" rel="noopener">Noam Shazeer leaves Google's Gemini for OpenAI</a></h4>
+    <p>Shazeer — VP of engineering at Google and a co-lead of the Gemini models — posted his departure on June 18 and is joining OpenAI. One of the most consequential individual moves of the cycle, and a fresh data point in the relentless talent war between the two labs.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-20-2026" target="_blank" rel="noopener">OpenAI is acquiring Astral, the team behind uv and ruff</a></h4>
+    <p>The deal brings the makers of <em>uv</em> (a fast Python package installer) and <em>ruff</em> (a Python linter and formatter) in-house, with plans to fold the tooling into Codex. If you write Python, your daily toolchain just became an OpenAI roadmap item.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-19-2026" target="_blank" rel="noopener">OpenAI launches a $150M Partner Network</a></h4>
+    <p>A formal ecosystem of Select, Advanced, and Elite tiers for consultants and integrators, aiming to certify as many as 300,000 consultants by year's end. The enterprise land-grab is now a channel-sales motion.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.neuralbuddies.com/p/ai-news-recap-june-19-2026" target="_blank" rel="noopener">Cornell: 13 words can poison AI search</a></h4>
+    <p>A new study shows that a carefully crafted 13-word snippet planted on the open web can manipulate what AI search systems surface. A pointed reminder that retrieval pipelines inherit the trust problems of the pages they read.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-20-2026" target="_blank" rel="noopener">ChatGPT now reaches 44% of U.S. adults</a></h4>
+    <p>More than double its 2023 share. The distribution story keeps compounding — which is exactly why a model going dark, even briefly, now makes national news.</p>
+  </div>
+
+  <div class="signal">
+    <h3>Today's Signal</h3>
+    <p>Model availability is now a variable you don't fully control. This week proved a frontier model can vanish from production not because it broke, but because a policy designation changed. If you're a solo builder shipping on one provider — Morning Launch, OpenClaw, Scholarship Finder, any of it — build the seam now: a thin abstraction over your model calls, one tested fallback provider, and a graceful-degradation path for when the smart model isn't there. It's an afternoon of work that buys you out of a very bad week.</p>
+  </div>
+
+  <nav class="bottom">
+    <a href="2026-06-20.html">&larr; 2026-06-20</a>
+    <span class="disabled">2026-06-22 &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Sunday, June twenty-first, twenty twenty-six. Today's lead: Washington pulls Anthropic's top models offline, and quietly redraws who gets to use frontier A.I. For a stretch of this week, two of the most capable models on the market simply went dark. Anthropic disabled access to its Fable five and Mythos five systems after receiving a U.S. government export-control directive ordering it to block foreign nationals from using them. What began as a narrow concern escalated fast. The White House flagged S.K. Telecom, South Korea's largest carrier and a reported one hundred million dollar Anthropic investor, as a security risk with access to Mythos five. Amazon researchers separately surfaced vulnerabilities in Fable five. Within days, the response widened from revoking one partner's access to cutting off all foreign nationals from both models. The episode lands against a fresh policy backdrop. A June second White House executive order established a process to assess the cyber capabilities of advanced A.I., and to designate certain systems as covered frontier models. That language turns model weights into something closer to controlled munitions than software. This outage is the first time that framing has produced a visible, real-world shutoff of a commercial product mid-flight. The company says it's temporary. At a Seoul press conference, Anthropic's managing director of international, Chris Ciauri, said the firm is very confident that in the coming days, the models will become available again. Here's the analysis. The story that matters isn't the outage. It's the precedent. We've spent years treating model access as a commercial relationship. You pay, you get tokens. This week reframed it as a geopolitical one, where availability can be revoked by a government directive overnight, even for paying customers. For anyone building on a single frontier provider, that's a new line in the risk column. Now, the briefs. One. Noam Shazeer, a co-lead of Google's Gemini models, posted his departure on June eighteenth and is joining OpenAI. One of the most consequential individual moves of the cycle. Two. OpenAI is acquiring Astral, the team behind u-v and ruff, the fast Python package installer and linter, with plans to fold the tooling into Codex. If you write Python, your daily toolchain just became an OpenAI roadmap item. Three. OpenAI launched a one hundred fifty million dollar Partner Network, aiming to certify as many as three hundred thousand consultants by year's end. Four. A Cornell study shows that a carefully crafted thirteen-word snippet planted on the open web can manipulate what A.I. search systems surface. Retrieval pipelines inherit the trust problems of the pages they read. Five. ChatGPT now reaches forty-four percent of U.S. adults, more than double its twenty twenty-three share. And today's signal. Model availability is now a variable you don't fully control. This week proved a frontier model can vanish from production not because it broke, but because a policy designation changed. If you're a solo builder shipping on one provider, build the seam now. A thin abstraction over your model calls, one tested fallback provider, and a graceful-degradation path for when the smart model isn't there. It's an afternoon of work that buys you out of a very bad week. That's the edition. Content is A.I.-synthesized. Links point to original sources. Build well.";
+
+let speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/.test(v.name)) || vs.find(v=>/Alex/.test(v.name)) ||
+         vs.find(v=>/en[-_]GB/i.test(v.lang)) || vs.find(v=>/en/i.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn = document.getElementById('playBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654; Listen'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice(); if(v) u.voice = v;
+  u.onend = ()=>{ speaking=false; btn.innerHTML='&#9654; Listen'; };
+  speaking = true; btn.innerHTML='&#10073;&#10073; Stop';
+  window.speechSynthesis.speak(u);
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged = ()=>{}; }
+</script>
+</body>
+</html>
