@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-22</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #9a8d6f;
+    --rule: #2a2419;
+    --card: #15110a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+    line-height: 1.65;
+    font-size: 18px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 22px 64px; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 0;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+  }
+  .nav.bottom { border-bottom: none; border-top: 1px solid var(--rule); margin-top: 48px; }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: var(--muted); opacity: 0.5; pointer-events: none; }
+  header { text-align: center; padding: 40px 0 18px; border-bottom: 2px solid var(--accent); }
+  .masthead {
+    font-size: 44px;
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .tagline { color: var(--muted); font-style: italic; font-size: 16px; margin-top: 6px; }
+  .dateline { color: var(--muted); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 14px; }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 28px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .player button:hover { background: #dcbb5e; }
+  .player .status { color: var(--muted); font-size: 14px; }
+  h2.section {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin: 44px 0 18px;
+  }
+  h3.head { font-size: 28px; line-height: 1.25; margin: 0 0 14px; color: var(--text); }
+  .brief { margin-bottom: 26px; }
+  .brief h4 { font-size: 20px; margin: 0 0 6px; color: var(--text); }
+  .brief p { margin: 0; }
+  a.src { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  a.src:hover { border-bottom-style: solid; }
+  .analysis {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 22px 0;
+    font-style: italic;
+    color: var(--muted);
+  }
+  .signal {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px 26px;
+    margin: 30px 0;
+  }
+  .signal .label { color: var(--accent); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .signal p { margin: 10px 0 0; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 40px; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav top">
+    <a href="2026-06-21.html">&larr; 2026-06-21</a>
+    <span class="disabled">2026-06-23 &rarr;</span>
+  </nav>
+
+  <header>
+    <h1 class="masthead">ABOVE THE NOISE</h1>
+    <div class="tagline">Signal over static — the AI &amp; tech brief for builders</div>
+    <div class="dateline">Monday, June 22, 2026</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9658; Listen</button>
+    <span class="status" id="audioStatus">~4 min read-aloud</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="head">Anthropic's most capable models are still dark — and the free-trial clock just ran out</h3>
+
+  <p>Two weeks after launching <strong>Claude Fable 5</strong> and <strong>Claude Mythos 5</strong> — a capability tier the company positioned a full step above Opus 4.8 — Anthropic's flagship models remain switched off worldwide, and today the last bit of goodwill cushioning subscribers expired. The June 20 refund deadline has passed, and the June 22 free-trial window closes today, leaving paying customers on full-price plans for models they cannot actually call.</p>
+
+  <p>The shutdown traces to a June 12 export-control directive from the U.S. government, issued just three days after the June 9 launch. Citing national-security concerns tied to the models' frontier capabilities, the directive effectively required Anthropic to keep the systems out of the hands of foreign nationals. Because the company could not filter foreign and domestic users in real time at the API and product layer, it took the blunt path available to it: disabling both models globally rather than risk a partial, leaky enforcement.</p>
+
+  <p>For builders, this is the first time a top-tier U.S. model has been pulled <em>after</em> general availability for reasons that have nothing to do with safety incidents, capacity, or a botched release. It was regulatory. That distinction matters. A model you architected a product around can now disappear not because it broke, but because policy moved faster than the infrastructure needed to comply with it. The half-life of "available" got shorter overnight.</p>
+
+  <p>The practical fallout lands hardest on solo developers and small teams who treated Fable 5 and Mythos 5 as a planning assumption. Anyone who started a trial expecting to evaluate the new tier this month is now staring at a subscription that bills in full while delivering Opus 4.8 at best. Anthropic has not published a restoration timeline, and the compliance problem it needs to solve — real-time nationality-based access gating across a global user base — is genuinely hard and may take months to build defensibly.</p>
+
+  <p>The strategic read is bigger than one vendor. Export controls have, until now, mostly governed chips and training compute. Applying them to <em>deployed inference</em> of a shipped model is a new front, and if it becomes a pattern, every builder relying on a single frontier provider inherits a new category of risk that no SLA covers.</p>
+
+  <div class="analysis">
+    Analysis: The lesson here isn't "abandon Anthropic" — it's "don't single-thread your stack on any one frontier model." If a regulatory directive can dark a flagship in 72 hours, your product needs a graceful degradation path: a fallback model, an abstraction layer over providers, and prompts that don't silently assume one model's quirks. The builders who shrug at this week are the ones who already designed for it.
+  </div>
+
+  <p>Watch for two signals over the coming weeks: whether Anthropic ships a geo/identity gating layer that satisfies the directive, and whether competitors quietly add export-control language to their own terms. The second would tell you this is now industry weather, not a one-off storm. (<a class="src" href="https://medium.com/adi-insights-innovations-collective/ai-update-friday-june-19-2026-404d0b767ca7">background</a>)</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>Zhipu drops GLM-5.2 under MIT license</h4>
+    <p>On June 13, Zhipu AI released <strong>GLM-5.2</strong>, a Mixture-of-Experts model with a usable 1-million-token context window, under a permissive MIT license. For builders weighing self-hosting or fine-tuning, a frontier-adjacent open model with a no-strings license is a meaningfully different proposition than the API-only frontier tier. (<a class="src" href="https://llm-stats.com/llm-updates">llm-stats</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h4>Gemini 3.5 Flash tops the intelligence index — and it's fast</h4>
+    <p>Google's <strong>Gemini 3.5 Flash</strong> posted an Intelligence Index of 55, edging Claude Sonnet 4.6 (52) and Grok 4.3 (53), while generating ~284 tokens/sec — roughly 4x competing frontier models. Gemini 3.5 Pro pairs a 2M-token window with a "Deep Think" mode. Speed-per-dollar is back in play for latency-sensitive apps. (<a class="src" href="https://llm-stats.com/ai-news">llm-stats</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h4>Microsoft ships seven in-house MAI models — including a code model</h4>
+    <p>Microsoft unveiled a family of seven models built in-house, led by <strong>MAI-Code-1-Flash</strong> (description-to-source) and <strong>MAI-Thinking-1</strong> (reasoning), part of a push to lower developer costs and reduce reliance on OpenAI. More provider competition at the cheap-and-fast end is good news for margins. (<a class="src" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">CNBC</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h4>Agent security goes mainstream at Build 2026</h4>
+    <p>Microsoft made the <strong>Agent 365 SDK</strong> generally available and previewed Microsoft Execution Containers (MXC) — a policy-driven runtime that lets developers declare constraints the OS enforces on agents. With AI now writing nearly half of enterprise code and 9 in 10 security leaders worried about it, sandboxing your agents is becoming table stakes, not a nice-to-have. (<a class="src" href="https://www.microsoft.com/en-us/security/blog/2026/06/02/microsoft-build-2026-securing-code-agents-and-models-across-the-development-lifecycle/">Microsoft Security</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h4>EU AI Act chatbot rules hit August 2 — start your compliance clock</h4>
+    <p>Transparency, disclosure, and consent obligations for chatbot systems take effect <strong>August 2, 2026</strong>, with penalties up to 7% of global annual revenue. If your app talks to EU users, you need clear AI-disclosure UX and consent handling shipped well before the deadline. (<a class="src" href="https://aigovernance.com/news/ai-governance-weekly-june-19-2026">AI Governance Institute</a>)</p>
+  </div>
+
+  <div class="signal">
+    <div class="label">Today's Signal</div>
+    <p>This week's throughline is fragility you don't control. A flagship model can be darked by regulation in 72 hours; compliance deadlines are closing; agent code is shipping faster than anyone can secure it. The builders who win the next quarter aren't the ones chasing the highest benchmark — they're the ones whose stacks survive a provider, a model, or a rule disappearing without warning. Build the fallback before you need it.</p>
+  </div>
+
+  <nav class="nav bottom">
+    <a href="2026-06-21.html">&larr; 2026-06-21</a>
+    <span class="disabled">2026-06-23 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise — daily for builders.<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Monday, June 22nd, 2026. Today's lead: Anthropic's most capable models are still dark, and the free-trial clock just ran out. Two weeks after launching Claude Fable 5 and Claude Mythos 5, a capability tier the company positioned a full step above Opus 4.8, Anthropic's flagship models remain switched off worldwide. And today, the last bit of goodwill cushioning subscribers expired. The June 20th refund deadline has passed, and the June 22nd free-trial window closes today, leaving paying customers on full-price plans for models they cannot actually call. The shutdown traces to a June 12th export-control directive from the U.S. government, issued just three days after the launch. Citing national-security concerns tied to the models' frontier capabilities, the directive effectively required Anthropic to keep the systems out of the hands of foreign nationals. Because the company could not filter foreign and domestic users in real time, it took the blunt path available to it: disabling both models globally. For builders, this is the first time a top-tier U.S. model has been pulled after general availability for reasons that have nothing to do with safety incidents, capacity, or a botched release. It was regulatory. A model you architected a product around can now disappear not because it broke, but because policy moved faster than the infrastructure needed to comply with it. Here's the analysis. The lesson isn't abandon Anthropic. It's don't single-thread your stack on any one frontier model. If a regulatory directive can dark a flagship in seventy-two hours, your product needs a graceful degradation path: a fallback model, an abstraction layer over providers, and prompts that don't silently assume one model's quirks. Now, the briefs. First, Zhipu A-I released GLM-5.2 under a permissive MIT license on June 13th, a Mixture-of-Experts model with a usable one-million-token context window. For anyone weighing self-hosting, a frontier-adjacent open model with a no-strings license is a meaningfully different proposition. Second, Google's Gemini 3.5 Flash topped the intelligence index with a score of 55, edging Claude Sonnet 4.6 and Grok 4.3, while generating around 284 tokens per second, roughly four times competing frontier models. Speed-per-dollar is back in play for latency-sensitive apps. Third, Microsoft unveiled a family of seven in-house models, led by MAI-Code-1-Flash, which turns descriptions into source code, and MAI-Thinking-1, a reasoning model. More competition at the cheap-and-fast end is good news for your margins. Fourth, at Build 2026 Microsoft made the Agent 365 SDK generally available and previewed Microsoft Execution Containers, a policy-driven runtime that enforces constraints on agents. With A-I now writing nearly half of enterprise code, sandboxing your agents is becoming table stakes. And fifth, E-U A-I Act chatbot rules hit August 2nd, with penalties up to seven percent of global annual revenue. If your app talks to E-U users, ship clear A-I disclosure and consent handling before the deadline. Today's signal. This week's throughline is fragility you don't control. A flagship model can be darked by regulation in seventy-two hours, compliance deadlines are closing, and agent code is shipping faster than anyone can secure it. The builders who win the next quarter aren't the ones chasing the highest benchmark. They're the ones whose stacks survive a provider, a model, or a rule disappearing without warning. Build the fallback before you need it. That's the brief. Content is A-I synthesized, links point to original sources. See you tomorrow.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/.test(v.name)) || vs.find(v => /Alex/.test(v.name)) ||
+         vs.find(v => /en-GB/.test(v.lang)) || vs.find(v => /en/.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const status = document.getElementById('audioStatus');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.innerHTML = '&#9658; Listen';
+    status.textContent = '~4 min read-aloud';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.innerHTML = '&#9658; Listen'; status.textContent = 'Finished'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true;
+  btn.innerHTML = '&#10073;&#10073; Stop';
+  status.textContent = 'Playing…';
+}
+if (typeof speechSynthesis !== 'undefined') {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
