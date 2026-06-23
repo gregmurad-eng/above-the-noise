@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-23</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8f8463;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+    font-size: 19px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+  .masthead {
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+    padding: 48px 0 24px;
+    margin-bottom: 8px;
+  }
+  .masthead h1 {
+    font-size: 52px;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .masthead .tagline {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 17px;
+    margin-top: 6px;
+  }
+  .masthead .date {
+    margin-top: 14px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #2a2316;
+    border-bottom: 1px solid #2a2316;
+    padding: 12px 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: #4a432c; pointer-events: none; }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #15110a;
+    border: 1px solid #2a2316;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 24px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .player button:hover { background: #d8b95c; }
+  .player .label { font-size: 14px; color: var(--muted); font-style: italic; }
+  h2.section {
+    color: var(--accent);
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #2a2316;
+    padding-bottom: 8px;
+    margin-top: 48px;
+  }
+  h3.headline { font-size: 30px; line-height: 1.25; margin: 18px 0 6px; color: var(--text); font-weight: 400; }
+  .byline { color: var(--muted); font-size: 14px; font-style: italic; margin-bottom: 18px; }
+  p { margin: 0 0 18px; }
+  a.inline { color: var(--accent); }
+  .brief { margin-bottom: 26px; }
+  .brief h4 { font-size: 21px; margin: 0 0 6px; color: var(--text); font-weight: 400; }
+  .brief .src { font-size: 13px; }
+  .brief .src a { color: var(--accent); text-decoration: none; }
+  .signal {
+    background: #15110a;
+    border-left: 4px solid var(--accent);
+    padding: 22px 26px;
+    margin: 30px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .signal .tag { color: var(--accent); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 8px; }
+  .analysis { font-style: italic; color: #cabd95; border-left: 2px solid #2a2316; padding-left: 18px; }
+  footer {
+    margin-top: 60px;
+    border-top: 1px solid #2a2316;
+    padding-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tagline">The signal in AI &amp; tech, distilled daily for builders.</div>
+    <div class="date">Tuesday, June 23, 2026</div>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-22.html">&larr; 2026-06-22</a>
+    <span class="disabled">2026-06-24 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="label">Audio edition &middot; ~4 min</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="headline">The Transformer's Architect Walks Out of Google — and Into OpenAI</h3>
+  <div class="byline">The talent war just got its biggest casualty since Karpathy</div>
+
+  <p>Noam Shazeer — co-author of the 2017 paper "Attention Is All You Need," the eight-page document that gave the world the Transformer and, by extension, every large language model running today — has left Google DeepMind to join OpenAI as Lead for Architecture Research. The announcement landed June 18, and in an industry that has normalized billion-dollar poaching, it still managed to feel like a tremor.</p>
+
+  <p>The role matters as much as the name. Shazeer won't be managing a product or shipping a chatbot feature; he'll own the physical neural-network structures underneath all of OpenAI's models — the next-generation architectures meant to succeed the very design he helped invent. Sam Altman framed the hire on X as "only 10 years in the making," calling Shazeer one of the people he has most wanted to work with since OpenAI's founding. That's not recruiting theater. It's a statement that OpenAI believes the next leap won't come from more data or more GPUs alone, but from rethinking the architecture itself.</p>
+
+  <p>The sting for Google is sharper because of the price tag. In August 2024, Google brought Shazeer back through a roughly $2.7 billion arrangement tied to Character.AI, the startup he co-founded after leaving the first time. Less than two years and billions of dollars later, he's gone again — and he's not the only one. His exit came within days of a Nobel laureate departing for Anthropic, a one-two punch that has Google bleeding foundational talent at exactly the moment it's trying to convince the market that Gemini 3.5 is the frontier.</p>
+
+  <p>For solo builders, the meta-signal is what counts. When the people who invented the current paradigm are being paid fortunes to go invent the next one, it tells you the incumbents themselves think the Transformer era has a ceiling. The tools you build on this year are not the tools you'll build on in two. Architecture is back on the table as a competitive variable, not a settled question.</p>
+
+  <p class="analysis">Analysis: Talent moves are the truest leading indicator in AI — more honest than benchmarks, which everyone games, and more honest than launch dates, which everyone slips. Shazeer didn't chase a title; he chased a mandate to redesign the foundation. Watch where the architecture researchers cluster over the next 18 months. That's where the next platform shift is being quietly assembled, long before it shows up in a model card.</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>White House issues AI innovation-and-security executive order</h4>
+    <p>The June 2 executive order, "Promoting Advanced Artificial Intelligence Innovation and Security," sets up a voluntary federal framework for "frontier" models and an AI cybersecurity clearinghouse to remediate software vulnerabilities at scale. Crucially, it expressly bars any mandatory licensing or pre-clearance to release a model — innovation-friendly on paper, with agency deliverables due July 2 and August 1.</p>
+    <div class="src"><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">whitehouse.gov</a></div>
+  </div>
+
+  <div class="brief">
+    <h4>Microsoft ships its own models to cut the OpenAI cord</h4>
+    <p>At Build, Microsoft unveiled MAI-Code-1-Flash, a model that turns plain-language descriptions into app and website source code, alongside MAI-Thinking-1, a reasoning model. The throughline is independence: lower-cost, in-house options that reduce reliance on OpenAI for developers building on Azure.</p>
+    <div class="src"><a href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html">cnbc.com</a></div>
+  </div>
+
+  <div class="brief">
+    <h4>Zhipu's GLM-5.2 lands under MIT license with a 1M-token window</h4>
+    <p>Released June 13, GLM-5.2 pairs a Mixture-of-Experts architecture with a usable one-million-token context window — and ships under a permissive MIT license. For builders, that's a rare combination: frontier-scale context plus the freedom to deploy commercially without strings.</p>
+    <div class="src"><a href="https://llm-stats.com/llm-updates">llm-stats.com</a></div>
+  </div>
+
+  <div class="brief">
+    <h4>EU AI Act enforcement deadline now weeks away</h4>
+    <p>The clock is down to roughly 40 days on the EU AI Act enforcement deadline, and reporting suggests most companies are still scrambling to comply. If you ship to European users, classification and documentation obligations stop being theoretical very soon.</p>
+    <div class="src"><a href="https://www.artificialintelligence-news.com/">artificialintelligence-news.com</a></div>
+  </div>
+
+  <div class="brief">
+    <h4>A fatal Tesla crash pulls autonomy back into the spotlight</h4>
+    <p>A fatal Tesla crash in Texas reignited the autonomous-driving safety debate just as the AI race pushes harder into physical-world systems. As models move off the screen and into machinery, the failure modes — and the liability — get a lot more concrete.</p>
+    <div class="src"><a href="https://techstartups.com/2026/06/22/top-tech-news-today-june-22-2026/">techstartups.com</a></div>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <span class="tag">Today's Signal</span>
+    <p>The frontier labs are spending billions to hire the people who can change <em>how</em> models are built, not just <em>what</em> they output. If you're a solo builder, don't over-anchor on any single model or API — build your products so the engine is swappable. The architecture underneath you is going to change, and the builders who win will be the ones who treated this year's best model as a temporary tenant, not a permanent foundation.</p>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-22.html">&larr; 2026-06-22</a>
+    <span class="disabled">2026-06-24 &rarr;</span>
+  </nav>
+
+  <footer>
+    <p>Above The Noise &middot; June 23, 2026<br>
+    Content is AI-synthesized. Links point to original sources.</p>
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Tuesday, June twenty-third, twenty twenty-six. Today's lead story: the Transformer's architect has walked out of Google and into OpenAI. Noam Shazeer, co-author of the 2017 paper Attention Is All You Need, the document that gave the world the Transformer and, by extension, every large language model running today, has left Google DeepMind to join OpenAI as Lead for Architecture Research. The announcement landed on June eighteenth, and in an industry that has normalized billion-dollar poaching, it still managed to feel like a tremor. The role matters as much as the name. Shazeer won't be managing a product or shipping a chatbot feature. He'll own the neural network structures underneath all of OpenAI's models, the next-generation architectures meant to succeed the very design he helped invent. Sam Altman framed the hire as only ten years in the making, calling Shazeer one of the people he has most wanted to work with since OpenAI's founding. The sting for Google is sharper because of the price tag. In August twenty twenty-four, Google brought Shazeer back through a roughly two-point-seven billion dollar arrangement tied to Character A-I. Less than two years later, he's gone again. And he's not the only one. His exit came within days of a Nobel laureate departing for Anthropic. For solo builders, the meta-signal is what counts. When the people who invented the current paradigm are being paid fortunes to go invent the next one, it tells you the incumbents themselves think the Transformer era has a ceiling. Here's the analysis. Talent moves are the truest leading indicator in A-I, more honest than benchmarks, which everyone games, and more honest than launch dates, which everyone slips. Watch where the architecture researchers cluster over the next eighteen months. That's where the next platform shift is being quietly assembled. Now, the briefs. First. The White House issued an executive order on June second titled Promoting Advanced Artificial Intelligence Innovation and Security. It sets up a voluntary federal framework for frontier models and an A-I cybersecurity clearinghouse, but expressly bars any mandatory licensing to release a model. Second. At Build, Microsoft unveiled M-A-I-Code-One-Flash, which turns plain language into source code, alongside M-A-I-Thinking-One, a reasoning model. The throughline is independence from OpenAI for developers on Azure. Third. Zhipu's G-L-M-five-point-two landed June thirteenth under a permissive M-I-T license, pairing a Mixture-of-Experts architecture with a usable one-million-token context window. Fourth. The E-U A-I Act enforcement deadline is now roughly forty days away, and most companies are still scrambling to comply. Fifth. A fatal Tesla crash in Texas pulled autonomous driving safety back into the spotlight, just as the A-I race pushes harder into physical-world systems. And finally, today's signal. The frontier labs are spending billions to hire the people who can change how models are built, not just what they output. If you're a solo builder, don't over-anchor on any single model or A-P-I. Build your products so the engine is swappable. The architecture underneath you is going to change. The builders who win will be the ones who treated this year's best model as a temporary tenant, not a permanent foundation. That's the signal for today. This has been Above The Noise.";
+
+let speaking = false;
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  const prefer = ['Daniel', 'Alex'];
+  for (const name of prefer) {
+    const v = voices.find(x => x.name && x.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(x => x.lang && x.lang.startsWith('en')) || voices[0] || null;
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.innerHTML = '&#9654; Listen';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.innerHTML = '&#9654; Listen'; };
+  window.speechSynthesis.speak(u);
+  speaking = true;
+  btn.innerHTML = '&#10073;&#10073; Stop';
+}
+if (typeof speechSynthesis !== 'undefined') {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
