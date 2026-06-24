@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-24</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.7; }
+  .wrap{ max-width:720px; margin:0 auto; padding:32px 22px 80px; }
+  .masthead{ text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1{ font-size:2.6rem; letter-spacing:2px; margin:0; color:var(--accent); font-variant:small-caps; }
+  .masthead .tag{ font-style:italic; opacity:.8; margin-top:6px; font-size:1rem; }
+  .masthead .date{ letter-spacing:3px; font-size:.82rem; text-transform:uppercase; opacity:.7; margin-top:10px; }
+  nav{ display:flex; justify-content:space-between; align-items:center; font-size:.9rem; padding:12px 0; border-bottom:1px solid rgba(201,168,76,.3); }
+  nav.bottom{ border-bottom:none; border-top:1px solid rgba(201,168,76,.3); margin-top:40px; }
+  nav a{ color:var(--accent); text-decoration:none; }
+  nav a:hover{ text-decoration:underline; }
+  nav .disabled{ opacity:.35; pointer-events:none; }
+  .player{ display:flex; align-items:center; gap:14px; background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.3); border-radius:8px; padding:12px 16px; margin:22px 0; }
+  .player button{ background:var(--accent); color:var(--bg); border:none; border-radius:6px; padding:9px 16px; font-family:inherit; font-size:.92rem; cursor:pointer; font-weight:bold; }
+  .player button:hover{ opacity:.9; }
+  .player .label{ font-style:italic; font-size:.86rem; opacity:.8; }
+  section{ margin:34px 0; }
+  h2.section-title{ color:var(--accent); font-variant:small-caps; letter-spacing:1px; font-size:1.05rem; border-bottom:1px solid rgba(201,168,76,.3); padding-bottom:6px; }
+  h3.lead{ font-size:1.8rem; line-height:1.25; margin:14px 0 6px; }
+  .byline{ font-style:italic; opacity:.7; font-size:.85rem; margin-bottom:14px; }
+  a.inline{ color:var(--accent); }
+  .analysis{ border-left:3px solid var(--accent); padding-left:16px; margin-top:18px; font-style:italic; opacity:.92; }
+  .brief{ margin:18px 0; }
+  .brief h4{ margin:0 0 4px; font-size:1.12rem; color:var(--text); }
+  .brief h4 a{ color:var(--text); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  .signal{ background:rgba(201,168,76,.1); border:1px solid var(--accent); border-radius:10px; padding:22px 24px; margin:30px 0; }
+  .signal .k{ color:var(--accent); font-variant:small-caps; letter-spacing:2px; font-size:.8rem; }
+  footer{ text-align:center; font-size:.78rem; opacity:.55; margin-top:40px; border-top:1px solid rgba(201,168,76,.2); padding-top:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="2026-06-23.html">&larr; 2026-06-23</a>
+    <span class="disabled">2026-06-25 &rarr;</span>
+  </nav>
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">Greg's daily signal on AI &amp; the things builders should actually care about</div>
+    <div class="date">Wednesday &middot; 2026-06-24</div>
+  </header>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="label">Audio edition &middot; ~4 min</span>
+  </div>
+
+  <section>
+    <h2 class="section-title">Lead Story</h2>
+    <h3 class="lead">Gemini 3.5 Pro is late, and the silence is telling us something</h3>
+    <div class="byline">The frontier's most-anticipated model missed its own window — here's what that means if you ship.</div>
+
+    <p>Google promised general availability for <a class="inline" href="https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm">Gemini 3.5 Pro</a> in June. With less than a week left in the month, it still hasn't shipped. As of this week the model remains in limited preview for a slice of Vertex AI enterprise customers — not in the Gemini app, not in AI Studio, not in the consumer subscription. Prediction markets put the odds of a June 30 launch at barely better than a coin flip.</p>
+
+    <p>The spec sheet explains the hype. Gemini 3.5 Pro targets a two-million-token context window — double its own Flash sibling and the largest deployed in any production frontier model to date — plus a "Deep Think" reasoning mode gated behind a $250-per-month Ultra tier. On paper it's the most ambitious context-and-reasoning combination anyone has tried to push into general availability.</p>
+
+    <p>But ambition is exactly why the delay matters. A two-million-token window isn't a marketing number; it's an inference-cost and latency problem that has to hold up under real traffic, not curated demos. When a company that ships as relentlessly as Google lets a flagship slip past its own stated window, the most likely read isn't incompetence — it's that serving frontier-scale context reliably and affordably is still genuinely hard. The gap between "works in preview" and "works for everyone at a price that pencils out" is where a lot of 2026's roadmaps are quietly dying.</p>
+
+    <p>This lands in a market that just got more expensive in other ways too. The same week, Claude's Fable 5 stopped being bundled into paid subscriptions and moved to usage credits — another signal that the era of frontier capability thrown in for free is ending. Builders are being asked to pay closer to the true cost of the compute they consume.</p>
+
+    <div class="analysis">If you're building on top of these models, don't architect around a launch date you can't control. The lesson of the Gemini delay is that headline context windows and reasoning modes are the last 10% to stabilize, not the first. Design for the model you can call today, keep your prompt and retrieval layers model-agnostic, and treat 2M-token context as an optimization you adopt when it's cheap and proven — not a foundation you bet the product on. The teams that win the back half of 2026 will be the ones whose moat is their data and their workflow, not whichever frontier model happens to be winning the benchmark this week.</div>
+  </section>
+
+  <section>
+    <h2 class="section-title">The Briefs</h2>
+
+    <div class="brief">
+      <h4><a href="https://aitoolsrecap.com/Blog/ai-news-june-23-2026">OpenAI ships GPT-5.5-Cyber and "Patch the Planet"</a></h4>
+      <p>OpenAI launched a security-tuned variant, GPT-5.5-Cyber, alongside a "Patch the Planet" initiative aimed at automated vulnerability remediation. For builders, the interesting part is a frontier lab explicitly productizing defensive security work rather than leaving it to third-party wrappers.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">Micron signs AI infrastructure deal with Anthropic</a></h4>
+      <p>Memory maker Micron struck a strategic agreement to supply memory and storage for Claude's training and deployment. It's another reminder that the AI supply chain is consolidating vertically — the model labs are locking in silicon partners years ahead of demand.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">Claude Fable 5 leaves the free subscription tier</a></h4>
+      <p>As of June 23, Fable 5 is no longer included at no extra cost in Pro, Max, Team, and seat-based Enterprise plans and now requires paid usage credits. If you've been leaning on it inside a flat subscription, re-check your unit economics this week.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://techstartups.com/2026/06/23/top-tech-news-today-june-23-2026/">Oracle cuts 21,000 jobs, citing AI deployment</a></h4>
+      <p>Oracle trimmed nearly 13% of its workforce over the past year and explicitly tied the reductions to AI adoption across its operations. Whatever you think of the framing, it's the clearest example yet of a large incumbent attributing headcount cuts directly to automation.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-23-2026">Meta pauses employee-tracking AI training after data exposure</a></h4>
+      <p>Meta halted a program that trained models on employee activity after an internal security issue exposed sensitive data from staff laptops. A cautionary tale on the boundary between "training data" and surveillance — and on shipping data pipelines faster than you can secure them.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="signal">
+      <div class="k">Today's Signal</div>
+      <p style="margin:10px 0 0;">Two stories this week point the same direction: the era of free frontier capability is closing. Gemini 3.5 Pro is late because frontier-scale context is expensive to serve; Fable 5 left the free tier because someone has to pay for the compute. The takeaway for solo builders isn't doom — it's discipline. Know your per-call cost, cache aggressively, and make sure the value you ship would survive a 2x price increase on the underlying model. If it wouldn't, that's not a model problem. That's a product problem.</p>
+    </div>
+  </section>
+
+  <nav class="bottom">
+    <a href="2026-06-23.html">&larr; 2026-06-23</a>
+    <span class="disabled">2026-06-25 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise &middot; 2026-06-24<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Wednesday, June twenty-fourth, twenty twenty-six. Here's the signal worth your attention today. Our lead story: Gemini three-point-five Pro is late, and the silence is telling us something. Google promised general availability for Gemini three-point-five Pro in June. With less than a week left in the month, it still hasn't shipped. As of this week the model remains in limited preview for a slice of Vertex AI enterprise customers. It is not in the Gemini app, not in AI Studio, and not in the consumer subscription. Prediction markets put the odds of a June thirtieth launch at barely better than a coin flip. The spec sheet explains the hype. Gemini three-point-five Pro targets a two-million-token context window. That's double its own Flash sibling, and the largest deployed in any production frontier model to date. It also adds a Deep Think reasoning mode, gated behind a two-hundred-fifty-dollar-per-month Ultra tier. On paper, it's the most ambitious context and reasoning combination anyone has tried to push into general availability. But ambition is exactly why the delay matters. A two-million-token window isn't a marketing number. It's an inference cost and latency problem that has to hold up under real traffic, not curated demos. When a company that ships as relentlessly as Google lets a flagship slip past its own stated window, the most likely read isn't incompetence. It's that serving frontier-scale context reliably and affordably is still genuinely hard. This lands in a market that just got more expensive in other ways. The same week, Claude's Fable five stopped being bundled into paid subscriptions and moved to usage credits. The era of frontier capability thrown in for free is ending. So here's the analysis. If you're building on top of these models, don't architect around a launch date you can't control. Headline context windows and reasoning modes are the last ten percent to stabilize, not the first. Design for the model you can call today. Keep your prompt and retrieval layers model-agnostic. And treat two-million-token context as an optimization you adopt when it's cheap and proven, not a foundation you bet the product on. Now, the briefs. One. OpenAI shipped a security-tuned variant, GPT five-point-five Cyber, alongside a Patch the Planet initiative aimed at automated vulnerability remediation. A frontier lab is productizing defensive security work directly. Two. Micron signed a strategic agreement to supply memory and storage for Claude's training and deployment. The AI supply chain is consolidating vertically. Three. As of June twenty-third, Claude Fable five is no longer included at no extra cost in Pro, Max, Team, and Enterprise plans. If you've been leaning on it inside a flat subscription, re-check your unit economics this week. Four. Oracle cut nearly thirteen percent of its workforce over the past year and explicitly tied the reductions to AI adoption. It's the clearest example yet of a large incumbent attributing headcount cuts directly to automation. Five. Meta paused a program that trained models on employee activity after an internal security issue exposed sensitive data from staff laptops. A cautionary tale on the boundary between training data and surveillance. And today's signal. Two stories this week point the same direction. The era of free frontier capability is closing. Gemini is late because frontier-scale context is expensive to serve. Fable five left the free tier because someone has to pay for the compute. The takeaway for solo builders isn't doom. It's discipline. Know your per-call cost. Cache aggressively. And make sure the value you ship would survive a two-x price increase on the underlying model. If it wouldn't, that's not a model problem. That's a product problem. That's the signal for today. Build well, and I'll see you tomorrow.";
+
+let speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/i.test(v.name)) || vs.find(v=>/Alex/i.test(v.name)) || vs.find(v=>/en[-_]?GB/i.test(v.lang)) || vs.find(v=>/en/i.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn = document.getElementById('playBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654; Listen'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice(); if(v) u.voice = v;
+  u.onend = ()=>{ speaking=false; btn.innerHTML='&#9654; Listen'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking=true; btn.innerHTML='&#10073;&#10073; Stop';
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
