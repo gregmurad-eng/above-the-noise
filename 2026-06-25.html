@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-25</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.65; }
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 22px 60px; }
+  .masthead{ text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:6px; }
+  .masthead h1{ font-size:2.5rem; letter-spacing:2px; margin:0; color:var(--accent); font-variant:small-caps; }
+  .masthead .tag{ font-style:italic; color:#b6a988; font-size:.95rem; margin-top:4px; }
+  .masthead .date{ font-size:.85rem; letter-spacing:3px; text-transform:uppercase; color:#8c7f5f; margin-top:8px; }
+  nav.bar{ display:flex; justify-content:space-between; align-items:center; font-size:.9rem; padding:10px 2px; border-bottom:1px solid #2a2316; }
+  nav.bar.bottom{ border-bottom:none; border-top:1px solid #2a2316; margin-top:40px; }
+  nav.bar a{ color:var(--accent); text-decoration:none; }
+  nav.bar a:hover{ text-decoration:underline; }
+  nav.bar .next{ color:#5c5235; cursor:default; }
+  .player{ display:flex; align-items:center; gap:14px; background:#161009; border:1px solid #2a2316; border-radius:8px; padding:12px 16px; margin:20px 0 30px; }
+  .player button{ background:var(--accent); color:#0d0a06; border:none; border-radius:50%; width:46px; height:46px; font-size:1.1rem; cursor:pointer; font-family:inherit; flex:0 0 auto; }
+  .player button:hover{ background:#dcbb5e; }
+  .player .label{ font-size:.85rem; color:#b6a988; }
+  .player .label b{ color:var(--text); display:block; font-size:.95rem; }
+  h2.section{ font-variant:small-caps; letter-spacing:1px; color:var(--accent); border-bottom:1px solid #2a2316; padding-bottom:6px; margin-top:38px; font-size:1.4rem; }
+  .lead h3{ font-size:1.7rem; line-height:1.25; margin:14px 0 6px; color:#f0e6cc; }
+  .lead .byline{ font-size:.8rem; text-transform:uppercase; letter-spacing:2px; color:#8c7f5f; margin-bottom:14px; }
+  .lead p, .briefs p{ margin:0 0 16px; }
+  .analysis{ border-left:3px solid var(--accent); padding:4px 0 4px 16px; margin:20px 0; font-style:italic; color:#cdc0a0; }
+  .brief{ margin-bottom:22px; }
+  .brief h4{ margin:0 0 4px; font-size:1.12rem; color:#f0e6cc; }
+  .brief a{ color:var(--accent); }
+  .signal{ background:#161009; border:1px solid var(--accent); border-radius:8px; padding:20px 22px; margin:30px 0; }
+  .signal h3{ margin:0 0 10px; color:var(--accent); font-variant:small-caps; letter-spacing:1px; }
+  a{ color:var(--accent); }
+  footer{ margin-top:40px; padding-top:16px; border-top:1px solid #2a2316; font-size:.78rem; color:#7a6f52; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, distilled daily</div>
+    <div class="date">Thursday, June 25, 2026</div>
+  </header>
+
+  <nav class="bar top">
+    <a href="2026-06-24.html">&larr; 2026-06-24</a>
+    <span class="next">2026-06-26 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()" aria-label="Play audio briefing">&#9654;</button>
+    <div class="label"><b>Listen to today's briefing</b>Audio narration &middot; ~4 min</div>
+  </div>
+
+  <section class="lead">
+    <h2 class="section">Lead Story</h2>
+    <h3>Google's Brain Drain Becomes a Stampede as DeepMind Stars Defect to Anthropic and OpenAI</h3>
+    <div class="byline">The AI Talent War</div>
+
+    <p>The most valuable asset in artificial intelligence isn't a data center or a model checkpoint — it's the few hundred people who know how to build the next one. This week made that brutally clear for Google. Two more senior DeepMind researchers, Jonas Adler and Alexander Pritzel, are reportedly on their way to Anthropic, the latest defections in an exodus that has turned from a worrying trend into an open crisis.</p>
+
+    <p>Adler worked on Google's AI coding efforts; Pritzel focused on pretraining. Both contributed to the AlphaFold research that earned DeepMind's John Jumper a share of a Nobel Prize — and Jumper himself announced just days earlier that he, too, is leaving for Anthropic. Layer on Noam Shazeer, the Transformer co-inventor who helped lead Gemini before departing for OpenAI, and a pattern emerges that no amount of corporate messaging can spin away. The people who built Google's frontier are walking out the door, and they're walking toward its two fiercest rivals.</p>
+
+    <p>The gravity pulling them is financial as much as intellectual. Anthropic recently closed a round at a reported $965 billion valuation — surpassing OpenAI — and has confidentially filed for an IPO. OpenAI is preparing its own filing, with a listing possible as soon as September. For a researcher sitting on Google equity that's already fully liquid, joining a soon-to-be-public lab offers the rare prospect of a generational payday. Established tech salaries, however large, can't replicate pre-IPO upside.</p>
+
+    <p>But money isn't the whole story. Reporting points to internal friction over compute — Google reportedly reassigned capacity away from one of Shazeer's projects, a flashpoint as teams fight over a finite pool of advanced chips. When your best people feel starved of the very resource they need to do their best work, a competitor's open checkbook starts to look like more than a raise. It looks like respect.</p>
+
+    <div class="analysis">For builders, the signal underneath the headlines is about momentum, not melodrama. Google still ships capable models, but Gemini 3.5 Flash and 3.1 Pro have slipped outside the top five on several leaderboards, trailing Anthropic, OpenAI, and even Chinese labs. Talent flight and benchmark slippage feed each other: researchers chase the labs that ship, and the labs that ship attract the researchers. If you're choosing a model stack or a platform to bet a product on, watch where the people go — it's a leading indicator that the benchmarks only confirm months later.</div>
+  </section>
+
+  <section class="briefs">
+    <h2 class="section">The Briefs</h2>
+
+    <div class="brief">
+      <h4>OpenAI ships GPT-5.5-Cyber — and locks it down</h4>
+      <p>OpenAI released the full <a href="https://openai.com/news/">GPT-5.5-Cyber</a> under its Daybreak security initiative, posting a record 85.6% on CyberGym (vs. 81.8% for standard GPT-5.5) and big jumps on ExploitGym and SEC-bench Pro. Notably, it's <em>not</em> a public API model — access is gated to vetted organizations through a Trusted Access program, a sign of how cautiously frontier labs now treat offensive-capable tooling.</p>
+    </div>
+
+    <div class="brief">
+      <h4>OpenAI's first in-house inference chip, "Jalapeño"</h4>
+      <p>OpenAI unveiled <a href="https://openai.com/news/">Jalapeño</a>, its first Intelligence Processor — a custom inference accelerator co-designed with Broadcom, with early testing pointing to strong performance per watt. It's the clearest signal yet that the frontier labs intend to own their own silicon rather than rent it indefinitely.</p>
+    </div>
+
+    <div class="brief">
+      <h4>Chinese labs keep squeezing Western pricing</h4>
+      <p>MiniMax's <a href="https://the-decoder.com/minimax-m2-5-promises-intelligence-too-cheap-to-meter-as-chinese-labs-squeeze-western-ai-pricing/">M2.5</a> continues to set the cost-performance pace — strong coding scores (80.2% SWE-Bench Verified) at a claimed tenth of Western prices, roughly a dollar an hour of continuous operation. For solo builders, the open-weight Chinese tier is becoming a serious default for anything cost-sensitive.</p>
+    </div>
+
+    <div class="brief">
+      <h4>The IPO race is reshaping the whole field</h4>
+      <p>Anthropic's confidential <a href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/">IPO filing</a> and OpenAI's imminent one aren't just finance news — they're the engine behind the talent war, the compute arms race, and the pricing pressure all at once. Public markets are about to get a direct read on frontier-AI economics.</p>
+    </div>
+
+    <div class="brief">
+      <h4>Infrastructure becomes the kingmaker</h4>
+      <p>Reflection AI is reportedly raising again at a <a href="https://blog.mean.ceo/new-ai-model-releases-news-june-2026/">$25 billion valuation</a>, while SpaceX's compute business is quietly emerging as an infrastructure layer beneath several top labs. The lesson holds: in 2026, whoever controls compute controls the roadmap.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="signal">
+      <h3>Today's Signal</h3>
+      <p>Watch the people, not just the benchmarks. The clearest leading indicator of where AI is heading right now isn't a leaderboard — it's the direction senior researchers are walking. Capital, compute, and talent are pooling around the labs closest to going public, and that flywheel is accelerating. If you're a builder choosing what to bet on, the org chart of who-just-joined-whom may tell you more about the next 12 months than any eval score.</p>
+    </div>
+  </section>
+
+  <nav class="bar bottom">
+    <a href="2026-06-24.html">&larr; 2026-06-24</a>
+    <span class="next">2026-06-26 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise &middot; June 25, 2026<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Good morning, and welcome to Above The Noise for Thursday, June twenty-fifth, twenty twenty-six. I'm your briefing for the signal in A.I. and tech, distilled. Today's lead story: Google's brain drain has become a stampede. The most valuable asset in artificial intelligence isn't a data center or a model checkpoint. It's the few hundred people who know how to build the next one. And this week, that became brutally clear for Google. Two more senior DeepMind researchers, Jonas Adler and Alexander Pritzel, are reportedly on their way to Anthropic. Adler worked on Google's A.I. coding efforts. Pritzel focused on pretraining. Both contributed to the AlphaFold research that earned DeepMind's John Jumper a share of a Nobel Prize. And Jumper himself announced just days earlier that he, too, is leaving for Anthropic. Add in Noam Shazeer, the Transformer co-inventor who helped lead Gemini before departing for OpenAI, and the pattern is undeniable. The people who built Google's frontier are walking out the door, and they're walking toward its two fiercest rivals. The gravity pulling them is financial as much as intellectual. Anthropic recently closed a round at a reported nine hundred sixty-five billion dollar valuation, surpassing OpenAI, and has confidentially filed for an I.P.O. OpenAI is preparing its own filing, with a listing possible as soon as September. For a researcher sitting on Google equity that's already liquid, joining a soon-to-be-public lab offers the rare prospect of a generational payday. But money isn't the whole story. Reporting points to internal friction over compute, as teams fight over a finite pool of advanced chips. When your best people feel starved of the very resource they need, a competitor's open checkbook starts to look like respect. For builders, the signal underneath the headlines is about momentum. Google still ships capable models, but Gemini three-point-five Flash and three-point-one Pro have slipped outside the top five on several leaderboards, trailing Anthropic, OpenAI, and even Chinese labs. Talent flight and benchmark slippage feed each other. Now, the briefs. First: OpenAI shipped GPT five-point-five Cyber under its Daybreak security initiative, posting a record eighty-five-point-six percent on CyberGym. Notably, it's not a public model. Access is gated to vetted organizations, a sign of how cautiously frontier labs now treat offensive-capable tooling. Second: OpenAI unveiled Jalapeño, its first in-house inference chip, co-designed with Broadcom, with strong early performance per watt. The frontier labs intend to own their silicon, not rent it forever. Third: Chinese labs keep squeezing Western pricing. MiniMax's M-two-point-five sets the cost-performance pace, with strong coding scores at a claimed tenth of Western prices. For solo builders, the open-weight Chinese tier is becoming a serious default for anything cost-sensitive. Fourth: the I.P.O. race is reshaping the whole field. Anthropic's confidential filing and OpenAI's imminent one are the engine behind the talent war, the compute arms race, and the pricing pressure all at once. And fifth: infrastructure is becoming the kingmaker. Reflection A.I. is reportedly raising again at twenty-five billion dollars, while SpaceX's compute business emerges as a layer beneath several top labs. Whoever controls compute controls the roadmap. And that brings us to today's signal. Watch the people, not just the benchmarks. The clearest leading indicator of where A.I. is heading right now isn't a leaderboard. It's the direction senior researchers are walking. Capital, compute, and talent are pooling around the labs closest to going public, and that flywheel is accelerating. If you're a builder choosing what to bet on, the org chart of who just joined whom may tell you more about the next twelve months than any eval score. That's the briefing for today. Stay above the noise, and I'll see you tomorrow.";
+
+let utter = null, speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/.test(v.name)) || vs.find(v=>/Alex/.test(v.name)) || vs.find(v=>/en-GB/.test(v.lang)) || vs.find(v=>/en/.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn = document.getElementById('playBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654;'; return; }
+  utter = new SpeechSynthesisUtterance(S);
+  utter.rate = 0.93;
+  const v = pickVoice(); if(v) utter.voice = v;
+  utter.onend = ()=>{ speaking=false; btn.innerHTML='&#9654;'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utter);
+  speaking=true; btn.innerHTML='&#10073;&#10073;';
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
