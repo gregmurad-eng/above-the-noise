@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-26</title>
+<style>
+  :root{ --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.7; }
+  .wrap{ max-width:720px; margin:0 auto; padding:32px 24px 64px; }
+  .masthead{ text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1{ font-size:2.6rem; letter-spacing:2px; margin:0; color:var(--accent); font-variant:small-caps; }
+  .masthead .tag{ font-style:italic; color:var(--text); opacity:.8; font-size:1rem; margin-top:6px; }
+  .masthead .date{ font-size:.85rem; letter-spacing:3px; text-transform:uppercase; margin-top:10px; opacity:.7; }
+  nav{ display:flex; justify-content:space-between; align-items:center; font-size:.9rem; padding:12px 0; border-bottom:1px solid rgba(201,168,76,.3); margin-bottom:24px; }
+  nav.bottom{ border-bottom:none; border-top:1px solid rgba(201,168,76,.3); margin:40px 0 0; }
+  nav a{ color:var(--accent); text-decoration:none; }
+  nav a:hover{ text-decoration:underline; }
+  nav .disabled{ color:var(--text); opacity:.35; pointer-events:none; }
+  .player{ display:flex; align-items:center; gap:14px; background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.3); border-radius:8px; padding:12px 16px; margin-bottom:32px; }
+  .player button{ background:var(--accent); color:var(--bg); border:none; border-radius:50%; width:44px; height:44px; font-size:1.1rem; cursor:pointer; flex:none; }
+  .player button:hover{ opacity:.85; }
+  .player .label{ font-size:.85rem; opacity:.8; }
+  h2{ color:var(--accent); font-size:1.5rem; border-bottom:1px solid rgba(201,168,76,.25); padding-bottom:6px; margin-top:40px; }
+  .kicker{ font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--accent); opacity:.8; margin-bottom:-8px; }
+  a.src{ color:var(--accent); }
+  .brief{ margin:22px 0; }
+  .brief h3{ margin:0 0 4px; font-size:1.1rem; }
+  .signal{ background:rgba(201,168,76,.1); border-left:4px solid var(--accent); border-radius:4px; padding:18px 22px; margin:36px 0; font-style:italic; }
+  .signal strong{ font-style:normal; color:var(--accent); display:block; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; font-size:.8rem; }
+  footer{ margin-top:48px; padding-top:18px; border-top:1px solid rgba(201,168,76,.25); font-size:.78rem; opacity:.6; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, distilled daily for builders.</div>
+    <div class="date">Friday, June 26, 2026</div>
+  </div>
+
+  <nav class="top">
+    <a href="2026-06-25.html">&larr; 2026-06-25</a>
+    <span class="disabled">2026-06-27 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()" aria-label="Play audio briefing">&#9654;</button>
+    <span class="label" id="playLabel">Listen to today's briefing (~4 min)</span>
+  </div>
+
+  <div class="kicker">Lead Story</div>
+  <h2>OpenAI's GPT-5.5-Cyber Tops the Charts While Anthropic Sits Benched</h2>
+  <p>OpenAI this week shipped the full version of <strong>GPT-5.5-Cyber</strong>, a model purpose-built for defensive security work, and it landed with a number designed to make headlines: <strong>85.6% on CyberGym</strong>, the UC Berkeley benchmark that asks an AI agent to reproduce 1,507 known vulnerabilities across 188 open-source projects. That edges out base GPT-5.5 at 81.8%, and — pointedly — beats Anthropic's Mythos 5 at 83.8% and Claude Opus 4 at 73.1%. (<a class="src" href="https://www.axios.com/2026/06/22/openai-rolls-out-more-capable-version-of-cyber-model">Axios</a>)</p>
+  <p>The model is engineered for the entire defensive loop, not a party trick. It reads large codebases, traces attack paths, validates likely vulnerabilities inside a controlled sandbox, writes patches, and tests those patches before handing them to a human reviewer. Access is gated to vetted security firms and researchers, and OpenAI is wrapping it in a new <strong>Daybreak Cyber Partner Program</strong> that lets approved vendors embed GPT-5.5 "with Trusted Access for Cyber" directly into the products they sell. (<a class="src" href="https://the-decoder.com/openai-says-new-gpt-5-5-cyber-outperforms-anthropics-mythos-on-cybersecurity-benchmark/">The Decoder</a>)</p>
+  <p>The subtext is the real story. Earlier this month the U.S. government issued an export-control directive that barred foreign nationals from accessing Anthropic's top-tier Mythos and Fable models on national-security grounds. So the most capable cyber model from one lab is benched for much of the world, and OpenAI just rolled a competitive — and more permissively licensed — alternative into the gap. (<a class="src" href="https://forklog.com/en/openai-launches-gpt-5-5-cyber-amid-anthropic-restrictions/">ForkLog</a>)</p>
+  <p><strong>Why it matters for builders:</strong> Benchmark bragging rights are noise; the access model is the signal. A frontier cyber capability that you can actually license and embed beats a marginally stronger one you can't touch. If you're building security tooling, the question isn't "which model scores higher" but "which model can I ship inside my product without tripping an export wall." Right now that answer points toward OpenAI's Daybreak track — and that distribution advantage, not the 1.8 benchmark points, is what reshapes the market. Watch whether the gating stays narrow or whether "vetted access" quietly becomes the default posture for every frontier capability that touches offense.</p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3>A second Transformer author walks out of DeepMind</h3>
+    <p>Noam Shazeer — co-author of the 2017 "Attention Is All You Need" paper that underpins essentially every modern model — is leaving Google DeepMind for OpenAI. It follows news that Nobel laureate and AlphaFold creator John Jumper is departing DeepMind for Anthropic. The talent reshuffle at the top is accelerating. (<a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-25-2026">BuildFastWithAI</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h3>Micron's revenue quadruples on the memory crunch</h3>
+    <p>Micron posted fiscal Q3 revenue of <strong>$41.46 billion</strong>, up roughly fourfold year over year, driven by an acute AI memory shortage that's reshaping hardware economics. The bottleneck for AI buildout is increasingly memory, not just GPUs. (<a class="src" href="https://techstartups.com/2026/06/25/top-tech-news-today-june-25-2026/">Tech Startups</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h3>Qualcomm buys Modular for ~$4B</h3>
+    <p>Qualcomm is acquiring AI-infra startup Modular in an all-stock deal worth nearly $4 billion, picking up a software stack for running models across heterogeneous processors. The mobile-chip giant wants a credible cross-hardware inference story. (<a class="src" href="https://techstartups.com/2026/06/25/top-tech-news-today-june-25-2026/">Tech Startups</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h3>A vision-language model is now running in orbit</h3>
+    <p>Loft Orbital's YAM-9 satellite is running Google's Gemma 3 on-board — the first deployment of a vision-language model in space. Ground teams can ask it natural-language questions about what it sees, processing imagery locally instead of beaming raw data back to Earth. (<a class="src" href="https://unrot.co/blogs/today-top-10-ai-news-june-25-2026">unrot.co</a>)</p>
+  </div>
+
+  <div class="brief">
+    <h3>ChatGPT slips below 50% share</h3>
+    <p>ChatGPT's market share fell to 46.4% by late May — its first time under half — as Gemini climbed to 27.7% and Claude reached 10.3%. The single-assistant era is fading; assume your users live across several. (<a class="src" href="https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/">The AI Track</a>)</p>
+  </div>
+
+  <div class="signal">
+    <strong>Today's Signal</strong>
+    The frontier is consolidating on capability and fragmenting on access. The model that wins your use case may not be the one at the top of the leaderboard — it'll be the one you're actually allowed to ship. Build for portability: abstract your model layer now, so an export rule, a price change, or a benchmark flip is a config edit, not a rewrite.
+  </div>
+
+  <nav class="bottom">
+    <a href="2026-06-25.html">&larr; 2026-06-25</a>
+    <span class="disabled">2026-06-27 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Friday, June twenty-sixth, twenty twenty-six. Today's lead: OpenAI just shipped the full version of GPT five-point-five Cyber, a model built specifically for defensive security work. It scored eighty-five point six percent on CyberGym, the Berkeley benchmark that asks an AI agent to reproduce over fifteen hundred known vulnerabilities. That beats base GPT five-five, and pointedly, it beats Anthropic's Mythos five and Claude Opus four. But the benchmark isn't the real story. This model runs the entire defensive loop. It reads large codebases, traces attack paths, validates vulnerabilities inside a sandbox, writes patches, and tests those patches before handing them to a human. And OpenAI is wrapping it in a new Daybreak partner program that lets vetted security vendors embed it directly in the products they sell. Here's the subtext. Earlier this month, the U.S. government barred foreign nationals from accessing Anthropic's top-tier models on national-security grounds. So the strongest cyber model from one lab is benched for much of the world, and OpenAI just rolled a competitive, more permissively licensed alternative into that gap. For builders, the lesson is simple. Benchmark points are noise. The access model is the signal. A capability you can actually license and ship beats a slightly stronger one you can't touch. Now, the briefs. One. Noam Shazeer, a co-author of the original Transformer paper, is leaving Google DeepMind for OpenAI. And Nobel laureate John Jumper, who built AlphaFold, is leaving DeepMind for Anthropic. The talent reshuffle at the top is accelerating. Two. Micron posted quarterly revenue of forty-one point four billion dollars, up roughly fourfold year over year, driven by an acute AI memory crunch. The bottleneck is increasingly memory, not just GPUs. Three. Qualcomm is buying AI-infrastructure startup Modular for nearly four billion dollars, picking up a software stack for running models across different processors. Four. Loft Orbital's YAM-9 satellite is now running Google's Gemma three on-board, the first vision-language model deployed in space. Ground teams can ask it questions about what it sees, processing imagery locally instead of beaming raw data home. And five. ChatGPT's market share fell below fifty percent for the first time, to forty-six point four, as Gemini climbed to nearly twenty-eight and Claude reached ten. The single-assistant era is fading. Today's signal. The frontier is consolidating on capability and fragmenting on access. The model that wins your use case may not be the one at the top of the leaderboard. It'll be the one you're actually allowed to ship. So build for portability. Abstract your model layer now, so that an export rule, a price change, or a benchmark flip becomes a config edit, not a rewrite. That's the signal, above the noise. See you tomorrow.";
+
+let speaking=false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/i.test(v.name)) || vs.find(v=>/Alex/i.test(v.name)) || vs.find(v=>/en[-_]US|en[-_]GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn=document.getElementById('playBtn'), lbl=document.getElementById('playLabel');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654;'; lbl.textContent="Listen to today's briefing (~4 min)"; return; }
+  const u=new SpeechSynthesisUtterance(S);
+  u.rate=0.93; const v=pickVoice(); if(v) u.voice=v;
+  u.onend=()=>{ speaking=false; btn.innerHTML='&#9654;'; lbl.textContent="Listen to today's briefing (~4 min)"; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking=true; btn.innerHTML='&#10073;&#10073;'; lbl.textContent="Playing… click to stop";
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged=()=>{}; }
+</script>
+</body>
+</html>
