@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-28</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif;
+    margin:0; padding:0; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:32px 24px 64px; }
+  .masthead { text-align:center; border-bottom:2px solid var(--accent); padding-bottom:18px; margin-bottom:8px; }
+  .masthead h1 { font-size:2.6rem; letter-spacing:2px; margin:0; color:var(--accent); font-weight:normal; }
+  .masthead .tag { font-style:italic; color:var(--text); opacity:.8; font-size:1rem; margin-top:6px; }
+  .masthead .date { letter-spacing:3px; text-transform:uppercase; font-size:.78rem; opacity:.7; margin-top:10px; }
+  nav { display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(201,168,76,.3); border-bottom:1px solid rgba(201,168,76,.3);
+    padding:10px 4px; margin:14px 0 26px; font-size:.92rem; letter-spacing:1px; }
+  nav a { color:var(--accent); text-decoration:none; }
+  nav a:hover { text-decoration:underline; }
+  nav .disabled { color:var(--text); opacity:.32; pointer-events:none; }
+  .player { display:flex; align-items:center; gap:14px; background:rgba(201,168,76,.07);
+    border:1px solid rgba(201,168,76,.3); border-radius:8px; padding:12px 16px; margin-bottom:34px; }
+  .player button { background:var(--accent); color:var(--bg); border:none; border-radius:6px;
+    padding:9px 18px; font-family:inherit; font-size:.92rem; cursor:pointer; letter-spacing:.5px; }
+  .player button:hover { opacity:.88; }
+  .player .label { font-size:.82rem; opacity:.75; font-style:italic; }
+  h2.section { color:var(--accent); font-size:.82rem; letter-spacing:3px; text-transform:uppercase;
+    border-bottom:1px solid rgba(201,168,76,.3); padding-bottom:6px; margin:40px 0 18px; font-weight:normal; }
+  h3.lead { font-size:1.85rem; line-height:1.3; margin:0 0 14px; color:var(--text); }
+  p { margin:0 0 16px; }
+  a.inline { color:var(--accent); }
+  .brief { margin-bottom:22px; }
+  .brief h4 { margin:0 0 5px; font-size:1.12rem; color:var(--text); }
+  .brief h4 a { color:var(--text); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  .brief p { margin:0; font-size:.97rem; opacity:.92; }
+  .signal { background:rgba(201,168,76,.09); border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0; padding:18px 22px; margin:30px 0; }
+  .signal .k { color:var(--accent); font-size:.78rem; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .analysis { font-style:italic; opacity:.9; border-left:2px solid rgba(201,168,76,.4); padding-left:16px; margin:18px 0; }
+  footer { margin-top:48px; padding-top:18px; border-top:1px solid rgba(201,168,76,.3);
+    font-size:.78rem; opacity:.6; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>ABOVE THE NOISE</h1>
+    <div class="tag">Signal from the day's AI &amp; tech, for builders</div>
+    <div class="date">Sunday · June 28, 2026</div>
+  </div>
+
+  <nav>
+    <a href="2026-06-27.html">&larr; 2026-06-27</a>
+    <span class="disabled">2026-06-29 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="label">Audio edition &middot; ~4 min</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="lead">Washington hands Anthropic a narrow door for its most powerful model</h3>
+  <p>The U.S. government has cleared Anthropic to release <strong>Claude Mythos 5</strong> to a restricted set of roughly 100 vetted companies and federal agencies, partially reversing an export-control order that earlier this month barred the model from foreign nationals entirely. Commerce Secretary Howard Lutnick wrote that <a class="inline" href="https://www.cnn.com/2026/06/26/tech/anthropic-mythos-release" target="_blank" rel="noopener">"appropriate safeguards are in place"</a> to let "certain trusted partners" access the model. The reprieve does not extend to Fable, the lighter sibling model, which remains restricted.</p>
+  <p>The backdrop is unusual even by this year's standards. When Anthropic launched Mythos 5 and Fable 5 on June 9, the company billed Mythos as its strongest cybersecurity model to date. Within days, the government invoked national-security concerns and ordered all foreign-national access suspended &mdash; a directive so sweeping that Anthropic disabled the models for its own non-citizen employees to comply. The worry, voiced by security researchers, was concrete: a model that can find and exploit software vulnerabilities faster than any human red team is also a gift to anyone on the other side of that contest.</p>
+  <p>What changed was not the model but the perimeter around it. Rather than ship broadly or not at all, Anthropic spent two weeks negotiating a licensing regime with Commerce &mdash; gated access, named partners, and conditions the public letter only gestures at. The result is a template that may outlast this one model: frontier capability released through a keyhole rather than a front door.</p>
+  <p class="analysis">For solo builders the practical signal is access, not headlines. If the strongest models now ship to "trusted partners" first, the gap between credentialed enterprises and independent developers widens at exactly the capability tier that matters most. Watch whether the partner list is published, how one applies to it, and whether Fable &mdash; the version a small team could actually afford to run &mdash; ever gets the same conditional pass.</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html" target="_blank" rel="noopener">OpenAI mirrors the move</a></h4>
+    <p>OpenAI announced three new models and confirmed it is complying with a U.S. government request to limit the initial rollout to a "small group of trusted partners." Two frontier labs, same gated-release posture in the same week &mdash; the pattern is now policy, not coincidence.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.transparencycoalition.ai/news/ai-legislative-update-june26-2026" target="_blank" rel="noopener">78 chatbot bills, 27 states</a></h4>
+    <p>State legislatures are not waiting on Washington: 78 chatbot-focused bills are alive across 27 states. California sent a ban on AI public-school teachers to Gov. Newsom, Rhode Island signed three AI bills into law, and Arizona's governor vetoed all three of hers. The patchwork is the regulation.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.developersdigest.tech/blog/best-ai-coding-tools-june-2026-post-fable5" target="_blank" rel="noopener">The coding-agent leaderboard tightens</a></h4>
+    <p>On Terminal-Bench 2.1, Codex + GPT-5.5 led at 83.4%, with Claude Code + Fable 5 at 83.1% and Terminus 2 + Fable 5 at 80.4% &mdash; a near-dead-heat at the top. For builders the differentiator is no longer raw score but harness, context, and cost per run.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/" target="_blank" rel="noopener">Gemini 3.5 Pro stretches the context window</a></h4>
+    <p>Google DeepMind's Gemini 3.5 Pro ships a 2-million-token context window and a "Deep Think" mode, paired with a faster 3.5 Flash. The race has quietly shifted from "can it reason" to "how much can it hold in its head at once."</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://startupcorners.com/digest/devtools-digest-2026-06-25" target="_blank" rel="noopener">Agent infrastructure goes mainstream on GitHub</a></h4>
+    <p>GitHub trending is now dominated by skill registries, plugin systems, and orchestration runtimes &mdash; including ByteDance's open-source deer-flow super-agent. The community stopped debating whether agents are real and started shipping the plumbing to run more of them.</p>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <span class="k">The pattern under the noise</span>
+    <p>This week the question stopped being <em>"are AI agents real?"</em> and became <em>"which part of my stack gets agentized first?"</em> When the strongest models ship through gated licenses and the dev world races to build orchestration plumbing, the leverage moves to whoever can wire reliable agent workflows around whatever capability they can actually get their hands on. For a solo builder running several products at once, that is the whole game: not the frontier model you can't access, but the dependable system you can assemble around the ones you can.</p>
+  </div>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.<br>
+    Above The Noise &middot; 2026-06-28
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Sunday, June twenty-eighth, twenty twenty-six. Today's lead: Washington hands Anthropic a narrow door for its most powerful model. The U.S. government has cleared Anthropic to release Claude Mythos 5 to a restricted set of roughly one hundred vetted companies and federal agencies. This partially reverses an export-control order that, earlier this month, barred the model from foreign nationals entirely. Commerce Secretary Howard Lutnick wrote that appropriate safeguards are in place to let certain trusted partners access the model. The reprieve does not extend to Fable, the lighter sibling model, which stays restricted. The backdrop is unusual even by this year's standards. When Anthropic launched Mythos 5 and Fable 5 on June ninth, it billed Mythos as its strongest cybersecurity model to date. Within days, the government invoked national-security concerns and ordered all foreign-national access suspended, a directive so sweeping that Anthropic disabled the models for its own non-citizen employees to comply. The worry was concrete: a model that can find and exploit software vulnerabilities faster than any human red team is also a gift to anyone on the other side of that contest. What changed was not the model but the perimeter around it. Rather than ship broadly or not at all, Anthropic spent two weeks negotiating a licensing regime with Commerce: gated access, named partners, and conditions the public letter only gestures at. The result is a template that may outlast this one model. Frontier capability released through a keyhole rather than a front door. For solo builders, the practical signal is access, not headlines. If the strongest models now ship to trusted partners first, the gap between credentialed enterprises and independent developers widens at exactly the capability tier that matters most. Now, the briefs. One. OpenAI mirrored the move, announcing three new models and confirming it is complying with a government request to limit the initial rollout to a small group of trusted partners. Two frontier labs, same posture, same week. Two. State legislatures are not waiting on Washington. Seventy-eight chatbot-focused bills are alive across twenty-seven states. California sent a ban on A-I public-school teachers to the governor, Rhode Island signed three A-I bills into law, and Arizona's governor vetoed all three of hers. Three. The coding-agent leaderboard tightened. On Terminal-Bench two-point-one, Codex with G-P-T five-point-five led at eighty-three-point-four percent, with Claude Code and Fable 5 right behind. The differentiator is no longer raw score but harness, context, and cost. Four. Google's Gemini three-point-five Pro shipped a two-million-token context window and a Deep Think mode. The race has shifted from can it reason to how much can it hold in its head at once. Five. Agent infrastructure went mainstream on GitHub, with skill registries, plugin systems, and orchestration runtimes dominating the trending list. Today's signal: the question stopped being are A-I agents real, and became which part of my stack gets agentized first. The leverage now belongs to whoever can wire reliable agent workflows around whatever capability they can actually get their hands on. For a builder running several products at once, that is the whole game. Not the frontier model you can't access, but the dependable system you can assemble around the ones you can. That's the signal above the noise. See you tomorrow.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) ||
+         vs.find(v => /Alex/i.test(v.name)) ||
+         vs.find(v => /en[-_]US|en[-_]GB/i.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false; btn.innerHTML = '&#9654; Listen'; return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice(); if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.innerHTML = '&#9654; Listen'; };
+  window.speechSynthesis.speak(u);
+  speaking = true; btn.innerHTML = '&#9632; Stop';
+}
+if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
