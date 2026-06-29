@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-29</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8c7f63;
+    --line: #2a2418;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+    font-size: 18px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 64px; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
+  .nav.bottom { border-bottom: none; border-top: 1px solid var(--line); margin-top: 48px; }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .nav .disabled { color: var(--muted); cursor: default; }
+  .masthead { text-align: center; padding: 40px 0 8px; border-bottom: 2px solid var(--accent); }
+  .masthead h1 {
+    font-size: 44px;
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .masthead .tagline { color: var(--muted); font-style: italic; font-size: 16px; margin-top: 6px; }
+  .masthead .date { color: var(--text); font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 14px; }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #14100a;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 28px 0;
+  }
+  .player button {
+    background: var(--accent);
+    color: #0d0a06;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .player button:hover { background: #ddbf63; }
+  .player .label { color: var(--muted); font-size: 14px; font-style: italic; }
+  h2.section {
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin: 44px 0 18px;
+    font-weight: normal;
+  }
+  .lead h3 { font-size: 30px; line-height: 1.25; margin: 0 0 6px; color: var(--text); font-weight: normal; }
+  .lead .dek { color: var(--muted); font-style: italic; font-size: 19px; margin-bottom: 22px; }
+  p { margin: 0 0 18px; }
+  a.inline { color: var(--accent); }
+  .analysis {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+    margin: 24px 0;
+    color: var(--text);
+    background: #110d08;
+  }
+  .analysis .tag { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 6px; }
+  .brief { margin-bottom: 26px; }
+  .brief h4 { font-size: 21px; margin: 0 0 4px; color: var(--text); font-weight: normal; }
+  .brief h4 a { color: var(--text); text-decoration: none; }
+  .brief h4 a:hover { color: var(--accent); }
+  .signal {
+    background: #161009;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 26px 28px;
+    margin: 28px 0;
+  }
+  .signal .tag { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 10px; }
+  .signal p { margin-bottom: 0; font-size: 19px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 13px; text-align: center; font-style: italic; }
+  .src { font-size: 14px; color: var(--muted); }
+  .src a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav top">
+    <a href="2026-06-28.html">&larr; 2026-06-28</a>
+    <span class="disabled">2026-06-30 &rarr;</span>
+  </div>
+
+  <div class="masthead">
+    <h1>ABOVE THE NOISE</h1>
+    <div class="tagline">Signal over volume — the day in AI, for people who build</div>
+    <div class="date">Monday, June 29, 2026</div>
+  </div>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9658; Listen</button>
+    <span class="label">Hear today's edition &mdash; about 4 minutes</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <div class="lead">
+    <h3>The race stops being about bigger models</h3>
+    <div class="dek">A custom chip, a cost revolt, and a quiet pivot to efficiency mark the end of the "tokenmaxxing" era.</div>
+
+    <p>For three years the AI story was a single number going up: parameters, context windows, benchmark scores. This week the story changed shape. OpenAI and Broadcom <a class="inline" href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/">unveiled Jalapeño</a>, OpenAI's first custom inference chip — a reticle-sized ASIC taken from design to tape-out in nine months, which the companies call possibly the fastest high-performance silicon cycle ever achieved. It is not a training accelerator and not a general-purpose part. It is purpose-built to make inference cheaper per watt, and OpenAI used its own models to speed the chip's design.</p>
+
+    <p>The timing is the tell. Days earlier, CNBC reported that customers are shifting from "tokenmaxxing" — throwing ever more tokens at a problem — toward squeezing cost and latency out of what they already run. The pressure is real enough that the CEO of AI startup Lindy moved 100% of his company's traffic off Claude to DeepSeek's cheaper open-weight models. When a frontier-app builder switches providers to save money, the market is telling you that raw capability is no longer the only axis of competition.</p>
+
+    <p>Jalapeño is OpenAI's answer to that pressure: own the silicon, own the margin. Initial deployment targets the end of 2026, scaling into gigawatt data centers with Microsoft and other partners. The bet is that whoever controls the full stack — model, chip, and datacenter — wins the next phase not by having the smartest model, but the cheapest competent one running at scale.</p>
+
+    <p>For a solo builder, this is the more useful frame. The question for the back half of 2026 is no longer "which model is best" but "what is the cheapest model that clears my quality bar, and can I move between providers without rewriting everything." That is a buildable, defensible position — and it is suddenly where the whole industry is pointed.</p>
+
+    <div class="analysis">
+      <span class="tag">The Analysis</span>
+      <p>Vertical integration is a moat for hyperscalers and a warning for everyone renting their compute. If OpenAI drives its own inference cost down with custom silicon, it can undercut on price while keeping margin — squeezing pure-API resellers from both sides. The hedge for small builders is portability: design around an abstraction layer so swapping OpenAI for DeepSeek or a local open-weight model is a config change, not a rebuild. Efficiency just became a feature, not an afterthought.</p>
+    </div>
+  </div>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.anthropic.com/news">Anthropic accuses Alibaba's Qwen of a record "distillation attack"</a></h4>
+    <p>In a letter to US Senators, Anthropic alleged that Alibaba's Qwen lab ran the largest known distillation attack against Claude — roughly 25,000 fraudulent accounts over six weeks driving 28.8 million exchanges between April 22 and June 5, harvesting outputs to train a rival. The accounts behaved like ordinary users, which is exactly what makes the abuse hard to detect. For anyone running a public API, it is a reminder that your outputs are training data for someone.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">Washington gates frontier releases on national security</a></h4>
+    <p>The White House executive order "Promoting Advanced AI Innovation and Security" set up a voluntary framework for developers to give the government pre-release model access for security review. Downstream, OpenAI's GPT-5.6 is reportedly going out in limited preview only, approved "customer by customer" until a general release clears. The era of surprise midnight model drops may be ending for the frontier labs.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://aitoolsrecap.com/Blog/ai-news-june-26-2026">Google bleeds talent as Gemini 3.5 slips</a></h4>
+    <p>In a single week Google lost Noam Shazeer to OpenAI and Nobel laureate John Jumper to Anthropic, while Gemini 3.5 Pro missed its June launch target. The departures and delay rattled investors. For builders, the practical read is to not over-index a roadmap on any one lab's next release — schedules and the people behind them are moving faster than the press releases.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.gunder.com/en/news-insights/insights/2026-ai-laws-update-key-regulations-and-practical-guidance">Colorado's AI Act takes effect tomorrow</a></h4>
+    <p>The Colorado AI Act is slated to come into force June 30, imposing a duty of "reasonable care" to avoid algorithmic discrimination on developers and deployers of high-risk AI systems. If your app makes consequential decisions about people — hiring, lending, housing, education — this is the first US state law with teeth you will want to read, even as a solo shop.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/">Open-weight challengers reshape the cost map</a></h4>
+    <p>TechCrunch argues the story is no longer OpenAI vs. Anthropic but frontier labs vs. cheap, capable open-weight models. DeepSeek and Qwen keep pulling price-sensitive traffic, and both leading US labs reportedly filed confidentially for IPOs this month. The middle of the market — good-enough quality at a fraction of the cost — is where the volume is heading.</p>
+  </div>
+
+  <div class="signal">
+    <span class="tag">Today's Signal</span>
+    <p>Build for portability, not loyalty. The week's news — custom chips, a cost revolt, open-weight defections — all point the same way: the winning move for a small builder is an inference layer you can re-point in an afternoon. Pick a quality bar, then route to the cheapest model that clears it. Treat your model provider like a commodity supplier, because in the second half of 2026 that is what it is becoming.</p>
+  </div>
+
+  <footer>
+    <p>Above The Noise &middot; Content is AI-synthesized. Links point to original sources.</p>
+  </footer>
+
+  <div class="nav bottom">
+    <a href="2026-06-28.html">&larr; 2026-06-28</a>
+    <span class="disabled">2026-06-30 &rarr;</span>
+  </div>
+
+</div>
+
+<script>
+const S = "Above The Noise. Monday, June twenty-ninth, twenty twenty-six. Signal over volume, the day in A.I. for people who build. Today's lead. The race stops being about bigger models. For three years the A.I. story was a single number going up. Parameters, context windows, benchmark scores. This week, the story changed shape. OpenAI and Broadcom unveiled Jalapeño, OpenAI's first custom inference chip. A reticle-sized chip taken from design to tape-out in just nine months, which the companies call possibly the fastest high-performance silicon cycle ever achieved. It is not a training accelerator and not a general-purpose part. It is purpose-built to make inference cheaper per watt, and OpenAI used its own models to speed the chip's design. The timing is the tell. Days earlier, customers began shifting from tokenmaxxing, throwing ever more tokens at a problem, toward squeezing cost and latency out of what they already run. The pressure is real enough that the chief executive of the startup Lindy moved one hundred percent of his company's traffic off Claude to DeepSeek's cheaper open-weight models. When a frontier-app builder switches providers to save money, the market is telling you that raw capability is no longer the only axis of competition. Jalapeño is OpenAI's answer. Own the silicon, own the margin. The bet is that whoever controls the full stack, model, chip, and datacenter, wins the next phase not by having the smartest model, but the cheapest competent one running at scale. For a solo builder, the question for the back half of twenty twenty-six is no longer which model is best, but what is the cheapest model that clears my quality bar, and can I move between providers without rewriting everything. The analysis. Vertical integration is a moat for the giants and a warning for everyone renting their compute. The hedge for small builders is portability. Design around an abstraction layer so swapping one provider for another is a config change, not a rebuild. Now, the briefs. One. Anthropic accused Alibaba's Qwen lab of the largest known distillation attack against Claude. Roughly twenty-five thousand fraudulent accounts over six weeks, driving nearly twenty-nine million exchanges to harvest outputs and train a rival. A reminder that your A.P.I. outputs are training data for someone. Two. The White House set up a voluntary framework for developers to give the government pre-release model access for security review. Downstream, OpenAI's G.P.T. five point six is reportedly shipping in limited preview only, approved customer by customer. The era of surprise midnight model drops may be ending. Three. In a single week, Google lost Noam Shazeer to OpenAI and Nobel laureate John Jumper to Anthropic, while Gemini three point five Pro missed its June launch target. Don't over-index your roadmap on any one lab's next release. Four. Colorado's A.I. Act takes effect tomorrow, imposing a duty of reasonable care to avoid algorithmic discrimination on high-risk systems. If your app makes consequential decisions about people, read it. Five. The story is no longer OpenAI versus Anthropic, but frontier labs versus cheap, capable open-weight models. DeepSeek and Qwen keep pulling price-sensitive traffic. Today's signal. Build for portability, not loyalty. Custom chips, a cost revolt, open-weight defections, all point the same way. The winning move for a small builder is an inference layer you can re-point in an afternoon. Pick a quality bar, then route to the cheapest model that clears it. Treat your model provider like a commodity supplier, because in the second half of twenty twenty-six, that is what it is becoming. That's the edition. Content is A.I. synthesized. Build well.";
+
+let speaking = false;
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  const pref = ['Daniel', 'Alex'];
+  for (const name of pref) {
+    const v = voices.find(x => x.name && x.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(x => x.lang && x.lang.startsWith('en')) || voices[0] || null;
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  if (speaking) {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.innerHTML = '&#9658; Listen';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.innerHTML = '&#9658; Listen'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true;
+  btn.innerHTML = '&#10073;&#10073; Stop';
+}
+if (typeof speechSynthesis !== 'undefined') {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
