@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-06-30</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif;
+         margin:0; padding:0; line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:28px 22px 60px; }
+  .nav { display:flex; justify-content:space-between; align-items:center;
+         border-top:1px solid rgba(201,168,76,.3); border-bottom:1px solid rgba(201,168,76,.3);
+         padding:10px 0; margin:10px 0; font-size:.9rem; letter-spacing:.5px; }
+  .nav a { color:var(--accent); text-decoration:none; }
+  .nav a:hover { text-decoration:underline; }
+  .nav .disabled { color:rgba(224,212,184,.35); pointer-events:none; }
+  .masthead { text-align:center; padding:18px 0 6px; }
+  .masthead h1 { font-size:2.5rem; margin:0; letter-spacing:2px; color:var(--accent);
+                 font-variant:small-caps; }
+  .masthead .tag { font-style:italic; color:rgba(224,212,184,.7); font-size:.95rem; margin-top:4px; }
+  .masthead .date { font-size:.85rem; letter-spacing:2px; text-transform:uppercase;
+                    color:rgba(224,212,184,.55); margin-top:8px; }
+  .player { display:flex; align-items:center; gap:14px; background:rgba(201,168,76,.07);
+            border:1px solid rgba(201,168,76,.25); border-radius:8px; padding:12px 16px; margin:18px 0; }
+  .player button { background:var(--accent); color:var(--bg); border:none; border-radius:50%;
+                   width:46px; height:46px; font-size:1.1rem; cursor:pointer; flex-shrink:0; }
+  .player button:hover { background:#dcbd5e; }
+  .player .label { font-size:.9rem; color:rgba(224,212,184,.8); }
+  h2.section { color:var(--accent); font-size:.85rem; letter-spacing:3px; text-transform:uppercase;
+               border-bottom:1px solid rgba(201,168,76,.3); padding-bottom:6px; margin:38px 0 16px; }
+  h3.lead { font-size:1.7rem; line-height:1.3; margin:0 0 12px; }
+  article p { margin:0 0 16px; }
+  a.src { color:var(--accent); text-decoration:none; border-bottom:1px dotted rgba(201,168,76,.5); }
+  a.src:hover { border-bottom-style:solid; }
+  .brief { margin-bottom:22px; }
+  .brief h4 { margin:0 0 5px; font-size:1.12rem; color:#f0e4c4; }
+  .brief p { margin:0; color:rgba(224,212,184,.88); }
+  .signal { background:rgba(201,168,76,.09); border-left:3px solid var(--accent);
+            border-radius:0 8px 8px 0; padding:18px 22px; margin:30px 0; }
+  .signal h2 { color:var(--accent); font-size:.85rem; letter-spacing:3px; text-transform:uppercase; margin:0 0 8px; }
+  .signal p { margin:0; font-style:italic; font-size:1.08rem; }
+  .analysis { font-style:italic; color:rgba(224,212,184,.78); border-left:2px solid rgba(201,168,76,.4);
+              padding-left:16px; margin:0 0 16px; }
+  footer { margin-top:46px; padding-top:18px; border-top:1px solid rgba(201,168,76,.3);
+           font-size:.8rem; color:rgba(224,212,184,.5); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The day's AI &amp; tech, distilled for builders</div>
+    <div class="date">Tuesday · June 30, 2026</div>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-29.html">← 2026-06-29</a>
+    <span class="disabled">2026-07-01 →</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" aria-label="Play audio briefing">▶</button>
+    <span class="label" id="playLabel">Listen — ~4 min audio briefing</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <article>
+    <h3 class="lead">OpenAI previews GPT-5.6 — and splits it into three</h3>
+    <p>OpenAI on June 26 pulled back the curtain on the <a class="src" href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">GPT-5.6 series</a>, what the company calls its most significant architecture change since GPT-5. Rather than ship a single monolith, OpenAI is splitting the family into three named tiers, each tuned to a different point on the cost-capability curve.</p>
+    <p>At the top sits <strong>Sol</strong>, the flagship aimed at genuinely hard problems — long-horizon reasoning, research-grade coding, the work where you'd happily pay for the best answer. In the middle is <strong>Terra</strong>, pitched as the balanced everyday model: OpenAI claims it matches GPT-5.5's quality while costing roughly half as much per token. At the bottom is <strong>Luna</strong>, the fast, cheap volume model for the high-throughput tasks where latency and price matter more than raw intelligence.</p>
+    <p>The naming is the tell. For two years the frontier labs competed on a single number that kept climbing; the interesting move now is segmentation. OpenAI is conceding that most production traffic does not need the flagship, and that the real margin war is over the Terra-shaped middle — good-enough quality at a price that makes per-request economics work at scale. Access to the preview is gated, with the company citing the usual safety-evaluation runway before broad availability.</p>
+    <p class="analysis">For solo builders, this is the more consequential trend than any benchmark bump. A 2x price cut on a GPT-5.5-class model changes which features are economically viable to ship — background agents, per-user personalization, always-on summarization. If Terra holds up, the calculus for routing cheap calls to Luna and reserving Sol for the hard 5% becomes the default architecture, not a clever optimization. Watch the actual per-token pricing when it lands; the preview framing is generous and the real numbers are what move roadmaps.</p>
+  </article>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>US government clears a limited release of Anthropic's Mythos</h4>
+    <p>Commerce Secretary Howard Lutnick determined "appropriate safeguards are in place" to let trusted partners access <a class="src" href="https://www.cnn.com/2026/06/26/tech/anthropic-mythos-release" target="_blank" rel="noopener">Claude Mythos 5</a>, Anthropic's strongest cybersecurity model, after an export block earlier in June over fears it could supercharge attackers. A weaker, guardrailed sibling (Fable 5) ships more broadly with cyber and bio queries blocked.</p>
+  </div>
+
+  <div class="brief">
+    <h4>Google throttles Meta's Gemini compute, rents from SpaceX</h4>
+    <p>Google reportedly <a class="src" href="https://techstartups.com/2026/06/29/top-tech-news-today-june-29-2026/" target="_blank" rel="noopener">capped Meta's access</a> to its models after Meta requested more capacity than Google could supply, delaying some of Meta's internal projects. Google has since limited other clients too — and signed a deal to rent additional cloud capacity from Elon Musk's SpaceX.</p>
+  </div>
+
+  <div class="brief">
+    <h4>Microsoft expands its in-house MAI model lineup</h4>
+    <p>Microsoft AI is filling out the <a class="src" href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/" target="_blank" rel="noopener">MAI family</a> — including the MAI-Thinking-1 reasoning model and MAI-Code-1-Flash for coding — part of a clear push to lower its dependence on OpenAI and cut token costs for developers building on Azure.</p>
+  </div>
+
+  <div class="brief">
+    <h4>South Korea unveils a sweeping chip-and-AI plan</h4>
+    <p>Seoul announced a major semiconductor and AI investment package <a class="src" href="https://techstartups.com/2026/06/29/top-tech-news-today-june-29-2026/" target="_blank" rel="noopener">centered on Samsung and SK Hynix</a> — new fabs, expanded high-bandwidth memory production, AI data centers and robotics — aimed at locking in Korea's place in the global AI chip supply chain.</p>
+  </div>
+
+  <div class="brief">
+    <h4>8090 raises $135M Series A; Chamath takes the CEO seat</h4>
+    <p>AI software-factory startup 8090 <a class="src" href="https://techstartups.com/2026/06/29/top-tech-news-today-june-29-2026/" target="_blank" rel="noopener">closed a $135M round</a> led by Salesforce Ventures to scale its platform. Investor Chamath Palihapitiya confirmed a return to full-time operating, stepping in directly as the company's CEO.</p>
+  </div>
+
+  <div class="signal">
+    <h2>Today's Signal</h2>
+    <p>The frontier stopped being one number. Within a week we got tiered model families from OpenAI and Microsoft, a government carving the difference between a cyber-capable model and its guardrailed twin, and Google rationing compute like a scarce commodity. The story of mid-2026 isn't "how smart" — it's who gets which capability, at what price, under whose terms.</p>
+  </div>
+
+  <nav class="nav">
+    <a href="2026-06-29.html">← 2026-06-29</a>
+    <span class="disabled">2026-07-01 →</span>
+  </nav>
+
+  <footer>
+    Above The Noise · June 30, 2026<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Tuesday, June 30th, 2026. Here's the day's A-I and tech, distilled for builders. " +
+"Today's lead story: OpenAI previews G-P-T five point six, and splits it into three. " +
+"On June 26th, OpenAI pulled back the curtain on the G-P-T five point six series, what it calls its most significant architecture change since G-P-T five. Rather than ship a single monolith, OpenAI is splitting the family into three named tiers, each tuned to a different point on the cost-capability curve. " +
+"At the top sits Sol, the flagship aimed at genuinely hard problems: long-horizon reasoning, research-grade coding, the work where you'd happily pay for the best answer. In the middle is Terra, pitched as the balanced everyday model. OpenAI claims it matches G-P-T five point five's quality while costing roughly half as much per token. At the bottom is Luna, the fast, cheap volume model for high-throughput tasks where latency and price matter more than raw intelligence. " +
+"The naming is the tell. For two years the frontier labs competed on a single number that kept climbing. The interesting move now is segmentation. OpenAI is conceding that most production traffic does not need the flagship, and that the real margin war is over the Terra-shaped middle: good-enough quality at a price that makes per-request economics work at scale. " +
+"Here's why that matters for solo builders. A two-times price cut on a five point five class model changes which features are economically viable to ship. Background agents, per-user personalization, always-on summarization. If Terra holds up, routing cheap calls to Luna and reserving Sol for the hard five percent becomes the default architecture, not a clever optimization. Watch the actual per-token pricing when it lands. " +
+"Now, the briefs. " +
+"First. The U-S government cleared a limited release of Anthropic's Mythos. Commerce Secretary Howard Lutnick said appropriate safeguards are in place to let trusted partners access Claude Mythos five, Anthropic's strongest cybersecurity model, after an export block earlier in June. A weaker, guardrailed sibling called Fable five ships more broadly, with cyber and bio queries blocked. " +
+"Second. Google throttled Meta's access to its models after Meta asked for more capacity than Google could supply, delaying some of Meta's internal projects. Google has since limited other clients too, and signed a deal to rent additional cloud capacity from Elon Musk's SpaceX. " +
+"Third. Microsoft is expanding its in-house M-A-I model lineup, including a reasoning model and a coding model, part of a clear push to lower its dependence on OpenAI and cut token costs for developers on Azure. " +
+"Fourth. South Korea unveiled a sweeping chip-and-A-I plan centered on Samsung and S-K Hynix: new fabs, more high-bandwidth memory, A-I data centers and robotics, aimed at locking in Korea's place in the global chip supply chain. " +
+"And fifth. A-I software startup eighty-ninety raised a one hundred thirty-five million dollar Series A led by Salesforce Ventures, with investor Chamath Palihapitiya stepping in as full-time C-E-O. " +
+"Today's signal. The frontier stopped being one number. Within a week we got tiered model families from OpenAI and Microsoft, a government carving the difference between a cyber-capable model and its guardrailed twin, and Google rationing compute like a scarce commodity. The story of mid-2026 isn't how smart. It's who gets which capability, at what price, under whose terms. " +
+"That's the noise, risen above. See you tomorrow.";
+
+(function(){
+  const btn = document.getElementById('playBtn');
+  const label = document.getElementById('playLabel');
+  let speaking = false, u = null;
+  function pickVoice(){
+    const vs = window.speechSynthesis.getVoices();
+    return vs.find(v=>/daniel/i.test(v.name)) || vs.find(v=>/alex/i.test(v.name)) ||
+           vs.find(v=>/en[-_]US/i.test(v.lang)) || vs[0] || null;
+  }
+  function start(){
+    window.speechSynthesis.cancel();
+    u = new SpeechSynthesisUtterance(S);
+    u.rate = 0.93;
+    const v = pickVoice(); if(v) u.voice = v;
+    u.onend = ()=>{ speaking=false; btn.textContent='▶'; label.textContent='Listen — ~4 min audio briefing'; };
+    u.onerror = ()=>{ speaking=false; btn.textContent='▶'; };
+    window.speechSynthesis.speak(u);
+    speaking=true; btn.textContent='❚❚'; label.textContent='Playing… (tap to stop)';
+  }
+  function stop(){ window.speechSynthesis.cancel(); speaking=false; btn.textContent='▶'; label.textContent='Listen — ~4 min audio briefing'; }
+  btn.addEventListener('click', ()=> speaking ? stop() : start());
+  if(typeof speechSynthesis!=='undefined' && speechSynthesis.onvoiceschanged!==undefined){
+    speechSynthesis.onvoiceschanged = pickVoice;
+  }
+})();
+</script>
+</body>
+</html>
