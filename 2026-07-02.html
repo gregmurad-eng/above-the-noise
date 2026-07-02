@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-07-02</title>
+<style>
+  :root{--bg:#0d0a06;--accent:#c9a84c;--text:#e0d4b8;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.65;}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 22px 60px;}
+  .masthead{text-align:center;border-bottom:2px solid var(--accent);padding-bottom:16px;margin-bottom:8px;}
+  .masthead h1{font-size:2.6rem;letter-spacing:1px;margin:0;color:var(--accent);font-variant:small-caps;}
+  .masthead .tag{font-style:italic;color:#b6a880;font-size:.95rem;margin-top:4px;}
+  .masthead .date{font-size:.9rem;letter-spacing:3px;text-transform:uppercase;margin-top:10px;color:#9c8f6a;}
+  nav{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;padding:12px 0;border-bottom:1px solid #2a2418;margin-bottom:24px;}
+  nav.bottom{border-bottom:none;border-top:1px solid #2a2418;margin-top:40px;margin-bottom:0;}
+  nav a{color:var(--accent);text-decoration:none;}
+  nav a:hover{text-decoration:underline;}
+  nav .disabled{color:#4a4636;cursor:default;}
+  .player{display:flex;align-items:center;gap:14px;background:#161009;border:1px solid #2f2717;border-radius:8px;padding:12px 16px;margin-bottom:32px;}
+  .player button{background:var(--accent);color:#0d0a06;border:none;border-radius:5px;padding:8px 16px;font-family:inherit;font-size:.9rem;font-weight:bold;cursor:pointer;}
+  .player button:hover{background:#dcbb5c;}
+  .player .plabel{font-size:.85rem;color:#9c8f6a;}
+  h2.section{color:var(--accent);font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid #2a2418;padding-bottom:6px;margin-top:40px;}
+  .lead h3{font-size:1.7rem;line-height:1.25;margin:14px 0 6px;}
+  .lead .kicker{color:var(--accent);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
+  .lead p{margin:14px 0;}
+  .analysis{background:#141009;border-left:3px solid var(--accent);padding:14px 18px;margin:20px 0;font-size:.98rem;}
+  .analysis strong{color:var(--accent);}
+  .brief{margin:22px 0;}
+  .brief h4{margin:0 0 4px;font-size:1.15rem;}
+  .brief h4 a{color:var(--text);text-decoration:none;border-bottom:1px dotted #6b6144;}
+  .brief h4 a:hover{color:var(--accent);}
+  .brief p{margin:6px 0;font-size:.96rem;color:#cfc2a2;}
+  .signal{background:#1a1305;border:1px solid var(--accent);border-radius:8px;padding:22px 24px;margin:30px 0;}
+  .signal .slabel{color:var(--accent);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;}
+  .signal p{margin:10px 0 0;font-size:1.05rem;}
+  a.src{color:var(--accent);}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid #2a2418;font-size:.8rem;color:#7a7050;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">The signal in AI &amp; tech, for people who build.</div>
+    <div class="date">Thursday · July 2, 2026</div>
+  </header>
+
+  <nav class="top">
+    <a href="2026-07-01.html">&larr; 2026-07-01</a>
+    <span class="disabled">2026-07-03 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
+    <span class="plabel">Audio edition · ~4 min · read aloud</span>
+  </div>
+
+  <section class="lead">
+    <h2 class="section">Lead Story</h2>
+    <div class="kicker">Frontier Models</div>
+    <h3>Claude Sonnet 5 ships as the new default — and California puts it in every agency</h3>
+    <p>Anthropic released <a class="src" href="https://www.anthropic.com/news">Claude Sonnet 5</a> on June 30 and, starting July 1, made it the default model for every Free and Pro user. The pitch is efficiency at the frontier: Anthropic calls it the most agentic Sonnet it has built, claims it performs close to the flagship Opus 4.8 on many tasks, and priced it below the outgoing Sonnet 4.6 through an introductory window. API pricing lands at $2 per million input tokens and $10 per million output through August 31 — a deliberate move to make agentic workloads cheap enough to run at scale.</p>
+    <p>The same 48 hours brought the deployment story that actually matters for adoption. California Governor Gavin Newsom announced what his office is calling the largest state-government AI rollout in U.S. history: every California state agency, plus any city or county that opts in, can access Claude at a 50% discount through a new Statewide Information Technology Shared Services portal. That is procurement doing what a benchmark never can — turning a model release into a standing government dependency across thousands of offices.</p>
+    <p>Put the two together and the shape of mid-2026 comes into focus. The competitive edge is no longer a single eval score; it is the combination of a good-enough frontier model, aggressive per-token pricing, and distribution deals that embed a vendor into public infrastructure. Sonnet 5 becoming the free-tier default means the median user is now interacting with a model built to take multi-step actions, not just answer questions. California becoming an anchor customer means an entire government workforce starts building habits and workflows around one provider.</p>
+    <p>For a solo builder, the read is practical. Cheaper agentic tokens change what is worth automating — background jobs, multi-step research, document pipelines that were marginal at last year's prices now pencil out. And when a model becomes the default for tens of millions of people plus a state government overnight, the interface conventions it establishes quietly become the conventions everyone else has to design around.</p>
+    <div class="analysis">
+      <strong>Why it matters:</strong> The winners this cycle aren't decided by who tops a leaderboard for a week — they're decided by price-per-useful-action and by who gets written into a government contract. Sonnet 5 lowers the cost of shipping agentic features; the California deal shows the distribution game has moved from consumer apps to institutional procurement. Watch pricing after August 31, because the introductory rate is the acquisition cost, not the steady state.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section">The Briefs</h2>
+
+    <div class="brief">
+      <h4><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">White House AI security order puts federal agencies on a 30-day clock</a></h4>
+      <p>A June executive order directs federal agencies to harden systems with AI-enabled cyber defenses and stand up an AI cybersecurity clearinghouse to coordinate vulnerability scanning, validation, and patch distribution with industry — most of it due within 30 days. Signal for builders: expect procurement and compliance language around AI security to tighten fast.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.esecurityplanet.com/weekly-roundup/massive-breaches-ai-risks-and-critical-vulnerabilities-define-this-week-in-cybersecurity-in-june-2026/">Time-to-exploit has gone negative</a></h4>
+      <p>Mandiant's M-Trends 2026 reports that exploits now routinely arrive before patches, with roughly 28% of CVEs exploited within 24 hours of disclosure. Verizon's DBIR adds that software vulnerabilities have overtaken stolen passwords as the top breach entry point. If you ship code, dependency hygiene is now a frontline security control, not housekeeping.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.artificialintelligence-news.com/">EU pushes back on Apple over delayed Siri AI in Europe</a></h4>
+      <p>EU tech chief Henna Virkkunen met Tim Cook after Apple delayed upgraded Siri features in Europe, blaming the Digital Markets Act for interoperability and privacy conflicts. The standoff is a preview of how AI feature rollouts will keep colliding with regional regulation — and why "ship everywhere at once" is getting harder.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.devflokers.com/blog/open-source-ai-roundup-june-2026">Open weights keep closing the gap</a></h4>
+      <p>Zhipu AI's GLM-5.2 shipped mid-June under a permissive MIT license with a usable million-token context window, giving builders a high-capacity local alternative to closed APIs. Combined with lighter agent frameworks like Hugging Face's smolagents, the self-hosted path is more viable than it was six months ago.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://www.weforum.org/stories/2026/06/ai-cybercrime-and-other-cybersecurity-news/">UN launches AI for Good Global Commission</a></h4>
+      <p>The UN and ITU are convening tech leaders and heads of state in a shared AI governance forum, first meeting July 8 in Geneva. Whatever its practical teeth, it signals that AI policy coordination is going international — another set of norms builders will eventually design around.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="signal">
+      <div class="slabel">Today's Signal</div>
+      <p>Cheap agentic tokens are the real headline. When multi-step model actions cost cents instead of dollars, the bottleneck stops being the model and becomes your imagination about what's worth automating. Pick one recurring chore in your own stack this week — a research digest, a triage step, a doc pipeline — and wire an agent to it. The economics finally favor the person who ships small automations, not the one waiting for the perfect model.</p>
+    </div>
+  </section>
+
+  <nav class="bottom">
+    <a href="2026-07-01.html">&larr; 2026-07-01</a>
+    <span class="disabled">2026-07-03 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Thursday, July second, twenty twenty-six. Here's the signal in A-I and tech, for people who build. Our lead story. Claude Sonnet 5 ships as the new default, and California puts it in every agency. Anthropic released Claude Sonnet 5 on June thirtieth, and starting July first made it the default model for every free and pro user. The pitch is efficiency at the frontier. Anthropic calls it the most agentic Sonnet it has built, claims it performs close to the flagship Opus 4.8 on many tasks, and priced it below the outgoing Sonnet 4.6. A-P-I pricing lands at two dollars per million input tokens and ten dollars per million output, through August thirty-first. That's a deliberate move to make agentic workloads cheap enough to run at scale. But the same forty-eight hours brought the deployment story that actually matters for adoption. California Governor Gavin Newsom announced the largest state government A-I rollout in U-S history. Every California state agency, plus any city or county that opts in, can access Claude at a fifty percent discount through a new statewide shared services portal. That's procurement doing what a benchmark never can. It turns a model release into a standing government dependency across thousands of offices. Put the two together and the shape of mid twenty twenty-six comes into focus. The competitive edge is no longer a single eval score. It's the combination of a good-enough frontier model, aggressive per-token pricing, and distribution deals that embed a vendor into public infrastructure. For a solo builder, the read is practical. Cheaper agentic tokens change what's worth automating. Background jobs, multi-step research, document pipelines that were marginal at last year's prices now pencil out. Now, the briefs. First. A White House executive order puts federal agencies on a thirty-day clock to harden systems with A-I cyber defenses and stand up a vulnerability clearinghouse. Expect A-I security language in procurement to tighten fast. Second. Time-to-exploit has gone negative. Mandiant reports exploits now routinely arrive before patches, with about twenty-eight percent of vulnerabilities exploited within twenty-four hours of disclosure. Dependency hygiene is now a frontline control. Third. The E-U pushed back on Apple after it delayed upgraded Siri features in Europe, blaming the Digital Markets Act. Shipping A-I features everywhere at once is getting harder. Fourth. Open weights keep closing the gap. Zhipu A-I's G-L-M five point two shipped under a permissive license with a million-token context window, a real local alternative to closed A-P-Is. And fifth. The U-N launched an A-I for Good Global Commission, first meeting July eighth in Geneva. A-I policy coordination is going international. And today's signal. Cheap agentic tokens are the real headline. When multi-step model actions cost cents instead of dollars, the bottleneck stops being the model and becomes your imagination about what's worth automating. Pick one recurring chore in your own stack this week and wire an agent to it. The economics finally favor the person who ships small automations, not the one waiting for the perfect model. That's the signal for today. Build something.";
+
+let speaking = false;
+function pickVoice(){
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/.test(v.name)) || vs.find(v=>/Alex/.test(v.name)) || vs.find(v=>/en[-_]?(US|GB)/i.test(v.lang)) || vs[0];
+}
+function toggleAudio(){
+  const btn = document.getElementById('playBtn');
+  if(speaking){ window.speechSynthesis.cancel(); speaking=false; btn.innerHTML='&#9654; Listen'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice(); if(v) u.voice = v;
+  u.onend = ()=>{ speaking=false; btn.innerHTML='&#9654; Listen'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking=true; btn.innerHTML='&#10073;&#10073; Stop';
+}
+if(typeof speechSynthesis!=='undefined'){ speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
