@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-07-04</title>
+<style>
+  :root{--bg:#0d0a06;--accent:#c9a84c;--text:#e0d4b8;}
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;margin:0;padding:0;line-height:1.7;}
+  .wrap{max-width:720px;margin:0 auto;padding:32px 24px 64px;}
+  .masthead{text-align:center;border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:8px;}
+  .masthead h1{font-size:2.6rem;letter-spacing:2px;margin:0;color:var(--accent);font-variant:small-caps;}
+  .masthead .tagline{font-style:italic;color:var(--text);opacity:.8;margin-top:6px;font-size:1rem;}
+  .masthead .date{margin-top:10px;font-size:.95rem;letter-spacing:3px;text-transform:uppercase;opacity:.7;}
+  nav{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;padding:12px 0;border-bottom:1px solid rgba(201,168,76,.3);margin-bottom:24px;}
+  nav.bottom{border-bottom:none;border-top:1px solid rgba(201,168,76,.3);margin-top:40px;margin-bottom:0;}
+  nav a{color:var(--accent);text-decoration:none;}
+  nav a:hover{text-decoration:underline;}
+  nav .disabled{color:var(--text);opacity:.35;cursor:default;}
+  .player{display:flex;align-items:center;gap:14px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:6px;padding:12px 16px;margin-bottom:32px;}
+  .player button{background:var(--accent);color:var(--bg);border:none;border-radius:4px;padding:8px 16px;font-family:inherit;font-size:.9rem;cursor:pointer;font-weight:bold;}
+  .player button:hover{opacity:.9;}
+  .player .label{font-size:.85rem;opacity:.8;font-style:italic;}
+  h2.section{color:var(--accent);font-size:1.5rem;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:6px;margin-top:44px;font-variant:small-caps;letter-spacing:1px;}
+  .lead h3{font-size:1.7rem;margin-bottom:4px;line-height:1.3;}
+  .lead .kicker{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:.78rem;margin-bottom:8px;}
+  p{margin:0 0 16px;}
+  a.src{color:var(--accent);}
+  .analysis{border-left:3px solid var(--accent);padding-left:16px;font-style:italic;opacity:.92;margin:20px 0;}
+  .brief{margin-bottom:22px;}
+  .brief h4{margin:0 0 4px;font-size:1.15rem;color:var(--text);}
+  .brief h4 a{color:var(--text);text-decoration:none;border-bottom:1px dotted var(--accent);}
+  .signal{background:rgba(201,168,76,.1);border:1px solid var(--accent);border-radius:8px;padding:22px 24px;margin-top:44px;}
+  .signal .tag{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:.78rem;margin-bottom:8px;}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid rgba(201,168,76,.3);font-size:.8rem;opacity:.6;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tagline">The day's AI &amp; tech signal, for builders</div>
+    <div class="date">Saturday · July 4, 2026</div>
+  </header>
+
+  <nav class="top">
+    <a href="2026-07-03.html">&larr; 2026-07-03</a>
+    <span class="disabled">2026-07-05 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="label">Read aloud — about 4 minutes</span>
+  </div>
+
+  <section class="lead">
+    <h2 class="section">Lead Story</h2>
+    <div class="kicker">Model Race</div>
+    <h3>Claude Fable 5 retakes the coding crown — as access to frontier models tightens</h3>
+    <p>The frontier model leaderboard reshuffled again this week. Anthropic's <strong>Claude Fable 5</strong>, returned on July 1, reclaimed the top spot for coding with a reported <strong>80.3% on SWE-Bench Pro</strong> — the highest score of any model currently usable, according to model-tracking sites. It edges past a crowded field that now includes Claude Sonnet 5 (released June 30), Google's fast Gemini 3.5 Flash, and OpenAI's newly announced GPT-5.6 line. For anyone whose day is spent shipping code, that number is not academic: it maps directly onto how much of a feature a model can carry end-to-end before a human has to step in.</p>
+    <p>But the more consequential story sits underneath the benchmark. Even as these models get stronger, <em>who is allowed to use them</em> is becoming a live policy question. Regulators moved in June to suspend access to Anthropic's Fable 5 and Mythos 5, with Mythos 5 partially reinstated to roughly 100 approved companies under undisclosed criteria. OpenAI, in parallel, deferred GPT-5.6's public rollout at government request, restricting initial access to about 20 trusted partner organizations. The pattern is unmistakable: frontier model access is now being treated as a national-security lever, not a purely commercial one.</p>
+    <p>The result is a widening gap between capability and availability. The best coding model in the world does you no good if it can be switched off, gated behind an approval list, or throttled by policy on short notice. That is a new kind of dependency risk — one that most individual builders and small teams have never had to plan around, because they've always assumed the API they wired up on Monday would still answer on Friday.</p>
+    <div class="analysis">
+      <strong>Why it matters for builders:</strong> The takeaway isn't "pick the highest benchmark." It's that model choice is quietly becoming an infrastructure decision with continuity risk attached. If a single provider's model is load-bearing in your product — your app's core loop, your agents, your deploy pipeline — you now have a real reason to keep a second provider wired up and a fallback path tested, the same way you'd keep a backup database. Capability leadership rotates every few weeks; the ability to keep shipping when access rules change is the durable advantage.
+    </div>
+    <p style="font-size:.85rem;opacity:.7;">Sources: <a class="src" href="https://felloai.com/best-ai-models/">Fello AI — Best AI Models July 2026</a>, <a class="src" href="https://aigovernance.com/news/ai-governance-weekly-july-3-2026">AI Governance Weekly, July 3, 2026</a>.</p>
+  </section>
+
+  <section>
+    <h2 class="section">The Briefs</h2>
+
+    <div class="brief">
+      <h4><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026">OpenAI ships GPT-5.6 Sol, Terra &amp; Luna — but only to ~20 partners</a></h4>
+      <p>OpenAI's new GPT-5.6 family launched with government coordination and a deliberately narrow initial rollout to about 20 trusted organizations. The flagship "Sol Ultra" reportedly posts 91.9% on TerminalBench 2.1. Broad availability is deferred, reinforcing this week's theme that top-tier models increasingly arrive behind an approval gate rather than a signup form.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://aigovernance.com/news/ai-governance-weekly-july-3-2026">A state-law surge: 19 new AI laws in two weeks</a></h4>
+      <p>Plural Policy tracked 19 new AI laws across 11 states and Congress in the two-week window ending in late June, including Washington's HB 1170 modified-content disclosure rule. Meanwhile the EU's Digital Omnibus effectively sets August 2026 as the compliance deadline for high-risk systems. Compliance surface area is growing faster than most solo products can track.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://thehackernews.com/2026/05/2026-year-of-ai-assisted-attacks.html">CISA cuts the federal patch window to 3 days, citing AI-assisted attacks</a></h4>
+      <p>With a Five Eyes warning framing 2026 as "the year of AI-assisted attacks," CISA shortened the mandatory federal remediation deadline to three days. The signal for smaller builders: the window between a vulnerability going public and it being exploited at scale is collapsing. Dependency hygiene and fast patching are no longer enterprise-only concerns.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/">Microsoft Build 2026 puts agent security in the default path</a></h4>
+      <p>Microsoft shipped the Agent 365 SDK to general availability, introduced "MDASH" — a multi-model system that deploys 100+ agents to hunt exploitable bugs — and previewed Microsoft Execution Containers (MXC), a policy-driven runtime that lets developers define constraints Windows enforces on agents. Agent sandboxing is moving from bolt-on to built-in.</p>
+    </div>
+
+    <div class="brief">
+      <h4><a href="https://openai.com/index/daybreak-securing-the-world/">OpenAI's Daybreak bundles models with Codex Security</a></h4>
+      <p>OpenAI introduced Daybreak, a platform pairing its models with Codex Security to help teams find, validate, and remediate vulnerabilities in code they own. Combined with Microsoft's MDASH, the week's clear direction is AI turned defensively on the codebase itself — automated bug-finding is becoming a standard part of the pipeline, not a specialty tool.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="signal">
+      <div class="tag">Today's Signal</div>
+      <p style="margin-bottom:0;"><strong>Wire up a fallback provider before you need one.</strong> This week made the risk concrete: the strongest model can also be the one that gets suspended, gated, or deferred by policy overnight. If you're a solo builder with a single model provider load-bearing across your apps, spend an hour this week abstracting the call behind one interface and testing a second provider as a live fallback. It's cheap insurance against a Friday where your Monday API stops answering — and it costs almost nothing to set up while everything is still working.</p>
+    </div>
+  </section>
+
+  <nav class="bottom">
+    <a href="2026-07-03.html">&larr; 2026-07-03</a>
+    <span class="disabled">2026-07-05 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise — daily signal for builders.<br>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+<script>
+const S = "Above The Noise. Saturday, July 4th, 2026. Today's lead: Claude Fable 5 retakes the coding crown, just as access to frontier models is getting tighter. The frontier leaderboard reshuffled again this week. Anthropic's Claude Fable 5, which returned on July 1st, reclaimed the top spot for coding with a reported 80.3 percent on SWE-Bench Pro, the highest score of any model you can currently use. It edges past a crowded field that now includes Claude Sonnet 5, Google's Gemini 3.5 Flash, and OpenAI's new GPT-5.6 line. For anyone who ships code all day, that number is not academic. It maps directly onto how much of a feature a model can carry before a human has to step in. But the more consequential story sits underneath the benchmark. Even as these models get stronger, who is allowed to use them is becoming a live policy question. Regulators moved in June to suspend access to Anthropic's Fable 5 and Mythos 5, with Mythos 5 partially reinstated to about 100 approved companies under undisclosed criteria. OpenAI, in parallel, deferred GPT-5.6's public rollout at government request, restricting early access to roughly 20 trusted partner organizations. The pattern is clear. Frontier model access is now being treated as a national security lever, not just a commercial one. The result is a widening gap between capability and availability. The best coding model in the world does you no good if it can be switched off, gated behind an approval list, or throttled by policy on short notice. That is a new kind of dependency risk, and most small teams have never had to plan around it, because they've always assumed the API they wired up on Monday would still answer on Friday. Here's why it matters for builders. The takeaway isn't to chase the highest benchmark. It's that model choice is quietly becoming an infrastructure decision with continuity risk attached. If a single provider's model is load-bearing in your product, you now have a real reason to keep a second provider wired up and a fallback path tested. Capability leadership rotates every few weeks. The ability to keep shipping when access rules change is the durable advantage. Now, the briefs. First: OpenAI shipped its GPT-5.6 family, Sol, Terra, and Luna, with government coordination and a deliberately narrow rollout to about 20 organizations. The flagship Sol Ultra reportedly posts nearly 92 percent on TerminalBench. Broad availability is deferred. Second: a state-law surge. Plural Policy tracked 19 new AI laws across 11 states and Congress in just two weeks, and the EU's Digital Omnibus effectively sets August as the compliance deadline for high-risk systems. Compliance surface area is growing fast. Third: CISA cut the federal patch window to three days, citing AI-assisted attacks, after a Five Eyes warning framed 2026 as the year of AI-assisted attacks. The window between a vulnerability going public and being exploited is collapsing. Fourth: at Build 2026, Microsoft shipped the Agent 365 SDK, introduced MDASH, a system that deploys over 100 agents to hunt exploitable bugs, and previewed execution containers that enforce constraints on agents at runtime. Agent sandboxing is becoming built-in. Fifth: OpenAI's new Daybreak platform pairs its models with Codex Security to find and fix vulnerabilities in your own code. The week's clear direction is AI turned defensively on the codebase itself. And today's signal: wire up a fallback provider before you need one. This week made the risk concrete. The strongest model can also be the one that gets suspended or gated overnight. If you're a solo builder with a single provider load-bearing across your apps, spend an hour abstracting the call behind one interface and testing a second provider as a live fallback. It's cheap insurance against a Friday where your Monday API stops answering. That's the signal for today. Build well.";
+
+let speaking=false;
+function pickVoice(){
+  const vs=speechSynthesis.getVoices();
+  return vs.find(v=>/Daniel/.test(v.name))||vs.find(v=>/Alex/.test(v.name))||vs.find(v=>/en-US|en_GB|English/.test(v.lang||v.name))||vs[0];
+}
+function toggleAudio(){
+  const btn=document.getElementById('playBtn');
+  if(speaking){speechSynthesis.cancel();speaking=false;btn.textContent='▶ Listen';return;}
+  const u=new SpeechSynthesisUtterance(S);
+  u.rate=0.93;
+  const v=pickVoice();if(v)u.voice=v;
+  u.onend=()=>{speaking=false;btn.textContent='▶ Listen';};
+  speechSynthesis.speak(u);
+  speaking=true;btn.textContent='■ Stop';
+}
+if(typeof speechSynthesis!=='undefined'){speechSynthesis.onvoiceschanged=()=>{};}
+</script>
+</body>
+</html>
