@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-07-08</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:Georgia,'Times New Roman',serif; line-height:1.7;
+    font-size:18px;
+  }
+  .wrap { max-width:720px; margin:0 auto; padding:0 24px 60px; }
+  .masthead { text-align:center; padding:40px 0 12px; border-bottom:2px solid var(--accent); }
+  .masthead h1 {
+    font-size:44px; letter-spacing:1px; margin:0; color:var(--accent);
+    font-weight:normal;
+  }
+  .masthead .tag { font-style:italic; color:var(--text); opacity:.75; margin-top:6px; font-size:16px; }
+  .masthead .date { margin-top:10px; font-size:15px; letter-spacing:2px; text-transform:uppercase; opacity:.6; }
+  nav.bar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 0; border-bottom:1px solid rgba(201,168,76,.3);
+    font-size:15px; letter-spacing:1px;
+  }
+  nav.bar.bottom { border-bottom:none; border-top:1px solid rgba(201,168,76,.3); margin-top:40px; }
+  nav.bar a { color:var(--accent); text-decoration:none; }
+  nav.bar a:hover { text-decoration:underline; }
+  nav.bar .disabled { color:var(--text); opacity:.3; pointer-events:none; }
+  .player {
+    display:flex; align-items:center; gap:14px;
+    background:rgba(201,168,76,.07); border:1px solid rgba(201,168,76,.3);
+    border-radius:8px; padding:14px 18px; margin:24px 0;
+  }
+  .player button {
+    background:var(--accent); color:var(--bg); border:none; cursor:pointer;
+    font-family:inherit; font-size:15px; padding:9px 18px; border-radius:6px;
+  }
+  .player button:hover { opacity:.88; }
+  .player .label { font-size:14px; opacity:.8; font-style:italic; }
+  h2.section {
+    color:var(--accent); font-size:15px; letter-spacing:3px; text-transform:uppercase;
+    border-bottom:1px solid rgba(201,168,76,.3); padding-bottom:8px; margin:44px 0 18px;
+    font-weight:normal;
+  }
+  h3.headline { font-size:28px; line-height:1.25; margin:0 0 14px; color:var(--text); font-weight:normal; }
+  p { margin:0 0 18px; }
+  a.link { color:var(--accent); }
+  .brief { margin-bottom:22px; }
+  .brief h4 { margin:0 0 4px; font-size:19px; color:var(--text); font-weight:normal; }
+  .brief h4 a { color:var(--text); text-decoration:none; border-bottom:1px solid var(--accent); }
+  .brief h4 a:hover { color:var(--accent); }
+  .signal {
+    background:rgba(201,168,76,.09); border-left:3px solid var(--accent);
+    padding:20px 24px; margin:30px 0; border-radius:0 8px 8px 0;
+  }
+  .signal .lbl { color:var(--accent); font-size:13px; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .analysis { font-style:italic; opacity:.9; border-left:2px solid rgba(201,168,76,.4); padding-left:16px; }
+  footer { margin-top:48px; padding-top:20px; border-top:1px solid rgba(201,168,76,.3); font-size:13px; opacity:.55; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Above The Noise</h1>
+    <div class="tag">Greg's daily read on AI &amp; the tools builders actually use</div>
+    <div class="date">Wednesday, July 8, 2026</div>
+  </div>
+
+  <nav class="bar top">
+    <a href="2026-07-07.html">&larr; 2026-07-07</a>
+    <span class="disabled">2026-07-09 &rarr;</span>
+  </nav>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="label" id="playLabel">~4 min read-aloud</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <h3 class="headline">Washington moves to gate the frontier — and the release calendar now runs through the government</h3>
+
+  <p>The most consequential thing happening in AI this week isn't a model launch. It's the emergence of a pre-release review regime that both OpenAI and Anthropic have already quietly navigated, and which the White House is now trying to formalize into a voluntary standards framework — expected to land as soon as this week. It grows out of the June 2 executive order directing agencies to build a classified benchmarking process for designating "covered frontier models," and allowing developers to hand the government up to 30 days of pre-release access.</p>
+
+  <p>You can already see it shaping the release calendar. OpenAI's GPT-5.6 Sol — which reportedly scored 96.7% on the company's internal Capture the Flag evaluation and crossed the "High" tier of its Preparedness Framework — has been held back from a broad public launch since late June, restricted to roughly 20 government-approved partner organizations. Google, meanwhile, is in the negotiating room too: Gemini 3.5 Pro slipped to a targeted July 17 launch. Google's stated reason is an architectural rebuild to improve coding, token efficiency, and long-task handling, but Reuters confirms Google's seat at the standards table, which suggests the framework is being designed with a model like Gemini 3.5 Pro in mind.</p>
+
+  <p>For a solo builder, the abstract policy question — who decides when a model is safe to ship — becomes a concrete supply question. The most capable models may now arrive to the general public weeks after they're technically finished, gated behind a review most of us never see. Terra and Luna, the cheaper GPT-5.6 tiers, are the ones aimed at cost-sensitive developers, and their general availability is the date worth watching, not the headline benchmark.</p>
+
+  <p class="analysis">The takeaway: frontier capability and frontier availability are decoupling. If your roadmap assumes "newest model = usable today," build in a lag. And watch the mid-tier and open-weight lanes — that's increasingly where builders get capability without waiting on a government sign-off.</p>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4><a href="https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html">Chinese open models close the gap — at a fifth of the price</a></h4>
+    <p>Z.ai's GLM 5.2 landed within a percentage point of Anthropic's Opus 4.8 on a closely-watched agentic benchmark while costing roughly 20% as much. Vercel clocked it as its fastest-adopted model of 2026, with daily token volume growing ~27x in its first full week. For cost-sensitive builders, the open-weight lane is now genuinely competitive.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.darkreading.com/application-security/coders-adopt-ai-agents-security-pitfalls-lurk-2026">JADEPUFFER: the first AI-driven ransomware attack</a></h4>
+    <p>An AI agent reportedly chained a Langflow RCE vulnerability into an automated database ransomware campaign — a preview of what autonomous agents look like when pointed at you. A parallel scan found 1,862 MCP servers exposed on the public internet, nearly all without authentication. If you run MCP, lock it down.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/">Anthropic keeps its lead — for now</a></h4>
+    <p>Despite the open-source surge, Anthropic is holding a ~$47B annualized run-rate and overtook OpenAI on business subscriptions in May. Coding agents are the engine. Separately, Anthropic is reportedly in talks with Samsung on a custom chip, echoing OpenAI's Broadcom-built "Jalapeño" inference processor.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://www.microsoft.com/en-us/security/blog/2026/06/02/microsoft-build-2026-securing-code-agents-and-models-across-the-development-lifecycle/">Agentic security scanning goes big</a></h4>
+    <p>Microsoft detailed MDASH, a harness that orchestrates 100+ specialized agents across an ensemble of models to discover, validate, and prove exploitability in codebases. The lesson for the rest of us: treat AI-generated code as untrusted until it's been reviewed and tested like any human's.</p>
+  </div>
+
+  <div class="brief">
+    <h4><a href="https://theaicareerlab.com/blog/gpt-5-6-sol-government-restrictions-2026">Claude Fable 5 leaves the subscription tiers</a></h4>
+    <p>As of July 7, Fable 5 is no longer bundled in Pro plans; from July 8 it's usage-credit only, at $10/M input and $50/M output tokens. A reminder that the pricing floor under premium models can move without much warning — worth a line in anyone's cost model.</p>
+  </div>
+
+  <h2 class="section">Today's Signal</h2>
+  <div class="signal">
+    <span class="lbl">Today's Signal</span>
+    <p>The center of gravity for builders is shifting to the middle. When the very top of the frontier is gated by governments and priced at a premium, the leverage moves to fast, cheap, open-weight models that ship without a permission slip. Build your stack so you can swap the model underneath it — because in 2026, the smartest model and the most <em>available</em> model are rarely the same one.</p>
+  </div>
+
+  <nav class="bar bottom">
+    <a href="2026-07-07.html">&larr; 2026-07-07</a>
+    <span class="disabled">2026-07-09 &rarr;</span>
+  </nav>
+
+  <footer>
+    Above The Noise · Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Wednesday, July eighth, twenty twenty-six. The most consequential thing in AI this week isn't a model launch. It's a new pre-release review regime that both OpenAI and Anthropic have already quietly navigated, and that the White House is now trying to formalize into a voluntary standards framework, expected as soon as this week. It grows out of the June second executive order directing agencies to build a classified benchmarking process for designating covered frontier models, and letting developers hand the government up to thirty days of pre-release access. You can already see it shaping the release calendar. OpenAI's GPT five point six Sol, which reportedly crossed the High tier of its own Preparedness Framework, has been held back from a broad public launch since late June, restricted to about twenty government-approved partners. Google is in the room too. Gemini three point five Pro slipped to a targeted July seventeenth launch. The stated reason is an architectural rebuild, but Reuters confirms Google's seat at the standards table. For a solo builder, the abstract question of who decides when a model is safe to ship becomes a concrete supply question. The most capable models may now arrive to the public weeks after they're technically finished. The cheaper GPT five point six tiers, Terra and Luna, are the ones to watch for cost-sensitive developers. The takeaway: frontier capability and frontier availability are decoupling. If your roadmap assumes newest model equals usable today, build in a lag. Now, the briefs. First, Chinese open models are closing the gap at a fifth of the price. Z dot AI's GLM five point two landed within a percentage point of Anthropic's Opus four point eight on a key agentic benchmark, at roughly twenty percent of the cost, and it was Vercel's fastest-adopted model of the year. Second, security. JADEPUFFER is described as the first AI-driven ransomware attack, an agent chaining a Langflow vulnerability into an automated campaign. A parallel scan found over eighteen hundred MCP servers exposed on the public internet, nearly all without authentication. If you run MCP, lock it down. Third, Anthropic is holding a forty-seven billion dollar annualized run rate and overtook OpenAI on business subscriptions in May, with coding agents as the engine. It's also reportedly in talks with Samsung on a custom chip. Fourth, Microsoft detailed a harness that orchestrates over a hundred specialized agents to find and prove exploits in codebases. Treat AI-generated code as untrusted until reviewed. And fifth, Claude Fable five has left the subscription tiers and is now usage-credit only, at ten dollars per million input and fifty per million output tokens. Today's signal: the center of gravity for builders is shifting to the middle. When the top of the frontier is gated and priced at a premium, leverage moves to fast, cheap, open-weight models that ship without a permission slip. Build your stack so you can swap the model underneath it, because in twenty twenty-six, the smartest model and the most available model are rarely the same one. That's the noise, cleared. See you tomorrow.";
+
+let speaking = false;
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/.test(v.name)) || vs.find(v => /Alex/.test(v.name))
+      || vs.find(v => /en-GB/.test(v.lang)) || vs.find(v => /en/.test(v.lang)) || vs[0];
+}
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const lbl = document.getElementById('playLabel');
+  if (speaking) {
+    window.speechSynthesis.cancel(); speaking = false;
+    btn.textContent = '▶ Listen'; lbl.textContent = '~4 min read-aloud'; return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93; u.pitch = 1;
+  const v = pickVoice(); if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; lbl.textContent = '~4 min read-aloud'; };
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  speaking = true; btn.textContent = '❚❚ Stop'; lbl.textContent = 'Playing…';
+}
+window.speechSynthesis.onvoiceschanged = pickVoice;
+</script>
+</body>
+</html>
