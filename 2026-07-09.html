@@ -52,7 +52,7 @@
 
   <div class="player">
     <button id="playBtn" onclick="toggleAudio()">&#9654; Listen</button>
-    <span class="label">Audio edition &middot; ~4 min</span>
+    <span class="label">Audio edition &middot; ~5 min</span>
   </div>
 
   <h2 class="section">Lead Story</h2>
@@ -96,6 +96,36 @@
     <p>Between Grok 4.5's aggressive $2/$6 pricing and cheap Chinese open models, the message for builders is consistent: raw capability is commoditizing fast, and the durable edge is in what you build on top &mdash; product, data, and distribution &mdash; not which model you can afford to call. <a class="src" href="https://llm-stats.com/llm-updates">LLM-Stats</a></p>
   </div>
 
+  <h2 class="section">Notes from the Loopers</h2>
+  <div class="byline">The people who stopped prompting and started looping &mdash; field notes from the loop-engineering movement</div>
+
+  <div class="brief">
+    <h4>Geoffrey Huntley &mdash; the Ralph Wiggum loop</h4>
+    <p>The technique that started it: feed the same prompt file to a coding agent in a <em>while-true</em> loop, commit whatever it produces, and let progress accumulate in git instead of the context window. Named for the Simpsons character who never stops trying, it looked like a joke until it shipped real contracts &mdash; and until Anthropic made it an <a class="src" href="https://github.com/anthropics/claude-code/blob/main/plugins/ralph-wiggum/README.md">official Claude Code plugin</a>. Huntley's core note: the loop only works when "done" is machine-checkable. <a class="src" href="https://www.humanlayer.dev/blog/brief-history-of-ralph">HumanLayer</a> &middot; <a class="src" href="https://www.theregister.com/2026/01/27/ralph_wiggum_claude_loops/">The Register</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Boris Cherny &mdash; "I don't prompt Claude anymore"</h4>
+    <p>The creator of Claude Code gave the movement its tagline this June: <em>"I don't prompt Claude anymore. I have loops that are running. They're the ones that are prompting Claude and figuring out what to do."</em> From the person who built the tool, that's not a hack &mdash; it's the intended end state: the human designs the loop, the loop drives the model. <a class="src" href="https://tosea.ai/blog/loop-engineering-ai-agents-complete-guide-2026">Tosea</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Peter Steinberger &mdash; fleets, not sessions</h4>
+    <p>The PSPDFKit founder runs parallel agent fleets and publishes the workflows: small, well-scoped units of work, ruthless verification between iterations, and a bias for letting agents run while he reviews outcomes instead of keystrokes. His notes read like ops runbooks, which is the point &mdash; the craft moved from writing prompts to designing the harness around them. <a class="src" href="https://explainx.ai/blog/loop-engineering-coding-agents-claude-code-guide-2026">ExplainX</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Addy Osmani &mdash; naming the discipline</h4>
+    <p>The Chrome engineering lead synthesized Cherny's and Steinberger's practice into a name &mdash; <em>loop engineering</em> &mdash; and an argument: when a single agent run can last an hour and touch dozens of files, the highest-leverage work is designing the loop that keeps it productive, verified, and on-goal. Including while you sleep. <a class="src" href="https://beyond.addy.ie/2026-trends/">Beyond Vibe Coding</a></p>
+  </div>
+
+  <div class="brief">
+    <h4>Matt Van Horn &mdash; the overnight shift</h4>
+    <p>The proof-of-scale example making the rounds: loops that open pull requests across roughly thirty open-source repos overnight, with the human's job reduced to a morning review queue. The pattern every one of these people converges on &mdash; machine-checkable done conditions, test-gated commits, human review of outcomes &mdash; is the same whether it's thirty repos or one. <a class="src" href="https://medium.com/@dave-patten/the-state-of-ai-coding-agents-2026-from-pair-programming-to-autonomous-ai-teams-b11f2b39232a">Medium</a></p>
+  </div>
+
+  <div class="analysis">Editor's footnote: this shop joined the club last night &mdash; the first two Ralph-style loops ran against the chief-of-staff app (self-hosted fonts, then a component reuse), each with a written prompt file, machine-checkable completion criteria, and an audited commit. The nightly worker gets loop mode next. The loopers above are right about the core of it: the work isn't the prompt, it's the harness.</div>
+
   <h2 class="section">Today's Signal</h2>
   <div class="signal">
     <div class="lbl">The one thing to carry into your build</div>
@@ -123,6 +153,7 @@ var S = "Above The Noise. Thursday, July ninth, twenty twenty-six. Here's the si
 + "Two. Chinese models are taking a real bite of U.S. API traffic. A CNBC investigation found open-source Chinese models now make up thirty to forty-six percent of enterprise token usage on U.S. platforms, running sixty to ninety percent cheaper. Z.ai's GLM five-point-two was the fastest-adopted model Vercel tracked this year. "
 + "Three. Google delayed Gemini three-point-five Pro, citing token efficiency and coding gaps flagged by enterprise testers. The July window still stands, but no firm date. "
 + "Four. The UN's AI for Good Global Commission held its first working meeting in Geneva, the first formal gathering of AI chiefs and heads of state under a UN governance mandate. Symbolic for now, but worth watching. "
++ "Next, notes from the loopers. The people who stopped prompting and started looping. Geoffrey Huntley created the Ralph Wiggum loop. Feed the same prompt file to a coding agent, over and over, in a while-true loop. Commit whatever it produces. Progress accumulates in git, not in the context window. It looked like a joke until it shipped real contracts, and until Anthropic made it an official Claude Code plugin. Boris Cherny, the creator of Claude Code, gave the movement its tagline. Quote. I don't prompt Claude anymore. I have loops that are running. They're the ones that are prompting Claude and figuring out what to do. End quote. Peter Steinberger runs parallel agent fleets. Small units of work, ruthless verification between iterations, review outcomes, not keystrokes. Addy Osmani gave the discipline its name. Loop engineering. When a single agent run can last an hour, the highest-leverage work is designing the loop that keeps it productive, verified, and on-goal, including while you sleep. And Matt Van Horn runs loops that open pull requests across thirty open-source repos overnight. One editor's footnote. This shop joined the club last night. The first two Ralph-style loops ran against the chief-of-staff app, each with a written prompt file, machine-checkable completion criteria, and an audited commit. The loopers are right about the core of it. The work isn't the prompt. It's the harness. "
 + "And today's signal. Model access is becoming a governance question, and model capability is becoming a commodity, at the same time. The winning move for a solo builder isn't chasing the top benchmark. It's designing so you can swap the engine underneath you. Wire your apps to a model-agnostic interface, keep your prompts and evals portable, and treat any single provider as rentable, not load-bearing. When the frontier shifts upstream of you, the builder who can re-point in an afternoon wins. "
 + "That's the signal for today. Go build.";
 
