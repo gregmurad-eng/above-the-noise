@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-07-28</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7f63; }
+  * { box-sizing:border-box; }
+  body { background:#0d0a06; color:#e0d4b8; font-family:Georgia,'Times New Roman',serif;
+         margin:0; line-height:1.62; font-size:18px; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 22px 64px; }
+  nav.bar { display:flex; justify-content:space-between; align-items:center;
+            max-width:720px; margin:0 auto; padding:18px 22px; font-size:15px; }
+  nav.bar a { color:#c9a84c; text-decoration:none; }
+  nav.bar a:hover { text-decoration:underline; }
+  nav.bar .next { color:#5c5442; cursor:default; }
+  .masthead { text-align:center; border-bottom:1px solid #2c2416; padding:26px 0 20px; margin-bottom:8px; }
+  .masthead h1 { font-size:40px; letter-spacing:2px; margin:0; color:#c9a84c; font-weight:normal; }
+  .masthead .tag { font-size:13px; letter-spacing:3px; text-transform:uppercase; color:#8a7f63; margin-top:8px; }
+  .masthead .date { font-size:14px; color:#a89a74; margin-top:6px; }
+  .player { display:flex; align-items:center; gap:12px; justify-content:center;
+            border:1px solid #2c2416; border-radius:6px; padding:10px 14px; margin:22px 0 8px; }
+  .player button { background:#c9a84c; color:#0d0a06; border:none; border-radius:4px;
+                   padding:7px 16px; font-family:inherit; font-size:14px; cursor:pointer; }
+  .player button:hover { background:#dcbb5a; }
+  .player .lbl { font-size:13px; color:#8a7f63; }
+  h2.section { font-size:15px; letter-spacing:2px; text-transform:uppercase; color:#c9a84c;
+               border-bottom:1px solid #2c2416; padding-bottom:6px; margin:40px 0 18px; }
+  article h3 { font-size:26px; color:#e8ddc0; margin:0 0 4px; font-weight:normal; }
+  .lede { color:#a89a74; font-style:italic; margin:0 0 16px; }
+  .brief { margin:0 0 22px; }
+  .brief h4 { font-size:20px; color:#e8ddc0; margin:0 0 4px; font-weight:normal; }
+  .brief a, article a { color:#c9a84c; }
+  .signal { border:1px solid #c9a84c; border-radius:6px; background:#151007;
+            padding:18px 20px; margin:34px 0; }
+  .signal .k { font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#c9a84c; }
+  footer { border-top:1px solid #2c2416; margin-top:44px; padding-top:16px;
+           font-size:13px; color:#6f6650; text-align:center; }
+</style>
+</head>
+<body>
+<nav class="bar">
+  <a href="2026-07-09.html">← 2026-07-09</a>
+  <span class="next">2026-07-29 →</span>
+</nav>
+
+<div class="masthead">
+  <h1>Above The Noise</h1>
+  <div class="tag">AI &amp; Tech · Signal over noise</div>
+  <div class="date">Tuesday, July 28, 2026</div>
+</div>
+
+<div class="wrap">
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">▶ Listen</button>
+    <span class="lbl">Audio edition · ~4 min</span>
+  </div>
+
+  <h2 class="section">Lead Story</h2>
+  <article>
+    <h3>Washington moves to write the rules for frontier model releases</h3>
+    <p class="lede">A voluntary standard is taking shape — and how the big labs respond will tell you who really sets the pace of AI in 2026.</p>
+    <p>The most consequential AI story this week isn't a benchmark — it's a negotiation. The White House is in advanced talks with OpenAI, Google, and Anthropic to finalize a set of <em>voluntary</em> standards governing how frontier models get released to the public. The framework under discussion would establish shared benchmarks, mandatory pre-release testing timelines, and tiered access rules for the most capable systems — the first serious attempt in the United States to put a common gate in front of the release process rather than letting each lab set its own.</p>
+    <p>The timing is not accidental. Over the past month the release cadence has gone vertical: OpenAI's GPT-5.6 family spent weeks limited to a short list of government-approved organizations before its wider rollout on July 9, a soft preview of exactly the kind of staged, access-controlled launch this framework would formalize. Read that sequence backwards and the shape of the deal becomes clear — the labs get predictability and legal cover; the government gets a testing window and a say in who gets early access to the frontier.</p>
+    <p>What makes "voluntary" more than a fig leaf is leverage. Government-approved early access, procurement eligibility, and the implicit threat of harder regulation if the voluntary path fails all give the framework teeth without a statute. It also arrives as the EU's AI Act grinds through its phased rollout, with obligations for general-purpose and high-risk systems now coming into force — meaning the labs are already building compliance machinery they can point a US framework at.</p>
+    <p>For builders, the practical question is access. If frontier releases increasingly route through an approval-and-staging pipeline, the gap between "a model exists" and "you can build on it" widens — and the winners in the next cycle may be whoever is inside the early-access list, not whoever ships the highest score. That is the quiet realignment worth watching: capability is becoming table stakes; <em>access</em> is becoming the moat. Keep an eye on which organizations show up on the approved lists, because that roster is the real leaderboard now.</p>
+    <p>Source: <a href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/">Solutions Review — AI News, week of July 24</a>.</p>
+  </article>
+
+  <h2 class="section">The Briefs</h2>
+
+  <div class="brief">
+    <h4>Kimi K3 tops a major coding leaderboard — and rattles the US</h4>
+    <p>Moonshot AI's <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-20-2026-16-biggest-stories">Kimi K3</a>, a 2.8-trillion-parameter open model, took the top spot on a major coding leaderboard over the weekend, reigniting the China–US AI rivalry debate. An open-weight model beating commercial frontier systems at code is exactly the scenario US labs have been bracing for.</p>
+  </div>
+
+  <div class="brief">
+    <h4>The open-weight tier is now genuinely competitive</h4>
+    <p>Kimi K3 isn't alone. <a href="https://llm-stats.com/llm-updates">GLM-5.2, DeepSeek V4, and MiniMax M3</a> are all benchmarking near the top commercial models — at a fraction of the cost and fully downloadable. For anyone running inference at scale, "good enough and self-hosted" is quietly eating the premium tier.</p>
+  </div>
+
+  <div class="brief">
+    <h4>The first documented autonomous AI ransomware</h4>
+    <p>Security firm Sysdig published its analysis of <a href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/">JADEPUFFER</a> — described as the first documented autonomous AI ransomware attack, in which an LLM agent ran 600+ payloads across a full attack chain with no human directing individual steps. The agentic-security era has a first data point, and it's an offensive one.</p>
+  </div>
+
+  <div class="brief">
+    <h4>Grok 4.5 and GPT-5.6 sharpen the price-per-capability race</h4>
+    <p>xAI's <a href="https://aitoolsrecap.com/Blog/AINewsJuly2026.aspx">Grok 4.5</a> (released July 8) is aimed squarely at business and coding work at a fraction of comparable-model cost, while OpenAI's GPT-5.6 lineup — Sol, Terra, and Luna — rolls out in stages. The competition has moved from "who's smartest" to "who's cheapest at the capability you actually need."</p>
+  </div>
+
+  <div class="brief">
+    <h4>Agentic fraud detection goes real-time</h4>
+    <p>Aerospike, AMD, and Google teamed up to show a <a href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/">real-time agentic fraud-detection stack</a> combining Aerospike's database with Gemini, the Agent Development Kit, and AMD EPYC systems — a concrete example of agents moving from demos into latency-critical production paths.</p>
+  </div>
+
+  <div class="signal">
+    <div class="k">Today's Signal</div>
+    <p style="margin:8px 0 0;">The market has flipped from <strong>"best model wins"</strong> to <strong>"best fit wins."</strong> Price, speed, and access now matter as much as raw scores — and open-weight models are collapsing the gap. If your build still assumes one frontier model is obviously correct, this is the month to re-test that assumption against a cheaper, self-hostable alternative.</p>
+  </div>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.<br>
+    Above The Noise · 2026-07-28
+  </footer>
+</div>
+
+<script>
+  const S = "Above The Noise, for Tuesday, July 28th, 2026. Today's lead: Washington moves to write the rules for frontier model releases. The biggest A-I story this week isn't a benchmark, it's a negotiation. The White House is in advanced talks with OpenAI, Google, and Anthropic to finalize voluntary standards for how frontier models get released, covering shared benchmarks, pre-release testing timelines, and tiered access rules. What makes voluntary more than a fig leaf is leverage: government-approved early access, procurement eligibility, and the threat of harder regulation give the framework teeth without a statute. For builders, the real question is access. As frontier releases route through an approval-and-staging pipeline, the gap between a model existing and you being able to build on it widens. Capability is becoming table stakes; access is becoming the moat. In the briefs: Moonshot A-I's Kimi K-3, a 2.8-trillion-parameter open model, took the top spot on a major coding leaderboard, reigniting the China versus U-S rivalry. It's not alone: G-L-M 5.2, DeepSeek V-4, and MiniMax M-3 are all benchmarking near the top commercial models at a fraction of the cost. On the security front, Sysdig documented JADEPUFFER, described as the first autonomous A-I ransomware, where an L-L-M agent ran over 600 payloads across a full attack chain with no human directing each step. Meanwhile, xAI's Grok 4.5 and OpenAI's GPT 5.6 lineup are sharpening the price-per-capability race, and Aerospike, A-M-D, and Google showed a real-time agentic fraud-detection stack moving agents into production. Today's signal: the market has flipped from best model wins to best fit wins. Price, speed, and access now matter as much as raw scores. If your build still assumes one frontier model is obviously correct, this is the month to re-test that against a cheaper, self-hostable option. That's the signal over the noise. See you tomorrow.";
+  let speaking = false;
+  function pickVoice() {
+    const vs = speechSynthesis.getVoices();
+    return vs.find(v => /Daniel/.test(v.name)) || vs.find(v => /Alex/.test(v.name)) ||
+           vs.find(v => /en-US|en_GB|English/.test(v.lang || v.name)) || vs[0];
+  }
+  function toggleAudio() {
+    const btn = document.getElementById('playBtn');
+    if (speaking) { speechSynthesis.cancel(); speaking = false; btn.textContent = '▶ Listen'; return; }
+    const u = new SpeechSynthesisUtterance(S);
+    u.rate = 0.93; const v = pickVoice(); if (v) u.voice = v;
+    u.onend = () => { speaking = false; btn.textContent = '▶ Listen'; };
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    speaking = true; btn.textContent = '■ Stop';
+  }
+  if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = pickVoice;
+</script>
+</body>
+</html>
