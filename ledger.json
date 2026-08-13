@@ -1,0 +1,19 @@
+{
+  "season": 1,
+  "started": "2026-08-13",
+  "method": "One call per edition, drawn from Today's Signal. Graded HIT or MISS on its stated horizon against a primary or tier-1 source, never on vibes. A call that cannot be settled by evidence on its horizon is graded UNSETTLED, not quietly dropped.",
+  "calls": [
+    {
+      "id": "2026-08-13-1",
+      "date": "2026-08-13",
+      "call": "The consequential AI work in August 2026 is moving from model capability to the governance layer around models: who may call which model, what marks its output must carry, and how the calling protocol survives supply-chain compromise.",
+      "basis": "Three of four Briefs this edition were governance stories in product clothing: GPT-5.6-Cyber's Daybreak Red licensing gate, the EU AI Act transparency clock, and the MCP stateless spec's OAuth-aligned auth.",
+      "horizon": "2026-09-13",
+      "test": "By 2026-09-13, at least two further gated-access, provenance-marking or protocol-auth developments ship from frontier labs or standards bodies, evidenced by primary sources.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    }
+  ]
+}
