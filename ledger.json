@@ -14,6 +14,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-14-1",
+      "date": "2026-08-14",
+      "call": "Theseus Infrastructure is the template, not the outlier: by 2026-10-31, at least one other frontier lab (OpenAI, Google DeepMind, xAI, Meta, Mistral, or another Anthropic-tier lab) will announce a structurally similar arrangement \u2014 a joint-venture data-centre platform co-owned by infrastructure-fund and/or sovereign-wealth capital, with the lab as long-lease anchor tenant rather than equity owner of the racks.",
+      "basis": "The Anthropic-Macquarie-GIC deal announced August 10 solves the trillion-dollar-compute cash-drag problem Amodei has been publicly warning about, and every other frontier lab has the same problem on a similar curve. The counterparties (Blackstone, Brookfield, Apollo, KKR, sovereign funds) were also part of NVIDIA's August 10 $500B MoU, so the money is being organised in public.",
+      "horizon": "2026-10-31",
+      "test": "A primary-source press release from any of the named labs, dated on or before 2026-10-31, announcing a JV/platform-vehicle data-centre arrangement with BOTH (a) non-lab-controlled equity from an infrastructure fund or sovereign wealth fund AND (b) a long-term (>=10 years) lease structure. Spot GPU rentals, hyperscaler capacity deals, and equity-swap partnerships do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
