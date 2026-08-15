@@ -26,6 +26,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-15-1",
+      "date": "2026-08-15",
+      "call": "The GLM-5.3 template \u2014 'same base model, all gains from post-training' \u2014 will be adopted publicly by at least one Western frontier lab within six weeks. By 2026-09-30, Anthropic, OpenAI, Google DeepMind, xAI, Meta, or Mistral will ship a release explicitly framed as a post-training-only iteration on an unchanged base, not a new pretrained model.",
+      "basis": "Z.ai shipped GLM-5.3 on Aug 14 explicitly stating 'Scaling post-training is all we did for GLM-5.3', taking #1 open-weights on Terminal Bench 3.0 (28.3 up from 4.6 on the same base) and topping CyberGym at 84.5%. If post-training scaling delivers frontier-adjacent coding gains from the same base, the story \u2014 'better model, same weights lineage, no capability drift' \u2014 is exactly what an enterprise buyer wants to hear. Western labs will not sit out that framing long.",
+      "horizon": "2026-09-30",
+      "test": "A primary-source release note, model card, or blog post from any of the named labs, dated on or before 2026-09-30, that explicitly states (a) no new pretraining was performed and (b) is presented as a numbered or named iteration (e.g. Claude X.Y, GPT-Z.W). Routine RLHF fine-tunes without the explicit 'same base' framing do not count; benchmark improvements alone do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
