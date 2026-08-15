@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-08-15</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7f63; --miss:#b06060; }
+  * { box-sizing:border-box; }
+  html, body { max-width:100%; overflow-x:hidden; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; margin:0; line-height:1.65; font-size:17px; }
+  .wrap { max-width:680px; margin:0 auto; padding:26px 22px 60px; }
+  a { color:var(--accent); }
+  a:hover { text-decoration:underline; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; padding:10px 0; margin-bottom:12px; border-bottom:1px solid rgba(201,168,76,0.2); font-size:14px; letter-spacing:1px; text-transform:uppercase; }
+  .bar a { color:var(--accent); text-decoration:none; white-space:nowrap; padding:12px 6px; margin:-12px -6px; }
+  .bar .next { color:var(--muted); white-space:nowrap; padding:12px 6px; }
+  .nav-mid { display:inline-flex; gap:0; }
+  .nav-mid a { color:var(--accent); margin:-12px 3px; padding:12px 9px; }
+  h1 { color:var(--accent); font-weight:normal; letter-spacing:2px; font-size:38px; margin:14px 0 4px; }
+  .tag { color:var(--muted); font-size:14px; letter-spacing:2px; text-transform:uppercase; margin-bottom:4px; }
+  .dateline { color:var(--muted); font-size:15px; margin-bottom:26px; letter-spacing:1px; }
+  h2 { color:var(--accent); font-weight:normal; font-size:15px; letter-spacing:3px; text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:6px; margin-top:44px; margin-bottom:18px; }
+  h3 { color:var(--text); font-weight:normal; font-size:22px; margin:22px 0 8px; line-height:1.3; }
+  h3 a { color:var(--text); text-decoration:none; }
+  h3 a:hover { color:var(--accent); text-decoration:none; }
+  .outlet { color:var(--muted); font-size:14px; font-style:italic; margin-bottom:8px; }
+  .item { margin-bottom:26px; padding-bottom:6px; }
+  .sowhat { color:var(--accent); font-style:italic; font-size:16px; margin-top:10px; border-left:2px solid var(--accent); padding-left:12px; }
+  .sowhat::before { content:"So what: "; font-weight:bold; font-style:normal; text-transform:uppercase; letter-spacing:1px; font-size:14px; }
+  blockquote { border-left:3px solid var(--accent); margin:14px 0; padding:6px 16px; color:var(--text); font-size:19px; line-height:1.5; }
+  .callout { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.35); padding:18px 20px; margin:12px 0; border-radius:2px; }
+  .callout p { margin:0; }
+  .player { display:flex; align-items:center; gap:14px; margin:8px 0 30px; padding:14px 16px; border:1px solid rgba(201,168,76,0.3); border-radius:2px; }
+  #playBtn { background:var(--accent); color:var(--bg); border:0; padding:12px 20px; font-family:Georgia,serif; font-size:16px; cursor:pointer; border-radius:2px; min-height:44px; }
+  #playBtn:hover { opacity:0.9; }
+  #playLabel { color:var(--muted); font-size:14px; }
+  .ledger-record { font-size:17px; margin-bottom:10px; }
+  .verdict-open { color:var(--muted); font-weight:bold; letter-spacing:2px; }
+  .verdict-hit { color:var(--accent); font-weight:bold; letter-spacing:2px; }
+  .verdict-miss { color:var(--miss); font-weight:bold; letter-spacing:2px; }
+  .verdict-unsettled { color:var(--muted); font-weight:bold; letter-spacing:2px; }
+  .call-block { border:1px solid rgba(201,168,76,0.25); padding:14px 16px; margin:14px 0; border-radius:2px; }
+  .call-block .meta { color:var(--muted); font-size:13px; letter-spacing:1px; margin-bottom:8px; text-transform:uppercase; }
+  .call-block p { margin:6px 0; }
+  ol.sources { padding-left:22px; font-size:15px; }
+  ol.sources li { margin-bottom:8px; color:var(--text); }
+  ol.sources li .tier { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-left:6px; }
+  sup a { color:var(--accent); text-decoration:none; font-size:12px; padding:6px 4px; margin:-6px -4px; }
+  sup a:hover { text-decoration:underline; }
+  footer { margin-top:60px; padding-top:20px; border-top:1px solid rgba(201,168,76,0.2); color:var(--muted); font-size:13px; text-align:center; }
+
+  @media (max-width: 480px) {
+    body { font-size:17px; }
+    .wrap { padding:18px 16px 40px; }
+    h1 { font-size:30px; letter-spacing:1px; }
+    .bar { font-size:13px; gap:8px 10px; }
+    .bar a, .bar .next { padding:12px 6px; margin:-12px -6px; }
+    .nav-mid a { padding:12px 8px; margin:-12px 2px; }
+    h2 { font-size:14px; letter-spacing:2px; margin-top:36px; }
+    h3 { font-size:20px; }
+    blockquote { font-size:17px; padding:6px 12px; }
+    .callout { padding:14px 14px; }
+    .call-block { padding:12px 12px; }
+    ol.sources { font-size:14px; padding-left:20px; }
+    .outlet, .dateline, .tag, ol.sources li .tier, .call-block .meta { font-size:14px; }
+    .sowhat { font-size:15px; }
+    sup a { padding:8px 6px; margin:-8px -6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar">
+  <a href="2026-08-14.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="tag">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="tag">AI &amp; Tech · Signal over noise</div>
+<div class="dateline">Saturday, August 15, 2026</div>
+
+<div class="player">
+  <button id="playBtn" onclick="togglePlay()">▶ Listen</button>
+  <span id="playLabel">~4 min briefing</span>
+</div>
+
+<h2>Lead Story</h2>
+<div class="item">
+<div class="outlet">— Z.ai / Bloomberg / SiliconANGLE</div>
+<h3><a href="https://www.bloomberg.com/news/articles/2026-08-14/z-ai-aims-to-catch-anthropic-openai-in-coding-with-new-ai-model">GLM-5.3 tops the open-weights coding board on post-training alone — and finds real vulnerabilities Z.ai didn't train it to find</a></h3>
+
+<p>On August 14 Z.ai shipped GLM-5.3, an update to its 743-billion-parameter mixture-of-experts base model. The headline claim is unusual: <em>nothing about the base changed</em>. "Scaling post-training is all we did for GLM-5.3," the company wrote in its release announcement.<sup><a href="#s1">[1]</a></sup> Every capability gain — and there are big ones — came from a longer, more expensive post-training run on the same weights that shipped as GLM-5.2 in June.<sup><a href="#s2">[2]</a></sup></p>
+
+<p>The coding numbers are the loud part. On Terminal-Bench 3.0, which measures long-horizon command-line agentic work, GLM-5.3 jumped from 4.6 to 28.3 and now leads all open-weights systems the benchmark tracks.<sup><a href="#s4">[4]</a></sup> On DeepSWE v1.1 the score moved from 46.2 to 66.9. Z.ai's internal coding benchmark showed a 50% improvement over GLM-5.2 at half the token budget of Claude Opus 4.8.<sup><a href="#s3">[3]</a></sup> Bloomberg framed the release as Z.ai's play to close the coding gap on Anthropic's Fable 5 and OpenAI's frontier tier;<sup><a href="#s2">[2]</a></sup> SiliconANGLE noted the model is now available through Z.ai's API and coding plan, with open weights promised on Hugging Face in roughly two weeks after safety hardening completes.<sup><a href="#s3">[3]</a></sup></p>
+
+<p>The quieter part is more interesting. GLM-5.3 hit 84.5% on CyberGym — first place ahead of Mythos 5 (83.8%) and GPT-5.6 Sol (83.6%) — and more than doubled its ExploitBench score, from 24.4% to 54.4%.<sup><a href="#s4">[4]</a></sup> Z.ai's own writeup says the vulnerability-discovery training scaled beyond what they planned: the model started chaining single-bug reasoning into multi-step exploitation on its own. During evaluation it found more than 2,400 vulnerabilities across 269 open-source projects, roughly half rated medium severity or above, including bugs in code written 40 years ago.<sup><a href="#s1">[1]</a></sup> A capability the lab did not fully anticipate emerged from post-training scale alone, on an unchanged base.</p>
+
+<p>Two structural signals for builders. First, the "pretraining is where the capability lives" mental model is breaking down at the edges — post-training now moves the coding leaderboard by 24 points on a single benchmark. Second, cyber capability is no longer separable from coding capability: the same run that made GLM-5.3 the best open-weights coder also made it the best open-weights vulnerability finder, and Z.ai flagged the offensive-security edge as a scaling surprise, not a design target. When the weights drop in two weeks under the MIT license Z.ai has used for prior GLM releases, both capabilities ship to whoever downloads them.</p>
+
+<div class="sowhat">If your coding-agent stack is built on Claude or GPT because "open weights aren't there yet," put a two-week hold on that assumption and re-run your eval suite against GLM-5.3 the day the weights drop. If your security team blocks self-hosted open-weights coders on capability-risk grounds, GLM-5.3 is the exact model to write the policy against — its vulnerability-discovery capability is now on the record.</div>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="item">
+<div class="outlet">— OpenAI / Cerebras</div>
+<h3><a href="https://openai.com/index/previewing-ultrafast/">OpenAI previews Ultrafast mode on GPT-5.6 Sol — 750 tokens/sec, 14× standard speed, powered by Cerebras</a></h3>
+<p>Announced August 13. Same model intelligence as GPT-5.6 Sol Standard, up to 750 output tokens per second via Cerebras Wafer-Scale Engine hardware. On the GDP-Val benchmark for economically valued knowledge work, Ultrafast delivered a 5.6× end-to-end speedup with no quality degradation; on Humanity's Last Exam it finished 2,500 PhD-level questions in 11 hours 11 minutes versus Claude Fable 5's 78+ hours.<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup> Limited preview only — no published price, no confirmed GA date, no model ID string. Available to select OpenAI API customers with capacity-based expansion planned.</p>
+<div class="sowhat">Agent loops bounded by response latency — voice UIs, IDE inline assist, live user turn-taking — become viable at frontier intelligence for the first time. Get on the invite list, but do not architect a shipping product around it: preview terms mean today's throughput is tomorrow's rate limit.</div>
+</div>
+
+<div class="item">
+<div class="outlet">— Alibaba / Hugging Face</div>
+<h3><a href="https://huggingface.co/Qwen/Qwen3.8-27B">Qwen 3.8-27B lands on Hugging Face under Apache 2.0 — 28B dense, 262K context, distilled from Qwen 3.8-Max</a></h3>
+<p>Alibaba published Qwen 3.8-27B this week as the open-weights sibling to the 2.4-trillion-parameter Qwen 3.8-Max that went GA on August 3. Dense (not MoE) at 28 billion parameters, multimodal across text, image and video, 262,144-token native context extensible toward 1M, Apache 2.0 license — commercial use, modification, and redistribution all allowed.<sup><a href="#s7">[7]</a></sup> Runs on a single high-end consumer GPU or a Ryzen AI Max workstation.</p>
+<div class="sowhat">This is the smallest frontier-adjacent multimodal model that fits on a workstation you already own. If Meta's Muse Glimmer was your last "finally, a permissive open-weights option" moment, put Qwen 3.8-27B on the same eval bench this week — the vision-language work you already did will mostly transfer.</div>
+</div>
+
+<div class="item">
+<div class="outlet">— OpenAI / CBS News</div>
+<h3><a href="https://openai.com/index/testing-ads-in-chatgpt/">OpenAI extends ChatGPT ads to EEA and Switzerland — Free and Go tiers only, contextual targeting first</a></h3>
+<p>OpenAI Ireland notified Free and Go plan users in the European Economic Area and Switzerland on August 15 that ads will start appearing later this month.<sup><a href="#s8">[8]</a></sup> Initial targeting is contextual only — current-conversation topic, general location, device type — with an explicit opt-in required before personalized ads can draw on chat history or memory.<sup><a href="#s9">[9]</a></sup> Plus, Pro, Business, Enterprise and Education subscriptions remain ad-free. This extends the rollout that began in the UK, Mexico, Brazil, Japan and South Korea on August 11.</p>
+<div class="sowhat">If your product routes end-users through free ChatGPT via link, embed, or a shared-workspace assistant, plan for sponsored content appearing in that response flow within weeks. If you sell to EU enterprise buyers who currently defend a "we use the free tier for scratch work" posture, the calculus just changed: ad-free requires a paid seat.</div>
+</div>
+
+<div class="item">
+<div class="outlet">— The Hacker News / CISA</div>
+<h3><a href="https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html">CISA adds Langflow RCE (CVE-2026-9198, CVSS 9.8) to Known Exploited Vulnerabilities — first AI agent platform on the list</a></h3>
+<p>Unauthenticated remote code execution on default Langflow deployments, fixed in version 1.10.1 in July. Telemetry: 650 exploitation attempts from 244 unique IPs across 41 countries starting July 6. Federal patch deadline was August 7. Langflow is the first AI agent orchestration platform to appear on the CISA KEV catalog.<sup><a href="#s11">[11]</a></sup> The same advisory flags CVE-2026-34486 in Apache Tomcat, being weaponized by Chinese threat actors using DeepSeek-driven Hermes Agent framework against 460+ systems in 100+ countries.</p>
+<div class="sowhat">If your team runs Langflow to prototype AI workflows, patch to 1.10.1 today — the exploits are in the wild, not theoretical. And the Hermes-Agent-plus-DeepSeek pattern is the shape of the next class of scanning campaign: assume the attackers now have coding-capable agents at least as good as the defenders' triage tools.</div>
+</div>
+
+<div class="item">
+<div class="outlet">— Google Workspace</div>
+<h3><a href="https://workspaceupdates.googleblog.com/2026/08/use-google-sheets-canvas-to-visualize-data.html">Google ships Sheets canvas — Gemini turns any spreadsheet into a read-write interactive mini-app from a prompt</a></h3>
+<p>Launched August 13. Natural-language prompts generate a live layout on top of the raw data with real-time bidirectional sync, shared via existing Sheets permissions. Rapid Release domains rolling out from August 10; Scheduled Release from August 31. Web only, English only. Available to Business Standard/Plus, Enterprise Standard/Plus, Google AI Pro/Ultra and select Education tiers.<sup><a href="#s10">[10]</a></sup></p>
+<div class="sowhat">Internal tools you hand-built as Retool or Streamlit dashboards on a shared sheet may lose the price-vs-friction fight to a Sheets prompt this quarter. Audit the ones with fewer than ~50 weekly users first — those are the ones the finance owner will be most tempted to consolidate.</div>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="item">
+<h3>GLM-5.3 — Z.ai, August 14</h3>
+<p>Same 743B mixture-of-experts base as GLM-5.2; every gain from post-training. Terminal-Bench 3.0 28.3 (from 4.6), CyberGym 84.5% (first place), ExploitBench 54.4% (doubled). API and GLM Coding Plan only until weights drop on Hugging Face in ~2 weeks. Pricing per Z.ai's existing coding plan tier.<sup><a href="#s1">[1]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+<div class="sowhat">Rebuild your open-weights coding eval to include GLM-5.3 the day the weights land — the current #1 open-weights coder is not the one you tested against last week.</div>
+</div>
+
+<div class="item">
+<h3>Qwen 3.8-27B — Alibaba, August 14</h3>
+<p>Dense 28B multimodal (text/image/video), 262,144-token native context extensible to 1M, Apache 2.0 on Hugging Face. Fits on a single high-end GPU. Distilled from the 2.4T Qwen 3.8-Max released August 3.<sup><a href="#s7">[7]</a></sup></p>
+<div class="sowhat">The smallest frontier-adjacent multimodal model that will fit on a workstation this week — genuinely permissive licensing, no field-of-use clause.</div>
+</div>
+
+<div class="item">
+<h3>GPT-5.6 Sol Ultrafast — OpenAI × Cerebras, August 13 (limited preview)</h3>
+<p>Same intelligence as GPT-5.6 Sol Standard. Up to 750 output tokens/sec, 14× Standard, 5.6× end-to-end speedup on GDP-Val with no quality loss. Cerebras Wafer-Scale Engine, weights on-chip. No published price, no GA date, no model ID string — invitation-based OpenAI API access.<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup></p>
+<div class="sowhat">Frontier intelligence at real-time speeds becomes an option for voice, IDE and turn-taking agent loops — but preview terms mean this is not yet an architecture to bet a product on.</div>
+</div>
+
+<h2>Voices</h2>
+<div class="item">
+<p><strong>Dr. Fei-Fei Li</strong>, Stanford computer science professor and co-founder of World Labs, on the <a href="https://www.hubermanlab.com/episode/using-ai-to-increase-your-intelligence-and-enrich-humanity-fei-fei-li">Huberman Lab podcast</a> released August 11, 2026 (episode: <em>Using AI to Increase Your Intelligence &amp; Enrich Humanity</em>, ~3 hours):<sup><a href="#s12">[12]</a></sup></p>
+<blockquote>"The absolute bad outcome is that our young generation, their agency and human-level motivation of learning and living is taken away by tools."</blockquote>
+<p>Li argues the primary danger of AI in classrooms is not academic dishonesty but the erosion of intrinsic motivation — students losing the reason to learn at all — and that outright bans are equally corrosive. Her position is a targeted-integration one: use AI when a motivated learner is already stuck on a specific problem, not as a shortcut around the effort that produces understanding.<sup><a href="#s13">[13]</a></sup> The framing generalises past classrooms. Any tool that mediates between a professional and the problem they are trying to solve can strip the same motivation if the friction it removes was the friction that produced the skill. Worth a full listen for the section on "agentic curiosity" and where in a workflow to place — and withhold — an assistant.</p>
+<div class="sowhat">Before your next agentic feature ships, name the specific skill your user develops <em>by struggling with</em> the problem this feature removes. If the answer is "none," the feature is fine. If the answer is a load-bearing professional skill, you are not building a copilot — you are building the reason your users stop developing.</div>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="callout">
+<p>The compute-side story this week is that <em>base pretraining is no longer where the marginal gains live</em>. GLM-5.3 took the open-weights coding crown by running a longer post-training pass on an unchanged base. Ultrafast took GPT-5.6 Sol to 14× real-time by rearchitecting inference on Cerebras silicon, without changing a weight. Qwen 3.8-27B distilled a 2.4-trillion-parameter teacher into 28 billion parameters that run on a single GPU. Three different labs, three different techniques, one shape: the base model is stable, and every serious capability move this week came from what you do <em>after</em> it — post-training, inference architecture, or distillation. Yesterday's signal said the frontier is moving into the layer <em>around</em> the model; today's says it is also moving into the layer <em>between</em> the model and the user. Base-model scale is not dead, but it is no longer the only lever, and this week the other levers moved further.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger-record"><strong>Season 1 · 0-0 · 3 calls OPEN</strong></div>
+<p>No calls graded today — the two prior calls (horizons 2026-09-13 and 2026-10-31) remain inside their windows. The record is public and unedited from the day each was written.</p>
+
+<div class="call-block">
+<div class="meta"><span class="verdict-open">OPEN</span> · 2026-08-15-1 · logged 2026-08-15 · horizon 2026-09-30</div>
+<p><strong>Call:</strong> The GLM-5.3 template — "same base model, all gains from post-training" — will be adopted publicly by at least one Western frontier lab within six weeks. By 2026-09-30, Anthropic, OpenAI, Google DeepMind, xAI, Meta, or Mistral will ship a release explicitly framed as a post-training-only iteration on an unchanged base, not a new pretrained model.</p>
+<p><strong>Basis:</strong> Z.ai shipped GLM-5.3 on August 14 explicitly stating "Scaling post-training is all we did for GLM-5.3", taking #1 open-weights on Terminal-Bench 3.0 (28.3 up from 4.6 on the same base) and topping CyberGym at 84.5%. If post-training scale is delivering these gains, the story — better model, same weights lineage, no capability drift — is exactly what an enterprise buyer wants to hear. Western labs will not sit out that framing long.</p>
+<p><strong>Test:</strong> A primary-source release note, model card, or blog post from any named lab on or before 2026-09-30, explicitly stating (a) no new pretraining was performed and (b) presented as a numbered or named iteration. Routine RLHF fine-tunes without the explicit "same base" framing do not count; benchmark improvements alone do not count.</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1">Z.ai — <em>Introducing GLM-5.3: Built to Code. Ready for Cyber Defense.</em> <a href="https://x.com/Zai_org/status/2088132965922476159">post</a> <span class="tier">primary</span></li>
+<li id="s2">Bloomberg — <em>Z.ai to Rival Anthropic, OpenAI in Coding With New AI Model.</em> <a href="https://www.bloomberg.com/news/articles/2026-08-14/z-ai-aims-to-catch-anthropic-openai-in-coding-with-new-ai-model">article</a> <span class="tier">tier-1</span></li>
+<li id="s3">SiliconANGLE — <em>Z.ai debuts GLM-5.3 with long-horizon coding, cybersecurity upgrades.</em> <a href="https://siliconangle.com/2026/08/14/z-ai-debuts-glm-5-3-long-horizon-coding-cybersecurity-upgrades/">article</a> <span class="tier">trade</span></li>
+<li id="s4">MarkTechPost — <em>Z.ai Ships GLM-5.3 Without Retraining the Base Model.</em> <a href="https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/">article</a> <span class="tier">trade</span></li>
+<li id="s5">OpenAI — <em>Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed.</em> <a href="https://openai.com/index/previewing-ultrafast/">post</a> <span class="tier">primary</span></li>
+<li id="s6">Cerebras — <em>Accelerating GPT-5.6 Sol Ultrafast with OpenAI.</em> <a href="https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai">post</a> <span class="tier">primary</span></li>
+<li id="s7">Hugging Face — <em>Qwen/Qwen3.8-27B model card.</em> <a href="https://huggingface.co/Qwen/Qwen3.8-27B">page</a> <span class="tier">primary</span></li>
+<li id="s8">OpenAI — <em>Testing ads in ChatGPT.</em> <a href="https://openai.com/index/testing-ads-in-chatgpt/">post</a> <span class="tier">primary</span></li>
+<li id="s9">CBS News — <em>OpenAI starts testing ads in free version of ChatGPT.</em> <a href="https://www.cbsnews.com/news/chatgpt-ads-openai-ai-artificial-intelligence/">article</a> <span class="tier">tier-1</span></li>
+<li id="s10">Google Workspace — <em>Use Sheets canvas to visualize data in custom, interactive mini-apps.</em> <a href="https://workspaceupdates.googleblog.com/2026/08/use-google-sheets-canvas-to-visualize-data.html">post</a> <span class="tier">primary</span></li>
+<li id="s11">The Hacker News — <em>CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited.</em> <a href="https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html">article</a> <span class="tier">trade</span></li>
+<li id="s12">Huberman Lab — <em>Using AI to Increase Your Intelligence &amp; Enrich Humanity | Dr. Fei-Fei Li.</em> <a href="https://www.hubermanlab.com/episode/using-ai-to-increase-your-intelligence-and-enrich-humanity-fei-fei-li">episode</a> <span class="tier">primary</span></li>
+<li id="s13">The Next Web — <em>Fei-Fei Li: the real risk of AI in classrooms is students who stop wanting to learn.</em> <a href="https://thenextweb.com/news/fei-fei-li-ai-schools-student-motivation-learning">article</a> <span class="tier">trade</span></li>
+</ol>
+
+<nav class="bar">
+  <a href="2026-08-14.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Saturday, August fifteenth, twenty twenty-six. Signal over noise. Here is what actually matters for builders today. Lead story. On August fourteenth, Z-dot-A-I shipped G L M five point three, an update to its seven hundred and forty three billion parameter mixture of experts base model. The unusual claim is that nothing about the base changed. Scaling post-training is all we did, the company wrote. Every capability gain came from a longer post-training run on the same weights that shipped as G L M five point two in June. The coding numbers are the loud part. On Terminal Bench three point zero, which measures long-horizon command line agentic work, G L M five point three jumped from four point six to twenty eight point three and now leads all open weights systems the benchmark tracks. On its internal coding benchmark, fifty percent better than the June release at half the token budget of Claude Opus four point eight. The quieter part is more interesting. The model hit eighty four point five percent on CyberGym, first place ahead of Mythos five and G P T five point six Sol, and more than doubled its ExploitBench score. Z-dot-A-I says the vulnerability discovery training scaled beyond what they planned. The model started chaining single bug reasoning into multi step exploitation on its own. During evaluation it found over twenty four hundred vulnerabilities across two hundred and sixty nine open source projects, including bugs in code written forty years ago. A capability the lab did not fully anticipate emerged from post-training scale alone. So what. If your coding agent stack is built on Claude or G P T because open weights aren't there yet, put a two week hold on that assumption and re-run your eval suite against G L M five point three the day the weights drop. Now the briefs. First. OpenAI previewed Ultrafast mode on G P T five point six Sol on August thirteenth. Same model intelligence, up to seven hundred and fifty output tokens per second via Cerebras wafer scale hardware. Fourteen times standard speed. Five point six times end to end speedup on the G D P Val benchmark with no quality loss. Limited preview only, no published price, no G A date. Second brief. Alibaba published Qwen three point eight twenty seven B on Hugging Face under Apache two point zero this week. Dense twenty eight billion parameters, multimodal across text image and video, two hundred and sixty two thousand token native context extensible toward one million. Fits on a single high end consumer G P U. The smallest frontier adjacent multimodal model that will fit on a workstation you already own. Third brief. OpenAI Ireland notified Free and Go tier users in the European Economic Area and Switzerland on August fifteenth that ads will start appearing later this month. Initial targeting is contextual only. Personalized ads require an explicit opt in. Paid tiers stay ad free. Fourth brief. C I S A added Langflow C V E twenty twenty six dash nine one nine eight to the Known Exploited Vulnerabilities catalog. C V S S nine point eight unauthenticated remote code execution. Six hundred and fifty exploitation attempts from two hundred and forty four unique I Ps across forty one countries. Langflow is the first A I agent platform ever on K E V. Fifth brief. Google shipped Sheets canvas on August thirteenth. Gemini turns any spreadsheet into a read write interactive mini app from a natural language prompt, with real time bidirectional sync. Internal tools built as Retool or Streamlit dashboards on a shared sheet may lose the price versus friction fight this quarter. Model watch. G L M five point three from Z-dot-A-I, August fourteenth, seven hundred and forty three billion mixture of experts, weights on Hugging Face in about two weeks. Qwen three point eight twenty seven B from Alibaba, August fourteenth, twenty eight billion dense multimodal, Apache two point zero. G P T five point six Sol Ultrafast from OpenAI and Cerebras, August thirteenth, limited preview. Voices. Doctor Fei-Fei Li, Stanford computer science professor and co-founder of World Labs, on the Huberman Lab podcast released August eleventh. Quote: The absolute bad outcome is that our young generation, their agency and human level motivation of learning and living is taken away by tools. End quote. Li argues the primary danger of A I in classrooms is not academic dishonesty but the erosion of intrinsic motivation. The framing generalizes past classrooms. Any tool that mediates between a professional and the problem they are trying to solve can strip the same motivation if the friction it removes was the friction that produced the skill. So what. Before your next agentic feature ships, name the specific skill your user develops by struggling with the problem this feature removes. If the answer is a load bearing professional skill, you are not building a copilot. Today's signal. Base pretraining is no longer where the marginal gains live. G L M five point three took the open weights coding crown from a longer post-training pass on an unchanged base. Ultrafast took G P T five point six Sol to fourteen times real time by rearchitecting inference on Cerebras silicon, without changing a weight. Qwen three point eight twenty seven B distilled a two point four trillion parameter teacher into twenty eight billion that runs on a single G P U. Three different labs, three different techniques, one shape. The base model is stable, and every serious capability move this week came from what you do after it. Base scale is not dead but it is no longer the only lever, and this week the other levers moved further. That is Above The Noise for August fifteenth. Ship carefully.";
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+function togglePlay() {
+  const btn = document.getElementById('playBtn');
+  const lbl = document.getElementById('playLabel');
+  if (U && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen';
+    lbl.textContent = '~4 min briefing';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ Listen'; lbl.textContent = 'Done.'; U = null; };
+  U.onerror = () => { btn.textContent = '▶ Listen'; lbl.textContent = 'Playback failed.'; U = null; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+  lbl.textContent = 'Playing…';
+}
+if (typeof speechSynthesis !== 'undefined') { speechSynthesis.onvoiceschanged = pickVoice; }
+</script>
+</body>
+</html>
