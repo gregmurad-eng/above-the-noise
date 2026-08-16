@@ -38,6 +38,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-16-1",
+      "date": "2026-08-16",
+      "call": "DeepSeek's Aug 16 pricing move is a template, not an isolated event: by 2026-09-30, at least one other frontier API vendor (OpenAI, Anthropic, xAI, Google, or Mistral) will publish an API pricing change that either (a) raises published per-token rates on an existing production frontier model, or (b) introduces peak / off-peak tiered pricing on a frontier model.",
+      "basis": "DeepSeek's 4x+ price hike on V4-Pro (effective 16:00 UTC 2026-08-16) moves the reference price for the entire market floor and gives every upstream vendor room to reprice. Anthropic's $6B Decart talks and IBM's Elite alliance with OpenAI are the same theme viewed from margin (efficiency buys) and revenue (consulting channels). The frontier is done chasing free traffic; peak/off-peak tiering will be copied because it works for cloud storage and now for inference.",
+      "horizon": "2026-09-30",
+      "test": "A primary-source release note, pricing page, changelog, or blog post from any of the named labs, dated on or before 2026-09-30, that either (a) raises published per-token rates on an existing production frontier model relative to its 2026-08-15 rate, or (b) introduces time-of-day tiered pricing on a frontier model. Introductory-pricing expiries that were pre-announced before 2026-08-16 do not count; new promotional discounts do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
