@@ -50,6 +50,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-17-1",
+      "date": "2026-08-17",
+      "call": "Stripe's OpenRouter buy is the opening move of AI-middleware consolidation by non-model incumbents, not an isolated deal. By 2026-10-15, at least one other AI-middleware vendor (an AI gateway, model router, LLM proxy, agent framework, or inference-routing platform, with a most-recent published valuation of $500M or more) will announce EITHER (a) an acquisition by an incumbent from payments, CDN, cloud, or database infrastructure at total consideration of $1B or more, OR (b) a strategic investment of $200M or more led by an incumbent from those categories.",
+      "basis": "Bloomberg and TechCrunch reported on 2026-08-16 that Stripe finalised its acquisition of OpenRouter for over $7B, a 5x+ markup on OpenRouter's May $1.3B Series B. The move buys a payments company visibility into which models win and lose per developer per call, and it makes the neutrality guarantee that developers relied on OpenRouter for explicitly billing-owned. Anthropic-Decart talks (efficiency layer), the IBM-OpenAI Elite alliance (consulting layer), and DeepSeek's pricing tier change (metering layer) are all versions of the same trade: model capability is table stakes, and the wrapper around the model is where the next round of consolidation lands. Cloudflare, Adyen, Snowflake, Databricks, PayPal, Block, and the major CDNs are all sitting on infrastructure that fits an AI-gateway acquisition.",
+      "horizon": "2026-10-15",
+      "test": "A primary-source press release or tier-1 news report on or before 2026-10-15 confirming (a) or (b) above. The middleware vendor must NOT be a foundation-model lab. The incumbent must NOT be a pure AI VC and must NOT be a foundation-model lab. Routine Series C/D venture rounds and OEM/reseller partnerships do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
