@@ -62,6 +62,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-18-1",
+      "date": "2026-08-18",
+      "call": "Nvidia's $105B residual-value guaranty for OpenAI's Ohio campus is the template, not the outlier: by 2026-11-30, at least one additional chip supplier (Nvidia, AMD, or Intel) will disclose in an SEC filing or primary-source press release a lease backstop, residual-value guaranty, or take-or-pay purchase commitment of $10B or more attached to a data-centre lease whose named tenant is a frontier AI lab OTHER than OpenAI (i.e. Anthropic, Google DeepMind, xAI, Meta, Mistral, or an Anthropic-tier peer).",
+      "basis": "Nvidia's Aug 17 8-K disclosed a residual-value guaranty capped at $105B for 4.25 GW of IT load at SB Energy's PORTS-Pike site in Ohio, with OpenAI as anchor tenant on a 20-year lease and a $1.5B equity investment into SB Energy. Huang framed it publicly as 'securing long-lived infrastructure' rather than as vendor financing, and told analysts the site could support $150-200B of GPU revenue per hardware generation. Every other frontier lab has the same balance-sheet gap Amodei has been public about, and Nvidia has the same reason to lock those labs in on other sites before AMD's MI400 launch reshuffles the buyer pool.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source SEC filing (10-Q, 10-K, 8-K) or company press release dated on or before 2026-11-30 from Nvidia, AMD, or Intel disclosing a residual-value guaranty, take-or-pay purchase commitment, or lease-payment guaranty totaling $10B or more, attached to a data-centre lease whose named tenant is a frontier AI lab OTHER than OpenAI. Routine GPU supply contracts, cloud-provider commitments (AWS, Azure, GCP, Oracle) where the tenant is the cloud, and equity investments without an accompanying financial guaranty do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
