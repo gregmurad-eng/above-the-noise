@@ -74,6 +74,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-19-1",
+      "date": "2026-08-19",
+      "call": "OpenAI's ChatGPT for Teens is the template, not the outlier: by 2026-11-30, at least one other frontier AI vendor (Anthropic, Google DeepMind, xAI, Meta, or Mistral) will announce a distinct under-18 product experience or age-gated mode with parental controls \u2014 a dedicated product surface, not a generic content filter.",
+      "basis": "OpenAI began global rollout of ChatGPT for Teens on Aug 18: distinct 13-17 tier, automatic age routing (self-declared and predicted), default Study Mode, hard content limits, anti-parasocial guardrail (no terms of endearment, no 'I have feelings'), and parental controls (Quiet Hours, Study Hours, safety alerts). Same day, opening arguments began in Oakland federal court in the 29-state child-safety trial against Meta, testing platform-liability theory against Section 230-era design choices. The trial arc + the plaintiffs' bar starting to circle foundation-model vendors + the EU AI Office transparency posture together make 'we do not offer age-tiered protections' an increasingly unhedged legal exposure. Every other frontier lab has both the incentive and the assets to match the OpenAI reference within the fast-follow window.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source blog post, press release, or product page from any of the named labs (Anthropic, Google DeepMind, xAI, Meta, or Mistral) dated on or before 2026-11-30, announcing (a) a product experience specifically marketed for users under 18 AND (b) exposing parental oversight controls (quiet hours, activity alerts, mode-defaults, or equivalent). Generic content-moderation policy updates, existing enterprise/education tiers, third-party integrations that add controls without a dedicated under-18 product surface, and safety-posture blog posts without a shipping product do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
