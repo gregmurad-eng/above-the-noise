@@ -86,6 +86,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-22-1",
+      "date": "2026-08-22",
+      "call": "Anthropic's protein-binder result is the template, not the outlier: by 2026-10-15, at least one other frontier lab (OpenAI, Google DeepMind, xAI, Meta, or Mistral) will publish a lab-validated result from its general-purpose frontier model designing a physical artefact \u2014 a protein binder, small-molecule ligand, novel material, or wet-lab-testable structure \u2014 with an outside experimental partner explicitly named.",
+      "basis": "Anthropic's Aug 18 paper 'Autonomous de novo protein binder design with Claude' reports 14/15 targets hit, with Adaptyv Bio and Twist Bioscience as named lab validators, and Mythos Preview scoring 40% on RBX1 vs 3.7% among Adaptyv competition participants. The same week, OpenAI cut GPT-5.6 Sol API pricing 20%+ under competitive pressure and Broadcom queued $60B+ in debt for AI-lab chip capacity: generic-token margin is compressing while specialised-domain capability is where labs are choosing to defend price. Every other frontier lab has both the motive (differentiate off the pricing floor) and the means (agentic tool loops + an experimental partner willing to publish) to match the Anthropic reference inside the fast-follow window.",
+      "horizon": "2026-10-15",
+      "test": "A primary-source blog post, paper, or press release from OpenAI, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15, disclosing BOTH (a) a lab-validated result from their frontier general-purpose model in a wet-lab or physical-materials domain, AND (b) an outside experimental partner explicitly named. Existing bio-specific model releases (e.g. AlphaFold-family drops from DeepMind), pure computational or simulation-only benchmarks, and partnership announcements without a shipped lab-validated result do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
