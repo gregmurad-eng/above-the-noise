@@ -98,6 +98,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-23-1",
+      "date": "2026-08-23",
+      "call": "MCP's Aug 22 roadmap will move from proposal to shipped identity primitive within eight weeks: by 2026-10-18, at least one of the two named Agent Identity WG proposals \u2014 DPoP (SEP-1932) OR Workload Identity Federation (SEP-1933) \u2014 will be merged as an accepted specification component in the modelcontextprotocol/modelcontextprotocol GitHub repository, and at least one Tier 1 MCP SDK (the official Anthropic, Google, or OpenAI implementation) will ship it in a released version.",
+      "basis": "The Aug 22 roadmap by lead maintainers David Soria Parra and Den Delimarsky explicitly names both SEPs as active proposals under an Agent Identity WG that is forming, and states 'SEPs that fall within these priority areas get expedited review.' Enterprise adoption of MCP servers is being held back by static-secret authentication and by the gap between agent identity and user-delegated authority; the roadmap frames both DPoP and Workload Identity Federation as the specific answers. The 2026-07-28 spec already shipped the stateless transport that these auth primitives were waiting on, so the ordering constraint is gone. Every Tier 1 SDK maintainer participates in the same WG and has a channel incentive to ship first.",
+      "horizon": "2026-10-18",
+      "test": "A primary-source GitHub PR merge, dated on or before 2026-10-18, into the modelcontextprotocol/modelcontextprotocol main branch that adopts either SEP-1932 (DPoP) or SEP-1933 (Workload Identity Federation) as an accepted specification component, AND a released SDK version (Python, TypeScript, C#, or the Anthropic/Google/OpenAI official implementation) dated on or before 2026-10-18 that ships support for the merged primitive. Draft PR state, RFC state, or withdrawal do not count. SDK support in an unreleased branch or pre-release tag does not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
