@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — Sunday, August 23, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a8068;
+    --miss: #c17070;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 48px; }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #2a2417;
+    margin-bottom: 20px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+  }
+  .bar a, .bar span {
+    white-space: nowrap;
+    padding: 12px 6px;
+    display: inline-block;
+    text-decoration: none;
+    min-height: 44px;
+    line-height: 1.4;
+  }
+  .bar a { color: var(--accent); }
+  .bar a:hover { text-decoration: underline; }
+  .nav-mid { display: inline-flex; gap: 0; align-items: center; }
+  .nav-mid a { color: var(--accent); margin: 0 9px; }
+  .bar .next { color: var(--muted); }
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 40px;
+    letter-spacing: 0.02em;
+    margin: 12px 0 4px;
+    color: var(--text);
+  }
+  .tag { color: var(--accent); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
+  .dateline { color: var(--muted); font-size: 14px; margin-bottom: 24px; font-style: italic; }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 1px solid #2a2417;
+    padding-top: 24px;
+    margin-top: 32px;
+    margin-bottom: 14px;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 18px 0 8px;
+    color: var(--text);
+  }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  h3 a:hover { color: var(--accent); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); }
+  .so-what {
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 10px;
+    display: block;
+  }
+  .so-what b { font-style: normal; font-weight: normal; letter-spacing: 0.05em; }
+  .item { margin: 22px 0 26px; padding-bottom: 4px; }
+  .outlet { color: var(--muted); font-size: 14px; letter-spacing: 0.05em; }
+  .listen {
+    display: inline-block;
+    min-height: 44px;
+    padding: 12px 22px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px 0 24px;
+  }
+  .listen:hover { background: var(--accent); color: var(--bg); }
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11px;
+    padding: 6px 4px;
+    margin: -6px -4px;
+    position: relative;
+    top: -2px;
+  }
+  sup a:hover { text-decoration: underline; }
+  .signal-box {
+    border: 1px solid var(--accent);
+    padding: 18px 22px;
+    margin: 20px 0;
+    background: rgba(201, 168, 76, 0.05);
+  }
+  .signal-box h2 { border: none; padding: 0; margin: 0 0 10px; }
+  .ledger .record {
+    color: var(--muted);
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .ledger .call { margin: 14px 0; padding: 12px 16px; border-left: 2px solid var(--muted); }
+  .ledger .call.open { border-left-color: var(--accent); }
+  .ledger .verdict-hit { color: var(--accent); font-weight: bold; letter-spacing: 0.1em; }
+  .ledger .verdict-miss { color: var(--miss); font-weight: bold; letter-spacing: 0.1em; }
+  .ledger .verdict-unsettled { color: var(--muted); font-weight: bold; letter-spacing: 0.1em; }
+  .ledger .verdict-open { color: var(--accent); font-weight: bold; letter-spacing: 0.1em; }
+  .ledger .horizon { color: var(--muted); font-size: 14px; font-style: italic; }
+  .sources ol { padding-left: 22px; }
+  .sources li { margin: 8px 0; font-size: 15px; line-height: 1.45; }
+  .sources .tier { color: var(--muted); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2417; color: var(--muted); font-size: 13px; font-style: italic; }
+  @media (max-width: 480px) {
+    html, body { font-size: 16px; }
+    .wrap { padding: 18px 16px 40px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 14px; }
+    h3 { font-size: 19px; }
+    .bar { font-size: 14px; gap: 8px 10px; }
+    .bar a, .bar span { padding: 12px 4px; }
+    .nav-mid a { margin: 0 6px; }
+    .tag, .dateline { font-size: 13px; }
+    .outlet { font-size: 14px; }
+    sup a { font-size: 11px; padding: 8px 5px; margin: -8px -5px; }
+    .sources li { font-size: 15px; }
+    .listen { padding: 12px 18px; font-size: 14px; }
+    .signal-box { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar"><a href="2026-08-22.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<div class="tag">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="dateline">AI &amp; Tech · Signal over noise · Sunday, August 23, 2026</div>
+
+<button class="listen" id="playBtn">▶ Listen (~4 min)</button>
+
+<h2>Lead Story</h2>
+<div class="item">
+<h3><a href="https://blog.modelcontextprotocol.io/posts/mcp-roadmap/">MCP's new roadmap moves agent identity off API keys and unifies transport on HTTP</a></h3>
+<div class="outlet">— Model Context Protocol Blog<sup><a href="#s1">[1]</a></sup></div>
+<p>The MCP maintainers published a new roadmap on August 22, signed by lead maintainers David Soria Parra and Den Delimarsky, that names five priority areas for the next specification cycle: agentic messaging primitives, HTTP-native transport unification, agent identity and enterprise security, improved primitives (progressive tool discovery and standardised tool results), and SDK developer experience.<sup><a href="#s1">[1]</a></sup> The document commits to expedited SEP review for proposals inside those areas and identifies two Agent Identity WG proposals already in active review: SEP-1932 for Demonstrating Proof of Possession (DPoP), and SEP-1933 for Workload Identity Federation.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup></p>
+
+<p>The read for anyone shipping an MCP server today: static-secret authentication is being deliberately retired. DPoP is the OAuth-adjacent mechanism that binds an access token to a key held by the caller, so a stolen bearer token cannot be replayed from another machine. Workload Identity Federation is how an agent proves it is calling on behalf of a specific user in a specific runtime, rather than as a shared service principal with a long-lived key. Read together, they answer the two enterprise objections that have stalled MCP rollouts inside regulated shops all summer: "which agent did this call?" and "what happens when the key leaks?"</p>
+
+<p>The transport story is the other half. The 2026-07-28 spec already made MCP servers stateless — each request carries what it needs, and a plain round-robin load balancer can front them — and the new roadmap collapses stdio-local and remote deployments onto the same HTTP-native transport model.<sup><a href="#s2">[2]</a></sup> That removes the last mode-switching branch from SDK code and lets the same server binary sit behind a Kubernetes ingress, a laptop tray icon, or a Cloudflare Worker without a config split. Progressive discovery lands in the same cycle so a tool catalogue of a few hundred entries stops eating the model's context window on first connect.</p>
+
+<p>What is not in this roadmap matters as much as what is. There is no capability-negotiation revamp, no new primitive for streaming multi-modal payloads, and no push to broaden the language of the spec beyond agent-to-tool. This is a hardening pass, not a widening one. The maintainers are betting that enterprise readiness — identity, audit, gateway behaviour, portable configuration — is what unblocks the next 12 months of adoption, and that the 97M-installs figure from the June dev summit is already the ceiling until those blockers move.<sup><a href="#s2">[2]</a></sup></p>
+
+<p class="so-what"><b>So what:</b> if you maintain an MCP server, mark DPoP (SEP-1932) and Workload Identity Federation (SEP-1933) as the next two hardening items on your Q4 roadmap — every enterprise buyer's security review after October will ask for both by name, and shipping ahead of the SDK is the cheapest time to do it.</p>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="item">
+<h3><a href="https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders">Anthropic ships Claude Mythos 5 into Claude Security vulnerability scanning</a></h3>
+<div class="outlet">— Anthropic<sup><a href="#s3">[3]</a></sup></div>
+<p>On August 21, Anthropic announced that Claude Mythos 5 — the cyber-capable model it had gated to vetted defenders since April — is now driving vulnerability scans inside Claude Security for Enterprise customers, and committed $35M in credits to a new open-source defence fund.<sup><a href="#s3">[3]</a></sup> The product surface hands back a scan result, not a prompt box, so the model that finds the bug cannot be steered into writing the exploit. The Cyber Verification Program expands over the coming weeks to route defensive workloads to Mythos-class access and reduce blocks on Opus and Sonnet for enrolled defenders.<sup><a href="#s3">[3]</a></sup></p>
+<p class="so-what"><b>So what:</b> if you run a security programme that already uses Claude for triage, get your Cyber Verification enrolment in this quarter — Mythos-class access is now a real ceiling and unenrolled orgs will hit the Opus/Sonnet safety blocks that enrolled ones no longer see.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://www.cnbc.com/2026/08/21/broadcom-debt-deal-expected-to-reach-upwards-of-70-billion-sources.html">Broadcom AI-chip debt raise expected to top $70B, potentially reaching $100B</a></h3>
+<div class="outlet">— CNBC<sup><a href="#s4">[4]</a></sup></div>
+<p>CNBC reported on August 21 that Broadcom's debt raise to finance custom-chip capacity for Anthropic and other AI-lab customers is now expected to reach $70–80 billion, with a roughly $30B junior tranche and total potentially climbing to $100 billion.<sup><a href="#s4">[4]</a></sup> The financing sits on top of the June $35B Broadcom–Apollo–Blackstone partnership to expand Anthropic's compute footprint through custom silicon, and behind a broader partnership target of delivering 20 GW of compute to top labs by 2028.</p>
+<p class="so-what"><b>So what:</b> price your 2027 inference plan against Anthropic-custom-silicon capacity coming online in H2 2027, not just NVIDIA GB300 supply — the pricing floor Anthropic can offer at that point compresses whatever the API market looks like today.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://thenextweb.com/news/dario-amodei-ai-public-trust-cure-cancer-ipo">Anthropic said to be weeks from an IPO filing, October listing targeted at $2T</a></h3>
+<div class="outlet">— TheNextWeb, citing Financial Times<sup><a href="#s5">[5]</a></sup></div>
+<p>TheNextWeb, summarising Financial Times reporting from August 16, said backers expect Anthropic to file its S-1 by the end of August and to list in October at a valuation of $2 trillion or more — larger than SpaceX's June debut, and predicated on annualised revenue projected between $100–120B by year end.<sup><a href="#s5">[5]</a></sup> Dario Amodei used X the same weekend to acknowledge that "the most accurate criticism of AI companies including Anthropic is that we haven't yet delivered on our big promises," which reads differently once the S-1 timing is public.<sup><a href="#s5">[5]</a></sup></p>
+<p class="so-what"><b>So what:</b> if your product roadmap depends on Anthropic pricing or SLAs, expect an S-1 quiet period to constrain product announcements from Anthropic over September–October — plan your public integrations around a filing window, not around a shipping cadence.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models">Claude 3 Haiku shut down on Google Cloud today</a></h3>
+<div class="outlet">— Google Cloud Documentation<sup><a href="#s6">[6]</a></sup></div>
+<p>August 23, 2026 is the published shutdown date for Claude 3 Haiku on Google Cloud's Gemini Enterprise Agent Platform, following the February 23 deprecation notice.<sup><a href="#s6">[6]</a></sup> The model retired on Anthropic's own API on April 20; today's Google Cloud sunset closes the last managed endpoint. Any batch job, cron, or agent pipeline still pinned to <code>claude-3-haiku@20240307</code> in Vertex fails from today.</p>
+<p class="so-what"><b>So what:</b> grep your production configs for any <code>claude-3-haiku</code> string right now — the failure mode for scheduled jobs is silent 404s on the first run after 00:00 PT, and a nightly ingestion job you have not touched in a year is the most likely victim.</p>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="item">
+<p><strong>No new frontier lab models in the last 48 hours.</strong> The most notable in-flight development: Nvidia's Q2 FY27 earnings call at 2:00 PM PT on Tuesday, August 26, on prior guidance of $91B ± 2% in revenue, with data-centre expected to run around 90% of the total.<sup><a href="#s7">[7]</a></sup> The Blackwell ramp and guidance for Q3 FY27 are what actually price the fall for anyone budgeting inference.</p>
+</div>
+
+<div class="item">
+<p><strong>Anthropic — Claude Platform GA (August 20).</strong> Computer use, the Skills API, and the Files API moved to general availability on the Claude Platform. Computer use adds a browser use tool for agents that work in web applications; Files API adds automatic expiration and raises organisation storage to 1 TB; both APIs are also available through Microsoft Foundry, with Google Cloud Vertex AI coverage listed as coming soon.<sup><a href="#s8">[8]</a></sup></p>
+</div>
+
+<div class="item">
+<p><strong>Anthropic — Claude Mythos 5 (August 21).</strong> First production surface for the cyber-capable Mythos-class model, via Claude Security vulnerability scanning. See Brief 1 above. Weights not open; access via Claude Security product only, not raw API.<sup><a href="#s3">[3]</a></sup></p>
+</div>
+
+<div class="item">
+<p><strong>Anthropic Claude Code — v-update August 22.</strong> Added ANTHROPIC_DEFAULT_MODEL env var for new session model pinning, notify_when_idle on cross-session SendMessage (macOS and Linux), Bedrock and Alpine support, a Python 1.x upgrade helper, and improvements to /resume and /goal. No capability change; ergonomics only.</p>
+</div>
+
+<h2>Voices</h2>
+<div class="item">
+<p><strong>Fei-Fei Li</strong>, co-founder and CEO of World Labs, in conversation with <strong>Yunzhu Li</strong> (SceniX co-founder, Columbia University) and Martin Casado on Andreessen Horowitz's July 28 podcast, marking World Labs' acquisition of SceniX.<sup><a href="#s9">[9]</a></sup> Li's argument on the episode: training robots to act in the physical world may require a fundamentally different data and training regime than training language models — spatial intelligence is not a subset of language capability, and the training-data curves that got LLMs to today do not extend into 3D physical reasoning at anything like the same slope.<sup><a href="#s9">[9]</a></sup></p>
+<p>Featured today because MCP's new roadmap and Broadcom's chip pipeline are both stories about scaling agents that operate through language. Li's counter-thesis is the load-bearing one for any product that expects agents to move something, drive something, or manipulate anything not made of text. If she is right, the next frontier that opens once text-native agents work reliably is a frontier that closes at the door of every domain where agents have to act on physical state.</p>
+<p class="so-what"><b>So what:</b> if your 2027 roadmap has agents doing anything in the physical world — logistics, robotics, drug discovery, wet-lab loops — budget a spatial-reasoning or simulation-in-the-loop stack as a separate line item now. It is not a subset of your LLM budget.</p>
+</div>
+
+<div class="signal-box">
+<h2>Today's Signal</h2>
+<p>The infrastructure and identity layers under the agent stack are hardening this month. MCP's Aug 22 roadmap moves agent identity from API keys to DPoP and Workload Identity Federation, collapses stdio and remote deployments onto a single HTTP-native transport, and adds progressive discovery so tool catalogues stop eating the model's context.<sup><a href="#s1">[1]</a></sup> Broadcom is arranging $70B+ of debt to build the custom chips that will run those agents at Anthropic scale.<sup><a href="#s4">[4]</a></sup> Nvidia's Q2 FY27 print on Tuesday sets the general-purpose GPU demand baseline that everyone else prices against.<sup><a href="#s7">[7]</a></sup> Anthropic is weeks from an IPO filing that will pull its product surface into a quiet period.<sup><a href="#s5">[5]</a></sup> Claude 3 Haiku vanishes from Google Cloud today.<sup><a href="#s6">[6]</a></sup> The story of Q3 2026 is not model capability — the frontier ceiling did not move this week. The story is identity, protocol, and supply. If your product tracking only watches model releases, you are watching the wrong dashboard: the load-bearing decisions of the next six months are getting made in specification GitHub issues, syndicated debt tranches, and deprecation calendars. Read those.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger">
+<p class="record">Season 1 · 0-0 · first call logged 2026-08-13 · 9 open, 0 graded</p>
+<p><em>No calls came due today; the earliest open call horizon is 2026-09-13. Today's call is logged below.</em></p>
+
+<div class="call open">
+<p><span class="verdict-open">OPEN</span> · 2026-08-23-1 · <span class="horizon">horizon 2026-10-18</span></p>
+<p>MCP's Aug 22 roadmap will move from proposal to shipped identity primitive within eight weeks: by 2026-10-18, at least one of DPoP (SEP-1932) OR Workload Identity Federation (SEP-1933) will be merged as an accepted specification component in the modelcontextprotocol/modelcontextprotocol GitHub repository, and at least one Tier 1 MCP SDK (the official Anthropic, Google, or OpenAI implementation) will ship it in a released version.</p>
+<p class="horizon">Test: merged PR into main + released SDK version dated on or before 2026-10-18. Draft state, RFC state, withdrawal, pre-release tags, or unreleased branch support do not count.</p>
+</div>
+</div>
+
+<h2>Sources</h2>
+<div class="sources">
+<ol>
+<li id="s1"><span class="tier">primary</span> — Model Context Protocol Blog, "The New MCP Roadmap" (David Soria Parra &amp; Den Delimarsky, Aug 22, 2026). <a href="https://blog.modelcontextprotocol.io/posts/mcp-roadmap/">blog.modelcontextprotocol.io/posts/mcp-roadmap/</a></li>
+<li id="s2"><span class="tier">practitioner</span> — Gerald Chen's Tech Blog, "Reading the MCP 2026 Roadmap: From Local Tools to Production-Grade Agent Infrastructure." <a href="https://chenguangliang.com/en/posts/blog088_mcp-2026-roadmap-analysis/">chenguangliang.com/en/posts/blog088_mcp-2026-roadmap-analysis/</a></li>
+<li id="s3"><span class="tier">primary</span> — Anthropic, "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders" (Aug 21, 2026). <a href="https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders">claude.com/blog/bringing-claude-mythos-5-to-more-defenders</a></li>
+<li id="s4"><span class="tier">tier-1</span> — CNBC, "Broadcom debt deal expected to reach upwards of $70 billion, sources say" (Aug 21, 2026). <a href="https://www.cnbc.com/2026/08/21/broadcom-debt-deal-expected-to-reach-upwards-of-70-billion-sources.html">cnbc.com/2026/08/21</a></li>
+<li id="s5"><span class="tier">tier-2</span> — TheNextWeb / Financial Times, "Dario Amodei admits AI companies have not delivered on their promises" (Aug 16, 2026). <a href="https://thenextweb.com/news/dario-amodei-ai-public-trust-cure-cancer-ipo">thenextweb.com/news/dario-amodei-ai-public-trust-cure-cancer-ipo</a></li>
+<li id="s6"><span class="tier">primary</span> — Google Cloud Documentation, "Partner model deprecations — Gemini Enterprise Agent Platform." <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/partner-models">docs.cloud.google.com/.../partner-models</a></li>
+<li id="s7"><span class="tier">primary</span> — NVIDIA Newsroom, "NVIDIA Sets Conference Call for Second-Quarter Financial Results" (call scheduled Aug 26, 2026 at 2 p.m. PT). <a href="https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-second-quarter-financial-results-6927195">nvidianews.nvidia.com/.../second-quarter-financial-results</a></li>
+<li id="s8"><span class="tier">primary</span> — Anthropic, "Build production agents with computer use, the Skills API, and the Files API" (Aug 20, 2026). <a href="https://claude.com/blog/computer-use-skills-api-files-api">claude.com/blog/computer-use-skills-api-files-api</a></li>
+<li id="s9"><span class="tier">primary</span> — Andreessen Horowitz, "Fei-Fei Li on Spatial Intelligence and Robotics" podcast, with Yunzhu Li and Martin Casado (Jul 28, 2026). <a href="https://a16z.com/podcast/fei-fei-li-on-spatial-intelligence-and-robotics/">a16z.com/podcast/fei-fei-li-on-spatial-intelligence-and-robotics/</a></li>
+</ol>
+</div>
+
+<nav class="bar"><a href="2026-08-22.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Sunday, August twenty third, twenty twenty-six. Signal over noise. Here is what actually matters for builders today. Lead story. The Model Context Protocol maintainers published a new roadmap on August twenty second. Signed by lead maintainers David Soria Parra and Den Delimarsky. The document names five priority areas. Agentic messaging primitives. H T T P native transport unification. Agent identity and enterprise security. Improved primitives, including progressive tool discovery and standardised tool results. And S D K developer experience. The document commits to expedited S E P review for proposals inside those areas, and identifies two Agent Identity Working Group proposals already in active review. S E P nineteen thirty-two for Demonstrating Proof of Possession, D P o P. And S E P nineteen thirty-three for Workload Identity Federation. The read for anyone shipping an M C P server today. Static secret authentication is being deliberately retired. D P o P is the O Auth adjacent mechanism that binds an access token to a key held by the caller, so a stolen bearer token cannot be replayed from another machine. Workload Identity Federation is how an agent proves it is calling on behalf of a specific user in a specific runtime, rather than as a shared service principal with a long lived key. Together they answer the two enterprise objections that have stalled M C P rollouts all summer. Which agent did this call. And what happens when the key leaks. The transport story is the other half. The July twenty eighth spec already made M C P servers stateless. Each request carries what it needs, and a plain round robin load balancer can front them. The new roadmap collapses stdio local and remote deployments onto the same H T T P native transport. Progressive discovery lands in the same cycle so a tool catalogue of a few hundred entries stops eating the model's context window on first connect. This is a hardening pass, not a widening one. So what. If you maintain an M C P server, mark D P o P S E P nineteen thirty-two and Workload Identity Federation S E P nineteen thirty-three as the next two hardening items on your Q four roadmap. Every enterprise buyer's security review after October will ask for both by name. Now the briefs. First. Anthropic announced August twenty first that Claude Mythos five, the cyber capable model gated to vetted defenders since April, is now running vulnerability scans inside Claude Security for enterprise customers. Anthropic also committed thirty five million dollars in credits to a new open source defence fund. Second brief. C N B C reported August twenty first that Broadcom's debt raise to finance custom chip capacity for Anthropic and other A I lab customers is now expected to reach seventy to eighty billion dollars, with a roughly thirty billion junior tranche, and total potentially climbing to one hundred billion. Third brief. The Next Web, summarising Financial Times reporting from August sixteenth, said backers expect Anthropic to file its S one by the end of August and to list in October at a valuation of two trillion dollars or more. Dario Amodei used X the same weekend to say the most accurate criticism of A I companies including Anthropic is that they have not yet delivered on their big promises. Fourth brief. August twenty third is the published shutdown date for Claude three Haiku on Google Cloud's Gemini Enterprise Agent Platform. The model retired on Anthropic's own A P I on April twentieth. Today's Google Cloud sunset closes the last managed endpoint. Any batch job or agent pipeline still pinned to claude three haiku on Vertex fails from today. Model watch. No new frontier lab models in the last forty eight hours. Most notable in flight. Nvidia's Q two fiscal twenty seven earnings call at two P M Pacific Tuesday August twenty sixth, on prior guidance of ninety one billion plus or minus two percent in revenue. The Blackwell ramp and Q three guidance price the fall for anyone budgeting inference. Anthropic Claude Platform G A on August twentieth. Computer use, Skills A P I, and Files A P I generally available. Files A P I raises organisation storage to one terabyte. Voices. Fei Fei Li, co founder and C E O of World Labs, on Andreessen Horowitz's July twenty eighth podcast with Yunzhu Li of SceniX and Martin Casado. Marking World Labs' acquisition of SceniX. Li's argument. Training robots to act in the physical world may require a fundamentally different data and training regime than training language models. Spatial intelligence is not a subset of language capability, and the training data curves that got L L Ms to today do not extend into three D physical reasoning at anything like the same slope. So what. If your twenty twenty seven roadmap has agents doing anything in the physical world, budget a spatial reasoning or simulation in the loop stack as a separate line item now. It is not a subset of your L L M budget. Today's signal. The infrastructure and identity layers under the agent stack are hardening this month. M C P's roadmap moves agent identity from A P I keys to D P o P and Workload Identity Federation, collapses stdio and remote onto a single H T T P native transport, and adds progressive discovery. Broadcom is arranging seventy billion plus of debt to build the custom chips that will run those agents at Anthropic scale. Nvidia's Q two print on Tuesday sets the general purpose G P U demand baseline. Anthropic is weeks from an I P O filing that will pull its product surface into a quiet period. Claude three Haiku vanishes from Google Cloud today. The story of Q three twenty twenty six is not model capability. The frontier ceiling did not move this week. The story is identity, protocol, and supply. If your product tracking only watches model releases, you are watching the wrong dashboard. The load bearing decisions of the next six months are getting made in specification GitHub issues, syndicated debt tranches, and deprecation calendars. Read those. That is Above The Noise for August twenty third. Ship carefully.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+const btn = document.getElementById('playBtn');
+btn.addEventListener('click', () => {
+  if (U && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    btn.textContent = '▶ Listen (~4 min)';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ Listen (~4 min)'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+});
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
