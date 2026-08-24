@@ -110,6 +110,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-24-1",
+      "date": "2026-08-24",
+      "call": "The Broadcom-Anthropic $70-80B debt-financed custom-silicon template will be matched by at least one other frontier lab within 14 weeks. By 2026-11-30, at least one of OpenAI, Google DeepMind, xAI, Meta, or Mistral will disclose in a primary-source press release, blog post, or SEC filing a custom-silicon co-development deal OR a debt-backed chip-capacity commitment of $10B or more with a non-Nvidia ASIC vendor (Broadcom, AMD's ASIC business, Marvell, or a comparable custom-silicon vendor).",
+      "basis": "Broadcom is arranging $70-80B in debt (potentially up to $100B) to finance custom AI-chip capacity for Anthropic and other lab customers, with Blackstone and Apollo as anchor lenders, extending the June Broadcom-Apollo-Blackstone-Anthropic $35B partnership targeting 20+ GW of compute for top AI labs by 2028 (CNBC/Bloomberg Aug 20-21). Nvidia's Aug 17 $105B residual-value guaranty for OpenAI's Ohio site was the same story on the general-purpose GPU side. The debt market is now underwriting AI-lab commitments, and every other frontier lab has both the incentive (differentiate from Nvidia lock-in, defensive supply diversity) and the capital access to move. Anthropic's expected end-of-August S-1 filing will make the revenue durability case in hard numbers, which further de-risks the debt underwrite for peers.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source press release, blog post, or SEC filing (10-Q, 10-K, 8-K) dated on or before 2026-11-30 from OpenAI, Google DeepMind, xAI, Meta, or Mistral disclosing (a) a custom-silicon co-development agreement OR (b) a debt-backed chip-capacity commitment of $10B or more, in either case with a non-Nvidia ASIC vendor (Broadcom, AMD's ASIC business, Marvell, or a comparable custom-silicon vendor). Routine Nvidia GPU commitments, cloud-provider deals where the named tenant is the hyperscaler (AWS, Azure, GCP, Oracle), further Anthropic-Broadcom increments, and equity investments without an accompanying financial guaranty or capacity commitment do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
