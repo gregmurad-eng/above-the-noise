@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · Tuesday, August 25, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --accent-dim: #8a7f63;
+    --text: #e0d4b8;
+    --miss: #a35a5a;
+    --grey: #8a8a8a;
+    --rule: rgba(201,168,76,0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.62;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 30px 22px 64px; }
+  h1 {
+    color: var(--accent);
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    font-size: 36px;
+    margin: 0 0 4px;
+  }
+  .tagline {
+    color: var(--accent-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 0 4px;
+  }
+  .dateline {
+    color: var(--text);
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 0 0 22px;
+    font-style: italic;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 14px 0 26px;
+    font-size: 15px;
+  }
+  .bar a { color: var(--accent); text-decoration: none; white-space: nowrap; padding: 8px 4px; display: inline-block; }
+  .bar a:hover { text-decoration: underline; }
+  .bar .nav-mid { flex: 1; text-align: center; }
+  .bar .nav-mid a { color: var(--accent); margin: 0 9px; white-space: nowrap; }
+  .bar .next { color: var(--accent-dim); white-space: nowrap; padding: 8px 4px; }
+  h2 {
+    color: var(--accent);
+    font-weight: normal;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin: 34px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 {
+    color: var(--text);
+    font-weight: normal;
+    font-size: 19px;
+    margin: 18px 0 6px;
+  }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--accent-dim); }
+  h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  p { margin: 8px 0 12px; }
+  .item { margin: 18px 0 22px; padding-bottom: 8px; border-bottom: 1px dashed var(--rule); }
+  .item:last-child { border-bottom: none; }
+  .item .source { color: var(--accent-dim); font-size: 14px; font-style: italic; }
+  .so-what {
+    color: var(--accent);
+    font-style: italic;
+    display: block;
+    margin: 8px 0 4px;
+    font-size: 16px;
+  }
+  .so-what b { font-style: normal; font-weight: normal; color: var(--accent); }
+  a { color: var(--accent); }
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 6px 4px;
+    margin: -6px -4px;
+    display: inline-block;
+    line-height: 1;
+  }
+  sup a:hover { text-decoration: underline; }
+  .signal-box {
+    background: rgba(201,168,76,0.06);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  .signal-box h2 { margin-top: 4px; border: none; }
+  .ledger { margin: 12px 0 20px; font-size: 16px; }
+  .ledger .record {
+    color: var(--accent-dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .call {
+    padding: 12px 14px;
+    border: 1px solid var(--rule);
+    margin: 10px 0;
+    font-size: 15px;
+  }
+  .verdict-open { color: var(--accent-dim); font-weight: bold; letter-spacing: 1px; }
+  .verdict-hit { color: var(--accent); font-weight: bold; letter-spacing: 1px; }
+  .verdict-miss { color: var(--miss); font-weight: bold; letter-spacing: 1px; }
+  .verdict-unsettled { color: var(--grey); font-weight: bold; letter-spacing: 1px; }
+  .horizon { color: var(--accent-dim); font-size: 13px; letter-spacing: 0.5px; }
+  .sources { font-size: 14px; }
+  .sources ol { padding-left: 22px; }
+  .sources li { margin: 6px 0; }
+  .sources li .tier {
+    color: var(--accent-dim);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 4px;
+  }
+  #playBtn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 12px 18px;
+    cursor: pointer;
+    margin: 6px 0 14px;
+    min-height: 44px;
+  }
+  #playBtn:hover { background: rgba(201,168,76,0.1); }
+  footer {
+    color: var(--accent-dim);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    line-height: 1.7;
+  }
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .wrap { padding: 22px 16px 48px; max-width: 100%; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    .item { font-size: 17px; }
+    .signal-box { font-size: 16px; padding: 14px; }
+    .ledger { font-size: 16px; }
+    .sources { font-size: 15px; }
+    .call { font-size: 15px; }
+    .tagline { font-size: 14px; }
+    .dateline { font-size: 14px; }
+    .bar { font-size: 15px; gap: 8px 12px; }
+    .bar .nav-mid a { margin: 0 6px; }
+    #playBtn { font-size: 15px; padding: 12px 16px; }
+    footer { font-size: 14px; }
+    .so-what { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Above The Noise</h1>
+<p class="tagline">AI &amp; Tech · Signal over noise</p>
+<p class="dateline">Tuesday, August 25, 2026</p>
+
+<nav class="bar"><a href="2026-08-24.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<button id="playBtn">▶ LISTEN · ~4 MIN</button>
+
+<h2>Lead Story</h2>
+<h3>The AI funding syndicate widens to retail</h3>
+<p>Two announcements on either side of Aug 23-24 changed where the money for the next round of AI capex is coming from. SoftBank Group said on Aug 24 it will issue a record ¥1 trillion (~$6.3 billion) retail bond in Japan — the largest ever by any Japanese issuer — to fund its $30 billion of commitments to OpenAI, of which $20 billion is already in and another $10 billion is scheduled for October. Pricing is set for Sept 4, indicative coupon 4.3–4.9%, offering period Sept 7–16.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup> Bloomberg reported the line that matters: "banks were reluctant to take the risk, leaving the deal dependent on retail investors."<sup><a href="#s1">[1]</a></sup></p>
+
+<p>The day before, on Aug 23, Alibaba priced a HK$80 billion (~$10.2 billion) follow-on share placement — Hong Kong's largest-ever primary follow-on — with 100% of net proceeds earmarked for "full-stack AI capabilities" spanning chips, infrastructure, and model development. Shares fell as much as 10% on Aug 24 when the market saw the size and the dilution.<sup><a href="#s3">[3]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+
+<p>Read the two together against yesterday's edition. The Broadcom-Anthropic $70–80 billion custom-silicon debt<sup><a href="#s5">[5]</a></sup> is being placed with Blackstone and Apollo — private credit at institutional scale. Nvidia's $105 billion residual-value guaranty for OpenAI's Ohio site<sup><a href="#s6">[6]</a></sup> is being underwritten inside a chip supplier's balance sheet. Both are wholesale funding structures that never touch a public market. This week's SoftBank and Alibaba deals move the same problem — how to fund AI capex without capitalising the operating labs to death — into channels that are public, retail-adjacent, and price-transparent. Japanese pensioners get to say yes or no at 4.9%. Hong Kong equity holders got to say no at $10.2 billion of dilution, and did.</p>
+
+<p>The Nvidia Q2 FY27 print on Wednesday Aug 26 sits inside the same seven-day window and will re-anchor everything. Consensus is ~$91B revenue, +95% YoY; Blackwell Ultra ramp visibility and Q3 guidance are the actual deliverables.<sup><a href="#s7">[7]</a></sup> Anthropic's public S-1 filing is expected within days on prior reporting, which will convert its ~$65B run-rate into disclosed numbers under the '33 Act, then start a quiet period.<sup><a href="#s8">[8]</a></sup> If the SoftBank tranche prices well on Sept 4 and Anthropic's S-1 shows the revenue durability leaked in mid-August<sup><a href="#s8">[8]</a></sup>, the debt underneath Broadcom's custom silicon becomes cheaper for peers. If retail refuses at 4.9% or Alibaba's dilution damage repeats on the next issuer, the whole capex chain reprices upward at the very moment inference APIs are still cutting price.</p>
+
+<p class="so-what"><b>So what:</b> if your Q4 2026 or Q1 2027 inference budget assumes flat GPU capacity and flat model pricing, freeze the assumptions column now and mark three release dates — Nvidia Aug 26 (compute floor), Anthropic S-1 whenever (revenue durability), SoftBank retail bond Sept 4 (cost of capital). Rebuild the column against all three before circulating the number, not after.</p>
+
+<h2>The Briefs</h2>
+
+<div class="item">
+<h3><a href="https://www.bloomberg.com/news/articles/2026-08-22/nvidia-customers-notified-about-ai-related-price-hikes-above-15">Nvidia customers told to expect 15%+ price hikes on Blackwell / Vera Rubin systems</a> — Bloomberg<sup><a href="#s9">[9]</a></sup><sup><a href="#s10">[10]</a></sup></h3>
+<p>Bloomberg reported Aug 22 that Nvidia's biggest customers have been notified that server prices for systems built around the flagship Vera Rubin and Grace Blackwell chips will rise more than 15% in many configurations, on shipments taking effect in early 2027. The cause named is soaring HBM3e memory prices, not GPU margin. Contract server-builders working for Microsoft, Google, and Oracle passed the notice through this week.</p>
+<p class="so-what"><b>So what:</b> any TCO model tied to Blackwell or Vera Rubin capacity in H1 2027 needs a 15%-plus upward revision in the memory-attach line — do it before you quote a customer. If you have a spot GPU commitment on any current-generation SKU, this is the week to lock a 2026 rate on it, not the week to defer.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0">Anthropic Python SDK v1.0.0 shipped: httpx → httpx2, Python 3.10 floor, Text Completions removed</a> — Anthropic<sup><a href="#s11">[11]</a></sup><sup><a href="#s12">[12]</a></sup></h3>
+<p>Anthropic tagged v1.0.0 of the official Python SDK on Aug 20. The HTTP layer moves from httpx to httpx2 (an API-compatible fork), the minimum Python is now 3.10, the legacy Text Completions API is deleted, temperature / top_p / top_k are removed from Messages, async .with_raw_response now requires await response.parse(), and AnthropicBedrock throws when no AWS region is configured instead of silently defaulting to us-east-1. Simon Willison shipped llm-anthropic 0.27 the same week to track the change.<sup><a href="#s12">[12]</a></sup></p>
+<p class="so-what"><b>So what:</b> if any production surface still pins anthropic&lt;1.0 or imports httpx directly for tracing / mocking, plan the migration before a transitive dep forces it. The AnthropicBedrock region-error change is the one that will crash a live pipeline first — audit every Bedrock caller for an explicit region before you upgrade.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://finance.yahoo.com/technology/ai/articles/alibaba-launches-wan3-0-ai-131300534.html">Alibaba launches Wan 3.0 video model: 30-second clips, docs-to-video, 480p–1080p</a> — Reuters via Yahoo Finance<sup><a href="#s13">[13]</a></sup><sup><a href="#s14">[14]</a></sup></h3>
+<p>Alibaba Cloud released Wan 3.0 on Aug 24, the day after the $10.2B share sale. It doubles output length from 15s (Wan 2.7) to 30s in a single pass, generates up to 1080p, and accepts documents, spreadsheets, presentations, PDFs, and web pages as inputs. Alibaba Cloud Model Studio prices it at $0.05/sec at 480p, $0.10/sec at 720p, $0.20/sec at 1080p. Public beta since Aug 6.</p>
+<p class="so-what"><b>So what:</b> if any Q4 roadmap has a video-generation feature, benchmark Wan 3.0 against your current Western pick before committing — $0.20/sec at 1080p resets the price floor and the 30-second single-pass output covers most ad-and-shortform use. If your model contract with a Western vendor has a right-to-migrate clause, this is the week to invoke a pilot.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/">Pew Research: one in three post-ChatGPT English web pages show AI-authorship signals</a> — Pew Research Center<sup><a href="#s15">[15]</a></sup><sup><a href="#s16">[16]</a></sup></h3>
+<p>Pew analysed a random 10,000-page sample of English-language pages from a July 2026 Common Crawl. About 10% of all sampled pages showed significant AI-authorship signals; restricted to pages published after ChatGPT's Nov 2022 launch, the share rises to more than a third. Prevalence in .com sits ~10%, roughly double .org (4.6%), and ~10x .edu and .gov (~1%). The story picked up wider coverage through Aug 24.</p>
+<p class="so-what"><b>So what:</b> if your retrieval or RAG pipeline treats "recent web content" as ground truth, one-third of post-2022 pages carry AI-authorship signals and .com is where the concentration is highest. A fresh crawl is no longer a fresh source of truth — invest in the provenance layer (SynthID-Text detection where the key exists, publisher-trust weighting where it does not) before your customer notices you cited a hallucination back to them.</p>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="item">
+<h3><a href="https://finance.yahoo.com/technology/ai/articles/alibaba-launches-wan3-0-ai-131300534.html">Wan 3.0 — Alibaba (video, general availability)</a><sup><a href="#s13">[13]</a></sup></h3>
+<p>Shipped Aug 24 by Alibaba Cloud. Generates 30-second 1080p video in a single pass from text, documents, spreadsheets, or web pages. API $0.05/sec (480p), $0.10/sec (720p), $0.20/sec (1080p). Not open weights.</p>
+<p class="so-what"><b>So what:</b> resets the reference price for hosted video generation and doubles single-pass output length — check Western vendor SLAs against this pricing before your renewal date.</p>
+</div>
+
+<div class="item">
+<h3>No new frontier text-model weights in the last 48 hours</h3>
+<p>Most notable in-flight: Nvidia's Q2 FY27 earnings call at 2 PM PT Wednesday Aug 26<sup><a href="#s7">[7]</a></sup>. Blackwell Ultra ramp visibility and Q3 guidance are the reads for anyone budgeting frontier inference into Q1 2027. Alibaba's Qwen3.8-Max (Aug 3 API launch) remains the most cited large open-weight of the month; weights were promised on Hugging Face and ModelScope but were still not posted at time of writing.</p>
+<p class="so-what"><b>So what:</b> tomorrow's Blackwell Ultra guide is your inference-cost oracle for Q1 2027 — do not sign a multi-quarter capacity contract before you have read the Q3 outlook.</p>
+</div>
+
+<h2>Voices</h2>
+<div class="item">
+<p><strong>Dario Amodei</strong>, co-founder and CEO of Anthropic, in conversation with <strong>Dwarkesh Patel</strong> on the Dwarkesh Podcast on Feb 13, 2026<sup><a href="#s17">[17]</a></sup> — a ~1h47m interview (an enduring conversation, not a fresh drop, still the clearest pre-S-1 exposition of Amodei's core thesis). Amodei told Patel he was surprised by "the lack of public recognition of how close we are to the end of the exponential" and framed the underlying capability curve as approaching saturation — with the load-bearing uncertainty being not "will scaling work" but "which tasks stay unverifiable long enough to blunt the returns."<sup><a href="#s17">[17]</a></sup></p>
+<p>Featured today because Anthropic's public S-1 filing is expected within days on prior reporting<sup><a href="#s8">[8]</a></sup>. The S-1 will convert Amodei's private thesis into disclosed revenue, gross margin, and capex numbers under the '33 Act — the honest measurable side of the "end of the exponential" bet. If you have not heard this interview, listen before the S-1 lands, so you can read the filing against the framework its own CEO articulated in public six months earlier.</p>
+<p class="so-what"><b>So what:</b> if you are pricing a multi-year commitment to a frontier lab, read the interview as the pre-S-1 baseline, then read the S-1 as the honest test — where Amodei's model breaks (or holds) is where your renegotiation leverage lives when the quiet period ends in October.</p>
+</div>
+
+<div class="signal-box">
+<h2>Today's Signal</h2>
+<p>The AI capex funding syndicate is widening from institutional debt into retail bond and public equity this week. SoftBank's ¥1 trillion retail bond<sup><a href="#s1">[1]</a></sup> (pricing Sept 4 at 4.3–4.9%) is the first record-scale test of whether Japanese individual investors will fund a specific frontier lab's compute build. Alibaba's HK$80B share placement<sup><a href="#s3">[3]</a></sup> is the same question in Hong Kong equity form, and it took a 10% opening-day price cut<sup><a href="#s4">[4]</a></sup>. The Broadcom-Anthropic custom-silicon debt<sup><a href="#s5">[5]</a></sup> and Nvidia's $105B residual guaranty<sup><a href="#s6">[6]</a></sup> — the two big wholesale structures of the last month — bracket the same problem but stay inside institutional channels. This week's pattern is: institutional appetite for AI capex is nearing saturation at current prices, and issuers are moving to broader capital pools to keep the build funded. If Sept 4 clears well and Anthropic's S-1 shows durable revenue, wholesale debt reprices cheaper and the story continues. If retail refuses at 4.9% or Alibaba's dilution damage repeats on the next issuer, the compute-side cost curve turns up at the same moment inference-side pricing is still being cut. The two prints you need are already scheduled — Nvidia tomorrow, SoftBank next Friday. Read them together, and your Q4 planning gets easier. Watch them separately and your budget goes wrong on the axis you failed to look at.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger">
+<p class="record">Season 1 · 0-0 · first call logged 2026-08-13 · 11 open, 0 graded · earliest grading due 2026-09-13</p>
+<p><em>No calls came due today. The earliest open call horizon remains 2026-09-13 (the governance-layer thesis from opening day). Today's call is logged below.</em></p>
+
+<div class="call">
+<p><span class="verdict-open">OPEN</span> · 2026-08-25-1 · <span class="horizon">horizon 2026-10-31</span></p>
+<p>The SoftBank retail-bond and Alibaba public-equity template is not a one-off: by 2026-10-31, at least one additional non-AI-lab company (an Asian conglomerate, hyperscaler-adjacent operator, or telecom / holding company — e.g. SoftBank next tranche, KDDI, NTT, Samsung, SK Hynix, Reliance, Tencent, or a comparable Fortune-500 non-cloud-native) will price a public retail bond OR public follow-on equity offering of USD 2 billion or more whose stated use of proceeds explicitly names AI infrastructure, AI-lab investment, or AI capex.</p>
+<p class="horizon">Test: primary-source press release, prospectus, exchange filing, or tier-1 news report dated on or before 2026-10-31 confirming that a company matching the definition has priced a public retail bond or public follow-on equity offering of USD 2B+ with stated AI-infrastructure or AI-lab-investment use of proceeds. Private placements to institutional investors, syndicated bank loans, convertibles issued below USD 2B, and pre-announced tranches from SoftBank's own Sept 4 pricing itself do not count.</p>
+</div>
+</div>
+
+<h2>Sources</h2>
+<div class="sources">
+<ol>
+<li id="s1">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-08-24/softbank-plans-record-1-trillion-retail-bond-offering-in-japan">SoftBank Plans $6.3 Billion Retail Bond Sale in Japan for OpenAI Investment</a> <span class="tier">tier-1</span></li>
+<li id="s2">The Japan Times — <a href="https://www.japantimes.co.jp/business/2026/08/24/companies/softbank-plan-bond-sale/">SoftBank plans record $6.3 billion retail bond sale in Japan</a> <span class="tier">tier-1</span></li>
+<li id="s3">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-08-23/alibaba-to-raise-10-billion-by-selling-shares-for-ai-expansion">Alibaba Raises $10 Billion for AI in Record Hong Kong Share Sale</a> <span class="tier">tier-1</span></li>
+<li id="s4">CNBC — <a href="https://www.cnbc.com/2026/08/24/alibaba-share-placement-drop-ai-hong-kong.html">Alibaba plunges after announcing $10.2 billion share placement to fund AI push</a> <span class="tier">tier-1</span></li>
+<li id="s5">CNBC — <a href="https://www.cnbc.com/2026/08/21/broadcom-anthropic-debt.html">Broadcom debt raise to fund custom AI chip capacity for Anthropic reaches $70–80B (reported)</a> <span class="tier">tier-1</span></li>
+<li id="s6">Nvidia investor filings — <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001045810&amp;type=8-K">Nvidia Form 8-K, Aug 17 2026 (SB Energy PORTS-Pike residual-value guaranty)</a> <span class="tier">primary</span></li>
+<li id="s7">Nvidia — <a href="https://investor.nvidia.com/financial-info/financial-reports/default.aspx">Q2 FY27 earnings, scheduled Aug 26 2026 after close</a> <span class="tier">primary</span></li>
+<li id="s8">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-08-17/anthropic-revenue-run-rate-surpasses-65-billion-ahead-of-ipo">Anthropic's Annualized Revenue Tops $65 Billion Before IPO</a> <span class="tier">tier-1</span></li>
+<li id="s9">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-08-22/nvidia-customers-notified-about-ai-related-price-hikes-above-15">Nvidia Customers Notified About AI-Related Price Hikes Above 15%</a> <span class="tier">tier-1</span></li>
+<li id="s10">CNBC — <a href="https://www.cnbc.com/2026/08/22/nvidia-customers-reportedly-warned-about-ai-related-price-hikes-.html">Nvidia customers reportedly warned about AI-related price hikes</a> <span class="tier">tier-1</span></li>
+<li id="s11">Anthropic (GitHub) — <a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0">Release v1.0.0 · anthropics/anthropic-sdk-python</a> <span class="tier">primary</span></li>
+<li id="s12">Simon Willison — <a href="https://simonwillison.net/">Release: llm-anthropic 0.27 (Aug 24 weblog entry)</a> <span class="tier">practitioner</span></li>
+<li id="s13">Reuters via Yahoo Finance — <a href="https://finance.yahoo.com/technology/ai/articles/alibaba-launches-wan3-0-ai-131300534.html">Alibaba launches Wan3.0 AI video model after record $10 billion share sale</a> <span class="tier">tier-1</span></li>
+<li id="s14">The Next Web — <a href="https://thenextweb.com/news/alibaba-wan3-video-model-after-share-sale">Alibaba launches Wan3.0, its 30-second video model, days after raising $10bn</a> <span class="tier">trade</span></li>
+<li id="s15">Pew Research Center — <a href="https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/">How Much of the Internet Is Written With AI?</a> <span class="tier">primary</span></li>
+<li id="s16">TechCrunch — <a href="https://techcrunch.com/2026/08/20/a-third-of-webpages-published-since-chatgpts-launch-show-signs-of-ai-authorship-study-finds/">A third of webpages published since ChatGPT's launch show signs of AI authorship, study finds</a> <span class="tier">tier-1</span></li>
+<li id="s17">Dwarkesh Podcast — <a href="https://www.dwarkesh.com/p/dario-amodei-2">Dario Amodei: "We are near the end of the exponential"</a> <span class="tier">primary</span></li>
+</ol>
+</div>
+
+<nav class="bar"><a href="2026-08-24.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Tuesday, August twenty fifth, twenty twenty-six. Signal over noise. Here is what actually matters for builders today. Lead story. The A I funding syndicate widens to retail. Two announcements on either side of August twenty third and twenty fourth changed where the money for the next round of A I capex is coming from. SoftBank Group said on August twenty fourth it will issue a record one trillion yen, roughly six point three billion dollars, retail bond in Japan. The largest ever by any Japanese issuer, to fund its thirty billion dollars of commitments to OpenAI, of which twenty billion is already in and another ten billion is scheduled for October. Pricing is set for September fourth, indicative coupon four point three to four point nine percent, offering period September seventh through sixteenth. Bloomberg reported the line that matters. Banks were reluctant to take the risk, leaving the deal dependent on retail investors. The day before, on August twenty third, Alibaba priced an eighty billion Hong Kong dollar, roughly ten point two billion U S dollars, follow on share placement. Hong Kong's largest ever primary follow on. With one hundred percent of net proceeds earmarked for full stack A I capabilities spanning chips, infrastructure, and model development. Shares fell as much as ten percent on August twenty fourth when the market saw the size and the dilution. Read the two together against yesterday's edition. The Broadcom Anthropic seventy to eighty billion dollar custom silicon debt is being placed with Blackstone and Apollo. Private credit at institutional scale. Nvidia's one hundred and five billion dollar residual value guaranty for OpenAI's Ohio site is being underwritten inside a chip supplier's balance sheet. Both are wholesale funding structures that never touch a public market. This week's SoftBank and Alibaba deals move the same problem, how to fund A I capex without capitalizing the operating labs to death, into channels that are public, retail adjacent, and price transparent. Japanese pensioners get to say yes or no at four point nine percent. Hong Kong equity holders got to say no at ten point two billion dollars of dilution, and did. The Nvidia Q two F Y twenty seven print on Wednesday August twenty sixth sits inside the same seven day window and will re anchor everything. Consensus is roughly ninety one billion dollars revenue, up ninety five percent year over year. Blackwell Ultra ramp visibility and Q three guidance are the actual deliverables. Anthropic's public S one filing is expected within days on prior reporting, which will convert its roughly sixty five billion dollar run rate into disclosed numbers, then start a quiet period. If the SoftBank tranche prices well on September fourth and Anthropic's S one shows the revenue durability leaked in mid August, the debt underneath Broadcom's custom silicon becomes cheaper for peers. If retail refuses at four point nine percent or Alibaba's dilution damage repeats on the next issuer, the whole capex chain reprices upward at the very moment inference A P Is are still cutting price. So what. If your Q four twenty twenty six or Q one twenty twenty seven inference budget assumes flat G P U capacity and flat model pricing, freeze the assumptions column now and mark three release dates. Nvidia August twenty sixth, Anthropic S one whenever, SoftBank retail bond September fourth. Rebuild the column against all three before circulating the number. Now the briefs. First. Nvidia customers told to expect fifteen percent plus price hikes on Blackwell and Vera Rubin systems. Bloomberg reported August twenty second that Nvidia's biggest customers have been notified that server prices for systems built around the flagship Vera Rubin and Grace Blackwell chips will rise more than fifteen percent in many configurations, on shipments taking effect in early twenty twenty seven. The cause named is soaring H B M three e memory prices, not G P U margin. Contract server builders working for Microsoft, Google, and Oracle passed the notice through this week. Second brief. Anthropic Python S D K version one point zero shipped. On August twentieth, the H T T P layer moves from httpx to httpx two, the minimum Python is now three point ten, the legacy Text Completions A P I is deleted, temperature, top p, and top k are removed from Messages, and Anthropic Bedrock throws when no A W S region is configured instead of silently defaulting to u s east one. Third brief. Alibaba launched Wan three point zero on August twenty fourth, the day after the ten point two billion dollar share sale. It doubles output length from fifteen seconds to thirty seconds in a single pass, generates up to ten eighty p, and accepts documents, spreadsheets, presentations, P D Fs, and web pages as inputs. A P I pricing five cents per second at four eighty p, ten cents at seven twenty p, twenty cents at ten eighty p. Fourth brief. Pew Research analyzed a random ten thousand page sample of English language pages from a July twenty twenty six Common Crawl. About ten percent of all sampled pages showed significant A I authorship signals. Restricted to pages published after ChatGPT's November twenty twenty two launch, the share rises to more than a third. Model watch. Wan three point zero from Alibaba, shipped August twenty fourth, thirty second ten eighty p video in a single pass, five to twenty cents per second on Alibaba Cloud Model Studio, not open weights. No new frontier text model weights in the last forty eight hours. Most notable in flight. Nvidia's Q two F Y twenty seven earnings call at two P M Pacific Wednesday August twenty sixth. Voices. Dario Amodei, co founder and C E O of Anthropic, in conversation with Dwarkesh Patel on the Dwarkesh Podcast on February thirteenth, twenty twenty six. An enduring conversation, not a fresh drop, still the clearest pre S one exposition of Amodei's core thesis. Amodei told Patel he was surprised by, quote, the lack of public recognition of how close we are to the end of the exponential, end quote, and framed the underlying capability curve as approaching saturation. Featured today because Anthropic's public S one filing is expected within days on prior reporting. The S one will convert Amodei's private thesis into disclosed revenue, gross margin, and capex numbers. If you have not heard this interview, listen before the S one lands, so you can read the filing against the framework its own C E O articulated in public six months earlier. So what. If you are pricing a multi year commitment to a frontier lab, read the interview as the pre S one baseline, then read the S one as the honest test. Where Amodei's model breaks or holds is where your renegotiation leverage lives when the quiet period ends in October. Today's signal. The A I capex funding syndicate is widening from institutional debt into retail bond and public equity this week. SoftBank's one trillion yen retail bond, pricing September fourth at four point three to four point nine percent, is the first record scale test of whether Japanese individual investors will fund a specific frontier lab's compute build. Alibaba's eighty billion Hong Kong dollar share placement is the same question in Hong Kong equity form, and it took a ten percent opening day price cut. The Broadcom Anthropic custom silicon debt and Nvidia's one hundred and five billion dollar residual guaranty, the two big wholesale structures of the last month, bracket the same problem but stay inside institutional channels. This week's pattern is. Institutional appetite for A I capex is nearing saturation at current prices, and issuers are moving to broader capital pools to keep the build funded. If September fourth clears well and Anthropic's S one shows durable revenue, wholesale debt reprices cheaper and the story continues. If retail refuses at four point nine percent or Alibaba's dilution damage repeats on the next issuer, the compute side cost curve turns up at the same moment inference side pricing is still being cut. The two prints you need are already scheduled. Nvidia tomorrow, SoftBank next Friday. That is Above The Noise for August twenty fifth. Ship carefully.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+const btn = document.getElementById('playBtn');
+function togglePlay() {
+  if (speechSynthesis.speaking && !speechSynthesis.paused) {
+    speechSynthesis.cancel();
+    btn.textContent = '▶ LISTEN · ~4 MIN';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ LISTEN · ~4 MIN'; };
+  U.onerror = () => { btn.textContent = '▶ LISTEN · ~4 MIN'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ STOP';
+}
+btn.addEventListener('click', togglePlay);
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+</script>
+</body>
+</html>
