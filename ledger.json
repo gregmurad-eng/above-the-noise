@@ -122,6 +122,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-25-1",
+      "date": "2026-08-25",
+      "call": "The SoftBank retail-bond / Alibaba public-equity template is not a one-off: by 2026-10-31, at least one additional non-AI-lab company (an Asian conglomerate, hyperscaler-adjacent operator, or telecom/holding-company such as SoftBank next tranche, KDDI, NTT, Samsung, SK Hynix, Reliance, Tencent, or a comparable Fortune-500 non-cloud-native) will price a public retail bond OR public follow-on equity offering of USD 2B or more whose stated use of proceeds explicitly names AI infrastructure, AI-lab investment, or AI capex.",
+      "basis": "On Aug 24 SoftBank announced a record 1-trillion-yen (approx USD 6.3B) retail bond in Japan to fund USD 30B of OpenAI commitments, with pricing set for Sept 4 at an indicative 4.3-4.9% coupon; Bloomberg reported that banks were 'reluctant to take the risk, leaving the deal dependent on retail investors'. On Aug 23 Alibaba raised HKD 80B (approx USD 10.2B) in Hong Kong's largest-ever follow-on offering to fund AI capex, with 100% of proceeds earmarked for AI, and shares fell as much as 10% on Aug 24. Both moves push AI funding beyond the institutional-debt syndicates that priced the Broadcom-Anthropic tranches into public capital pools. Every non-AI-lab operator with an AI capex need has the same reason to move, and September's Nvidia print plus Anthropic's expected S-1 will price the reference credit for peers.",
+      "horizon": "2026-10-31",
+      "test": "A primary-source press release, prospectus, exchange filing, or tier-1 news report dated on or before 2026-10-31 confirming that a company matching the definition above has priced a public retail bond or public follow-on equity offering of USD 2B or more with stated AI-infrastructure or AI-lab-investment use of proceeds. Private placements to institutional investors, syndicated bank loans, convertibles issued below USD 2B, and pre-announced tranches from SoftBank's Sept 4 pricing itself do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
