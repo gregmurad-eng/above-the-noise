@@ -134,6 +134,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-26-1",
+      "date": "2026-08-26",
+      "call": "Anthropic's Aug 25 Memory update \u2014 persistent context across chat and Cowork with per-topic view/edit/delete controls and a sensitive-topics gate \u2014 is a template, not a lab-specific product move. By 2026-09-30, at least one other frontier AI vendor (OpenAI, Google DeepMind, xAI, Meta, or Mistral) will ship a memory feature that works across BOTH a chat product surface AND an agent-style multi-step product surface, with user-visible per-topic view/edit/delete controls exposed in end-user settings.",
+      "basis": "Anthropic on Aug 25 shipped three coordinated enterprise-readiness moves in one day: Claude Memory unified across chat + Cowork with topic-level controls and a sensitive-topics gate; a Global Premier partnership with Bain & Company disclosing more than 7,000 active Claude users inside Bain; and a $5M grants program for independent AI-wellbeing evaluations. Memory-across-surfaces is the ergonomic differentiator that removes 're-explain everything' friction in enterprise deployment, and it is a known blocker every peer is being asked about. OpenAI already ships memory in ChatGPT but currently offers bulk controls, not topic-level ones; Google's same-day Ask Gemini in Chat launch exposes exactly the same UX gap. Anthropic's expected S-1 filing within days will make the enterprise-revenue case in hard numbers, adding buyer-side pressure on every peer to close the memory-parity gap before Q4 renewals.",
+      "horizon": "2026-09-30",
+      "test": "A primary-source blog post, changelog, help-center article, product release note, or press release from OpenAI, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-09-30 announcing a memory feature that BOTH (a) works across at least two distinct end-user product surfaces including one chat surface and one agent-style or multi-step surface (e.g. ChatGPT + Operator/Codex, Gemini app + Chat/Workspace agent, Meta AI + agent surface), AND (b) exposes user-visible per-topic view/edit/delete controls in end-user settings. Bulk 'clear all memory' controls, existing memory features without new cross-surface expansion, admin-only or enterprise-tenant-only controls that end users cannot self-serve, and general 'we're working on memory' safety-posture posts without a shipping product do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
