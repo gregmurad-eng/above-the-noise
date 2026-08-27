@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · Thursday, August 27, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0d0a06; color: #e0d4b8; font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.6; -webkit-text-size-adjust: 100%; }
+  body { max-width: 760px; margin: 0 auto; padding: 24px 22px 60px; overflow-x: hidden; }
+  a { color: #c9a84c; text-decoration: none; border-bottom: 1px solid rgba(201, 168, 76, 0.3); }
+  a:hover { border-bottom-color: #c9a84c; }
+  h1 { font-family: Georgia, serif; font-weight: normal; font-size: 42px; letter-spacing: 0.02em; margin: 8px 0 4px; color: #f0e5c8; line-height: 1.1; }
+  .tagline { color: #7a6f52; font-style: italic; font-size: 15px; letter-spacing: 0.06em; }
+  .dateline { color: #c9a84c; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; margin: 14px 0 20px; }
+  h2 { font-family: Georgia, serif; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: #c9a84c; border-top: 1px solid #3a3221; padding-top: 22px; margin-top: 44px; font-weight: normal; }
+  h3 { font-family: Georgia, serif; font-size: 22px; color: #f0e5c8; margin: 22px 0 6px; font-weight: normal; line-height: 1.25; }
+  h3 a { color: #f0e5c8; border-bottom: 1px dotted #7a6f52; }
+  h3 a:hover { border-bottom-color: #c9a84c; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #3a3221; margin-bottom: 8px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .bar a { white-space: nowrap; padding: 12px 4px; display: inline-block; min-height: 44px; line-height: 20px; border-bottom: none; }
+  .bar a:hover { color: #f0e5c8; }
+  .nav-mid { display: inline-flex; gap: 18px; }
+  .nav-mid a { color: #c9a84c; margin: 0; }
+  .next { white-space: nowrap; color: #4a4230; padding: 12px 4px; display: inline-block; min-height: 44px; line-height: 20px; }
+  .item { margin-bottom: 34px; }
+  .item p { margin: 6px 0 8px; }
+  .so-what { color: #c9a84c; font-style: italic; margin-top: 8px; display: block; }
+  .so-what::before { content: "So what: "; font-weight: bold; font-style: normal; letter-spacing: 0.04em; }
+  .lead-body { font-size: 18px; }
+  .signal-box { background: rgba(201, 168, 76, 0.06); border-left: 3px solid #c9a84c; padding: 18px 20px; margin: 18px 0; border-radius: 2px; }
+  .signal-box p { margin: 6px 0 10px; }
+  .ledger-row { padding: 10px 0; border-bottom: 1px dashed #3a3221; }
+  .ledger-row:last-child { border-bottom: none; }
+  .verdict-hit { color: #c9a84c; font-weight: bold; letter-spacing: 0.1em; }
+  .verdict-miss { color: #a55a55; font-weight: bold; letter-spacing: 0.1em; }
+  .verdict-unsettled { color: #7a6f52; font-weight: bold; letter-spacing: 0.1em; }
+  .verdict-open { color: #7a6f52; letter-spacing: 0.1em; }
+  .season { font-size: 15px; color: #7a6f52; margin-bottom: 12px; letter-spacing: 0.08em; }
+  .player { background: rgba(201, 168, 76, 0.08); border: 1px solid #3a3221; border-radius: 4px; padding: 16px; margin: 20px 0 8px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .player button { background: #c9a84c; color: #0d0a06; border: none; padding: 12px 22px; font-family: Georgia, serif; font-size: 15px; letter-spacing: 0.06em; cursor: pointer; border-radius: 3px; min-height: 44px; font-weight: bold; }
+  .player button:hover { background: #f0e5c8; }
+  .player .hint { color: #7a6f52; font-size: 14px; font-style: italic; }
+  sup { font-size: 12px; line-height: 0; }
+  sup a { padding: 6px 4px; margin: -6px -4px; border-bottom: none; }
+  .sources ol { padding-left: 24px; margin: 12px 0; }
+  .sources li { margin-bottom: 8px; font-size: 14px; color: #b0a480; }
+  .sources li a { font-style: italic; }
+  .tier { text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: #7a6f52; margin-left: 6px; }
+  .foot { color: #4a4230; font-size: 13px; text-align: center; margin-top: 44px; padding-top: 22px; border-top: 1px solid #3a3221; letter-spacing: 0.05em; }
+  em.pub { color: #b0a480; font-style: normal; letter-spacing: 0.02em; }
+  @media (max-width: 480px) {
+    body { padding: 16px 14px 40px; font-size: 16px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 14px; letter-spacing: 0.18em; margin-top: 36px; padding-top: 18px; }
+    h3 { font-size: 19px; }
+    .lead-body { font-size: 17px; }
+    .tagline { font-size: 14px; }
+    .dateline { font-size: 14px; letter-spacing: 0.1em; }
+    .bar { font-size: 15px; padding: 6px 0; gap: 6px 10px; }
+    .bar a, .next { padding: 12px 6px; }
+    .nav-mid { gap: 12px; }
+    .sources li { font-size: 15px; }
+    .season { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="bar"><a href="2026-08-26.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<h1>Above The Noise</h1>
+<div class="tagline">AI &amp; Tech · Signal over noise</div>
+<div class="dateline">Thursday, August 27, 2026</div>
+
+<div class="player">
+  <button id="playBtn" aria-label="Listen to today's edition">▶ Listen · ~4 min</button>
+  <span class="hint">Reads today's edition aloud via your browser.</span>
+</div>
+
+<h2>Lead Story</h2>
+<div class="item lead-body">
+<h3><a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027">Nvidia's Q2 print reprices the compute layer — and the memory bottleneck sets the ceiling</a> — <em class="pub">Nvidia</em></h3>
+
+<p>Nvidia reported fiscal Q2 FY27 after the close on Aug 26 and, in one release, reset the arithmetic that every hyperscaler and lab downstream is now running for Q4 planning. Revenue landed at $96.2B, up 106% year-over-year and 18% sequentially; Data Center hit $89.0B, up 117% YoY; GAAP and non-GAAP gross margins both at 75.0%; non-GAAP diluted EPS of $2.22.<sup><a href="#s1">[1]</a></sup> Q3 guidance came in at $108B ±2% at 74.0% gross margin — $17B above Nvidia's own Q2 guide of $91B and roughly $4B above the sell-side consensus of $104B that Kiplinger's live tracker was reporting into the print.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup></p>
+
+<p>The two numbers that will move Q4 planning inside every hyperscaler are further down the release. Management guided FY28 to 70% year-over-year revenue growth, with Jensen Huang telling analysts on the call that the FY28 outlook "would be a lot higher" if not for supply constraints.<sup><a href="#s3">[3]</a></sup> And supply commitments — Nvidia's own purchase obligations, mostly for future memory and components — more than doubled from $119B last quarter to $279B this quarter, disclosed as "primarily related to the procurement of memory."<sup><a href="#s4">[4]</a></sup><sup><a href="#s5">[5]</a></sup> CFO Colette Kress framed the demand environment against a $2T cloud-industry backlog, and said hyperscaler capex is tracking above $800B this year, scaling toward $1.3T in 2027.<sup><a href="#s3">[3]</a></sup></p>
+
+<p>Huang framed the print with the sentence Wall Street will quote for weeks: "AI has reached its inflection point. It's doing useful work. Its tokens are productive and profitable. Now, compute is revenue."<sup><a href="#s1">[1]</a></sup> He added the demand story has broadened — "This time last year, one lab alone was driving the buildout; today, we have a golden age of new AI labs and startups, multiple frontier labs scaling in parallel, a thriving open-model ecosystem and physical AI coming online" — and reaffirmed the "$3 trillion to $4 trillion AI infrastructure opportunity" framing over the next five years.<sup><a href="#s1">[1]</a></sup><sup><a href="#s6">[6]</a></sup></p>
+
+<p>The uncomfortable part sits under the guide. The $279B supply commitment is not headroom; it is Nvidia telling the market that the memory supply chain is now the binding constraint on FY28. TrendForce's early-August reporting on Nvidia considering a spec cut to Rubin Ultra's HBM configuration was the earliest tell; Kress's language on the call, and Seoul Economic Daily's coverage of the same-day commentary from HBM suppliers, both put the bottleneck lasting into 2028.<sup><a href="#s7">[7]</a></sup> A hyperscaler that reads the print as "Nvidia guided up by $17B, so I have time" is reading it wrong — the correct read is that memory allocation is scarce, Nvidia is buying it forward at scale, and the compute customers who lock capex earliest get supply first.</p>
+
+<p class="so-what">If your Q4 inference-cost model was drafted before yesterday's close, freeze the assumption column and rebuild it against a $108B Q3 top-line, 74% gross margin, and a $279B supply commitment that is mostly memory — because at least one of your model providers is about to price memory scarcity into their next rate card.</p>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="item">
+<h3><a href="https://help.openai.com/en/articles/9624314-model-release-notes">OpenAI's o3 leaves ChatGPT today</a> — <em class="pub">OpenAI</em></h3>
+<p>OpenAI o3 was retired from ChatGPT on Aug 26 after a 90-day sunset that began May 28.<sup><a href="#s8">[8]</a></sup> API access is unchanged — this is a ChatGPT-only removal, and existing conversations auto-continue on the corresponding GPT-5-family model. It is a small event on paper and the second frontier deprecation in ninety days, which is the actual story: the deprecation cadence at OpenAI is now fast enough that any workflow bound to a specific reasoning model needs a written fallback path.</p>
+<p class="so-what">If any of your prod agents, scheduled jobs, or Custom GPTs still name o3 in a system prompt or user preset, audit them this week and pin them to a GPT-5-family model with an explicit fallback — the ChatGPT-only sunset is a preview of the API deprecation window that will follow.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://workspaceupdates.googleblog.com/2026/08/ask-gemini-in-chat.html">Ask Gemini in Google Chat begins its wider rollout</a> — <em class="pub">Google Workspace</em></h3>
+<p>Google's Workspace team confirmed Ask Gemini in Chat began rolling out on Aug 26 as the successor to the old Gemini side panel, with a Ctrl+G / ⌘+G command line that searches across Gmail, Drive, and Calendar, drafts from inside the conversation, and organises work into per-topic sessions.<sup><a href="#s9">[9]</a></sup> Promotional higher usage limits run through October 1. English-language accounts get the new surface first; other language accounts keep the old side panel until support ships. Old side-panel history does not migrate automatically — Takeout or lose it.</p>
+<p class="so-what">If any team of yours has been storing threads or grounding in the old Gemini side panel as if it were durable, export via Takeout this week — the migration cutover is a data-loss risk that Google has explicitly not undertaken.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://www.socialmediatoday.com/news/meta-adds-new-ai-subscription-packages/828904/">Meta launches AI Core and AI Premium subscription tiers</a> — <em class="pub">Social Media Today</em></h3>
+<p>Meta introduced two paid AI subscription packages on Aug 26 — Meta AI Core and Meta AI Premium — both bundling higher image- and video-generation quotas and expanded model access.<sup><a href="#s10">[10]</a></sup> This is the first time Meta has priced consumer AI directly rather than treating it as a distribution feature of the platform. The framing matters: Meta's Q2 filings recorded elevated AI capex on the same call the plaintiff's bar was opening in Oakland on the 29-state child-safety trial, and paid tiers are how a big platform funds the buildout without further concentrating cost inside advertising.</p>
+<p class="so-what">If your product roadmap assumed Meta AI would stay free-for-users indefinitely as a moat against paid competitors, retire that assumption — the entire consumer frontier is now on paid tiers, and the "free" baseline is what shrinks.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august">EU AI Act enforcement passes its first month with the fine architecture live</a> — <em class="pub">European Commission</em></h3>
+<p>The Commission's AI Office and member-state market-surveillance authorities activated full enforcement powers on Aug 2, with the tiered fine structure now live: up to 3% of global revenue for general-purpose AI model violations, up to 7% or €35M (whichever is higher) for prohibited practices, and up to 3% or €15M for high-risk system breaches.<sup><a href="#s11">[11]</a></sup><sup><a href="#s12">[12]</a></sup> Any chatbot or voice agent deployed in the EU must now identify itself as AI at the start of interaction; AI-generated content requires machine-readable provenance labels. The Digital Omnibus (Regulation 2026/1744, signed July 27) pushed the conformity assessment for high-risk systems out to Dec 2, 2027 — buying time on the hard classification, not on the transparency clock.</p>
+<p class="so-what">If any of your production surfaces face EU users, you now have three unambiguous shipping requirements before Q4: an at-start AI disclosure, a machine-readable provenance marker on generated media, and a documented risk-classification decision that survives a Commission audit request.</p>
+</div>
+
+<div class="item">
+<h3><a href="https://www.anthropic.com/news/confidential-draft-s1-sec">Anthropic's public S-1 filing window opens</a> — <em class="pub">Anthropic / CNBC</em></h3>
+<p>Anthropic submitted its confidential draft S-1 to the SEC on June 1<sup><a href="#s13">[13]</a></sup>; CNBC reported on Aug 21 that the public filing is expected imminently and will list "AI backlash" as a standalone risk factor.<sup><a href="#s14">[14]</a></sup> Unusual Whales's Aug 25 read of the timeline points to late-August pricing, ahead of a targeted Q4 Nasdaq listing. Nvidia's Q3 guide and the $279B supply commitment landing 48 hours before Anthropic's expected filing changes the comparable calculus for the roadshow — every peer is now being underwritten against Nvidia's cash-generative print.</p>
+<p class="so-what">If you are on a Q4 vendor decision involving Anthropic pricing or SLA terms, expect a quiet period to begin the week the S-1 lands — get your commercial questions answered now, because after filing the answer window closes.</p>
+</div>
+
+<h2>Model Watch</h2>
+<p style="color:#7a6f52; font-style:italic; margin-top:14px;">No significant new frontier weights shipped in the past 48 hours. The notable in-flight developments are the deprecation cadence and the compute layer's supply picture.</p>
+
+<div class="item">
+<h3>OpenAI o3 — retired from ChatGPT (Aug 26)</h3>
+<p>Second frontier ChatGPT deprecation in 90 days. Existing conversations continue on GPT-5-family models automatically. API access is unchanged and no API deprecation date is announced.<sup><a href="#s8">[8]</a></sup></p>
+<p class="so-what">Any Custom GPT or scheduled job that names a model in the system prompt gets audited this week — the ChatGPT sunset previews the API window.</p>
+</div>
+
+<div class="item">
+<h3>Rubin Ultra — memory-configuration cut under review (in-flight)</h3>
+<p>Nvidia's $279B supply commitment (mostly memory) and TrendForce's early-August reporting on a Rubin Ultra HBM spec cut are the same story: the memory supply chain is the constraint on FY28, and it is expected to persist through 2027.<sup><a href="#s4">[4]</a></sup><sup><a href="#s7">[7]</a></sup></p>
+<p class="so-what">If your 2027 inference plan was priced against Rubin Ultra's original HBM spec, re-request specs from your reseller and rebuild the memory-bandwidth-per-dollar column before locking Q4 commitments.</p>
+</div>
+
+<div class="item">
+<h3>Claude Sonnet 5 — introductory pricing made permanent</h3>
+<p>Anthropic confirmed the previously scheduled Sept 1 price increase on Claude Sonnet 5 to $3 / $15 per MTok will not occur; $2 / $10 per MTok is now the standard rate.<sup><a href="#s15">[15]</a></sup> Small item, real budget implication for anyone who had priced Q4 against a step-up.</p>
+<p class="so-what">If your Q4 forecast assumed a 50% Sonnet 5 unit-cost rise from Sept 1, remove the increment now — you have found $ per million tokens for whatever you push next.</p>
+</div>
+
+<h2>Voices</h2>
+<div class="item">
+<p><strong>Andrej Karpathy</strong>, founder of Eureka Labs and former director of AI at Tesla and founding member of OpenAI, in his written summary of a fireside chat at <em>Sequoia Ascent 2026</em> (published Apr 30, 2026 on his blog) — an enduring piece, not a fresh drop, and the clearest short articulation of what changes when the interface to a codebase becomes an orchestrator of agents rather than a keyboard.<sup><a href="#s16">[16]</a></sup> Karpathy's two load-bearing lines: "You can outsource your thinking, but you can't outsource your understanding" and "The programmer is increasingly not just a code writer, but an orchestrator of agents."<sup><a href="#s16">[16]</a></sup></p>
+<p>Featured today because Nvidia's Q3 guide<sup><a href="#s1">[1]</a></sup> just told the market that compute supply is committed at scale, and the Ask Gemini launch<sup><a href="#s9">[9]</a></sup> and the o3 retirement<sup><a href="#s8">[8]</a></sup> are three moves in the same direction: the interface is moving from "call one model" to "orchestrate several across surfaces." Karpathy's warning is the honest one — the failure mode of agent orchestration is not that the agent underperforms, it is that the operator stops understanding what the agent is doing. Read it before your next Q4 planning cycle where "AI-augmented" is a line item.</p>
+<p class="so-what">Add a line to your Q4 team plan requiring that at least one human on each agent-orchestrated workflow can hand-execute the workflow end-to-end, without the agent — that is the operational check on "outsourced thinking, retained understanding."</p>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal-box">
+<p>Nvidia's Q2 print reprices two things at once. The compute layer's headline number moved up — $108B Q3, 70% FY28 growth — but the more consequential move is the $279B supply commitment, more than double last quarter, primarily memory. That number tells you the compute layer is now bounded by HBM allocation, not by Nvidia's willingness to ship, and it will stay bounded into 2027.</p>
+<p>The Q3 CY26 hyperscaler earnings cycle lands inside the next eight weeks. Microsoft, Alphabet, Amazon and Meta all disclose capex under filings that will be read against Nvidia's print. Every one of them has both the incentive (secure Rubin-era allocation before peers do) and the visibility (they see their own Nvidia commitments) to raise FY26 capex guidance in that window. The ones that do will name AI infrastructure as the reason — and by doing so will remove the last ambiguity about whether the next capex cycle is priced.</p>
+<p>Anthropic's public S-1 filing is expected to land inside the same window. So the compute-layer reset, the hyperscaler-capex reset, and the first public AI-lab equity comparable are about to be read together — and Q4 vendor decisions made without all three data points will get retroactively repriced by the market.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="season">Season 1 · 0-0 · first call logged 2026-08-13 · 13 calls open</div>
+
+<div class="ledger-row">
+<p><span class="verdict-open">OPEN</span> · <strong>2026-08-27-1</strong> · horizon 2026-11-15</p>
+<p>Nvidia's Q2 FY27 print will force at least two of the four US hyperscalers to reset their published FY26 capex guidance upward by more than $5B in their next scheduled quarterly disclosure. Test: at least two of Microsoft, Alphabet, Amazon, or Meta issue a primary-source disclosure (10-Q, 8-K, earnings release, or CFO commentary) on or before 2026-11-15 raising FY26 capex guidance by more than $5B relative to their most recent Q2 CY26 print, with AI infrastructure, GPU supply, or accelerator capacity cited as the reason.</p>
+</div>
+<p style="color:#7a6f52; font-style:italic; margin-top:12px; font-size:15px;">No calls due for grading today. Twelve prior calls remain OPEN across horizons 2026-09-13 through 2026-11-30.</p>
+
+<h2>Sources</h2>
+<div class="sources">
+<ol>
+<li id="s1">Nvidia — <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027">NVIDIA Announces Financial Results for Second Quarter Fiscal 2027</a><span class="tier">primary</span></li>
+<li id="s2">Kiplinger — <a href="https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026">Nvidia Earnings: Live Updates and Commentary August 2026</a><span class="tier">tier-1</span></li>
+<li id="s3">Fortune — <a href="https://fortune.com/2026/08/26/nvidia-results-q2-earnings/">Nvidia doubles Q2 revenue to $96 billion and crushes estimates</a><span class="tier">tier-1</span></li>
+<li id="s4">Yahoo Finance — <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-makes-bold-108b-promise-012604896.html">Nvidia makes bold $108B promise in blockbuster earnings, but issues a warning</a><span class="tier">tier-3</span></li>
+<li id="s5">Seoul Economic Daily — <a href="https://en.sedaily.com/finance/2026/08/27/nvidia-sees-memory-bottleneck-lasting-into-2028">Nvidia Sees Memory Bottleneck Lasting Into 2028</a><span class="tier">trade</span></li>
+<li id="s6">Data Center Frontier — <a href="https://www.datacenterfrontier.com/machine-learning/article/55315014/nvidia-forecasts-34-trillion-ai-market-driving-next-wave-of-infrastructure">NVIDIA Forecasts $3–$4 Trillion AI Market</a><span class="tier">trade</span></li>
+<li id="s7">Tom's Hardware / TechTimes — <a href="https://www.techtimes.com/articles/323106/20260805/nvidia-rubin-ultra-ai-chip-may-deliver-less-hbm-rubin-forcing-procurement-replanning.htm">NVIDIA Rubin Ultra AI Chip May Deliver Less HBM Than Rubin</a><span class="tier">trade</span></li>
+<li id="s8">OpenAI — <a href="https://help.openai.com/en/articles/9624314-model-release-notes">Model Release Notes (o3 ChatGPT retirement Aug 26, 2026)</a><span class="tier">primary</span></li>
+<li id="s9">Google Workspace — <a href="https://workspaceupdates.googleblog.com/2026/08/ask-gemini-in-chat.html">Introducing Ask Gemini in Chat: your new partner in productivity</a><span class="tier">primary</span></li>
+<li id="s10">Social Media Today — <a href="https://www.socialmediatoday.com/news/meta-adds-new-ai-subscription-packages/828904/">Meta adds new AI subscription packages</a><span class="tier">trade</span></li>
+<li id="s11">European Commission — <a href="https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august">Commission starts enforcing AI Act rules and new transparency requirements on 2 August</a><span class="tier">primary</span></li>
+<li id="s12">Help Net Security — <a href="https://www.helpnetsecurity.com/2026/08/04/eu-ai-act-enforcement-ai-models/">EU begins enforcing AI Act, putting AI models under the microscope</a><span class="tier">trade</span></li>
+<li id="s13">Anthropic — <a href="https://www.anthropic.com/news/confidential-draft-s1-sec">Anthropic confidentially submits draft S-1 to the SEC</a><span class="tier">primary</span></li>
+<li id="s14">CNBC — <a href="https://www.cnbc.com/2026/08/21/-anthropic-ipo-filing-will-show-ai-backlash-as-risk-sources-say.html">Anthropic IPO filing will show AI backlash as a risk factor</a><span class="tier">tier-1</span></li>
+<li id="s15">Anthropic — <a href="https://releasebot.io/updates/anthropic/claude">Anthropic Claude release notes — August 2026</a><span class="tier">primary</span></li>
+<li id="s16">Andrej Karpathy — <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/">Sequoia Ascent 2026 summary</a><span class="tier">practitioner</span></li>
+</ol>
+</div>
+
+<nav class="bar" style="margin-top:44px;"><a href="2026-08-26.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<div class="foot">Content is AI-synthesized. Links point to original sources.</div>
+
+<script>
+const S = "Above The Noise. Thursday, August twenty seventh, twenty twenty-six. Signal over noise. Here is what actually matters for builders today. Lead story. Nvidia's fiscal Q two print reprices the compute layer, and the memory bottleneck sets the ceiling. Nvidia reported fiscal Q two F Y twenty twenty seven after the close on August twenty sixth and, in one release, reset the arithmetic every hyperscaler and lab downstream is now running for Q four planning. Revenue landed at ninety six point two billion dollars, up one hundred and six percent year over year and eighteen percent sequentially. Data center hit eighty nine billion dollars, up one hundred and seventeen percent. Gross margin, seventy five percent. Q three guidance came in at one hundred and eight billion dollars, seventeen billion above Nvidia's own Q two guide and roughly four billion above the sell side consensus. Two numbers further down the release will move Q four planning inside every hyperscaler. Management guided F Y twenty twenty eight to seventy percent revenue growth, with Jensen Huang telling analysts the F Y twenty eight outlook would be a lot higher if not for supply constraints. And supply commitments, Nvidia's own purchase obligations, more than doubled from one hundred and nineteen billion last quarter to two hundred and seventy nine billion this quarter. Primarily related to the procurement of memory. Huang framed the print with the sentence Wall Street will quote for weeks. A I has reached its inflection point. Its tokens are productive and profitable. Now, compute is revenue. The uncomfortable part sits under the guide. Two hundred and seventy nine billion in supply commitments is not headroom. It is Nvidia telling the market memory supply is now the binding constraint on F Y twenty eight. A hyperscaler that reads the print as Nvidia guided up seventeen billion, so I have time, is reading it wrong. The correct read is that memory allocation is scarce and the customers who lock capex earliest get supply first. So what. If your Q four inference cost model was drafted before yesterday's close, freeze the assumption column and rebuild it against a one hundred and eight billion Q three top line, seventy four percent gross margin, and a two hundred and seventy nine billion supply commitment that is mostly memory. Because at least one of your model providers is about to price memory scarcity into their next rate card. Now the briefs. First. Open A I retired the o three model from Chat G P T today, ending a ninety day sunset. A P I access is unchanged. Existing conversations auto continue on the G P T five family. The story is the deprecation cadence. Second, prod agent bound to a specific reasoning model needs a written fallback path. Second brief. Google's Ask Gemini in Chat began rolling out August twenty sixth, replacing the old side panel with a Control G or Command G command line that searches across Gmail, Drive, and Calendar. Promotional higher limits run through October first. English accounts get the new surface first. Old side panel history does not migrate. Third brief. Meta launched two paid A I subscription tiers, Meta A I Core and Meta A I Premium, on August twenty sixth. First time Meta has priced consumer A I directly. Fourth brief. The E U A I Act's enforcement architecture is one month old. Fines up to three percent of global revenue for general purpose A I model violations. Chatbots must identify as A I at the start of interaction. A I generated content requires machine readable provenance labels. Fifth brief. Anthropic's public S one filing window is open. C N B C reported the filing will list A I backlash as a standalone risk factor. The Nvidia print landing forty eight hours before Anthropic's expected filing changes the comparable calculus for the roadshow. Model watch. No significant new frontier weights shipped in the past forty eight hours. The notable developments are the o three Chat G P T sunset, the Rubin Ultra H B M spec cut still under review, and Anthropic making Claude Sonnet five's introductory pricing permanent. If your Q four forecast assumed a fifty percent Sonnet five cost rise from September first, remove the increment. Voices. Andrej Karpathy, founder of Eureka Labs, in his summary of a fireside chat at Sequoia Ascent twenty twenty six from April thirtieth. An enduring piece, not a fresh drop. Karpathy's two load bearing lines. You can outsource your thinking, but you cannot outsource your understanding. And, the programmer is increasingly not just a code writer, but an orchestrator of agents. Featured today because Nvidia's guide, the Ask Gemini launch, and the o three retirement are three moves in the same direction. The interface is moving from call one model to orchestrate several across surfaces. So what. Add a line to your Q four team plan requiring that at least one human on each agent orchestrated workflow can hand execute the workflow end to end, without the agent. Today's signal. Nvidia's Q two print reprices two things at once. Compute layer headline moves up to one hundred and eight billion Q three and seventy percent F Y twenty eight growth. But the more consequential move is the two hundred and seventy nine billion supply commitment, primarily memory. The compute layer is now bounded by H B M allocation, not by Nvidia's willingness to ship. The Q three C Y twenty six hyperscaler earnings cycle lands inside the next eight weeks. Every one of Microsoft, Alphabet, Amazon and Meta has both the incentive and the visibility to raise F Y twenty six capex guidance in that window. Anthropic's public S one filing is expected inside the same window. The compute reset, the hyperscaler capex reset, and the first public A I lab equity comparable are about to be read together. Q four vendor decisions made without all three data points will get retroactively repriced by the market. That is Above The Noise for August twenty seventh. Ship carefully.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+const btn = document.getElementById('playBtn');
+btn.addEventListener('click', () => {
+  if (U) { speechSynthesis.cancel(); U = null; btn.textContent = '▶ Listen · ~4 min'; return; }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { U = null; btn.textContent = '▶ Listen · ~4 min'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+});
+if (speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = () => {}; }
+</script>
+</body>
+</html>
