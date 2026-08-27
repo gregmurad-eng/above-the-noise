@@ -146,6 +146,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-27-1",
+      "date": "2026-08-27",
+      "call": "Nvidia's Q2 FY27 print \u2014 $96.2B revenue, Q3 guide of $108B, FY28 guide of 70% growth, and supply commitments jumping from $119B to $279B \u2014 will force at least two of the four US hyperscalers to reset their published FY26 capital-expenditure guidance upward by more than $5B in their next scheduled quarterly disclosure. By 2026-11-15, at least two of Microsoft, Alphabet, Amazon, or Meta will issue a primary-source disclosure (10-Q, 8-K, earnings release, or CFO commentary) that raises FY26 capex guidance by more than USD 5B relative to their most recent Q2 CY26 print, and names AI infrastructure, GPU supply, or accelerator capacity as the reason.",
+      "basis": "Nvidia disclosed Q2 FY27 revenue of $96.2B (up 106% YoY, up 18% QoQ) and Data Center revenue of $89.0B (up 117% YoY); Q3 guidance of $108B \u00b12% is $17B above Nvidia's own Q2 guide and roughly $4B above street consensus. CFO Colette Kress said hyperscaler capex is tracking above $800B this year and $1.3T next. Huang told analysts the FY28 outlook 'would be a lot higher' if not for supply constraints, and that Nvidia is scaling into 'a $3 trillion to $4 trillion AI infrastructure opportunity'. Supply commitments more than doubled from $119B last quarter to $279B, 'primarily related to the procurement of memory'. When Nvidia raises its Q3 guide by $17B and its FY28 guide to 70% growth, the cost of the compute layer for every hyperscaler downstream just got redrawn \u2014 and the memory-constrained ceiling means the ones that lock capex early get supply first. Q3 CY26 filings from Microsoft, Alphabet, Amazon, and Meta will land inside this window, and the buy-side pressure to visibly commit to Rubin-era supply will be at its highest point of the cycle.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source SEC filing (10-Q, 10-K, 8-K), earnings release, or CFO commentary from at least two of Microsoft, Alphabet, Amazon, or Meta dated on or before 2026-11-15, in each case raising FY26 (calendar-year or fiscal-year matching that company's convention) capex guidance by more than USD 5B relative to their most recent Q2 CY26 disclosure, with the release or accompanying commentary explicitly citing AI infrastructure, GPU supply, or accelerator capacity as the reason. Buyback expansions, opex increases without a capex line change, unchanged capex ranges whose midpoint stays inside prior guidance, and third-party analyst estimates do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
