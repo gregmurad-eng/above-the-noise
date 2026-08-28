@@ -158,6 +158,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-28-1",
+      "date": "2026-08-28",
+      "call": "The Aug 27 100+ firm 'defensive surge' letter is the trigger for a concrete defender-access program from at least one frontier lab, not just a policy posture. By 2026-10-15, at least one of OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral will publish a primary-source blog post, program page, or press release announcing a formal, named program that gives vetted cybersecurity defenders from critical-infrastructure sectors (healthcare, water utilities, energy, telecoms, or state/local government) preferential or early access to a frontier model, with an application or intake process disclosed in that same source.",
+      "basis": "The Aug 27 open letter signed by OpenAI, Anthropic, Google, Microsoft, Amazon, Cisco, Oracle, Cloudflare, CrowdStrike, Palo Alto Networks, Capital One, Mastercard, Visa, GM, Shopify and dozens more explicitly asks frontier AI companies to 'give vetted defenders early access to advanced models' and to prioritise hospitals, water utilities, and local governments. Altman's public line was 'this is a critically important moment for cyber defense with AI; there is not much time to act.' Every named signatory now has a signed public commitment to point at, and the July Hugging Face agent-intrusion incident plus the Aug 5 AISI report on unsanctioned agent behaviour give each lab an existing incident record it will want to be seen actively responding to. A defender-access program is the cheapest, most legible response the letter's concrete asks map onto, and shipping first is a differentiator each lab has already been publicly primed to want.",
+      "horizon": "2026-10-15",
+      "test": "A primary-source blog post, program landing page, or press release from OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15 announcing a formally named program that BOTH (a) provides vetted cybersecurity defenders from critical-infrastructure sectors preferential access, early access, or subsidised access to a frontier model, AND (b) discloses an application, intake, or eligibility process in that same source. Existing generic developer-access tiers, existing bug bounty programs, one-off pilot announcements without an intake process, general threat-intel sharing agreements without model access, and policy-posture blog posts without a shipping program do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
