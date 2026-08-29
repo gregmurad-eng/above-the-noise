@@ -170,6 +170,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-29-1",
+      "date": "2026-08-29",
+      "call": "Judge Rita Lin's Aug 28 ruling \u2014 that the Pentagon's supply-chain-risk designation of Anthropic for refusing surveillance and autonomous-weapons use cases was 'illegal and baseless' First Amendment retaliation \u2014 makes public use-case refusal a defensible posture rather than a commercial liability. By 2026-11-30, at least one other frontier AI vendor (OpenAI, Google DeepMind, xAI, Meta, or Mistral) will publish a primary-source acceptable-use policy update, model card, blog post, or press release that explicitly names a specific government or military use case (mass surveillance, autonomous weapons targeting, lethal autonomy, or equivalent) the lab refuses to enable, as public company policy rather than a private contractual carve-out.",
+      "basis": "U.S. District Judge Rita Lin's 59-page order on Aug 28 held that Defense Secretary Pete Hegseth's designation of Anthropic as a national-security supply-chain risk violated both the First Amendment and Fifth Amendment due-process protections, and required the government to withdraw the directives. The ruling gives every other frontier lab written federal-court authority that a written refusal to enable specific state-security use cases cannot lawfully trigger a supply-chain blacklist. In parallel, Nvidia paused its AI Compute Partnership under WSJ-reported antitrust concerns about controlling which end customers may lease its GPUs, and SemiAnalysis published Jalape\u00f1o specs showing OpenAI's first Broadcom-built inference ASIC posts a 1.5-1.9x perf-per-watt lead over Nvidia Rubin. The three moves together tell one story: control-of-compute chokepoints \u2014 Pentagon leverage over lab customers, Nvidia leverage over cloud customers, single-vendor silicon lock-in \u2014 are all being contested at the same time. Public use-case carve-outs are the cheapest, most legible way for a lab to lock in the legal-defensibility side of that shift, and each of the named peers has both the platform reach and the enterprise-buyer pressure to move.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source acceptable-use policy update, model card, blog post, or press release from OpenAI, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-11-30 that explicitly names a specific government or military use case (mass surveillance, autonomous weapons targeting, lethal autonomy, or the equivalent) the lab publicly refuses to enable, as company policy rather than a private contractual carve-out. Existing generic 'we prohibit misuse' language, existing bans on unlawful conduct, policy updates without a named government/military use case, and non-public contractual side letters do not count. The named refusal must be new or newly specified relative to the lab's 2026-08-28 published policy state.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
