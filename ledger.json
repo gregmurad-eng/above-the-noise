@@ -182,6 +182,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-30-1",
+      "date": "2026-08-30",
+      "call": "Amazon's Sept 30 shutdown of Mechanical Turk (plus SageMaker Ground Truth and Amazon Augmented AI on the same date) is a market-structure event, not a housekeeping one: by 2026-11-30, at least one of Scale AI, Mercor, or Prolific will announce EITHER (a) a funding round of USD 500M or more, OR (b) an M&A transaction of USD 1B or more, with a primary-source press release or SEC filing explicitly citing AI-training data-labeling capacity, expert-panel-labeling capacity, or RLHF / preference-data capacity as the use case.",
+      "basis": "Amazon posted a shutdown notice on mturk.com this week (CNBC first-reported Aug 25) closing Mechanical Turk on Sept 30, 2026, along with SageMaker Ground Truth and Amazon Augmented AI \u2014 exiting the human-in-the-loop data-infrastructure business entirely. At its peak MTurk served 500,000+ workers and was the substrate for ImageNet-era supervised learning and downstream RLHF pipelines. Trade coverage uniformly names Scale AI, Mercor and Prolific as the beneficiaries: the demand did not disappear, it moved upmarket toward vetted, higher-priced pools doing preference-comparison and adversarial red-team work that RLHF and Constitutional-AI-style training now needs. In parallel the NBER four-central-bank survey (w34984) reports ~90% of firms see zero measurable AI productivity gain \u2014 the pressure to show provenance and audit-quality on training-data pipelines is now compounding a live vendor-consolidation event. That combination usually surfaces as a funding round or an acquisition inside a quarter, not a year.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source press release, blog post, or SEC filing (S-1, 8-K, or equivalent) dated on or before 2026-11-30 from Scale AI, Mercor, or Prolific disclosing EITHER (a) a funding round of USD 500M or more, OR (b) an M&A transaction of USD 1B or more (as buyer or as target). In either case, the release language must explicitly cite AI-training data-labeling capacity, expert-panel labeling, RLHF / preference-data capacity, or an equivalent frontier-AI training-data thesis as the use of proceeds or strategic rationale. Ordinary Series C/D venture rounds without an AI-training-capacity thesis in the release language do not count; secondary-market share sales without new primary capital do not count; unrelated GovCloud or DoD deployment announcements do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
