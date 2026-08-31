@@ -194,6 +194,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-08-31-1",
+      "date": "2026-08-31",
+      "call": "The EU's Aug 31 VLOSE designation of ChatGPT is a template, not a one-off: by 2026-10-31, at least one additional frontier AI chatbot (Google Gemini, Anthropic Claude, Microsoft Copilot, Perplexity, xAI Grok, or Meta AI) will either (a) be formally designated as a VLOSE or VLOP under the DSA in a primary-source European Commission announcement, OR (b) be publicly acknowledged \u2014 by the European Commission or by the service provider itself \u2014 as being under active DSA designation review, with a user-count disclosure at or above the 45M EU MAU threshold.",
+      "basis": "The European Commission on Aug 31 designated ChatGPT as a Very Large Online Search Engine and Reddit and Roblox as Very Large Online Platforms under the DSA, bringing the strictest-tier count to 28. The trigger was OpenAI's own disclosure of ~159.1M EU monthly active users on ChatGPT Search. Executive VP Henna Virkkunen framed the move as a higher standard of scrutiny and accountability; Ireland's Coimisi\u00fan na Me\u00e1n and the Netherlands' ACM are the supervising national coordinators. The DSA layer sits on top of the AI Act's Aug 2 GPAI transparency clock and stacks with the FSB Chair's Aug 31 letter to G20 finance ministers naming frontier AI as a financial-stability transmission channel. Every other frontier chatbot on the same 45M-EU-MAU curve now has a public, mechanical designation pathway pointed at it, and each has an incentive to disclose or contest first rather than be discovered last.",
+      "horizon": "2026-10-31",
+      "test": "A primary-source European Commission announcement, service-provider press release, or tier-1 news report dated on or before 2026-10-31 confirming (a) formal VLOSE or VLOP designation of any of the named chatbots, OR (b) that any of the named chatbots is under active DSA designation review with a user-count disclosure at or above the 45M EU MAU threshold. Generic policy-posture statements, voluntary transparency reports without a designation-review reference, private consultations without a public disclosure, and non-EU regulatory actions do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
