@@ -206,6 +206,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-01-1",
+      "date": "2026-09-01",
+      "call": "The Pentagon's Aug 31 addition of ChatGPT Mil and Grok for Government to GenAI.mil is a template, not a one-off: by 2026-12-15, at least one other Five Eyes or major NATO-allied national government (the United Kingdom, Canada, Australia, New Zealand, France, Germany, Japan, or South Korea, acting at central-government level) will publish a primary-source announcement of a government-wide multi-vendor generative-AI portal offering at least two commercial frontier models (from among OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral) to civilian or defence employees, with an onboarded-user or eligible-user count disclosed in that same source.",
+      "basis": "GenAI.mil now fronts three frontier vendors (Google Gemini since Dec 2025, plus OpenAI ChatGPT Mil and xAI Grok for Government added Aug 31) for 1.7M of the DoD's 3M personnel, on a single-tenant enclave with GSA-priced schedules (xAI Grok at USD 0.42/unit through March 2027). The architecture \u2014 one portal, multiple vendors, agency-owned tenancy, standard-price contract vehicles \u2014 is legibly copiable, and every named allied peer has an existing single-vendor pilot to consolidate into it. Q4 procurement windows are where FY27 IT budgets get set in allied capitals, and 'the DoD is already doing this' is now the strongest single procurement argument available to those buyers.",
+      "horizon": "2026-12-15",
+      "test": "A primary-source national-government press release, ministerial statement, or cabinet-office publication dated on or before 2026-12-15 confirming (a) a government-wide (not single-agency) multi-vendor generative-AI portal, (b) at least two commercial frontier vendors named (from among OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral), AND (c) a disclosed onboarded-user or eligible-user count. Single-agency pilots, single-vendor rollouts, private procurement notices without a public announcement, and general 'AI strategy' white papers without a shipping portal do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
