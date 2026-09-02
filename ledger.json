@@ -218,6 +218,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-02-1",
+      "date": "2026-09-02",
+      "call": "OpenAI's Sept 1 Astra 'Critical' cyber-tier designation is a template for peer-lab risk-tier disclosure, not a company-specific posture. By 2026-10-15, at least one other frontier lab (Anthropic, Google DeepMind, xAI, Meta, or Mistral) will publish a primary-source model card, release note, safety-framework update, or policy blog post that explicitly claims OR denies that a currently-released or in-flight model has reached the lab's own highest cyber-capability risk tier (Critical, or the equivalent named designation in that lab's published framework).",
+      "basis": "OpenAI's Path to Astra post is the first time a frontier lab has publicly said one of its own models crossed the top-severity tier of its own risk framework, and shipped it anyway behind tighter gating. The evidence disclosed is unusually specific: 100% on ExploitBench and two zero-days discovered and chained in expert-led red-team runs. The move retires the question every enterprise buyer has been asking since the Aug 27 100+ firm defensive-surge letter (whether labs will actually restrict a shipped model on their own risk assessment before regulators force it) and makes 'we assessed our model against our own top tier and told you the answer' the new floor of a defensible frontier release. Every peer already runs a published framework with an equivalent top tier (Anthropic RSP, Google Frontier Safety Framework, xAI Risk Management, Meta Frontier AI Framework, Mistral commitments) and has both procurement pressure (defensive-surge letter, GenAI.mil buyer stance) and governance machinery to answer publicly.",
+      "horizon": "2026-10-15",
+      "test": "A primary-source model card, release note, safety-framework update, or policy blog post from Anthropic, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15 that explicitly claims OR denies that a currently-released or in-flight model has reached the lab's own highest cyber-capability risk tier (Critical, or the equivalent named designation in that lab's published framework). Generic 'we take safety seriously' statements, unchanged model cards without a cyber-tier statement, third-party evaluator claims without lab endorsement, and lower-tier or general-purpose framework updates that do not address the highest cyber tier do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
