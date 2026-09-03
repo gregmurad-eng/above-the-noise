@@ -230,6 +230,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-03-1",
+      "date": "2026-09-03",
+      "call": "CrowdStrike's Sept 2 SafeMind launch \u2014 a dual-agent frontier-model system (Red Tempest offensive + Blue Solano defensive) running in closed loop on an NVIDIA digital twin \u2014 is a template for the next round of AI security product architecture, not a company-specific move. By 2026-11-15, at least one other major security vendor (Microsoft, Palo Alto Networks, Cisco, Fortinet, SentinelOne, Check Point, IBM Security, or Trend Micro) will publish a primary-source announcement of a dual-agent autonomous red-team / blue-team system that pairs an offensive AI model with a defensive AI model in a closed-loop or continuous-improvement architecture, with a named simulation-environment, digital-twin, or cyber-range partner disclosed in the same source.",
+      "basis": "CrowdStrike on Sept 2 shipped SafeMind (Red Tempest / Blue Solano) built on Nvidia Nemotron and 15 years of incident-response data, with internal evaluations showing 29% higher detection, 6x faster remediation, and 99% lower cost than leading frontier models. Same day, Google launched Gemini 3.8 Flash Cyber with the Fairwind Program for vetted defenders (governments, healthcare, telecom, software maintainers), OpenAI mandated hardware security keys for Daybreak Blue/Red enrolment, and Anthropic shipped Fable 5.1 + Mythos 5.1 alongside Enterprise Frontier Safeguards. The industry has just settled on 'AI-defends-against-AI, run in a simulated environment, gated to trusted parties' as the frontier product category, and every named peer already runs the threat-intel telemetry, simulation-environment tooling, and enterprise-buyer relationships to ship a matching product inside the fast-follow window.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source press release, product page, blog post, or SEC filing dated on or before 2026-11-15 from Microsoft, Palo Alto Networks, Cisco, Fortinet, SentinelOne, Check Point, IBM Security, or Trend Micro announcing a system that BOTH (a) combines an offensive AI model (red team, adversary emulation, or autonomous exploit generation) with a defensive AI model (blue team, autonomous remediation, or patch generation) in a closed-loop or continuous-improvement architecture, AND (b) names a simulation-environment, digital-twin, or cyber-range partner in the same source. Single-model AI security products, red-team AI without a paired defensive AI (or vice versa), threat-intel-only announcements, generic 'AI copilot for SOC' launches, and partnership announcements without a shipped dual-agent product do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
