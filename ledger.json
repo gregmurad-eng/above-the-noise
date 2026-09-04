@@ -242,6 +242,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-04-1",
+      "date": "2026-09-04",
+      "call": "The $10 input / $50 output per million tokens pricing tier that GPT-6 Astra just adopted, matching Claude Fable 5.1's Sept 1 price, is the new reference price for top-tier frontier general-purpose model APIs \u2014 not a coincidence. By 2026-10-31, at least one additional frontier lab (Google DeepMind, xAI, Meta, or Mistral) will publish primary-source API pricing for a currently-released or newly-released top-tier frontier general-purpose model (not a flash / mini / small variant) at rates within 10% of $10 per million input tokens AND $50 per million output tokens.",
+      "basis": "OpenAI shipped GPT-6 Astra on Sept 3 with published API pricing of $10/$50 per million tokens, matching Claude Fable 5.1 (shipped Sept 1 by Anthropic) at exactly the same tier. Meta Muse Spark 1.3 shipped Sept 2 at $1.25/$4.25 and Google Gemini 3.8 Flash at $0.75/$3.75 sit in the flash/mid-tier line, not top-tier reasoning. When the two largest frontier labs converge on the same top-tier price within 48 hours, that becomes the reference number the rest of the market anchors against, and the pricing pressure runs toward the top tier at Q4 renewal season.",
+      "horizon": "2026-10-31",
+      "test": "A primary-source API pricing page, model card, changelog, or blog post from Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-31 that lists a top-tier frontier general-purpose model (equivalent capability tier to GPT-6 Astra or Claude Fable 5.1 \u2014 not a small, flash, or mini variant) at API pricing within 10% of $10 per million input tokens AND $50 per million output tokens. Existing enterprise-contract pricing, custom pricing, discount programs, and free tiers do not count. New pricing for a genuinely new top-tier release does count. Pricing that hits only one side of the input/output pair within the 10% window does not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
