@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · 4 September 2026</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7d5f; --miss:#c26a5a; --card:#151107; --line:#2a2216; }
+  * { box-sizing:border-box; }
+  html, body { max-width:100%; overflow-x:hidden; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia, 'Times New Roman', serif; margin:0; padding:0; line-height:1.55; font-size:17px; }
+  .wrap { max-width:760px; margin:0 auto; padding:28px 22px 60px; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; padding:10px 0 18px; border-bottom:1px solid var(--line); font-family:'Helvetica Neue', Arial, sans-serif; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; }
+  .bar a, .bar span { white-space:nowrap; padding:12px 6px; margin:-12px -6px; min-height:44px; display:inline-flex; align-items:center; }
+  .bar a { color:var(--accent); text-decoration:none; }
+  .bar a:hover { text-decoration:underline; }
+  .nav-mid { display:inline-flex; gap:0; }
+  .nav-mid a { color:var(--accent); margin:-12px 3px; padding:12px 6px; }
+  .next { color:var(--muted); }
+  h1 { font-family:Georgia, serif; font-size:44px; letter-spacing:0.02em; margin:22px 0 4px; color:var(--text); line-height:1.05; }
+  .tagline { font-family:'Helvetica Neue', Arial, sans-serif; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:2px; }
+  .dateline { font-family:'Helvetica Neue', Arial, sans-serif; font-size:14px; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:26px; }
+  h2 { font-family:'Helvetica Neue', Arial, sans-serif; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); margin:44px 0 14px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+  h3 { font-family:Georgia, serif; font-size:24px; margin:22px 0 8px; color:var(--text); line-height:1.2; }
+  h3 a { color:var(--text); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  h3 a:hover { color:var(--accent); }
+  p { margin:12px 0; }
+  .attrib { color:var(--muted); font-size:14px; font-style:italic; }
+  .sowhat { color:var(--accent); font-style:italic; display:block; margin-top:10px; padding-top:8px; border-top:1px dashed var(--line); }
+  .signal { background:var(--card); border-left:3px solid var(--accent); padding:20px 22px; margin:16px 0; }
+  .signal p { margin:8px 0; }
+  .brief, .watch-item { margin-bottom:26px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+  .brief:last-child, .watch-item:last-child { border-bottom:none; }
+  .voices { background:var(--card); padding:18px 20px; border-left:3px solid var(--accent); margin-top:10px; }
+  .voices blockquote { margin:8px 0 12px; padding-left:14px; border-left:2px solid var(--accent); font-style:italic; color:var(--text); }
+  .voices cite { color:var(--muted); font-style:normal; font-size:14px; display:block; margin-top:-4px; }
+  .ledger-line { padding:10px 0; border-bottom:1px solid var(--line); }
+  .ledger-line:last-child { border-bottom:none; }
+  .hit { color:var(--accent); font-weight:bold; letter-spacing:0.08em; }
+  .miss { color:var(--miss); font-weight:bold; letter-spacing:0.08em; }
+  .unsettled { color:var(--muted); font-weight:bold; letter-spacing:0.08em; }
+  .open { color:var(--muted); font-weight:bold; letter-spacing:0.08em; }
+  .season { font-family:'Helvetica Neue', Arial, sans-serif; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  a { color:var(--accent); }
+  sup a { color:var(--accent); text-decoration:none; padding:6px 4px; margin:-6px -4px; font-size:12px; }
+  sup a:hover { text-decoration:underline; }
+  ol.sources { padding-left:22px; font-size:15px; }
+  ol.sources li { margin-bottom:8px; color:var(--text); }
+  ol.sources .tier { color:var(--muted); font-size:13px; font-style:italic; margin-left:4px; }
+  .listen { margin:20px 0 6px; }
+  .listen button { background:transparent; color:var(--accent); border:1px solid var(--accent); padding:12px 20px; font-family:'Helvetica Neue', Arial, sans-serif; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; min-height:44px; }
+  .listen button:hover { background:var(--accent); color:var(--bg); }
+  footer { margin-top:44px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; text-align:center; }
+  @media (max-width: 480px) {
+    body { font-size:17px; }
+    .wrap { padding:18px 16px 40px; }
+    h1 { font-size:34px; }
+    h2 { font-size:14px; }
+    h3 { font-size:21px; }
+    .bar { font-size:14px; gap:8px 12px; }
+    .bar a, .bar span { padding:14px 8px; margin:-14px -8px; min-height:48px; }
+    .nav-mid a { margin:-14px 4px; padding:14px 8px; }
+    ol.sources { font-size:15px; }
+    .attrib, .voices cite, footer { font-size:14px; }
+    ol.sources .tier { font-size:14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar" aria-label="Edition navigation">
+  <a href="2026-09-03.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="tagline">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="tagline">AI &amp; Tech · Signal over noise</div>
+<div class="dateline">Friday, 4 September 2026</div>
+
+<div class="listen">
+  <button id="listenBtn" onclick="toggleAudio()">▶ Listen · ~4 min</button>
+</div>
+
+<h2>Lead Story</h2>
+<h3><a href="https://openai.com/index/gpt-6-astra/">OpenAI ships GPT-6 Astra — the first frontier model released above its own top cyber-risk tier</a></h3>
+<p class="attrib">— OpenAI</p>
+<p>OpenAI released GPT-6 Astra on 3 September, with API pricing set at $10 per million input tokens and $50 per million output tokens, a 1.05M-token context window, and a rollout that reached ChatGPT Plus, Pro, Business and Enterprise users plus API and AWS over the following days<sup><a href="#s1">[1]</a></sup>. The company's own release page went down mid-announcement — for close to an hour the only reliable copy was an archived mirror circulating on social — which is itself a data point about the demand curve the top of this market is now serving<sup><a href="#s3">[3]</a></sup>.</p>
+<p>The story is not the benchmark scores. GPT-6 Astra is the first model OpenAI has ever declared to have crossed the &quot;Critical&quot; cyber-capability tier of its own Preparedness Framework — and shipped anyway, behind tighter gating and additional monitoring<sup><a href="#s2">[2]</a></sup>. Under that framework, the Critical bar is a model that can identify and develop functional zero-day exploits across hardened real-world systems without a human guiding each step. In testing, OpenAI says Astra developed exploits for hardened browsers and operating systems and discovered two previously unknown V8 vulnerabilities that were disclosed to maintainers<sup><a href="#s2">[2]</a></sup>. Chief scientist Jakub Pachocki said the model &quot;can find previously unknown security flaws and develop ways to exploit them across many well-protected systems without a person guiding each step&quot;<sup><a href="#s4">[4]</a></sup>. President Greg Brockman framed the release as a &quot;generational leap&quot; and told reporters Astra could eventually be seen as the arrival of artificial general intelligence<sup><a href="#s6">[6]</a></sup>.</p>
+<p>Two things are worth holding steady against the AGI framing. First, the $10/$50 API price is exactly the price Anthropic set for Claude Fable 5.1 forty-eight hours earlier<sup><a href="#s13">[13]</a></sup> — two of the largest frontier labs converging on the same top-of-market tag inside one week. That is a pricing floor now, not an accident. Second, the headline ARC-AGI-3 score of 99.9% was, as Simon Willison noted, achieved for $19K using OpenAI's custom &quot;Provider Adapter harness&quot;, while the default harness posted 62.7% at $26K<sup><a href="#s3">[3]</a></sup> — a gap that says something specific about how much of the frontier capability sits in the scaffolding rather than the weights. The consequential thing on 3 September was not the leaderboard; it was that a lab publicly said one of its own models cleared its own top-severity tier and then chose gated release over a delay. That is the new floor of a defensible frontier launch.</p>
+<span class="sowhat">So what: if you run agent systems that touch untrusted inputs, treat the top-tier cyber-capable frontier models as dual-use tooling that will end up on both sides of your threat model — and assume your ARC-AGI-flavoured evals overstate ability by the size of a custom harness.</span>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google opens the Fairwind Program with Gemini 3.8 Flash Cyber</a></h3>
+<p class="attrib">— Google</p>
+<p>Google shipped Gemini 3.8 Flash on 2 September at $0.75/$3.75 per million tokens (through 31 December, then $1.50/$7.50), and paired it with a restricted-access Cyber variant available only through the new Fairwind Program — prioritised for &quot;trusted government authorities, as well as critical infrastructure operators and software maintainers&quot;<sup><a href="#s7">[7]</a></sup>. The Register's read: after weeks of &quot;Google is done&quot; takes, this is Google reminding the market it still ships<sup><a href="#s8">[8]</a></sup>. The Fairwind gating matches the ask in the 27 August open letter from OpenAI, Anthropic, Google, Microsoft and roughly a hundred other firms calling for early defender access to frontier models — exactly the concrete answer that letter was written to force.</p>
+<span class="sowhat">So what: if you defend critical infrastructure and you have not applied to a named defender-access program at a frontier lab this week, you are watching an access advantage form without you in the room.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&amp;%20Claude%20Mythos%205.1%20System%20Card.pdf">Anthropic ships Fable 5.1 and Mythos 5.1 with Enterprise Frontier Safeguards and a 75% cache-read cut</a></h3>
+<p class="attrib">— Anthropic</p>
+<p>On 1 September Anthropic released Claude Fable 5.1 (generally available, production safeguards) and Claude Mythos 5.1 (same model, restricted-access programs for vetted cybersecurity and life-sciences organisations), both at 1M-token context and 128K output, with the price of cached context cut by 75% and a new security architecture called Enterprise Frontier Safeguards<sup><a href="#s13">[13]</a></sup><sup><a href="#s14">[14]</a></sup>. The system card labels the pair as demonstrating &quot;the strongest overall cyber capabilities of any model Anthropic has released.&quot; The Astra release two days later hit the same $10/$50 API tier — this is now the reference price for a top-of-market frontier model API.</p>
+<span class="sowhat">So what: if your inference bill is mostly cache reads, redo the maths this week — a 75% cut moves what workloads pencil out, especially long-context RAG and multi-turn agents.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3">Meta ships Muse Spark 1.3 with 20% fewer tool calls per task</a></h3>
+<p class="attrib">— Meta AI Research</p>
+<p>Meta's 2 September release of Muse Spark 1.3 keeps a 1M-token context and holds price at $1.25/$4.25 per million tokens, and claims ~20% fewer tool calls and ~25% fewer tokens per task versus 1.2<sup><a href="#s9">[9]</a></sup><sup><a href="#s10">[10]</a></sup>. That is a compression story rather than a capability story: for agent workloads paying by call count and token, an efficiency delta at the same price is a real unit-economics change. Bloomberg's framing is that Meta is now edging on OpenAI and Anthropic on agentic benchmarks; the mid-tier flash line is where the pricing pressure is sharpest right now.</p>
+<span class="sowhat">So what: if you route agent traffic across labs, re-benchmark your tool-heavy flows on Muse Spark 1.3 before your next billing cycle — 20% fewer calls at unchanged price is a live cost delta, not a marketing line.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://technode.com/2026/09/02/alibaba-upgrades-qwen38-max-with-new-0902-snapshot/">Alibaba ships Qwen3.8-Max-0902 as a post-training-only iteration on the same base</a></h3>
+<p class="attrib">— TechNode</p>
+<p>Alibaba on 2 September shipped Qwen3.8-Max-0902, a snapshot that is explicitly a post-training update on the same 2.4T-parameter MoE base, at the same pricing ($2/$6 per million tokens) and the same 1M context — with a front-end CodeArena score up 22 points to 1,691, topping the leaderboard<sup><a href="#s11">[11]</a></sup><sup><a href="#s12">[12]</a></sup>. This is the third open-weight lab this quarter to publicly frame a release as &quot;same base, all gains from post-training&quot; — the pattern first named around GLM-5.3 in mid-August. Enterprise buyers reward that framing because it de-risks capability drift on the base weights.</p>
+<span class="sowhat">So what: if you have a Qwen3.8-Max in production, the 0902 snapshot is a drop-in that changes tokens-out but not the base — validate on your existing eval suite and swap without a re-plumbing project.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="watch-item">
+<h3><a href="https://openai.com/index/gpt-6-astra/">OpenAI · GPT-6 Astra · 3 September 2026</a></h3>
+<p>1.05M-token context; 128K max output; API at $10/$50 per million tokens; ChatGPT Plus/Pro/Business/Enterprise + API + AWS. First OpenAI model classified &quot;Critical&quot; on cyber capability under the Preparedness Framework; released with additional monitoring rather than delayed<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup>. Weights closed.</p>
+<span class="sowhat">So what: pin your model IDs — if you were pointing at gpt-5.6-sol, the pricing and behaviour change is not a routine rev.</span>
+</div>
+
+<div class="watch-item">
+<h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google DeepMind · Gemini 3.8 Flash + 3.8 Flash Cyber · 2 September 2026</a></h3>
+<p>Flash generally available at $0.75/$3.75 per million tokens through 31 December, then $1.50/$7.50; Flash Cyber gated via the Fairwind Program. Flash reports 90.8% on Terminal-Bench 2.1 and 54.9% on HLE-Verified; Cyber reports &gt;70% real-world vulnerability discovery rate<sup><a href="#s7">[7]</a></sup>. Weights closed.</p>
+<span class="sowhat">So what: your Q1 27 unit-cost model must assume Flash pricing doubles on 1 January — bake it in now, not in December.</span>
+</div>
+
+<div class="watch-item">
+<h3><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3">Meta · Muse Spark 1.3 · 2 September 2026</a></h3>
+<p>1M-token context; $1.25/$4.25 per million tokens; rolling out via Muse Code and Meta Model API, then Meta AI and social surfaces. Max variant in limited preview scores 62 on Artificial Analysis Intelligence Index; ~20% fewer tool calls and ~25% fewer tokens per task versus 1.2<sup><a href="#s9">[9]</a></sup>. Weights not open at release.</p>
+<span class="sowhat">So what: efficiency at unchanged price cascades into your agent SLA math — expect vendors that resell Muse Spark to pass some of that through by end of month.</span>
+</div>
+
+<div class="watch-item">
+<h3><a href="https://www.alibabagroup.com/en-US/document-2021044032125272064">Alibaba · Qwen3.8-Max-0902 · 2 September 2026</a></h3>
+<p>2.4T-parameter MoE; 1M-token context; $2/$6 per million tokens; post-training-only snapshot on the unchanged Qwen3.8-Max base. CodeArena front-end score +22 to 1,691 (leaderboard top). Weights open<sup><a href="#s11">[11]</a></sup><sup><a href="#s12">[12]</a></sup>.</p>
+<span class="sowhat">So what: this is a low-risk swap — same base means your safety and eval work carries; upside is the coding delta.</span>
+</div>
+
+<h2>Voices</h2>
+<div class="voices">
+<p><strong>Simon Willison</strong>, independent researcher and creator of Datasette, on GPT-6 Astra's headline benchmark result<sup><a href="#s3">[3]</a></sup>:</p>
+<blockquote>&quot;the 99.9% score was achieved for $19K using OpenAI's custom &lsquo;Provider Adapter harness&rsquo;, while the default ARC-AGI harness scored 62.7% for $26K.&quot;</blockquote>
+<cite>Simon Willison's Weblog, 3 September 2026</cite>
+<p>Willison is disciplined about the difference between a model's capability and the scaffolding around it, and he is the closest thing this beat has to a public evaluator that will not front-run access. His caveat matters because the AGI framing coming out of the Astra release day depends heavily on the ARC-AGI-3 headline, and a 37-point spread between the custom harness and the default harness is not a rounding error — it is the size of the frontier lab's own tooling advantage on its own eval. Read the number that way and the release is still enormous; read it any other way and you will overpay for capability you have not measured on your own harness.</p>
+<span class="sowhat">So what: before you re-scope a roadmap off Astra's benchmark reel, run your own workload on the default harness — the number that matters is the one you can reproduce.</span>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>Two frontier labs converged on identical $10/$50-per-million-token pricing for their top-tier general-purpose models inside forty-eight hours. Claude Fable 5.1 landed at that price on 1 September; GPT-6 Astra landed at exactly the same price on 3 September. That is now the reference price for a top-of-market frontier API — and it happened at the same moment OpenAI declared its release above its own Critical cyber-risk tier and Google opened a gated defender-access program for its cyber-specialised variant.</p>
+<p>The signal is that the frontier is no longer competing on capability at the top end — it is competing on the shape of controlled release. Same price, same context class, same day: what differentiates a top-tier launch this quarter is how the lab gates it, who it lets in early, and whether it says out loud that it crossed its own top tier and shipped anyway. Enterprise buyers will price that discipline into procurement long before the next round of benchmark leadership changes hands.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="season">Season 1 · 0-0 · first call logged 2026-08-13 · 20 open</div>
+
+<div class="ledger-line">
+<p><span class="open">OPEN</span> · <em>2026-09-04</em> — The $10 input / $50 output per million tokens pricing tier that GPT-6 Astra just adopted, matching Claude Fable 5.1's 1 September price, is now the reference for top-tier frontier general-purpose model APIs. By <strong>2026-10-31</strong>, at least one additional frontier lab (Google DeepMind, xAI, Meta, or Mistral) will publish primary-source API pricing for a currently-released or newly-released top-tier frontier general-purpose model (not a flash / mini / small variant) at rates within 10% of $10/$50 per million tokens. Existing enterprise-contract pricing, custom deals, and free tiers do not count.</p>
+</div>
+
+<div class="ledger-line">
+<p class="attrib">No calls fell due today. Earliest open horizon: 2026-09-13 (2026-08-13-1 · governance layer shift).</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1">OpenAI — &quot;GPT-6 Astra: A new generation of intelligence&quot; — <span class="tier">primary</span> — <a href="https://openai.com/index/gpt-6-astra/">openai.com/index/gpt-6-astra/</a></li>
+<li id="s2">OpenAI — &quot;Path to Astra: critical capabilities and frontier safeguards&quot; — <span class="tier">primary</span> — <a href="https://openai.com/index/path-to-astra/">openai.com/index/path-to-astra/</a></li>
+<li id="s3">Simon Willison — &quot;GPT-6 Astra&quot; — <span class="tier">practitioner</span> — <a href="https://simonwillison.net/2026/Sep/3/gpt6-astra/">simonwillison.net/2026/Sep/3/gpt6-astra/</a></li>
+<li id="s4">NBC News — &quot;OpenAI debuts GPT-6 Astra, says it triggered security measures&quot; — <span class="tier">tier-1</span> — <a href="https://www.nbcnews.com/tech/tech-news/openai-debuts-gpt-6-astra-security-measures-rcna595940">nbcnews.com/tech/tech-news/openai-debuts-gpt-6-astra-security-measures-rcna595940</a></li>
+<li id="s5">CNBC — &quot;OpenAI says Astra AI model crosses 'Critical' cyber capability&quot; — <span class="tier">tier-1</span> — <a href="https://www.cnbc.com/2026/09/01/open-ai-astra-cyber-model.html">cnbc.com/2026/09/01/open-ai-astra-cyber-model.html</a></li>
+<li id="s6">Bloomberg — &quot;OpenAI Rolls Out GPT-6 Astra Model With Added Cyber Guardrails&quot; — <span class="tier">tier-1</span> — <a href="https://www.bloomberg.com/news/articles/2026-09-03/openai-rolls-out-gpt-6-astra-model-with-added-cyber-guardrails">bloomberg.com/news/articles/2026-09-03/openai-rolls-out-gpt-6-astra-model-with-added-cyber-guardrails</a></li>
+<li id="s7">Google — &quot;Introducing Gemini 3.8 Flash and 3.8 Flash Cyber&quot; — <span class="tier">primary</span> — <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/</a></li>
+<li id="s8">The Register — &quot;With Gemini 3.8 Flash, Google reminds everyone it's still in the race&quot; — <span class="tier">trade</span> — <a href="https://www.theregister.com/ai-and-ml/2026/09/02/with-gemini-38-flash-google-reminds-everyone-its-still-in-the-race/5294049">theregister.com/ai-and-ml/2026/09/02/with-gemini-38-flash-google-reminds-everyone-its-still-in-the-race/5294049</a></li>
+<li id="s9">Meta AI Research — &quot;Introducing Muse Spark 1.3&quot; — <span class="tier">primary</span> — <a href="https://research.meta.ai/blog/introducing-muse-spark-1-3">research.meta.ai/blog/introducing-muse-spark-1-3</a></li>
+<li id="s10">Bloomberg — &quot;Meta Releases AI Model Muse Spark 1.3, Edges Closer to OpenAI, Anthropic&quot; — <span class="tier">tier-1</span> — <a href="https://www.bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals">bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals</a></li>
+<li id="s11">Alibaba Group — &quot;Alibaba Unveils Qwen3.8-Max&quot; — <span class="tier">primary</span> — <a href="https://www.alibabagroup.com/en-US/document-2021044032125272064">alibabagroup.com/en-US/document-2021044032125272064</a></li>
+<li id="s12">TechNode — &quot;Alibaba upgrades Qwen3.8-Max with a new 0902 snapshot&quot; — <span class="tier">trade</span> — <a href="https://technode.com/2026/09/02/alibaba-upgrades-qwen38-max-with-new-0902-snapshot/">technode.com/2026/09/02/alibaba-upgrades-qwen38-max-with-new-0902-snapshot/</a></li>
+<li id="s13">Anthropic — &quot;Claude Fable 5.1 &amp; Claude Mythos 5.1 System Card&quot; — <span class="tier">primary</span> — <a href="https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&amp;%20Claude%20Mythos%205.1%20System%20Card.pdf">anthropic.com system card PDF</a></li>
+<li id="s14">VentureBeat — &quot;Anthropic's Claude Fable 5.1 and Mythos 5.1 arrive with a 75% cost reduction for Fable cache reads&quot; — <span class="tier">trade</span> — <a href="https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads">venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads</a></li>
+</ol>
+
+<nav class="bar" aria-label="Edition navigation">
+  <a href="2026-09-03.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Friday September fourth, twenty twenty six. Today's lead: OpenAI shipped GPT-6 Astra on September third at ten dollars per million input tokens and fifty per million output, with a one point zero five million token context window, and rolled it out across ChatGPT Plus, Pro, Business and Enterprise, plus the API and A W S. The company's own release page went down mid announcement, so for about an hour the only reliable copy was an archived mirror circulating on social. But the real story is not the benchmark reel. Astra is the first model OpenAI has ever declared to have crossed the Critical cyber capability tier of its own Preparedness Framework, and shipped anyway, behind tighter gating. Under that framework, the Critical bar is a model that can find and develop functional zero day exploits across hardened systems without a person guiding each step. In testing, OpenAI says Astra developed exploits for hardened browsers and operating systems and discovered two previously unknown V8 vulnerabilities. President Greg Brockman called the release a generational leap and suggested it could eventually be seen as the arrival of A G I. Hold two things steady against that framing. First, the ten fifty API price is exactly what Anthropic set for Claude Fable five point one forty eight hours earlier. That is a floor now, not an accident. Second, Simon Willison flagged that the headline ARC A G I three score of ninety nine point nine percent was achieved for nineteen thousand dollars using OpenAI's custom Provider Adapter harness, while the default harness posted sixty two point seven percent at twenty six thousand. The consequential thing on September third was not the leaderboard, it was that a lab publicly said its own model cleared its own top severity tier and chose gated release over delay. In The Briefs: Google shipped Gemini three point eight Flash on September second at seventy five cents in, three seventy five out per million tokens, and opened the Fairwind Program to give trusted government authorities, critical infrastructure operators and software maintainers gated access to a Flash Cyber variant. Anthropic released Fable five point one and Mythos five point one with Enterprise Frontier Safeguards and a seventy five percent cache read cost cut. Meta shipped Muse Spark one point three with about twenty percent fewer tool calls and twenty five percent fewer tokens per task versus one point two, at unchanged price. Alibaba shipped Qwen three point eight Max zero nine zero two, an explicit post training only snapshot on the same base, following the same base, all gains from post training template that GLM five point three named in mid August. Voices features Simon Willison, on the ARC A G I harness gap, and his caution that a thirty seven point spread between the custom harness and the default is not a rounding error. Today's Signal: two frontier labs converged on identical ten dollar in, fifty dollar out pricing for their top tier models inside forty eight hours, at the same moment as OpenAI's Critical tier disclosure and Google's Fairwind gated program. The top of this market is no longer competing on capability; it is competing on the shape of controlled release. That is Above The Noise for today. See you tomorrow.";
+
+let U = null;
+function toggleAudio() {
+  const btn = document.getElementById('listenBtn');
+  if (U && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen · ~4 min';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const voices = speechSynthesis.getVoices();
+  const preferred = voices.find(v => v.name === 'Daniel') || voices.find(v => v.name === 'Alex') || voices.find(v => v.lang && v.lang.startsWith('en'));
+  if (preferred) U.voice = preferred;
+  U.onend = () => { btn.textContent = '▶ Listen · ~4 min'; U = null; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+}
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+
+</body>
+</html>
