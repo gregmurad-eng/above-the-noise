@@ -266,6 +266,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-06-1",
+      "date": "2026-09-06",
+      "call": "Microsoft AI's Sept 3 pricing of MAI-Transcribe-2 at $0.10 per audio hour \u2014 a 72% cut on its own five-month-old MAI-Transcribe-1 line \u2014 forces a matching cut from at least one paid-transcription incumbent. By 2026-10-31, at least one of OpenAI (GPT-Transcribe / Whisper API), Google (Gemini transcription or Chirp), ElevenLabs (Scribe), Deepgram (Nova family), or AssemblyAI will publish a primary-source pricing change on its flagship transcription API cutting the per-audio-hour or equivalent per-minute rate by 40% or more relative to its 2026-09-03 rate.",
+      "basis": "Microsoft's own release page and the VentureBeat writeup both confirm $0.10/audio hour through end of 2026, with claimed 10x speed advantage over GPT-Transcribe and a #1 FLEURS finish at 5.2% WER across 60 languages. MAI-Transcribe-1 shipped at $0.36/hour, so Microsoft has priced its own line down by 72% in five months while asserting benchmark leadership. Every named peer has published per-hour or per-minute rates well above $0.10 and now has an anchor number to move to before Q4 renewal shopping starts; the transcription market is short enough on switching cost that the first mover captures material volume.",
+      "horizon": "2026-10-31",
+      "test": "A primary-source pricing page, changelog, or blog post from OpenAI, Google, ElevenLabs, Deepgram, or AssemblyAI dated on or before 2026-10-31 that cuts the flagship transcription API rate by 40% or more relative to its 2026-09-03 rate, expressed per audio hour or per audio minute. Introductory-tier promotions that were pre-announced before 2026-09-03 do not count; volume-discount coupons and enterprise-contract carve-outs do not count; the change must apply to the standard published rate for the flagship transcription product.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
