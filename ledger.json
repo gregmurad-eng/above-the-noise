@@ -278,6 +278,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-07-1",
+      "date": "2026-09-07",
+      "call": "The Anthropic $1.5B settlement's publisher-vs-author allocation dispute \u2014 dozens of publishers filing 100% claims on works whose rights reverted years ago, and literary agents claiming 15-25% allocations despite not being rightsholders \u2014 is a template, not an outlier. Future AI-training copyright cases will import the same 50/50-default-plus-deviation-form mechanic and produce the same claim collision.",
+      "basis": "Sept 4-6 reporting from TechCrunch, Writer Beware and the Authors Guild that dozens of trade and university publishers (HarperCollins, Macmillan, Penguin Random House among them) filed 100% claims on rights-reverted books under the Bartz v. Anthropic settlement's default 50/50 split, and that literary agents are claiming allocations despite not being rightsholders, forcing a 30-day settlement-administrator dispute window before a court-appointed Special Master takes over. The mechanic that produced this collision \u2014 a default split with a deviation form that any claimant can check \u2014 is the obvious template for every future AI-training class-action settlement.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source court filing or Tier-1 press report of one, dated on or before 2026-11-30, showing at least one other AI-training copyright case (against OpenAI, Google, Meta, Microsoft, xAI, Perplexity, or an equivalent frontier-lab defendant) files or publicly proposes settlement terms that include an explicit publisher-vs-author allocation mechanism \u2014 a default split, a deviation form, a rights-reverted-works carve-out, or a Special-Master dispute path. Pending motions to certify a class do not count. Amicus briefs do not count. Individual-plaintiff settlements without a publisher-vs-author allocation mechanism do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
