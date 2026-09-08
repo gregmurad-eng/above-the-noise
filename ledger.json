@@ -290,6 +290,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-08-1",
+      "date": "2026-09-08",
+      "call": "Anthropic will file its S-1 registration statement publicly with the SEC before its expected Nasdaq listing window closes \u2014 either by the current end of October 2026 target reported by Yahoo Finance and The Information, or the target will slip and a new date will be publicly named.",
+      "basis": "Bloomberg reported Sept 3 that Anthropic is finalizing a $15B pre-IPO credit facility; The Information reported Sept 6 that Anthropic has signed $517B in compute contracts over 11 months; Anthropic confidentially filed a draft S-1 in June and has been telegraphing an October Nasdaq listing.",
+      "horizon": "2026-10-31",
+      "test": "By 2026-10-31, either Anthropic has a public S-1 (not confidential draft) visible on SEC EDGAR and priced its IPO, OR Anthropic or lead underwriters publicly named a new target date that pushes the listing past 2026-10-31. If neither happens (silent slip), the call is MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
