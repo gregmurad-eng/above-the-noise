@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · 16 September 2026</title>
+<style>
+  :root {
+    --bg:#0d0a06; --card:#1a1409; --text:#e0d4b8; --muted:#8a7f63;
+    --accent:#c9a84c; --miss:#c46a5a; --border:#2a2318;
+  }
+  * { box-sizing:border-box; }
+  html, body { max-width:100%; overflow-x:hidden; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; margin:0; line-height:1.65; font-size:18px; }
+  .wrap { max-width:680px; margin:0 auto; padding:26px 22px 60px; }
+  nav.bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; font-size:15px; padding:12px 0; border-bottom:1px solid var(--border); margin-bottom:22px; }
+  nav.bar a, nav.bar .next { color:var(--accent); text-decoration:none; white-space:nowrap; padding:6px 4px; }
+  nav.bar a:hover { text-decoration:underline; }
+  nav.bar .next { color:var(--muted); }
+  nav.bar .nav-mid { display:inline-flex; gap:0; margin:0 auto; }
+  nav.bar .nav-mid a { color:var(--accent); margin:0 9px; }
+  h1 { color:var(--accent); font-weight:normal; letter-spacing:1px; font-size:38px; margin:14px 0 6px; }
+  .tag { color:var(--muted); font-size:14px; font-variant:small-caps; letter-spacing:2px; margin-bottom:4px; }
+  .date { color:var(--muted); font-size:15px; margin-bottom:22px; font-style:italic; }
+  h2 { color:var(--accent); font-weight:normal; font-size:22px; letter-spacing:0.5px; margin:38px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+  h3 { color:var(--text); font-weight:normal; font-size:19px; margin:22px 0 8px; }
+  h3 a { color:var(--text); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  h3 a:hover { color:var(--accent); }
+  p { margin:10px 0; }
+  a { color:var(--accent); }
+  .player { display:flex; align-items:center; gap:14px; padding:14px 18px; background:var(--card); border-radius:4px; margin:14px 0 22px; flex-wrap:wrap; }
+  .player button { background:var(--accent); color:var(--bg); border:none; padding:12px 20px; font-family:inherit; font-size:15px; cursor:pointer; border-radius:3px; min-height:44px; font-weight:bold; letter-spacing:0.5px; }
+  .player button:hover { background:#dbb85c; }
+  .player .hint { color:var(--muted); font-size:14px; font-style:italic; }
+  .briefs .item { margin:20px 0; padding-bottom:16px; border-bottom:1px solid var(--border); }
+  .briefs .item:last-child { border-bottom:none; }
+  .briefs .src { color:var(--muted); font-size:14px; font-style:italic; }
+  .sowhat { color:var(--accent); font-style:italic; display:block; margin-top:8px; font-size:16px; }
+  .callout { background:var(--card); border-left:3px solid var(--accent); padding:18px 22px; margin:12px 0; border-radius:0 4px 4px 0; }
+  .callout p { margin:0; }
+  .voices { padding:6px 0; }
+  .voices blockquote { color:var(--text); font-size:19px; line-height:1.55; margin:14px 0 6px; padding:0 0 0 18px; border-left:3px solid var(--accent); font-style:italic; }
+  .voices cite { color:var(--muted); font-size:14px; font-style:italic; display:block; margin-bottom:14px; }
+  .voices p:first-of-type { margin-top:0; }
+  .ledger { background:var(--card); padding:16px 20px; border-radius:4px; margin:12px 0; }
+  .ledger .rec { color:var(--accent); font-variant:small-caps; letter-spacing:1px; font-size:15px; margin-bottom:8px; }
+  .ledger .verdict-HIT { color:var(--accent); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-MISS { color:var(--miss); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-UNSETTLED { color:var(--muted); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-OPEN { color:var(--text); font-variant:small-caps; letter-spacing:0.5px; }
+  .ledger .call-body { margin:6px 0; }
+  .ledger .call-meta { color:var(--muted); font-size:14px; }
+  sup a { color:var(--accent); text-decoration:none; padding:6px 4px; margin:-6px -4px; font-size:12px; }
+  sup a:hover { text-decoration:underline; }
+  .sources { padding-left:22px; margin:0; }
+  .sources li { margin-bottom:10px; font-size:15px; line-height:1.5; }
+  .sources .tier { color:var(--muted); font-size:13px; font-style:italic; font-variant:small-caps; letter-spacing:0.5px; }
+  footer { border-top:1px solid var(--border); margin-top:44px; padding-top:18px; color:var(--muted); font-size:14px; text-align:center; font-style:italic; }
+  @media (max-width:480px) {
+    body { font-size:17px; }
+    .wrap { padding:22px 16px 44px; }
+    h1 { font-size:32px; }
+    h2 { font-size:20px; }
+    h3 { font-size:18px; }
+    nav.bar { font-size:14px; gap:10px 12px; }
+    nav.bar a, nav.bar .next { padding:10px 8px; min-height:44px; }
+    .player { flex-wrap:wrap; }
+    .player button { min-height:44px; padding:12px 20px; }
+    sup a { padding:8px 6px; margin:-8px -6px; font-size:14px; }
+    .sources { padding-left:18px; }
+    .sources li { font-size:15px; }
+    .ledger { padding:14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="bar"><a href="2026-09-09.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<div class="tag">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="date">AI &amp; Tech · Signal over noise · Wednesday, 16 September 2026</div>
+
+<div class="player">
+  <button id="playBtn">▶ Listen · 4 min</button>
+  <span class="hint">Read aloud in your browser · Web Speech API</span>
+</div>
+
+<h2>Lead Story</h2>
+<h3><a href="https://fortune.com/2026/09/12/sam-altman-openai-ipo-delay-ill-advised-moment-safety-concerns/">The frontier just publicly agreed to slow down — and priced its own IPO on it</a> — Fortune, Bloomberg, MarkTechPost</h3>
+
+<p>On Friday 12 September, Anthropic CEO Dario Amodei published <em>We Must Pace the Frontier</em>, arguing that frontier labs must deliberately slow capability gains so alignment and evaluation work can catch up, and committing Anthropic unilaterally to the first step of a three-part plan: <em>embedded evaluators</em> — permanent, employee-level, badged access at Anthropic offices for a third-party team (he named METR as a candidate) empowered to publish findings without editorial control<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup>. Inside 48 hours the pledge stopped being one lab's posture. Sam Altman said OpenAI would match the embedded-evaluator commitment; Demis Hassabis quote-tweeted the essay and endorsed the direction; Microsoft became the first hyperscaler to formally sign onto the pacing framework<sup><a href="#s2">[2]</a></sup><sup><a href="#s3">[3]</a></sup>.</p>
+
+<p>Monday 14 September, Microsoft published its <em>MAI Code of Conduct</em> for public consultation — a behavioural rulebook for its first-party models with absolute bans on cyberattacks, nuclear-weapons work, and deepfake production, plus a six-week comment window<sup><a href="#s3">[3]</a></sup><sup><a href="#s4">[4]</a></sup>. Satya Nadella's own X post announcing it was unambiguous about the frame: pacing is now Microsoft's stated stance, not a hedge<sup><a href="#s4">[4]</a></sup>. And on the same Friday, Sam Altman told Fortune editor-in-chief Alyson Shontell that OpenAI's IPO will not happen in 2026, saying "given everything happening with safety, right now would be an ill-advised moment to go public"<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup>. A CFO-level walk-back on the largest expected AI listing of the year is what a pacing pledge looks like when it hits a balance sheet.</p>
+
+<p>The analytical question is whether any of this survives contact with Q4 pricing pressure. Amodei's essay names two triggers behind the reversal: recursive self-improvement — models measurably helping build the next generation — and the OpenAI–Hugging Face agent-swarm incident as an industry-wide warning that misaligned swarms could produce catastrophic cyber damage inside 6–12 months<sup><a href="#s1">[1]</a></sup><sup><a href="#s7">[7]</a></sup>. Both are real. But every lab in the coalition has trillion-dollar-scale compute commitments landing on the same clock, and the only public pledge with teeth so far is Anthropic's embedded-evaluator seat inside its own building. Everything else is a code of conduct, a comment window, or a delayed prospectus. The pacing story is now falsifiable: within eight weeks, either a lab publishes a delayed release citing safety review, or the pledge is the polite version of "we could not have shipped that fast anyway."</p>
+
+<p><em class="sowhat">So what: model roadmaps you are planning against will slip on safety-review grounds, not capability grounds. Pin the model version, region, and provider you depend on in a contract clause, and expect at least one deprecation window this quarter to be extended by four to eight weeks — plan renewals to that widened window rather than the last published date.</em></p>
+
+<h2>The Briefs</h2>
+
+<div class="briefs">
+
+<div class="item">
+<h3><a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare's mixed-use crawler block goes live on ad-supported pages</a> — Cloudflare</h3>
+<p>The July-announced default that blocks "mixed-use" AI crawlers — those that blend search indexing with training and agent collection — on any page carrying advertising took effect Tuesday 15 September for new customers, new sites owned by existing customers, and all existing free-tier customers<sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup>. Google, Apple and Microsoft all run bundled crawlers; publishers who block Training now also lose search visibility until those companies separate the functions. <span class="src">Primary: Cloudflare's own policy page.</span></p>
+<p><em class="sowhat">So what: if your product ingests public web pages via a mixed-use crawler, expect ad-page coverage to fall this week without a single line of code changing. Audit which user-agent your fetcher declares, and split search from training if you want a route back onto the ad-supported long tail.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs">Perplexity Portable Computer ships local on Windows RTX PCs</a> — VentureBeat, SiliconANGLE</h3>
+<p>On 14 September Perplexity brought its Portable Computer agent — model, agent harness, orchestrator and scheduler — fully on-device to Windows PCs with an Nvidia GeForce RTX GPU carrying 24GB VRAM or more<sup><a href="#s10">[10]</a></sup><sup><a href="#s11">[11]</a></sup>. The Windows app ships a Qwen 3.8 27B variant post-trained for the agent loop and RTX-optimised. Available to Pro and Max subscribers via the Microsoft Store; zero token cost per action once running. <span class="src">Trade: VentureBeat and SiliconANGLE, corroborated.</span></p>
+<p><em class="sowhat">So what: local computer-use agents are the first credible answer to per-call inference costs on high-volume, low-margin workflows. If you're building browser automation on rented API tokens, price a hybrid — local Qwen on capable clients, cloud fallback for the rest — before Q4 pricing renewals reset your margin math.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/">Google's Fairwind Program crosses 650 vetted defender partners</a> — Google</h3>
+<p>The gated-access channel for Gemini 3.8 Flash Cyber paired with CodeMender — Google's autonomous patch-generation agent — now counts more than 650 participating governments, critical-infrastructure operators and platform maintainers, up from the initial announcement fortnight on 2 September<sup><a href="#s12">[12]</a></sup>. Access is application-only; the model is deliberately unavailable outside the program. <span class="src">Primary: Google's own program page.</span></p>
+<p><em class="sowhat">So what: if you run a critical-infrastructure product and haven't applied, the peer-defender population that can already generate verified patches inside minutes is now large enough to be a competitive gap on incident-response SLAs. Apply this quarter or price into your response times.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://easternherald.com/2026/09/13/ios-27-siri-google-gemini-apple-launch/">Apple ships rebuilt Siri backed by Google Gemini in iOS 27</a> — Forbes, Eastern Herald</h3>
+<p>Apple's rebuilt Siri began public beta rollout Monday alongside iOS 27, with server-side reasoning routed to a Google Gemini deployment and complex queries running against Apple's own AFM 3 Cloud Pro model on Nvidia hardware hosted in Google's cloud<sup><a href="#s13">[13]</a></sup><sup><a href="#s14">[14]</a></sup>. English-only beta with daily usage limits and a waitlist; a paid tier is signalled but not priced. <span class="src">Tier-1: Forbes, corroborated by Eastern Herald.</span></p>
+<p><em class="sowhat">So what: if your app integrates App Intents or exposes shortcuts, expect a step-change in how many arbitrary phrasings Siri now routes to you — instrument your intent handlers for the widened match distribution before your users start reporting weird invocations you didn't design for.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://research.empiricalsecurity.com/research/september-2026-cve-of-the-month">CVE-2026-58138 — unauth RCE in Orkes Conductor, orchestrating agents in prod</a> — Empirical Security</h3>
+<p>Orkes Conductor versions 3.21.21 through pre-3.30.2 carry an unauthenticated remote-code-execution flaw scored CVSS 9.8: inline workflow definitions accept JavaScript or Python expressions and execute them on the engine host with no auth wall<sup><a href="#s15">[15]</a></sup>. The Netflix-derived workflow engine has found a second life orchestrating production AI-agent pipelines, which puts a lot of RAG and tool-calling systems in scope. Patch to 3.30.2 or later; block inline expressions at the reverse-proxy layer if you can't upgrade this week. <span class="src">Specialist: Empirical Security CVE-of-the-month.</span></p>
+<p><em class="sowhat">So what: any agent orchestrator you inherited from a "just use the workflow engine" decision made in 2023 is now on your patch-tree. Audit which version is behind your MCP servers and CI job runners before Friday — the CVSS 9.8 unauth path is the exact class of bug that dies quietly and then loudly.</em></p>
+</div>
+
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="briefs">
+
+<div class="item">
+<h3><a href="https://api-docs.deepseek.com/updates/">DeepSeek V4.1-Flash — 552B multimodal MoE, MIT-licensed weights</a> — DeepSeek</h3>
+<p>Released 10 September, generally available on the API; V4-Pro traffic switched to V4.1-Flash on 14 September<sup><a href="#s16">[16]</a></sup><sup><a href="#s17">[17]</a></sup>. New Causal Encoder-Decoder architecture with native text/image/audio in one model — not the bolt-on vision approach of V4-Flash-Vision-Exp. 552B parameters total, 8B active per input token, 16B active per output token, 1M context. Off-peak pricing $0.003 per million cached input tokens, $0.15 per million uncached input, $0.60 per million output. MIT-licensed weights.</p>
+<p><em class="sowhat">So what: MIT-licensed weights at this parameter count and this pricing floor become the reference number Western labs will be measured against on Q4 renewals — batch your image-plus-text workloads onto V4.1-Flash off-peak and use the delta to renegotiate with your primary provider.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://aiweekly.co/ai-news-today/edition/2026-09-15">Gemini 3.8 Live — real-time audio streaming API</a> — Google DeepMind</h3>
+<p>Shipped 15 September at $0.005 per minute of audio input and $0.018 per minute of audio output<sup><a href="#s18">[18]</a></sup>. Priced for continuous conversational streams rather than transcribe-then-respond patterns; complements the same-day rebuilt-Siri routing. Native audio-to-audio, not the transcribe-plus-TTS chain that most voice agents shipped in 2024–2025.</p>
+<p><em class="sowhat">So what: if you're running a voice product on Whisper-in / GPT-out / TTS-out, price a live-streaming rebuild — the latency floor drops from ~800ms to ~200ms and the per-minute cost sits below most incumbent transcription-only APIs.</em></p>
+</div>
+
+<div class="item">
+<h3><a href="https://aiweekly.co/ai-news-today/edition/2026-09-15">Atria Dawn Preview — Shanghai AI Lab, 143 authors, 16 benchmarks</a> — Shanghai AI Laboratory</h3>
+<p>Released 15 September as a 143-author preprint with evaluations across 16 benchmarks<sup><a href="#s18">[18]</a></sup>. Positioning: an open-lab preview of a frontier-adjacent Chinese model attempting to force the same "same base, post-training only" framing GLM-5.3 debuted in August. Weights availability and licensing terms still to be published; watch for the model card next.</p>
+<p><em class="sowhat">So what: if you were waiting on a second Western frontier lab to adopt the "post-training-only iteration" framing before betting on it, the Chinese lab pool is now doing the framing publicly on your behalf — factor that pressure into any 4-6 week model-selection decision.</em></p>
+</div>
+
+</div>
+
+<h2>Voices</h2>
+<div class="voices">
+<p><strong>Satya Nadella</strong>, Chairman and CEO of Microsoft, on <a href="https://www.unite.ai/nadella-announces-public-consultation-on-microsofts-mai-model-rules/">X, 13 September 2026</a>, announcing the MAI Code of Conduct one day before publication<sup><a href="#s4">[4]</a></sup><sup><a href="#s3">[3]</a></sup>:</p>
+<blockquote>"Any pursuit of superintelligence has to be grounded in the core principle that if the AI we build is not helping humanity and under human control, it's not worth pursuing."</blockquote>
+<cite>— Satya Nadella, X, 13 September 2026</cite>
+<p>Featured this week because Nadella is the first hyperscaler CEO to publicly sign onto the pacing framework Amodei just proposed, and because the sentence is unusually specific for a Nadella corporate post — it names a condition ("under human control") that his own MAI Code of Conduct, published the next day, is written to make enforceable. This is not the usual "AI safety matters" post; it is a CEO drawing a line his own product team now has to design against, in a comment window his own regulators can watch. The line Microsoft has just committed to defend in public is the line every peer will get asked to defend next.</p>
+<p><em class="sowhat">So what: if you're an enterprise buyer, add "does the vendor commit publicly to human-control preconditions on frontier releases" to your RFP scorecard this quarter — the answers stop being uniform this week, and the labs that hedge are telling you something you can price.</em></p>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="callout">
+<p>Wednesday's story isn't a model release — it's a coalition. In five days, Anthropic's CEO published a pacing essay, OpenAI's CEO matched the first commitment, Google DeepMind's CEO endorsed the direction, Microsoft's CEO signed on and shipped a code of conduct, and OpenAI's own IPO window slipped past 2026 with "safety" as the on-record reason. That is the four largest frontier operators aligning on a governance stance inside a single news cycle, at the same moment their compute commitments are pushing $500B–$1T on a shared clock. The pacing pledge is either the beginning of the first real coordinated slowdown in frontier AI history, or it is a coordinated <em>appearance</em> of one, timed to give Anthropic's S-1, Microsoft's comment window, and OpenAI's 2027 listing the same defensible story. Either way, the next visible artefact — a delayed release citing safety review, or the absence of one — is the signal, and it lands inside the next eight weeks.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger">
+<p class="rec">Season 1 · 1-0 · 26 open · first call graded 2026-09-16</p>
+<p class="call-meta">One call came due today. First verdict on the record.</p>
+</div>
+
+<div class="ledger">
+<p><span class="verdict-HIT">2026-08-13-1 · HIT</span> · <span class="call-meta">horizon 2026-09-13 · graded 2026-09-16</span></p>
+<p class="call-body">Called: "The consequential AI work in August 2026 is moving from model capability to the governance layer around models — who may call which model, what marks its output must carry, and how the calling protocol survives supply-chain compromise." Test required at least two further gated-access, provenance-marking or protocol-auth developments from frontier labs or standards bodies by 2026-09-13, evidenced by primary sources.</p>
+<p class="call-meta"><strong>Evidence:</strong> Google's Fairwind Program (2 September, primary source at <a href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/">blog.google</a>) — application-only defender access to Gemini 3.8 Flash Cyber, now more than 650 vetted partners<sup><a href="#s12">[12]</a></sup>. OpenAI's Path-to-Astra "Critical" tier + hardware-security-key gate for Daybreak Blue/Red enrolment (1–3 September). MCP roadmap of 22 August formally naming SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) as active Agent Identity WG proposals. Three independent, primary-sourced developments; threshold cleared.</p>
+</div>
+
+<div class="ledger">
+<p><span class="verdict-OPEN">Today's call · OPEN</span> · <span class="call-meta">horizon 2026-11-15</span></p>
+<p class="call-body">The pacing pledge is a coordination event, not a policy statement. By 2026-11-15, at least one of Anthropic, OpenAI, Google DeepMind, Microsoft AI or xAI will publish a primary-source blog post, model card, release note, or SEC filing that explicitly discloses a specific model release, capability rollout, or training milestone was delayed to accommodate safety review — the pacing pledge in visible action, not another framework document. <strong>Test:</strong> a primary-source disclosure from one of the named labs dated on or before 2026-11-15, naming a specific product, model version, or capability, and explicitly citing safety review, evaluator sign-off, or pacing as the reason for the delay. Generic policy or framework updates without a delayed artefact do not count. IPO-timing slips do not count — Altman's Fortune line already ships that on the record. A silent slip with no on-record safety citation grades MISS.</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1">MarkTechPost · <a href="https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/">"Anthropic's 3-Step 'Pace the Frontier' Plan Wins OpenAI, xAI and Microsoft Support"</a> · <span class="tier">trade</span></li>
+<li id="s2">Unite.AI · <a href="https://www.unite.ai/altman-says-openai-will-match-anthropics-embedded-evaluator-pledge/">"Altman Says OpenAI Will Match Anthropic's Embedded Evaluator Pledge"</a> · <span class="tier">trade</span></li>
+<li id="s3">Kingy AI · <a href="https://kingy.ai/news/microsoft-ai-code-of-conduct-nadella-human-control/">"Microsoft Is Opening Its AI Rulebook as Nadella Draws a Line on Superintelligence"</a> · <span class="tier">trade</span></li>
+<li id="s4">Unite.AI · <a href="https://www.unite.ai/nadella-announces-public-consultation-on-microsofts-mai-model-rules/">"Nadella Announces Public Consultation on Microsoft's MAI Model Rules"</a> · <span class="tier">trade</span></li>
+<li id="s5">Fortune · <a href="https://fortune.com/2026/09/12/sam-altman-openai-ipo-delay-ill-advised-moment-safety-concerns/">"Sam Altman confirms OpenAI won't go public this year"</a> · <span class="tier">tier-1</span></li>
+<li id="s6">Bloomberg · <a href="https://www.bloomberg.com/news/articles/2026-09-12/openai-ipo-won-t-happen-until-2027-sam-altman-tells-fortune">"OpenAI CEO Sam Altman Says IPO Won't Be Until 2027 Due to AI Safety Concerns"</a> · <span class="tier">tier-1</span></li>
+<li id="s7">Cryptobriefing · <a href="https://cryptobriefing.com/anthropic-amodei-embedded-ai-evaluators/">"Anthropic's Amodei proposes continuous evaluator access for AI firms"</a> · <span class="tier">trade</span></li>
+<li id="s8">Cloudflare · <a href="https://blog.cloudflare.com/content-independence-day-ai-options/">"Your site, your rules: new AI traffic options for all customers"</a> · <span class="tier">primary</span></li>
+<li id="s9">TechCrunch · <a href="https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/">"Cloudflare's new policy pushes AI companies to pay for publishers' content"</a> · <span class="tier">tier-1</span></li>
+<li id="s10">VentureBeat · <a href="https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs">"Perplexity partners with Nvidia to launch Portable Computer, a fully local AI agent with zero token costs"</a> · <span class="tier">tier-1</span></li>
+<li id="s11">SiliconANGLE · <a href="https://siliconangle.com/2026/08/25/perplexity-ai-launches-portable-computer-on-device-ai-agent/">"Perplexity AI launches Portable Computer on-device AI agent"</a> · <span class="tier">trade</span></li>
+<li id="s12">Google · <a href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/">"Fairwind Program: Cyber defense tools for trusted partners"</a> · <span class="tier">primary</span></li>
+<li id="s13">Forbes · <a href="https://www.forbes.com/sites/jonmarkman/2026/09/15/apple-rolls-out-siri-ai-in-beta-with-daily-limits-and-paid-tier-coming/">"Apple Rolls Out Siri AI In Beta With Daily Limits And Paid Tier Coming"</a> · <span class="tier">tier-1</span></li>
+<li id="s14">Eastern Herald · <a href="https://easternherald.com/2026/09/13/ios-27-siri-google-gemini-apple-launch/">"iOS 27 Arrives Monday: Apple's Rebuilt Siri Runs on Google Gemini"</a> · <span class="tier">trade</span></li>
+<li id="s15">Empirical Security · <a href="https://research.empiricalsecurity.com/research/september-2026-cve-of-the-month">"September 2026 CVE of the Month: CVE-2026-58138"</a> · <span class="tier">specialist</span></li>
+<li id="s16">DeepSeek · <a href="https://api-docs.deepseek.com/updates/">DeepSeek API Change Log</a> · <span class="tier">primary</span></li>
+<li id="s17">Bitrue · <a href="https://www.bitrue.com/blog/deepseek-v4-1-flash">"DeepSeek V4.1-Flash Released: Features, Benchmark, and How to Access It"</a> · <span class="tier">trade</span></li>
+<li id="s18">AI Weekly · <a href="https://aiweekly.co/ai-news-today/edition/2026-09-15">"AI News for September 15, 2026 — Daily Edition"</a> · <span class="tier">trade</span></li>
+</ol>
+
+<nav class="bar" style="margin-top:38px;border-top:1px solid var(--border);border-bottom:none;padding-top:16px;"><a href="2026-09-09.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>
+Content is AI-synthesized. Links point to original sources.
+</footer>
+</div>
+
+<script>
+const S = "Above The Noise. Wednesday, September sixteenth, twenty twenty six. Signal over noise. " +
+"Lead story. The frontier just publicly agreed to slow down — and priced its own I P O on it. On Friday September twelfth, Anthropic C E O Dario Amodei published an essay titled We Must Pace the Frontier, arguing that frontier labs must deliberately slow capability gains so alignment and evaluation work can catch up. He committed Anthropic unilaterally to the first step of a three-part plan: embedded evaluators — permanent, employee-level, badged access at Anthropic offices for a third-party team, with M E T R named as a candidate, empowered to publish findings without editorial control. Inside forty eight hours the pledge stopped being one lab's posture. Sam Altman said OpenAI would match the embedded-evaluator commitment. Demis Hassabis quote-tweeted the essay and endorsed the direction. Microsoft became the first hyperscaler to formally sign onto the pacing framework. " +
+"Monday September fourteenth, Microsoft published its M A I Code of Conduct for public consultation — a behavioural rulebook for its first-party models with absolute bans on cyberattacks, nuclear-weapons work, and deepfake production, plus a six-week comment window. And on the same Friday, Sam Altman told Fortune editor-in-chief Alyson Shontell that OpenAI's I P O will not happen in twenty twenty six, saying that given everything happening with safety, right now would be an ill-advised moment to go public. A C F O-level walk-back on the largest expected A I listing of the year is what a pacing pledge looks like when it hits a balance sheet. " +
+"The analytical question is whether any of this survives contact with Q four pricing pressure. Every lab in the coalition has trillion-dollar-scale compute commitments landing on the same clock, and the only public pledge with teeth so far is Anthropic's embedded-evaluator seat inside its own building. Everything else is a code of conduct, a comment window, or a delayed prospectus. So what for builders. Model roadmaps you are planning against will slip on safety-review grounds, not capability grounds. Pin the model version, region, and provider you depend on in a contract clause, and expect at least one deprecation window this quarter to be extended by four to eight weeks. " +
+"The briefs. First, Cloudflare's mixed-use crawler block went live on ad-supported pages Tuesday September fifteenth for new customers, new sites, and all existing free-tier customers. Publishers who block Training now also lose search visibility until Google, Apple and Microsoft separate their bundled crawlers. Second, Perplexity brought its Portable Computer agent fully on-device to Windows P Cs with an Nvidia R T X G P U carrying twenty four gigabytes of V RAM or more. The Windows app ships a Qwen three point eight, twenty seven billion parameter variant post-trained for the agent loop. Zero token cost per action once running. Third, Google's Fairwind Program — application-only defender access to Gemini three point eight Flash Cyber paired with the CodeMender patch agent — now counts more than six hundred fifty vetted partners. Fourth, Apple's rebuilt Siri began public beta rollout Monday alongside i O S twenty seven, with server-side reasoning routed to a Google Gemini deployment. English-only beta with daily usage limits. Fifth, C V E twenty twenty six dash five eight one three eight in Orkes Conductor is an unauthenticated remote-code-execution flaw scored C V S S nine point eight. The Netflix-derived workflow engine has found a second life orchestrating production A I agent pipelines. Patch to three point three zero point two or later. " +
+"Model watch. DeepSeek V four point one Flash — a five hundred fifty two billion parameter multimodal M o E with M I T-licensed weights — went generally available September tenth. Gemini three point eight Live audio streaming shipped September fifteenth at half a cent per minute of input and under two cents per minute of output. And Shanghai A I Lab released Atria Dawn Preview as a one hundred forty three author preprint across sixteen benchmarks. " +
+"Voices. Satya Nadella, Chairman and C E O of Microsoft, on X on September thirteenth, announcing the M A I Code of Conduct one day before publication. Quote. Any pursuit of superintelligence has to be grounded in the core principle that if the A I we build is not helping humanity and under human control, it's not worth pursuing. Unquote. Nadella is the first hyperscaler C E O to publicly sign onto the pacing framework Amodei just proposed. The sentence is unusually specific for a Nadella corporate post — it names a condition, under human control, that his own M A I Code of Conduct, published the next day, is written to make enforceable. This is not the usual A I safety matters post; it is a C E O drawing a line his own product team now has to design against, in a comment window his own regulators can watch. " +
+"Today's signal. Wednesday's story isn't a model release — it's a coalition. In five days, Anthropic's C E O published a pacing essay, OpenAI's C E O matched the first commitment, Google DeepMind's C E O endorsed the direction, Microsoft's C E O signed on and shipped a code of conduct, and OpenAI's own I P O window slipped past twenty twenty six with safety as the on-record reason. That is the four largest frontier operators aligning on a governance stance inside a single news cycle. The pacing pledge is either the beginning of the first real coordinated slowdown in frontier A I history, or it is a coordinated appearance of one, timed to give Anthropic's S dash one, Microsoft's comment window, and OpenAI's twenty twenty seven listing the same defensible story. " +
+"The ledger. Season one now stands at one and zero, twenty six open, first call graded September sixteenth. The August thirteenth call — that the consequential A I work was moving from model capability to the governance layer — grades hit, with primary sources in Google's Fairwind Program page, OpenAI's Path to Astra materials, and the M C P August twenty second roadmap. Today's call is open, horizon November fifteenth: by then, at least one of Anthropic, OpenAI, Google DeepMind, Microsoft A I, or x A I will publish a primary-source disclosure that a specific model release, capability rollout, or training milestone was delayed to accommodate safety review — the pacing pledge in visible action. Generic framework updates do not count. A silent slip grades miss. " +
+"That is today's Above The Noise. Thank you for reading, and for building carefully. Until tomorrow.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+const btn = document.getElementById('playBtn');
+btn.addEventListener('click', () => {
+  if (U && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen · 4 min';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  U.pitch = 1.0;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { U = null; btn.textContent = '▶ Listen · 4 min'; };
+  U.onerror = () => { U = null; btn.textContent = '▶ Listen · 4 min'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+});
+if (speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.addEventListener('voiceschanged', () => {}, { once: true });
+}
+</script>
+</body>
+</html>
