@@ -10,10 +10,10 @@
       "basis": "Three of four Briefs this edition were governance stories in product clothing: GPT-5.6-Cyber's Daybreak Red licensing gate, the EU AI Act transparency clock, and the MCP stateless spec's OAuth-aligned auth.",
       "horizon": "2026-09-13",
       "test": "By 2026-09-13, at least two further gated-access, provenance-marking or protocol-auth developments ship from frontier labs or standards bodies, evidenced by primary sources.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-09-16",
+      "verdict": "HIT",
+      "evidence": "Three independent, primary-sourced developments cleared the threshold before 2026-09-13: (1) Google's Fairwind Program launched 2026-09-02 as an application-only gated-access channel to Gemini 3.8 Flash Cyber paired with CodeMender, now 650+ vetted partners (primary: https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/); (2) OpenAI's Path-to-Astra materials on 2026-09-01 with the 'Critical' cyber-tier gate and hardware-security-key requirement for Daybreak Blue/Red enrolment; (3) the MCP roadmap of 2026-08-22 formally naming SEP-1932 (DPoP) and SEP-1933 (Workload Identity Federation) as active Agent Identity WG proposals (primary: https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/)."
     },
     {
       "id": "2026-08-14-1",
@@ -310,6 +310,18 @@
       "basis": "OpenAI announced Sept 8 that an unreleased internal model plus ~10,000 agents produced a Lean-verified Navier-Stokes finite-time blow-up proof over 88 hours. NYU Courant Clay Research Award winner Tristan Buckmaster (Axios, Fortune, Sept 8) alleges OpenAI Sebastien Bubeck learned of his and Anthropic researcher Levent Alpoges unpublished proof and proposed dropping Alpoge from authorship because his Anthropic affiliation was annoying, plus a career-threat line Bubeck has since apologized for. Bubeck disputes the account on X. Terence Tao posted on Mathstodon 2026-09-09 warning that the mere rumor of research on a problem now triggers massive AI-powered effort to flatten it, and that current incentives reverse centuries of open-science tradition. This is a norms-forcing event; math bodies and journals have both the standing and the incentive to move.",
       "horizon": "2026-11-30",
       "test": "A primary-source policy page, editorial, press release, or preprint-server FAQ dated on or before 2026-11-30 from the Clay Mathematics Institute, American Mathematical Society, International Mathematical Union, arXiv, Annals of Mathematics, Inventiones Mathematicae, Journal of the AMS, or Duke Mathematical Journal, that explicitly addresses AI-agent contribution disclosure requirements or coordinated release-timing between AI-lab and academic teams. Generic AI policy statements without a disclosure or timing rule, blog posts from individuals not writing in an official capacity, third-party open letters, and social-media posts do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-09-16-1",
+      "date": "2026-09-16",
+      "call": "The pacing pledge announced in Dario Amodei's 2026-09-12 essay 'We Must Pace the Frontier', matched within 48 hours by Sam Altman for OpenAI, endorsed by Demis Hassabis, and signed onto by Satya Nadella alongside Microsoft's 2026-09-14 MAI Code of Conduct, is a coordination event rather than a governance statement. By 2026-11-15, at least one of Anthropic, OpenAI, Google DeepMind, Microsoft AI, or xAI will publish a primary-source disclosure that a specific model release, capability rollout, or training milestone was delayed to accommodate safety review \u2014 the pacing pledge in visible action, not another framework document.",
+      "basis": "In five days (Sept 12-16, 2026) four frontier operators aligned publicly on a pacing stance while their compute commitments push $500B-$1T on a shared clock: Amodei's essay + Anthropic's unilateral embedded-evaluators commitment; Altman's matching commitment and simultaneous Fortune line pushing OpenAI's IPO out of 2026 with 'safety' as the on-record reason; Hassabis endorsing the direction on X; Nadella committing Microsoft as the first hyperscaler and shipping the MAI Code of Conduct for public consultation. Every named lab now has a signed public commitment to point at, and the incentive to be seen shipping the first concrete slowdown artefact within the fast-follow window before Q4 renewal season is at its highest point of the cycle.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source blog post, model card, release note, changelog, help-center article, or SEC filing from Anthropic, OpenAI, Google DeepMind, Microsoft AI, or xAI dated on or before 2026-11-15 that BOTH (a) names a specific product, model version, capability rollout, or training milestone, AND (b) explicitly states the release, rollout, or milestone was delayed to accommodate safety review, evaluator sign-off, embedded-evaluator process, or pacing. Generic policy or framework updates without a delayed artefact do not count. IPO-timing slips do not count (Altman's Fortune line already ships that on the record). Deprecation extensions unrelated to a new-capability delay do not count. Third-party news reporting without a lab-source disclosure does not count. A silent slip with no on-record safety citation grades MISS.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
