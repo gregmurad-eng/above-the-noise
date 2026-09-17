@@ -326,6 +326,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-17-1",
+      "date": "2026-09-17",
+      "call": "Ursula von der Leyen's 2026-09-16 State of the Union pledge to 'invite the main frontier labs for a discussion on how we can support ongoing industry efforts to pace the frontier' is a coordination artefact, not a communique. By 2026-11-30, the European Commission (or a body it formally convenes) will publish a primary-source announcement of a formal frontier-lab pacing convening with (a) a named meeting date on or after 2026-09-16, (b) at least three named frontier labs from Anthropic, OpenAI, Google DeepMind, xAI, Meta or Mistral, AND (c) a published output - a joint statement, memorandum, or named workstream.",
+      "basis": "Von der Leyen's 2026-09-16 SOTEU committed the EU publicly to pacing and named a convening as the follow-through, one week after Amodei's 'We Must Pace the Frontier' essay and the four-CEO alignment (Amodei, Altman, Hassabis, Nadella). Reuters (Foo Yun Chee, Inti Landauro) wired the speech globally; on 2026-09-15 Chris Lehane confirmed the three US labs have been in active talks on shared safety infrastructure for weeks and specifically endorsed independent verification organisations. The mechanism (convening a small group of named labs), the timing (Q4 EU legislative window), and the political cost already paid (public alignment against a Trump-administration posture that dismissed AI safety alarm) all point to a Commission-chaired convening being the cheapest way to bank the coalition - and the labs have every incentive to attend before the FRONTIER Act reshapes the US side.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source European Commission publication (press release, statement by the President's spokesperson, Directorate-General AI Office notice, or equivalent official communication) dated on or before 2026-11-30, announcing a formal frontier-lab pacing convening with (a) a named meeting date on or after 2026-09-16, (b) at least three named frontier labs from Anthropic, OpenAI, Google DeepMind, xAI, Meta or Mistral, AND (c) a published output (joint statement, memorandum, or named workstream). Generic AI Act guidance updates without a named convening do not count; bilateral Commission-lab meetings do not count; ad-hoc off-record briefings do not count; a silent slip with no on-record convening grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
