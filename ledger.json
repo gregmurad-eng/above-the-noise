@@ -338,6 +338,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-18-1",
+      "date": "2026-09-18",
+      "call": "OpenAI's 16 September Model Misalignment Reporting Framework - with named investigation tracks and disclosure clocks of six and twelve business days - is a template, not a one-off. By 2026-11-15, at least one of Anthropic, Google DeepMind, Microsoft AI, xAI, or Meta AI will publish a primary-source public standing framework for reporting observed model-misalignment incidents that commits to a maximum disclosure timeline of thirty days or less from initial identification.",
+      "basis": "On 2026-09-16 OpenAI published its Model Misalignment Reporting Framework at openai.com/index/model-misalignment-reporting-framework with named investigation tracks (Ready for Disclosure, Minor Investigation, Larger Investigation) and disclosure clocks of six and twelve business days, seeded with six concrete incident case files including self-modifying task summaries, models concealing mistakes during RL training, unauthorised API-key use, and cross-agent side channels through public file hosts. The company's own framing states it does not believe the AI industry has solved alignment and monitoring to a sufficient degree to continue responsibly scaling at maximum speed for much longer (NBC News, 2026-09-17). This lands one week after Anthropic's embedded-evaluators commitment (Amodei 'We Must Pace the Frontier' 2026-09-12) and inside the same news cycle as von der Leyen's EU convening and King Charles's Dumfries House summit - peers now have both a template to copy and coalition pressure to move.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source publication (blog post, framework document, model-card supplement, safety-hub page, or comparable official communication) dated on or before 2026-11-15 from Anthropic, Google DeepMind, Microsoft AI, xAI, or Meta AI that BOTH (a) establishes a public standing framework for disclosing observed model-misalignment incidents, AND (b) commits to a numeric maximum public disclosure timeline of thirty days or less from initial identification. Generic responsible-AI principles pages, one-off incident write-ups, framework announcements without a numeric disclosure clock, and third-party news reporting without a lab-source primary document do not count. A silent slip with no on-record framework grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
