@@ -350,6 +350,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-19-1",
+      "date": "2026-09-19",
+      "call": "By 20 November 2026 California's expert working group \u2014 activated by Newsom's 18 September executive order \u2014 delivers a substantive report or interim recommendation on frontier-AI kill-switch obligations and third-party safety verification, and does so before the OpenAI/Anthropic/Google DeepMind self-regulatory body proposal has formally organized with an announced governance structure and initial members.",
+      "basis": "Newsom's 18 September 2026 executive order gave a state working group two months to deliver measures California could adopt, including a potential kill-switch requirement, and accelerated the SB 813 independent-verification-organization deadline from January 2028 to May 2027. In parallel Chris Lehane confirmed the three labs' self-regulatory body has been in private discussion for weeks with no announced structure, and Cohere's Aidan Gomez is organizing public pushback.",
+      "horizon": "2026-11-20",
+      "test": "HIT if by 20 November 2026 a working-group report or substantive interim document appears on a primary California-state source (gov.ca.gov or a named state agency) AND the three-lab body has not by that date announced a formal governance structure, initial members and testing scope in a primary source. MISS if the working-group deadline passes with no primary-source delivery, or if the three-lab body announces its formal structure first. UNSETTLED only if both processes deliver in the same week such that ordering is genuinely ambiguous.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
