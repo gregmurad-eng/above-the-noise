@@ -362,6 +362,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-20-1",
+      "date": "2026-09-20",
+      "call": "By 15 November 2026, at least one of the four defendants in Buist v. Anthropic PBC (N.D. Cal., No. 3:26-cv-10693) - Anthropic, OpenAI, SpaceXAI, or Google - will file a primary-source public response addressing the coordinated-slowdown allegation: EITHER a court filing (motion to dismiss, answer, or Rule 12 motion) in the docket, OR a company statement, press release, or SEC filing that explicitly addresses the antitrust allegation.",
+      "basis": "The 18 September filing of Buist v. Anthropic PBC (N.D. Cal. No. 3:26-cv-10693) alleges the four defendants coordinated a slowdown of AI development under Section 1 of the Sherman Act, treating as the coordination artifact the same-day public endorsements of Amodei's 12 September pacing essay by Sam Altman (OpenAI), Elon Musk (SpaceXAI) and Demis Hassabis (Google DeepMind). Amodei's own essay footnote acknowledging that pacing coordination is 'legally challenging' and would require 'government mediation or waivers of antitrust restrictions' is now Exhibit A. All four defendants have Big Law antitrust counsel and both the ability (Rule 12 motion timelines run 21-60 days from service) and the incentive (subscription-price signalling, investor pressure ahead of Anthropic's expected IPO) to respond publicly rather than let the parallel-conduct inference sit unaddressed for the full pleading cycle.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source docket entry on N.D. Cal. No. 3:26-cv-10693 OR a company press release, blog post, or SEC filing (8-K, 10-Q, 10-K) URL dated on or before 15 November 2026 from Anthropic, OpenAI, SpaceXAI, or Google that explicitly names the Buist complaint OR its coordinated-slowdown allegation. Third-party analyst commentary, executive social-media posts that do not name the case or the allegation, and generic 'we welcome oversight' posts that do not address the antitrust claim do not count. A silent slip with no on-record response from any defendant grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
