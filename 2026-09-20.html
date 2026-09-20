@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · 20 September 2026</title>
+<style>
+  :root {
+    --bg:#0d0a06;
+    --card:#17130c;
+    --accent:#c9a84c;
+    --text:#e0d4b8;
+    --muted:#8a7f63;
+    --border:rgba(201,168,76,0.22);
+    --miss:#b46b6b;
+  }
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; line-height:1.65; overflow-x:hidden; }
+  body { font-size:17px; }
+  .wrap { max-width:680px; margin:0 auto; padding:26px 22px 60px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  h1 { color:var(--accent); font-weight:normal; letter-spacing:1px; font-size:32px; margin:0 0 4px; }
+  h2 { color:var(--accent); font-variant:small-caps; letter-spacing:2px; font-size:15px; font-weight:normal; margin:36px 0 12px; border-bottom:1px solid var(--border); padding-bottom:6px; }
+  h3 { color:var(--text); font-size:22px; font-weight:normal; margin:16px 0 8px; line-height:1.3; }
+  h3 a { color:var(--text); }
+  h3 a:hover { color:var(--accent); text-decoration:none; }
+
+  .tagline { color:var(--muted); font-style:italic; font-size:15px; letter-spacing:1px; margin-bottom:2px; }
+  .dateline { color:var(--muted); font-size:14px; letter-spacing:1px; text-transform:uppercase; margin-bottom:22px; }
+
+  nav.bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:8px 0 22px; font-size:15px; }
+  .bar a, .bar .next { white-space:nowrap; padding:8px 4px; margin:-8px -4px; min-height:44px; display:inline-flex; align-items:center; }
+  .bar .nav-mid { display:inline-flex; gap:0 18px; align-items:center; }
+  .bar .nav-mid a { color:var(--accent); margin:0 0px; }
+  .bar .next { color:var(--muted); margin-left:auto; }
+
+  .listen { margin:12px 0 22px; }
+  .listen button { background:transparent; color:var(--accent); border:1px solid var(--accent); padding:12px 18px; font-family:Georgia,serif; font-size:15px; letter-spacing:1px; cursor:pointer; min-height:44px; }
+  .listen button:hover { background:var(--accent); color:var(--bg); }
+
+  .source-tag { color:var(--muted); font-size:13px; font-style:italic; margin-left:6px; }
+
+  .brief { padding:6px 0 14px; border-bottom:1px dashed var(--border); }
+  .brief:last-child { border-bottom:none; }
+  .brief p { margin:6px 0; }
+
+  .sowhat { color:var(--accent); font-style:italic; display:block; margin-top:8px; font-size:16px; }
+
+  .voices { padding:6px 0; }
+  .voices blockquote { color:var(--text); font-size:19px; line-height:1.55; margin:14px 0 6px; padding:0 0 0 18px; border-left:3px solid var(--accent); font-style:italic; }
+  .voices cite { color:var(--muted); font-size:14px; font-style:italic; display:block; margin-bottom:14px; }
+  .voices p:first-of-type { margin-top:0; }
+
+  .callout { background:var(--card); padding:18px 22px; border-left:3px solid var(--accent); margin:12px 0; font-size:17px; }
+
+  .ledger { background:var(--card); padding:16px 20px; border-radius:4px; margin:12px 0; }
+  .ledger .rec { color:var(--accent); font-variant:small-caps; letter-spacing:1px; font-size:15px; margin-bottom:8px; }
+  .ledger .verdict-HIT { color:var(--accent); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-MISS { color:var(--miss); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-UNSETTLED { color:var(--muted); font-weight:bold; font-variant:small-caps; }
+  .ledger .verdict-OPEN { color:var(--text); font-variant:small-caps; letter-spacing:0.5px; }
+  .ledger .call-body { margin:6px 0; }
+  .ledger .call-meta { color:var(--muted); font-size:14px; }
+
+  sup a { color:var(--accent); text-decoration:none; padding:6px 4px; margin:-6px -4px; font-size:12px; }
+  sup a:hover { text-decoration:underline; }
+
+  .sources { padding-left:22px; margin:0; }
+  .sources li { margin-bottom:10px; font-size:15px; line-height:1.5; }
+  .sources .tier { color:var(--muted); font-size:13px; font-style:italic; font-variant:small-caps; letter-spacing:0.5px; }
+
+  footer { border-top:1px solid var(--border); margin-top:44px; padding-top:18px; color:var(--muted); font-size:14px; text-align:center; font-style:italic; }
+
+  @media (max-width:480px) {
+    body { font-size:16px; }
+    .wrap { padding:20px 16px 48px; }
+    h1 { font-size:28px; }
+    h2 { font-size:14px; }
+    h3 { font-size:18px; }
+    .callout, .voices blockquote { font-size:16px; }
+    .sowhat { font-size:15px; }
+    .dateline, .tagline { font-size:14px; }
+    .ledger, .sources li { font-size:14px; }
+    .voices cite, .ledger .call-meta, .sources .tier { font-size:13px; }
+    .bar { gap:8px 12px; font-size:14px; }
+    .bar a, .bar .next { font-size:14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar"><a href="2026-09-19.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<h1>Above The Noise</h1>
+<div class="tagline">AI &amp; Tech · Signal over noise</div>
+<div class="dateline">Sunday, 20 September 2026</div>
+
+<div class="listen">
+  <button id="playBtn">▶ Listen · 4 min</button>
+</div>
+
+<h2>Lead Story</h2>
+<h3>The pacing pledge, eight days old, is now a Sherman Act complaint — four paying subscribers sue Anthropic, OpenAI, SpaceXAI and Google over the "slowdown"</h3>
+
+<p>On Friday evening the U.S. District Court for the Northern District of California docketed <em>Buist v. Anthropic PBC</em>, case number 3:26-cv-10693, a proposed nationwide antitrust class action against Anthropic, OpenAI, SpaceXAI and Google filed 18 September by four paid subscribers to ChatGPT, Claude, Grok and Gemini<sup><a href="#s1">[1]</a></sup>. The complaint alleges the four defendants entered an unlawful agreement to restrain trade under Section 1 of the Sherman Antitrust Act by coordinating to slow the pace of AI capability improvements, reducing the value paying subscribers get for the same monthly fee<sup><a href="#s2">[2]</a></sup>. The named plaintiffs are Charles Buist, Nick Spetsas, Cheyenne Hunt and Christine Bullock; the defendants had not filed responses by the weekend<sup><a href="#s3">[3]</a></sup>.</p>
+
+<p>The complaint's central factual allegation is compact. On 12 September, Anthropic CEO Dario Amodei published a 3,800-word essay urging industry-wide cooperation on decelerating frontier AI capability advances in favor of stronger safety measures<sup><a href="#s2">[2]</a></sup>. Within hours, three of Amodei's most direct competitors — Sam Altman of OpenAI, Elon Musk of SpaceXAI, and Demis Hassabis of Google DeepMind — publicly endorsed the proposal<sup><a href="#s3">[3]</a></sup>. The complaint frames those simultaneous public endorsements as the coordination artifact: four horizontal competitors publicly aligning on a supply restriction inside a single news cycle is the pattern the Sherman Act was written for. As reinforcing evidence, the plaintiffs cite a July 2026 open letter signed by senior researchers at several leading labs acknowledging "intense competitive pressure not to unilaterally slow" development and calling on government to enable coordination<sup><a href="#s2">[2]</a></sup>.</p>
+
+<p>What makes this uncomfortable for the defendants is that Amodei anticipated it in the essay itself. In a footnote, he wrote that "some forms of coordination that would be impactful for pacing are legally challenging" and would require "government support" with "government mediation or waivers of antitrust restrictions"<sup><a href="#s3">[3]</a></sup>. That footnote is now Exhibit A for the plaintiffs: the CEO of the company that convened the coalition publicly acknowledged, in the same document that convened it, that what he was asking for required antitrust cover the labs did not yet have. Chris Lehane confirmed on 15 September that the three labs have been in private discussion "for weeks" on a joint standards body modelled on FINRA<sup><a href="#s4">[4]</a></sup> — a body that ordinarily operates under an SEC oversight structure that provides its own antitrust shielding. That shielding does not yet exist for AI, which is what the FRONTIER Act in Congress and the California kill-switch executive order signed 18 September are separately trying to build<sup><a href="#s5">[5]</a></sup>.</p>
+
+<p>The complaint should not be read as a prediction about who wins. Parallel-conduct cases under Twombly are difficult to plead, and defendants have credible First Amendment and Noerr-Pennington defences for coordinated petitioning of the government. The signal is the timing: a Section 1 complaint eight days after the "pacing" essay tells every frontier lab that the pacing framework is now a legal cost to hold, not just a governance benefit. The four defendants have three near-term options — file an early motion to dismiss and defend the pacing position, publicly disavow the coordinated framing, or ship the next capability jump and let the complaint moot itself. Which one each lab picks will resolve, publicly, whether the 12 September coalition is a durable industry position or a rhetorical week that ended on a Friday.</p>
+
+<p><em class="sowhat">So what: if your product roadmap assumed frontier models would stay on the "pacing" cadence Amodei described, price the reversal risk this week — one credible motion to dismiss that defends the pacing position holds the cadence; one lab that ships an unhedged capability jump breaks it, and your compute-budget assumption for Q4 needs a revised line for "peer response to plaintiff pressure."</em></p>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+  <h3><a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">Anthropic publishes an R&amp;D Automation Index — Claude "leads" 26% of Anthropic's own AI R&amp;D, up from under 1% in February</a> — Anthropic</h3>
+  <p>The Anthropic Institute post, dated 17 September, catalogues every category of AI R&amp;D task at the company and scores each on Epoch AI's AL0–AL5 automation scale<sup><a href="#s6">[6]</a></sup>. Bloomberg's coverage adds that the "leads" tier (AL4) means Claude completes most of a task end-to-end from a high-level prompt while a human supervises the result, and that "collaborates or above" (AL3+) now covers more than 90% of measured work<sup><a href="#s7">[7]</a></sup>. Roughly 30,000 Claude agents run concurrently inside Anthropic; the company is explicit that Claude is not operating fully autonomously on any measured subset.</p>
+  <p><em class="sowhat">So what: this is the first published internal-productivity metric any frontier lab has released against a public scale — if you are pricing an internal-tooling Claude deployment, use AL3-and-above as the coverage number you ask for in a POC (not "Claude wrote it"), and demand the same time-weighted breakdown your vendor's own team is now measuring.</em></p>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.air.security/blog-posts/plugin4shell">Plugin4Shell — zero-click RCE across Claude Code, Codex, Copilot and Gemini CLI, bypassing SHA pinning</a> — AIR Security</h3>
+  <p>AIR disclosed Plugin4Shell on 17 September: a supply-chain attack against the four major AI coding agents that swaps malicious plugin code past the SHA-pinning protections developers rely on, and executes without a user click, approval, or reinstall<sup><a href="#s8">[8]</a></sup>. Help Net Security reports Anthropic patched Claude Code in 2.1.179 and OpenAI patched Codex in 0.146.0 before disclosure; Microsoft has not shipped a Copilot fix, and Google says Gemini CLI is deprecated and will not receive one<sup><a href="#s9">[9]</a></sup>. AIR calls it the first supply-chain vulnerability in the AI agent ecosystem.</p>
+  <p><em class="sowhat">So what: pin your coding agent to the patched version this weekend, not Monday — Claude Code &gt;= 2.1.179, Codex &gt;= 0.146.0. If your team standardises on Copilot or Gemini CLI, treat the plugin marketplace as untrusted input until a fix ships and disable auto-update on background workers.</em></p>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.neowin.net/news/chatgpt-finally-comes-to-microsoft-word-gets-new-google-chrome-extension-and-more/">OpenAI adds Chrome extension support inside ChatGPT desktop's built-in browser</a> — Neowin</h3>
+  <p>OpenAI turned on Chrome extension support inside the ChatGPT desktop app's built-in browser on 18 September, letting users install and pin extensions like 1Password without switching windows<sup><a href="#s10">[10]</a></sup>. The same release shipped general availability of ChatGPT for Microsoft Word, multi-account support for plugins, and Appshots on Windows. The move continues the OpenAI product pattern of collapsing surfaces Simon Willison flagged last week — the ChatGPT app is being built to hold the workflow rather than hand off to Chrome.</p>
+  <p><em class="sowhat">So what: if you sell a Chrome extension whose distribution assumes the user opens Chrome first, your funnel just got a competitor that owns the tab — publish your extension to the ChatGPT desktop surface as a Q4 milestone, not a 2027 backlog item.</em></p>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.investing.com/news/stock-market-news/exclusiveanthropic-considers-releasing-new-ai-model-ahead-of-ipo-sources-say-4908007">Reuters exclusive — Anthropic weighing a new model release ahead of expected IPO, six days after Amodei's pacing essay</a> — Reuters (via Investing.com)</h3>
+  <p>Reuters reported 18 September, citing three sources, that Anthropic is evaluating the safety of its next model as part of deliberations over a release, aimed at countering OpenAI's momentum since GPT-6 Astra shipped on 3 September<sup><a href="#s11">[11]</a></sup>. The reporting explicitly notes the timing tension: Amodei's 12 September essay called for the industry to slow the pace of releasing new capabilities, and this deliberation began within days. OpenAI's annualized revenue passed $40B in July; Anthropic is projecting 2028 revenue of $190–200B.</p>
+  <p><em class="sowhat">So what: this is the first test of the pacing pledge from inside its own founding coalition — if Anthropic ships before the antitrust complaint (see Lead Story) forces a public disavowal, the "we agreed to slow down" framing is gone; if it holds, it holds under buyer-side revenue pressure that other labs face on the same curve. Watch the release-note wording for whether it names an embedded-evaluator sign-off.</em></p>
+</div>
+
+<h2>Model Watch</h2>
+<p>No significant frontier model releases in the past 48 hours. The most consequential in-flight development is Anthropic's evaluation of a new model release before its expected IPO — the first credible test of whether the 12 September pacing pledge is a floor or a slogan (Reuters, 18 September)<sup><a href="#s11">[11]</a></sup>. Anthropic's separate 17 September R&amp;D Automation Index post is not a model release, but it is the first published capability-tracking metric that pairs release cadence with an internal use-of-AI number rather than a benchmark score.</p>
+
+<div class="brief">
+  <h3><a href="https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf">Claude Fable 5.1 &amp; Mythos 5.1 (Anthropic, 1 September 2026, still in force)</a> — Anthropic</h3>
+  <p>Fable 5.1 remains GA at $3 / $15 per million input/output tokens with cache reads at $0.25 per million; Mythos 5.1 remains available through vetted cybersecurity and life-sciences access programmes with fewer restrictions<sup><a href="#s12">[12]</a></sup>. No pricing or capability change this week.</p>
+  <p><em class="sowhat">So what: if you have not yet migrated agent workloads with heavy cache reuse to Fable 5.1, you are still leaving the 75% cache-read reduction (from $1.00 to $0.25 per million) on the table — this is a one-line config change and a same-day cost win.</em></p>
+</div>
+
+<div class="brief">
+  <h3><a href="https://openai.com/index/introducing-gpt-6-astra/">GPT-6 Astra (OpenAI, 3 September 2026, default in ChatGPT since 8 September)</a> — OpenAI</h3>
+  <p>OpenAI's top-tier model remains at $10 / $50 per million input/output tokens ($1 cached / $12.50 cache write), 1.05M context, 128K output<sup><a href="#s13">[13]</a></sup>. Now the default engine behind ChatGPT with no user-visible toggle in most tiers.</p>
+  <p><em class="sowhat">So what: your ChatGPT-surface prompts have been running against GPT-6 Astra for twelve days now — if you have not re-run regression tests against dashboards that consume ChatGPT output, do it before Monday; behaviour on 5.6 Sol and Astra diverges materially on tool use.</em></p>
+</div>
+
+<h2>Voices</h2>
+<div class="voices">
+<p><strong>Ethan Mollick</strong>, Wharton professor and author of the widely-read <em>One Useful Thing</em>, writing on <a href="https://www.oneusefulthing.org/p/the-overhang">his Substack</a> on 18 September 2026<sup><a href="#s14">[14]</a></sup>:</p>
+<blockquote>"The capability overhang, the gap between what these models can do and what almost anyone is doing with them, is an opportunity."</blockquote>
+<cite>— Ethan Mollick, oneusefulthing.org, 18 September 2026</cite>
+<p>Featured this week because Mollick lands on the counter-question the pacing debate does not answer: the practical constraint on AI's impact is no longer capability, it is diffusion — how quickly organisations rewire their work to actually use what already ships. Read against Anthropic's own R&amp;D Automation Index (26% of Claude's builder using Claude at the "leads" tier) and against the Reuters report that Anthropic is weighing a new release six days after the pacing essay, Mollick's frame is the honest one for a builder: whether the frontier moves fast or slow next quarter, most of the value on the table has already shipped and is sitting there waiting for a workflow around it.</p>
+<p><em class="sowhat">So what: pick one workflow in your product where a Claude Fable 5.1 or GPT-6 Astra could plausibly handle a full task loop, and this week write down what your team would need to trust the output — evals, a verifier, human sign-off, an audit log — before your next model-picking meeting; the overhang is real, and the question that matters is what your verifier looks like, not which model you buy.</em></p>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="callout">
+<p>The pacing pledge is now a defendant. Eight days after Dario Amodei convened Sam Altman, Elon Musk and Demis Hassabis behind a public "slow down" position, four paying subscribers filed a Sherman Act Section 1 complaint that treats the same-day endorsements as the coordination artifact. Reuters is separately reporting that Anthropic is weighing a new model release. The framework the labs proposed has now met its first counter-motion from below (the plaintiffs' bar) and its first defection risk from inside (the founding lab's own product schedule). Whichever way the next release goes tells you whether the coalition is a floor or a slogan.</p>
+</div>
+
+<h2>The Ledger</h2>
+
+<div class="ledger">
+  <div class="rec">Season 1 · 1-0 · 29 open · first call logged 2026-08-13</div>
+  <div class="call-body">No calls came due today. The full record is in <a href="https://raw.githubusercontent.com/gregmurad-eng/above-the-noise/main/ledger.json">ledger.json</a>.</div>
+</div>
+
+<div class="ledger">
+  <div class="rec">Today's call · <span class="verdict-OPEN">OPEN</span> · horizon 15 Nov 2026</div>
+  <div class="call-body">By 15 November 2026, at least one of the four defendants in <em>Buist v. Anthropic PBC</em> (N.D. Cal., No. 3:26-cv-10693) — Anthropic, OpenAI, SpaceXAI, or Google — will file a primary-source public response addressing the coordinated-slowdown allegation: EITHER a court filing (motion to dismiss, answer, or Rule 12 motion) in the docket, OR a company statement, press release, or SEC filing that explicitly addresses the antitrust allegation.</div>
+  <div class="call-meta"><strong>Test:</strong> HIT on a primary-source court docket entry or a company press-release/blog-post/SEC-filing URL dated on or before 15 November 2026 from any of the four named defendants that explicitly names the <em>Buist</em> complaint OR its coordinated-slowdown allegation. MISS if the 15 November window passes with no on-record response from any defendant (silent slip). Third-party analyst commentary, executive tweets that do not name the case or allegation, and generic "we welcome oversight" posts do not count.</div>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+  <li id="s1">Bloomberg Law, "OpenAI, Anthropic, Google, SpaceXAI Hit With Antitrust Lawsuit," 19 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://news.bloomberglaw.com/litigation/openai-anthropic-google-spacexai-hit-with-antitrust-lawsuit">news.bloomberglaw.com</a></li>
+  <li id="s2">CNN Business, "Lawsuit says Anthropic, OpenAI, SpaceXAI and Google made illegal agreement on AI slowdown," 19 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://www.cnn.com/2026/09/19/business/ai-slowdown-lawsuit-antitrust">cnn.com</a></li>
+  <li id="s3">Fortune, "Lawsuit claims Anthropic, OpenAI, SpaceXAI and Google violated antitrust laws when they coordinated AI slowdown, reducing value of subscriptions," 19 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/">fortune.com</a></li>
+  <li id="s4">Bloomberg, "OpenAI, Anthropic, Google DeepMind Coordinate on AI Safety Measures," 15 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety">bloomberg.com</a></li>
+  <li id="s5">Office of Governor Gavin Newsom, "Governor Newsom issues executive order to accelerate independent oversight and advance the creation of an AI kill switch," 18 Sept 2026 — <span class="tier">primary</span> — <a href="https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/">gov.ca.gov</a></li>
+  <li id="s6">Anthropic Institute, "Measurements for understanding the pace of AI development inside frontier labs," 17 Sept 2026 — <span class="tier">primary</span> — <a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development">anthropic.com</a></li>
+  <li id="s7">Bloomberg, "Anthropic Says Claude Drives 26% of Its Research and Development," 17 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://www.bloomberg.com/news/articles/2026-09-17/anthropic-says-claude-drives-26-of-its-research-and-development">bloomberg.com</a></li>
+  <li id="s8">AIR Security, "Plugin4Shell — Zero Click RCE Vulnerability found in top 4 most popular coding agents," 17 Sept 2026 — <span class="tier">primary</span> — <a href="https://www.air.security/blog-posts/plugin4shell">air.security</a></li>
+  <li id="s9">Help Net Security, "Zero-click RCE vulnerability hit four major AI coding agents, two remain unpatched," 18 Sept 2026 — <span class="tier">trade</span> — <a href="https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/">helpnetsecurity.com</a></li>
+  <li id="s10">Neowin, "ChatGPT finally comes to Microsoft Word, gets new Google Chrome extension, and more," 18 Sept 2026 — <span class="tier">trade</span> — <a href="https://www.neowin.net/news/chatgpt-finally-comes-to-microsoft-word-gets-new-google-chrome-extension-and-more/">neowin.net</a></li>
+  <li id="s11">Reuters (via Investing.com), "Exclusive-Anthropic considers releasing new AI model ahead of IPO, sources say," 18 Sept 2026 — <span class="tier">tier-1</span> — <a href="https://www.investing.com/news/stock-market-news/exclusiveanthropic-considers-releasing-new-ai-model-ahead-of-ipo-sources-say-4908007">investing.com (Reuters)</a></li>
+  <li id="s12">Anthropic, "Claude Fable 5.1 &amp; Claude Mythos 5.1 System Card," 1 Sept 2026 — <span class="tier">primary</span> — <a href="https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf">anthropic.com</a></li>
+  <li id="s13">OpenAI, "Introducing GPT-6 Astra," 3 Sept 2026 — <span class="tier">primary</span> — <a href="https://openai.com/index/introducing-gpt-6-astra/">openai.com</a></li>
+  <li id="s14">Ethan Mollick, "The Overhang," One Useful Thing, 18 Sept 2026 — <span class="tier">practitioner</span> — <a href="https://www.oneusefulthing.org/p/the-overhang">oneusefulthing.org</a></li>
+</ol>
+
+<nav class="bar"><a href="2026-09-19.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>
+Above The Noise · daily · Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise, for Sunday, September twentieth, 2026. " +
+"Today's lead story: the pacing pledge, eight days old, is now a Sherman Act complaint. " +
+"On Friday evening the U.S. District Court for the Northern District of California docketed Buist v. Anthropic P B C, a proposed nationwide antitrust class action against Anthropic, OpenAI, SpaceXAI and Google, filed by four paid subscribers to ChatGPT, Claude, Grok and Gemini. The complaint alleges the four defendants entered an unlawful agreement to restrain trade under Section 1 of the Sherman Act by coordinating to slow the pace of A I capability improvements, reducing the value paying subscribers get for the same monthly fee. " +
+"The complaint's central factual allegation is compact. On September twelfth, Anthropic C E O Dario Amodei published a 3,800-word essay urging industry-wide cooperation on decelerating frontier A I. Within hours, Sam Altman of OpenAI, Elon Musk of SpaceXAI, and Demis Hassabis of Google DeepMind publicly endorsed the proposal. The complaint frames those simultaneous public endorsements as the coordination artifact. " +
+"What makes this uncomfortable for the defendants is that Amodei anticipated it in the essay itself. In a footnote he wrote that some forms of coordination that would be impactful for pacing are legally challenging and would require government mediation or waivers of antitrust restrictions. That footnote is now Exhibit A. " +
+"The signal is the timing: a Section 1 complaint eight days after the pacing essay tells every frontier lab that pacing is now a legal cost to hold, not just a governance benefit. Which of three options each lab picks — file an early motion to dismiss and defend, publicly disavow, or ship the next capability jump and moot the complaint — will resolve publicly whether the September twelfth coalition is durable or a rhetorical week that ended on a Friday. " +
+"In the briefs. Anthropic published an R and D Automation Index this week — Claude leads twenty-six percent of Anthropic's own A I R and D, up from under one percent in February. " +
+"AIR Security disclosed Plugin4Shell, a zero-click remote code execution flaw across Claude Code, Codex, Copilot and Gemini C L I. Claude Code and Codex are patched. Copilot and Gemini C L I are not. " +
+"OpenAI added Chrome extension support inside ChatGPT desktop's built-in browser on September eighteenth. " +
+"And Reuters is reporting, exclusively, that Anthropic is weighing a new model release before its expected I P O — six days after Amodei's pacing essay. " +
+"Model Watch. No significant frontier model releases in the past forty-eight hours. The most consequential in-flight development is Anthropic's evaluation of a new model release, the first credible test of whether the pacing pledge is a floor or a slogan. " +
+"In Voices, Ethan Mollick, Wharton professor and author of One Useful Thing, wrote on September eighteenth that the capability overhang — the gap between what these models can do and what almost anyone is doing with them — is an opportunity. Whether the frontier moves fast or slow, most of the value on the table has already shipped and is sitting there waiting for a workflow around it. " +
+"Today's Signal: the pacing pledge is now a defendant. The framework the labs proposed has met its first counter-motion from below, from the plaintiffs' bar, and its first defection risk from inside, from the founding lab's own product schedule. " +
+"The ledger. Season one stands at one and zero, twenty-nine open. No calls came due today. Today's new call: by November fifteenth, at least one of the four defendants in Buist versus Anthropic will file a primary-source public response addressing the coordinated-slowdown allegation — either a court filing in the docket, or a company statement, press release, or S E C filing that explicitly addresses the antitrust allegation. A silent slip grades miss. " +
+"That is today's Above The Noise. Thank you for reading, and for building carefully. Until tomorrow.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  return vs.find(v => /Daniel/i.test(v.name)) || vs.find(v => /Alex/i.test(v.name)) || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+}
+const btn = document.getElementById('playBtn');
+btn.addEventListener('click', () => {
+  if (U && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen · 4 min';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  U.pitch = 1.0;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ Listen · 4 min'; U = null; };
+  U.onerror = () => { btn.textContent = '▶ Listen · 4 min'; U = null; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+});
+if (speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.addEventListener('voiceschanged', () => {}, { once: true });
+}
+</script>
+</body>
+</html>
