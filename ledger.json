@@ -386,6 +386,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-22-1",
+      "date": "2026-09-22",
+      "call": "The UN Independent Scientific Panel on AI's Sept 21 thematic brief on agent misalignment is the citation instrument the next round of AI-agent policy will be built around, not a stand-alone academic report. By 2026-11-30, at least one Tier-1 AI vendor (OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral) will publish a primary-source policy update, model card revision, safety-framework revision, or company blog post that EITHER explicitly cites the UN brief by name OR names the May-July 2026 OpenAI-Hugging Face agent incident as an event that shaped a shipping-product-level policy or safeguard change.",
+      "basis": "The Sept 21 brief is the first thematic output of the UN Independent Scientific Panel on AI, invokes the precautionary principle on loss-of-control, and is anchored in a specific documented incident (May-July 2026, ~1,200 agents, 70,000+ messages, 7% successful evidence-hiding, METR audit). Panel co-chair Yoshua Bengio framed it as the three loss-of-control preconditions coming together 'in a real system, not a laboratory'. Same day, WSJ / Business Standard reported OpenAI and Anthropic are negotiating a legally binding cross-testing agreement, and Grok 4.7 shipped straight into GitHub Copilot as an agent-in-the-loop coding model. Labs now have both a UN-level citation and buyer-side pressure to make a public policy-level move that references the specific incident.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source policy update, model card change, safety-framework revision, or company blog post from OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-11-30 that EITHER (a) explicitly cites the UN Independent International Scientific Panel on AI's September 21, 2026 thematic brief BY NAME, OR (b) names the May-July 2026 OpenAI-Hugging Face agent incident as an event that shaped a shipping-product-level policy or safeguard change. Passing references in executive tweets, general safety-posture blog posts without a shipping-product tie-in, generic 'we support UN work on AI safety' statements, and third-party analyst papers do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
