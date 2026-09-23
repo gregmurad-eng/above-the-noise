@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 23 September 2026</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7f66; --miss:#c96b6b; }
+  html,body { background:var(--bg); color:var(--text); margin:0; padding:0;
+    font-family:Georgia,'Times New Roman',serif; -webkit-text-size-adjust:100%; }
+  body { max-width:760px; margin:0 auto; padding:28px 22px 60px; font-size:17px; line-height:1.55; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px dotted rgba(201,168,76,0.45); }
+  a:hover { border-bottom-style:solid; }
+  h1 { font-size:38px; letter-spacing:0.5px; margin:0 0 4px; color:var(--text); }
+  .tag { color:var(--accent); font-size:15px; letter-spacing:2px; text-transform:uppercase; }
+  .dateline { color:var(--muted); font-size:14px; margin-top:4px; margin-bottom:26px; }
+  h2 { font-size:15px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--accent); border-bottom:1px solid rgba(201,168,76,0.3);
+    padding-bottom:6px; margin-top:36px; margin-bottom:16px; }
+  h3 { font-size:22px; color:var(--text); margin:20px 0 8px; line-height:1.25; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center;
+    padding:12px 0; border-top:1px solid rgba(201,168,76,0.25);
+    border-bottom:1px solid rgba(201,168,76,0.25); margin:8px 0 22px;
+    font-size:14px; letter-spacing:1px; text-transform:uppercase; }
+  .bar a, .bar .next { white-space:nowrap; padding:10px 6px; display:inline-block;
+    min-height:44px; line-height:24px; box-sizing:border-box; }
+  .bar .next { color:var(--muted); opacity:0.55; }
+  .nav-mid { display:inline-flex; gap:0; flex:1; justify-content:center; flex-wrap:wrap; }
+  .nav-mid a { color:var(--accent); margin:0 9px; }
+  .listen { margin:18px 0 10px; }
+  .listen button { background:transparent; color:var(--accent);
+    border:1px solid var(--accent); padding:10px 18px; min-height:44px;
+    font-family:inherit; font-size:14px; letter-spacing:1.5px; cursor:pointer;
+    text-transform:uppercase; }
+  .listen button:hover { background:rgba(201,168,76,0.1); }
+  .brief, .model-item { padding:14px 0; border-bottom:1px dotted rgba(138,127,102,0.35); }
+  .brief:last-child, .model-item:last-child { border-bottom:none; }
+  .brief h3, .model-item h3 { font-size:19px; margin-top:0; }
+  .attribution { color:var(--muted); font-size:14px; font-style:italic; }
+  .sowhat { color:var(--accent); font-style:italic; margin-top:8px; display:block; font-size:15.5px; }
+  .signal { background:rgba(201,168,76,0.08); border-left:3px solid var(--accent);
+    padding:18px 22px; margin:16px 0; }
+  .voices blockquote { border-left:3px solid var(--accent); margin:14px 0;
+    padding:6px 20px; color:var(--text); font-style:italic; font-size:18px; line-height:1.5; }
+  .voices .attrib { font-size:14px; color:var(--muted); margin-top:6px; }
+  .ledger-row { padding:10px 0; border-bottom:1px dotted rgba(138,127,102,0.35); }
+  .ledger-row:last-child { border-bottom:none; }
+  .verdict-hit { color:var(--accent); font-weight:bold; letter-spacing:1px; }
+  .verdict-miss { color:var(--miss); font-weight:bold; letter-spacing:1px; }
+  .verdict-unsettled { color:var(--muted); font-weight:bold; letter-spacing:1px; }
+  .verdict-open { color:var(--muted); letter-spacing:1px; font-weight:bold; }
+  .season { color:var(--accent); font-size:16px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
+  ol.sources { padding-left:22px; font-size:15px; color:var(--text); }
+  ol.sources li { margin-bottom:6px; }
+  ol.sources .tier { color:var(--muted); font-style:italic; font-size:13px; }
+  sup a { color:var(--accent); border-bottom:none; padding:6px 4px; margin:-6px -4px;
+    display:inline-block; font-size:12px; }
+  footer { color:var(--muted); font-size:13px; margin-top:40px;
+    border-top:1px solid rgba(201,168,76,0.25); padding-top:18px; text-align:center; }
+  @media (max-width:480px) {
+    body { padding:20px 16px 50px; font-size:16px; line-height:1.6; }
+    h1 { font-size:30px; }
+    h2 { font-size:14px; }
+    h3 { font-size:18px; }
+    .dateline { font-size:14px; }
+    .brief h3, .model-item h3 { font-size:17px; }
+    .voices blockquote { font-size:17px; }
+    .attribution, .sowhat, ol.sources, .attrib { font-size:15px; }
+    ol.sources .tier { font-size:14px; }
+    .bar { font-size:13px; gap:8px 8px; }
+    .bar a, .bar .next { padding:11px 6px; min-height:44px; }
+    .nav-mid { flex:1 0 100%; justify-content:center; order:2; }
+    .nav-mid a { margin:0 8px; }
+    sup a { padding:8px 6px; margin:-8px -6px; font-size:12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tag">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="dateline">AI &amp; Tech · Signal over noise · Wednesday, 23 September 2026</div>
+
+<nav class="bar">
+  <a href="2026-09-22.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="listen">
+  <button id="listenBtn" onclick="toggleSpeech()">▶ Listen (≈4 min)</button>
+</div>
+
+<h2>Lead Story</h2>
+
+<h3><a href="https://www.anthropic.com/claude-opus-5-5">Anthropic and OpenAI cut frontier prices on the same day</a></h3>
+<p class="attribution">— Anthropic and OpenAI, 22 September 2026</p>
+
+<p>On Monday, 22 September, Anthropic launched Claude Opus 5.5 at $4 per million input tokens and $20 per million output — twenty per cent below Opus 5 — with cache reads at $0.20 per million, sixty per cent cheaper<sup><a href="#s1">[1]</a></sup>. Roughly an hour later, OpenAI shipped GPT‑6 Sol at $2 per million input / $10 output, and a small‑frontier sibling, GPT‑6 Luna, at $0.10 input / $0.50 output — half the introductory prices of the GPT‑5.6 family<sup><a href="#s2">[2]</a></sup>. Two labs cut their headline sticker on the same trading day. That has not happened before.</p>
+
+<p>The performance numbers are the second story, not the first. Anthropic says Opus 5.5 clears 66.4 % on Terminal‑Bench 4.0 and scored 1,846 Elo on GDPval‑AA v2.1, with one external tester completing a 680,000‑line code migration inside a day<sup><a href="#s1">[1]</a></sup>. OpenAI positions Sol as capable of beating "Claude Opus 5 at max effort" on its own AutomationBench suite at nine per cent of the cost per task<sup><a href="#s2">[2]</a></sup>. Read across two labs those framings are marketing, not evidence — but the cost sides are objective, and they move the floor.</p>
+
+<p>Simon Willison, who tracks pricing more carefully than almost anyone outside the labs, called the new levels "hard to overstate how competitive" and flagged that GPT‑6 Luna is now beaten on price only by the far weaker GPT‑4.1 Nano and GPT‑5 Nano<sup><a href="#s4">[4]</a></sup>. The wider trade read is that this is now a two‑horse price war with a distinct second race — the small‑frontier tier at $0.10 – $2 input — opening beneath it<sup><a href="#s3">[3]</a></sup>.</p>
+
+<p>For builders, this is not "cheaper Claude, cheaper GPT." It is a compaction of the pricing curve. A batch job that ran on GPT‑5.6 Sol at introductory pricing is now half price on GPT‑6 Sol. A retrieval or classification path that could not justify a frontier model at Opus 5 rates can defensibly justify Opus 5.5. And Luna at $0.10 input drags the whole "cheap tier" conversation into new territory — a nightly agent loop with a million input tokens per run costs ten cents to run at rest.</p>
+
+<p>One live footnote from Willison: Anthropic's "40 % cheaper" claim compares Opus 5 at its old default reasoning effort with Opus 5.5 at a new lower default. That is fair for most users, but existing code that pins <code>reasoning_effort=high</code> may 400 before it sees any saving<sup><a href="#s4">[4]</a></sup>. Read the migration note before you flip the model string in production.</p>
+
+<span class="sowhat">So what: today is the day to re‑price your production model math against Sol at $2 input and Opus 5.5 at $4 input — and to sanity‑check that your batch and eval jobs are not pinned to a reasoning‑effort flag that blocks the new default and eats the promised saving.</span>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+  <h3><a href="https://www.securitycouncilreport.org/whatsinblue/2026/09/artificial-intelligence-high-level-briefing-2.php">UN Security Council holds first frontier‑lab AI briefing today</a></h3>
+  <p class="attribution">— Security Council Report / CNBC, 22–23 September 2026</p>
+  <p>Under France's September presidency, the Council meets in New York this afternoon under the "Maintenance of international peace and security" agenda, with Yoshua Bengio, Sam Altman (in person), Dario Amodei (remote) and Hugging Face's Clément Delangue briefing<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup>. DeepSeek and Moonshot are invited to make statements, the first time frontier US and Chinese labs are seated in the same Council session on shared safety concerns<sup><a href="#s5">[5]</a></sup>.</p>
+  <span class="sowhat">So what: expect at least one of the briefing labs to publish a new evaluator‑access or red‑team commitment in the following two weeks — pin your Model Cards / trust‑and‑safety page reader to catch it, because it is likely to include a dated third‑party access clause you can cite in your own security review.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/">Grok 4.7 lands on the xAI API and inside GitHub Copilot</a></h3>
+  <p class="attribution">— GitHub Changelog, 21 September 2026</p>
+  <p>xAI's new coding‑and‑agent flagship shipped on 21 September at $2 input / $6 output per million tokens (matching Grok 4.6) with a 500,000‑token context window and 2.1 trillion parameters<sup><a href="#s7">[7]</a></sup>. GitHub added it to Copilot Pro, Pro+, Max, Business and Enterprise the same day, selectable in VS Code, Visual Studio, Copilot CLI, the cloud agent, JetBrains, Xcode and Eclipse<sup><a href="#s7">[7]</a></sup>. That is a Copilot picker with Claude, GPT and Grok side by side at similar tiers, which is a first.</p>
+  <span class="sowhat">So what: if your team's Copilot policy silently pins a single vendor, the picker just widened — pick a benchmark you actually care about (your own repo's PR‑merge success rate is a good one) and route two weeks of work through the new option before assuming "our provider" is still the right default.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85889">Microsoft patches CVSS‑10 Azure AI Foundry auth bypass</a></h3>
+  <p class="attribution">— Microsoft MSRC / The Hacker News, 17–22 September 2026</p>
+  <p>CVE‑2026‑85889, a missing‑authentication check in an Azure AI Foundry backend function, scores the maximum 10.0 on CVSS and lets an unauthenticated network attacker escalate privilege<sup><a href="#s8">[8]</a></sup>. Microsoft says it was reported by researcher Rémy Marot, patched service‑side on 17 September, and is not known to have been exploited<sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup>. No customer action is required — but any post‑incident audit will want the CVE ID in the timeline.</p>
+  <span class="sowhat">So what: paste CVE‑2026‑85889 into your risk register and your cloud SIEM's known‑CVE tag list this morning — Microsoft's "no action needed" line does not remove the requirement to record it, and downstream auditors will ask why a CVSS‑10 in your fleet's control plane isn't logged on your side.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.cnbc.com/2026/09/22/altman-amodei-unga-ai-safety.html">Trump tells the UNGA the US "will not stifle" AI, hours before its lab CEOs ask the Council to slow down</a></h3>
+  <p class="attribution">— CNBC, 22 September 2026</p>
+  <p>President Trump used his UN General Assembly address on Tuesday to reject international caps on AI, saying the US would not "rein it in," and floated re‑labelling frontier systems "super intelligence"<sup><a href="#s6">[6]</a></sup>. Altman and Amodei — both briefing the Security Council today — have publicly called for coordinated pacing<sup><a href="#s10">[10]</a></sup>. That gap between an administration position and the labs' own asks is now the actual policy story to watch, not the individual speeches.</p>
+  <span class="sowhat">So what: if your product's compliance narrative depends on "the US will regulate this" you now have visible evidence it will not this year — quote the frontier‑lab self‑governance commitments instead when talking to customers, since those are the ones with dated public delivery clauses attached.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="model-item">
+  <h3><a href="https://www.anthropic.com/claude-opus-5-5">Claude Opus 5.5 — Anthropic — 22 Sep 2026</a></h3>
+  <p>New flagship. $4 / $20 per million tokens (20 % below Opus 5), cache reads $0.20 (60 % cheaper), fast‑serving tier at $8 / $40. Available on the Claude Developer Platform as <code>claude-opus-5-5</code>, plus AWS, Google Cloud and Microsoft Azure; live in Pro, Max, Team and Enterprise. Sonnet 5.5 and Haiku 5.5 are named as follow‑on. Ships with the "preserved thinking" anti‑distillation safeguard from Fable 5.1<sup><a href="#s1">[1]</a></sup>.</p>
+  <span class="sowhat">So what: model string change is <code>claude-opus-5-1</code>/<code>claude-opus-5</code> → <code>claude-opus-5-5</code>; if you pin reasoning_effort, unpin it before switching or the new default won't cost you what the release notes promise.</span>
+</div>
+
+<div class="model-item">
+  <h3><a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/">GPT‑6 Sol and GPT‑6 Luna — OpenAI — 22 Sep 2026</a></h3>
+  <p>Cost‑optimised siblings to the flagship GPT‑6 Astra. Sol at $2 / $10 per million tokens; Luna at $0.10 / $0.50. Both keep the 90 % cache‑read discount. Available as <code>gpt-6-sol</code> and <code>gpt-6-luna</code> in the API, in ChatGPT Work and Codex for Plus / Pro / Business / Enterprise / Edu subscribers<sup><a href="#s2">[2]</a></sup>.</p>
+  <span class="sowhat">So what: Luna is the first serious frontier‑lineage model under $0.15 input — a nightly agent that runs a million tokens costs a dime; the "we can't afford to keep this scheduled" argument is now a spreadsheet, not a hunch.</span>
+</div>
+
+<div class="model-item">
+  <h3><a href="https://docs.x.ai/developers/release-notes">Grok 4.7 — xAI — 21 Sep 2026</a></h3>
+  <p>New coding/agent flagship. 2.1 trillion parameters (up 40 % from 4.6). 500,000‑token context. Text + image in, text out, no output cap. Pricing $2 / $0.50 / $6 per million tokens (input / cached input / output) below 200k prompt tokens; $4 / $1 / $12 above. Live in Cursor, Grok Build, the xAI API, and same‑day in GitHub Copilot<sup><a href="#s7">[7]</a></sup>.</p>
+  <span class="sowhat">So what: the two‑tier prompt‑length pricing means a batched retrieval job that quietly grew past 200k tokens per call is now twice as expensive per call — audit the length distribution of your agent's actual prompts before assuming the sticker price applies.</span>
+</div>
+
+<h2>Voices</h2>
+
+<div class="voices">
+  <p><strong>Dario Amodei</strong>, Anthropic co‑founder and CEO, briefing the UN Security Council today alongside Sam Altman and Yoshua Bengio, wrote on <a href="https://darioamodei.com/post/we-must-pace-the-frontier">his personal site</a> on 12 September in the essay "We Must Pace the Frontier"<sup><a href="#s10">[10]</a></sup>:</p>
+  <blockquote>"We must slow the pace at which we improve the capabilities of AI models."</blockquote>
+  <p class="attrib">— Dario Amodei, <em>We Must Pace the Frontier</em>, 12 September 2026</p>
+  <p>Amodei is not making an abstract case here. In the same essay he lays out a three‑part plan — embedded third‑party evaluators with employee‑level access; safety‑standard coordination among labs in democratic countries; and international agreements including with authoritarian governments — and commits Anthropic unilaterally to the first step<sup><a href="#s10">[10]</a></sup>. The reason it matters this week, not last week, is that the man asking the rest of the industry to pace itself is on the Security Council podium in the same 48 hours his company is cutting the price of its most capable model by twenty per cent<sup><a href="#s1">[1]</a></sup>. That tension — self‑restraint at the policy layer, aggressive pricing at the product layer — is the actual shape of the frontier right now.</p>
+  <span class="sowhat">So what: when a lab's CEO publishes a dated "we will pace" commitment, put the horizon in your calendar and check whether the shipping products in the same 60 days honour it — a policy essay next to an aggressive price cut is the exact case a builder should learn to grade themselves.</span>
+</div>
+
+<h2>Today's Signal</h2>
+
+<div class="signal">
+<p>Two frontier labs cut their headline prices on the same trading day, and the industry did not blink because the industry expected it. That is the actual news. The pricing curve is now compacting faster than either lab's marketing suggests: Opus 5.5 at $4 input, Sol at $2 input, Luna at $0.10 input, Grok 4.7 at $2 input. Six months ago three of those numbers didn't exist and the fourth was double.</p>
+<p>The Council briefing today is the other side of the same coin. The labs are asking for slower capability growth in public, while shipping cheaper capability in private. Neither is dishonest — pacing is about safety headroom, and price is about compute economics — but the two levers are visible in the same 48 hours, and a builder should hold both in the same hand: model economics have changed enough this week to re‑cost every scheduled job; policy has not.</p>
+</div>
+
+<h2>The Ledger</h2>
+
+<div class="season">Season 1 · 1–0 · 32 open</div>
+<p style="color:var(--muted); font-size:14px; margin-top:-8px;">No calls graded today — the next call comes due 30 September 2026.</p>
+
+<div class="ledger-row">
+  <div><span class="verdict-open">OPEN</span> · <strong>2026‑09‑23 call</strong> · horizon 15 November 2026</div>
+  <p style="margin:6px 0 0;">The 22 September double‑drop — Claude Opus 5.5 at $4/$20 and GPT‑6 Sol/Luna at $2/$10 and $0.10/$0.50 per million tokens — resets the frontier‑model price floor, and at least one other named‑tier lab publishes a matching or lower price on a comparable model before mid‑November.</p>
+  <p class="attribution" style="margin-top:6px;">Test: A primary‑source pricing page, changelog, model card, or blog post from Google (Gemini), xAI (Grok), Meta (Llama on any first‑party endpoint), Mistral, or DeepSeek, dated on or before 2026‑11‑15, announcing either (a) a ≥ 20 % headline input‑token price cut on a currently‑priced frontier or small‑frontier model, OR (b) a new model at or below GPT‑6 Sol's $2/M input tier with published benchmarks placing it in the same class as GPT‑6 Sol or Claude Opus 5.5.</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+  <li id="s1">Anthropic — <a href="https://www.anthropic.com/claude-opus-5-5">Introducing Claude Opus 5.5</a> — <span class="tier">primary</span></li>
+  <li id="s2">OpenAI — <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/">Introducing GPT‑6 Sol and Luna</a> — <span class="tier">primary</span></li>
+  <li id="s3">SiliconANGLE — <a href="https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/">Anthropic releases Claude Opus 5.5 and OpenAI counters with two cheaper GPT‑6 models</a> — <span class="tier">trade</span></li>
+  <li id="s4">Simon Willison — <a href="https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/">Claude Opus 5.5, GPT‑6 Sol, GPT‑6 Luna, and a new price war</a> — <span class="tier">practitioner</span></li>
+  <li id="s5">Security Council Report — <a href="https://www.securitycouncilreport.org/whatsinblue/2026/09/artificial-intelligence-high-level-briefing-2.php">Artificial Intelligence: High‑level Briefing</a> — <span class="tier">tier‑1</span></li>
+  <li id="s6">CNBC — <a href="https://www.cnbc.com/2026/09/22/altman-amodei-unga-ai-safety.html">Altman and Amodei expected to join UN Security Council meeting about AI</a> — <span class="tier">tier‑1</span></li>
+  <li id="s7">GitHub Changelog — <a href="https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/">Grok 4.7 is now available in GitHub Copilot</a> — <span class="tier">primary</span></li>
+  <li id="s8">Microsoft MSRC — <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85889">CVE‑2026‑85889 — Azure AI Foundry Elevation of Privilege Vulnerability</a> — <span class="tier">primary</span></li>
+  <li id="s9">The Hacker News — <a href="https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html">Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw</a> — <span class="tier">trade</span></li>
+  <li id="s10">Dario Amodei — <a href="https://darioamodei.com/post/we-must-pace-the-frontier">We Must Pace the Frontier</a> — <span class="tier">primary</span></li>
+</ol>
+
+<nav class="bar">
+  <a href="2026-09-22.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<footer>Content is AI‑synthesized. Links point to original sources.</footer>
+
+<script>
+const S = "Above The Noise. Wednesday, September twenty-third, twenty twenty-six. " +
+"Lead Story. On Monday the twenty-second, Anthropic launched Claude Opus five point five at four dollars per million input tokens and twenty dollars per million output — twenty per cent below Opus five — with cache reads at twenty cents per million, sixty per cent cheaper. Roughly an hour later, OpenAI shipped GPT-six Sol at two dollars per million input and ten dollars output, and a small-frontier sibling, GPT-six Luna, at ten cents input and fifty cents output — half the introductory prices of the GPT-five point six family. Two labs cut their headline sticker on the same trading day. That has not happened before. " +
+"The performance numbers are the second story, not the first. Anthropic says Opus five point five clears sixty-six per cent on Terminal-Bench four, with one external tester completing a six-hundred-eighty-thousand-line code migration inside a day. OpenAI positions Sol as beating Claude Opus five at max effort on its own AutomationBench suite at nine per cent of the cost per task. Read across two labs, those framings are marketing, not evidence — but the cost sides are objective, and they move the floor. Simon Willison called the new levels hard to overstate how competitive, and flagged that GPT-six Luna is now beaten on price only by the far weaker Nano models. So what: today is the day to re-price your production model math against Sol at two dollars input and Opus five point five at four dollars input, and to sanity-check that your batch and eval jobs are not pinned to a reasoning-effort flag that eats the promised saving. " +
+"The Briefs. First, the UN Security Council holds its first frontier-lab AI briefing this afternoon in New York, under France's September presidency. Bengio, Altman, Amodei and Hugging Face's Delangue brief; DeepSeek and Moonshot are invited to make statements. So what: expect at least one briefing lab to publish a new evaluator-access commitment in the following two weeks. " +
+"Second, xAI's Grok four point seven landed on the API and inside GitHub Copilot on September twenty-first at two dollars input, six dollars output, five-hundred-thousand-token context, two point one trillion parameters. A Copilot picker with Claude, GPT and Grok side by side is a first. So what: audit the length distribution of your agent's actual prompts before assuming the sticker price applies, because Grok tiers by prompt length. " +
+"Third, Microsoft patched a CVSS ten point zero missing-auth flaw in Azure AI Foundry, tracked as CVE twenty twenty-six dash eight five eight eight nine, service-side on September seventeenth. So what: log the CVE in your risk register today; a no-action-needed vendor line does not remove the audit trail requirement. " +
+"Fourth, at the UN General Assembly on Tuesday, President Trump rejected international AI caps and said the US would not rein AI in — hours before Altman and Amodei brief the Security Council asking for coordinated pacing. So what: if your compliance narrative depends on the US regulating this, quote the frontier-lab self-governance commitments instead. " +
+"Model Watch. Claude Opus five point five, four dollars slash twenty. GPT-six Sol at two slash ten, GPT-six Luna at ten cents slash fifty cents. Grok four point seven at two slash six under two-hundred-thousand prompt tokens. Three flagship-tier launches inside forty-eight hours. " +
+"Voices. Dario Amodei, briefing the Security Council today, wrote on his personal site on September twelfth in the essay We Must Pace the Frontier: quote — we must slow the pace at which we improve the capabilities of AI models — unquote. Amodei's essay commits Anthropic unilaterally to embedded third-party evaluators with employee-level access, and asks other labs to follow. What makes this week different is the tension: self-restraint at the policy layer, aggressive pricing at the product layer, from the same company on the same seventy-two hours. Grade both. So what: when a lab's CEO publishes a dated we will pace commitment, put the horizon in your calendar and check whether the shipping products in the same sixty days honour it. " +
+"Today's Signal. Two frontier labs cut their headline prices on the same trading day, and the industry did not blink because the industry expected it. That is the actual news. Six months ago, three of the four numbers on the price sheet — ten cents for Luna, two dollars for Sol, four dollars for Opus five point five — did not exist, and the fourth was double. " +
+"The Ledger. Season one stands at one and zero, thirty-two open. No calls graded today; the next comes due September thirtieth. Today's new call: by November fifteenth, at least one other named-tier lab — Google Gemini, xAI Grok, Meta Llama on a first-party endpoint, Mistral, or DeepSeek — publishes a primary-source pricing change that either cuts a headline input token price by at least twenty per cent on a currently-priced frontier or small-frontier model, or launches a new model at or below GPT-six Sol's two-dollar input tier with published benchmarks placing it in the same class as Sol or Opus five point five. Silence for eight weeks grades miss. Thanks for listening.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  if (!vs.length) return null;
+  return vs.find(v => /Daniel/i.test(v.name))
+      || vs.find(v => /Alex/i.test(v.name))
+      || vs.find(v => /^en/i.test(v.lang))
+      || vs[0];
+}
+function toggleSpeech() {
+  const btn = document.getElementById('listenBtn');
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    btn.textContent = '▶ Listen (≈4 min)';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ Listen (≈4 min)'; };
+  U.onerror = () => { btn.textContent = '▶ Listen (≈4 min)'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+}
+if (speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.addEventListener('voiceschanged', () => {}, { once: true });
+}
+</script>
+</body>
+</html>
