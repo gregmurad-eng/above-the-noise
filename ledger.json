@@ -398,6 +398,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-23-1",
+      "date": "2026-09-23",
+      "call": "The 22 September double-drop \u2014 Claude Opus 5.5 at $4/$20 and GPT-6 Sol/Luna at $2/$10 and $0.10/$0.50 per million tokens \u2014 resets the frontier-model price floor, and at least one other named-tier lab publishes a matching or lower price on a comparable model before mid-November.",
+      "basis": "Both labs cut headline prices 20\u201350% on the same day and Simon Willison called it hard to overstate how competitive; competitive dynamics of the past 18 months say Google, xAI, Meta, Mistral, or DeepSeek will not sit on stale sticker prices for eight weeks after a coordinated cut.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source pricing page, changelog, model card, or blog post from Google (Gemini), xAI (Grok), Meta (Llama on any first-party endpoint), Mistral, or DeepSeek, dated on or before 2026-11-15, announcing either (a) a headline input-token price cut of at least 20% on a currently-priced frontier or small-frontier model, OR (b) a new model at a price at or below GPT-6 Sol $2-per-million input tier with published benchmarks placing it in the same class as GPT-6 Sol or Claude Opus 5.5.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
