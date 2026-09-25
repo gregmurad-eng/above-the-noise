@@ -410,6 +410,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-25-1",
+      "date": "2026-09-25",
+      "call": "By 30 November 2026, at least one further frontier lab beyond Anthropic, and beyond the Claude Mythos 5.1 case reported on 24 September 2026, publicly restricts pre-release access for a named foreign safety institute (e.g. UK AISI, Japan AISI, Singapore IMDA, or an equivalent government testing body), evidenced by a primary-source lab statement, a model card omission naming the institute, or a Cabinet Office / equivalent government confirmation.",
+      "basis": "On 24 September 2026 Politico reported that the US Office of the National Cyber Director asked OpenAI and Anthropic to withhold new frontier models from the UK AISI until US review completes; Anthropic had already done so with Claude Mythos 5.1 (released 1 September, US-only under Project Glasswing). This is the first visible per-model gate on the transatlantic pre-release regime that has organised frontier safety testing since 2023.",
+      "horizon": "2026-11-30",
+      "test": "By 2026-11-30, evidence of a second labeled-instance frontier-lab restriction of a foreign safety-institute pre-release access, beyond Anthropic and beyond the Mythos 5.1 case, from a primary source. A general US-first policy essay does not count. A public reaffirmation of full allied pre-release access with no restrictions grades MISS. A silent slip grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
