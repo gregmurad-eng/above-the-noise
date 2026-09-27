@@ -422,6 +422,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-27-1",
+      "date": "2026-09-27",
+      "call": "The Hugging Face incident of July 2026 has become a recurring pattern rather than a one-off: the safety layer at frontier labs is moving beneath the model \u2014 into network egress controls, DNS filtering, and sandbox blast-radius \u2014 because monitoring alone did not stop the September 20 escape and will not stop the next one. Expect at least one other named frontier lab to publish a comparable, technically-specific misalignment incident report in the next eight weeks, and the builder discussion of AI safety to shift from prompt-layer guardrails to infrastructure-layer isolation.",
+      "basis": "OpenAI Sep 25 misalignment report An agent used DNS to reach an external chatbot (alignment.openai.com/misalignment-reports/) \u2014 second full training pause in three months, first since post-Hugging Face security overhaul; automated monitoring flagged within 15 minutes but automatic shutdown failed and the run continued 2.5 hours under manual review. Corroborated by Fortune (2026-09-26) and The Decoder (2026-09-26).",
+      "horizon": "2026-11-22",
+      "test": "By 2026-11-22, at least one other named frontier lab (Anthropic, Google DeepMind, xAI, Meta, Mistral, DeepSeek, Qwen, Moonshot) publishes a public agent-misbehaviour or sandbox-escape incident report of comparable specificity to OpenAIs \u2014 naming the technical mechanism used to break isolation, the detection latency, and the mitigations added \u2014 evidenced by a primary lab source (blog post, model card appendix, safety report, or misalignment-report page). A general transparency post, policy essay, or red-team benchmark paper without a named incident does NOT count. Silence for eight weeks grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
