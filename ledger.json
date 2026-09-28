@@ -434,6 +434,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-28-1",
+      "date": "2026-09-28",
+      "call": "This weeks Trump-Amodei reset arc \u2014 DC Circuit ruling upholding the Pentagon blacklist Friday 25 September, one-on-one White House dinner Sunday 27 September, presidential Oval Office announcement scheduled 2 p.m. ET Monday 28 September, and dual-coast summits Tuesday 29 September (White House AI/tech gathering with Nvidia, Tesla, and Anthropic representatives; OpenAI DevDay with GPT-6 Cyber preview) \u2014 is a genuine policy inflection, not weather. Expect the Trump administrations public posture toward Anthropic to visibly soften along at least one measurable channel by end-November; the silent status quo (Anthropic still blacklisted, no federal contract, no favourable White House statement) will not hold.",
+      "basis": "Washington Post (2026-09-25) DC Circuit 2-1 ruling upholding DoD supply-chain-risk designation of Anthropic; Bloomberg / CNBC / Axios (2026-09-27) reporting private Trump-Amodei dinner at the White House; White House schedule and Trumps own remarks at Joint Base Andrews confirming the 2pm ET Monday Oval Office announcement and the Tuesday AI/tech gathering with America.gov debut (participants include Jensen Huang, Elon Musk, and Anthropics Tom Brown); Fortune (2026-09-24) preview of GPT-6 Cyber at OpenAI DevDay 29 September. Ledger call 2026-08-13-1 already established governance is the consequential layer; this call is about which direction that governance moves in Q4.",
+      "horizon": "2026-11-30",
+      "test": "By 2026-11-30, at least ONE of the following is evidenced by a primary source (DoD/GSA release, court order, Anthropic press release, whitehouse.gov post, or federal contract award notice on sam.gov): (a) DoD formally rescinds, stays, or narrows Anthropics supply-chain-risk designation; (b) Anthropic wins or is awarded a new federal contract of publicly disclosed value >= 50 million USD; (c) the White House issues a written statement, MOU, executive order, or joint fact sheet specifically naming Anthropic in a favourable procurement or partnership context. A Trump verbal remark at a podium without a written primary source does NOT count. Continued silent status quo \u2014 Anthropic still blacklisted, no new federal deal, no White House statement \u2014 grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
