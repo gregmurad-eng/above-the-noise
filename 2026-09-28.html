@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 28 September 2026</title>
+<style>
+  :root {
+    --bg:#0d0a06;
+    --accent:#c9a84c;
+    --text:#e0d4b8;
+    --muted:#8a7f63;
+    --miss:#c47070;
+  }
+  * { box-sizing:border-box; }
+  html, body { max-width:100%; overflow-x:hidden; }
+  body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,'Times New Roman',serif;
+    margin:0 auto;
+    max-width:720px;
+    padding:30px 22px 64px;
+    font-size:17px;
+    line-height:1.7;
+  }
+  .tag {
+    color:var(--muted);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:4px;
+  }
+  h1 {
+    color:var(--accent);
+    font-weight:normal;
+    letter-spacing:1px;
+    font-size:38px;
+    margin:0 0 6px;
+    line-height:1.15;
+  }
+  .dateline {
+    color:var(--muted);
+    font-size:15px;
+    letter-spacing:0.5px;
+    margin-bottom:22px;
+  }
+  nav.bar {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid rgba(201,168,76,0.28);
+    border-bottom:1px solid rgba(201,168,76,0.28);
+    padding:10px 0;
+    margin:14px 0 24px;
+    font-size:14px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+  }
+  nav.bar a, nav.bar .next {
+    color:var(--accent);
+    text-decoration:none;
+    white-space:nowrap;
+    padding:12px 6px;
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+  }
+  nav.bar a:hover { text-decoration:underline; }
+  nav.bar .next { color:var(--muted); cursor:default; }
+  .nav-mid { display:inline-flex; align-items:center; }
+  .nav-mid a { color:var(--accent); margin:0 9px; }
+  .listen {
+    background:transparent;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    font-family:Georgia,serif;
+    font-size:15px;
+    padding:12px 22px;
+    cursor:pointer;
+    letter-spacing:1px;
+    margin-bottom:30px;
+    min-height:44px;
+  }
+  .listen:hover { background:rgba(201,168,76,0.1); }
+  h2 {
+    color:var(--accent);
+    font-weight:normal;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    font-size:15px;
+    border-bottom:1px solid rgba(201,168,76,0.35);
+    padding-bottom:6px;
+    margin-top:38px;
+    margin-bottom:16px;
+  }
+  h3 {
+    color:var(--text);
+    font-weight:normal;
+    font-size:22px;
+    line-height:1.3;
+    margin:20px 0 8px;
+  }
+  h3 a { color:var(--text); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  h3 a:hover { color:var(--accent); }
+  p { margin:10px 0; }
+  a { color:var(--accent); }
+  .lead p { font-size:17px; }
+  .brief, .model-item {
+    padding:14px 0;
+    border-bottom:1px dotted rgba(138,127,102,0.35);
+  }
+  .brief:last-child, .model-item:last-child { border-bottom:none; }
+  .source-tag { color:var(--muted); font-style:italic; font-size:14px; }
+  .sowhat {
+    display:block;
+    color:var(--accent);
+    font-style:italic;
+    margin-top:10px;
+    font-size:16px;
+    line-height:1.5;
+  }
+  .sowhat strong { font-style:normal; font-weight:bold; letter-spacing:0.5px; }
+  .voices blockquote {
+    border-left:3px solid var(--accent);
+    margin:14px 0;
+    padding:6px 20px;
+    color:var(--text);
+    font-style:italic;
+    font-size:19px;
+    line-height:1.5;
+  }
+  .voices .attrib { font-size:14px; color:var(--muted); margin-top:6px; }
+  .signal {
+    background:rgba(201,168,76,0.06);
+    border-left:3px solid var(--accent);
+    padding:16px 20px;
+    margin:14px 0;
+  }
+  .signal p { margin:8px 0; }
+  .ledger-row { padding:12px 0; border-bottom:1px dotted rgba(138,127,102,0.35); }
+  .ledger-row:last-child { border-bottom:none; }
+  .verdict-hit { color:var(--accent); font-weight:bold; letter-spacing:1px; }
+  .verdict-miss { color:var(--miss); font-weight:bold; letter-spacing:1px; }
+  .verdict-unsettled { color:var(--muted); font-weight:bold; letter-spacing:1px; }
+  .verdict-open { color:var(--muted); letter-spacing:1px; font-weight:bold; }
+  .season { color:var(--accent); font-size:16px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+  ol.sources { padding-left:22px; font-size:15px; color:var(--text); }
+  ol.sources li { margin-bottom:8px; line-height:1.5; }
+  ol.sources .tier { color:var(--muted); font-style:italic; font-size:13px; }
+  ol.sources a { word-break:break-word; }
+  sup a {
+    color:var(--accent);
+    text-decoration:none;
+    padding:6px 4px;
+    margin:-6px -4px;
+    display:inline-block;
+    font-size:12px;
+  }
+  footer {
+    color:var(--muted);
+    font-size:14px;
+    margin-top:40px;
+    border-top:1px solid rgba(201,168,76,0.25);
+    padding-top:18px;
+    text-align:center;
+  }
+  @media (max-width:480px) {
+    body { padding:20px 16px 50px; font-size:16px; line-height:1.65; }
+    h1 { font-size:30px; }
+    h2 { font-size:14px; letter-spacing:2px; }
+    h3 { font-size:19px; }
+    .dateline { font-size:14px; }
+    .lead p, .brief p, .model-item p, .signal p { font-size:16px; }
+    .voices blockquote { font-size:17px; }
+    .sowhat { font-size:15px; }
+    ol.sources { font-size:15px; }
+    ol.sources .tier { font-size:14px; }
+    .source-tag { font-size:14px; }
+    nav.bar { font-size:13px; gap:8px 10px; letter-spacing:1px; }
+    nav.bar a, nav.bar .next { padding:12px 6px; min-height:44px; }
+    .nav-mid { flex:1 0 100%; justify-content:center; order:2; }
+    .nav-mid a { margin:0 10px; }
+    sup a { padding:8px 6px; margin:-8px -6px; font-size:12px; }
+    .listen { font-size:15px; padding:12px 18px; min-height:44px; }
+    .season { font-size:15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tag">Above The Noise</div>
+<h1>Above The Noise</h1>
+<div class="dateline">AI &amp; Tech · Signal over noise · Monday, 28 September 2026</div>
+
+<nav class="bar">
+  <a href="2026-09-27.html">← Yesterday</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">Tomorrow →</span>
+</nav>
+
+<button id="listenBtn" class="listen" onclick="toggleSpeech()">▶ Listen · ≈4 min</button>
+
+<h2>Lead Story</h2>
+
+<div class="lead">
+<h3><a href="https://www.bloomberg.com/news/articles/2026-09-27/anthropic-s-amodei-to-meet-trump-with-ai-safety-concerns-rising">Trump and Amodei dined at the White House Sunday, two days after a court upheld the Pentagon's Anthropic blacklist — and Trump has an AI announcement scheduled for Monday at 2 p.m.</a> <span class="source-tag">— Bloomberg</span></h3>
+
+<p>The sequence is what matters. On Friday 25 September, a divided DC Circuit panel voted 2–1 to uphold the Department of Defense's designation of Anthropic as a "supply chain risk," ending the company's appeal against the blacklist that has kept Claude out of most federal-government work since March<sup><a href="#s1">[1]</a></sup>. On Sunday 27 September, Dario Amodei — who had missed the previous Thursday's state dinner for Xi Jinping — arrived at the White House at Trump's personal invitation for a one-on-one private dinner, the first sit-down between the two men<sup><a href="#s2">[2]</a></sup><sup><a href="#s3">[3]</a></sup>. Speaking to reporters at Joint Base Andrews earlier the same day, Trump said "we have a meeting with Anthropic on Tuesday, that will be important," and confirmed the dinner<sup><a href="#s4">[4]</a></sup>. On Monday 28 September, the White House schedule lists a presidential announcement from the Oval Office at 2:00 p.m. ET; the subject was not publicly disclosed in advance, but the schedule and Trump's own remarks put it inside the AI arc<sup><a href="#s5">[5]</a></sup>.</p>
+
+<p>What sits behind the dinner is a February executive-branch determination that Anthropic was endangering national security, followed by a $200M July 2025 Pentagon contract that collapsed over Anthropic's refusal to grant the military unqualified access to Claude for fully-autonomous weapons and domestic mass surveillance<sup><a href="#s1">[1]</a></sup>. Friday's ruling made the blacklist judicially durable rather than a policy that could be softened by an executive email. The dinner reads, in that context, as either a de-escalation gesture — a president who wants access to a lab he has publicly attacked — or an appetiser for something harder in Tuesday's announcement<sup><a href="#s3">[3]</a></sup>.</p>
+
+<p>Tuesday 29 September is the busier day. Trump and House Speaker Mike Johnson are hosting an all-day AI and technology gathering at the White House to debut a federal portal called America.gov; confirmed participants include Nvidia's Jensen Huang, Tesla's Elon Musk, and Anthropic's co-founder and president Tom Brown, alongside sessions on AI, energy, healthcare, space, and farming<sup><a href="#s5">[5]</a></sup>. In parallel, OpenAI is running DevDay in San Francisco with a keynote from Sam Altman and, per Fortune's 24 September scoop, a preview of GPT-6 Cyber and a first-of-its-kind cybersecurity deployment product<sup><a href="#s6">[6]</a></sup>. The two events are within a few hours' flight of each other on the same day, and the guest lists partially overlap — a coincidence that reads more like a scheduling contest than an accident.</p>
+
+<p>Read across the week — court loss Friday, private dinner Sunday, 2 p.m. announcement Monday, dual-coast summits Tuesday — the storyline is not "will there be an AI announcement." It is which of two postures the Trump administration will publicly commit to: continue to squeeze the labs it distrusts and reward the ones it does not, or shift toward a broader "American AI stack" frame that pulls Anthropic back inside the tent. The reason this matters beyond DC gossip is that the answer sets the terms for federal procurement, export controls, and state-preemption fights for the rest of 2026.</p>
+
+<span class="sowhat"><strong>So what:</strong> if any product roadmap you own depends on Anthropic models running in a federal, DoD-integrator, or FedRAMP-High context, do not make sourcing decisions this week — the Monday 2 p.m. announcement and the Tuesday summit will move the ground under you, and a Q4 vendor bet made on Sunday's status quo can look wrong by Wednesday morning.</span>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/">OpenAI's DevDay tomorrow is set to preview GPT-6 Cyber and a dozen-plus product launches</a> <span class="source-tag">— Fortune</span></h3>
+<p>Sam Altman keynotes DevDay 2026 at Fort Mason in San Francisco on Tuesday 29 September, 10 a.m. PDT, with a free livestream<sup><a href="#s7">[7]</a></sup>. Fortune reported on 24 September, citing a source with direct knowledge, that OpenAI will preview GPT-6 Cyber — the fourth cybersecurity-tier model of 2026 after GPT-5.4/5.5/5.6-Cyber — with a companion "first-of-its-kind" deployment product for automating vulnerability discovery and patching, and that the company froze major launches over the previous two weeks to concentrate them at DevDay ("a dozen or more" total products)<sup><a href="#s6">[6]</a></sup>. Alpha access to GPT-6 Cyber is already gated to Daybreak Red program customers<sup><a href="#s6">[6]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> assume today is your last quiet planning day this week; if you sell or defend anything with a cyber tag, the pricing floor and the "help/harm" narrative around AI vulnerability tools will both shift by Tuesday afternoon, and any RFP language you have that references "leading AI security tooling" needs a Wednesday-morning read.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.washingtonpost.com/technology/2026/09/25/federal-appeals-court-rules-pentagon-can-blacklist-anthropic/">Federal appeals court upholds Pentagon's Anthropic blacklist in 2–1 ruling</a> <span class="source-tag">— Washington Post</span></h3>
+<p>Friday 25 September the DC Circuit ruled 2–1 that the Department of Defense acted within its authority when it designated Anthropic a "supply chain risk" in March, ending the company's appeal<sup><a href="#s1">[1]</a></sup>. The decision creates a live circuit split with the Northern District of California, where Judge Lin granted partial summary judgment for Anthropic on 27 August, finding the DoD action unlawfully retaliated against constitutionally protected expressive activity<sup><a href="#s8">[8]</a></sup>. Anthropic and Trump met privately at the White House two days later<sup><a href="#s3">[3]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> if you procure or resell Claude for any federal-adjacent workload — sub to a prime, or through a FedRAMP-authorised platform — the "we'll wait for the courts to clarify" defence just expired for the DC Circuit; you now need a written model-fallback plan and a named replacement in every SoW that touches DoD, DHS, or IC boundaries.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.bloomberg.com/news/articles/2026-09-25/ai-coding-startup-cognition-hits-1-billion-in-annualized-revenue">Cognition (Devin) says annualised revenue passed $900M — nearly double May's $492M</a> <span class="source-tag">— Bloomberg</span></h3>
+<p>Bloomberg reported on 25 September, citing Cognition CEO Scott Wu, that the AI coding-agent company behind Devin now runs at approximately $900M in annualised revenue and is "on track" for $1B this month — up from $492M in May, roughly 82% growth in four months<sup><a href="#s9">[9]</a></sup>. Named enterprise customers disclosed include Mercedes-Benz, NASA, Goldman Sachs, and Citi<sup><a href="#s9">[9]</a></sup>. Cognition closed a $2B Series E at a $48B post-money valuation on 8 September, with Andreessen Horowitz and Accel leading<sup><a href="#s10">[10]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> the ARR curve here is the first hard number that puts an autonomous-coding-agent price point above the seat-based IDE-copilot price point on the same enterprise footprint — if you sell developer tooling by the seat, run the exercise this week of what your renewal book looks like when the buyer stops counting seats and starts counting shipped merges.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.itpro.com/infrastructure/alibaba-cloud-eyes-european-gains-in-global-infrastructure-build-out-and-teases-a-roadmap-for-future-qwen-ai-models">Alibaba Cloud plans 20 GW of capacity by 2032 and a 5–10T-parameter Qwen roadmap at Yunqi</a> <span class="source-tag">— IT Pro</span></h3>
+<p>At the Yunqi Conference in Hangzhou (23–24 September), Alibaba Cloud announced new regions in Turkey, Finland, and the Netherlands, expansions in Malaysia, Germany, UAE, France, and Hong Kong, and a plan to reach 20 GW of data-centre capacity by 2032<sup><a href="#s11">[11]</a></sup>. CEO Wu Yongming said Qwen is exploring recursive self-improvement and targeting a 5–10 trillion parameter scale, framing the next generation as agentic rather than chat-first<sup><a href="#s11">[11]</a></sup>. Wu also said current customer AI demand "far exceeds supply capacity" for the medium and long term<sup><a href="#s11">[11]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> if your data-residency posture excludes Chinese-controlled cloud regions, the new Turkey/Finland/Netherlands zones are the specific sourcing paths a European buyer will be asked about in 2027 procurement — decide the answer before a customer asks, because "we haven't looked yet" reads as neither yes nor no.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="model-item">
+<h3>No new frontier chat model in the last 48 hours</h3>
+<p>Nothing shipped as a public production model between 26 and 28 September. The reference set from the previous window still stands: <a href="https://www.anthropic.com/news">Claude Opus 5.5</a> (Anthropic, 22 September; ~40% cheaper than Opus 5), <a href="https://llmgateway.io/timeline">GPT-6 Sol and GPT-6 Luna</a> (OpenAI, 22 September; small- and mid-frontier tiers), and <a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">Qwen-Audio 3.1</a> (Alibaba, 23 September; five-model voice stack, prices cut up to 95%)<sup><a href="#s12">[12]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> the calendar around DevDay is doing what the pricing physics can't — one large lab has intentionally frozen its launches for two weeks to bunch them tomorrow, and if your eval harness only re-runs on the calendar you set in Q3, you will read Tuesday's news as a discontinuous shock rather than a batched release.</span>
+</div>
+
+<div class="model-item">
+<h3><a href="https://openai.com/index/devday-2026/">GPT-6 Cyber (preview)</a> <span class="source-tag">— OpenAI, DevDay 29 September (expected)</span></h3>
+<p>OpenAI's fourth cyber-tier model of 2026, aimed at pen-testing, vulnerability research, exploit validation, malware analysis, and patch validation. Currently in alpha under the Daybreak Red access program; a wider launch is expected in months rather than days<sup><a href="#s6">[6]</a></sup><sup><a href="#s7">[7]</a></sup>. Companion product for automated deployment and cybersecurity workflows to be announced alongside<sup><a href="#s6">[6]</a></sup>. Weights closed. Pricing, context window, and rate limits not yet disclosed.</p>
+<span class="sowhat"><strong>So what:</strong> if you sell managed detection-and-response or run a bug-bounty program, the Daybreak Red gate is the concrete signal that a lab thinks the model is dangerous enough to require identity-verified enrolment — read whatever pricing OpenAI publishes against that gate, because a low headline price with a hard access wall is a different SKU than the same number without one.</span>
+</div>
+
+<div class="model-item">
+<h3>In flight: DeepMind's Gemini 4 in post-training</h3>
+<p>Google DeepMind CTO Koray Kavukcuoglu said on 23–24 September that Gemini 4 is in the early post-training phase and that he hopes to launch it "much earlier" than year-end, without naming a month; as of Sunday 27 September the model was not in Google's public model catalog<sup><a href="#s13">[13]</a></sup>. Alibaba's Qwen team, at Yunqi, said it is targeting a 5–10T-parameter next generation and is running recursive-self-improvement experiments<sup><a href="#s11">[11]</a></sup>.</p>
+<span class="sowhat"><strong>So what:</strong> both statements are plans, not shipped models — treat them as pricing signals for competitors' Q4 SKUs, not as models to build against; if your product's context-window or pricing math assumes Gemini 4 lands before December, that is a bet you are placing, not a fact.</span>
+</div>
+
+<h2>Voices</h2>
+
+<div class="voices">
+<p><strong>Ethan Mollick</strong>, Wharton professor and one of the most-read practitioner writers on how frontier models change work, in his 18 September post <a href="https://www.oneusefulthing.org/p/the-overhang">"The Overhang"</a> on <em>One Useful Thing</em><sup><a href="#s14">[14]</a></sup>:</p>
+<blockquote>"The capability overhang, the gap between what these models can do and what almost anyone is using them with them, is an opportunity."</blockquote>
+<p class="attrib">— Ethan Mollick, oneusefulthing.org, 18 September 2026</p>
+<p>Mollick's argument in the piece is that current frontier models are already capable of doing work the vast majority of their users are not yet asking them to do, and that the gap between those two things — the "overhang" — is where the near-term returns from AI actually live. He names the four human levers that close it: deep knowledge in a specific domain, wide knowledge across domains, taste in selecting and refining outputs, and the agency to test the boundary. It is worth re-reading this week because the DC noise around Anthropic and the DevDay noise around GPT-6 Cyber both pull attention toward capability at the top of the curve, when the operator's leverage this quarter is at the bottom — the workflows already inside the box that no one has finished wiring up.</p>
+<span class="sowhat"><strong>So what:</strong> before you spec a fifth agent or evaluate a sixth model, name one workflow inside your product where the current best-tier model would ship a materially better output than what your team is prompting for today — if you cannot name one in five minutes, the "overhang" is your problem, and no new SKU on Tuesday will fix it.</span>
+</div>
+
+<h2>Today's Signal</h2>
+
+<div class="signal">
+<p>US frontier-lab governance has moved this week from an executive-branch quarrel into a durable, judicially blessed regime — and simultaneously into a private-dinner reconciliation channel. Friday's DC Circuit ruling makes the Pentagon's Anthropic blacklist survivable to a court test; Sunday's dinner and Monday's 2 p.m. announcement are the president's tools for adjusting the ground beneath it without the courts. Tuesday's dual-coast summits — one at the White House with America.gov, Huang, Musk, and Tom Brown, one at Fort Mason with GPT-6 Cyber and a dozen product drops — are the visible surface of the same reordering.</p>
+<p>The frame this replaces is a year of loose "AI slowdown" essays that treated the industry as an autonomous system that governments would eventually regulate. What has happened instead is more specific: a court has judicialised one blacklist, a president is running a bilateral reset with the lab most publicly opposed to his DoD terms, and the other frontier labs are timing their biggest launches of the quarter into the same 48-hour window. Read this way, the AI governance layer of Q4 2026 is being written not in a policy document but in a schedule — court dockets, White House invite lists, and DevDay decks — and the operators who spend this week reading calendars will be better-informed than the ones reading essays.</p>
+</div>
+
+<h2>The Ledger</h2>
+
+<div class="season">Season 1 · 1–0 · 36 open</div>
+<p style="color:var(--muted); font-size:14px; margin-top:-2px;">No calls graded today — the next comes due 30 September 2026.</p>
+
+<div class="ledger-row">
+<p><span class="verdict-open">OPEN</span> · <strong>New call, 28 September 2026, horizon 30 November 2026</strong>: this week's Trump–Amodei reset arc — court loss Friday, private dinner Sunday, 2 p.m. Monday announcement, dual summits Tuesday — is a genuine policy inflection, not just weather. By the end of November, the Trump administration's public posture toward Anthropic will have visibly softened along at least one measurable channel; the status-quo (Anthropic still blacklisted, no federal contract, no favourable White House statement) will not hold.</p>
+<p style="font-size:14px; color:var(--muted);"><strong>Test:</strong> by 30 November 2026, at least ONE of the following is evidenced by a primary source (a DoD/GSA release, a court order, an Anthropic press release, a whitehouse.gov post, or a federal contract award notice on sam.gov): (a) DoD formally rescinds, stays, or narrows Anthropic's "supply chain risk" designation; (b) Anthropic wins or is awarded a new federal contract of publicly disclosed value ≥$50M; (c) the White House issues a written statement, MOU, executive order, or joint fact sheet specifically naming Anthropic in a favourable procurement or partnership context. Continued silent status quo — Anthropic still blacklisted, no new federal deal, no White House statement — grades MISS. A Trump remark at a podium without a written primary source does NOT count.</p>
+</div>
+
+<h2>Sources</h2>
+
+<ol class="sources">
+<li id="s1"><a href="https://www.washingtonpost.com/technology/2026/09/25/federal-appeals-court-rules-pentagon-can-blacklist-anthropic/">Washington Post — Federal appeals court rules Pentagon can blacklist Anthropic (25 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s2"><a href="https://www.axios.com/2026/09/27/anthropic-trump-dario-amodei-dinner-invite">Axios — Scoop: Anthropic's Dario Amodei to have White House dinner with Trump (27 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s3"><a href="https://www.bloomberg.com/news/articles/2026-09-27/anthropic-s-amodei-to-meet-trump-with-ai-safety-concerns-rising">Bloomberg — Anthropic's Amodei to Meet Trump with AI Safety Concerns Rising (27 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s4"><a href="https://www.cnbc.com/2026/09/27/dario-amodei-set-to-have-dinner-with-trump-after-missing-state-dinner.html">CNBC — Anthropic CEO Amodei set to meet with Trump after missing state dinner (27 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s5"><a href="https://www.whitehouse.gov/priorities/tech-innovation/">The White House — Lead the World in AI (administration priorities page; Monday 28 Sep 2 p.m. ET announcement and Tuesday 29 Sep AI &amp; technology gathering per White House schedule)</a> <span class="tier">— primary</span></li>
+<li id="s6"><a href="https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/">Fortune — OpenAI to unveil GPT-6 Cyber model plus a first-of-its-kind cybersecurity-focused product to help deploy it (24 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s7"><a href="https://openai.com/index/devday-2026/">OpenAI — Announcing OpenAI DevDay 2026 (29 Sep, Fort Mason, San Francisco; keynote livestream)</a> <span class="tier">— primary</span></li>
+<li id="s8"><a href="https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/">TechCrunch — Anthropic gets its first court win over the Pentagon's supply-chain risk label (28 Aug 2026)</a> <span class="tier">— trade</span></li>
+<li id="s9"><a href="https://www.bloomberg.com/news/articles/2026-09-25/ai-coding-startup-cognition-hits-1-billion-in-annualized-revenue">Bloomberg — AI Coding Startup Cognition Hits $1 Billion in Annualized Revenue (25 Sep 2026)</a> <span class="tier">— tier-1</span></li>
+<li id="s10"><a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/">TechCrunch — Cognition Series E context (May 2026 raise and September 2026 $48B post-money round)</a> <span class="tier">— trade</span></li>
+<li id="s11"><a href="https://www.itpro.com/infrastructure/alibaba-cloud-eyes-european-gains-in-global-infrastructure-build-out-and-teases-a-roadmap-for-future-qwen-ai-models">IT Pro — Alibaba Cloud eyes European gains in global infrastructure build-out and teases a roadmap for future Qwen AI models (Yunqi Conference, 23–24 Sep 2026)</a> <span class="tier">— trade</span></li>
+<li id="s12"><a href="https://the-decoder.com/alibaba-launches-qwen-audio-3-1-with-five-new-models-and-slashes-ai-audio-prices-by-up-to-95-percent/">The Decoder — Alibaba launches Qwen Audio 3.1, cuts API prices up to 95% (23 Sep 2026)</a> <span class="tier">— trade</span></li>
+<li id="s13"><a href="https://www.gurufocus.com/news/9094960/googles-deepmind-nears-launch-of-gemini-4-ai-model">GuruFocus, citing The Information — Google DeepMind Nears Launch of Gemini 4 AI Model (24 Sep 2026)</a> <span class="tier">— tier-1 (Information original)</span></li>
+<li id="s14"><a href="https://www.oneusefulthing.org/p/the-overhang">Ethan Mollick — "The Overhang" (One Useful Thing, 18 Sep 2026)</a> <span class="tier">— practitioner</span></li>
+</ol>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+<script>
+const S = "Above The Noise for Monday, September twenty-eighth, twenty twenty-six. " +
+"Lead story. Trump and Anthropic CEO Dario Amodei dined at the White House on Sunday night, two days after a federal appeals court upheld the Pentagon's designation of Anthropic as a supply chain risk in a two-to-one ruling, and one day before a presidential announcement scheduled from the Oval Office at two p.m. Eastern on Monday. The sequence is what matters. Friday, the DC Circuit made the blacklist judicially durable. Sunday, Trump personally invited Amodei — who had missed the Thursday state dinner for Xi Jinping — to a private one-on-one at the White House, the first sit-down between the two men. Monday, the White House schedule lists the presidential announcement without a public topic, but Trump himself has framed the week around Anthropic. Tuesday is the busier day: Trump and Speaker Mike Johnson are hosting an all-day AI and technology gathering at the White House to debut a federal portal called America.gov, with Nvidia's Jensen Huang, Tesla's Elon Musk, and Anthropic co-founder Tom Brown; at the same time OpenAI runs DevDay in San Francisco with a preview of GPT-six Cyber, its fourth cybersecurity-tier model of the year. So what: if any product roadmap you own depends on Anthropic models in a federal, DoD-integrator, or FedRAMP-High context, do not make sourcing decisions this week — the Monday two p.m. announcement and Tuesday's summit will move the ground under you. " +
+"Briefs. OpenAI's DevDay Tuesday is set to preview GPT-six Cyber and a dozen-plus product launches, with Sam Altman's keynote at ten a.m. Pacific and a companion first-of-its-kind cybersecurity deployment product. " +
+"Second brief: the DC Circuit ruled two-to-one on September twenty-fifth that the Pentagon acted within its authority when it designated Anthropic a supply chain risk, ending the company's appeal and creating a live circuit split with the Northern District of California, which had ruled the other way on August twenty-seventh. " +
+"Third brief: Cognition, the company behind the Devin coding agent, says its annualised revenue passed nine hundred million dollars — up from four hundred and ninety-two million in May, roughly eighty-two percent growth in four months — with named enterprise customers including Mercedes-Benz, NASA, Goldman Sachs, and Citi. " +
+"Fourth brief: Alibaba Cloud at the Yunqi Conference in Hangzhou announced new cloud regions in Turkey, Finland, and the Netherlands, a twenty-gigawatt data-centre plan by twenty thirty-two, and a Qwen roadmap targeting five to ten trillion parameters with recursive self-improvement. " +
+"Model Watch. No new frontier chat model shipped in the last forty-eight hours; the reference set is Claude Opus five point five, GPT-six Sol and Luna, and Qwen-Audio three point one, all from the September twenty-second and twenty-third window. In-flight: GPT-six Cyber previews at DevDay tomorrow, currently in alpha under OpenAI's Daybreak Red access program; and Gemini four is in post-training with a much-earlier-than-year-end target per DeepMind's CTO. " +
+"Voices. Ethan Mollick, Wharton professor and one of the most-read practitioner writers on how frontier models change work, in his September eighteenth post 'The Overhang' on One Useful Thing, wrote: quote — the capability overhang, the gap between what these models can do and what almost anyone is using them with them, is an opportunity — unquote. Mollick's argument is that the near-term returns from AI actually live in the gap between what current models can do and what their users are asking them to do, and that four human levers close that gap: deep knowledge, wide knowledge, taste, and agency. It is worth re-reading this week because the DC noise around Anthropic and the DevDay noise around GPT-six Cyber both pull attention toward capability at the top of the curve, when the operator's leverage this quarter is at the bottom — the workflows already inside the box that no one has finished wiring up. " +
+"Today's Signal. US frontier-lab governance has moved this week from an executive-branch quarrel into a durable, judicially blessed regime — and simultaneously into a private-dinner reconciliation channel. Friday's DC Circuit ruling makes the Pentagon's Anthropic blacklist survivable to a court test; Sunday's dinner and Monday's two p.m. announcement are the president's tools for adjusting the ground beneath it without the courts. Tuesday's dual-coast summits are the visible surface of the same reordering. The AI governance layer of Q4 twenty twenty-six is being written not in a policy document but in a schedule — court dockets, White House invite lists, and DevDay decks — and the operators who spend this week reading calendars will be better-informed than the ones reading essays. " +
+"The Ledger. Season one stands at one and zero, thirty-six open. No calls graded today; the next comes due September thirtieth. Today's new call, horizon November thirtieth: this week's Trump-Amodei reset arc is a genuine policy inflection, not just weather. By the end of November, the Trump administration's public posture toward Anthropic will have visibly softened along at least one measurable channel — a rescinded or narrowed supply-chain-risk designation, a new federal contract of fifty million dollars or more, or a written White House statement specifically naming Anthropic favourably. Continued silent status quo grades miss. " +
+"That is today's Above The Noise. Thank you for reading, and for building carefully. Until tomorrow.";
+
+let U = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  if (!vs.length) return null;
+  return vs.find(v => /Daniel/i.test(v.name))
+      || vs.find(v => /Alex/i.test(v.name))
+      || vs.find(v => /^en/i.test(v.lang))
+      || vs[0];
+}
+function toggleSpeech() {
+  const btn = document.getElementById('listenBtn');
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    btn.textContent = '▶ Listen · ≈4 min';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { btn.textContent = '▶ Listen · ≈4 min'; };
+  U.onerror = () => { btn.textContent = '▶ Listen · ≈4 min'; };
+  speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+}
+if (speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.addEventListener('voiceschanged', () => {}, { once: true });
+}
+</script>
+
+<nav class="bar" style="margin-top:36px;">
+  <a href="2026-09-27.html">← Yesterday</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">Tomorrow →</span>
+</nav>
+
+</body>
+</html>
