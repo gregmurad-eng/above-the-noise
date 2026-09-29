@@ -446,6 +446,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-09-29-1",
+      "date": "2026-09-29",
+      "call": "NVIDIA's 28 September launch of the Open Agent Safety Platform - OpenShell runtime on Vera CPUs plus Sentry watchdog on BlueField-4 DPUs, endorsed by a 100+ firm coalition including Anthropic, Microsoft, CrowdStrike, Palo Alto, Palantir, JPMorganChase, and Scale - is the template for hardware-enforced agent boundaries, not an NVIDIA-only bet. By 2026-11-24, at least one other silicon vendor or major hyperscaler will publicly announce a competing or interoperable hardware-anchored agent-safety primitive.",
+      "basis": "NVIDIA shipped OpenShell (open-source runtime for Arm and Intel targets) plus Sentry (out-of-band DPU watchdog) on 2026-09-28 with governance via the Linux Foundation's Open Secure AI Alliance and 100+ named industry partners. The coalition breadth and the OSS/Foundation framing signal that hardware-anchored agent runtimes are a shared enterprise ask, not a proprietary NVIDIA moat - which historically triggers matching announcements from adjacent silicon and cloud suppliers within weeks.",
+      "horizon": "2026-11-24",
+      "test": "A primary-source press release, product page, blog post, engineering post, or SEC filing dated on or before 2026-11-24 from AMD, Intel, Arm Holdings, Broadcom, Marvell, AWS, Microsoft Azure, or Google Cloud that either (a) announces a hardware-based or silicon-anchored runtime, monitor, or policy layer specifically framed for AI agent safety, isolation, or containment; or (b) commits to shipping compatible/interoperable primitives inside their processors, DPU, NIC, or accelerator line for that purpose. Software-only agent-safety products (e.g. guardrails SDKs, prompt filters, agent frameworks) do not count. The commitment must name AI agents or agentic workloads as the target.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
