@@ -34,10 +34,10 @@
       "basis": "Z.ai shipped GLM-5.3 on Aug 14 explicitly stating 'Scaling post-training is all we did for GLM-5.3', taking #1 open-weights on Terminal Bench 3.0 (28.3 up from 4.6 on the same base) and topping CyberGym at 84.5%. If post-training scaling delivers frontier-adjacent coding gains from the same base, the story \u2014 'better model, same weights lineage, no capability drift' \u2014 is exactly what an enterprise buyer wants to hear. Western labs will not sit out that framing long.",
       "horizon": "2026-09-30",
       "test": "A primary-source release note, model card, or blog post from any of the named labs, dated on or before 2026-09-30, that explicitly states (a) no new pretraining was performed and (b) is presented as a numbered or named iteration (e.g. Claude X.Y, GPT-Z.W). Routine RLHF fine-tunes without the explicit 'same base' framing do not count; benchmark improvements alone do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-09-30",
+      "verdict": "MISS",
+      "evidence": "No Western frontier lab (Anthropic, OpenAI, Google DeepMind, xAI, Meta, Mistral) shipped a release explicitly framed as same-base, all-gains-from-post-training on or before 2026-09-30. Claude Opus 5.5 (2026-09-22), GPT-6 Sol/Luna (2026-09-22), Claude Sonnet 5.5 (2026-09-28), and GPT-6.1 Sol (2026-09-29) all shipped as numbered iterations but none were primary-sourced with the no-new-pretraining framing that the GLM-5.3 release used. Reference: https://simonw.substack.com/p/2026-in-llms-so-far and https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol document numbered iterations without that specific framing."
     },
     {
       "id": "2026-08-16-1",
@@ -46,10 +46,10 @@
       "basis": "DeepSeek's 4x+ price hike on V4-Pro (effective 16:00 UTC 2026-08-16) moves the reference price for the entire market floor and gives every upstream vendor room to reprice. Anthropic's $6B Decart talks and IBM's Elite alliance with OpenAI are the same theme viewed from margin (efficiency buys) and revenue (consulting channels). The frontier is done chasing free traffic; peak/off-peak tiering will be copied because it works for cloud storage and now for inference.",
       "horizon": "2026-09-30",
       "test": "A primary-source release note, pricing page, changelog, or blog post from any of the named labs, dated on or before 2026-09-30, that either (a) raises published per-token rates on an existing production frontier model relative to its 2026-08-15 rate, or (b) introduces time-of-day tiered pricing on a frontier model. Introductory-pricing expiries that were pre-announced before 2026-08-16 do not count; new promotional discounts do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-09-30",
+      "verdict": "MISS",
+      "evidence": "By 2026-09-30, no Western frontier API vendor (OpenAI, Anthropic, xAI, Google, Mistral) had (a) raised published per-token rates on an existing production frontier model or (b) introduced time-of-day peak/off-peak pricing on a frontier model. The market moved the opposite direction: OpenAI announced GPT-6.1 Sol at DevDay 2026 (2026-09-29) with an approximately 80 percent price cut versus the prior GPT-6 Sol reference tier. Reference: https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol. Only DeepSeek continues to use peak/off-peak tiering among frontier vendors."
     },
     {
       "id": "2026-08-17-1",
@@ -142,10 +142,10 @@
       "basis": "Anthropic on Aug 25 shipped three coordinated enterprise-readiness moves in one day: Claude Memory unified across chat + Cowork with topic-level controls and a sensitive-topics gate; a Global Premier partnership with Bain & Company disclosing more than 7,000 active Claude users inside Bain; and a $5M grants program for independent AI-wellbeing evaluations. Memory-across-surfaces is the ergonomic differentiator that removes 're-explain everything' friction in enterprise deployment, and it is a known blocker every peer is being asked about. OpenAI already ships memory in ChatGPT but currently offers bulk controls, not topic-level ones; Google's same-day Ask Gemini in Chat launch exposes exactly the same UX gap. Anthropic's expected S-1 filing within days will make the enterprise-revenue case in hard numbers, adding buyer-side pressure on every peer to close the memory-parity gap before Q4 renewals.",
       "horizon": "2026-09-30",
       "test": "A primary-source blog post, changelog, help-center article, product release note, or press release from OpenAI, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-09-30 announcing a memory feature that BOTH (a) works across at least two distinct end-user product surfaces including one chat surface and one agent-style or multi-step surface (e.g. ChatGPT + Operator/Codex, Gemini app + Chat/Workspace agent, Meta AI + agent surface), AND (b) exposes user-visible per-topic view/edit/delete controls in end-user settings. Bulk 'clear all memory' controls, existing memory features without new cross-surface expansion, admin-only or enterprise-tenant-only controls that end users cannot self-serve, and general 'we're working on memory' safety-posture posts without a shipping product do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-09-30",
+      "verdict": "HIT",
+      "evidence": "OpenAIs Dots launch at DevDay 2026 on 2026-09-29 satisfies both test clauses. (a) Cross-surface: Dots are always-on agents that draw context from ChatGPT memory (chat surface) and integrate Codex (agent-style multi-step surface); reachable from ChatGPT, Slack, and Teams. This matches the tests named example ChatGPT + Operator/Codex. (b) Per-topic controls: ChatGPT memory settings expose per-topic view/edit/delete in end-user settings. Evidence: https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol and https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/."
     },
     {
       "id": "2026-08-27-1",
@@ -454,6 +454,18 @@
       "basis": "NVIDIA shipped OpenShell (open-source runtime for Arm and Intel targets) plus Sentry (out-of-band DPU watchdog) on 2026-09-28 with governance via the Linux Foundation's Open Secure AI Alliance and 100+ named industry partners. The coalition breadth and the OSS/Foundation framing signal that hardware-anchored agent runtimes are a shared enterprise ask, not a proprietary NVIDIA moat - which historically triggers matching announcements from adjacent silicon and cloud suppliers within weeks.",
       "horizon": "2026-11-24",
       "test": "A primary-source press release, product page, blog post, engineering post, or SEC filing dated on or before 2026-11-24 from AMD, Intel, Arm Holdings, Broadcom, Marvell, AWS, Microsoft Azure, or Google Cloud that either (a) announces a hardware-based or silicon-anchored runtime, monitor, or policy layer specifically framed for AI agent safety, isolation, or containment; or (b) commits to shipping compatible/interoperable primitives inside their processors, DPU, NIC, or accelerator line for that purpose. Software-only agent-safety products (e.g. guardrails SDKs, prompt filters, agent frameworks) do not count. The commitment must name AI agents or agentic workloads as the target.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-09-30-1",
+      "date": "2026-09-30",
+      "call": "The White House Accord on Super Intelligence signed 2026-09-29 by Anthropic, OpenAI, Google, Meta, xAI, and Nvidia commits signatories to partner with independent external auditors and to meet regularly to establish standards and best practices. Both clauses are testable within weeks. By 2026-11-25, at least one of the six signatories will publicly disclose EITHER (a) the identity of a specific independent external auditor engaged for AI-safeguard audit work explicitly referencing the accord, OR (b) a first coordination-meeting readout or milestone report referencing the accord.",
+      "basis": "The accords own text names two operational external commitments (external audits and regular meetings) alongside two internal ones. Internal commitments duplicate language every signatory has used for eighteen months. The external ones are the novel and falsifiable part. Trumps framing as morally binding plus the accompanying executive order rebranding federal AI language to super intelligence means the political incentive to publish visible follow-through in Q4 is strong.",
+      "horizon": "2026-11-25",
+      "test": "A primary-source blog post, press release, transparency report, model card, safety-framework update, or SEC filing dated on or before 2026-11-25 from Anthropic, OpenAI, Google, Meta, xAI, or Nvidia that EITHER (a) names a specific independent external auditor engaged for AI-safeguard audit work explicitly referencing the White House Accord on Super Intelligence, OR (b) publishes a coordination-meeting readout or milestone report explicitly referencing the accord and disclosing at least the meeting date plus named participants. Generic responsible AI press releases without specific auditor names or specific meeting readouts do not count. Internal-team announcements or reiterated internal control policies do not count.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
