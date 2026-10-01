@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · 1 October 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7a5c;
+    --line: #2a2118;
+    --miss: #b05a52;
+    --unsettled: #8a7a5c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; max-width: 100%; overflow-x: hidden; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 22px 60px; }
+  h1 { font-size: 44px; letter-spacing: 0.5px; margin: 10px 0 4px; color: var(--text); font-weight: normal; }
+  .tagline { color: var(--accent); font-size: 15px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px; }
+  .dateline { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
+  h2 { font-size: 22px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: 6px; margin: 36px 0 18px; font-weight: normal; }
+  h3 { font-size: 22px; margin: 18px 0 8px; color: var(--text); font-weight: normal; line-height: 1.3; }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
+  h3 a:hover { border-bottom-color: var(--accent); }
+  p { margin: 10px 0 14px; font-size: 17px; }
+  a { color: var(--accent); }
+  nav.bar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 0; margin: 22px 0 10px; font-size: 15px; }
+  nav.bar a { color: var(--accent); text-decoration: none; white-space: nowrap; padding: 10px 4px; min-height: 44px; display: inline-flex; align-items: center; }
+  nav.bar .nav-mid { display: inline-flex; align-items: center; gap: 10px; }
+  nav.bar .nav-mid a { margin: 0 9px; }
+  nav.bar .next { color: var(--muted); white-space: nowrap; padding: 10px 4px; }
+  .listen { background: transparent; border: 1px solid var(--accent); color: var(--accent); font-family: Georgia, serif; font-size: 15px; padding: 10px 18px; min-height: 44px; cursor: pointer; margin: 10px 0 24px; }
+  .listen:hover { background: rgba(201,168,76,0.1); }
+  .lead, .brief, .model-item, .voices, .signal { margin-bottom: 22px; }
+  .brief, .model-item {
+    border-left: 2px solid var(--line);
+    padding-left: 16px;
+    margin-left: 2px;
+  }
+  .sowhat { color: var(--accent); font-style: italic; display: block; margin-top: 10px; font-size: 16px; }
+  .sowhat::before { content: "So what: "; font-style: normal; font-weight: normal; color: var(--accent); }
+  .voices blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 14px 0;
+    padding: 2px 18px;
+    color: var(--text);
+    font-size: 18px;
+  }
+  .voices .attrib { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .signal {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 18px 20px;
+    margin: 20px 0;
+  }
+  .ledger { font-size: 16px; }
+  .ledger .record { color: var(--accent); font-weight: normal; letter-spacing: 1px; }
+  .ledger .hit { color: var(--accent); font-weight: bold; }
+  .ledger .miss { color: var(--miss); font-weight: bold; }
+  .ledger .unsettled { color: var(--unsettled); font-weight: bold; }
+  .ledger .open { color: var(--muted); font-weight: bold; }
+  ol.sources { font-size: 15px; padding-left: 22px; color: var(--muted); }
+  ol.sources li { margin-bottom: 8px; }
+  ol.sources li a { color: var(--accent); }
+  ol.sources .tier { color: var(--muted); font-style: italic; }
+  sup a { color: var(--accent); text-decoration: none; padding: 6px 4px; margin: -6px -4px; }
+  sup a:hover { text-decoration: underline; }
+  .label-small { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 20px 16px 50px; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 20px; }
+    p, .brief p, .model-item p, .signal p, .voices p, .lead p { font-size: 17px; }
+    .voices blockquote { font-size: 18px; padding: 4px 14px; }
+    .sowhat { font-size: 16px; }
+    ol.sources { font-size: 15px; padding-left: 20px; }
+    nav.bar { font-size: 15px; }
+    nav.bar .nav-mid { gap: 6px; }
+    nav.bar .nav-mid a { margin: 0 6px; }
+    .label-small { font-size: 14px; }
+    .listen { width: 100%; }
+    .dateline { font-size: 15px; }
+    footer { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="tagline">Above The Noise</p>
+<h1>Above The Noise</h1>
+<p class="dateline">AI &amp; Tech · Signal over noise · Thursday, 1 October 2026</p>
+
+<nav class="bar">
+  <a href="2026-09-30.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<button class="listen" id="listenBtn">▶ Listen · ~4 min</button>
+
+<section class="lead">
+<h2>Lead Story</h2>
+<h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Gemini 4 Argon retakes the benchmark lead — and ships to cyber defenders before developers</a><sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup><sup><a href="#s3">[3]</a></sup> — Google</h3>
+
+<p>Google launched <strong>Gemini 4 Argon</strong> on 30 September<sup><a href="#s1">[1]</a></sup>, and the launch is as much a statement about distribution as about capability. On the capability axis, Argon tops the current enterprise benchmarks it names in its own post: 77.9% on DeepSWE v1.1 (real-world software engineering), 68% on CWE-bench v1 (autonomous vulnerability remediation), #1 on AutomationBench at 51.3%, and 91.7% on LVBench for long-video understanding<sup><a href="#s1">[1]</a></sup>. The most consequential technical disclosure is quieter: the model supports an industry-leading <strong>one million output tokens</strong>, up from a 64K ceiling<sup><a href="#s1">[1]</a></sup>. That is a different kind of model — one that can emit a book-length artefact in a single call rather than stitching together paginated completions.</p>
+
+<p>Introductory pricing is $2 per million input tokens and $10 per million output tokens, with cached input priced at 95% off<sup><a href="#s1">[1]</a></sup>. Full-pricing of $4 and $20 kicks in later. That lands Argon squarely below OpenAI's current frontier tier on headline rates, which matters once anyone starts budgeting for million-token outputs.</p>
+
+<p>But the distribution choice is the real headline. Argon <em>is not</em> rolling out to developers first. It is rolling out through Google's <strong>Fairwind Program</strong> to a set of trusted cyber defenders, and participating in the U.S. government's voluntary pre-release model access process<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup>. Broader availability for paid API customers and Google AI Ultra subscribers follows "as soon as possible," with no firm date<sup><a href="#s2">[2]</a></sup>. VentureBeat's framing — "retaking benchmark lead, but in limited release"<sup><a href="#s3">[3]</a></sup> — is precisely right. Google is deliberately choosing to put its most capable public frontier model behind a vetted-partner gate for its first weeks of life.</p>
+
+<p>Read against the rest of the week — Newsom signing a package of AI employment and clinical bills in California<sup><a href="#s4">[4]</a></sup>, Connecticut's AI subscription disclosure law taking effect<sup><a href="#s9">[9]</a></sup>, and an autonomous AI agent chaining two Zammad zero-days to root inside the Dutch disclosure clearinghouse<sup><a href="#s5">[5]</a></sup> — the shape is coherent. Capability keeps compounding. Rollout is quietly bifurcating into a two-channel world: vetted-partner first, retail later. The "ship it, let the market figure it out" pattern that defined 2024–2025 model launches is being replaced by something closer to how pharmaceutical capability ships — through a tiered trust channel with an identifiable sponsor.</p>
+
+<span class="sowhat">if your product roadmap assumed day-one API access to the next frontier model, rewrite the assumption — budget six to twelve weeks between a lab's capability post and the moment your paid tier can call it, and build a fallback model path for anything with a committed ship date in that window.</span>
+</section>
+
+<section>
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/">Newsom signs ten AI bills in one afternoon</a><sup><a href="#s4">[4]</a></sup> — California Governor's Office</h3>
+<p>Governor Newsom signed a sweeping package on 30 September, including <strong>SB 947</strong> (the "No Robo Bosses Act," banning sole-AI firing or discipline decisions and requiring human review), <strong>SB 951</strong> (worker notice for AI-driven mass layoffs or relocations), <strong>SB 503</strong> (requiring developers of clinical AI decision tools to mitigate known bias), <strong>AB 1979</strong> (preserving physician professional judgment), and seven others covering gene-synthesis safety, deepfakes, education, and attorney practice<sup><a href="#s4">[4]</a></sup>. SB 947 is the headliner — a reversal of Newsom's October 2025 veto of its predecessor SB 7<sup><a href="#s4">[4]</a></sup>.</p>
+<span class="sowhat">if your product makes employment, discipline, or termination recommendations to a California customer, your implementation needs a documented human-review step and a written notice flow by the SB 947 effective date — "the model said so" is now a Business and Professions Code violation.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/">An AI agent chained two Zammad zero-days to root in seconds inside a cyber-disclosure clearinghouse</a><sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup> — BleepingComputer</h3>
+<p>DIVD — the Dutch Institute for Vulnerability Disclosure — disclosed on 30 September that its Zammad helpdesk was compromised by an autonomous AI agent that strung together <strong>CVE-2026-102489</strong> (unauthenticated remote code execution) and <strong>CVE-2026-102490</strong> (local privilege escalation to root), completing session hijacking, RCE, and the climb to root "within seconds" without a human in the loop<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup>. DIVD and Merlon Security identified the vulnerabilities during incident response. The Dutch NCSC issued an active-exploitation advisory the same day<sup><a href="#s6">[6]</a></sup>. The agent "left behind clear explanations of its decisions," which is how the chain was reconstructed.</p>
+<span class="sowhat">this is the first widely documented, CVE-assigned, in-the-wild AI-agent exploitation chain — treat it as the moment your threat model has to assume an autonomous attacker can patch-diff a new CVE and chain it before your maintenance window opens, not after; upgrade Zammad to v7 or take instances offline today.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://manus.im/blog/introducing-manus-2-0">Manus 2.0 gives each agent its own email, phone number, and wallet</a><sup><a href="#s7">[7]</a></sup> — Manus</h3>
+<p>Manus shipped a full architecture rewrite on 28 September<sup><a href="#s7">[7]</a></sup>. The headline numbers: the new <strong>Cascade</strong> agent harness uses 23.2% fewer tokens, finishes tasks 28.2% faster, and costs 32% less to run than the previous system<sup><a href="#s7">[7]</a></sup>. The headline product is <strong>Cue</strong> — a personal-agent app where each agent gets its own email address, phone number, wallet, and <strong>Cloud Computer</strong> that keeps running after you close your laptop<sup><a href="#s7">[7]</a></sup>. <strong>Automations</strong> replaces time-based scheduling with event triggers (incoming email, calendar change, Slack message, Notion update) spec'd in a single prompt<sup><a href="#s7">[7]</a></sup>.</p>
+<span class="sowhat">this is the first mainstream agent product where the agent is a legal-ish entity with its own payment credentials and phone number — if you accept new accounts, decide this week whether a "Cue agent" is a user, a bot you block, or a user with a verified-human sponsor, because the ambiguity will not survive a chargeback.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.insideprivacy.com/consumer-protection/connecticut-extends-ai-regulation-to-subscriptions/">Connecticut's AI subscription-disclosure law takes effect today</a><sup><a href="#s9">[9]</a></sup> — Covington InsidePrivacy</h3>
+<p>Effective 1 October, Connecticut requires any business offering an AI technology on a subscription basis to provide consumers in the state with clear written notice of the service's "quantitative or qualitative limitations" — usage caps, feature restrictions, and any discretion the provider retains to reduce quality or functionality mid-subscription — and to re-disclose modifications at renewal<sup><a href="#s9">[9]</a></sup>. Enforcement is exclusively by the Connecticut Attorney General under CUTPA; up to $5,000 per willful violation<sup><a href="#s9">[9]</a></sup>.</p>
+<span class="sowhat">if you charge Connecticut residents a monthly AI subscription, your "we may adjust rate limits at any time" clause now requires an itemised written disclosure before renewal — audit your billing-email templates this week, not next quarter.</span>
+</div>
+
+</section>
+
+<section>
+<h2>Model Watch</h2>
+
+<div class="model-item">
+<h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Gemini 4 Argon (Google, 30 September)</a><sup><a href="#s1">[1]</a></sup></h3>
+<p>Context not disclosed in launch post; <strong>1M-token output window</strong> (up from 64K); $2 / $10 introductory per million input/output tokens, cached input 95% off; weights closed; rollout gated through Fairwind to vetted cyber-defence partners first, broader paid-tier access TBD<sup><a href="#s1">[1]</a></sup>. Benchmark claims disclosed in the primary post: DeepSWE v1.1 77.9%, CWE-bench v1 68%, AutomationBench #1 (51.3%), LVBench 91.7%<sup><a href="#s1">[1]</a></sup>.</p>
+<span class="sowhat">plan for retail availability "end of October at the earliest" — if your pipeline needs million-token outputs today, your only options this week are Argon via a Fairwind partner, or chunked outputs on a current-generation model.</span>
+</div>
+
+<div class="model-item">
+<h3><a href="https://manus.im/blog/introducing-manus-2-0">Manus 2.0 · Cascade harness (Manus, 28 September)</a><sup><a href="#s7">[7]</a></sup></h3>
+<p>Not a model release — a harness release — but the numbers are the kind an evals team should take seriously: on a stated internal task set, Cascade uses 23.2% fewer tokens, completes 28.2% faster, and costs 32% less than the prior system<sup><a href="#s7">[7]</a></sup>. Available on web, macOS, Windows, iOS, Android<sup><a href="#s7">[7]</a></sup>.</p>
+<span class="sowhat">if your agent costs are dominated by harness overhead rather than model inference, Cascade is the first mainstream datapoint that a published harness swap can move your bill by a third — worth a weekend benchmark against your own loop.</span>
+</div>
+
+<div class="model-item">
+<h3>No other frontier model release in the last 48 hours</h3>
+<p>The week's frontier news is Argon. The in-flight development to watch: Anthropic's 29 September threat-intelligence report describing operations where threat actors tried to use Claude for malicious activity<sup><a href="#s10">[10]</a></sup> — which is the lab-side counterpart to the DIVD attack narrative above, and worth reading before your next incident-response tabletop.</p>
+</div>
+
+</section>
+
+<section class="voices">
+<h2>Voices</h2>
+<p><strong>Satya Nadella</strong>, Chairman and CEO of Microsoft, on the <em>Sources with Alex Heath</em> podcast recorded in Seattle for the Copilot unveiling, published 25 September 2026<sup><a href="#s8">[8]</a></sup>:</p>
+<blockquote>"I think we are way too self-obsessed as an industry about, look at us, how glorious we are."</blockquote>
+<p class="attrib">— Satya Nadella, <em>Sources</em>, 25 Sep 2026</p>
+<p>Nadella's line is worth keeping because it is being said by the CEO whose company spent the largest single sum of capital in the history of any AI partnership, and because it comes in the same ten-day window as Dario Amodei's "Pace the Frontier" essay and Yoshua Bengio's UN Security Council speech. The three sources — a hyperscaler CEO, a frontier-lab CEO, and a Turing laureate — do not usually sing in chorus. They are, this time, saying the same thing in different registers: the industry is talking too loudly about itself relative to what it is actually delivering to the people who have to use it. Nadella's follow-on in the same interview — "Any amount that I say or any one of us say is not good enough anymore"<sup><a href="#s8">[8]</a></sup> — is a tacit admission that the executive-speech channel is saturated.</p>
+<span class="sowhat">when you write your next launch post or demo thread, cut every sentence that is about your product's capability and keep only the sentences that name a specific user doing a specific job better — the self-regard channel is now literally the Microsoft CEO's example of what to stop doing.</span>
+</section>
+
+<section class="signal">
+<h2>Today's Signal</h2>
+<p><strong>Frontier capability is quietly shipping through vetted-partner channels before it ships to developers — and the DIVD attack is why.</strong> Google Argon rolls out to Fairwind partners first. OpenAI's Astra tier requires Daybreak Blue/Red enrolment. California just made "the model decided it" an unlawful basis for firing someone. Connecticut just made the terms of your model subscription a mandated disclosure. And a single autonomous AI agent chained two unknown vulnerabilities to root inside a <em>security</em> organisation inside of seconds. These are not four unrelated stories — they are one story. The era in which frontier labs could ship a capability post on Monday and watch the market absorb the fallout by Friday is ending. What is replacing it is a two-channel world: a vetted-partner channel where capability lands first and the sponsor is identifiable, and a retail channel that comes later with contractual guardrails. The twelve-week question is which other frontier lab names its vetted-partner-first channel in the next capability launch.</p>
+</section>
+
+<section>
+<h2>The Ledger</h2>
+<div class="ledger">
+<p><span class="record">Season 1 · 2-2</span> (37 open, 0 unsettled)</p>
+<p>No calls graded today. Next horizon: 15 October 2026.</p>
+<p><span class="open">OPEN</span> · Today's call, horizon <strong>12 November 2026</strong>: at least one other frontier lab (OpenAI, Anthropic, Meta, xAI, DeepSeek, Mistral, Alibaba, Moonshot) will ship a new capability-tier model whose launch post explicitly names a vetted-partner-first access channel analogous to Google's Fairwind-first rollout for Argon or OpenAI's Daybreak-tiered access — i.e., a trust-gated channel named in a primary source as the first-weeks distribution path. A paid-tier waitlist alone does not satisfy the test; the gate must be named and the partner population must be bounded. Silence for six weeks grades <span class="miss">MISS</span>.</p>
+</div>
+</section>
+
+<section>
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Google — "Gemini 4 Argon: our next era of frontier intelligence"</a> <span class="tier">· primary</span></li>
+<li id="s2"><a href="https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/">TechCrunch — "Google releases Gemini 4 Argon, called its most powerful model yet"</a> <span class="tier">· tier-1</span></li>
+<li id="s3"><a href="https://venturebeat.com/technology/google-unveils-gemini-4-argon-retaking-benchmark-lead-over-openai-and-anthropic-but-in-limited-release">VentureBeat — "Google unveils Gemini 4 Argon, retaking benchmark lead ... but in limited release"</a> <span class="tier">· tier-1</span></li>
+<li id="s4"><a href="https://www.gov.ca.gov/2026/09/30/californias-nation-leading-ai-framework-just-got-stronger-governor-newsom-signs-more-first-in-the-nation-worker-protections-and-more/">California Governor's Office — "California's nation-leading AI framework just got stronger"</a> <span class="tier">· primary</span></li>
+<li id="s5"><a href="https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/">BleepingComputer — "DIVD says Zammad zero-days enabled AI-driven network breach"</a> <span class="tier">· tier-1</span></li>
+<li id="s6"><a href="https://www.ncsc.nl/alerts/actief-misbruik-van-zeroday-kwetsbaarheden-in-zammad-update-nu">Dutch NCSC — "Actief misbruik van zeroday-kwetsbaarheden in Zammad: update nu"</a> <span class="tier">· primary</span></li>
+<li id="s7"><a href="https://manus.im/blog/introducing-manus-2-0">Manus — "Introducing Manus 2.0"</a> <span class="tier">· primary</span></li>
+<li id="s8"><a href="https://sources.news/p/satya-nadella-microsoft-copilot-future">Sources (Alex Heath) — "Satya Nadella on Microsoft's agent bet and AI's trust problem"</a> <span class="tier">· tier-1</span></li>
+<li id="s9"><a href="https://www.insideprivacy.com/consumer-protection/connecticut-extends-ai-regulation-to-subscriptions/">Covington InsidePrivacy — "Connecticut Extends AI Regulation to Subscriptions"</a> <span class="tier">· trade</span></li>
+<li id="s10"><a href="https://www.anthropic.com/news">Anthropic — Newsroom (September 2026 threat intelligence report)</a> <span class="tier">· primary</span></li>
+</ol>
+</section>
+
+<nav class="bar">
+  <a href="2026-09-30.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise. Thursday, first October twenty twenty six. AI and tech. Signal over noise. " +
+"Lead Story. Google launched Gemini four Argon on the thirtieth of September, and the launch is as much a statement about distribution as about capability. Argon tops the current enterprise benchmarks it names in its own post, seventy seven point nine on DeepSWE v one point one, sixty eight on CWE bench v one, number one on AutomationBench, and ninety one point seven on LVBench. The quieter technical disclosure is that the model supports one million output tokens, up from a sixty four thousand ceiling. That is a different kind of model, one that can emit a book length artefact in a single call. " +
+"Pricing is two dollars per million input tokens and ten dollars per million output tokens, with cached input priced at ninety five percent off. Full pricing of four and twenty kicks in later. " +
+"But the distribution choice is the real headline. Argon is not rolling out to developers first. It is rolling out through Google's Fairwind Program to a set of trusted cyber defenders, and participating in the U S government's voluntary pre release model access process. Broader availability for paid API customers and Google AI Ultra subscribers follows as soon as possible, with no firm date. " +
+"Read against the rest of the week — Newsom signing a package of AI employment and clinical bills in California, Connecticut's AI subscription disclosure law taking effect, and an autonomous AI agent chaining two Zammad zero days to root inside the Dutch disclosure clearinghouse — the shape is coherent. Capability keeps compounding. Rollout is quietly bifurcating into a two channel world: vetted partner first, retail later. " +
+"The Briefs. Newsom signed ten AI bills in one afternoon on the thirtieth of September, including SB nine four seven, the No Robo Bosses Act, banning sole AI firing or discipline decisions and requiring human review. — An AI agent chained two Zammad zero days to root in seconds inside DIVD, the Dutch Institute for Vulnerability Disclosure. CVE twenty twenty six one zero two four eight nine, unauthenticated remote code execution. CVE twenty twenty six one zero two four nine zero, local privilege escalation to root. The first widely documented, CVE assigned, in the wild AI agent exploitation chain. — Manus two point zero gives each agent its own email, phone number, wallet, and cloud computer that keeps running after you close your laptop. The new Cascade harness uses twenty three point two percent fewer tokens, finishes tasks twenty eight point two percent faster, and costs thirty two percent less to run. — Connecticut's AI subscription disclosure law takes effect today, requiring any AI subscription business to provide written notice of usage caps, feature restrictions, and any provider discretion to reduce quality mid subscription, to Connecticut residents. " +
+"Model Watch. Gemini four Argon, one million output tokens, two and ten dollar introductory pricing, Fairwind gated to vetted cyber defence partners first. — Manus Cascade harness, twenty three percent fewer tokens, twenty eight percent faster, thirty two percent cheaper. — No other frontier model release in the last forty eight hours. " +
+"Voices. Satya Nadella, Chairman and CEO of Microsoft, on the Sources with Alex Heath podcast published twenty fifth September, said: quote — I think we are way too self obsessed as an industry about, look at us, how glorious we are — unquote. In the same ten day window as Dario Amodei's Pace the Frontier essay and Yoshua Bengio's UN Security Council speech, a hyperscaler CEO, a frontier lab CEO, and a Turing laureate are saying the same thing in different registers: the industry is talking too loudly about itself relative to what it is actually delivering. So what: cut every sentence from your next launch post that is about your product's capability and keep only the sentences that name a specific user doing a specific job better. " +
+"Today's Signal. Frontier capability is quietly shipping through vetted partner channels before it ships to developers, and the DIVD attack is why. Google Argon rolls out to Fairwind partners first. OpenAI's Astra tier requires Daybreak enrolment. California just made the model decided it an unlawful basis for firing. Connecticut just made the terms of your model subscription a mandated disclosure. And a single autonomous AI agent chained two unknown vulnerabilities to root inside a security organisation inside of seconds. These are not four unrelated stories. They are one story. What is replacing the ship it and let the market absorb it era is a two channel world: a vetted partner channel where capability lands first and the sponsor is identifiable, and a retail channel that comes later with contractual guardrails. " +
+"The Ledger. Season one stands at two and two, thirty seven open. No calls graded today. Today's new call, horizon twelfth November: expect at least one other frontier lab to ship a capability tier model with a named vetted partner first access channel analogous to Fairwind or Daybreak, in a primary source launch post. A paid tier waitlist alone does not satisfy the test. Silence for six weeks grades miss. " +
+"That's today's signal. Thanks for listening.";
+
+let U = null;
+const btn = document.getElementById('listenBtn');
+
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find(v => v.name === 'Daniel' && v.lang && v.lang.startsWith('en')) ||
+         voices.find(v => v.name === 'Alex') ||
+         voices.find(v => /Daniel/i.test(v.name)) ||
+         voices.find(v => v.lang && v.lang.startsWith('en')) ||
+         voices[0];
+}
+
+function speak() {
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { U = null; btn.textContent = '▶ Listen · ~4 min'; };
+  window.speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+}
+
+btn.addEventListener('click', () => {
+  if (U || window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen · ~4 min';
+    return;
+  }
+  if (window.speechSynthesis.getVoices().length === 0) {
+    window.speechSynthesis.onvoiceschanged = speak;
+    window.speechSynthesis.getVoices();
+  } else {
+    speak();
+  }
+});
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+
+</body>
+</html>
