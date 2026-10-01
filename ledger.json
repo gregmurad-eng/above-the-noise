@@ -470,6 +470,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-01-1",
+      "date": "2026-10-01",
+      "call": "Within six weeks, at least one other frontier lab (OpenAI, Anthropic, Meta, xAI, DeepSeek, Mistral, Alibaba, or Moonshot) will ship a new capability-tier model whose launch post explicitly names a vetted-partner-first access channel analogous to Google Fairwind-first for Argon or OpenAI Daybreak-tiered access - a trust-gated channel named in a primary source as the first-weeks distribution path, with a bounded partner population. A paid-tier waitlist alone does not satisfy the test.",
+      "basis": "Google Gemini 4 Argon shipped on 30 September 2026 to Fairwind partners first (not to developers). It is the second frontier launch after OpenAI Astra/Daybreak that explicitly names a vetted-partner channel as the first-weeks distribution path. The California AI package signed the same day and the Zammad / DIVD AI-agent zero-day chain disclosed the same day are the policy and threat-model forces that make the vetted-partner pattern the lowest-regret rollout model for frontier capability.",
+      "horizon": "2026-11-12",
+      "test": "By 2026-11-12, at least one further frontier-lab capability launch names a vetted-partner-first distribution channel in a primary source (lab blog, release notes, or model card). The channel must have an identifiable sponsor and a bounded partner population; a paid-tier waitlist or Enterprise sales motion does not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
