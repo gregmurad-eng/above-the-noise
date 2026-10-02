@@ -482,6 +482,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-02-1",
+      "date": "2026-10-02",
+      "call": "The FTC will formally serve civil investigative demands (6(b) orders or equivalent compulsory process) to at least one of OpenAI or Anthropic within the next seven weeks.",
+      "basis": "Reuters and ABC News reported on 2026-10-01 that the FTC is preparing CIDs to both labs and plans to seek documents and executive testimony, including from METR. The agency said the demands are likely to be sent in the coming weeks. The practice-rule bar is to grade the regulators actual filing, not the news coverage of it.",
+      "horizon": "2026-11-20",
+      "test": "By 2026-11-20, at least one civil investigative demand or equivalent FTC compulsory process is confirmed on the record by a primary source - an FTC statement or public filing, a company 8-K or similar SEC disclosure, or a published legal document. A news-outlet report citing an anonymous source does not satisfy the test. Silence through the horizon date grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
