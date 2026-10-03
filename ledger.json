@@ -494,6 +494,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-03-1",
+      "date": "2026-10-03",
+      "call": "By 2026-11-15, at least one named major AI-agent-orchestration framework (Flowise, Langflow, LangChain, LlamaIndex, Haystack, CrewAI, or AutoGen) will publish a security-hardening release \u2014 a changelog, advisory, or model-card-equivalent \u2014 that explicitly addresses prompt-injection-reachable code-execution nodes, OR will formally deprecate / sandbox-by-default a code-execution node that previously ran unsandboxed.",
+      "basis": "Today's Lead on Google GTIG's Vulnerability Discovery and Exploitation Trends in the AI Era report (published 30 Sep 2026): 50% of AI-related CVEs in 2026 live in orchestration middleware; disclosures in that layer are up 347% year-over-year; the named exploitation path is prompt injection or crafted workflow JSONs reaching dynamic-code-execution nodes shipped by default. Named exemplars include CVE-2026-5027 and CVE-2025-3248 in Langflow.",
+      "horizon": "2026-11-15",
+      "test": "A primary-source changelog, security advisory, or official release note from any of the named orchestration frameworks (Flowise, Langflow, LangChain, LlamaIndex, Haystack, CrewAI, AutoGen), dated on or before 2026-11-15, that explicitly names the attack class (prompt injection, workflow-JSON injection, code-execution-node sandbox escape, or equivalent wording) AND names the affected component. A generic security-improvements line does not satisfy the test; neither does a third-party blog post without a corresponding framework release.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
