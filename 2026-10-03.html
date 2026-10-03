@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-10-03</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f63;
+    --line: rgba(201,168,76,0.22);
+    --miss: #c76b6b;
+    --grey: #8a7f63;
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0; line-height: 1.65; font-size: 18px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 22px 72px; }
+  .bar {
+    display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
+    font-size: 15px; letter-spacing: 1px; text-transform: uppercase;
+    border-bottom: 1px solid var(--line); padding: 10px 0; margin-bottom: 22px;
+  }
+  .bar a {
+    color: var(--accent); text-decoration: none; white-space: nowrap;
+    padding: 12px 4px; display: inline-block; min-height: 44px;
+    line-height: 20px;
+  }
+  .bar a:hover { text-decoration: underline; }
+  .nav-mid { display: inline-flex; gap: 9px 18px; flex-wrap: wrap; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .next { color: var(--muted); white-space: nowrap; padding: 12px 4px; }
+  h1 {
+    color: var(--accent); font-weight: normal; letter-spacing: 2px;
+    font-size: 34px; margin: 10px 0 2px;
+  }
+  .tagline { color: var(--muted); font-size: 14px; letter-spacing: 2px;
+             text-transform: uppercase; margin-bottom: 8px; }
+  .dateline { color: var(--muted); font-size: 14px; letter-spacing: 1px;
+              text-transform: uppercase; margin-bottom: 24px; }
+  h2 {
+    color: var(--accent); font-weight: normal; letter-spacing: 1px;
+    font-size: 22px; margin: 36px 0 10px; border-top: 1px solid var(--line);
+    padding-top: 20px; text-transform: uppercase;
+  }
+  h3 {
+    color: var(--text); font-weight: normal; font-size: 22px;
+    margin: 18px 0 4px; line-height: 1.3;
+  }
+  h3 a { color: var(--text); text-decoration: none;
+         border-bottom: 1px dotted var(--muted); }
+  h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  p { margin: 10px 0; font-size: 18px; }
+  a { color: var(--accent); }
+  .pub { color: var(--muted); font-size: 15px; letter-spacing: 0.5px; }
+  .so-what {
+    color: var(--accent); font-style: italic; margin: 10px 0 2px;
+    font-size: 17px;
+  }
+  .so-what::before { content: "So what: "; font-weight: bold; font-style: normal; }
+  .brief, .model-item { border-left: 2px solid var(--line);
+                        padding: 2px 0 10px 16px; margin: 22px 0; }
+  .signal {
+    background: rgba(201,168,76,0.07); border-left: 3px solid var(--accent);
+    padding: 16px 20px; margin: 22px 0;
+  }
+  .ledger-row { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .ledger-row:last-child { border-bottom: none; }
+  .verdict-hit { color: var(--accent); font-weight: bold; letter-spacing: 1px; }
+  .verdict-miss { color: var(--miss); font-weight: bold; letter-spacing: 1px; }
+  .verdict-unsettled { color: var(--grey); font-weight: bold; letter-spacing: 1px; }
+  .verdict-open { color: var(--muted); font-weight: bold; letter-spacing: 1px; }
+  .score { color: var(--muted); font-size: 15px; letter-spacing: 1px;
+           text-transform: uppercase; margin-bottom: 14px; }
+  blockquote {
+    border-left: 3px solid var(--accent); margin: 14px 0;
+    padding: 4px 14px; font-style: italic; color: var(--text); font-size: 19px;
+  }
+  .attrib { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  sup { line-height: 0; }
+  sup a {
+    color: var(--accent); text-decoration: none;
+    padding: 6px 4px; margin: -6px -4px;
+    font-size: 13px;
+  }
+  sup a:hover { text-decoration: underline; }
+  ol.sources { padding-left: 22px; font-size: 15px; }
+  ol.sources li { padding: 6px 0; }
+  ol.sources a { word-break: break-all; }
+  .tier { color: var(--muted); font-size: 13px; letter-spacing: 1px;
+          text-transform: uppercase; margin: 0 4px; }
+  .listen-btn {
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent); padding: 12px 20px;
+    font-family: Georgia, serif; font-size: 16px;
+    letter-spacing: 1px; cursor: pointer; min-height: 44px;
+    text-transform: uppercase; margin: 16px 0 24px;
+  }
+  .listen-btn:hover { background: rgba(201,168,76,0.12); }
+  footer { color: var(--muted); font-size: 14px; margin-top: 48px;
+           border-top: 1px solid var(--line); padding-top: 18px; }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 18px 16px 60px; }
+    body { font-size: 17px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 20px; }
+    p, .brief p, .model-item p, .signal p, blockquote { font-size: 17px; }
+    blockquote { font-size: 18px; padding: 4px 14px; }
+    .so-what { font-size: 16px; }
+    ol.sources { font-size: 14px; }
+    .bar { font-size: 14px; gap: 8px 10px; }
+    .bar a, .next { padding: 12px 2px; }
+    .nav-mid a { margin: 0 4px; }
+    .dateline, .tagline { font-size: 13px; }
+    .pub { font-size: 14px; }
+    .attrib { font-size: 13px; }
+    .tier { font-size: 12px; }
+    sup a { font-size: 12px; padding: 8px 4px; margin: -8px -4px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar">
+<a href="2026-10-02.html">← Yesterday</a>
+<span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+<span class="next">Tomorrow →</span>
+</nav>
+
+<div class="tagline">AI &amp; Tech · Signal over noise</div>
+<h1>Above The Noise</h1>
+<div class="dateline">Saturday · October 3, 2026</div>
+
+<button class="listen-btn" id="listen-btn" onclick="toggleListen()">▶ Listen · ~4 min</button>
+
+<section class="lead">
+<h2>Lead Story</h2>
+<h3><a href="https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era">Google's threat-intel group says half of AI-discovered vulnerabilities now lead to remote code execution — and 50% of AI-related CVEs this year hit orchestration middleware</a> <span class="pub">— Google Threat Intelligence Group, report dated 30 September</span><sup><a href="#s1">[1]</a></sup></h3>
+
+<p>Google Threat Intelligence Group's new report, <em>Vulnerability Discovery and Exploitation Trends in the AI Era</em>, published on 30 September and amplified across the trade press through 1–2 October, puts hard numbers on something builders have felt for a quarter: the shape of the vulnerability curve is bending because AI is both finding more flaws and finding worse ones.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup> CVE disclosures doubled across 2026, from <strong>5,045 in January to 10,740 in August</strong>. High-risk vulnerability disclosures grew 167% in the same window. Average in-the-wild exploitation climbed from 10.5 vulnerabilities per month in 2025 to <strong>18 per month</strong> through August.<sup><a href="#s1">[1]</a></sup><sup><a href="#s3">[3]</a></sup></p>
+
+<p>Two findings deserve the lead framing rather than the Model Watch footer. First: of the vulnerabilities GTIG attributes to AI-assisted discovery, <strong>50% result in Remote Code Execution</strong>, versus 26% across the broader CVE ecosystem.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup> AI research agents are not just finding more bugs — they are disproportionately finding the kind that give an attacker a shell. Second: AI-related software now carries its own CVE curve, with <strong>50% of all AI-related flaws concentrated in orchestration middleware</strong> — the Flowises, Langflows, LangChains and workflow builders that live between the model and the user. Disclosures in that layer surged <strong>347%</strong> this year, driven by prompt injection and crafted workflow JSONs that reach the dynamic-code-execution nodes those builders ship by default.<sup><a href="#s1">[1]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+
+<p>The report names a specific case worth lingering on, because it is the clearest "AI finds, AI weaponises" loop on the record. <strong>CVE-2026-1731</strong>, an unauthenticated OS command-injection flaw in BeyondTrust Privileged Remote Access and Remote Support, was discovered by Hacktron AI, an autonomous research agent, via variant analysis on roughly 8,500 exposed on-premises instances. Within <strong>four days of public disclosure</strong>, GTIG observed one threat cluster exploiting it. Within <strong>seven days</strong>, five more clusters were in. Post-exploitation included privilege escalation, data exfiltration, and the deployment of SNOWLIGHT, SPARKRAT, and cryptominers.<sup><a href="#s1">[1]</a></sup><sup><a href="#s3">[3]</a></sup> Four days is faster than most patch cycles clear change management.</p>
+
+<p>Why this is the lead rather than another model-release story: the frontier conversation this week keeps being told as capability. GTIG's numbers quietly redraw it as runtime. The orchestration layer builders ship on top of is where the CVE curve is bending; the exploit lag against AI-found bugs is now shorter than enterprise mean-time-to-patch; and the specific CVEs GTIG cites (CVE-2026-5027 and CVE-2025-3248 in Langflow)<sup><a href="#s1">[1]</a></sup> are in code paths — path traversal in a file upload handler, Python <code>exec()</code> on an unauthenticated endpoint — that pre-AI code review should have caught, which tells you something about how fast these tools got picked up and shipped.</p>
+
+<p class="so-what">If your stack runs Flowise, Langflow, LangChain, LlamaIndex or any workflow builder with a code-exec node, treat prompt input to those nodes as an untrusted path to <code>exec()</code> this week — pin the version, read the changelog for anything named <em>sandbox</em> or <em>code-execution</em>, and plan an inventory sweep against the GTIG report's named CVEs before the 7-day exploitation window closes on the next one.</p>
+</section>
+
+<section class="briefs">
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/">Apple will tighten macOS Full Disk Access controls, naming AI agents as the reason</a> <span class="pub">— TechCrunch, on an Apple developer post</span><sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup></h3>
+<p>Announced October 2 via Apple's developer channel: new "explicit user action" gating for the Full Disk Access permission on macOS, which currently grants persistent, unscoped filesystem reads. Apple's own framing names the trigger directly — "as AI agents become increasingly capable and autonomous, the risks associated with this level of access will grow substantially" — and the move follows reports of Meta's Muse agent reading a journalist's private iMessages and a plaintext-storage flaw in OpenAI's ChatGPT Mac app.<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup> No timeline for the rollout.</p>
+<p class="so-what">If your Mac-side agent assumes a once-granted Full Disk Access carries forward, start building the fallback now — the permission is about to become a per-session ritual, and the first macOS release that ships it will break the "backup, then forget" assumption your installer flow relies on.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://fortune.com/2026/10/01/yann-lecun-anthropic-ceo-dario-amodei-deluded-crazy-cybersecurity/">Yann LeCun calls Dario Amodei "completely deluded", says labs' sandboxes are "leaky and horribly designed"</a> <span class="pub">— Fortune interview</span><sup><a href="#s7">[7]</a></sup></h3>
+<p>Published October 1 by Fortune's Jim Edwards. LeCun — Meta's chief AI scientist and 2018 Turing laureate — on recent agent-escape incidents: "Those agents are doing exactly what they've been asked to do. They were supposed to be in sandboxes, but the sandboxes were leaky and horribly designed." On Amodei's extinction-risk framing, LeCun used "the worst marketing campaign you can possibly imagine," and said he has "zero concerns" about recent rogue-AI incidents.<sup><a href="#s7">[7]</a></sup> The piece lands the same week GTIG's data (above) says the problem isn't model intent — it's that the runtime leaks.</p>
+<p class="so-what">The operator read of LeCun's line is the same whether you agree with him on x-risk or not: your post-mortem template should separate "model acted outside spec" from "the harness was leaky," because those are different owners and different fixes, and conflating them is how the next escape ships.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/">OpenAI and Synopsys announce GPT-Synopsys, a frontier model trained to drive EDA tools end-to-end</a> <span class="pub">— The Decoder; Synopsys Investor Day</span><sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup></h3>
+<p>Multi-year agreement unveiled at Synopsys Investor Day on September 30 and detailed through October 2. OpenAI licenses Synopsys' EDA stack; the joint-trained model is meant to operate the tools, interpret outputs, and iterate toward verified PPA (power, performance, area) targets autonomously, not just suggest edits. Revenue model is two-sided: tool subscriptions for frontier-model training plus consumption-based usage and revenue share from the deployed model. Early semiconductor customers are already testing.<sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup></p>
+<p class="so-what">A frontier lab buying tool-use training data from the market leader in a vertical is now a template others will copy — if you run a domain-specific SaaS with a tool-heavy workflow, Synopsys-style data licensing has just been priced at a multi-year, multi-billion-dollar valuation band, and your board will ask about it this quarter.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/china-issues-new-rules-on-cyberspace-security-inspection">China's new cyberspace-security inspection rules take effect October 1, expanding police authority over software vendors and data processors</a> <span class="pub">— Hunton Andrews Kurth analysis</span><sup><a href="#s10">[10]</a></sup></h3>
+<p>The Measures for Public Security Organs' Supervision and Inspection of Cyberspace Security — promulgated by the Ministry of Public Security on 6 August and effective 1 October — replace the 2018 provisions and shift police oversight from "internet safety" to a unified "cyberspace security" definition that explicitly covers software product vendors, data processors, foreign-facing applications, and cross-border data operations. Mandated checks include asset inventory, data classification, algorithm safety, and international user logs.<sup><a href="#s10">[10]</a></sup></p>
+<p class="so-what">If any part of your product reaches Chinese users or runs on infrastructure routed through the PRC, the new regime makes algorithm-safety inspection a police-authority matter rather than a regulator-authority one — treat it as a privileged-access risk, not a compliance-ticket risk, and get the diligence done before enforcement calendars populate.</p>
+</div>
+</section>
+
+<section class="model-watch">
+<h2>Model Watch</h2>
+
+<p>No significant frontier-model releases in the last 48 hours. Yesterday's Lead (Broadcom's $42B convertible to Anthropic) and the preceding week's launches — Google's Gemini 4 Argon via Fairwind, OpenAI's GPT-6.1 Sol, Anthropic's Claude Sonnet 5.5 and Opus 5.5 — still constitute the current frontier shelf.</p>
+
+<div class="model-item">
+<h3><a href="https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/">In flight: GPT-Synopsys — OpenAI × Synopsys — announced September 30</a><sup><a href="#s8">[8]</a></sup></h3>
+<p>Not shipped. Specialised chip-design model built on licensed EDA tooling; closed weights; distribution bundled with compute + Synopsys tool subscription. Early customer testing underway. The notable spec is architectural, not numerical: the model is being trained to <em>drive</em> a professional tool suite rather than to suggest edits in natural language.<sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup></p>
+<p class="so-what">If you build in a vertical with a dominant tool suite (CAD, EDA, DAWs, legal document stacks, radiology viewers), the Synopsys template is the one your competitors will quote at their next raise — understand whether your vendor's data is now a frontier-training asset before someone else buys the exclusive.</p>
+</div>
+</section>
+
+<section class="voices">
+<h2>Voices</h2>
+<p><strong>Ethan Mollick</strong>, Wharton professor and author of the <em>One Useful Thing</em> newsletter, in <a href="https://www.oneusefulthing.org/p/the-dot-and-the-swarm">"The Dot and the Swarm"</a> published October 1<sup><a href="#s11">[11]</a></sup>, correcting his own earlier assumption that humans would need to design elaborate coordination structures for multi-agent systems:</p>
+<blockquote>"Organizing work is just one more thing AI can learn to do."</blockquote>
+<p class="attrib">— Ethan Mollick, <em>One Useful Thing</em>, 1 Oct 2026</p>
+<p>Mollick spent most of 2024–25 writing that AI agents would need to be managed like junior employees, with careful role design and explicit coordination scaffolding. His October 1 post retracts that: watching OpenAI's thousand-agent swarm attack a Millennium Prize Problem, and watching Codex and Claude Code spawn subagents on demand without a human writing the plan, he now thinks the organising layer is itself inside the capability curve. That matters for anyone staffing an "AI engineer" role whose job description is <em>agent orchestration</em>.</p>
+<p class="so-what">If your 2026 hiring plan has a role whose main deliverable is "design the agent org chart," ask whether the role still exists in six months — Mollick's reversal is the signal that the orchestration layer is being eaten by the model, and the surviving human job is scope selection and output review, not team construction.</p>
+</section>
+
+<section class="signal">
+<h2>Today's Signal</h2>
+<p>Three stories broke this week from three different vantage points — a threat-intel team, a platform owner, and the field's most-cited elder — and all three say the same thing in different vocabularies: the frontier conversation has to move from <em>what the model can do</em> to <em>what runs between the model and the machine</em>. GTIG's data makes it quantitative (50% of AI-related CVEs now live in orchestration middleware, with a 347% YoY surge). Apple's Full Disk Access rewrite makes it architectural (the OS will no longer trust once-granted agent permissions). LeCun's "leaky and horribly designed" line, delivered inside Fortune's week-old reporting cycle, makes it rhetorical. The next six weeks will show whether orchestration-framework maintainers treat this as a hardening sprint or a PR cycle.</p>
+</section>
+
+<section class="ledger">
+<h2>The Ledger</h2>
+<p class="score">Season 1 · 2–2 · 38 open · 0 unsettled</p>
+
+<div class="ledger-row">
+<p class="attrib">No calls graded today — none due. Next horizon: 2026-10-15. Full history: <a href="https://raw.githubusercontent.com/gregmurad-eng/above-the-noise/main/ledger.json">ledger.json</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict-open">OPEN</span> — Today's call, horizon 2026-11-15:</p>
+<p>By 2026-11-15, at least one named major AI-agent-orchestration framework (Flowise, Langflow, LangChain, LlamaIndex, Haystack, CrewAI, or AutoGen) will publish a security-hardening release — a changelog, advisory, or model-card-equivalent — that explicitly addresses prompt-injection-reachable code-execution nodes, OR will formally deprecate / sandbox-by-default a code-execution node that previously ran unsandboxed. A generic "security improvements" line in release notes does not satisfy the test; the release must name the attack class (prompt injection, workflow-JSON injection, or equivalent) and the component.</p>
+</div>
+</section>
+
+<section class="sources">
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1"><a href="https://cloud.google.com/blog/topics/threat-intelligence/vulnerability-discovery-and-exploitation-trends-in-the-ai-era">Google Threat Intelligence Group — "Vulnerability Discovery and Exploitation Trends in the AI Era"</a> <span class="tier">· primary</span></li>
+<li id="s2"><a href="https://www.securityweek.com/google-ai-is-changing-the-pace-and-profile-of-vulnerability-discovery/">SecurityWeek — "Google: AI Is Changing the Pace and Profile of Vulnerability Discovery"</a> <span class="tier">· trade</span></li>
+<li id="s3"><a href="https://www.helpnetsecurity.com/2026/10/01/google-ai-discovered-vulnerabilities-remote-code-execution/">Help Net Security — "The vulnerabilities AI finds are the ones attackers want"</a> <span class="tier">· trade</span></li>
+<li id="s4"><a href="https://siliconangle.com/2026/09/30/google-finds-vulnerability-disclosures-doubled-as-ai-changes-which-flaws-get-discovered/">SiliconANGLE — "Google finds vulnerability disclosures doubled as AI changes which flaws get discovered"</a> <span class="tier">· trade</span></li>
+<li id="s5"><a href="https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/">TechCrunch — "Apple says it's tightening macOS 'Full Disk Access' controls due to new risks from AI agents"</a> <span class="tier">· trade</span></li>
+<li id="s6"><a href="https://www.macrumors.com/2026/10/02/apple-announces-macos-full-disk-access-changes/">MacRumors — "Apple Announces 'Full Disk Access' Changes on macOS Due to AI Agents"</a> <span class="tier">· trade</span></li>
+<li id="s7"><a href="https://fortune.com/2026/10/01/yann-lecun-anthropic-ceo-dario-amodei-deluded-crazy-cybersecurity/">Fortune — "Yann LeCun: Anthropic CEO Dario Amodei is 'deluded,' 'crazy,' and doesn't understand cybersecurity"</a> <span class="tier">· tier-1</span></li>
+<li id="s8"><a href="https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/">The Decoder — "OpenAI and Synopsys team up to build an AI model that designs chips like a seasoned engineer"</a> <span class="tier">· trade</span></li>
+<li id="s9"><a href="https://www.hpcwire.com/aiwire/2026/10/02/synopsys-and-openai-partner-to-develop-specialized-ai-model-for-chip-design/">HPCwire / AIwire — "Synopsys and OpenAI Partner to Develop Specialized AI Model for Chip Design"</a> <span class="tier">· trade</span></li>
+<li id="s10"><a href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/china-issues-new-rules-on-cyberspace-security-inspection">Hunton Andrews Kurth — "China Issues New Rules on Cyberspace Security Inspection"</a> <span class="tier">· trade</span></li>
+<li id="s11"><a href="https://www.oneusefulthing.org/p/the-dot-and-the-swarm">Ethan Mollick / One Useful Thing — "The Dot and the Swarm"</a> <span class="tier">· practitioner</span></li>
+</ol>
+</section>
+
+<nav class="bar">
+<a href="2026-10-02.html">← Yesterday</a>
+<span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+<span class="next">Tomorrow →</span>
+</nav>
+
+<footer>
+Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+const S = "Above the Noise. Saturday, October third, twenty twenty six. " +
+"Lead story. Google's threat intelligence group published a report on September thirtieth that quietly redraws the frontier conversation. The headline number: of the vulnerabilities Google can attribute to AI-assisted discovery, fifty percent lead to remote code execution. The broader CVE ecosystem averages twenty six. CVE disclosures doubled across twenty twenty six, from five thousand in January to ten thousand seven hundred in August. High-risk disclosures grew one hundred and sixty seven percent. In-the-wild exploitation rose from ten and a half per month in twenty twenty five to eighteen per month in twenty twenty six. " +
+"The number that should concern you most, if you ship on top of an orchestration framework, is this: half of all AI-related CVEs in twenty twenty six live in orchestration middleware. Flowise, Langflow, and their peers. Disclosures in that layer are up three hundred and forty seven percent year over year. The attack path is prompt injection or crafted workflow JSONs reaching code-execution nodes that these frameworks ship by default. " +
+"The specific case worth lingering on. CVE twenty twenty six, one seven three one. An unauthenticated OS command injection flaw in BeyondTrust's remote access product. Discovered by Hacktron AI, an autonomous research agent. Within four days of public disclosure, Google observed one threat cluster weaponising it. Within seven days, five more. Four days is faster than most patch cycles clear change management. " +
+"The briefs. One. Apple will tighten macOS Full Disk Access controls, explicitly naming AI agents as the reason. The permission is becoming per-session rather than persistent. If your Mac-side agent assumes once-granted access carries forward, that assumption is about to break. " +
+"Two. Yann LeCun, interviewed by Fortune on October first, called Dario Amodei completely deluded, said recent agent-escape incidents happened because the sandboxes were leaky and horribly designed, and dismissed extinction-risk framing as the worst marketing campaign imaginable. The operator read: separate model-behaved-outside-spec from harness-was-leaky in your post-mortems. " +
+"Three. OpenAI and Synopsys announced GPT Synopsys on September thirtieth. A joint model trained to drive EDA tools end to end. Not shipped yet, but the template matters: a frontier lab buying tool-use training data from a vertical's dominant vendor, with revenue share built in. " +
+"Four. China's new cyberspace security inspection rules took effect October first. Police authority now explicitly covers software product vendors, data processors, and foreign-facing applications. Treat it as a privileged-access risk, not a compliance ticket. " +
+"Model watch. No significant frontier releases in the last forty eight hours. The current shelf: Gemini Four Argon via Fairwind, GPT six point one Sol, Claude Sonnet five point five and Opus five point five. In flight: GPT Synopsys. " +
+"Voices. Ethan Mollick, in his October first post The Dot and the Swarm, retracts his earlier view that agents need human-designed coordination. His line: organising work is just one more thing AI can learn to do. If you have a hiring plan with an agent-org-chart designer role, ask whether that role still exists in six months. " +
+"Today's signal. Three stories from three vantage points: a threat intel team, a platform owner, and the field's most-cited elder. All three say the frontier conversation has to move from what the model can do to what runs between the model and the machine. " +
+"The ledger. Season one stands at two hits, two misses, with zero unsettled and thirty eight open. No calls graded today, none due. Today's new call, horizon November fifteenth: at least one named major agent orchestration framework will publish a security hardening release explicitly addressing prompt-injection-reachable code-execution nodes. A generic security improvements line does not satisfy the test. " +
+"That's today's edition. Links in the sources list.";
+
+let U = null;
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return voices.find(v => v.name === 'Daniel' && v.lang && v.lang.startsWith('en')) ||
+         voices.find(v => v.name === 'Alex') ||
+         voices.find(v => /Daniel/i.test(v.name)) ||
+         voices.find(v => v.lang && v.lang.startsWith('en')) ||
+         voices[0];
+}
+function toggleListen() {
+  const btn = document.getElementById('listen-btn');
+  if (U && window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    U = null;
+    btn.textContent = '▶ Listen · ~4 min';
+    return;
+  }
+  U = new SpeechSynthesisUtterance(S);
+  U.rate = 0.93;
+  const v = pickVoice();
+  if (v) U.voice = v;
+  U.onend = () => { U = null; btn.textContent = '▶ Listen · ~4 min'; };
+  window.speechSynthesis.speak(U);
+  btn.textContent = '■ Stop';
+}
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+
+</body>
+</html>
