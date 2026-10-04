@@ -506,6 +506,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-04-1",
+      "date": "2026-10-04",
+      "call": "By 2026-11-18, at least one additional LLM-gateway or LLM-proxy project distinct from GitLab's AI Gateway will publish a security advisory for a CVSS-high-or-critical flaw whose root cause is prompt-template or tool-call sandbox escape leading to arbitrary command execution or data exfiltration on the gateway host.",
+      "basis": "Today's Lead on CVE-2026-90970 (GitLab AI Gateway, CVSS 9.9, disclosed 2026-10-02): a custom-flow prompt template let an authenticated Duo Agent user escape the template sandbox and execute arbitrary commands on the gateway. The same shape, prompts and tool invocations crossing a weakly-walled sandbox into the host process, exists in every self-hosted LLM gateway and proxy on the market (LiteLLM, Portkey, Helicone, LangGraph Platform, Flowise self-host, OpenRouter gateway, Vercel AI Gateway self-host). CVE-2026-42271 in LiteLLM landed in the same class earlier this quarter.",
+      "horizon": "2026-11-18",
+      "test": "A primary-source advisory or CVE record dated on or before 2026-11-18 for any LLM-gateway or LLM-proxy project (candidates include LiteLLM, Portkey, Helicone, LangGraph Platform, Flowise, OpenRouter gateway, Vercel AI Gateway, Cloudflare AI Gateway) that (a) carries a CVSS score of 7.0 or higher, (b) is distinct from GitLab's AI Gateway, and (c) explicitly names prompt-template sandbox escape, tool-call sandbox escape, or arbitrary-command-execution-on-the-gateway as the root cause. A generic info-disclosure CVE or a client-library-only bug does not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
