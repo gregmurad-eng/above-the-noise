@@ -518,6 +518,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-06-1",
+      "date": "2026-10-06",
+      "call": "Within six weeks, at least two of the six 2026-10-01 Joint Commitment on Frontier Responsibilities signatories (Anthropic, OpenAI, Google, Meta, xAI, Nvidia) will publicly map their internal controls to the pact's commitment areas, with primary-source documents (RSP update, safety-case memo, model-card appendix, or auditor engagement letter) referencing the Oct 1 pact by name.",
+      "basis": "On 2026-10-01 six CEOs signed the Joint Commitment on Frontier Responsibilities; on 2026-10-04 the White House announced the Super Intelligence Force with a 120-day report clock; on 2026-10-05 lab policy leads testified at NYC Council. The pact is voluntary but is now the measurement frame SIF will apply.",
+      "horizon": "2026-11-20",
+      "test": "By 2026-11-20, two or more primary-source documents from signatory labs cite the Oct 1 Joint Commitment on Frontier Responsibilities and map at least one specific internal control to one of its commitment areas.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
