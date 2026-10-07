@@ -530,6 +530,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-07-1",
+      "date": "2026-10-07",
+      "call": "The 'deployed in your jurisdiction' framing Arthur Mensch repeated at Ai Everything Abu Dhabi on 2026-10-06 is a sovereign-procurement wedge, not rhetoric. By 2026-11-20, at least one named sovereign or regional buyer (EU member state, GCC government, UK, Japan, South Korea, Singapore, or India) will publicly announce an AI-platform deployment commitment anchored to Mistral or another non-US frontier lab, with data-sovereignty or jurisdictional deployment named as an explicit basis.",
+      "basis": "On 2026-10-06 Mistral shipped Mistral Large 4 ('Le Chonk'), a 1T-parameter / 49B-active model trained end-to-end in European data centres on 3,800 Grace Blackwell GPUs, with open weights promised for 2026-10-27. Mensch unveiled it at Ai Everything Abu Dhabi and told Reuters 'The narrative that Europe cannot compete is something that is not true', and that 'having very powerful cyber models deployed here in Abu Dhabi in a way where the deployment is fully under Abu Dhabi control is going to be quite important.' Reflection AI's 2026-10-05 Beam launch (501B total / 23B active, Apache-2.0 weights) is pitched the same way: a Western open-weights answer to Chinese labs. The pitch is now a procurement line, not a tweet.",
+      "horizon": "2026-11-20",
+      "test": "A primary-source announcement from a named sovereign or regional buyer (national ministry, regulator, state investment vehicle, or equivalent official body in an EU member state, GCC government, UK, Japan, South Korea, Singapore, or India), OR a lab-side press release that names the sovereign buyer and the lab, dated on or before 2026-11-20, that BOTH (a) names a specific non-US frontier lab (Mistral, DeepSeek, Alibaba Qwen, Moonshot, Z.ai / GLM, or a comparable non-US lab) as the vendor, AND (b) explicitly cites data-sovereignty, data-residency, or jurisdictional control as a stated reason for the choice. Generic AI partnerships without a sovereignty rationale do not count. Spot cloud or hyperscaler deals do not count. Pure R&D grants without a deployment commitment do not count.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
