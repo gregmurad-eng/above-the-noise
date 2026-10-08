@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · 8 October 2026</title>
+<style>
+  :root { --bg:#0d0a06; --ink:#e0d4b8; --accent:#c9a84c; --muted:#8a7f6a; --miss:#b85c5c; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:Georgia,'Times New Roman',serif; line-height:1.6; }
+  body { max-width:720px; margin:0 auto; padding:28px 24px 56px; overflow-x:hidden; }
+  h1 { font-size:38px; letter-spacing:0.5px; margin:0 0 2px; color:var(--accent); font-weight:normal; }
+  .tagline { color:var(--muted); font-style:italic; font-size:14px; margin:0 0 2px; }
+  .dateline { color:var(--muted); font-size:14px; margin:0 0 22px; text-transform:uppercase; letter-spacing:1px; }
+  h2 { font-size:20px; margin:34px 0 10px; color:var(--accent); border-bottom:1px solid #2a241a; padding-bottom:6px; letter-spacing:0.4px; font-weight:normal; }
+  h3 { font-size:18px; margin:18px 0 6px; color:var(--ink); font-weight:normal; }
+  p { font-size:17px; margin:10px 0; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  a:hover { border-bottom-style:solid; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; border:1px solid #2a241a; padding:10px 14px; margin:18px 0; font-size:14px; }
+  .bar a, .bar span { white-space:nowrap; }
+  .nav-mid { display:inline-flex; gap:18px; }
+  .nav-mid a { color:var(--accent); margin:0 9px; }
+  .next { color:var(--muted); }
+  .so { color:var(--accent); font-style:italic; display:block; margin-top:6px; font-size:15px; }
+  .so::before { content:"So what: "; font-style:normal; font-weight:bold; letter-spacing:0.5px; }
+  sup a { color:var(--accent); border-bottom:none; padding:6px 4px; margin:-6px -4px; font-size:13px; }
+  blockquote { border-left:3px solid var(--accent); margin:14px 0; padding:4px 16px; color:var(--ink); font-style:italic; }
+  .signal { border:1px solid var(--accent); padding:18px; margin:18px 0; background:#120e07; }
+  .signal p { font-size:17px; margin:0; }
+  .ledger-row { padding:10px 0; border-bottom:1px dashed #2a241a; font-size:16px; }
+  .ledger-row:last-child { border-bottom:none; }
+  .verdict { font-weight:bold; letter-spacing:1px; }
+  .hit { color:var(--accent); }
+  .miss { color:var(--miss); }
+  .unsettled { color:var(--muted); }
+  .open-tag { color:var(--muted); letter-spacing:1px; font-weight:bold; }
+  .record { font-size:17px; color:var(--ink); margin:0 0 10px; }
+  ol.sources { font-size:15px; padding-left:28px; }
+  ol.sources li { margin:7px 0; }
+  .tier { color:var(--muted); font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-left:4px; }
+  .listen { background:transparent; border:1px solid var(--accent); color:var(--accent); font:inherit; font-size:15px; padding:12px 20px; margin:12px 0; cursor:pointer; letter-spacing:1px; min-height:44px; }
+  .listen:hover { background:#1a1510; }
+  footer { color:var(--muted); font-size:13px; margin-top:40px; border-top:1px solid #2a241a; padding-top:16px; }
+
+  @media (max-width: 480px) {
+    body { padding:20px 16px 48px; font-size:16px; }
+    h1 { font-size:30px; }
+    h2 { font-size:18px; }
+    h3 { font-size:17px; }
+    p { font-size:16px; }
+    .tagline, .dateline, .tier { font-size:14px; }
+    .bar { font-size:14px; padding:10px 12px; }
+    .nav-mid a { margin:0 8px; min-height:44px; display:inline-flex; align-items:center; }
+    .bar > a, .next { min-height:44px; display:inline-flex; align-items:center; }
+    .so { font-size:15px; }
+    sup a { padding:8px 6px; margin:-8px -6px; }
+    .signal p { font-size:16px; }
+    ol.sources { font-size:15px; }
+    .listen { font-size:16px; padding:12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Above The Noise</h1>
+<p class="tagline">AI &amp; Tech · Signal over noise</p>
+<p class="dateline">Thursday, 8 October 2026</p>
+
+<nav class="bar"><a href="2026-10-07.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<button class="listen" id="listen">▶ LISTEN (≈4 min)</button>
+
+<h2>Lead Story</h2>
+<h3>Anthropic cuts Haiku to a dime and meets OpenAI at the floor</h3>
+<p>Anthropic shipped Claude Haiku 5.5 on 7 October and set its price at $0.10 per million input tokens and $0.50 per million output tokens for prompts under 100,000 tokens — a roughly 75% cut from Haiku 4.5 and an exact match to OpenAI's GPT-6 Luna, which began rolling out to Free and Go users of ChatGPT the following morning<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup>. Above 100,000 tokens the price steps up to $0.50 / $2.50. Context remains 1M tokens, output up to 128K, and Anthropic is calling it "the cheapest, fastest, and most capable small model we've ever released"<sup><a href="#s3">[3]</a></sup>.</p>
+
+<p>Two things make this more than a routine refresh. First, timing: Anthropic landed its price cut on the same day OpenAI began the Sol/Luna rollout of GPT-6 to paid tiers<sup><a href="#s4">[4]</a></sup>, and 24 hours before Luna reached free users. That is not a coincidence — the two labs now sit at an identical published floor for the small-and-fast slot, which is where high-volume routing lives (classification, embedding-adjacent lookups, agent sub-calls, bulk extraction). The commodity line has been drawn, and it is drawn at a dime.</p>
+
+<p>Second, a hidden cost shift that is easy to miss. Simon Willison, reading the release the same day, flagged a tokenizer change: "the same long prompt uses around 1.25x as many tokens with Haiku 5.5 compared to Haiku 4.5"<sup><a href="#s5">[5]</a></sup>. On a per-million-token basis Haiku is 75% cheaper. On a per-document basis the delta is smaller. Builders who are routing by cost need to re-benchmark their actual prompts, not accept the headline number.</p>
+
+<p>What is new strategically: Anthropic is now explicitly selling against OpenAI at the price layer, not only the capability layer. For a year the pitch was "pay more for Opus/Sonnet quality." The pitch today is "same price as Luna under 100K, higher benchmark scores." That is a different kind of claim, and it is the first time in this cycle a frontier lab has openly priced to match a direct competitor's small-model floor rather than quietly undercut it. Pricing floors do not stay floors — they get tested.</p>
+<span class="so">If your production routing was built around Haiku 4.5 at $1/$5, you can cut spend ~75% on prompts under 100K by swapping the model slug — but re-run your token counts first; the new tokenizer eats ~25% more tokens per character on long inputs, which eats part of the win.</span>
+
+<h2>The Briefs</h2>
+
+<h3><a href="https://openai.com/index/gpt-6-for-everyone/">OpenAI brings GPT-6 to every ChatGPT tier — OpenAI</a></h3>
+<p>OpenAI began rolling GPT-6 across ChatGPT on 7 October: Sol for Plus/Pro/Business/Enterprise, Luna for Free and Go users starting 8 October<sup><a href="#s4">[4]</a></sup>. Shipped alongside is "Intelligent UI," which lets the model respond with interactive charts, forms, tappable buttons and editable diagrams instead of text alone<sup><a href="#s6">[6]</a></sup>. OpenAI frames it as "a significant shift in how people interact with ChatGPT."</p>
+<span class="so">Any product that embeds ChatGPT via the web share-sheet or iframe now has to assume responses may contain live widgets, not just prose — sanitise and style for it, or your "copy this answer" button will start copying JSON blobs.</span>
+
+<h3><a href="https://www.commerce.senate.gov/press/dem/release/cantwell-outlines-comprehensive-governance-framework-for-safe-and-secure-frontier-ai/">Cantwell releases six-point frontier-AI framework — U.S. Senate Commerce</a></h3>
+<p>Senator Maria Cantwell (D-WA), ranking member of Senate Commerce, published a six-principle framework for frontier AI on 7 October: enforceable federal safety standards, continuous testing/audit, disclosure and oversight, public-private partnerships, protections for children and workers, and U.S.-led global cooperation<sup><a href="#s7">[7]</a></sup>. NIST would set risk-based standards, including for cyber-attack, bio/nuclear uplift, loss of human control, and "rogue agents escaping secure testing environments"<sup><a href="#s8">[8]</a></sup>.</p>
+<span class="so">This is a draft bill in waiting — if you ship an agent that can execute code, assume a near-future compliance ask of "prove it can't escape its sandbox" and start keeping the evidence (seccomp profile, test logs, red-team runs) in a form a NIST auditor could read.</span>
+
+<h3><a href="https://news.un.org/en/story/2026/10/1168529">UN rights chief: "the clock on AI regulation is ticking" — UN News</a></h3>
+<p>UN High Commissioner for Human Rights Volker Türk warned on 5 October that voluntary industry commitments are not enough and that mandatory safeguards are overdue, in a statement endorsing both the Global Dialogue on AI Governance and a joint call from 29 states plus the EU for tighter control of frontier models<sup><a href="#s9">[9]</a></sup>. He singled out the risk of "entire populations… cut off from communication, clean water, heating and financial services at the click of a button."</p>
+<span class="so">If you sell AI into European or multilateral buyers, the ground is shifting from "we signed a voluntary pact" to "which independent audit cleared you" — update your enterprise security questionnaire boilerplate before an RFP forces you to.</span>
+
+<h3><a href="https://www.helpnetsecurity.com/2026/10/01/google-ai-discovered-vulnerabilities-remote-code-execution/">AI-found vulns are twice as likely to enable RCE — Help Net Security / Google TIG</a></h3>
+<p>Google Threat Intelligence Group's rolling study (Jan 2025–Aug 2026) found that half of likely-AI-discovered vulnerabilities enable remote code execution, versus 26% of those found by other means; monthly CVE disclosures roughly doubled across 2026, from 5,045 in January to 10,740 in August<sup><a href="#s10">[10]</a></sup>. BeyondTrust's AI-discovered CVE-2026-1731 was exploited in the wild within four days of disclosure.</p>
+<span class="so">The window from "patch available" to "patch applied" is now measured in days, not weeks — if your dependency-update job runs weekly, that gap is your incident waiting to happen; move critical-severity patching to a daily cadence.</span>
+
+<h2>Model Watch</h2>
+
+<h3><a href="https://www.marktechpost.com/2026/10/07/anthropic-releases-claude-haiku-5-5-a-small-model-with-1m-context-priced-at-0-10-per-million-input-tokens/">Claude Haiku 5.5 — Anthropic (7 Oct 2026)</a></h3>
+<p>$0.10/$0.50 per million tokens under 100K, $0.50/$2.50 above. 1M context, 128K output, effort controls, closed weights<sup><a href="#s3">[3]</a></sup>. Self-reported OSWorld 72.4%.</p>
+<span class="so">Default to Haiku 5.5 for anything high-volume and short-context; keep Luna in the mix for prompts above 100K tokens where Haiku's upper tier is 5× more expensive.</span>
+
+<h3><a href="https://openai.com/index/gpt-6-for-everyone/">GPT-6 Sol &amp; Luna — OpenAI (7–8 Oct 2026)</a></h3>
+<p>Sol routes to paid tiers; Luna to Free/Go. Both include Intelligent UI output mode. OpenAI reports a 44% faster web-search response and real-time streaming during reasoning<sup><a href="#s4">[4]</a></sup>. Closed weights.</p>
+<span class="so">If your product's response renderer only knows how to display Markdown, you now have a parity gap with ChatGPT — users will start asking why your chat answers can't show a slider or a chart.</span>
+
+<h3>Gemini Nano Banana 2.1 — Google (6 Oct 2026)</h3>
+<p>Point release to Google's small-tier model earlier in the week; details limited to Google's own LLM-release timeline aggregate rather than a dedicated blog post. Noted here for completeness; verify against Google AI's model-card page before building on it.</p>
+<span class="so">Treat this as a quiet patch, not a shift — if nothing in Google's own release notes names a capability or price change, don't rebuild your routing around it.</span>
+
+<h2>Voices</h2>
+<p><strong>Simon Willison</strong>, writing on his weblog on 7 October 2026, hours after Anthropic shipped Haiku 5.5<sup><a href="#s5">[5]</a></sup>:</p>
+<blockquote>"If your workloads fit in 100,000 tokens, Haiku is the same price as Luna and reports higher benchmark scores. Above 100,000 tokens, Luna looks like a much better deal."</blockquote>
+<p>Willison is the most consistently useful practitioner voice reading model pricing in public, and his read on Haiku 5.5 is unusually blunt: the two labs are now priced identically for the common case, and the choice collapses to context length rather than vendor loyalty. He also flagged the tokenizer change (same prompt, ~1.25× tokens) — the kind of fine print that moves real production budgets but rarely makes a launch post.</p>
+<span class="so">Add "run the real prompt distribution through both tokenizers" to any Haiku 5.5 vs. Luna bakeoff before you decide — Willison's 1.25× number means a cost comparison done on model prices alone will mislead you by roughly a quarter.</span>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>Frontier labs just drew a commodity line under the small-fast model, and they drew it together. Anthropic matching OpenAI's $0.10/$0.50 price inside 48 hours is not a race to the bottom — it is two labs agreeing, in public, that the floor of this market is a dime. What differentiates small models from here on is not price but context length, tokenizer efficiency, and routing cost at scale. The pricing fight has moved up the stack: Opus-tier reasoning and agent orchestration is where the margin lives now, and the small-fast layer is becoming utility.</p>
+</div>
+
+<h2>The Ledger</h2>
+<p class="record"><strong>Season 1 · 2-2</strong> · 42 open · last graded 2026-10-02</p>
+
+<div class="ledger-row">
+<p>No calls were due today — the next graded calls land as their horizons arrive through October and November. Misses stay visible: a scorecard that only shows hits is a sales deck, not a ledger.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="open-tag">OPEN · 2026-10-08-1</span> — The small-model API price floor has become a commodity line at $0.10/$0.50 per million tokens. Within six weeks, at least one additional major frontier lab will publicly match or beat that floor for a fast/small model via its own pricing page or release post.</p>
+<p><em>Horizon: 2026-11-20. Test: by that date, at least one of Google (Gemini Flash/Nano), Mistral, DeepSeek, Meta, Qwen, or Cohere publishes small-model pricing of $0.10/million input tokens or less via an official pricing page, model card, or release post.</em></p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1"><a href="https://www.anthropic.com/claude/haiku">Anthropic — Claude Haiku product page</a> <span class="tier">primary</span></li>
+<li id="s2"><a href="https://finance.yahoo.com/technology/article/anthropic-reveals-haiku-55-model-as-ai-pricing-war-intensifies-180000423.html">Yahoo Finance — "Anthropic reveals Haiku 5.5 model as AI pricing war intensifies"</a> <span class="tier">tier-1</span></li>
+<li id="s3"><a href="https://www.marktechpost.com/2026/10/07/anthropic-releases-claude-haiku-5-5-a-small-model-with-1m-context-priced-at-0-10-per-million-input-tokens/">MarkTechPost — "Anthropic Releases Claude Haiku 5.5" (7 Oct 2026)</a> <span class="tier">trade</span></li>
+<li id="s4"><a href="https://openai.com/index/gpt-6-for-everyone/">OpenAI — "GPT-6 and Intelligent UI for everyone"</a> <span class="tier">primary</span></li>
+<li id="s5"><a href="https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/">Simon Willison — "Claude Haiku 5.5" (7 Oct 2026)</a> <span class="tier">practitioner</span></li>
+<li id="s6"><a href="https://www.unite.ai/openai-brings-gpt-6-with-intelligent-ui-to-all-chatgpt-tiers/">Unite.AI — "OpenAI Brings GPT-6 With Intelligent UI to All ChatGPT Tiers"</a> <span class="tier">trade</span></li>
+<li id="s7"><a href="https://www.commerce.senate.gov/press/dem/release/cantwell-outlines-comprehensive-governance-framework-for-safe-and-secure-frontier-ai/">U.S. Senate Commerce Committee — "Cantwell Outlines Comprehensive Governance Framework"</a> <span class="tier">primary</span></li>
+<li id="s8"><a href="https://rollcall.com/2026/10/07/sen-maria-cantwell-looks-to-federal-testing-role-in-ai-safety-framework/">Roll Call — "Sen. Maria Cantwell looks to federal testing role in AI safety framework"</a> <span class="tier">tier-1</span></li>
+<li id="s9"><a href="https://news.un.org/en/story/2026/10/1168529">UN News — "'The clock on AI regulation is ticking', warns UN rights chief"</a> <span class="tier">primary</span></li>
+<li id="s10"><a href="https://www.helpnetsecurity.com/2026/10/01/google-ai-discovered-vulnerabilities-remote-code-execution/">Help Net Security — "The vulnerabilities AI finds are the ones attackers want"</a> <span class="tier">trade</span></li>
+</ol>
+
+<nav class="bar"><a href="2026-10-07.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+<script>
+const S = "Above The Noise. Thursday, October eighth, twenty twenty six. Signal over noise. " +
+"Lead story. Anthropic cuts Haiku to a dime and meets OpenAI at the floor. Anthropic shipped Claude Haiku five point five on October seventh and set its price at ten cents per million input tokens and fifty cents per million output, for prompts under one hundred thousand tokens. That is a seventy five percent cut from Haiku four point five, and an exact match to OpenAI's GPT six Luna, which began rolling out to free and Go users the following morning. Above one hundred thousand tokens the price steps up to fifty cents and two dollars fifty. Context stays at one million, output up to one hundred twenty eight thousand. " +
+"Two things make this more than a routine refresh. First, timing. Anthropic landed its price cut on the same day OpenAI began the Sol and Luna rollout of GPT six to paid tiers, and twenty four hours before Luna reached free users. The two labs now sit at an identical published floor for the small and fast slot, which is where high volume routing lives. The commodity line has been drawn, and it is drawn at a dime. " +
+"Second, a hidden cost shift. Simon Willison, reading the release the same day, flagged a tokenizer change: the same long prompt now uses about one point two five times as many tokens. On a per million token basis Haiku is seventy five percent cheaper. On a per document basis the delta is smaller. Rebenchmark your actual prompts before you accept the headline number. " +
+"The Briefs. OpenAI began rolling GPT six across ChatGPT: Sol for paid tiers, Luna for free and Go starting October eighth, with Intelligent UI that lets the model respond with charts, forms, buttons and editable diagrams instead of text alone. Senator Maria Cantwell published a six principle framework for frontier AI, including a NIST testing role for cyber attack, bio and nuclear uplift, loss of human control, and rogue agents escaping secure testing environments. The UN rights chief, Volker Türk, warned on October fifth that voluntary industry commitments are not enough and that mandatory safeguards are overdue, backed by twenty nine states plus the EU. And Google Threat Intelligence Group's rolling study found that half of likely AI discovered vulnerabilities enable remote code execution, versus twenty six percent of those found by other means. " +
+"Model Watch. Claude Haiku five point five from Anthropic, October seventh: ten cents and fifty cents under one hundred thousand tokens, fifty cents and two fifty above, one million context, one hundred twenty eight K output, closed weights, OSWorld self reported at seventy two point four percent. GPT six Sol and Luna from OpenAI, October seventh and eighth, with Intelligent UI output mode, forty four percent faster web search response, real time streaming during reasoning. Gemini Nano Banana two point one from Google, October sixth, a point release noted for completeness. " +
+"Voices. Simon Willison, writing on his weblog on October seventh, hours after Anthropic shipped Haiku five point five. Quote: If your workloads fit in one hundred thousand tokens, Haiku is the same price as Luna and reports higher benchmark scores. Above one hundred thousand tokens, Luna looks like a much better deal. End quote. Willison also flagged the tokenizer change: same prompt, one point two five times as many tokens, the kind of fine print that moves real production budgets. " +
+"Today's signal. Frontier labs just drew a commodity line under the small fast model, and they drew it together. Anthropic matching OpenAI's dime floor inside forty eight hours is not a race to the bottom. It is two labs agreeing, in public, that the floor of this market is ten cents. What differentiates small models from here is context length, tokenizer efficiency, and routing cost at scale. The pricing fight has moved up the stack. " +
+"The ledger. Season one, two and two. Forty two open. No calls graded today. Today's new call: within six weeks, by November twentieth, at least one additional major frontier lab will match or beat the ten cent fifty cent floor for a small or fast model via its official pricing page. Thanks for listening.";
+
+let speaking = false;
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  const prefs = ['Daniel', 'Alex'];
+  for (const name of prefs) {
+    const v = voices.find(x => x.name && x.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(x => x.lang && x.lang.startsWith('en')) || voices[0];
+}
+function toggle() {
+  const btn = document.getElementById('listen');
+  if (speaking) {
+    speechSynthesis.cancel();
+    speaking = false;
+    btn.textContent = '▶ LISTEN (≈4 min)';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  u.voice = pickVoice();
+  u.onend = () => { speaking = false; btn.textContent = '▶ LISTEN (≈4 min)'; };
+  speechSynthesis.speak(u);
+  speaking = true;
+  btn.textContent = '■ STOP';
+}
+document.getElementById('listen').addEventListener('click', toggle);
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+</html>
