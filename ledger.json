@@ -554,6 +554,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-09-1",
+      "date": "2026-10-09",
+      "call": "The commodity line Anthropic drew under Haiku on 2026-10-07 \u2014 $0.10/$0.50 per million tokens plus a 50% cache-read cut on Sonnet 5.5 to $0.10/M \u2014 moves the pricing fight from headline token rates to cache and reuse economics. Within six weeks, at least one other frontier lab will cut cache-read, batch, or prompt-reuse pricing by 40% or more on a flagship or mid-tier model via its official pricing page.",
+      "basis": "Anthropic's Haiku 5.5 launch and simultaneous Sonnet 5.5 cache-read halving were pitched explicitly at long-context agentic workloads, where cache economics dominate per-call cost. Haiku 5.5 also carries a 1M context window \u2014 a tier where reused prompt prefixes are the real cost driver, not raw token price.",
+      "horizon": "2026-11-20",
+      "test": "A primary-source API pricing page, changelog, model card, or official blog post from OpenAI, Google (Gemini), xAI (Grok), Mistral, or Meta dated on or before 2026-11-20, explicitly announcing a cut of 40% or more to cache-read, prompt-caching, batch, or prompt-reuse pricing on a flagship or mid-tier model. The cut must be on a persistent pricing tier, not a promotional credit. HIT if met by a primary-source URL; MISS if the horizon passes without such a cut; UNSETTLED only if a primary source appears but ambiguity exists on whether the pricing dimension or percentage threshold is met.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
