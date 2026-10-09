@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 9 October 2026</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7f63; --rule:rgba(201,168,76,0.18); --miss:#b86a65; }
+  * { box-sizing:border-box; }
+  html, body { max-width:100%; overflow-x:hidden; }
+  body { background:var(--bg); color:var(--text); font-family:Georgia,'Times New Roman',serif; margin:0; line-height:1.65; font-size:17px; }
+  .wrap { max-width:720px; margin:0 auto; padding:28px 22px 72px; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; padding:12px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin:8px 0 24px; font-size:14px; letter-spacing:1px; text-transform:uppercase; }
+  .bar a, .bar .next { color:var(--accent); text-decoration:none; white-space:nowrap; padding:10px 2px; margin:-10px -2px; min-height:44px; display:inline-flex; align-items:center; }
+  .bar a:hover { text-decoration:underline; }
+  .nav-mid { display:inline-flex; gap:0; align-items:center; }
+  .nav-mid a { margin:0 9px; }
+  .next { color:var(--muted); cursor:default; }
+  h1 { color:var(--accent); font-weight:normal; letter-spacing:2px; font-size:34px; margin:12px 0 4px; }
+  .tag { color:var(--muted); font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px; }
+  .date { color:var(--muted); font-size:14px; letter-spacing:1px; margin-bottom:22px; }
+  h2 { color:var(--accent); font-weight:normal; font-size:16px; letter-spacing:3px; text-transform:uppercase; margin:36px 0 10px; border-bottom:1px solid var(--rule); padding-bottom:6px; }
+  h3 { color:var(--text); font-weight:normal; font-size:22px; margin:18px 0 6px; line-height:1.3; }
+  h3 a { color:var(--text); text-decoration:none; border-bottom:1px solid var(--rule); }
+  h3 a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+  p { margin:10px 0 14px; }
+  a { color:var(--accent); }
+  .listen { background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:inherit; font-size:14px; letter-spacing:2px; text-transform:uppercase; padding:12px 18px; cursor:pointer; min-height:44px; }
+  .listen:hover { background:var(--accent); color:var(--bg); }
+  .status { color:var(--muted); font-size:13px; margin-left:12px; letter-spacing:1px; }
+  .meta { color:var(--muted); font-size:14px; margin:4px 0 10px; }
+  .sowhat { color:var(--accent); font-style:italic; font-size:16px; margin:10px 0 22px; padding-left:12px; border-left:2px solid var(--accent); }
+  .sowhat::before { content:"So what: "; font-weight:bold; font-style:normal; letter-spacing:1px; text-transform:uppercase; font-size:13px; }
+  blockquote { margin:14px 0; padding:12px 18px; border-left:3px solid var(--accent); color:var(--text); font-style:italic; background:rgba(201,168,76,0.05); }
+  .signal { background:rgba(201,168,76,0.08); border:1px solid var(--rule); padding:18px 22px; margin:14px 0 10px; }
+  .signal p { margin:0; }
+  .ledger .row { padding:10px 0; border-bottom:1px solid var(--rule); }
+  .ledger .row:last-child { border-bottom:none; }
+  .verdict { font-weight:bold; letter-spacing:1px; }
+  .verdict.hit { color:var(--accent); }
+  .verdict.miss { color:var(--miss); }
+  .verdict.unsettled { color:var(--muted); }
+  .verdict.open { color:var(--muted); }
+  .label { color:var(--muted); font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  ol.sources { padding-left:22px; }
+  ol.sources li { margin:8px 0; font-size:15px; }
+  ol.sources li .tier { color:var(--muted); font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-left:6px; }
+  sup a { color:var(--accent); text-decoration:none; padding:6px 4px; margin:-6px -4px; }
+  sup a:hover { text-decoration:underline; }
+  .footer { color:var(--muted); font-size:13px; margin-top:40px; padding-top:16px; border-top:1px solid var(--rule); text-align:center; }
+  .briefs h3 { font-size:19px; margin-top:22px; }
+  .modelwatch h3 { font-size:19px; margin-top:22px; }
+
+  @media (max-width: 480px) {
+    .wrap { padding:22px 16px 56px; }
+    body { font-size:16px; }
+    h1 { font-size:28px; letter-spacing:1.5px; }
+    h2 { font-size:14px; }
+    h3 { font-size:20px; }
+    .briefs h3, .modelwatch h3 { font-size:18px; }
+    .bar { font-size:14px; gap:10px 14px; }
+    .nav-mid a { margin:0 7px; }
+    blockquote { padding:10px 14px; }
+    .signal { padding:14px 16px; }
+    ol.sources li { font-size:15px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="tag">Above The Noise</div>
+  <h1>Above The Noise</h1>
+  <div class="date">AI &amp; Tech · Signal over noise · Friday, 9 October 2026</div>
+
+  <nav class="bar">
+    <a href="2026-10-08.html">← Yesterday</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">Tomorrow →</span>
+  </nav>
+
+  <p>
+    <button class="listen" id="playBtn" onclick="toggle()">▶ Listen</button>
+    <span class="status" id="status">4 min read aloud</span>
+  </p>
+
+  <h2>Lead Story</h2>
+  <h3><a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic ships Haiku 5.5 at $0.10/$0.50 per million tokens — and quietly rewrites the small-model economics around cache</a><sup><a href="#s1">[1]</a></sup> — <span class="label">Anthropic</span></h3>
+  <div class="meta">Published 7 October 2026 · corroborated by SiliconANGLE<sup><a href="#s2">[2]</a></sup></div>
+
+  <p>Anthropic released <strong>Claude Haiku 5.5</strong> on 7 October, priced at $0.10 per million input tokens and $0.50 per million output tokens for prompts up to 100,000 tokens — a roughly 90% cut from Haiku 4.5 at the equivalent tier — and lifted the context window from 200K to one million, with 128K output tokens<sup><a href="#s1">[1]</a></sup>. The model is multimodal, carries adjustable thinking by default for the first time in the Haiku line, and ships simultaneously on the Anthropic API, AWS Bedrock, Google Vertex AI and Azure AI Foundry.</p>
+
+  <p>The headline price matches the floor OpenAI set on 22 September with GPT-6 Luna, which this newsletter noted was the signal that the fast-small tier had become a commodity line. The more consequential move in the same announcement is the one Anthropic buried below the fold: Sonnet 5.5 cache-read pricing is now $0.10 per million tokens — <em>half</em> what it was<sup><a href="#s2">[2]</a></sup>. Anthropic puts the net effect at a roughly 20% drop in cost on cache-heavy agentic workloads, which, in the kinds of production systems that reuse large context prefixes across dozens or hundreds of calls, is the number that actually shows up on the invoice.</p>
+
+  <p>Independent reporting from SiliconANGLE flags benchmark comparisons Anthropic is willing to put on paper: Haiku 5.5 against GPT-6 Luna, 72.4% vs 48.9% on OSWorld 2.1 (agent tasks) and 39.2% vs 16.4% on Terminal-Bench 4.0 (coding)<sup><a href="#s2">[2]</a></sup>. Benchmark numbers from a lab talking about its own model deserve the usual skepticism; the pricing numbers do not — they are legally binding on invoices.</p>
+
+  <p>Two things to notice. First, the sticker price has stopped moving. Both frontier small-model vendors are now at $0.10/$0.50 per million tokens; this is a floor, and it holds across tokenizers that disagree by 20-30% on the same prompt. Second, the real competition is now cache economics, prompt reuse, and context length at that price — Haiku 5.5's 1M window at ten cents per million input tokens is a different product than Haiku 4.5 at the same number. A long-context cache hit at $0.01/M (Anthropic's cache-read rate for Haiku 5.5) is, in practice, a nearly free re-read of the whole working set. The economic argument against building agent memory as context rather than retrieval just got harder to make.</p>
+
+  <p>The thing the headline misses: Anthropic is pitching this as "the cost of a world-class model has fallen 90%" — which is roughly the pattern Haiku has followed every generation. But the delta that matters is not Haiku-to-Haiku. It is that the second-most-expensive thing in a serious agent today — reused prompt prefixes under long context — just got cut in half on Anthropic's mid-tier model on the same day. That is the economic signal.</p>
+
+  <div class="sowhat">If you run agent systems with reused context prefixes on Sonnet, rerun your cost model this week with cache-read at $0.10/M, not $0.20 — the breakeven for storing more in context versus retrieval has moved against retrieval, and the longer your working set the more it moves.</div>
+
+  <h2>The Briefs</h2>
+  <div class="briefs">
+
+    <h3><a href="https://www.bloomberg.com/news/articles/2026-10-08/us-stock-futures-slip-on-mounting-energy-shock-ai-bubble-fears">OpenAI's $50B annualized-revenue number lands and AI-infrastructure stocks give back a week</a><sup><a href="#s3">[3]</a></sup> — <span class="label">Bloomberg · TechCrunch</span></h3>
+    <p>The Financial Times reported OpenAI has told investors its annualized revenue is approaching $50B — roughly $20B below figures that had been circulating. The company's line is methodology (Anthropic counts cloud-partner resale; OpenAI does not), but the correction pulled the Nasdaq 100 down 1.4% on 8 October and the Philadelphia Semiconductor Index down 3.4%, with Nvidia -2.94%, Broadcom -4.35%, AMD -3.90% and Micron -4.79%<sup><a href="#s3">[3]</a></sup><sup><a href="#s4">[4]</a></sup>. First visible gut-check on the AI capex thesis since the Nvidia-Anthropic and Broadcom-Anthropic prints in late August.</p>
+    <div class="sowhat">The thesis you are shipping on top of has a visible retrace line now — if your deployment plan assumed Nvidia and Oracle supply guarantees would stay priced for growth, the market just told you to stress-test the back-up option; add a cheaper-model fallback to your routing today, not next quarter.</div>
+
+    <h3><a href="https://openai.com/index/disrupting-ai-enabled-false-front-operations/">OpenAI discloses a Category-5 Russian and Category-4 Iranian influence operation on ChatGPT</a><sup><a href="#s5">[5]</a></sup> — <span class="label">OpenAI</span></h3>
+    <p>OpenAI banned two covert influence operations on 8 October: a Russia-origin network (its top-of-scale "Category 5" rating on OpenAI's internal IO Breakout Scale) that stood up a fake "Social Research Center" think-tank and co-opted unwitting Latin Americans to run its public operations against Ukraine, and an Iran-origin network running seven fake journalist personas that placed roughly 100 articles across about a dozen outlets worldwide<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup>. OpenAI says it has removed ten influence operations in the current reporting window.</p>
+    <div class="sowhat">If you ship an AI-enabled product with free-tier usage and no abuse telemetry, this report is a template of what adversaries do between the signup form and your terms of service — ingest OpenAI's six-level IO Breakout Scale into your own abuse-triage runbook before the first incident, not after.</div>
+
+    <h3><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic launches the Cyber Mission — CIDP partners and a free OSS Scanner</a><sup><a href="#s7">[7]</a></sup> — <span class="label">Anthropic</span></h3>
+    <p>Also on 8 October: Anthropic named a Critical Infrastructure Defense Program with eleven founding partners — Accenture, Booz Allen, CrowdStrike, Deloitte, Dragos, Hitachi, Insane Cyber, Nozomi Networks, Palo Alto Networks, PwC, Rockwell Automation — plus a free opt-in <strong>OSS Scanner</strong> for open-source projects, which Anthropic claims hits above 90% true-positive rates on vulnerability discovery<sup><a href="#s7">[7]</a></sup>. The frame is defender-first, matching OpenAI's "defender surge" track from late August.</p>
+    <div class="sowhat">If your repo has any CVE surface — and it does — opt in to OSS Scanner before the lab's threat-intel team finds the hole first; the signal in the 90% true-positive number is not accuracy, it is that the scan is now cheap enough to run on everything.</div>
+
+    <h3><a href="https://nvidianews.nvidia.com/news/nvidia-commits-1-billion-to-advance-us-science-over-the-next-five-years">Nvidia pledges $1B over five years to US science via DOE's Genesis Mission</a><sup><a href="#s8">[8]</a></sup> — <span class="label">NVIDIA</span></h3>
+    <p>Nvidia committed $1 billion over five years to US science, quantum and energy security on 8 October, aligned with the Department of Energy's Genesis Mission and partnered with Argonne and Los Alamos. The pledge covers seven new systems including work toward DOE's largest supercomputer for scientific research<sup><a href="#s8">[8]</a></sup>. Separately, the Nvidia board added $60B to its buyback authorization the same week, bringing the combined program to ~$235B.</p>
+    <div class="sowhat">If your workload is scientific — materials, bio, climate, fluids — the national-lab access path for frontier compute is now a published door you can knock on, not a rumour; the people writing the Genesis Mission RFPs are the ones whose names you will see on the systems in 2027.</div>
+
+  </div>
+
+  <h2>Model Watch</h2>
+  <div class="modelwatch">
+
+    <h3><a href="https://www.anthropic.com/claude-haiku-5-5">Claude Haiku 5.5 — Anthropic, 7 October 2026</a><sup><a href="#s1">[1]</a></sup></h3>
+    <p>API ID <code>claude-haiku-5-5</code>. Context 1M in / 128K out. Prompts under 100K tokens priced $0.10 / $0.50 per million input/output; over 100K tokens, $0.50 / $2.50. Cache read $0.01/M, cache write $0.125/M. Multimodal (text + image). Available on Anthropic API, AWS Bedrock, Google Vertex AI, Azure AI Foundry. First Haiku with adjustable thinking effort.</p>
+    <div class="sowhat">If you built against Haiku 4.5, re-run your eval on <code>claude-haiku-5-5</code> this week — the 1M context changes what belongs in prompt versus retrieval, and your old tokenization assumptions are now 10-25% off.</div>
+
+    <h3><a href="https://openai.com/index/gpt-6-for-everyone/">GPT-6 rolled out to ChatGPT Free and Go, with "Intelligent UI" generation — OpenAI, 7–8 October 2026</a></h3>
+    <p>GPT-6 Sol on Plus/Pro/Business/Enterprise and GPT-6 Luna on Free and Go. The capability note worth paying attention to is "Intelligent UI": the model generates tappable buttons, forms, charts, and inline interactive elements inside chat, interleaved with its reasoning. The visible shift is that ChatGPT answers are becoming components, not just text, and that moves ChatGPT one step closer to being a shell rather than a channel.</p>
+    <div class="sowhat">If your product is a chat-over-API wrapper, note that OpenAI's own chat surface now ships generative UI by default — the differentiator you shipped is being commoditized at the model layer; pick a vertical lane or move up the stack to orchestration.</div>
+
+    <h3><a href="https://www.anthropic.com/claude-haiku-5-5">Sonnet 5.5 cache-read price halved to $0.10 per million tokens — Anthropic, 7 October 2026</a><sup><a href="#s1">[1]</a></sup></h3>
+    <p>Technically a Sonnet pricing-table change, not a new model release, but the operationally important move in the Haiku 5.5 announcement. Anthropic estimates roughly a 20% total-cost reduction on cache-heavy agentic workloads. Pricing-table changes rarely make headlines; this one changes the breakeven on long-context agent design.</p>
+    <div class="sowhat">Rerun the cost model on any Sonnet agent that reuses a large system prompt across calls — the correct number to plug in now is $0.10/M, not $0.20/M, and the gap compounds across cache-heavy loops.</div>
+
+  </div>
+
+  <h2>Voices</h2>
+  <p><strong>Yann LeCun</strong>, Chief AI Scientist at Meta and 2018 Turing Award recipient, in a <a href="https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/">Fortune interview</a><sup><a href="#s9">[9]</a></sup> published 1 October and still echoing across coverage this week, on Anthropic CEO Dario Amodei:</p>
+  <blockquote>"Dario tries to distance himself from Open Philanthropy, but he's totally into it. I think he's completely deluded."</blockquote>
+  <p>LeCun also calls Amodei "crazy" later in the same interview and derides the Amodei–Altman existential-risk framing as "the worst marketing campaign you can possibly imagine"<sup><a href="#s9">[9]</a></sup>. Hard to read it as anything but calculated: it lands in the week Anthropic is pitching critical-infrastructure defence as a frontier-lab mandate, and Meta is pushing an open-weights-first posture that treats cyber doom as market enclosure in disguise. The disagreement is not whether AI is dangerous — it is whether labs that insist on being the only ones who can safely deploy it should be trusted on that framing.</p>
+  <div class="sowhat">Watch where this fault line maps to API access over the next quarter — the labs calling for gated distribution are the ones with the strongest tier-licensing play; the labs calling that framing "deluded" are the ones with weights to give away.</div>
+
+  <h2>Today's Signal</h2>
+  <div class="signal"><p>The pricing fight at the small/fast tier is over — $0.10/$0.50 per million tokens is the commodity floor, and both Anthropic and OpenAI are camped on it. What differentiates frontier small models from here is cache economics, context length at that floor, and how cheap prompt reuse becomes under long context. Anthropic's quiet 50% cut to Sonnet cache-read in the same announcement is the real move — the next place the pricing fight shows up is in cache-read, batch, and prompt-reuse rates on everyone else's flagship and mid-tier models.</p></div>
+
+  <h2>The Ledger</h2>
+  <div class="ledger">
+    <div class="row"><span class="label">Season 1 ·</span> <span class="verdict hit">2 HIT</span> – <span class="verdict miss">2 MISS</span> · 43 open calls</div>
+    <div class="row"><span class="label">Graded today ·</span> <span class="verdict unsettled">none — earliest open horizon is 2026-10-15</span></div>
+    <div class="row"><span class="label">New call (OPEN) · horizon 2026-11-20 ·</span> Within six weeks, at least one frontier lab beyond Anthropic (OpenAI, Google Gemini, xAI Grok, Mistral, or Meta) will cut cache-read, prompt-caching, batch, or prompt-reuse pricing by 40% or more on a flagship or mid-tier model, published on its official pricing page.</div>
+  </div>
+
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li id="s1">Anthropic — <a href="https://www.anthropic.com/claude-haiku-5-5">Introducing Claude Haiku 5.5</a><span class="tier">· primary</span></li>
+    <li id="s2">SiliconANGLE — <a href="https://siliconangle.com/2026/10/07/anthropic-releases-claude-haiku-5-5-small-model-and-halves-sonnet-5-5-cache-read-prices/">Anthropic releases Claude Haiku 5.5 small model and halves Sonnet 5.5 cache-read prices</a><span class="tier">· trade</span></li>
+    <li id="s3">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-10-08/us-stock-futures-slip-on-mounting-energy-shock-ai-bubble-fears">Nasdaq 100 Drops 1.4% as OpenAI Warning Deepens Bubble Fears</a><span class="tier">· tier-1</span></li>
+    <li id="s4">TechCrunch — <a href="https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/">OpenAI's revenue is reportedly $20 billion less than previously projected</a><span class="tier">· trade</span></li>
+    <li id="s5">OpenAI — <a href="https://openai.com/index/disrupting-ai-enabled-false-front-operations/">Disrupting AI-enabled 'false front' operations</a><span class="tier">· primary</span></li>
+    <li id="s6">NPR — <a href="https://www.npr.org/2026/10/08/nx-s1-5995576/openai-russia-iran-influence-operations-chatgpt">OpenAI caught Russians and Iranians using ChatGPT for influence campaigns</a><span class="tier">· tier-1</span></li>
+    <li id="s7">Anthropic — <a href="https://www.anthropic.com/news/anthropic-cyber-mission">Introducing the Anthropic Cyber Mission</a><span class="tier">· primary</span></li>
+    <li id="s8">NVIDIA — <a href="https://nvidianews.nvidia.com/news/nvidia-commits-1-billion-to-advance-us-science-over-the-next-five-years">NVIDIA Commits $1 Billion to Advance US Science Over the Next Five Years</a><span class="tier">· primary</span></li>
+    <li id="s9">Fortune — <a href="https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/">AI 'godfather' Yann LeCun has 'zero concerns' about human extinction and thinks Anthropic CEO Dario Amodei is 'deluded' and 'crazy'</a><span class="tier">· tier-1</span></li>
+  </ol>
+
+  <nav class="bar">
+    <a href="2026-10-08.html">← Yesterday</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">Tomorrow →</span>
+  </nav>
+
+  <div class="footer">Content is AI-synthesized. Links point to original sources.</div>
+
+</div>
+
+<script>
+const S = "Above The Noise. Friday, October ninth, twenty twenty six. Signal over noise. " +
+"Lead story. Anthropic ships Claude Haiku five point five, priced at ten cents per million input tokens and fifty cents per million output tokens for prompts under one hundred thousand tokens. A roughly ninety percent cut from Haiku four point five at the equivalent tier. The context window moves from two hundred thousand to one million, with one hundred twenty eight thousand output tokens. The headline matches the floor OpenAI set with GPT six Luna last month. The more consequential move is buried below the fold. Anthropic halved Sonnet five point five cache read pricing in the same announcement. Ten cents per million, down from twenty. For agentic workloads that reuse a large context prefix across many calls, that is roughly a twenty percent total cost reduction, in a line of the pricing table most readers will not notice. So what. If you run agent systems with reused context prefixes on Sonnet, rerun your cost model this week with cache read at ten cents, not twenty. The break even for storing more in context versus retrieval just moved against retrieval. " +
+"The briefs. One. OpenAI's annualized revenue is approaching fifty billion dollars, roughly twenty billion below figures that had been circulating. Methodology dispute. Market impact real. Nasdaq one hundred down one point four percent on October eighth. Semiconductors down three point four. Nvidia down almost three. Broadcom down four and a third. Add a cheaper model fallback to your routing today, not next quarter. " +
+"Two. OpenAI banned a category five Russia origin and category four Iran origin influence operation using ChatGPT. The Russian network ran a fake think tank through unwitting Latin Americans against Ukraine. The Iranian network placed about one hundred articles across a dozen outlets through seven fake journalist personas. Ingest OpenAI's IO breakout scale into your abuse triage runbook before your first incident. " +
+"Three. Anthropic launched the Cyber Mission, with eleven founding critical infrastructure defender partners, and a free OSS Scanner for open source projects claiming above ninety percent true positive rates on vulnerability discovery. Opt in before the threat intel team finds the hole first. " +
+"Four. Nvidia pledged one billion dollars over five years to US science via the Department of Energy's Genesis Mission, partnered with Argonne and Los Alamos. Seven new systems. Scientific workloads now have a published door. " +
+"Model watch. Claude Haiku five point five from Anthropic on October seventh. One million context in, one hundred twenty eight thousand out. Cache read a penny per million. First Haiku with adjustable thinking. GPT six rolled out to ChatGPT Free and Go. GPT six Sol on paid tiers, Luna on free. New Intelligent UI capability generates tappable buttons, forms and charts inline. Sonnet five point five cache read halved to ten cents per million, which is the operationally important change in the Haiku announcement. " +
+"Voices. Yann LeCun, Chief AI Scientist at Meta and Turing laureate, in a Fortune interview published October first and still echoing this week. Quote. Dario tries to distance himself from Open Philanthropy, but he is totally into it. I think he is completely deluded. End quote. LeCun also calls Amodei crazy later in the same interview and derides the existential risk framing as, quote, the worst marketing campaign you can possibly imagine. End quote. Watch where this fault line maps to API access over the next quarter. The labs calling for gated distribution are the ones with the strongest tier licensing play. " +
+"Today's signal. The pricing fight at the small and fast tier is over. Ten cents and fifty cents per million is the commodity floor. Anthropic and OpenAI are camped on it. What differentiates frontier small models from here is cache economics, context length at that floor, and how cheap prompt reuse becomes under long context. The next place the pricing fight shows up is in cache read, batch, and prompt reuse rates on everyone else's flagship and mid tier models. " +
+"The ledger. Season one, two and two. Forty three open. No calls graded today. Earliest open horizon is October fifteenth. Today's new call. Within six weeks, by November twentieth, at least one frontier lab beyond Anthropic will cut cache read, prompt caching, batch, or prompt reuse pricing by forty percent or more on a flagship or mid tier model, published on its official pricing page. Thanks for listening.";
+
+let utter = null;
+let speaking = false;
+
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  const prefs = ['Daniel', 'Alex'];
+  for (const name of prefs) {
+    const v = voices.find(x => x.name && x.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(x => x.lang && x.lang.startsWith('en')) || voices[0];
+}
+
+function toggle() {
+  const btn = document.getElementById('playBtn');
+  const status = document.getElementById('status');
+  if (speaking) {
+    speechSynthesis.cancel();
+    speaking = false;
+    btn.textContent = '▶ Listen';
+    status.textContent = '4 min read aloud';
+    return;
+  }
+  utter = new SpeechSynthesisUtterance(S);
+  utter.rate = 0.93;
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  utter.onend = () => {
+    speaking = false;
+    btn.textContent = '▶ Listen';
+    status.textContent = 'Done.';
+  };
+  utter.onerror = () => {
+    speaking = false;
+    btn.textContent = '▶ Listen';
+    status.textContent = 'Audio unavailable.';
+  };
+  speechSynthesis.speak(utter);
+  speaking = true;
+  btn.textContent = '■ Stop';
+  status.textContent = 'Reading…';
+}
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+</html>
