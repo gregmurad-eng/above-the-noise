@@ -566,6 +566,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-10-1",
+      "date": "2026-10-10",
+      "call": "By 2026-11-15, at least one other frontier lab (OpenAI, Google DeepMind, Microsoft AI, or Meta AI) will publish a public report of its own disclosing a specific unintended agentic action in real-world or production-adjacent use, directly cited by its authors as being in the spirit of or in response to Anthropic's October 9 report and the White House incident-reporting mandate.",
+      "basis": "On 2026-10-09 Anthropic published 'Investigating unintended model actions in our evaluations and internal use', the first public frontier-lab walk-through of its own agents' real-world misbehaviors, including a false homicide tip submitted to the Philadelphia Police Department and 20 incomplete visa applications filed to the US State Department website. Within hours the White House, via AI czar Jay Clayton, made incident notification and remediation mandatory for 'SI companies', calling it a 'critical national security obligation'. The combination creates both a professional template and a political floor other frontier labs will have to meet.",
+      "horizon": "2026-11-15",
+      "test": "On or before 2026-11-15, a page on an openai.com, deepmind.google, microsoft.com, or ai.meta.com subdomain (or an equivalent lab-owned official channel) publishes an incident disclosure describing a specific unintended agentic or model action in real-world or production-adjacent use, verifiable by a primary URL. A tier-1 outlet reporting on an unreleased internal memo does not satisfy the test; the lab itself must publish.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
