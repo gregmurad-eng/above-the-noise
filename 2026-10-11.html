@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — October 11, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f66;
+    --dim-red: #a66b6b;
+    --rule: #2a2217;
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+  }
+  header.masthead {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin: 0 0 2px 0;
+    font-variant: small-caps;
+  }
+  .tagline {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 4px;
+  }
+  .dateline {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  nav.bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 14px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 22px;
+  }
+  nav.bar a {
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 6px;
+    display: inline-block;
+  }
+  nav.bar a:hover { color: var(--accent); }
+  nav.bar .nav-mid { display: inline-flex; gap: 0 18px; }
+  nav.bar .nav-mid a {
+    color: var(--accent);
+    margin: 0 9px;
+    padding: 10px 6px;
+  }
+  nav.bar .next {
+    color: var(--muted);
+    white-space: nowrap;
+    padding: 10px 6px;
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 24px;
+    padding: 10px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: #110c07;
+  }
+  .player button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 12px 18px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 3px;
+    min-height: 44px;
+  }
+  .player .state {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  h2 {
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    font-variant: small-caps;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 4px;
+    margin: 36px 0 14px;
+  }
+  h3 {
+    font-size: 20px;
+    color: var(--text);
+    margin: 20px 0 8px;
+    line-height: 1.25;
+  }
+  h3 a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); }
+  sup a {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 6px 4px;
+    margin: -6px -4px;
+  }
+  .brief, .model-item, .voices {
+    padding: 10px 0 14px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .brief:last-child, .model-item:last-child { border-bottom: none; }
+  .outlet { color: var(--muted); font-style: italic; font-size: 14px; }
+  .sowhat {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 8px;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent);
+  }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 14px 0;
+    padding: 2px 0 2px 16px;
+    color: var(--text);
+    font-style: italic;
+    font-size: 18px;
+  }
+  .signal {
+    background: #15100a;
+    border: 1px solid var(--accent);
+    padding: 16px 20px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .ledger {
+    background: #110c07;
+    border: 1px solid var(--rule);
+    padding: 14px 18px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  .ledger .record { font-size: 15px; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .ledger .call-row { padding: 8px 0; border-top: 1px dotted var(--rule); }
+  .verdict-hit   { color: var(--accent); font-weight: bold; letter-spacing: 1px; }
+  .verdict-miss  { color: var(--dim-red); font-weight: bold; letter-spacing: 1px; }
+  .verdict-open  { color: var(--muted); font-weight: bold; letter-spacing: 1px; }
+  .verdict-unsettled { color: var(--muted); font-weight: bold; letter-spacing: 1px; }
+  ol.sources { padding-left: 24px; font-size: 14px; line-height: 1.5; }
+  ol.sources li { margin-bottom: 6px; }
+  ol.sources .tier {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .wrap { padding: 18px 14px 48px; }
+    h1 { font-size: 26px; }
+    h2 { font-size: 19px; }
+    h3 { font-size: 18px; }
+    blockquote { font-size: 16px; }
+    .tagline, .dateline, .outlet, .state { font-size: 14px; }
+    .ledger { font-size: 15px; }
+    .ledger .record { font-size: 14px; }
+    ol.sources { font-size: 14px; }
+    ol.sources .tier { font-size: 11px; }
+    nav.bar { font-size: 13px; }
+    nav.bar a, nav.bar .next { padding: 12px 4px; }
+    nav.bar .nav-mid a { margin: 0 6px; padding: 12px 4px; }
+    sup a { padding: 8px 5px; margin: -8px -5px; }
+    .player { flex-wrap: wrap; }
+    .player button { min-height: 48px; padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Above The Noise</h1>
+  <p class="tagline">AI &amp; Tech · Signal over noise</p>
+  <p class="dateline">Sunday, October 11, 2026</p>
+</header>
+
+<nav class="bar">
+  <a href="2026-10-10.html">&larr; YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW &rarr;</span>
+</nav>
+
+<div class="player">
+  <button id="playBtn" onclick="toggleAudio()">&#9654; LISTEN</button>
+  <span class="state" id="playState">~4 min read aloud</span>
+</div>
+
+<h2>Lead Story</h2>
+<h3><a href="https://blog.cloudflare.com/deno-joins-cloudflare/">Cloudflare absorbs Deno — the runtime winds down in twelve months, Deno Deploy in six</a> <span class="outlet">— Cloudflare</span><sup><a href="#s1">[1]</a></sup></h3>
+
+<p>Cloudflare and Deno jointly announced on October 9 that Deno — the TypeScript-first runtime from Node's original creator Ryan Dahl — is being acquired, with both companies publishing matching posts under the same title<sup><a href="#s2">[2]</a></sup>. The strategic asset is not the runtime itself but <em>celld</em>, Deno's engine for Durable Objects and self-hosted compute, which Cloudflare plans to merge into <em>workerd</em> to unlock a self-hostable version of Workers and Durable Objects. On the Deno side, the open-source Deno runtime will see one more year of maintenance before being archived, and Deno Deploy — the hosted platform — shuts in six months. Deno KV, Deno Queues, and the standalone <code>deno</code> binary all converge toward Cloudflare's primitives.</p>
+
+<p>Three things make this consequential beyond the standard acqui-hire template. First, this is the first visible break in the "independent JavaScript edge runtime" cohort that formed around 2020 — Deno, Bun, Vercel's Edge Runtime, Fly.io's firecracker fleet. The economics of running a global compute network as a standalone business always required either a cloud underneath you or a cloud buying you; Cloudflare's purchase answers which outcome won here. Second, Dahl now ships <em>celld</em> inside Cloudflare's dominant Workers platform, which means the "Deno-flavored" standards work (Web APIs on the server, native TypeScript, built-in test runner) effectively becomes the Workers roadmap. Third, and most pointed for anyone running agents at the edge: the six-month Deno Deploy sunset is a hard migration clock for every scheduled job, cron handler, and MCP endpoint running there today — and Cloudflare has not yet published a Deno-Deploy-to-Workers API compatibility matrix.</p>
+
+<p>The honest read for builders: Cloudflare just acquired both the right to shape the server-side JavaScript standards narrative and the right to tell a few thousand Deno Deploy teams where their next bill comes from. The "Workers API coverage" document that eventually drops will quietly determine which Deno Deploy applications migrate cleanly, which rewrite their edge layer, and which move to a competitor who still exists next quarter.</p>
+
+<p class="sowhat"><strong>So what:</strong> if your scheduled jobs, cron handlers, or MCP endpoints run on Deno Deploy, you have a six-month clock — start the Workers compatibility audit this week, because the migration guide Cloudflare has not yet shipped is on the critical path for everyone else too.</p>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://arxiv.org/abs/2610.11794">Memento 3 reports 100% on ARC-AGI-3 with a frozen LLM and an editable rulebook</a> <span class="outlet">— arXiv (UCL &amp; Huawei Noah's Ark)</span><sup><a href="#s3">[3]</a></sup></h3>
+<p>Zhao et al. published Memento 3 on October 8 — a model-based agent that scores a perfect 100.0 mean RHAE across all 25 public ARC-AGI-3 games using a <em>frozen</em> underlying LLM. The learning happens entirely in a natural-language rulebook that gets compiled to Python at runtime and iteratively refined via reflection on failures; the reported baseline for Claude Opus 5 under the same protocol is 40.7.</p>
+<p class="sowhat"><strong>So what:</strong> if your agent system's "self-improvement" story is finetune-on-trace, this paper is the clearest argument this year for moving that logic into an externalized, versioned, auditable rulebook — weights that don't change can be gated and signed; weights that silently drift cannot.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742">Microsoft ships Decision-1 — a probability-returning model in Azure Foundry</a> <span class="outlet">— Microsoft Tech Community (Azure AI Foundry Blog)</span><sup><a href="#s4">[4]</a></sup></h3>
+<p>Announced October 9, Decision-1 is a Qwen3.5-9B post-trained to return calibrated probabilities over fixed answer sets — yes/no, multiple-choice, rubric grades — instead of generating free-form text. 32K context, hosted-only (no weights), $0.042 per million input tokens, output tokens free. Microsoft publishes P50 latency figures claiming 35× faster than GPT-6 Sol for the same classification tasks.</p>
+<p class="sowhat"><strong>So what:</strong> if your agent pipeline currently pays frontier-model rates to have Opus or GPT-6 classify, route, or score a step, this is a two-order-of-magnitude cost drop for that specific subtask — and calibrated probabilities let you threshold confidence instead of regex-parsing a chatty JSON response.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://github.com/QwenLM/Qwen-Image-2.1">Alibaba's Qwen team releases Qwen-Image-2.1-Turbo — open-weight 8-step image model</a> <span class="outlet">— QwenLM GitHub</span><sup><a href="#s5">[5]</a></sup></h3>
+<p>Dropped October 9. Same 7B visual architecture as Qwen-Image-2.1, but with an 8-step denoising schedule at CFG=1 baked into weights — down from 40 steps on the base — producing roughly a 5× speedup at matched quality for text-to-image and multi-reference edit tasks. Weights live on Hugging Face and ModelScope under the Qwen Research License (commercial use requires permission); API available via Alibaba Cloud Model Studio at CNY 0.1 per image.</p>
+<p class="sowhat"><strong>So what:</strong> if latency or per-image API cost was gating a creative pipeline on your product, this is a self-hostable path to near-realtime generation on a single workstation GPU — but read the Qwen Research License before you ship it in anything paid.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini Flash 3.5 and 3.7 are being auto-routed, silently, to 3.6 and 3.8</a> <span class="outlet">— Google AI for Developers</span><sup><a href="#s6">[6]</a></sup></h3>
+<p>Per Google's October 8 Gemini API changelog, requests to <code>gemini-3.7-flash</code> now auto-route to <code>gemini-3.8-flash</code>, and <code>gemini-3.5-flash</code> auto-routes to <code>gemini-3.6-flash</code>. Nothing changes in your SDK call. Nothing in the response payload tells you the swap happened.</p>
+<p class="sowhat"><strong>So what:</strong> every scheduled job pinned to a 3.5 or 3.7 Flash string is now hitting different weights with different tokenization, different token counts, and different pricing — audit your model-string constants today, because prompt-cache keys may have invalidated and the first signal will be a cost or regression spike nobody can root-cause.</p>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="model-item">
+<h3><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742">Microsoft Decision-1</a> <span class="outlet">— Microsoft, 2026-10-09</span><sup><a href="#s4">[4]</a></sup></h3>
+<p>Qwen3.5-9B post-trained to return calibrated probabilities, not text. 32K context, hosted-only, $0.042/M input, free output. New category in the Foundry catalog: "decision/classification" distinct from "chat/generation".</p>
+<p class="sowhat"><strong>So what:</strong> expect every other frontier lab to publish or document a comparable classification-only product tier within the quarter — the shape of the category is now set.</p>
+</div>
+
+<div class="model-item">
+<h3><a href="https://github.com/QwenLM/Qwen-Image-2.1">Qwen-Image-2.1-Turbo</a> <span class="outlet">— Alibaba Qwen, 2026-10-09</span><sup><a href="#s5">[5]</a></sup></h3>
+<p>7B parameter architecture, 8-step denoising at CFG=1, 2K output resolution, multi-reference edit. Open weights on Hugging Face and ModelScope under Qwen Research License. API: CNY 0.1/image via Alibaba Cloud Model Studio.</p>
+<p class="sowhat"><strong>So what:</strong> near-realtime open-weight image generation on consumer hardware — the latency gap that still kept creative tools on Midjourney/DALL-E APIs narrows another step.</p>
+</div>
+
+<div class="model-item">
+<h3><a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini 3.5-flash and 3.7-flash deprecations</a> <span class="outlet">— Google, 2026-10-08</span><sup><a href="#s6">[6]</a></sup></h3>
+<p>Both older Flash tiers now auto-route to their next-generation successor (3.5 → 3.6, 3.7 → 3.8). No parameter in the SDK response indicates the substitution. Pricing and tokenization change silently.</p>
+<p class="sowhat"><strong>So what:</strong> if you ever wrote "pin the model" into a runbook, this is the quarter to actually do it — hardcode an explicit allowlist of model strings and alert on anything else.</p>
+</div>
+
+<div class="model-item">
+<h3><a href="https://mistral.ai/news/mistral-large-4/">Mistral Large 4 "le Chonk" preview</a> <span class="outlet">— Mistral AI, 2026-10-06</span><sup><a href="#s7">[7]</a></sup></h3>
+<p>Follow-on from last week: trillion-parameter MoE (52B active), multimodal, 160+ languages, trained on Grace Blackwell in European datacenters. In preview on Mistral Studio at $1.36/$4.18 per M tokens. Open-weight release still promised by end of October — the countdown is now three weeks.</p>
+<p class="sowhat"><strong>So what:</strong> keep a Mistral-API fallback behind your flagship-provider abstraction so the moment weights drop, you can swap to self-hosted on your own schedule, not Mistral's.</p>
+</div>
+
+<h2>Voices</h2>
+<div class="voices">
+<p><strong>Yoshua Bengio</strong>, Turing Award laureate and founder of LawZero/Mila, in an essay written exclusively for <em>Transformer</em><sup><a href="#s8">[8]</a></sup> published October 8, 2026:</p>
+<blockquote>"If you truly prioritize safety, it is time for you to leave frontier AI companies."</blockquote>
+<p>Bengio's argument is that safety and interpretability work inside the frontier labs has become structurally compromised — not because the researchers are insincere, but because the organizations are no longer organized around the possibility that they are wrong — and that the serious work now lives in national safety institutes, LawZero-style independent labs, and mission-driven orgs willing to publish findings their employer will not. Published a day before Anthropic disclosed four classes of agent misbehavior in its own evaluations<sup><a href="#s9">[9]</a></sup>, the essay reads as the sharpest contemporary rebuttal to the premise that frontier-lab self-regulation is sufficient.</p>
+<p class="sowhat"><strong>So what:</strong> if your product's safety story leans on "the lab tested it before shipping", the Bengio essay plus the Anthropic disclosure give you a dated receipt that the lab's own senior safety voices consider that posture inadequate — plan to carry the audit load yourself, or to buy it from someone whose paycheck does not depend on the lab you are auditing.</p>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>Three stories this edition point at the same slow movement: the infrastructure layer under agents is consolidating faster than most teams' lock-in audit can keep up. Deno — one of the independent JavaScript runtimes with the strongest standards voice — folds into Cloudflare. Google silently reroutes two deprecated Flash tiers to their successors. Microsoft ships a non-generative model category that is going to pull routing and classification workloads out of frontier APIs within a quarter. None of this looks like a crisis in isolation. Stack them and the pattern is clear: the number of independent providers your agent system genuinely depends on is shrinking, and the number of places a silent substitution can happen is growing. The teams who notice this quarter spend November writing lock-in audits. The teams who notice it in Q1 spend January rewriting critical paths against a deadline someone else set.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger">
+  <div class="record">Season 1 · 2–2 · 44 open · earliest open horizon 2026-10-15</div>
+  <div class="call-row">
+    <strong>No calls graded today.</strong>
+    <br><span style="color:var(--muted);">Next grading due 2026-10-15 (call <code>2026-09-15-1</code>, horizon 2026-10-15).</span>
+  </div>
+  <div class="call-row">
+    <span class="verdict-open">OPEN</span> &middot; <strong>Today's call</strong> (horizon 2026-11-22):
+    <br>Within six weeks, at least one additional independent edge/agent runtime vendor
+    (Vercel, Fly.io, Netlify, Railway, Render, or an equivalent) will announce either
+    acquisition, shutdown of a core service, or an explicit retreat from "independent runtime"
+    positioning — the Cloudflare&ndash;Deno absorption being the first visible break in a
+    cohort that cannot carry its own compute economics alone.
+    <br><span style="color:var(--muted);">Test: primary release, SEC filing, or official blog post from one of the named vendors (or a comparable independent-runtime vendor) announcing one of {acquisition, core-service shutdown, explicit platform-strategy pivot} by 2026-11-22, confirmed by a tier-1 press account.</span>
+  </div>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+  <li id="s1"><a href="https://blog.cloudflare.com/deno-joins-cloudflare/">Cloudflare Blog — "Deno is joining Cloudflare"</a> <span class="tier">[primary]</span></li>
+  <li id="s2"><a href="https://deno.com/blog/cloudflare">Deno Blog — "Deno is joining Cloudflare"</a> <span class="tier">[primary]</span></li>
+  <li id="s3"><a href="https://arxiv.org/abs/2610.11794">arXiv 2610.11794 — Zhao et al., "Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks" (UCL &amp; Huawei Noah's Ark)</a> <span class="tier">[primary]</span></li>
+  <li id="s4"><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742">Azure AI Foundry Blog (Microsoft Tech Community) — "Introducing Microsoft Decision-1 in Microsoft Foundry"</a> <span class="tier">[primary]</span></li>
+  <li id="s5"><a href="https://github.com/QwenLM/Qwen-Image-2.1">QwenLM/Qwen-Image-2.1 — official repository and Turbo release</a> <span class="tier">[primary]</span></li>
+  <li id="s6"><a href="https://ai.google.dev/gemini-api/docs/changelog">Google AI for Developers — Gemini API Release Notes (changelog)</a> <span class="tier">[primary]</span></li>
+  <li id="s7"><a href="https://mistral.ai/news/mistral-large-4/">Mistral AI — "Introducing Mistral Large 4"</a> <span class="tier">[primary]</span></li>
+  <li id="s8"><a href="https://www.transformernews.ai/p/yoshua-bengio-if-you-prioritize-safety-leave-frontier-ai-companies">Transformer — Yoshua Bengio, "If you prioritize safety, leave frontier AI companies"</a> <span class="tier">[practitioner]</span></li>
+  <li id="s9"><a href="https://www.anthropic.com/research/investigating-unintended-model-actions">Anthropic — "Investigating unintended model actions in our evaluations and internal use"</a> <span class="tier">[primary]</span></li>
+</ol>
+
+<nav class="bar">
+  <a href="2026-10-10.html">&larr; YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW &rarr;</span>
+</nav>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+const S = "Above the Noise. Signal over noise. Sunday, October eleventh, two thousand twenty six. " +
+"Lead story. Cloudflare has acquired Deno. The two companies published matching posts on October ninth under the same title: Deno is joining Cloudflare. The strategic asset is not the Deno runtime itself but celld, Deno's engine for Durable Objects and self-hosted compute, which Cloudflare will merge into workerd. The open source Deno runtime gets one more year of maintenance before archiving. Deno Deploy, the hosted platform, shuts in six months. Three things make this consequential. First, this is the first visible break in the independent JavaScript edge runtime cohort that formed around twenty twenty. Second, Ryan Dahl now ships celld inside Cloudflare's dominant Workers platform, which means the Deno flavored standards work effectively becomes the Workers roadmap. Third, the six month Deno Deploy sunset is a hard migration clock for every scheduled job, cron handler, and M C P endpoint running there today, and Cloudflare has not yet published a Deno Deploy to Workers API compatibility matrix. If your production agents touch Deno Deploy, start the Workers audit this week. " +
+"The briefs. First. Memento three, from U C L and Huawei Noah's Ark, reports a perfect one hundred percent mean R H A E across all twenty five public arc A G I three games with a frozen large language model. All the learning lives in a natural language rulebook that gets compiled to Python at runtime. The published baseline for Claude Opus five on the same benchmark is forty point seven. If your agent system's self improvement story is fine tune on trace, this is the clearest argument this year for moving that logic into an externalized, versioned, auditable rulebook. " +
+"Second. Microsoft shipped Decision one in Azure Foundry on October ninth. It's a Qwen three point five, nine billion parameter model post trained to return calibrated probabilities over fixed answer sets rather than generate text. Four point two cents per million input tokens. Output tokens free. If your pipeline currently pays frontier model rates to do classification or routing, this is a two orders of magnitude cost drop for that subtask. " +
+"Third. Alibaba's Qwen team released Qwen Image two point one Turbo on October ninth. Open weight, seven billion parameters, eight step denoising at C F G one, roughly a five times speedup at matched quality. Weights on Hugging Face and Model Scope under the Qwen Research License, which does restrict commercial use. " +
+"Fourth. Google's Gemini A P I changelog on October eighth announced that requests to gemini three point seven flash now auto route to gemini three point eight flash, and gemini three point five flash auto routes to gemini three point six flash. Nothing in the response payload tells you the swap happened. Every scheduled job pinned to a three five or three seven Flash string is now hitting different weights with different tokenization and different pricing. Audit your model string constants today. " +
+"Model watch. Microsoft Decision one, calibrated probabilities not text, thirty two K context, hosted only. Qwen Image two point one Turbo, seven billion parameters, eight step denoising, open weights. Gemini three five flash and three seven flash, deprecated, silently auto routed. Mistral Large four preview from last week, one trillion parameter mixture of experts, fifty two billion active, open weight release still promised by end of October. " +
+"Voices. Yoshua Bengio, Turing Award laureate and founder of Law Zero and Mila, writing exclusively for Transformer on October eighth. Quote. If you truly prioritize safety, it is time for you to leave frontier A I companies. End quote. The piece argues that safety and interpretability work inside the frontier labs has become structurally compromised, and that the serious work now lives in national safety institutes, Law Zero style independent labs, and mission driven orgs. Published a day before Anthropic's own disclosure of four classes of agent misbehavior in its evaluations, it reads as the sharpest contemporary rebuttal to frontier lab self regulation. " +
+"Today's signal. The infrastructure layer under agents is consolidating faster than most teams' lock in audit can keep up. Deno folds into Cloudflare. Google reroutes two Flash tiers silently. Microsoft ships a non generative category that will pull routing and classification out of frontier A P Is within a quarter. Stack them and the pattern is clear. The number of independent providers your agent system depends on is shrinking. The number of places a silent substitution can happen is growing. " +
+"The ledger. Season one, two and two. Forty four open. No calls graded today. Today's new call. Within six weeks, by November twenty second, at least one additional independent edge or agent runtime vendor will announce either acquisition, shutdown of a core service, or an explicit retreat from independent runtime positioning. Thanks for listening.";
+
+let utter = null;
+let playing = false;
+
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  const pref = vs.find(v => /Daniel/i.test(v.name)) ||
+               vs.find(v => /Alex/i.test(v.name)) ||
+               vs.find(v => /en[-_]GB/i.test(v.lang)) ||
+               vs.find(v => /en/i.test(v.lang));
+  return pref || vs[0];
+}
+
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const st = document.getElementById('playState');
+  if (playing) {
+    window.speechSynthesis.cancel();
+    playing = false;
+    btn.innerHTML = '&#9654; LISTEN';
+    st.textContent = '~4 min read aloud';
+    return;
+  }
+  utter = new SpeechSynthesisUtterance(S);
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  utter.rate = 0.93;
+  utter.pitch = 1.0;
+  utter.onend = () => {
+    playing = false;
+    btn.innerHTML = '&#9654; LISTEN';
+    st.textContent = '~4 min read aloud';
+  };
+  window.speechSynthesis.speak(utter);
+  playing = true;
+  btn.innerHTML = '&#9632; STOP';
+  st.textContent = 'playing…';
+}
+
+if (typeof speechSynthesis !== 'undefined') {
+  speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+  window.speechSynthesis.getVoices();
+}
+</script>
+</body>
+</html>
