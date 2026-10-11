@@ -578,6 +578,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-11-1",
+      "date": "2026-10-11",
+      "call": "Within six weeks, by 2026-11-22, at least one additional independent edge/agent runtime vendor (Vercel, Fly.io, Netlify, Railway, Render, or a comparable independent-runtime vendor) will announce either acquisition, shutdown of a core service, or an explicit retreat from 'independent runtime' positioning \u2014 the Cloudflare-Deno absorption being the first visible break in a cohort that cannot carry its own compute economics alone.",
+      "basis": "Today's Lead Story: Cloudflare acquired Deno on 2026-10-09, winding down the Deno runtime in twelve months and Deno Deploy in six, absorbing the celld self-host engine into workerd. Combined with Google silently auto-routing deprecated Flash tiers and Microsoft shipping Decision-1 as a non-generative routing/classification product, the infrastructure layer under agents is consolidating fast; the independent-runtime cohort that formed around 2020 is the first to crack.",
+      "horizon": "2026-11-22",
+      "test": "By 2026-11-22, at least one primary release, SEC filing, or official blog post from Vercel, Fly.io, Netlify, Railway, Render, or an equivalent independent edge/agent runtime vendor announces one of {acquisition by a hyperscaler or larger cloud/platform, shutdown of a core hosted service, or an explicit platform-strategy pivot away from standalone-runtime positioning}, confirmed by a tier-1 press account (Reuters, Bloomberg, FT, WSJ, Axios, The Register, CNBC).",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
