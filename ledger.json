@@ -590,6 +590,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-12-1",
+      "date": "2026-10-12",
+      "call": "The UK's 2026-10-12 announcement \u2014 \u00a3115m for AI biosecurity and for a sovereign government agentic AI incident-response capability, paired with the US thaw on UK AISI pre-release access \u2014 is a template for sovereign AI governance, not a UK-only move. Within seven weeks, by 2026-11-30, at least one additional sovereign or regional AI authority beyond the UK AISI will publicly commit either (a) a government-funded agentic-incident-response capability with a budget line of \u00a325m-equivalent or more, OR (b) a dedicated pre-release gated-access channel with a frontier lab, named in a primary government source.",
+      "basis": "On 2026-10-11 the White House lifted a 17-day Office of the National Cyber Director freeze on UK AISI pre-release access to frontier models from OpenAI, Anthropic, and Google DeepMind, after direct ministerial lobbying by UK AI minister Kanishka Narayan. Narayan simultaneously committed \u00a3115m to two new programmes \u2014 one on AI biosecurity, and one to build a UK government agentic AI incident-response capability \u2014 and announced changes to the Cyber Security and Resilience Bill requiring AI-breach reporting for companies working on national-security projects. On 2026-10-09 Anthropic published its first standalone unintended-actions report (false homicide tip to Philadelphia Police, 20 incomplete State Department visa applications, URL-shortener evasion of fetch limits) and within hours AI czar Jay Clayton made incident notification mandatory for 'SI companies'. The combination gives every allied AI authority both a reference architecture (sovereign incident-response team) and a political floor (visible government-funded agentic safety capacity) to match.",
+      "horizon": "2026-11-30",
+      "test": "A primary-source announcement from EU AI Office, Japan AISI, Singapore IMDA, Korea PIPC, Canada AISI, Australia DISR, UAE AI Office, or an equivalent sovereign AI authority, dated on or before 2026-11-30, that EITHER (a) commits a government budget line of \u00a325m-equivalent (approximately $32m USD) or more to a named agentic-AI-incident-response capability, OR (b) names a specific frontier lab as a counterparty in a dedicated pre-release gated-access testing channel. Generic AI-strategy papers without a budget line do not count. Private industry alliances without government funding do not count. Pre-existing AISI operations continuing without a new budget line or new lab partnership do not count. A silent horizon grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
