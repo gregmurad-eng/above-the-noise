@@ -602,6 +602,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-10-13-1",
+      "date": "2026-10-13",
+      "call": "The October 7-12 Ukrainian drone strikes on Yandex datacenters -- which took out two of three supercomputers used to train Russian LLMs -- will trigger operational responses from non-Russian frontier labs, hyperscalers, or sovereign AI programs on a measurable timeline. The AI-datacenter-as-kinetic-target risk class crosses from theoretical to priced within weeks.",
+      "basis": "Yandex, Al Jazeera, The Register, The Moscow Times and Toms Hardware all confirmed on October 11-12 that drones struck three of six Yandex datacenters including the Galushkin supercomputer in Vladimir. Russian consumer internet services (Pay, Cloud) are degraded; LLM training capacity is materially reduced. No Western lab has responded publicly yet; insurers and government customers will not wait for a US or EU rerun to ask the question.",
+      "horizon": "2026-11-24",
+      "test": "By 2026-11-24, at least two primary-source operational responses from non-Russian frontier labs, hyperscalers, or sovereign-AI programs explicitly cite datacenter-resilience, geographic-redundancy, or physical-infrastructure risk as the rationale: a published multi-region training commitment, a datacenter-resilience line in a new SLA, a sovereignty-tier product, or a national-security procurement criterion. HIT if at least two such primary-source announcements land by the horizon; MISS if fewer than two.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
