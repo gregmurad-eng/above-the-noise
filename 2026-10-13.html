@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — October 13, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --accent-dim: #8a7332;
+    --text: #e0d4b8;
+    --muted: #8a8070;
+    --rule: #2a241a;
+    --card: #15110a;
+    --red: #b86f6f;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+    font-size: 17px;
+    overflow-x: hidden;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 28px 80px;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    margin: 6px 0 28px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+  .bar a {
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 10px 6px;
+    display: inline-block;
+    min-height: 44px;
+    line-height: 24px;
+  }
+  .bar a:hover { color: var(--text); }
+  .nav-mid { display: flex; gap: 8px 18px; flex-wrap: wrap; }
+  .nav-mid a { margin: 0 9px; }
+  .bar .next {
+    color: var(--muted);
+    white-space: nowrap;
+    padding: 10px 6px;
+    display: inline-block;
+    min-height: 44px;
+    line-height: 24px;
+  }
+  h1 {
+    font-size: 42px;
+    letter-spacing: 0.02em;
+    margin: 10px 0 4px;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .tagline {
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 4px;
+    font-size: 15px;
+  }
+  .dateline {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 22px;
+  }
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 15px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin: 42px 0 18px;
+    font-weight: normal;
+  }
+  h3 {
+    font-size: 22px;
+    color: var(--text);
+    margin: 22px 0 10px;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+  h3 a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+  h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  .brief { margin: 0 0 26px; padding-bottom: 10px; border-bottom: 1px dashed var(--rule); }
+  .brief:last-child { border-bottom: none; }
+  .brief .pub { color: var(--muted); font-size: 14px; font-style: italic; }
+  .mw-item { margin: 0 0 20px; padding-bottom: 10px; border-bottom: 1px dashed var(--rule); }
+  .mw-item:last-child { border-bottom: none; }
+  .mw-meta { color: var(--muted); font-size: 14px; font-style: italic; margin: -4px 0 8px; }
+  .sowhat {
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 8px;
+  }
+  .sowhat strong { font-style: normal; letter-spacing: 0.02em; }
+  .signal {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 10px 0 20px;
+  }
+  .voices blockquote {
+    margin: 10px 0 10px;
+    padding: 4px 0 4px 18px;
+    border-left: 3px solid var(--accent-dim);
+    font-style: italic;
+    color: var(--text);
+  }
+  .ledger .record {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+  }
+  .verdict-hit { color: var(--accent); font-weight: bold; }
+  .verdict-miss { color: var(--red); font-weight: bold; }
+  .verdict-unsettled { color: var(--muted); font-weight: bold; }
+  .call-row {
+    margin: 10px 0 14px;
+    padding: 12px 16px;
+    background: var(--card);
+    border-left: 2px solid var(--accent-dim);
+    font-size: 15px;
+  }
+  .sources ol { padding-left: 22px; margin: 0; }
+  .sources li { margin-bottom: 8px; font-size: 15px; color: var(--muted); }
+  .sources li a { color: var(--text); }
+  .sources .tier {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 2px 6px;
+    margin-right: 6px;
+    border-radius: 2px;
+    font-family: Georgia, serif;
+  }
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+    padding: 6px 4px;
+    margin: -6px -4px;
+    position: relative;
+    font-size: 12px;
+  }
+  sup a:hover { color: var(--text); }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    margin: 0 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  #playBtn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 10px 18px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    min-height: 44px;
+    min-width: 110px;
+  }
+  #playBtn:hover { color: var(--text); border-color: var(--accent); }
+  #playState { color: var(--muted); font-size: 14px; font-style: italic; }
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+  @media (max-width: 480px) {
+    html, body { font-size: 16px; }
+    .wrap { padding: 18px 16px 60px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 14px; margin: 36px 0 14px; }
+    h3 { font-size: 20px; }
+    .bar { gap: 8px 10px; font-size: 14px; }
+    .bar a, .bar .next { padding: 10px 4px; }
+    .nav-mid a { margin: 0 4px; }
+    .dateline { font-size: 14px; }
+    .brief .pub, .mw-meta, .sources li { font-size: 15px; }
+    .ledger .record { font-size: 15px; }
+    .call-row { font-size: 15px; }
+    sup a { padding: 8px 6px; margin: -8px -6px; font-size: 13px; }
+    #playBtn { font-size: 14px; padding: 12px 18px; }
+    .signal { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="bar">
+    <a href="2026-10-12.html">&larr; YESTERDAY</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">TOMORROW &rarr;</span>
+  </nav>
+
+  <h1>Above The Noise</h1>
+  <p class="tagline">AI &amp; Tech &middot; Signal over noise</p>
+  <p class="dateline">Tuesday, October 13, 2026</p>
+
+  <div class="player">
+    <button id="playBtn" onclick="toggleAudio()">&#9654; LISTEN</button>
+    <span id="playState">~4 min read aloud</span>
+  </div>
+
+  <!-- ============ LEAD STORY ============ -->
+  <h2>Lead Story</h2>
+  <h3><a href="https://www.theregister.com/security/2026/10/12/ukrainian-drone_strikes_on_yandex_datacenters_knock_cloud_and_payments_offline/5302577">Ukraine takes out three of Yandex's six datacenters in four days &mdash; and two of the three supercomputers that train Russia's AI</a> &mdash; <em>The Register</em></h3>
+
+  <p>Between the overnight of October 7&ndash;8 and the overnight of October 11&ndash;12, Ukrainian long-range drones struck three Yandex datacenters inside Russia: Sasovo (Ryazan), Kaluga, and Vladimir. Yandex &mdash; Russia's largest tech company and the search, cloud, maps, taxi and payments backbone of the Russian consumer internet &mdash; confirmed the Sasovo and Vladimir sites were taken completely offline, with the third operating in limited mode.<sup><a href="#s1">[1]</a></sup> Al Jazeera, citing Yandex and Russian regional governors, reported fires at Sasovo and the full shutdown of the Vladimir facility.<sup><a href="#s2">[2]</a></sup> The Moscow Times put the business impact plainly: Yandex Pay offline, Yandex Cloud degraded, network connectivity to roughly 30% of normal.<sup><a href="#s3">[3]</a></sup></p>
+
+  <p>What makes this an AI story and not just a war story: the sites that were hit host two of Yandex's three supercomputers used to train AI models, including Galushkin in Vladimir, among the most powerful in Russia.<sup><a href="#s4">[4]</a></sup> Tom's Hardware adds a second-order observation that is worth sitting with &mdash; Russian disinformation bot traffic measurably dropped overnight after the strikes, because the LLM infrastructure that generates it was literally offline.<sup><a href="#s4">[4]</a></sup> Ukraine's foreign minister framed this as retaliation for Russian strikes on Kyiv datacenters that cut internet for about 100,000 households.<sup><a href="#s2">[2]</a></sup></p>
+
+  <p>The analytical point for anyone running compute: AI datacenters are now, formally, legitimate military targets in a shooting war, and the first operator to lose multiple sites in a single week is the national-champion incumbent, not a startup. The specific physical dependencies that make a frontier training run economical &mdash; dense GPU clusters in one hall, custom power, in-building cooling, one grid connection &mdash; are the same dependencies that make a datacenter a crisply-defined kinetic target. Russian regulators and operators have spent 2026 debating a "sovereign AI stack"; the week of October 7 is the week they discovered the stack is only as sovereign as the perimeter around it. The Record notes that even partially-restored Yandex services depend on the two remaining supercomputers running at elevated load, which is a reliability single-point-of-failure dressed as a redundancy plan.<sup><a href="#s5">[5]</a></sup> No Western frontier lab has yet announced a response. Expect that to change in weeks, not months, because insurers and government customers will not wait for a US- or EU-sited rerun of the Vladimir incident to ask the question.</p>
+
+  <p class="sowhat"><strong>So what:</strong> if your training or inference footprint sits in a single building, a single metro, or a single jurisdiction, write that down as an auditable risk this week &mdash; the Yandex strikes just converted "geographic redundancy" from a FinOps slide into a line item underwriters will price, and the first vendor to publish a cross-region AI SLA with physical-infrastructure terms will set the market default.</p>
+
+  <!-- ============ THE BRIEFS ============ -->
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3><a href="https://www.wsj.com/tech/ai/amazon-decart-ai-acquisition-talks">Amazon in talks to acquire AI startup Decart for ~$7 billion</a> <span class="pub">&mdash; Wall Street Journal, via Spokesman &amp; GeekWire</span></h3>
+    <p>Amazon is in talks to buy three-year-old Israeli AI startup Decart in a cash-plus-stock deal worth about $7 billion, up from Decart's May valuation of roughly $4 billion.<sup><a href="#s6">[6]</a></sup> Decart's core products include software that abstracts over different AI chips (useful when you own as many Trainium parts as AWS does) and real-time 3D-world generation. GeekWire adds the kicker: Anthropic walked away from a competing $6B deal with Decart last month.<sup><a href="#s7">[7]</a></sup></p>
+    <p class="sowhat"><strong>So what:</strong> if your agent stack calls an LLM through a cloud-abstraction layer rather than a vendor SDK, assume that abstraction becomes an AWS-strategic asset within a quarter &mdash; price your migration cost now, before Amazon acquires the thing between you and your Nvidia bill.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/">Anthropic adds a "sustained and needless abusive or cruel behavior" clause to its usage policy, effective November 12</a> <span class="pub">&mdash; TechCrunch, The Register, CBS News</span></h3>
+    <p>Anthropic updated its Usage Policy on October 8 to prohibit sustained, needless cruel behavior toward its Claude models, among other clarifications on election interference, surveillance, and physical-world agent control.<sup><a href="#s8">[8]</a></sup> The Register and CBS confirm the rule applies only to extreme cases, keeps model-side conversation-ending as the primary enforcement mechanism, and takes effect November 12.<sup><a href="#s9">[9]</a></sup><sup><a href="#s10">[10]</a></sup> Builders should read it alongside the simultaneous clause on autonomous physical hardware: a qualified operator must be able to halt the equipment.</p>
+    <p class="sowhat"><strong>So what:</strong> if your product routes end-user chats to Claude, you now have 30 days to decide whether your TOS inherits Anthropic's model-welfare line or carves it out &mdash; the quiet default is that it inherits, and your legal team should know that before November 12, not on November 13.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://pub.sakana.ai/mass/">Sakana AI releases MASS: one 27B model plays executor, workflow optimizer, and judge &mdash; and trains itself on its best team's runs</a> <span class="pub">&mdash; Sakana AI (primary)</span></h3>
+    <p>Sakana AI and UC Berkeley released MASS (Multi-Agent Self-Supervision) on October 11, with the arXiv paper (2610.12176) and code on GitHub.<sup><a href="#s11">[11]</a></sup> One Qwen3.6-27B instance is used three ways: optimizer, executor, and evaluator. Starting from the base model, MASS wins 53.9% of comparisons against itself after one round of self-training and 69.9% after two, judged by GPT-5.5 and Claude Opus 4.8. Score-per-output-token improves 1.2&ndash;1.6&times; across MLR-Bench, DSBench, ScienceAgentBench, and AstaBench.</p>
+    <p class="sowhat"><strong>So what:</strong> if your pipeline treats "the agent," "the planner," and "the critic" as separate model deployments, you're paying three times for architecture that MASS shows one 27B weight set can run &mdash; consolidate before your compute bill decides for you.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-trump-administration-announces-the-most-ambitious-set-of-science-initiatives-this-century/">White House announces $6B science push; 11 companies pledge $2.4B in AI compute credits to Genesis Mission</a> <span class="pub">&mdash; White House (primary), CDO Magazine</span></h3>
+    <p>At its October 8 "Science: A New Golden Age" summit, the Trump administration announced $6B+ in science initiatives and $2.4B in compute credits from eleven companies to the DOE's Genesis Mission.<sup><a href="#s12">[12]</a></sup><sup><a href="#s13">[13]</a></sup> Pledges: NVIDIA $1B, AMD $500M, OpenAI $200M, Anthropic and Google $150M each, AWS/Armada/Crusoe/Micron $50M each. The centerpiece is DOE's Quantum Genesis Q Competition, funded at up to $215M for the first fault-tolerant 100-logical-qubit machines.</p>
+    <p class="sowhat"><strong>So what:</strong> if your research org is federal-adjacent, the compute-credit tier of your grant funnel just got $2.4B larger and the eligibility gate is "Genesis Mission consortium project" &mdash; file for a slot before November, because the operational guidance from DOE will land before the window formally opens.</p>
+  </div>
+
+  <!-- ============ MODEL WATCH ============ -->
+  <h2>Model Watch</h2>
+
+  <div class="mw-item">
+    <h3><a href="https://ai.meta.com/">Meta Muse Wonder &amp; Muse Wonder Full</a> <span class="pub">&mdash; Meta Superintelligence Labs, October 12</span></h3>
+    <div class="mw-meta">Frontier models with "Active Memory" (cross-session context) and "Active Focus" (multi-step agent drift control). Intelligence Index: Wonder Full 56, Wonder 52 (Claude Opus 5.5: 58). Wonder Full is withheld from the API; API access requires a Muse Code subscription from $50/mo.<sup><a href="#s14">[14]</a></sup></div>
+    <p class="sowhat"><strong>So what:</strong> Meta's flagship is deliberately gated behind a subscription harness, which means the model you build against is not the model Meta ships internally &mdash; benchmark on the API tier you can actually buy.</p>
+  </div>
+
+  <div class="mw-item">
+    <h3><a href="https://openrouter.ai/microsoft/microsoft-decision-1">Microsoft-Decision-1</a> <span class="pub">&mdash; Microsoft, October 9</span></h3>
+    <div class="mw-meta">Non-generative "decision model" that returns a probability over a fixed answer set (yes/no, multi-choice, rubric grade). MIT-licensed. $0.42/M input, output free. Microsoft claims 4.5&times; faster than Quyet-1.0-Large and 35&times; faster than GPT-6 Sol on routing-class tasks.<sup><a href="#s15">[15]</a></sup></div>
+    <p class="sowhat"><strong>So what:</strong> the routing/classification layer of your agent should move off a generative LLM this quarter &mdash; a free-output decision model at $0.42/M input is a step-change in cost basis for the "which tool do I call" subproblem.</p>
+  </div>
+
+  <div class="mw-item">
+    <h3><a href="https://pub.sakana.ai/mass/">Mistral Large 4 (Le Chonk) &mdash; public preview</a> <span class="pub">&mdash; Mistral AI, October 6</span></h3>
+    <div class="mw-meta">1.05T-parameter multimodal MoE, ~49B active, 1M context, API-only in preview with open weights promised by end of October. API $1.36/M in, $4.18/M out (temporary 50% sale: $0.68/$2.09). Primary release page: <a href="https://mistral.ai">mistral.ai</a>.<sup><a href="#s16">[16]</a></sup></div>
+    <p class="sowhat"><strong>So what:</strong> this is the first serious open-weight-bound frontier MoE from an EU lab in 2026 &mdash; if your deployment story involves "EU-sovereign weights on-prem by Q1," pencil in the end-of-October drop and start the eval today.</p>
+  </div>
+
+  <div class="mw-item">
+    <h3><a href="https://www.anthropic.com/claude-haiku-5-5">Claude Haiku 5.5</a> <span class="pub">&mdash; Anthropic, October 7</span></h3>
+    <div class="mw-meta">Anthropic's first Haiku-class model with an adjustable effort setting (cost vs intelligence). ~75% cheaper to run on average than Haiku 4.5. $0.10/M input, $0.50/M output two-tier pricing. Model string: <code>claude-haiku-5-5</code>. Knowledge cutoff June 2026.<sup><a href="#s17">[17]</a></sup></div>
+    <p class="sowhat"><strong>So what:</strong> if you were running a nightly summariser on Haiku 4.5, the drop-in rename plus effort=low will cut that job's bill roughly in half &mdash; do the rename this week and bank the savings.</p>
+  </div>
+
+  <!-- ============ VOICES ============ -->
+  <h2>Voices</h2>
+  <div class="voices">
+    <p><strong>Ethan Mollick</strong>, Wharton professor and author of <em>Co-Intelligence</em>, writing in his <em>One Useful Thing</em> newsletter on October 1, 2026, in a post titled <em>"The Dot and the Swarm"</em><sup><a href="#s18">[18]</a></sup>:</p>
+    <blockquote>&ldquo;The organizational problem I thought would take years of careful human design was largely solved by models that are better at organizing.&rdquo;</blockquote>
+    <p>Mollick is publicly correcting a position he held through most of 2026: that orchestrating useful work across agents would require elaborate human scaffolding &mdash; roles, protocols, retries, structured plans. His revised view, written days before Sakana's MASS paper demonstrated the self-organizing version of the same claim, is that modern models are good enough at coordination that most of the explicit multi-agent machinery developers have shipped this year is cost paid against a problem the model has already quietly solved for them. It is a rare in-public update from an operator-track voice, and it argues against the direction most teams are currently investing in.</p>
+    <p class="sowhat"><strong>So what:</strong> audit the orchestration layer of your agent system this quarter and strike every rule, prompt scaffold, or state machine whose only justification is "the model wouldn't do this on its own" &mdash; a lot of them are no longer true, and the ones that still are deserve explicit evidence rather than inherited assumption.</p>
+  </div>
+
+  <!-- ============ TODAY'S SIGNAL ============ -->
+  <h2>Today's Signal</h2>
+  <div class="signal">
+    <p>Four of today's five stories are about the same substrate: compute is no longer a layer under the AI stack, it is the asset. Ukraine took three Yandex datacenters offline including two supercomputers that train Russian LLMs. Amazon is in talks to pay $7B for a company whose core product is abstracting over which chip you call. The White House and eleven frontier players committed $2.4B in compute credits to a single federal research consortium. Mistral's Large 4 preview turns on API-only this week and open-weights by month's end &mdash; the differentiator is where the weights can physically live. The thread through all of it is that in October 2026 "compute" means a specific building, a specific jurisdiction, and a specific chip family, and treating it as fungible is now a materially mispriced position. Builders who priced their stack as "model + API" last quarter are being quietly repriced as "model + API + physical dependency," and the first vendors to publish that line item explicitly will take share from the ones who make customers calculate it themselves.</p>
+  </div>
+
+  <!-- ============ THE LEDGER ============ -->
+  <h2>The Ledger</h2>
+  <div class="ledger">
+    <div class="record">Season 1 &middot; <span class="verdict-hit">2</span>&ndash;<span class="verdict-miss">2</span> &middot; 46 open &middot; earliest open horizon 2026-10-15</div>
+
+    <div class="call-row">
+      <strong>No calls graded today.</strong>
+      <br><span style="color:var(--muted);">Next grading due 2026-10-15 (two calls: <code>2026-08-17-1</code> Stripe-OpenRouter template; <code>2026-08-22-1</code> protein-binder template; <code>2026-08-28-1</code> federal AI incident response; <code>2026-09-02-1</code> gated frontier channel; <code>2026-09-15-1</code>).</span>
+    </div>
+
+    <div class="call-row">
+      <strong>Today's new call &mdash; OPEN:</strong> Within six weeks (by <strong>2026-11-24</strong>), the Yandex strikes trigger at least two primary-source operational responses from non-Russian frontier labs, hyperscalers, or sovereign AI programs &mdash; a published multi-region training commitment, a datacenter-resilience line in a new SLA, a sovereignty-tier product, or a national-security contract that references physical-infrastructure resilience as a procurement criterion. HIT if at least two such announcements land, each in a primary company or government source, by the horizon date; MISS if fewer than two.
+    </div>
+  </div>
+
+  <!-- ============ SOURCES ============ -->
+  <h2>Sources</h2>
+  <div class="sources">
+    <ol>
+      <li id="s1"><span class="tier">tier-1</span><em>The Register</em> &mdash; <a href="https://www.theregister.com/security/2026/10/12/ukrainian-drone_strikes_on_yandex_datacenters_knock_cloud_and_payments_offline/5302577">Ukrainian drone strikes on Yandex datacenters knock cloud and payments offline</a></li>
+      <li id="s2"><span class="tier">tier-1</span><em>Al Jazeera</em> &mdash; <a href="https://www.aljazeera.com/news/2026/10/11/russias-yandex-says-data-centre-in-vladimir-shut-down-after-drone-attack">Russia's Yandex says data centre in Vladimir shut down after drone attack</a></li>
+      <li id="s3"><span class="tier">tier-1</span><em>The Moscow Times</em> &mdash; <a href="https://www.themoscowtimes.com/2026/10/12/ukraines-strikes-on-yandex-data-centers-explained-a93953">Ukraine's Strikes on Yandex Data Centers, Explained</a></li>
+      <li id="s4"><span class="tier">trade</span><em>Tom's Hardware</em> &mdash; <a href="https://www.tomshardware.com/tech-industry/data-centers/russian-disinformation-bot-traffic-nearly-eliminated-overnight-after-ukraine-drone-strikes-cripple-multiple-of-russias-google-data-centers-ukraine-intensifies-bombing-of-yandex-data-centers-in-response-to-moscows-strikes-on-kyiv-data-centers">Russia's Yandex bot traffic nearly eliminated overnight after Ukraine drone strikes cripple multiple of 'Russia's Google' data centers</a></li>
+      <li id="s5"><span class="tier">trade</span><em>The Record</em> &mdash; <a href="https://therecord.media/ukraine-strikes-third-yandex-data-center">Ukraine strikes third Yandex data center, disrupting digital services across Russia</a></li>
+      <li id="s6"><span class="tier">tier-1</span><em>Wall Street Journal</em> (via <em>Spokesman-Review</em>) &mdash; <a href="https://www.spokesman.com/stories/2026/oct/12/amazon-reportedly-in-talks-to-buy-ai-startup-decar/">Amazon reportedly in talks to buy AI startup Decart in $7B deal</a></li>
+      <li id="s7"><span class="tier">tier-1</span><em>GeekWire</em> &mdash; <a href="https://www.geekwire.com/2026/why-amazon-might-pay-billions-for-decart-a-3-year-old-ai-startup-that-hasnt-disclosed-its-revenue/">Why Amazon might pay billions for Decart, a 3-year-old AI startup that hasn't disclosed its revenue</a></li>
+      <li id="s8"><span class="tier">tier-1</span><em>TechCrunch</em> &mdash; <a href="https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/">Anthropic changes usage policy to ban model abuse and election interference</a></li>
+      <li id="s9"><span class="tier">tier-1</span><em>The Register</em> &mdash; <a href="https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218">Anthropic asks users to stop being mean to Claude</a></li>
+      <li id="s10"><span class="tier">tier-1</span><em>CBS News</em> &mdash; <a href="https://www.cbsnews.com/news/anthropic-bans-abusive-behavior-claude/">Anthropic bars "abusive or cruel" behavior toward its Claude AI model</a></li>
+      <li id="s11"><span class="tier">primary</span>Sakana AI &mdash; <a href="https://pub.sakana.ai/mass/">MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision</a> (arXiv 2610.12176, code at github.com/SakanaAI/mass)</li>
+      <li id="s12"><span class="tier">primary</span>White House &mdash; <a href="https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-trump-administration-announces-the-most-ambitious-set-of-science-initiatives-this-century/">Fact Sheet: Trump Administration Announces the Most Ambitious Set of Science Initiatives This Century</a></li>
+      <li id="s13"><span class="tier">trade</span><em>CDO Magazine</em> &mdash; <a href="https://www.cdomagazine.tech/us-federal-news-bureau/white-house-announces-6b-science-push-including-2-4b-genesis-mission-ai-commitments">White House Announces $6B Science Push, Including $2.4B Genesis Mission AI Commitments</a></li>
+      <li id="s14"><span class="tier">trade</span><em>Unite.AI</em> &mdash; <a href="https://www.unite.ai/meta-unveils-muse-wonder-series-its-most-capable-ai-models-yet/">Meta Unveils Muse Wonder Series, Its Most Capable AI Models Yet</a></li>
+      <li id="s15"><span class="tier">primary</span>Microsoft (via OpenRouter listing) &mdash; <a href="https://openrouter.ai/microsoft/microsoft-decision-1">Microsoft-Decision-1 &mdash; API pricing &amp; providers</a></li>
+      <li id="s16"><span class="tier">trade</span><em>SiliconANGLE</em> &mdash; <a href="https://siliconangle.com/2026/10/06/mistral-launches-open-source-mistral-large-4-details-ai-roadmap/">Mistral launches open-source Mistral Large 4, details AI roadmap</a></li>
+      <li id="s17"><span class="tier">primary</span>Anthropic &mdash; <a href="https://www.anthropic.com/claude-haiku-5-5">Introducing Claude Haiku 5.5</a></li>
+      <li id="s18"><span class="tier">practitioner</span>Ethan Mollick, <em>One Useful Thing</em> &mdash; <a href="https://www.oneusefulthing.org/p/the-dot-and-the-swarm">The Dot and the Swarm</a></li>
+    </ol>
+  </div>
+
+  <nav class="bar">
+    <a href="2026-10-12.html">&larr; YESTERDAY</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">TOMORROW &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+
+</div>
+
+<script>
+const S = "Above the Noise. AI and tech, signal over noise. For Tuesday, October thirteenth, twenty twenty six. " +
+"Lead story. Ukraine takes out three of Yandex's six datacenters in four days, and two of the three supercomputers that train Russia's AI. Between October seventh and twelfth, Ukrainian long range drones struck Yandex datacenters in Sasovo, Kaluga, and Vladimir. Yandex confirmed Sasovo and Vladimir are completely offline. Yandex Pay is down, Yandex Cloud is degraded, network connectivity dropped to thirty percent of normal. The sites that were hit host two of Yandex's three supercomputers used to train AI models, including Galushkin, among the most powerful in Russia. Tom's Hardware notes Russian disinformation bot traffic measurably dropped overnight after the strikes, because the L L M infrastructure that generates it was literally offline. The analytical point for anyone running compute: A I datacenters are now, formally, legitimate military targets, and the first operator to lose multiple sites in a single week is the national incumbent. Expect Western frontier labs to publish geographic redundancy commitments in weeks, not months. " +
+"The briefs. One. Amazon is in talks to buy A I startup Decart for about seven billion dollars, up from four billion in May. Decart's core products include software that abstracts over different A I chips. Anthropic walked from a competing six billion deal last month. " +
+"Two. Anthropic added a sustained and needless abusive or cruel behavior clause to its Usage Policy on October eighth, effective November twelfth. Enforcement runs through Claude ending conversations, not account penalties. " +
+"Three. Sakana A I released MASS on October eleventh. One Qwen three point six twenty seven B model plays executor, workflow optimizer, and judge, and trains itself on its best team's work. Wins fifty three point nine percent against the base after one round, sixty nine point nine percent after two. " +
+"Four. The White House announced six billion in science initiatives on October eighth. Eleven companies pledged two point four billion in compute credits to the Genesis Mission. Nvidia one billion. A M D five hundred million. OpenAI two hundred million. Anthropic and Google one hundred fifty million each. " +
+"Model watch. Meta released Muse Wonder and Muse Wonder Full on October twelfth. Microsoft released Decision One on October ninth, a non generative decision model at zero point four two per million input, output free. Mistral Large four, le Chonk, is in public preview, one point zero five trillion parameter MoE, forty nine billion active, one million context, open weights promised by end of October. Claude Haiku five point five shipped October seventh, Anthropic's first Haiku with an effort control, about seventy five percent cheaper to run than Haiku four point five. " +
+"Voices. Ethan Mollick, Wharton professor and author of Co Intelligence, writing in One Useful Thing on October first, in a post titled The Dot and the Swarm, quote: The organizational problem I thought would take years of careful human design was largely solved by models that are better at organizing. End quote. He is publicly correcting a position he held through most of twenty twenty six: that orchestrating useful agent work would require elaborate human scaffolding. Days before Sakana's MASS paper demonstrated the self organizing version of the same claim. " +
+"Today's signal. Four of today's five stories are about the same substrate: compute is no longer a layer under the A I stack, it is the asset. Ukraine took three Yandex datacenters offline. Amazon may pay seven billion for chip abstraction software. The White House committed two point four billion in compute credits. Mistral Large four open weights land by month's end, and the differentiator is where the weights can physically live. In October twenty twenty six, compute means a specific building, a specific jurisdiction, a specific chip family, and treating it as fungible is a mispriced position. " +
+"The ledger. Season one, two and two. Forty six open. No calls graded today. Earliest open horizon October fifteenth. Today's new call: within six weeks, by November twenty fourth, the Yandex strikes trigger at least two primary source operational responses from non Russian frontier labs, hyperscalers, or sovereign A I programs. A published multi region training commitment, a datacenter resilience line in a new SLA, a sovereignty tier product, or a national security contract that names physical infrastructure resilience as a procurement criterion. " +
+"That's Above the Noise for today. Signal over noise.";
+
+let utter = null;
+let playing = false;
+
+function pickVoice() {
+  const vs = window.speechSynthesis.getVoices();
+  const pref = vs.find(v => /Daniel/i.test(v.name)) ||
+               vs.find(v => /Alex/i.test(v.name)) ||
+               vs.find(v => /en[-_]GB/i.test(v.lang)) ||
+               vs.find(v => /en/i.test(v.lang));
+  return pref || vs[0];
+}
+
+function toggleAudio() {
+  const btn = document.getElementById('playBtn');
+  const st = document.getElementById('playState');
+  if (playing) {
+    window.speechSynthesis.cancel();
+    playing = false;
+    btn.innerHTML = '&#9654; LISTEN';
+    st.textContent = '~4 min read aloud';
+    return;
+  }
+  utter = new SpeechSynthesisUtterance(S);
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  utter.rate = 0.93;
+  utter.onend = () => {
+    playing = false;
+    btn.innerHTML = '&#9654; LISTEN';
+    st.textContent = '~4 min read aloud';
+  };
+  window.speechSynthesis.speak(utter);
+  playing = true;
+  btn.innerHTML = '&#9632; STOP';
+  st.textContent = 'playing…';
+}
+
+if ('speechSynthesis' in window) {
+  speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+  window.speechSynthesis.getVoices();
+}
+</script>
+</body>
+</html>
