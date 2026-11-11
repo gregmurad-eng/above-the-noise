@@ -22,10 +22,10 @@
       "basis": "The Anthropic-Macquarie-GIC deal announced August 10 solves the trillion-dollar-compute cash-drag problem Amodei has been publicly warning about, and every other frontier lab has the same problem on a similar curve. The counterparties (Blackstone, Brookfield, Apollo, KKR, sovereign funds) were also part of NVIDIA's August 10 $500B MoU, so the money is being organised in public.",
       "horizon": "2026-10-31",
       "test": "A primary-source press release from any of the named labs, dated on or before 2026-10-31, announcing a JV/platform-vehicle data-centre arrangement with BOTH (a) non-lab-controlled equity from an infrastructure fund or sovereign wealth fund AND (b) a long-term (>=10 years) lease structure. Spot GPU rentals, hyperscaler capacity deals, and equity-swap partnerships do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "UNSETTLED",
+      "evidence": "Stargate LLC (OpenAI + SoftBank + Oracle + MGX) is a JV with non-lab-controlled equity from SoftBank (infrastructure-fund side) and MGX (UAE sovereign wealth), and Nvidia's 2026-08-17 8-K disclosed a 20-year lease for the OpenAI-anchored Ohio SB Energy site. Those structural facts match the test, but the test requires a primary-source press release FROM a named lab (OpenAI, Google DeepMind, xAI, Meta, Mistral) in the 2026-08-14 to 2026-10-31 window stating (a) non-lab-controlled infra/sovereign equity AND (b) a long-term lease. The Aug-Oct window shows OpenAI participating in Stargate expansions but no single OpenAI primary-source release packages both clauses together; the clearest primary filing (Nvidia's 8-K) is from the chip supplier, not the lab. Graded UNSETTLED. Reference: https://en.wikipedia.org/wiki/Stargate_LLC and https://finance.yahoo.com/technology/ai/articles/wall-street-mobilizes-500-billion-192149503.html"
     },
     {
       "id": "2026-08-15-1",
@@ -58,10 +58,10 @@
       "basis": "Bloomberg and TechCrunch reported on 2026-08-16 that Stripe finalised its acquisition of OpenRouter for over $7B, a 5x+ markup on OpenRouter's May $1.3B Series B. The move buys a payments company visibility into which models win and lose per developer per call, and it makes the neutrality guarantee that developers relied on OpenRouter for explicitly billing-owned. Anthropic-Decart talks (efficiency layer), the IBM-OpenAI Elite alliance (consulting layer), and DeepSeek's pricing tier change (metering layer) are all versions of the same trade: model capability is table stakes, and the wrapper around the model is where the next round of consolidation lands. Cloudflare, Adyen, Snowflake, Databricks, PayPal, Block, and the major CDNs are all sitting on infrastructure that fits an AI-gateway acquisition.",
       "horizon": "2026-10-15",
       "test": "A primary-source press release or tier-1 news report on or before 2026-10-15 confirming (a) or (b) above. The middleware vendor must NOT be a foundation-model lab. The incumbent must NOT be a pure AI VC and must NOT be a foundation-model lab. Routine Series C/D venture rounds and OEM/reseller partnerships do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "No qualifying deal landed in the 2026-08-17 to 2026-10-15 window. The candidate events either fall outside the test or outside the window: Snowflake-Natoma (database incumbent + MCP gateway) was announced 2026-05-27, predating the call. Nvidia-Hugging Face ($12.93B, 2026-09-03) is a silicon incumbent, not from the named payments/CDN/cloud/database categories, so it does not count per the test's explicit list. Cloudflare-Deno (2026-10-09) is CDN + runtime, not AI middleware per the vendor-category definition. No $200M+ incumbent-led strategic investment matching the criteria was published in-window. Reference: https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/ and https://techcrunch.com/2026/10/09 Cloudflare-Deno coverage."
     },
     {
       "id": "2026-08-18-1",
@@ -94,10 +94,10 @@
       "basis": "Anthropic's Aug 18 paper 'Autonomous de novo protein binder design with Claude' reports 14/15 targets hit, with Adaptyv Bio and Twist Bioscience as named lab validators, and Mythos Preview scoring 40% on RBX1 vs 3.7% among Adaptyv competition participants. The same week, OpenAI cut GPT-5.6 Sol API pricing 20%+ under competitive pressure and Broadcom queued $60B+ in debt for AI-lab chip capacity: generic-token margin is compressing while specialised-domain capability is where labs are choosing to defend price. Every other frontier lab has both the motive (differentiate off the pricing floor) and the means (agentic tool loops + an experimental partner willing to publish) to match the Anthropic reference inside the fast-follow window.",
       "horizon": "2026-10-15",
       "test": "A primary-source blog post, paper, or press release from OpenAI, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15, disclosing BOTH (a) a lab-validated result from their frontier general-purpose model in a wet-lab or physical-materials domain, AND (b) an outside experimental partner explicitly named. Existing bio-specific model releases (e.g. AlphaFold-family drops from DeepMind), pure computational or simulation-only benchmarks, and partnership announcements without a shipped lab-validated result do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "Google DeepMind did publish a wet-lab-validated protein result in early October 2026 \u2014 SynthID Bio watermarks on AI-designed protein binders, validated with Adaptyv Bio using Carterra HT-SPR, published in Nature \u2014 but the generator was AlphaProteo paired with a SynthID version of ProteinMPNN, both bio-specific models. The test explicitly excludes 'bio-specific model releases (e.g. AlphaFold-family drops from DeepMind)' and requires a result from the lab's FRONTIER GENERAL-PURPOSE model. No OpenAI, xAI, Meta, or Mistral general-purpose-model lab-validated physical artefact with a named experimental partner shipped by 2026-10-15. Reference: https://www.helpnetsecurity.com/2026/10/01/synthid-bio-watermark/ and https://thenextweb.com/news/google-deepmind-synthid-bio-watermark-ai-designed-proteins"
     },
     {
       "id": "2026-08-23-1",
@@ -106,10 +106,10 @@
       "basis": "The Aug 22 roadmap by lead maintainers David Soria Parra and Den Delimarsky explicitly names both SEPs as active proposals under an Agent Identity WG that is forming, and states 'SEPs that fall within these priority areas get expedited review.' Enterprise adoption of MCP servers is being held back by static-secret authentication and by the gap between agent identity and user-delegated authority; the roadmap frames both DPoP and Workload Identity Federation as the specific answers. The 2026-07-28 spec already shipped the stateless transport that these auth primitives were waiting on, so the ordering constraint is gone. Every Tier 1 SDK maintainer participates in the same WG and has a channel incentive to ship first.",
       "horizon": "2026-10-18",
       "test": "A primary-source GitHub PR merge, dated on or before 2026-10-18, into the modelcontextprotocol/modelcontextprotocol main branch that adopts either SEP-1932 (DPoP) or SEP-1933 (Workload Identity Federation) as an accepted specification component, AND a released SDK version (Python, TypeScript, C#, or the Anthropic/Google/OpenAI official implementation) dated on or before 2026-10-18 that ships support for the merged primitive. Draft PR state, RFC state, or withdrawal do not count. SDK support in an unreleased branch or pre-release tag does not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "UNSETTLED",
+      "evidence": "The SDK half of the test is clearly satisfied: the official @modelcontextprotocol TypeScript SDK 2.1.0 released 2026-09-23 shipped DPoP sender-constrained access tokens and OAuth scope challenges, well before the 2026-10-18 horizon. The spec-repo-merge half is ambiguous: DPoP work landed as an experimental extension in modelcontextprotocol/ext-auth (PR #38 and surrounding), not as an accepted specification component merged into modelcontextprotocol/modelcontextprotocol main. By 2026-10-23 PRs were still actively being reviewed and merged in the ext-auth repo. On the strict reading the test requires, both halves are needed and the main-repo-component clause is not clearly met by 2026-10-18. Reference: https://workos.com/blog/mcp-sdk-dpop-and-scope-challenges and https://github.com/modelcontextprotocol/ext-auth/pull/38"
     },
     {
       "id": "2026-08-24-1",
@@ -130,10 +130,10 @@
       "basis": "On Aug 24 SoftBank announced a record 1-trillion-yen (approx USD 6.3B) retail bond in Japan to fund USD 30B of OpenAI commitments, with pricing set for Sept 4 at an indicative 4.3-4.9% coupon; Bloomberg reported that banks were 'reluctant to take the risk, leaving the deal dependent on retail investors'. On Aug 23 Alibaba raised HKD 80B (approx USD 10.2B) in Hong Kong's largest-ever follow-on offering to fund AI capex, with 100% of proceeds earmarked for AI, and shares fell as much as 10% on Aug 24. Both moves push AI funding beyond the institutional-debt syndicates that priced the Broadcom-Anthropic tranches into public capital pools. Every non-AI-lab operator with an AI capex need has the same reason to move, and September's Nvidia print plus Anthropic's expected S-1 will price the reference credit for peers.",
       "horizon": "2026-10-31",
       "test": "A primary-source press release, prospectus, exchange filing, or tier-1 news report dated on or before 2026-10-31 confirming that a company matching the definition above has priced a public retail bond or public follow-on equity offering of USD 2B or more with stated AI-infrastructure or AI-lab-investment use of proceeds. Private placements to institutional investors, syndicated bank loans, convertibles issued below USD 2B, and pre-announced tranches from SoftBank's Sept 4 pricing itself do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "The closest fits priced outside the window. Oracle's Investor Day on 2026-10-28 committed to raising $20B ($10B equity + $10B debt) for AI data centers, but the actual public pricing landed 2026-11-02 \u2014 after the 2026-10-31 horizon. No other non-AI-lab, non-cloud-native Asian conglomerate/telecom/holding-company on the named list (KDDI, NTT, Samsung, SK Hynix, Reliance, Tencent, SoftBank next-tranche) priced a qualifying $2B+ public retail bond or public follow-on equity offering with explicit AI-infrastructure use of proceeds on or before 2026-10-31. Reference: https://www.bloomberg.com/news/articles/2026-11-02/oracle-is-offering-10-billion-of-high-grade-dollar-bonds and https://247wallst.com/investing/2026/11/02/oracle-declines-4-as-10-billion-bond-sale-revives-ai-debt-worries-coreweave-advances-2-microsoft-holds-steady/"
     },
     {
       "id": "2026-08-26-1",
@@ -166,10 +166,10 @@
       "basis": "The Aug 27 open letter signed by OpenAI, Anthropic, Google, Microsoft, Amazon, Cisco, Oracle, Cloudflare, CrowdStrike, Palo Alto Networks, Capital One, Mastercard, Visa, GM, Shopify and dozens more explicitly asks frontier AI companies to 'give vetted defenders early access to advanced models' and to prioritise hospitals, water utilities, and local governments. Altman's public line was 'this is a critically important moment for cyber defense with AI; there is not much time to act.' Every named signatory now has a signed public commitment to point at, and the July Hugging Face agent-intrusion incident plus the Aug 5 AISI report on unsanctioned agent behaviour give each lab an existing incident record it will want to be seen actively responding to. A defender-access program is the cheapest, most legible response the letter's concrete asks map onto, and shipping first is a differentiator each lab has already been publicly primed to want.",
       "horizon": "2026-10-15",
       "test": "A primary-source blog post, program landing page, or press release from OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15 announcing a formally named program that BOTH (a) provides vetted cybersecurity defenders from critical-infrastructure sectors preferential access, early access, or subsidised access to a frontier model, AND (b) discloses an application, intake, or eligibility process in that same source. Existing generic developer-access tiers, existing bug bounty programs, one-off pilot announcements without an intake process, general threat-intel sharing agreements without model access, and policy-posture blog posts without a shipping program do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "HIT",
+      "evidence": "Anthropic on 2026-10-06 expanded its Cyber Verification Program into three named tiers \u2014 Defense Access, Red Team Access, Specialized Access \u2014 with Defense Access explicitly covering 'critical infrastructure operators, small security firms, and open-source maintainers' and a disclosed application/intake process. On 2026-10-08 Axios covered Anthropic's Critical Infrastructure Defense Program (CIDP) pairing frontier Claude access with on-site engineers for operators of power, water, factories, and transport OT. Both are inside the 2026-10-15 horizon and both satisfy clauses (a) preferential/early access to a frontier model for vetted critical-infrastructure defenders AND (b) a disclosed intake process. Reference: https://www.anthropic.com/news/anthropic-cyber-mission and https://www.axios.com/2026/10/08/anthropic-critical-infrastructure-cybersecurity"
     },
     {
       "id": "2026-08-29-1",
@@ -202,10 +202,10 @@
       "basis": "The European Commission on Aug 31 designated ChatGPT as a Very Large Online Search Engine and Reddit and Roblox as Very Large Online Platforms under the DSA, bringing the strictest-tier count to 28. The trigger was OpenAI's own disclosure of ~159.1M EU monthly active users on ChatGPT Search. Executive VP Henna Virkkunen framed the move as a higher standard of scrutiny and accountability; Ireland's Coimisi\u00fan na Me\u00e1n and the Netherlands' ACM are the supervising national coordinators. The DSA layer sits on top of the AI Act's Aug 2 GPAI transparency clock and stacks with the FSB Chair's Aug 31 letter to G20 finance ministers naming frontier AI as a financial-stability transmission channel. Every other frontier chatbot on the same 45M-EU-MAU curve now has a public, mechanical designation pathway pointed at it, and each has an incentive to disclose or contest first rather than be discovered last.",
       "horizon": "2026-10-31",
       "test": "A primary-source European Commission announcement, service-provider press release, or tier-1 news report dated on or before 2026-10-31 confirming (a) formal VLOSE or VLOP designation of any of the named chatbots, OR (b) that any of the named chatbots is under active DSA designation review with a user-count disclosure at or above the 45M EU MAU threshold. Generic policy-posture statements, voluntary transparency reports without a designation-review reference, private consultations without a public disclosure, and non-EU regulatory actions do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "No further frontier chatbot received a VLOSE/VLOP DSA designation on or before 2026-10-31, and no primary-source European Commission announcement, service-provider press release, or tier-1 news report in the window confirmed that Gemini, Claude, Copilot, Perplexity, Grok, or Meta AI was under active DSA designation review with a 45M-EU-MAU disclosure. Commentary across EU policy circles treated the ChatGPT VLOSE move as a template that *could* extend, but the designation list stayed at 28 through the horizon. Reference: https://digital-strategy.ec.europa.eu/en/news/commission-designates-chatgpt-reddit-roblox-under-digital-services-act and https://euperspectives.eu/2026/10/one-chatbot-several-rulebooks/"
     },
     {
       "id": "2026-09-01-1",
@@ -226,10 +226,10 @@
       "basis": "OpenAI's Path to Astra post is the first time a frontier lab has publicly said one of its own models crossed the top-severity tier of its own risk framework, and shipped it anyway behind tighter gating. The evidence disclosed is unusually specific: 100% on ExploitBench and two zero-days discovered and chained in expert-led red-team runs. The move retires the question every enterprise buyer has been asking since the Aug 27 100+ firm defensive-surge letter (whether labs will actually restrict a shipped model on their own risk assessment before regulators force it) and makes 'we assessed our model against our own top tier and told you the answer' the new floor of a defensible frontier release. Every peer already runs a published framework with an equivalent top tier (Anthropic RSP, Google Frontier Safety Framework, xAI Risk Management, Meta Frontier AI Framework, Mistral commitments) and has both procurement pressure (defensive-surge letter, GenAI.mil buyer stance) and governance machinery to answer publicly.",
       "horizon": "2026-10-15",
       "test": "A primary-source model card, release note, safety-framework update, or policy blog post from Anthropic, Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-15 that explicitly claims OR denies that a currently-released or in-flight model has reached the lab's own highest cyber-capability risk tier (Critical, or the equivalent named designation in that lab's published framework). Generic 'we take safety seriously' statements, unchanged model cards without a cyber-tier statement, third-party evaluator claims without lab endorsement, and lower-tier or general-purpose framework updates that do not address the highest cyber tier do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "UNSETTLED",
+      "evidence": "Anthropic shipped the expanded Cyber Verification Program on 2026-10-06 with three gated tiers and disclosed Glasswing partners' vulnerability counts, but the program page itself is a gating/access scheme rather than a primary-source statement claiming or denying that a specific model has reached the lab's own highest cyber-capability tier under the RSP. Google's Fairwind/Gemini-Flash-Cyber material and xAI/Meta/Mistral framework updates in the 2026-09-02 to 2026-10-15 window did not publish an explicit top-tier claim or denial on cyber-capability risk. The pattern is clearly tightening in this direction, but no single peer-lab primary source met the strict bar inside the horizon. Reference: https://www.anthropic.com/news/anthropic-cyber-mission and https://www.securityweek.com/anthropic-introduces-3-tier-cyber-verification-program-for-ai-access/"
     },
     {
       "id": "2026-09-03-1",
@@ -250,10 +250,10 @@
       "basis": "OpenAI shipped GPT-6 Astra on Sept 3 with published API pricing of $10/$50 per million tokens, matching Claude Fable 5.1 (shipped Sept 1 by Anthropic) at exactly the same tier. Meta Muse Spark 1.3 shipped Sept 2 at $1.25/$4.25 and Google Gemini 3.8 Flash at $0.75/$3.75 sit in the flash/mid-tier line, not top-tier reasoning. When the two largest frontier labs converge on the same top-tier price within 48 hours, that becomes the reference number the rest of the market anchors against, and the pricing pressure runs toward the top tier at Q4 renewal season.",
       "horizon": "2026-10-31",
       "test": "A primary-source API pricing page, model card, changelog, or blog post from Google DeepMind, xAI, Meta, or Mistral dated on or before 2026-10-31 that lists a top-tier frontier general-purpose model (equivalent capability tier to GPT-6 Astra or Claude Fable 5.1 \u2014 not a small, flash, or mini variant) at API pricing within 10% of $10 per million input tokens AND $50 per million output tokens. Existing enterprise-contract pricing, custom pricing, discount programs, and free tiers do not count. New pricing for a genuinely new top-tier release does count. Pricing that hits only one side of the input/output pair within the 10% window does not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "The pricing move in the 2026-09-04 to 2026-10-31 window went in the opposite direction from the call: Google priced Gemini 4 Argon at $2.00/$10.00 per million tokens (intro through 2026-11-30, then $4.00/$20.00) \u2014 a competitive undercut rather than convergence at $10/$50. $2/$10 is far outside the test's 10% band ($9-$11 input, $45-$55 output). xAI, Meta, and Mistral did not publish a top-tier general-purpose model at ~$10/$50 in the window either. The commodity line actually moved lower during the horizon (Anthropic Haiku 5.5 at $0.10/$0.50 on 2026-10-07, OpenAI GPT-6 Luna earlier at the same rate), and the Gemini 4 line extended that pressure to Argon-class. Reference: https://www.technology.org/2026/10/14/gemini-4-argon-generally-available-pricing-december/ and https://explainx.ai/blog/gemini-4-argon-launch-benchmarks-pricing-2026"
     },
     {
       "id": "2026-09-05-1",
@@ -274,10 +274,10 @@
       "basis": "Microsoft's own release page and the VentureBeat writeup both confirm $0.10/audio hour through end of 2026, with claimed 10x speed advantage over GPT-Transcribe and a #1 FLEURS finish at 5.2% WER across 60 languages. MAI-Transcribe-1 shipped at $0.36/hour, so Microsoft has priced its own line down by 72% in five months while asserting benchmark leadership. Every named peer has published per-hour or per-minute rates well above $0.10 and now has an anchor number to move to before Q4 renewal shopping starts; the transcription market is short enough on switching cost that the first mover captures material volume.",
       "horizon": "2026-10-31",
       "test": "A primary-source pricing page, changelog, or blog post from OpenAI, Google, ElevenLabs, Deepgram, or AssemblyAI dated on or before 2026-10-31 that cuts the flagship transcription API rate by 40% or more relative to its 2026-09-03 rate, expressed per audio hour or per audio minute. Introductory-tier promotions that were pre-announced before 2026-09-03 do not count; volume-discount coupons and enterprise-contract carve-outs do not count; the change must apply to the standard published rate for the flagship transcription product.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "MISS",
+      "evidence": "No named flagship transcription incumbent published a 40%+ per-audio-hour standard-rate cut on or before 2026-10-31. OpenAI deprecated whisper-1/gpt-4o-transcribe family on 2026-08-26 (pricing unchanged for continued use through 2027-02-26, not a cut). Deepgram's 2026-10-23 release added a Nova-3 multilingual model but did not announce a 40%+ cut to its flagship rate. ElevenLabs' large Scribe cut was in May 2026, pre-call. AssemblyAI and Google (Chirp/Gemini transcription) did not publish qualifying cuts in-window. Microsoft's own MAI-Transcribe-2 price was the anchor the call was built around, so it does not count as the matching response. Reference: https://www.cartesia.ai/learn/openai-whisper-api-pricing and https://convertaudiototext.com/blog/speech-to-text-api-pricing-2026"
     },
     {
       "id": "2026-09-07-1",
@@ -298,10 +298,10 @@
       "basis": "Bloomberg reported Sept 3 that Anthropic is finalizing a $15B pre-IPO credit facility; The Information reported Sept 6 that Anthropic has signed $517B in compute contracts over 11 months; Anthropic confidentially filed a draft S-1 in June and has been telegraphing an October Nasdaq listing.",
       "horizon": "2026-10-31",
       "test": "By 2026-10-31, either Anthropic has a public S-1 (not confidential draft) visible on SEC EDGAR and priced its IPO, OR Anthropic or lead underwriters publicly named a new target date that pushes the listing past 2026-10-31. If neither happens (silent slip), the call is MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-11",
+      "verdict": "HIT",
+      "evidence": "Anthropic filed its public Form S-1 with the SEC on 2026-10-26, well inside the 2026-10-31 horizon, and applied to list Class A common stock on the Nasdaq Global Select Market under the ticker ANT. The public S-1 is visible on SEC EDGAR (not a confidential draft) and includes financials and risk factors. By 2026-11-02 Anthropic filed an amended S-1/A-1 and by 2026-11-10 set a filed price range of $70-$78, launched the roadshow, and named 2026-11-19 as the first trading day. Reference: https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm and https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html"
     },
     {
       "id": "2026-09-09-1",
@@ -610,6 +610,18 @@
       "basis": "Yandex, Al Jazeera, The Register, The Moscow Times and Toms Hardware all confirmed on October 11-12 that drones struck three of six Yandex datacenters including the Galushkin supercomputer in Vladimir. Russian consumer internet services (Pay, Cloud) are degraded; LLM training capacity is materially reduced. No Western lab has responded publicly yet; insurers and government customers will not wait for a US or EU rerun to ask the question.",
       "horizon": "2026-11-24",
       "test": "By 2026-11-24, at least two primary-source operational responses from non-Russian frontier labs, hyperscalers, or sovereign-AI programs explicitly cite datacenter-resilience, geographic-redundancy, or physical-infrastructure risk as the rationale: a published multi-region training commitment, a datacenter-resilience line in a new SLA, a sovereignty-tier product, or a national-security procurement criterion. HIT if at least two such primary-source announcements land by the horizon; MISS if fewer than two.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-11-1",
+      "date": "2026-11-11",
+      "call": "Anthropic's 2026-11-10 price range ($70-$78, up to $1.4T valuation, Nasdaq ANT first trading day 2026-11-19) will pull at least one other named frontier lab into the public-listing path on a short clock. Within four weeks of ANT's first trading day, at least one of OpenAI, Google DeepMind (as a separate Alphabet-tracked entity), xAI, Meta Superintelligence Labs, or Mistral will file a confidential or public S-1 registration statement with the SEC OR publicly name a specific listing quarter.",
+      "basis": "Anthropic's 2026-11-10 roadshow launch at a $1.3-$1.4T implied cap sets the reference print for every peer with similar compute commitments. TSMC's board on the same day approved up to $500M each in Anthropic and OpenAI, signalling that strategic capital is already pricing to the public-markets curve. The 2026-10-26 public S-1 and 2026-11-02 S-1/A-1 established the disclosure template \u2014 revenue, net loss, compute obligations \u2014 that peers will need to match if they want comparable buyer-side demand. Five major labs have signed compute contracts in the $100B-$500B range; the balance-sheet gap is forcing public capital whether they chose it or not.",
+      "horizon": "2026-12-17",
+      "test": "By 2026-12-17, at least one primary-source confirmation that a named lab has either (a) a public or confidential S-1 on file with the SEC (SEC EDGAR filing, Reuters/Bloomberg/FT/WSJ confirmation of a confidential filing with the registrant named on the record), OR (b) publicly named a specific listing quarter in a primary-source company statement, SEC filing, or tier-1 press report quoting a named lab spokesperson. Routine private fundraising rounds, secondary sales, SPAC speculation, and anonymous-source 'exploring an IPO' reports without a registrant-named filing or dated listing window do not count. Silent horizon grades MISS.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
