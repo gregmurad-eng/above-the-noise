@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 11 November 2026</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a8070; --miss:#b86a5a; }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; margin:0; padding:0; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 20px 80px; }
+  h1 { color: var(--accent); font-size: 40px; margin: 10px 0 2px; letter-spacing: 0.5px; font-weight: normal; }
+  .tagline { color: var(--muted); font-size: 15px; font-style: italic; margin: 0 0 4px; }
+  .dateline { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin: 6px 0 20px; }
+  h2 { color: var(--accent); font-size: 22px; margin: 36px 0 12px; border-bottom: 1px solid #3a3326; padding-bottom: 6px; font-weight: normal; }
+  h3 { color: var(--text); font-size: 18px; margin: 20px 0 6px; font-weight: normal; }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  h3 a:hover { color: var(--accent); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  p { margin: 10px 0; font-size: 17px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; margin: 0 0 18px; padding: 10px 0; border-bottom: 1px solid #2a2419; font-size: 14px; }
+  .bar a, .bar span { white-space: nowrap; }
+  .bar a { color: var(--accent); padding: 10px 2px; display: inline-block; min-height: 44px; line-height: 24px; }
+  .nav-mid { display: inline-flex; gap: 8px; }
+  .nav-mid a { color: var(--accent); margin: 0 9px; }
+  .next { color: var(--muted); padding: 10px 2px; display: inline-block; min-height: 44px; line-height: 24px; }
+  .org { color: var(--muted); font-size: 14px; font-style: italic; }
+  .sowhat { color: var(--accent); font-style: italic; margin: 8px 0 18px; font-size: 16px; display: block; }
+  .sowhat::before { content: "So what: "; font-weight: bold; font-style: normal; }
+  .listen { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 12px 20px; font-family: Georgia, serif; font-size: 15px; cursor: pointer; margin: 18px 0; min-height: 44px; }
+  .listen:hover { background: var(--accent); color: var(--bg); }
+  .signal-box { border-left: 3px solid var(--accent); padding: 12px 18px; margin: 20px 0; background: rgba(201,168,76,0.05); }
+  .ledger { margin: 14px 0; }
+  .ledger .rec { font-size: 18px; color: var(--accent); margin: 10px 0; }
+  .verdict-HIT { color: var(--accent); font-weight: bold; }
+  .verdict-MISS { color: var(--miss); font-weight: bold; }
+  .verdict-UNSETTLED { color: var(--muted); font-weight: bold; }
+  .ledger-item { margin: 10px 0 14px; padding: 10px 14px; border-left: 2px solid #3a3326; font-size: 15px; }
+  .ledger-item.open { border-left-color: var(--accent); }
+  sup { font-size: 0.75em; }
+  sup a { color: var(--accent); padding: 6px 4px; margin: -6px -4px; }
+  .sources { font-size: 14px; color: var(--muted); }
+  .sources ol { padding-left: 22px; }
+  .sources li { margin: 6px 0; }
+  .sources .tier { color: var(--muted); font-style: italic; margin-left: 6px; }
+  .footer { color: var(--muted); font-size: 13px; margin-top: 50px; text-align: center; font-style: italic; }
+  @media (max-width: 480px) {
+    .wrap { padding: 20px 14px 60px; }
+    h1 { font-size: 30px; }
+    .tagline { font-size: 14px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    p, .sowhat { font-size: 16px; }
+    .bar { font-size: 14px; gap: 8px 10px; }
+    .nav-mid a { margin: 0 6px; }
+    .ledger-item, .sources { font-size: 15px; }
+    .dateline { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar">
+  <a href="2026-10-13.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<h1>Above The Noise</h1>
+<p class="tagline">AI &amp; Tech · Signal over noise</p>
+<p class="dateline">Wednesday · 11 November 2026</p>
+
+<button class="listen" id="listenBtn" onclick="speak()">▶ Listen (approx 4 min)</button>
+
+<h2>Lead Story</h2>
+<h3><a href="https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/">Anthropic prices its IPO at $70-$78, a trillion-dollar frontier lab eight days from the public market</a> <span class="org">— TechCrunch</span></h3>
+
+<p>Anthropic on 10 November set the filed price range for its initial public offering at $70 to $78 per share, naming 825 million Class A shares, a 2026-11-19 Nasdaq debut under the ticker <strong>ANT</strong>, and an implied fully-diluted valuation of up to $1.404 trillion at the top of the range<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup>. The pricing sits below the reported $2 trillion the company was targeting weeks ago but well above the $965 billion private mark from its May round. The company launched the investor roadshow the same day.</p>
+
+<p>The paper trail behind the number is what makes this a signal rather than a ticker-tape moment. Anthropic filed its public Form S-1 on 2026-10-26<sup><a href="#s3">[3]</a></sup> after a June confidential draft, then an amended S-1/A-1 on 2026-11-02. The filing disclosed $16.3B first-half revenue and an $80.7B net loss, and detailed a Class F founder-share structure giving Dario Amodei and the six co-founders 50.1% of total voting power through a single share class. Each of the seven co-founders is selling 3,378,378 shares in the offering. TSMC's board on 10 November separately approved investments of up to $500 million each in Anthropic and OpenAI — strategic capital explicitly pricing to the public-markets curve.</p>
+
+<p>Three things change simultaneously once ANT prints. First, the S-1 is now the public disclosure template every other frontier lab's underwriters will measure them against: revenue cadence, compute obligations, model-safety risk factors, R&amp;D as a share of opex. Anthropic's filing names $517B of signed compute contracts over eleven months — that number is the new comparable. Second, the balance-sheet gap Amodei has been publicly warning about since early 2026 is now priced: if public markets will take an $80B loss at a trillion-dollar valuation from the lab with the slowest-moving commercial motion, every peer with deeper enterprise traction has an argument to move too. Third, the share-class mechanic will be copied — Class F concentrating voting power in founders while raising public capital is exactly how OpenAI, DeepMind, and xAI have been reported to want their eventual listings structured.</p>
+
+<p>The macro backdrop is not friendly. Nvidia is down roughly 10% over two sessions on an unrelated CEO scandal<sup><a href="#s4">[4]</a></sup><sup><a href="#s5">[5]</a></sup>, SoftBank just wrote down $3.7B of US data-center exposure<sup><a href="#s9">[9]</a></sup>, and AI-infrastructure bond issuance is tightening. Fortune's framing of the price range as "amid AI stock sell-off"<sup><a href="#s15">[15]</a></sup> is not wrong. But that is also why the pricing print matters: it tests whether buy-side demand for a frontier-lab listing holds up when the rest of the AI stack is wobbling.</p>
+
+<span class="sowhat">If your product pricing, contract terms, or compute reseller margins are anchored to Anthropic as a private counterparty, pull the S-1 and reset your assumptions this week — public-company quarterly cadence changes which pricing moves are legible to the Street and which get held for earnings-day drama.</span>
+
+<h2>The Briefs</h2>
+
+<h3><a href="https://www.bloomberg.com/news/articles/2026-11-08/nvidia-board-to-probe-spying-case-after-ceo-jensen-huang-admits-infidelity">Nvidia board opens counter-intel probe after Jensen Huang admits affair with alleged Chinese spy; stock down ~10% in two sessions</a> <span class="org">— Bloomberg</span></h3>
+<p>CEO Jensen Huang on 8 November admitted an extramarital relationship with Alice Huang (also known as Huang Le), an executive at Singapore cloud firm and Nvidia customer Megaspeed, after a leaked US intelligence memo named her as a recruit of China's Ministry of State Security<sup><a href="#s4">[4]</a></sup>. Nvidia's board is assembling an independent committee with outside counsel to investigate. Shares fell 4.3% Monday ($200B market-cap erased) and another 5.52% Tuesday to $168.80 on 3× average volume<sup><a href="#s6">[6]</a></sup>. NPR confirmed the formal investigation<sup><a href="#s5">[5]</a></sup>.</p>
+<span class="sowhat">If your agent stack is routed to a single GPU supplier, this is the week to actually benchmark fallbacks on AMD MI400 and Trainium2 — the Nvidia governance overhang will survive earnings and could price into supply allocations through FY27.</span>
+
+<h3><a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/6ae2f5bb8675bcd9fac006125817ba1393b396e4.pdf">Anthropic's robotics-safety usage policy takes effect 12 November: Claude-driven machines must fail-safe on link loss</a> <span class="org">— Anthropic (PDF)</span></h3>
+<p>Anthropic's 2026 Usage Policy, effective 12 November, requires that any Claude-wired machinery able to hurt a person must "stop or hold a safe state" when a qualified operator steps in or when the connection to Anthropic services drops<sup><a href="#s7">[7]</a></sup>. The six named triggers cover moving vehicles/vessels/aircraft/drones/mobile robots, striking/crushing/dropping machinery, hazardous energy or materials, direct action on the human body, safety systems such as shutoffs, and industrial processes where a fault could injure. Speed and force limits must be set outside the model. The same update bans sustained cruelty toward Claude and tightens election-interference, weapons-software, and surveillance restrictions.</p>
+<span class="sowhat">If your product sits a Claude call between a sensor and an actuator, the deterministic external governor is now contractually required — build the hardware interlock this sprint, not after the first incident.</span>
+
+<h3><a href="https://openai.com/index/chatgpt-enterprise-aws-marketplace/">ChatGPT Enterprise lands on AWS Marketplace; buyers can draw down existing AWS commitments</a> <span class="org">— OpenAI</span></h3>
+<p>OpenAI on 9-10 November listed ChatGPT Enterprise on AWS Marketplace, letting organizations buy and manage the product through their existing AWS relationship and apply eligible spend against their AWS commitments<sup><a href="#s8">[8]</a></sup>. Same models, same features, same release cadence as direct. ChatGPT for Healthcare and ChatGPT for Financial Services are also available through the Marketplace listing. OpenAI reports 1.2 billion weekly ChatGPT users.</p>
+<span class="sowhat">If your company has an undrawn AWS enterprise commit, procurement can now move ChatGPT Enterprise off the "another vendor contract" line and onto the cloud spend you already owe — the financial close gets substantially easier this quarter.</span>
+
+<h3><a href="https://www.bloomberg.com/news/articles/2026-11-10/softbank-group-earnings-loss-after-ai-worries-hit-tech-stocks-masayoshi-son">SoftBank posts first loss in nearly two years after $3.7B US data-center writedown</a> <span class="org">— Bloomberg</span></h3>
+<p>SoftBank reported a $7B net loss on 10 November after writing down $3.7B of non-refundable advance payments for power-generation equipment tied to its 8-GW Ohio project and other US data-center commitments<sup><a href="#s9">[9]</a></sup>. The group's total OpenAI commitment runs close to $64.6B with an October deadline; the $20B bond offering that was supposed to close the gap landed reliant on retail investors. SoftBank is both anchor funder and anchor tenant risk inside Stargate LLC.</p>
+<span class="sowhat">If your roadmap assumes Stargate capacity rolls on schedule for a 2027 workload, add a 90-day slip to your capacity-planning model and price for Oracle or CoreWeave backup now — the funder of last resort just flinched.</span>
+
+<h3><a href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/">Amazon Bedrock AgentCore Web Search API hits GA at $7 per 1,000 queries</a> <span class="org">— AWS</span></h3>
+<p>AWS on 10 November announced general availability of the <code>InvokeWebSearch</code> API on Amazon Bedrock AgentCore<sup><a href="#s10">[10]</a></sup>. Single-call web search for agents, callable via SDK or CLI, IAM-authorized, VPC-reachable through PrivateLink, with CloudTrail data-event logging. Pricing is $7/1,000 queries, matching the existing AgentCore Gateway Web Search rate with no gateway charges stacked on top.</p>
+<span class="sowhat">If you were paying Serper, Tavily, or Brave Search behind your agent for less than $7/1,000, keep doing that — AWS priced GA to match its gateway rate, not to undercut the independent tools, so switching costs only make sense if you already live inside IAM and CloudTrail.</span>
+
+<h2>Model Watch</h2>
+
+<h3><a href="https://platform.claude.com/docs/en/about-claude/pricing">Claude Fable 5.2 and Mythos 5.2 — Anthropic, 9 November</a> <span class="org">— Anthropic</span></h3>
+<p>Standard pricing $8 per million input tokens and $40 per million output tokens — a 20% cut from Fable/Mythos 5.1's $10/$50. Context window 1M, output 128K, up to 30% faster than the 5.1 generation. Fast-mode tier at $16/$80. Mythos 5.2 is the gated capability twin; Fable 5.2 is the general-availability safeguarded release<sup><a href="#s11">[11]</a></sup>.</p>
+<span class="sowhat">If your agent orchestrator pins Anthropic pricing in cost models, update today — the 20% cut flows directly into per-task margin and the 1M context changes which workloads can skip RAG entirely.</span>
+
+<h3><a href="https://research.meta.ai/blog/muse-ember">Meta Muse Ember 1.0 — Meta Superintelligence Labs, 9 November</a> <span class="org">— Meta AI</span></h3>
+<p>$0.10 per million input tokens and $0.50 per million output — matching the GPT-6 Luna and Claude Haiku 5.5 commodity floor. 1M context window. Positioned for sub-agent tasks, tool calls, routing, and document parsing. On 10 November Meta made Muse Ember, Muse Spark 1.3, and Muse Wonder available on Google Cloud (Pichai welcomed Zuckerberg publicly) and also on Oracle Cloud<sup><a href="#s12">[12]</a></sup><sup><a href="#s13">[13]</a></sup>.</p>
+<span class="sowhat">If your orchestrator routes small/fast calls to Haiku 5.5 or GPT-6 Luna, add Muse Ember to the router this week — three vendors now meet at the same floor, so routing to availability and latency beats routing to price.</span>
+
+<h3><a href="https://www.technology.org/2026/10/14/gemini-4-argon-generally-available-pricing-december/">Google Gemini 4 Argon — general availability</a> <span class="org">— Google</span></h3>
+<p>Standard pricing $2 input / $10 output per million tokens through 30 November 2026, then $4/$20 from 1 December. Cached input at $0.10/M (95% discount). Priority tier at $3.60/$18.00 through November. 1M output capability named in launch materials. This is the Gemini 4 line's lower-tier reasoning slot; a top-tier $10/$50 Argon-plus equivalent has not been named.</p>
+<span class="sowhat">If your batch jobs run before 1 December, they get cheaper on Argon than Fable 5.2 by a wide margin; after 1 December, re-check the math because Google doubles the sticker without a performance jump.</span>
+
+<h3>DeepSeek V4.1 Flash 1017 Uncensored (HeimdaLLM) — 9 November <span class="org">— DeepSeek</span></h3>
+<p>Open-weights Flash-tier release, limited public primary-source documentation available at time of writing. Third-party registries list it as the latest V4.1-line variant.</p>
+<span class="sowhat">If you ship in a jurisdiction with content-moderation duty-of-care rules, an "uncensored" variant on your allowlist is a procurement-review event — document the gate before devs start pulling the weights.</span>
+
+<h2>Voices</h2>
+<p>This edition's Voice is <strong>Yann LeCun</strong>, Meta Chief AI Scientist (through 2026) and co-founder of AMI Labs. On 9 November he and Randall Balestriero (Brown) and Kerda Varaku posted a new paper, <em>"Counterfactual World Models: Natura Non Facit Saltus"</em>, that LeCun has been pointing at publicly as the mathematical case for his long-standing view that today's LLM paradigm will not get to robot-capable intelligence on its own<sup><a href="#s14">[14]</a></sup>. The paper argues that an agent can learn, from just the mismatch between what its world-model predicted and what actually happened, which hidden causes it failed to account for — and recover the counterfactual "what would have happened had I acted differently" with a single subtraction rather than a separate causal-inference stack. Balestriero's framing in <em>The Register</em> was that one subtraction now covers the three steps causal inference used to need. For builders of physical or long-horizon agents, the signal is that the next real capability jump is more likely to come from models that carry an explicit predictor of their own environment than from more pretraining on text.</p>
+<span class="sowhat">If your agent architecture uses an LLM as the single reasoning surface over a non-text environment, read the paper this week — the pressure to add an explicit predictive-world-model layer is about to compound, and the research record is now pointing where the capability line is moving.</span>
+
+<h2>Today's Signal</h2>
+<div class="signal-box">
+<p>Two prints landed on the same desks today and read as one story. Anthropic set a trillion-dollar listing eight days out; Nvidia's board opened a counter-intelligence probe into its CEO. A year ago those were different beats — markets and geopolitics. Now they are one sheet: the financial layer under frontier AI is becoming a public-disclosure surface at the same moment the people who sign the compute invoices are being treated as intelligence targets. The lab IPO template Anthropic just set, the robotics-usage policy that takes effect tomorrow, SoftBank's writedown, and the Nvidia governance exposure all point at the same thing — the stack is being repriced not by capability but by who is accountable for what it does and who gets to see inside.</p>
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger">
+  <p class="rec">Season 1 · <span class="verdict-HIT">4</span>-<span class="verdict-MISS">8</span> · <span class="verdict-UNSETTLED">3 UNSETTLED</span></p>
+
+  <p style="color:var(--muted); font-size:14px; font-style:italic;">Grading backlog cleared: eleven calls with horizons on or before today were overdue after the publishing gap. All graded against primary or tier-1 sources below; two HIT, six MISS, three UNSETTLED. Full evidence URLs live in the public ledger JSON.</p>
+
+  <div class="ledger-item"><strong>2026-08-14-1</strong> · <span class="verdict-UNSETTLED">UNSETTLED</span> — JV data-centre arrangement with infra/sovereign-fund equity plus a 10+ year lease for a non-Anthropic lab. Stargate (OpenAI + SoftBank + MGX + Oracle) matches structurally and Nvidia's Aug-17 8-K disclosed a 20-year OpenAI lease, but the test required a primary source <em>from the lab itself</em> packaging both clauses in-window.</div>
+
+  <div class="ledger-item"><strong>2026-08-17-1</strong> · <span class="verdict-MISS">MISS</span> — No $1B+ AI-middleware acquisition by a payments / CDN / cloud / database incumbent landed by 15 Oct. Nvidia-HuggingFace was silicon (not in the named categories); Snowflake-Natoma predated the call; Cloudflare-Deno wasn't AI middleware.</div>
+
+  <div class="ledger-item"><strong>2026-08-22-1</strong> · <span class="verdict-MISS">MISS</span> — Google DeepMind's SynthID Bio wet-lab result (Nature, early Oct, with Adaptyv Bio) used AlphaProteo + ProteinMPNN, which the test explicitly excluded as a bio-specific model. No <em>general-purpose</em> frontier-model physical-artefact validation from the named peers landed by 15 Oct.</div>
+
+  <div class="ledger-item"><strong>2026-08-23-1</strong> · <span class="verdict-UNSETTLED">UNSETTLED</span> — MCP TypeScript SDK 2.1.0 (23 Sep) shipped DPoP, satisfying the SDK clause. The spec-repo-merge clause is ambiguous: DPoP landed in <code>modelcontextprotocol/ext-auth</code>, not merged into the main <code>modelcontextprotocol/modelcontextprotocol</code> branch by 18 Oct.</div>
+
+  <div class="ledger-item"><strong>2026-08-25-1</strong> · <span class="verdict-MISS">MISS</span> — Oracle's $10B bond and $10B equity for AI data centres priced 2 Nov — two days past horizon. No KDDI, NTT, Samsung, SK Hynix, Reliance, or Tencent qualifying public offering landed inside the window.</div>
+
+  <div class="ledger-item"><strong>2026-08-28-1</strong> · <span class="verdict-HIT">HIT</span> — Anthropic shipped the Critical Infrastructure Defense Program (Axios, 8 Oct) plus the three-tier Cyber Verification Program (6 Oct) with Defense Access explicitly for critical-infrastructure operators and a disclosed intake process. Inside horizon, both test clauses satisfied.</div>
+
+  <div class="ledger-item"><strong>2026-08-31-1</strong> · <span class="verdict-MISS">MISS</span> — No further frontier chatbot received a VLOSE/VLOP DSA designation or an on-record 45M-EU-MAU disclosure under active review by 31 Oct. Commission's designated list stayed at 28.</div>
+
+  <div class="ledger-item"><strong>2026-09-02-1</strong> · <span class="verdict-UNSETTLED">UNSETTLED</span> — Anthropic's expanded Cyber Verification Program (6 Oct) and peers' framework updates tightened the cyber-access posture but none met the strict bar of a primary-source statement claiming or denying that a specific model has reached the lab's own highest cyber-capability tier.</div>
+
+  <div class="ledger-item"><strong>2026-09-04-1</strong> · <span class="verdict-MISS">MISS</span> — Pricing moved the opposite direction. Gemini 4 Argon landed at $2/$10 (intro through 30 Nov), far below the test's $9-$11/$45-$55 band. No top-tier $10/$50 release from Google / xAI / Meta / Mistral.</div>
+
+  <div class="ledger-item"><strong>2026-09-06-1</strong> · <span class="verdict-MISS">MISS</span> — No named flagship transcription incumbent published a 40%+ cut to its standard rate by 31 Oct. OpenAI deprecated whisper-1 without a price cut; Deepgram added Nova-3 multilingual on 23 Oct without a flagship rate change; ElevenLabs' large cut was in May, pre-call.</div>
+
+  <div class="ledger-item"><strong>2026-09-08-1</strong> · <span class="verdict-HIT">HIT</span> — Anthropic filed its public Form S-1 on SEC EDGAR 2026-10-26 (inside the 31 Oct horizon), applied to list under ANT, filed an S-1/A-1 2 Nov, and on 10 Nov set the $70-$78 range and 19 Nov trading date.</div>
+
+  <div class="ledger-item open"><strong>2026-11-11-1 · OPEN</strong> — Horizon 2026-12-17. Anthropic's $1.4T listing print will pull at least one of OpenAI, Google DeepMind (as a separately-tracked Alphabet entity), xAI, Meta Superintelligence Labs, or Mistral into the public-listing path on a short clock — either a confidential/public S-1 on file with the SEC or a primary-source named listing quarter. Silent horizon grades MISS.</div>
+</div>
+
+<h2>Sources</h2>
+<div class="sources">
+<ol>
+<li id="s1">TechCrunch — <a href="https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/">Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion</a> <span class="tier">(tier-1)</span></li>
+<li id="s2">CNBC — <a href="https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html">Anthropic sets IPO price range of $70 to $78, looks to start trading Nov. 19</a> <span class="tier">(tier-1)</span></li>
+<li id="s3">SEC EDGAR — <a href="https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm">Anthropic, PBC — Form S-1 (FY2026)</a> <span class="tier">(primary)</span></li>
+<li id="s4">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-11-08/nvidia-board-to-probe-spying-case-after-ceo-jensen-huang-admits-infidelity">Nvidia Board to Probe Spying Case After CEO Jensen Huang Admits Infidelity</a> <span class="tier">(tier-1)</span></li>
+<li id="s5">NPR — <a href="https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy">Nvidia launches investigation into CEO's alleged relationship with Chinese spy</a> <span class="tier">(tier-1)</span></li>
+<li id="s6">CNBC — <a href="https://www.cnbc.com/2026/11/10/nvidia-nvda-jensen-huang-affair-chinese-spy.html">Nvidia sells off for second day in fallout from Jensen Huang's affair with alleged spy</a> <span class="tier">(tier-1)</span></li>
+<li id="s7">Anthropic — <a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/6ae2f5bb8675bcd9fac006125817ba1393b396e4.pdf">2026 Usage Policy (PDF, effective 12 Nov)</a> <span class="tier">(primary)</span></li>
+<li id="s8">OpenAI — <a href="https://openai.com/index/chatgpt-enterprise-aws-marketplace/">ChatGPT Enterprise now available in AWS Marketplace</a> <span class="tier">(primary)</span></li>
+<li id="s9">Bloomberg — <a href="https://www.bloomberg.com/news/articles/2026-11-10/softbank-group-earnings-loss-after-ai-worries-hit-tech-stocks-masayoshi-son">SoftBank Loses $7 Billion After Big US Data Center Writedown</a> <span class="tier">(tier-1)</span></li>
+<li id="s10">AWS — <a href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/">Amazon Bedrock AgentCore now offers a Web Search API</a> <span class="tier">(primary)</span></li>
+<li id="s11">Anthropic — <a href="https://platform.claude.com/docs/en/about-claude/pricing">Claude Platform Docs — Pricing</a> <span class="tier">(primary)</span></li>
+<li id="s12">Meta AI — <a href="https://research.meta.ai/blog/muse-ember">Introducing Our Smallest, Most Efficient Model: Muse Ember</a> <span class="tier">(primary)</span></li>
+<li id="s13">Simon Willison — <a href="https://simonwillison.net/2026/Nov/10/muse-ember/">Introducing Our Smallest, Most Efficient Model: Muse Ember</a> <span class="tier">(practitioner)</span></li>
+<li id="s14">The Register — <a href="https://www.theregister.com/ai-and-ml/2026/11/09/machine-learning-researchers-build-a-better-world-model/5308301">Machine learning researchers build a better world model</a> <span class="tier">(tier-1)</span></li>
+<li id="s15">Fortune — <a href="https://fortune.com/2026/11/10/anthropic-ipo-price-range-ai-stock-sell-off/">Anthropic sets IPO range valuing it at up to $1.4 trillion amid AI stock sell-off</a> <span class="tier">(tier-1)</span></li>
+</ol>
+</div>
+
+<nav class="bar">
+  <a href="2026-10-13.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<p class="footer">Content is AI-synthesized. Links point to original sources.</p>
+
+</div>
+
+<script>
+const S = "Above The Noise. AI and Tech. Signal over noise. Wednesday, November eleventh, twenty twenty six. Lead Story. Anthropic prices its initial public offering at seventy to seventy eight dollars a share, naming eight hundred twenty five million Class A shares and a Nasdaq debut on November nineteenth under the ticker A N T, at an implied valuation of up to one point four trillion dollars at the top of the range. The paper trail behind that number is what makes this a signal rather than a ticker tape moment. Anthropic filed its public Form S one on October twenty sixth after a June confidential draft, then an amended version on November second. The filing disclosed sixteen point three billion dollars in first half revenue and an eighty point seven billion dollar net loss, and detailed a Class F founder share structure giving Dario Amodei and the six cofounders fifty point one percent of total voting power through a single share class. T S M C's board on the same day approved investments of up to five hundred million dollars each in Anthropic and OpenAI. Three things change simultaneously once A N T prints. First, the S one is now the public disclosure template every other frontier lab's underwriters will measure them against. Anthropic's filing names five hundred seventeen billion dollars of signed compute contracts over eleven months. That number is the new comparable. Second, the balance sheet gap Amodei has been publicly warning about since early twenty twenty six is now priced. Third, the share class mechanic will be copied. The Briefs. Nvidia's board opened a counter intelligence probe after CEO Jensen Huang admitted an affair with an executive at a Singapore cloud firm named by a leaked US intelligence memo as a recruit of China's Ministry of State Security. Nvidia shares fell four point three percent Monday erasing two hundred billion dollars of market cap, and another five point five percent Tuesday. Anthropic's twenty twenty six Usage Policy takes effect November twelfth. Any Claude wired machinery that can hurt a person must stop or hold a safe state when a qualified operator steps in or when the connection drops. Six categories are named. Speed and force limits must be set outside the model. OpenAI listed ChatGPT Enterprise on A W S Marketplace. Buyers can apply the spend against their existing A W S commitments. Same models, same features, same release cadence. SoftBank reported its first loss in nearly two years after writing down three point seven billion dollars of U S data center exposure, including non refundable advance payments on power generation for the eight gigawatt Ohio project. Amazon Bedrock AgentCore's web search API hit general availability at seven dollars per thousand queries, matching the existing gateway rate. Model Watch. Anthropic shipped Claude Fable five point two and Mythos five point two on November ninth. Standard pricing is eight dollars per million input tokens and forty per million output. A twenty percent cut. One million token context, one hundred twenty eight thousand token output, up to thirty percent faster. Meta shipped Muse Ember one point zero on November ninth at ten cents per million input and fifty cents per million output. One million token context. Now available on Google Cloud and Oracle Cloud. Google's Gemini four Argon is G A at two dollars input and ten output per million through November thirtieth, then doubles. DeepSeek V four point one Flash shipped November ninth. Voices. Yann LeCun of N Y U and A M I Labs, on November ninth, posted a new paper with Randall Balestriero of Brown and Kerda Varaku titled Counterfactual World Models, Natura Non Facit Saltus. The paper argues that an agent can learn, from just the mismatch between what its world model predicted and what actually happened, which hidden causes it failed to account for, and recover the counterfactual what would have happened had I acted differently with a single subtraction. For builders of physical or long horizon agents, the signal is that the next real capability jump is more likely to come from models that carry an explicit predictor of their own environment than from more pretraining on text. Today's Signal. Two prints landed on the same desks today and read as one story. Anthropic set a trillion dollar listing eight days out. Nvidia's board opened a counter intelligence probe into its CEO. A year ago those were different beats. Now they are one sheet. The financial layer under frontier A I is becoming a public disclosure surface at the same moment the people who sign the compute invoices are being treated as intelligence targets. The Ledger. Season one, four hits, eight misses, three unsettled. Eleven calls were graded today, clearing the backlog from the publishing gap. Two hits, Anthropic's critical infrastructure defense program and Anthropic's public S one filing. Six misses, including no top tier dollar ten dollar fifty pricing from Google, Meta, or Mistral, no further D S A designation beyond ChatGPT, no forty percent transcription cut, and no large non lab bond pricing inside the window. Three unsettled. Today's new call. By December seventeenth, at least one of OpenAI, Google DeepMind, X A I, Meta Superintelligence, or Mistral will file an S one with the S E C or publicly name a specific listing quarter. Silent horizon grades miss. End of today's Above the Noise.";
+
+function speak() {
+  const btn = document.getElementById('listenBtn');
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    btn.textContent = '▶ Listen (approx 4 min)';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const voices = speechSynthesis.getVoices();
+  u.voice = voices.find(v => /Daniel/i.test(v.name)) || voices.find(v => /Alex/i.test(v.name)) || voices.find(v => /en[-_]/i.test(v.lang)) || voices[0];
+  u.onend = () => { btn.textContent = '▶ Listen (approx 4 min)'; };
+  u.onerror = () => { btn.textContent = '▶ Listen (approx 4 min)'; };
+  speechSynthesis.speak(u);
+  btn.textContent = '■ Stop';
+}
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+</html>
