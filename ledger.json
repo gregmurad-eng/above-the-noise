@@ -478,10 +478,10 @@
       "basis": "Google Gemini 4 Argon shipped on 30 September 2026 to Fairwind partners first (not to developers). It is the second frontier launch after OpenAI Astra/Daybreak that explicitly names a vetted-partner channel as the first-weeks distribution path. The California AI package signed the same day and the Zammad / DIVD AI-agent zero-day chain disclosed the same day are the policy and threat-model forces that make the vetted-partner pattern the lowest-regret rollout model for frontier capability.",
       "horizon": "2026-11-12",
       "test": "By 2026-11-12, at least one further frontier-lab capability launch names a vetted-partner-first distribution channel in a primary source (lab blog, release notes, or model card). The channel must have an identifiable sponsor and a bounded partner population; a paid-tier waitlist or Enterprise sales motion does not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-12",
+      "verdict": "HIT",
+      "evidence": "Anthropic Claude Mythos 5.2 shipped 2026-11-09 and is reserved for organizations verified through the Cyber Verification Program as its first-weeks distribution path, a bounded vetted-partner population with an identifiable sponsor (Anthropic), not a paid-tier waitlist. Primary sources: https://www.anthropic.com/claude-fable-and-mythos-5-2 and https://www.anthropic.com/news/cyber-verification-program."
     },
     {
       "id": "2026-10-02-1",
@@ -622,6 +622,18 @@
       "basis": "Anthropic's 2026-11-10 roadshow launch at a $1.3-$1.4T implied cap sets the reference print for every peer with similar compute commitments. TSMC's board on the same day approved up to $500M each in Anthropic and OpenAI, signalling that strategic capital is already pricing to the public-markets curve. The 2026-10-26 public S-1 and 2026-11-02 S-1/A-1 established the disclosure template \u2014 revenue, net loss, compute obligations \u2014 that peers will need to match if they want comparable buyer-side demand. Five major labs have signed compute contracts in the $100B-$500B range; the balance-sheet gap is forcing public capital whether they chose it or not.",
       "horizon": "2026-12-17",
       "test": "By 2026-12-17, at least one primary-source confirmation that a named lab has either (a) a public or confidential S-1 on file with the SEC (SEC EDGAR filing, Reuters/Bloomberg/FT/WSJ confirmation of a confidential filing with the registrant named on the record), OR (b) publicly named a specific listing quarter in a primary-source company statement, SEC filing, or tier-1 press report quoting a named lab spokesperson. Routine private fundraising rounds, secondary sales, SPAC speculation, and anonymous-source 'exploring an IPO' reports without a registrant-named filing or dated listing window do not count. Silent horizon grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-12-1",
+      "date": "2026-11-12",
+      "call": "Within four weeks, at least one hyperscaler or chip vendor named in Anthropics 26-billion-dollar private placement (Google, Nvidia, AMD, Microsoft) will disclose a reciprocal AI-services or compute commitment back to Anthropic in a primary source: an 8-K, 10-Q, earnings press release, or SEC filing that names Anthropic and a stated dollar or compute value.",
+      "basis": "Anthropic launched its IPO roadshow on 2026-11-10 at a 70-to-78-dollar band for 825M shares, and the same filing names seven firms (Google, Nvidia, AMD and Microsoft among them) as buyers of 26 billion dollars in Class N shares. A capital loop in which named compute suppliers are also named equity buyers is now the briefs organizing fact; the test is whether that loop shows up on the other side of the balance sheet in a primary disclosure, not just in the S-1.",
+      "horizon": "2026-12-10",
+      "test": "By 2026-12-10, at least one of Google, Nvidia, AMD or Microsoft publishes a primary-source disclosure (8-K, 10-Q, annual report, earnings release, or official investor communication) that both names Anthropic as a counterparty AND states a specific dollar or compute commitment flowing to Anthropic. A press release that merely references leading AI customers without naming Anthropic does not count.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
