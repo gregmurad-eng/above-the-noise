@@ -638,6 +638,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-13-1",
+      "date": "2026-11-13",
+      "call": "Within four weeks, at least two additional critical CVEs (CVSS >= 9.0) in widely-deployed open-source infrastructure will be publicly credited at least in part to a frontier-lab AI-agent scanning pipeline \u2014 Anthropic OSS Scanner, OpenAI Daybreak Red Team, Google Cloud Vulnerability Research AI agents, or an equivalent lab product.",
+      "basis": "Apache HTTP Server 2.4.71 (CVE-2026-119618, CVSS 9.8) was reported independently by Anthropic OSS Scanner (26 Oct) and Google Cloud Vulnerability Research (3 Nov), and OpenAI shipped Daybreak Red Team and Defense Factory on 12 Nov. In 48 hours the labs moved from AI-does-security as a demo to shipped scanning product, with one critical, publicly-exploitable CVE already on the board.",
+      "horizon": "2026-12-13",
+      "test": "By 2026-12-13, inspect NVD, vendor security advisories, and the credit lines on CVE records. HIT if two or more CVEs with CVSS >= 9.0 published between 2026-11-13 and 2026-12-13 inclusive credit a named frontier-lab AI scanning pipeline. MISS if fewer than two meet that bar. UNSETTLED only if public credit lines are ambiguous on two or more candidates.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
