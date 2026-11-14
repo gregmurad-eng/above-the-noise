@@ -650,6 +650,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-14-1",
+      "date": "2026-11-14",
+      "call": "Within five weeks, at least one of OpenAI, Anthropic, or Google will publicly announce a second agent-authorised payments capability beyond todays ChatGPT Wallet launch \u2014 either a new wallet, a new partner surface, or an agent-spending policy framework.",
+      "basis": "ChatGPT Wallet shipped 2026-11-13 in a narrow US Pro rollout with Visa, Mastercard, and American Express; the competitive incentive to match before the holiday agent-commerce window closes is high, and governance language on agent spending is converging across labs.",
+      "horizon": "2026-12-20",
+      "test": "By 2026-12-20, a primary-source post from OpenAI, Anthropic, or Google that is unambiguously about an agent-executed spending capability beyond todays ChatGPT Wallet announcement. A model rate-card update alone does not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
