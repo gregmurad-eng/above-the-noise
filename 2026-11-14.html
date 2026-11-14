@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — Saturday, November 14, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --ink: #e0d4b8;
+    --accent: #c9a84c;
+    --muted: #8a7d66;
+    --rule: #2a2419;
+    --miss: #c76b6b;
+    --card: #15110a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px; line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 36px 24px 72px; }
+  header.masthead { border-bottom: 1px solid var(--rule); padding-bottom: 18px; margin-bottom: 20px; }
+  h1 {
+    font-size: 40px; letter-spacing: 0.5px;
+    margin: 0 0 6px; color: var(--accent);
+    font-variant: small-caps;
+  }
+  .tagline { color: var(--muted); font-style: italic; margin: 0 0 4px; font-size: 15px; }
+  .dateline { color: var(--ink); font-size: 15px; letter-spacing: 0.4px; }
+  nav.bar {
+    display: flex; flex-wrap: wrap;
+    gap: 10px 14px; align-items: center;
+    padding: 12px 0; margin: 12px 0 24px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  nav.bar a, nav.bar span.next {
+    white-space: nowrap;
+    padding: 12px 10px;
+    margin: -4px 0;
+    display: inline-block;
+    text-decoration: none;
+  }
+  nav.bar a { color: var(--accent); }
+  nav.bar a:hover { text-decoration: underline; }
+  .nav-mid { display: inline-flex; gap: 0; align-items: center; flex: 1 1 auto; justify-content: center; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .next { color: var(--muted); opacity: 0.6; }
+  .listen-box { margin: 18px 0 28px; padding: 14px 16px; background: var(--card); border: 1px solid var(--rule); border-radius: 4px; }
+  .listen-box button {
+    background: var(--accent); color: var(--bg);
+    border: 0; padding: 12px 20px; min-height: 44px;
+    font-family: Georgia, serif; font-size: 16px; font-weight: bold;
+    cursor: pointer; border-radius: 3px; letter-spacing: 0.4px;
+  }
+  .listen-box button:hover { filter: brightness(1.1); }
+  .listen-box .note { color: var(--muted); font-size: 14px; margin-top: 8px; font-style: italic; }
+  h2 {
+    color: var(--accent); font-variant: small-caps;
+    letter-spacing: 1px; font-size: 22px;
+    margin: 42px 0 8px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 {
+    color: var(--ink); font-size: 20px;
+    margin: 20px 0 6px;
+  }
+  h3 a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .meta { color: var(--muted); font-size: 14px; font-style: italic; margin: 0 0 10px; }
+  p { margin: 12px 0; }
+  .sowhat { color: var(--accent); font-style: italic; margin-top: 12px; display: block; font-size: 17px; }
+  .sowhat::before { content: "So what: "; font-weight: bold; font-style: normal; }
+  .brief { margin: 24px 0; padding-bottom: 20px; border-bottom: 1px dashed var(--rule); }
+  .brief:last-child { border-bottom: 0; }
+  .signal {
+    background: var(--card); border-left: 4px solid var(--accent);
+    padding: 20px 22px; margin: 18px 0;
+    font-size: 19px;
+  }
+  .ledger-row { padding: 14px 0; border-bottom: 1px dashed var(--rule); font-size: 16px; }
+  .ledger-row:last-child { border-bottom: 0; }
+  .ledger-label { font-variant: small-caps; letter-spacing: 0.6px; font-size: 14px; color: var(--muted); display: inline-block; min-width: 72px; }
+  .verdict-hit { color: var(--accent); font-weight: bold; }
+  .verdict-miss { color: var(--miss); font-weight: bold; }
+  .verdict-unsettled { color: var(--muted); font-weight: bold; }
+  .verdict-open { color: var(--ink); font-weight: bold; }
+  .model-item { margin: 18px 0; padding-bottom: 14px; border-bottom: 1px dashed var(--rule); }
+  .model-item:last-child { border-bottom: 0; }
+  ol.sources { padding-left: 28px; font-size: 15px; }
+  ol.sources li { margin: 10px 0; }
+  ol.sources a { color: var(--accent); word-break: break-word; }
+  .tier { font-variant: small-caps; letter-spacing: 0.5px; color: var(--muted); font-size: 13px; margin-left: 4px; }
+  a { color: var(--accent); }
+  sup a {
+    color: var(--accent); text-decoration: none; font-weight: bold;
+    padding: 6px 4px; margin: -6px -4px;
+  }
+  sup a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: 14px; font-style: italic;
+  }
+  .short-labels { display: none; }
+  @media (max-width: 480px) {
+    .wrap { padding: 20px 16px 48px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 19px; }
+    h3 { font-size: 18px; }
+    body { font-size: 17px; }
+    .meta { font-size: 14px; }
+    .listen-box .note { font-size: 14px; }
+    .ledger-row { font-size: 16px; }
+    ol.sources { font-size: 15px; padding-left: 22px; }
+    .tier { font-size: 14px; }
+    .long-labels { display: none; }
+    .short-labels { display: inline; }
+    nav.bar { gap: 8px 10px; font-size: 16px; }
+    nav.bar a, nav.bar span.next { padding: 12px 8px; }
+    .nav-mid a { margin: 0 6px; }
+    .signal { font-size: 17px; padding: 16px 18px; }
+    .sowhat { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Above The Noise</h1>
+  <p class="tagline">AI &amp; Tech · Signal over noise</p>
+  <p class="dateline">Saturday, November 14, 2026</p>
+</header>
+
+<nav class="bar" aria-label="Edition navigation">
+  <a href="2026-11-13.html"><span class="long-labels">← YESTERDAY</span><span class="short-labels">←</span></a>
+  <span class="nav-mid">
+    <a href="./">Today</a>
+    <a href="archive.html">Archive</a>
+  </span>
+  <span class="next"><span class="long-labels">TOMORROW →</span><span class="short-labels">→</span></span>
+</nav>
+
+<div class="listen-box">
+  <button id="playBtn" aria-label="Listen to today's edition">▶ Listen (~4 min)</button>
+  <div class="note">Spoken via your browser's voice. Tap again to stop.</div>
+</div>
+
+<h2>Lead Story</h2>
+<h3>Nvidia&rsquo;s founder-CEO is out, and the whole chip stack blinks<sup><a href="#s1">[1]</a></sup></h3>
+<p class="meta">Published by Nvidia Investor Relations &mdash; November 12, 2026</p>
+
+<p>On Wednesday evening, Nvidia&rsquo;s board announced that Jensen Huang had resigned as president, CEO, and board member, effective immediately. CFO Colette Kress was appointed interim CEO while keeping her finance brief, and Harvey C. Jones &mdash; a former Synopsys CEO who had sat on the board for years &mdash; became Nvidia&rsquo;s first-ever chair.<sup><a href="#s1">[1]</a></sup> The company&rsquo;s own press release carries two brief quotes and no elaboration on cause. The reporting around it does not share that reticence: Huang&rsquo;s departure follows disclosures tying him to a woman alleged by US investigators to be a Chinese intelligence asset, and it lands days before Nvidia&rsquo;s Q3 FY27 earnings call.<sup><a href="#s2">[2]</a></sup><sup><a href="#s3">[3]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+
+<p>Three things make this more than a governance story. First, Huang was not a conventional CEO &mdash; he was the single operator most closely identified with the thesis that AI demand is a decade-long secular shift. His voice set guidance that moved the S&amp;P 500 the morning after each earnings call. Interim leadership, however capable, does not have that reach. Second, the alleged counter-intelligence angle has handed export-control hawks exactly the political cover they needed: China warned on Thursday against further US restrictions on AI chips, while Commerce is already finalising a rule that would block China-headquartered firms from remotely using Nvidia Blackwell and H200 chips from data centres sitting <em>outside</em> China.<sup><a href="#s7">[7]</a></sup> Third, Kress inherits a company whose four largest customers are each both counterparties and competitors on the hyperscaler stack; a founder who had informal protocol with those CEOs is gone.</p>
+
+<p>For builders, the near-term read is narrower than the headlines. Capacity doesn&rsquo;t vanish because a CEO does &mdash; $500bn of booked Blackwell orders still runs through fabs on the same schedule. What changes is the political envelope around who gets access to what, and that envelope is tightening visibly this week. Teams that priced long-horizon capacity assuming the Huang-era mix of &ldquo;let everything ship, resolve controls later&rdquo; now have to price a world where Commerce is moving faster, Congress is louder,<sup><a href="#s7">[7]</a></sup> and Nvidia&rsquo;s own executive team is working out what it wants to say in public.</p>
+
+<span class="sowhat">If you depend on Blackwell or H200 capacity booked through a non-US affiliate for 2027 &mdash; especially anything routed through Singapore, Malaysia, or the Gulf &mdash; pull your contracts forward this week and confirm the end-use attestation language survives the new rule. Assume &ldquo;remote access from a China-headquartered entity&rdquo; becomes a license trigger before year end, and plan the fallback mix.</span>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+  <h3><a href="https://openai.com/index/introducing-chatgpt-wallet/">OpenAI ships ChatGPT Wallet &mdash; agents can now spend money &mdash; OpenAI</a><sup><a href="#s5">[5]</a></sup></h3>
+  <p>On Friday OpenAI launched ChatGPT Wallet in a limited US rollout to Pro subscribers over 18, in partnership with Visa, Mastercard, and American Express. Users add a card to the wallet; ChatGPT&rsquo;s &ldquo;dots&rdquo; agents can then execute purchases on their behalf, with per-transaction approval required and card details withheld from the agent itself.<sup><a href="#s6">[6]</a></sup></p>
+  <span class="sowhat">If you run an e-commerce stack, add &ldquo;agent of a known buyer&rdquo; as a distinct case alongside bot/human: it won&rsquo;t fail your bot checks, but your return and dispute flows assume the human saw the SKU. They now might not have. Put a human-visible receipt in the loop before refunds get expensive.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.cbsnews.com/news/china-us-export-controls-chips-nvidia-huang-scandal/">China warns US against new chip export controls as Commerce finalises remote-access rule &mdash; CBS News</a><sup><a href="#s7">[7]</a></sup></h3>
+  <p>In the wake of the Huang resignation, the US Commerce Department is finalising a rule that would require China-headquartered firms to obtain licences to use Nvidia Blackwell and H200 chips remotely, including from data centres located in third countries. House Democrats have separately written to Secretary Lutnick demanding the department halt advanced-chip exports pending a review of oversight failures.<sup><a href="#s7">[7]</a></sup></p>
+  <span class="sowhat">If your training pipeline runs on a non-US cloud and your parent org has any Chinese ownership upstream, write down your exposure before this rule drops. Auditors will ask for the attestation chain, not a verbal assurance.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma">Amodei at JPMorgan calls compute Anthropic&rsquo;s &ldquo;deepest business dilemma&rdquo; &mdash; Bloomberg</a><sup><a href="#s8">[8]</a></sup></h3>
+  <p>On Friday Anthropic CEO Dario Amodei told Jamie Dimon at a JPMorgan event that compute &mdash; not model capability, product-market fit, or safety &mdash; is the hardest business question he faces, because capacity decisions have to be made years before the economic payoff is legible. Anthropic&rsquo;s response, Amodei said, is to buy on the low side in advance and pay spot when demand runs ahead. The remarks closed Anthropic&rsquo;s IPO roadshow.<sup><a href="#s8">[8]</a></sup></p>
+  <span class="sowhat">If you quote a flat Anthropic rate card to customers for 2027, reconsider. Providers who are buying low-and-spot pass volatility through on their enterprise tier eventually. Build a spot-cost pass-through into any annual SKU before Q1.</span>
+</div>
+
+<div class="brief">
+  <h3><a href="https://siliconangle.com/2026/11/11/prompt-injection-attacks-drive-red-hat-nvidia-s-openshell-kubeconna/">Red Hat and Nvidia donate OpenShell to CNCF as agent-sandboxing standard &mdash; SiliconANGLE</a><sup><a href="#s9">[9]</a></sup></h3>
+  <p>At KubeCon NA, Red Hat and Nvidia moved OpenShell &mdash; a sandbox layer that constrains what filesystem, network, and tool calls an AI agent can issue &mdash; under CNCF open governance. The framing is explicit: prompt injection is treated as a platform-level threat that belongs beside container isolation, not a prompt-engineering problem to be solved per-app.<sup><a href="#s9">[9]</a></sup></p>
+  <span class="sowhat">If you ship agents on OpenShift or any Kubernetes stack, plan to migrate your current &ldquo;trust the prompt&rdquo; agent containers onto OpenShell or an equivalent sandbox within two quarters &mdash; this is now the layer your auditors will ask about.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="model-item">
+  <h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/">Gemini 4 Hydrogen &mdash; Google, November 12</a><sup><a href="#s10">[10]</a></sup></h3>
+  <p>Hydrogen is Google&rsquo;s fast, cheap entrant in the Gemini 4 line, priced at $1.50 per million input tokens and $7.50 per million output, with a 1M-token input window. Google reports 2.5&times; faster task completion than Gemini 3.8 Flash, a triple on Terminal-Bench 4.1 (57% vs 18.2%), and claims a 5&times; reduction in fabricated claims. Rolling out across Google AI Studio, the Gemini API, Antigravity, and Search. Authored by Koray Kavukcuoglu.<sup><a href="#s10">[10]</a></sup></p>
+  <span class="sowhat">If your agent runs many short reasoning steps and you&rsquo;re paying for a frontier model to do them, swap in Hydrogen for the hot path and keep Carbon for planning &mdash; the per-step economics change meaningfully at these prices.</span>
+</div>
+
+<div class="model-item">
+  <h3><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Claude Fable 5.2 and Mythos 5.2 &mdash; Anthropic, November 9</a><sup><a href="#s11">[11]</a></sup></h3>
+  <p>Fable 5.2 is generally available at $8 / $40 per million input/output tokens &mdash; a 20% cut from Fable 5.1 &mdash; and Anthropic says prerelease testing drove a working formalisation of Fermat&rsquo;s Last Theorem in 30 hours. Mythos 5.2 is the same model without cyber and biology safeguards, available only to vetted organisations through Anthropic&rsquo;s Life Sciences and Cyber Verification Programs.<sup><a href="#s11">[11]</a></sup></p>
+  <span class="sowhat">If you weren&rsquo;t already in a verification program and your workflow needs Mythos&rsquo;s unrestricted cyber or life-sciences envelope, apply now &mdash; the gated-access tier is becoming the operational bar for serious security and bio work, not a VIP channel.</span>
+</div>
+
+<div class="model-item">
+  <h3>Gemini 4 Carbon &mdash; Google, November 10<sup><a href="#s10">[10]</a></sup></h3>
+  <p>Carbon is the deep-reasoning sibling to Hydrogen in the Gemini 4 line, live since Tuesday. Google positions it for long-horizon, multi-step work rather than throughput; Hydrogen&rsquo;s own release post acknowledges that Carbon and Argon are the right choices when latency can be traded for depth.<sup><a href="#s10">[10]</a></sup></p>
+  <span class="sowhat">If your agent ran against Gemini 2.5 Pro for research-heavy tasks and you&rsquo;ve been waiting for the next Google jump before re-benchmarking, this is the moment &mdash; Carbon is the rematch, Hydrogen is for the other half of the stack.</span>
+</div>
+
+<h2>Voices</h2>
+
+<div class="brief" style="border-bottom: 0;">
+  <h3><a href="https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma">Dario Amodei &mdash; Anthropic CEO &mdash; in conversation with Jamie Dimon, November 13</a><sup><a href="#s8">[8]</a></sup></h3>
+  <p class="meta">Livestreamed from JPMorgan&rsquo;s Manhattan headquarters as Anthropic&rsquo;s IPO roadshow closed.</p>
+  <p>Amodei told Dimon that compute &mdash; not alignment, not product &mdash; is the single question that keeps him up. His argument, paraphrased from the Bloomberg report, was that the field is moving so fast on the technical side that no one can confidently forecast how capability translates into economic value, which means capacity commitments made two years out are genuinely bets rather than plans. Anthropic&rsquo;s stance, he said, is to buy conservatively in advance and accept spot prices when demand outruns the plan.<sup><a href="#s8">[8]</a></sup></p>
+  <p>Worth hearing because it is the most senior frontier-lab CEO saying, in front of the CEO of the largest US bank days before his own IPO prices, that the economic model of the AI business is still unsettled. That is not a line he would use loosely. It is also a quiet acknowledgement that the capex cycle leaders are building toward is being paid for ahead of the demand curve, not behind it.</p>
+  <span class="sowhat">If you are modelling 2027 inference costs linearly off 2026 rate cards, stop. Amodei is saying out loud that the lab doing the buying can&rsquo;t forecast the shape of the curve &mdash; your model shouldn&rsquo;t pretend you can either.</span>
+</div>
+
+<h2>Today&rsquo;s Signal</h2>
+<div class="signal">
+  <p>Two of the biggest AI stories this week &mdash; Nvidia&rsquo;s founder-CEO resigning under a national-security cloud, and OpenAI letting agents move money through a Visa/Mastercard/Amex rail &mdash; sit on opposite ends of the same axis. The industry is being forced to answer, on a compressed clock, who is <em>accountable</em> for what AI systems do and who they do it for: accountable in the Commerce Department sense of &ldquo;you are personally reviewable&rdquo;, and accountable in the credit-card sense of &ldquo;this purchase belongs to this human&rdquo;. Capability stopped being the bottleneck a while ago. Trust &mdash; of executives, of counterparties, of payment rails, of export-controlled supply &mdash; is the one that moved this week.</p>
+</div>
+
+<h2>The Ledger</h2>
+<p class="meta">Season 1 · <span class="verdict-hit">5</span>&ndash;<span class="verdict-miss">8</span> · <span class="verdict-unsettled">3 unsettled</span> &nbsp;·&nbsp; graded calls through 2026-11-13. No calls graded today.</p>
+
+<div class="ledger-row">
+  <span class="ledger-label">New call</span> <span class="verdict-open">OPEN</span> &middot; horizon 2026-12-20
+  <p>Within five weeks, at least one of OpenAI, Anthropic, or Google will publicly announce a second agent-authorised payments capability &mdash; either a new wallet, a new partner surface beyond today&rsquo;s Visa/Mastercard/Amex launch, or an agent-spending policy framework &mdash; in a primary blog or docs page.</p>
+  <p><strong>Basis:</strong> ChatGPT Wallet shipped today in a narrow US Pro rollout with three card networks; the competitive incentive is to match before the holiday agent-commerce window closes.</p>
+  <p><strong>Test:</strong> By 2026-12-20, a primary-source post from OpenAI, Anthropic, or Google that is unambiguously about an agent-executed spending capability beyond today&rsquo;s ChatGPT Wallet announcement. A rate-card update alone does not satisfy the test.</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+  <li id="s1">NVIDIA Investor Relations, &ldquo;NVIDIA Announces CEO Transition&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition">nvidianews.nvidia.com</a></li>
+  <li id="s2">TechCrunch, &ldquo;Nvidia&rsquo;s Jensen Huang resigns, chipmaker names CFO Colette Kress as interim CEO&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://techcrunch.com/2026/11/12/nvidias-jensen-huang-resigns-chipmaker-names-cfo-colette-kress-as-interim-ceo/">techcrunch.com</a></li>
+  <li id="s3">CNN, &ldquo;CFO Colette Kress to serve as interim leader after Nvidia CEO Jensen Huang resignation&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.cnn.com/2026/11/12/tech/jensen-huang-nvidia-resigns">cnn.com</a></li>
+  <li id="s4">CNBC, &ldquo;Nvidia CEO Jensen Huang resigns: Live updates&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-ceo-live-updates.html">cnbc.com</a></li>
+  <li id="s5">OpenAI, &ldquo;Introducing ChatGPT Wallet&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://openai.com/index/introducing-chatgpt-wallet/">openai.com</a></li>
+  <li id="s6">TechCrunch, &ldquo;ChatGPT&rsquo;s new Wallet lets AI agents shop and check out for you&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/">techcrunch.com</a></li>
+  <li id="s7">CBS News, &ldquo;China warns against new U.S. export controls on chips in wake of Nvidia&rsquo;s Huang scandal&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.cbsnews.com/news/china-us-export-controls-chips-nvidia-huang-scandal/">cbsnews.com</a></li>
+  <li id="s8">Bloomberg, &ldquo;Anthropic&rsquo;s Dario Amodei Says Computing Power Is Key Challenge Ahead of IPO&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma">bloomberg.com</a></li>
+  <li id="s9">SiliconANGLE, &ldquo;Prompt injection attacks drive Red Hat and Nvidia&rsquo;s OpenShell&rdquo; <span class="tier">[trade]</span> &mdash; <a href="https://siliconangle.com/2026/11/11/prompt-injection-attacks-drive-red-hat-nvidia-s-openshell-kubeconna/">siliconangle.com</a></li>
+  <li id="s10">Google, &ldquo;Introducing Gemini 4 Hydrogen for Agentic Workflows&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/">blog.google</a></li>
+  <li id="s11">Anthropic, &ldquo;Introducing Claude Fable 5.2 and Claude Mythos 5.2&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">anthropic.com</a></li>
+</ol>
+
+<nav class="bar" aria-label="Edition navigation" style="margin-top: 40px;">
+  <a href="2026-11-13.html"><span class="long-labels">← YESTERDAY</span><span class="short-labels">←</span></a>
+  <span class="nav-mid">
+    <a href="./">Today</a>
+    <a href="archive.html">Archive</a>
+  </span>
+  <span class="next"><span class="long-labels">TOMORROW →</span><span class="short-labels">→</span></span>
+</nav>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise for Saturday, November fourteenth, twenty twenty six. Signal over noise. " +
+"Lead story. Nvidia's founder CEO is out, and the whole chip stack blinks. On Wednesday evening, Nvidia's board announced that Jensen Huang had resigned as president, CEO, and board member, effective immediately. CFO Colette Kress was appointed interim CEO while keeping her finance brief. Harvey C. Jones, a former Synopsys CEO, became Nvidia's first-ever chair. The company's own release is terse. The reporting around it is not: Huang's departure follows disclosures tying him to a woman alleged by U.S. investigators to be a Chinese intelligence asset, and it lands days before Nvidia's Q3 earnings call. " +
+"Three things make this more than a governance story. First, Huang was the single operator most identified with the thesis that A.I. demand is a decade-long secular shift. Interim leadership does not have that reach. Second, the counter-intelligence angle has handed export-control hawks political cover. China warned on Thursday against further U.S. restrictions, while Commerce is finalising a rule that would block China-headquartered firms from remotely using Nvidia Blackwell and H200 chips from data centres sitting outside China. Third, Kress inherits a company whose four largest customers are both counterparties and competitors on the hyperscaler stack. The founder who had informal protocol with those CEOs is gone. So what for builders: capacity does not vanish because a CEO does. What changes is the political envelope around who gets access to what, and that envelope is tightening visibly this week. " +
+"The briefs. OpenAI shipped ChatGPT Wallet on Friday. A.I. agents on the Pro tier, over eighteen, in the U.S., can now execute purchases through Visa, Mastercard, and American Express with per-transaction approval. If you run an e-commerce stack, add agent-of-a-known-buyer as a distinct case. Return and dispute flows assume the human saw the SKU. They now might not have. " +
+"China warned the U.S. against new chip export controls as Commerce finalises a remote-access rule. House Democrats wrote to Secretary Lutnick asking the department to halt advanced-chip exports pending a review. If your training pipeline runs on a non-U.S. cloud and your parent organisation has Chinese ownership upstream, document your exposure now. " +
+"Dario Amodei at a JPMorgan event called compute Anthropic's deepest business dilemma. He told Jamie Dimon that capacity commitments made two years out are genuinely bets, and Anthropic buys low in advance and pays spot when demand runs ahead. If you quote flat Anthropic rates to customers for twenty twenty seven, reconsider. " +
+"Red Hat and Nvidia donated OpenShell to the C.N.C.F. at KubeCon. It constrains what filesystem, network, and tool calls an A.I. agent can issue. Prompt injection is now treated as a platform-level threat beside container isolation. Plan the migration within two quarters. " +
+"Model watch. Google released Gemini 4 Hydrogen on November twelfth. A dollar fifty per million input tokens, seven fifty per million output, one million token input window, two and a half times faster than Gemini 3.8 Flash. Anthropic released Claude Fable 5.2 and Mythos 5.2 on November ninth, with a twenty percent price cut on Fable. Mythos is gated to Anthropic's Life Sciences and Cyber Verification Programs. Google's Gemini 4 Carbon shipped on November tenth for deep-reasoning work. " +
+"Voices. Dario Amodei, in conversation with Jamie Dimon, said the hardest question he faces is not alignment, not product, but compute. Capacity decisions are made years before the economic payoff is legible. Worth hearing because it is the most senior frontier-lab CEO saying, days before his own I.P.O. prices, that the economic model of the A.I. business is still unsettled. " +
+"Today's signal. Two of the biggest stories this week sit on opposite ends of the same axis. Nvidia's founder CEO resigning under a national security cloud, and OpenAI letting agents move money through a credit-card rail. The industry is being forced to answer, on a compressed clock, who is accountable for what A.I. systems do and who they do it for. Capability stopped being the bottleneck a while ago. Trust is the one that moved this week. " +
+"That's today. Links in every item.";
+
+(function() {
+  const btn = document.getElementById('playBtn');
+  let speaking = false;
+  let utter = null;
+
+  function pickVoice() {
+    const voices = window.speechSynthesis.getVoices();
+    const prefs = ['Daniel', 'Alex'];
+    for (const name of prefs) {
+      const v = voices.find(v => v.name.includes(name));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0] || null;
+  }
+
+  function stop() {
+    window.speechSynthesis.cancel();
+    speaking = false;
+    btn.textContent = '▶ Listen (~4 min)';
+  }
+
+  function play() {
+    utter = new SpeechSynthesisUtterance(S);
+    utter.rate = 0.93;
+    const v = pickVoice();
+    if (v) utter.voice = v;
+    utter.onend = () => { speaking = false; btn.textContent = '▶ Listen (~4 min)'; };
+    utter.onerror = () => { speaking = false; btn.textContent = '▶ Listen (~4 min)'; };
+    window.speechSynthesis.speak(utter);
+    speaking = true;
+    btn.textContent = '■ Stop';
+  }
+
+  btn.addEventListener('click', () => {
+    if (speaking) stop(); else play();
+  });
+
+  if (window.speechSynthesis && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+    window.speechSynthesis.onvoiceschanged = () => {};
+  }
+})();
+</script>
+
+</body>
+</html>
