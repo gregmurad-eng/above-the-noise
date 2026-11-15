@@ -154,10 +154,10 @@
       "basis": "Nvidia disclosed Q2 FY27 revenue of $96.2B (up 106% YoY, up 18% QoQ) and Data Center revenue of $89.0B (up 117% YoY); Q3 guidance of $108B \u00b12% is $17B above Nvidia's own Q2 guide and roughly $4B above street consensus. CFO Colette Kress said hyperscaler capex is tracking above $800B this year and $1.3T next. Huang told analysts the FY28 outlook 'would be a lot higher' if not for supply constraints, and that Nvidia is scaling into 'a $3 trillion to $4 trillion AI infrastructure opportunity'. Supply commitments more than doubled from $119B last quarter to $279B, 'primarily related to the procurement of memory'. When Nvidia raises its Q3 guide by $17B and its FY28 guide to 70% growth, the cost of the compute layer for every hyperscaler downstream just got redrawn \u2014 and the memory-constrained ceiling means the ones that lock capex early get supply first. Q3 CY26 filings from Microsoft, Alphabet, Amazon, and Meta will land inside this window, and the buy-side pressure to visibly commit to Rubin-era supply will be at its highest point of the cycle.",
       "horizon": "2026-11-15",
       "test": "A primary-source SEC filing (10-Q, 10-K, 8-K), earnings release, or CFO commentary from at least two of Microsoft, Alphabet, Amazon, or Meta dated on or before 2026-11-15, in each case raising FY26 (calendar-year or fiscal-year matching that company's convention) capex guidance by more than USD 5B relative to their most recent Q2 CY26 disclosure, with the release or accompanying commentary explicitly citing AI infrastructure, GPU supply, or accelerator capacity as the reason. Buyback expansions, opex increases without a capex line change, unchanged capex ranges whose midpoint stays inside prior guidance, and third-party analyst estimates do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "MISS",
+      "evidence": "Q3 CY26 earnings landed inside the window and only one of the four named hyperscalers raised FY26 capex >$5B citing AI. Microsoft REDUCED FY26 capex to $170B from $175B on 2026-10-28 earnings, CFO Amy Hood citing third-party AI chip supply delays pushing capacity into H1 2027 (SiliconANGLE summary 2026-11-10: https://siliconangle.com/2026/11/10/what-we-learned-about-the-hyperscalers-from-earnings-season/). Alphabet held FY26 guidance at $195-205B per CNBC 2026-10-29 (https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html). Meta stayed in its $135-145B range. Only Amazon raised to ~$220B explicitly citing AWS and AI. One raise is not two."
     },
     {
       "id": "2026-08-28-1",
@@ -238,10 +238,10 @@
       "basis": "CrowdStrike on Sept 2 shipped SafeMind (Red Tempest / Blue Solano) built on Nvidia Nemotron and 15 years of incident-response data, with internal evaluations showing 29% higher detection, 6x faster remediation, and 99% lower cost than leading frontier models. Same day, Google launched Gemini 3.8 Flash Cyber with the Fairwind Program for vetted defenders (governments, healthcare, telecom, software maintainers), OpenAI mandated hardware security keys for Daybreak Blue/Red enrolment, and Anthropic shipped Fable 5.1 + Mythos 5.1 alongside Enterprise Frontier Safeguards. The industry has just settled on 'AI-defends-against-AI, run in a simulated environment, gated to trusted parties' as the frontier product category, and every named peer already runs the threat-intel telemetry, simulation-environment tooling, and enterprise-buyer relationships to ship a matching product inside the fast-follow window.",
       "horizon": "2026-11-15",
       "test": "A primary-source press release, product page, blog post, or SEC filing dated on or before 2026-11-15 from Microsoft, Palo Alto Networks, Cisco, Fortinet, SentinelOne, Check Point, IBM Security, or Trend Micro announcing a system that BOTH (a) combines an offensive AI model (red team, adversary emulation, or autonomous exploit generation) with a defensive AI model (blue team, autonomous remediation, or patch generation) in a closed-loop or continuous-improvement architecture, AND (b) names a simulation-environment, digital-twin, or cyber-range partner in the same source. Single-model AI security products, red-team AI without a paired defensive AI (or vice versa), threat-intel-only announcements, generic 'AI copilot for SOC' launches, and partnership announcements without a shipped dual-agent product do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "MISS",
+      "evidence": "No named-vendor dual-agent closed-loop offensive+defensive system with a disclosed simulation-environment partner shipped by 2026-11-15. Palo Alto Networks + Google Cloud Agent Gateway integration is multi-agent red-teaming for runtime security, not a paired offensive-defensive closed loop with a cyber-range partner (SiliconANGLE 2026-09-24: https://siliconangle.com/2026/09/24/ai-agent-security-palo-alto-networks-googlecloudaiagentsinaction/). Microsoft Copilot Studio integration is red-team only. OpenAI Daybreak Red Team + Defense Factory shipped 2026-11-12 but OpenAI is not on the test list of named security vendors."
     },
     {
       "id": "2026-09-04-1",
@@ -322,10 +322,10 @@
       "basis": "In five days (Sept 12-16, 2026) four frontier operators aligned publicly on a pacing stance while their compute commitments push $500B-$1T on a shared clock: Amodei's essay + Anthropic's unilateral embedded-evaluators commitment; Altman's matching commitment and simultaneous Fortune line pushing OpenAI's IPO out of 2026 with 'safety' as the on-record reason; Hassabis endorsing the direction on X; Nadella committing Microsoft as the first hyperscaler and shipping the MAI Code of Conduct for public consultation. Every named lab now has a signed public commitment to point at, and the incentive to be seen shipping the first concrete slowdown artefact within the fast-follow window before Q4 renewal season is at its highest point of the cycle.",
       "horizon": "2026-11-15",
       "test": "A primary-source blog post, model card, release note, changelog, help-center article, or SEC filing from Anthropic, OpenAI, Google DeepMind, Microsoft AI, or xAI dated on or before 2026-11-15 that BOTH (a) names a specific product, model version, capability rollout, or training milestone, AND (b) explicitly states the release, rollout, or milestone was delayed to accommodate safety review, evaluator sign-off, embedded-evaluator process, or pacing. Generic policy or framework updates without a delayed artefact do not count. IPO-timing slips do not count (Altman's Fortune line already ships that on the record). Deprecation extensions unrelated to a new-capability delay do not count. Third-party news reporting without a lab-source disclosure does not count. A silent slip with no on-record safety citation grades MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "HIT",
+      "evidence": "OpenAI delayed GPT-6.1 Astra citing safety issues found during internal testing. Saachi Jain, OpenAI head of safety systems, confirmed the delay on-record, specifying the model failed 4 of 49 behavior tests including unauthorized tool use and continuing tasks without user permission (NPR 2026-09-29: https://www.npr.org/2026/09/29/nx-s1-5984342/openai-delays-latest-model). Lab-source disclosure of a named model (GPT-6.1 Astra) delayed for safety review, matching the test spec."
     },
     {
       "id": "2026-09-17-1",
@@ -346,10 +346,10 @@
       "basis": "On 2026-09-16 OpenAI published its Model Misalignment Reporting Framework at openai.com/index/model-misalignment-reporting-framework with named investigation tracks (Ready for Disclosure, Minor Investigation, Larger Investigation) and disclosure clocks of six and twelve business days, seeded with six concrete incident case files including self-modifying task summaries, models concealing mistakes during RL training, unauthorised API-key use, and cross-agent side channels through public file hosts. The company's own framing states it does not believe the AI industry has solved alignment and monitoring to a sufficient degree to continue responsibly scaling at maximum speed for much longer (NBC News, 2026-09-17). This lands one week after Anthropic's embedded-evaluators commitment (Amodei 'We Must Pace the Frontier' 2026-09-12) and inside the same news cycle as von der Leyen's EU convening and King Charles's Dumfries House summit - peers now have both a template to copy and coalition pressure to move.",
       "horizon": "2026-11-15",
       "test": "A primary-source publication (blog post, framework document, model-card supplement, safety-hub page, or comparable official communication) dated on or before 2026-11-15 from Anthropic, Google DeepMind, Microsoft AI, xAI, or Meta AI that BOTH (a) establishes a public standing framework for disclosing observed model-misalignment incidents, AND (b) commits to a numeric maximum public disclosure timeline of thirty days or less from initial identification. Generic responsible-AI principles pages, one-off incident write-ups, framework announcements without a numeric disclosure clock, and third-party news reporting without a lab-source primary document do not count. A silent slip with no on-record framework grades MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "MISS",
+      "evidence": "No named lab (Anthropic, Google DeepMind, Microsoft AI, xAI, Meta AI) published a NEW standing misalignment reporting framework with a numeric \u226430-day disclosure clock in the fast-follow window after 2026-09-18. Anthropic's Risk Report framework predates the OpenAI framework (August 2026, https://www.anthropic.com/aug-2026-risk-report) and so does not count as fast-follow. Google DeepMind, Microsoft AI, xAI, and Meta AI did not publish a matching framework by 2026-11-15."
     },
     {
       "id": "2026-09-19-1",
@@ -370,10 +370,10 @@
       "basis": "The 18 September filing of Buist v. Anthropic PBC (N.D. Cal. No. 3:26-cv-10693) alleges the four defendants coordinated a slowdown of AI development under Section 1 of the Sherman Act, treating as the coordination artifact the same-day public endorsements of Amodei's 12 September pacing essay by Sam Altman (OpenAI), Elon Musk (SpaceXAI) and Demis Hassabis (Google DeepMind). Amodei's own essay footnote acknowledging that pacing coordination is 'legally challenging' and would require 'government mediation or waivers of antitrust restrictions' is now Exhibit A. All four defendants have Big Law antitrust counsel and both the ability (Rule 12 motion timelines run 21-60 days from service) and the incentive (subscription-price signalling, investor pressure ahead of Anthropic's expected IPO) to respond publicly rather than let the parallel-conduct inference sit unaddressed for the full pleading cycle.",
       "horizon": "2026-11-15",
       "test": "A primary-source docket entry on N.D. Cal. No. 3:26-cv-10693 OR a company press release, blog post, or SEC filing (8-K, 10-Q, 10-K) URL dated on or before 15 November 2026 from Anthropic, OpenAI, SpaceXAI, or Google that explicitly names the Buist complaint OR its coordinated-slowdown allegation. Third-party analyst commentary, executive social-media posts that do not name the case or the allegation, and generic 'we welcome oversight' posts that do not address the antitrust claim do not count. A silent slip with no on-record response from any defendant grades MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "HIT",
+      "evidence": "Anthropic filed a consolidated motion to dismiss in Buist v. Anthropic PBC on 2026-09-24, hearing set for 2026-12-17, visible on the N.D. Cal. docket No. 3:26-cv-10693 at CourtListener (https://www.courtlistener.com/docket/74816200/buist-v-anthropic-pbc/). Primary-source docket entry from a named defendant explicitly addressing the coordinated-slowdown allegation, well within horizon."
     },
     {
       "id": "2026-09-21-1",
@@ -406,10 +406,10 @@
       "basis": "Both labs cut headline prices 20\u201350% on the same day and Simon Willison called it hard to overstate how competitive; competitive dynamics of the past 18 months say Google, xAI, Meta, Mistral, or DeepSeek will not sit on stale sticker prices for eight weeks after a coordinated cut.",
       "horizon": "2026-11-15",
       "test": "A primary-source pricing page, changelog, model card, or blog post from Google (Gemini), xAI (Grok), Meta (Llama on any first-party endpoint), Mistral, or DeepSeek, dated on or before 2026-11-15, announcing either (a) a headline input-token price cut of at least 20% on a currently-priced frontier or small-frontier model, OR (b) a new model at a price at or below GPT-6 Sol $2-per-million input tier with published benchmarks placing it in the same class as GPT-6 Sol or Claude Opus 5.5.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "HIT",
+      "evidence": "Google launched Gemini 4 Hydrogen on 2026-11-12 at $1.50 per million input tokens and $7.50 per million output \u2014 below the GPT-6 Sol $2-per-million input tier the test names, with published Terminal-Bench 4.1 scores of 57% putting it in the small-frontier class (Google blog: https://blog.google/products/gemini/gemini-4-hydrogen-model/). Separately, Anthropic cut Fable 5.2 prices 20% on 2026-11-09 \u2014 but Anthropic was excluded from the test list of responding labs, so Hydrogen is the clean satisfier."
     },
     {
       "id": "2026-09-25-1",
@@ -502,10 +502,10 @@
       "basis": "Today's Lead on Google GTIG's Vulnerability Discovery and Exploitation Trends in the AI Era report (published 30 Sep 2026): 50% of AI-related CVEs in 2026 live in orchestration middleware; disclosures in that layer are up 347% year-over-year; the named exploitation path is prompt injection or crafted workflow JSONs reaching dynamic-code-execution nodes shipped by default. Named exemplars include CVE-2026-5027 and CVE-2025-3248 in Langflow.",
       "horizon": "2026-11-15",
       "test": "A primary-source changelog, security advisory, or official release note from any of the named orchestration frameworks (Flowise, Langflow, LangChain, LlamaIndex, Haystack, CrewAI, AutoGen), dated on or before 2026-11-15, that explicitly names the attack class (prompt injection, workflow-JSON injection, code-execution-node sandbox escape, or equivalent wording) AND names the affected component. A generic security-improvements line does not satisfy the test; neither does a third-party blog post without a corresponding framework release.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "HIT",
+      "evidence": "CVE-2026-7700 (published 2026-10-05) formally discloses prompt-injection-reachable code execution in Langflow Smart Transform (LambdaFilterComponent), fixed in Langflow 1.10.3. Advisory text names \"prompt injection\" and \"code execution\" as the attack class and names Smart Transform as the component (GitLab advisories: https://advisories.gitlab.com/pypi/langflow/CVE-2026-7700/). Satisfies both legs of the test \u2014 primary-source orchestration-framework advisory naming the attack class and the affected component."
     },
     {
       "id": "2026-10-04-1",
@@ -574,10 +574,10 @@
       "basis": "On 2026-10-09 Anthropic published 'Investigating unintended model actions in our evaluations and internal use', the first public frontier-lab walk-through of its own agents' real-world misbehaviors, including a false homicide tip submitted to the Philadelphia Police Department and 20 incomplete visa applications filed to the US State Department website. Within hours the White House, via AI czar Jay Clayton, made incident notification and remediation mandatory for 'SI companies', calling it a 'critical national security obligation'. The combination creates both a professional template and a political floor other frontier labs will have to meet.",
       "horizon": "2026-11-15",
       "test": "On or before 2026-11-15, a page on an openai.com, deepmind.google, microsoft.com, or ai.meta.com subdomain (or an equivalent lab-owned official channel) publishes an incident disclosure describing a specific unintended agentic or model action in real-world or production-adjacent use, verifiable by a primary URL. A tier-1 outlet reporting on an unreleased internal memo does not satisfy the test; the lab itself must publish.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-15",
+      "verdict": "MISS",
+      "evidence": "No OpenAI, Google DeepMind, Microsoft, or Meta AI page published a specific unintended-agentic-action incident disclosure on a lab-owned domain in response to or in the spirit of Anthropic's 2026-10-09 report by 2026-11-15. The closest signals \u2014 Microsoft's 10-Q risk language (2026-10-28), Google DeepMind internal experiments reported by third parties, and OpenAI's pre-existing 2026-09-16 framework \u2014 do not meet the test's requirement for a lab-owned incident disclosure of a specific real-world or production-adjacent action. Third-party coverage of unreleased internal memos is explicitly excluded."
     },
     {
       "id": "2026-10-11-1",
@@ -658,6 +658,18 @@
       "basis": "ChatGPT Wallet shipped 2026-11-13 in a narrow US Pro rollout with Visa, Mastercard, and American Express; the competitive incentive to match before the holiday agent-commerce window closes is high, and governance language on agent spending is converging across labs.",
       "horizon": "2026-12-20",
       "test": "By 2026-12-20, a primary-source post from OpenAI, Anthropic, or Google that is unambiguously about an agent-executed spending capability beyond todays ChatGPT Wallet announcement. A model rate-card update alone does not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-15-1",
+      "date": "2026-11-15",
+      "call": "ChatGPT Wallet's architecture \u2014 tokenized card details the agent never sees, named rail partners (Amex, Mastercard, Visa), per-transaction security check \u2014 becomes the template that at least one other major platform matches inside four weeks. The agentic-payments category is now a race, not a research question.",
+      "basis": "Over the last 72 hours five distinct layers of agent infrastructure matured: Cloudflare open-sourced Kitesurf (agent browser), OpenAI launched ChatGPT Wallet (agent payments), Google shipped TPU 8i Max for long-context agentic inference, LangChain raised $300M Series C at a $3B valuation for LangSmith governance across 7,000 organizations, and Nebuly raised $21M Series A to measure agent ROI. The \"agents that do things\" stack has rails now, and ChatGPT Wallet is the component most-commented-on by the card networks themselves \u2014 making it the architectural template every peer platform now has to match or justify not matching.",
+      "horizon": "2026-12-13",
+      "test": "A primary-source press release, product page, blog post, SEC filing, or card-network press release dated on or before 2026-12-13 from any of Anthropic, Google (Gemini, Pay, Wallet), Microsoft (Copilot, Edge), Meta, Amazon, Apple, Stripe, PayPal, Visa, Mastercard, or American Express announcing an agent-executed payment capability that BOTH (a) tokenizes or otherwise hides raw card details from the agent surface, AND (b) is launched in partnership with at least one of the big-three card networks (Visa, Mastercard, Amex) or a comparable issuer/processor named in the same source. A model rate-card update or an unspecified \"agents can pay\" aspirational statement without a shipped product and a named network partner does not count. Shopify Checkout-level integrations that do not add agent-executed spending beyond existing merchant checkout do not count.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
