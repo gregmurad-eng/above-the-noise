@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — Sunday, November 15, 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a8266;
+    --rule: #2a241a;
+    --miss: #b06e6e;
+    --uns: #8a8266;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; line-height: 1.55; }
+  body { max-width: 760px; margin: 0 auto; padding: 36px 24px 72px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(201, 168, 76, 0.25); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+  .bar a, .bar .next { white-space: nowrap; display: inline-block; padding: 10px 6px; margin: -6px 0; }
+  .nav-mid { display: inline-flex; gap: 0; align-items: center; flex: 1; justify-content: center; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .bar .next { color: var(--muted); }
+
+  h1.masthead { font-size: 36px; letter-spacing: 0.02em; margin: 28px 0 4px; color: var(--text); }
+  .tagline { color: var(--muted); font-style: italic; font-size: 15px; }
+  .dateline { color: var(--muted); font-size: 14px; margin-top: 6px; letter-spacing: 0.04em; }
+
+  h2 { font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin: 44px 0 14px; border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+  h3 { font-size: 20px; margin: 20px 0 8px; color: var(--text); }
+  h3 a { color: var(--text); border-bottom: 1px dotted rgba(201, 168, 76, 0.35); }
+
+  p { font-size: 17px; margin: 10px 0; }
+  .brief { padding: 12px 0 14px; border-bottom: 1px solid var(--rule); }
+  .brief:last-child { border-bottom: 0; }
+
+  .sowhat {
+    color: var(--accent);
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 12px;
+    margin: 10px 0 2px;
+    font-size: 16px;
+  }
+
+  .player { margin: 18px 0 8px; }
+  #listen-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  #listen-btn:hover { background: var(--accent); color: var(--bg); }
+  #listen-status { color: var(--muted); font-size: 13px; margin-left: 10px; font-style: italic; }
+
+  sup a {
+    display: inline-block;
+    padding: 6px 4px;
+    margin: -6px -4px;
+    font-size: 12px;
+    border: none;
+    color: var(--accent);
+  }
+
+  .signal {
+    background: #15110a;
+    border: 1px solid var(--rule);
+    padding: 16px 20px;
+    margin: 14px 0;
+  }
+
+  .ledger-row { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+  .ledger-row:last-child { border-bottom: 0; }
+  .verdict { font-weight: bold; letter-spacing: 0.08em; }
+  .verdict.hit { color: var(--accent); }
+  .verdict.miss { color: var(--miss); }
+  .verdict.uns { color: var(--uns); }
+  .ledger-head { color: var(--text); font-weight: bold; }
+
+  ol.sources { padding-left: 24px; font-size: 14px; color: var(--text); }
+  ol.sources li { margin: 6px 0; padding-left: 4px; }
+  ol.sources .tier { color: var(--muted); font-style: italic; }
+
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; text-align: center; border-top: 1px solid var(--rule); padding-top: 18px; }
+
+  @media (max-width: 480px) {
+    body { padding: 20px 16px 56px; font-size: 16px; }
+    h1.masthead { font-size: 28px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 17px; }
+    p { font-size: 16px; }
+    .brief, .signal, .ledger-row { font-size: 16px; }
+    .sowhat { font-size: 15px; }
+    .bar { font-size: 13px; gap: 8px 12px; }
+    .nav-mid a { margin: 0 8px; }
+    ol.sources { font-size: 14px; padding-left: 20px; }
+    #listen-btn { padding: 12px 18px; }
+    .dateline, .tagline { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="bar"><a href="2026-11-14.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<h1 class="masthead">Above The Noise</h1>
+<div class="tagline">AI &amp; Tech · Signal over noise</div>
+<div class="dateline">Sunday, November 15, 2026</div>
+
+<div class="player">
+  <button id="listen-btn" type="button" aria-label="Listen to today's edition">▶ LISTEN</button>
+  <span id="listen-status"></span>
+</div>
+
+<h2>Lead Story</h2>
+
+<h3>The agent-era stack landed its rails this week</h3>
+
+<p>While the headline chair at Nvidia sat empty<sup><a href="#s1">[1]</a></sup>, the plumbing underneath AI agents quietly hardened. Over the last seventy-two hours, five distinct layers of the "agents that do things" stack moved from research posture to shipped product. They did not ship as a coordinated package — nobody runs that playbook — but the week reads like one, because every piece answers the same question: what does an agent need in order to be trusted to act?</p>
+
+<p>Start at the top of the stack. On 13 November OpenAI launched <strong>ChatGPT Wallet</strong>, in partnership with American Express, Mastercard, and Visa<sup><a href="#s2">[2]</a></sup>. Dots — OpenAI's always-on agents — can now complete purchases on a Pro subscriber's behalf without ever seeing the real card number; the wallet issues a payment token and requires a security check before each transaction. The three card networks co-signed it, which is what the headline is actually about. Agentic payments stopped being an aspiration slide the day Visa and Mastercard put their names on one.</p>
+
+<p>Beneath payments sits the agent's web surface. Cloudflare, the same day, open-sourced <strong>Kitesurf</strong><sup><a href="#s3">[3]</a></sup>, the browser engine it built for agents instead of shipping a full copy of Chrome. It is written in Rust, compiles to WebAssembly, runs entirely inside Cloudflare Workers isolates, and renders pages without a Chromium binary. Apache 2.0, inspectable, deployable to your own Cloudflare account. The pitch is not "faster Chrome" — it is a smaller, auditable surface for an agent to touch the web with.</p>
+
+<p>Beneath the browser sits the compute. On 9 November Google added <strong>TPU 8i Max and TPU 8tx</strong> to its eighth-generation lineup<sup><a href="#s4">[4]</a></sup>. 8i Max is two 8i chips on one package — 768 MB of on-chip SRAM, 17.2 TB/s of HBM bandwidth — explicitly positioned for long-context agentic workloads. 8tx is a confidential-compute variant for regulated and federal workloads. Four new TPU systems in a single calendar year is not a product cadence; it is a bet that long-session agent inference is the next quarter's bottleneck.</p>
+
+<p>Beneath compute sits governance. On 13 November <strong>LangChain</strong> closed a $300M Series C at a $3B valuation, led by CapitalG<sup><a href="#s5">[5]</a></sup>, with GIC, DFJ Growth, Salesforce Ventures and MongoDB Ventures in. LangSmith — their observe/evaluate/govern plane — now runs across more than 7,000 organizations and processes over a billion agent events a day. CapitalG writing the biggest check in that round is Alphabet buying a seat at the agent-governance table it does not yet own with Gemini.</p>
+
+<p>And beneath governance sits the thing enterprises actually pay for: did any of this work? On 12 November, <strong>Nebuly</strong> raised a $21M Series A led by Planven to measure exactly that<sup><a href="#s6">[6]</a></sup> — AI-influenced revenue, churn risk, upsell signals, deployment ROI — across Claude, ChatGPT and Copilot, with Oura, Iveco and Zeiss named as paying customers. It is the smallest round of the five, and the one that tells you the category is now mature enough for the CFO question.</p>
+
+<p>Five layers, five shipped products, one week. The question for a builder is no longer "can I build an agent that does things" — it is "whose rails am I standing on when it does."</p>
+<p class="sowhat">So what: if you are shipping an agent that touches the web, holds a budget, or lives inside an enterprise, write down your dependency on each of these five layers this week. ChatGPT Wallet locks you into dots and OpenAI's security-check UX; Kitesurf frees you from a Chromium footprint but ties you to Cloudflare Workers; LangSmith is becoming the audit log regulators will ask to see; Nebuly is the number your CFO will quote at renewal. Decide which rail you want to be on before your competitors choose for you.</p>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://www.cnbc.com/2026/11/13/nvidia-huang-ceo-replacement-search.html">Nvidia's permanent-CEO search still at the search-firm stage — CNBC</a></h3>
+<p>Two days after Jensen Huang's resignation and the appointment of CFO Colette Kress as interim CEO and Harvey C. Jones as Board Chair<sup><a href="#s7">[7]</a></sup>, Nvidia told CNBC the board has not yet selected a search firm or formally engaged candidates<sup><a href="#s1">[1]</a></sup>. The Financial Times separately reports the board approached Arm CEO Rene Haas; Nvidia says no candidate has been formally engaged. Kress continues as CFO alongside the interim role, which is a signal in itself about the board's expected timeline.</p>
+<p class="sowhat">So what: supply allocation at Nvidia routes through the CEO's office more than any other hyperscaler-adjacent vendor. If you are on a 2027 GPU allocation plan with Nvidia, assume your account map changes once a permanent CEO lands — write the next review assuming a new relationship, not a continuation.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.anthropic.com/news/claude-for-manufacturing">Anthropic launches Claude for Manufacturing with Infor as preferred ERP — Anthropic</a></h3>
+<p>On 12 November, mid-IPO-roadshow, Anthropic shipped Claude for Manufacturing — a plugin with 17 skills for quoting, quality investigation, production reporting, maintenance diagnosis, sourcing and design, connected to Autodesk Fusion, Infor, Microsoft 365 and Oracle NetSuite<sup><a href="#s8">[8]</a></sup>. Infor announced the same day that it has designated Claude its preferred AI assistant across its Industry AI products<sup><a href="#s9">[9]</a></sup>. Buyers, planners and CS reps can now ask operational questions in plain language and execute approved transactions — PO approvals, stock reallocation, production-line shifts — without leaving the Claude conversation.</p>
+<p class="sowhat">So what: Anthropic is pricing the IPO and shipping a vertical ERP integration on the same tape. If your product sits next to an Infor deployment, expect your buyer to have a Claude budget line by Q1 — write the integration brief now rather than after the deal closes.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://thinkingmachines.ai/news/inkling-2-small/">Thinking Machines opens Inkling 2 Small weights, 594B MoE under Apache 2.0 — Thinking Machines Lab</a></h3>
+<p>On 12 November, a week after the hosted launch via Tinker, Thinking Machines Lab published the full open weights of Inkling 2 Small on Hugging Face under Apache 2.0, in two checkpoints (NVFP4 and MXFP8) totalling roughly 393.5 GB<sup><a href="#s10">[10]</a></sup>. It is a 594B-total-parameter Mixture-of-Experts with 17B active, 1M context, and image-input support. The release followed external safety testing and red-teaming per the original announcement commitment.</p>
+<p class="sowhat">So what: open-weight frontier releases in this class let you move an evaluation or batch-scoring job off hosted APIs for less than one GPU-month of your time. If you have an inference bill with a frontier lab of more than $50K a month on a non-interactive workload, benchmark Inkling 2 Small against your current stack before renewal.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://casrai.org/news/smic-ai-chip-supply-tight-through-2027">SMIC: AI chip supply will stay tight through 2027 — CASRAI (summarising SMIC co-CEO comments)</a></h3>
+<p>SMIC's co-CEO said on 13 November that AI-related chip supply will stay tight through 2027<sup><a href="#s11">[11]</a></sup>. The signal echoes Microsoft CFO Amy Hood's 28 October earnings call saying third-party AI chip supply delays will push some capacity into H1 2027<sup><a href="#s12">[12]</a></sup>, and TSMC's 2026 agentic-chip demand commentary<sup><a href="#s13">[13]</a></sup>. Nvidia disclosed $279B of supply commitments in Q2, primarily memory. Supply, not demand, is the binding constraint going into next year.</p>
+<p class="sowhat">So what: if your 2027 roadmap assumes available GPU capacity on-demand through a hyperscaler, the earnings calls just confirmed that assumption is wrong. Reserve or commit now, or move the workload to a model that fits inside a smaller silicon envelope.</p>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="brief">
+<h3><a href="https://thinkingmachines.ai/news/inkling-2-small/">Inkling 2 Small — Thinking Machines Lab (12 November)</a></h3>
+<p>594B total / 17B active, Mixture-of-Experts, 1M context, image inputs, variable effort. Hosted via Tinker from 5 November; full weights on Hugging Face from 12 November under Apache 2.0 in NVFP4 and MXFP8 checkpoints. ~393.5 GB total. First post-hosted-debut weight release from the lab<sup><a href="#s10">[10]</a></sup>.</p>
+<p class="sowhat">So what: if you have a workload currently running on Mythos 5.2 or Opus 5.5 for compliance-driven on-prem deployment, Inkling 2 Small at Apache 2.0 is now a procurement option your legal team can sign off on without an API contract.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://blog.google/products/gemini/gemini-4-hydrogen-model/">Gemini 4 Hydrogen — Google (12 November, pricing landed)</a></h3>
+<p>$1.50 per million input tokens, $7.50 per million output; 2.5× faster task completion than Flash at default thinking; 57% on Terminal-Bench 4.1; free tier in the Gemini app and Search<sup><a href="#s14">[14]</a></sup>. Positioned as Google's fast, disciplined execution model. Below GPT-6 Sol's $2 input tier — but as Simon Willison flagged on 12 November, still 15× Haiku 5.5 and GPT-6 Luna at $0.10/$0.50, so the floor it resets is the mid-frontier tier, not the cheap tier.</p>
+<p class="sowhat">So what: for any new product requiring Gemini-native tool use or Android distribution, Hydrogen is now the sensible default. For everything else, the long-tail pricing floor is still Haiku 5.5 or GPT-6 Luna, and switching to Hydrogen for cost alone is a losing math.</p>
+</div>
+
+<div class="brief">
+<h3><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/">TPU 8i Max &amp; TPU 8tx — Google (9 November)</a></h3>
+<p>Not a model, but the compute aimed at today's models: TPU 8i Max is two 8i chips on one package — 768 MB of on-chip SRAM, 17.2 TB/s HBM bandwidth — built for long-context agentic inference. TPU 8tx builds confidential-compute isolation into hardware, aimed at federal and regulated workloads<sup><a href="#s4">[4]</a></sup>. Availability dates and pricing not yet announced.</p>
+<p class="sowhat">So what: if you are running a Gemini-family workload with greater than 500K tokens of context per request, add 8i Max to your Q1 vendor review — Google quoting it as agent-era silicon signals pricing will favour long-session workloads that today get rate-limited.</p>
+</div>
+
+<h2>Voices</h2>
+
+<div class="brief" style="border-bottom: 0;">
+<p>This edition's Voice is <strong>Demis Hassabis</strong>, co-founder and CEO of Google DeepMind. Recorded live at the Masters of Scale Summit at the Presidio Theatre in San Francisco in October and published in early November, Hassabis's conversation with Reid Hoffman — <em>"Society is 'not ready' for the AI future"</em>, about 55 minutes<sup><a href="#s15">[15]</a></sup> — is the most senior frontier-lab leader to date giving a named prediction of the near-term failure mode. His framing: <em>"Some kind of incident, I sometimes call it like an oil spill, is going to happen on the current trajectory."</em><sup><a href="#s15">[15]</a></sup> He pairs the warning with what DeepMind is doing about it inside the lab — <em>"much more hardened sandboxes"</em> walling off what an agent can reach — a concrete answer to the critique that frontier labs talk about safety abstractly. The best fifteen minutes for a builder start roughly where Hoffman asks what an incident would actually look like.</p>
+<p class="sowhat">So what: if you are shipping agents into any environment with real-world side effects, the "hardened sandbox" phrase just became the vocabulary your buyer will expect you to speak. If your product does not have a documented isolation story — what the agent can reach, what it can't, and what a failure contains — write one this week before a customer asks.</p>
+</div>
+
+<h2>Today's Signal</h2>
+
+<div class="signal">
+<p>The agentic stack has rails now. A week ago, "agents that act in the world" was still a research posture — this week, the browser (Kitesurf), payments (ChatGPT Wallet), compute (TPU 8i Max), governance (LangChain / LangSmith) and measurement (Nebuly) all shipped in production form. None of these were announced together. All five answer the same question. The next twelve months of competition in this category will not be won by whoever has the smartest model — the model layer is already saturated — but by whoever stands on the right combination of rails. Choose your stack with the same care you once chose a database.</p>
+</div>
+
+<h2>The Ledger</h2>
+
+<p><span class="ledger-head">Season 1 · <span class="verdict hit">9 HIT</span> — <span class="verdict miss">12 MISS</span> — <span class="verdict uns">3 UNSETTLED</span> · 32 open</span></p>
+
+<div class="ledger-row">
+<p><strong>Graded today (8 calls due 2026-11-15):</strong></p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict miss">MISS</span> · <strong>2026-08-27-1 — hyperscaler capex raise</strong> · Microsoft reduced FY26 capex to $170B from $175B on 28 October citing AI-chip supply delays; Alphabet held guidance at $195–205B; Meta stayed in range. Only Amazon raised (to ~$220B). One is not two. Evidence: <a href="https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html">CNBC, 29 October</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict miss">MISS</span> · <strong>2026-09-03-1 — dual-agent red/blue security system</strong> · No named-vendor closed-loop offensive+defensive system with a disclosed simulation-environment partner shipped by 15 November. Palo Alto / Google Cloud Agent Gateway is multi-agent red-teaming, not a paired closed loop. Evidence: <a href="https://siliconangle.com/2026/09/24/ai-agent-security-palo-alto-networks-googlecloudaiagentsinaction/">SiliconANGLE, 24 September</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict hit">HIT</span> · <strong>2026-09-16-1 — frontier lab delays a specific release citing safety</strong> · OpenAI delayed GPT-6.1 Astra; head of safety systems Saachi Jain confirmed the model failed 4 of 49 behaviour tests, including unauthorized tool use. Evidence: <a href="https://www.npr.org/2026/09/29/nx-s1-5984342/openai-delays-latest-model">NPR, 29 September</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict miss">MISS</span> · <strong>2026-09-18-1 — new misalignment-reporting framework from a peer lab</strong> · No NEW standing framework from Anthropic / DeepMind / Microsoft AI / xAI / Meta AI in the fast-follow window. Anthropic's August 2026 Risk Report already had a 30-day clock, which predates the OpenAI framework and so does not satisfy the spirit of the call. Evidence: <a href="https://www.anthropic.com/aug-2026-risk-report">Anthropic Risk Report, August 2026</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict hit">HIT</span> · <strong>2026-09-20-1 — Buist defendant on-record response</strong> · Anthropic filed a consolidated motion to dismiss in Buist v. Anthropic PBC on 24 September; hearing set 17 December. Evidence: <a href="https://www.courtlistener.com/docket/74816200/buist-v-anthropic-pbc/">CourtListener docket</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict hit">HIT</span> · <strong>2026-09-23-1 — peer lab matches the September price reset</strong> · Google launched Gemini 4 Hydrogen on 12 November at $1.50/$7.50 per million tokens, below GPT-6 Sol's $2 input tier, with Terminal-Bench 4.1 scores in the small-frontier class. Evidence: <a href="https://blog.google/products/gemini/gemini-4-hydrogen-model/">Google blog, 12 November</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict hit">HIT</span> · <strong>2026-10-03-1 — orchestration framework ships prompt-injection hardening</strong> · CVE-2026-7700 (published 5 October) discloses prompt-injection-reachable code execution in Langflow Smart Transform, fixed in 1.10.3 — advisory names both the attack class and the component. Evidence: <a href="https://advisories.gitlab.com/pypi/langflow/CVE-2026-7700/">GitLab advisories, 5 October</a>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict miss">MISS</span> · <strong>2026-10-10-1 — peer lab publishes an unintended-agentic-action incident report</strong> · No OpenAI / DeepMind / Microsoft / Meta AI page published a specific unintended-agentic-action incident disclosure on a lab-owned domain by 15 November. Third-party reporting of internal memos is excluded by the test. Microsoft's 10-Q risk language and OpenAI's pre-existing September framework do not satisfy. Honest MISS.</p>
+</div>
+
+<div class="ledger-row">
+<p><strong>Today's new call (OPEN):</strong></p>
+<p><strong>2026-11-15-1</strong> · ChatGPT Wallet's architecture — tokenized card details the agent never sees, named rail partners, per-transaction security check — becomes the template that at least one other major platform matches inside four weeks. The test lives in the ledger JSON. Horizon: <strong>2026-12-13</strong>.</p>
+</div>
+
+<h2>Sources</h2>
+
+<ol class="sources">
+  <li id="s1">CNBC — <a href="https://www.cnbc.com/2026/11/13/nvidia-huang-ceo-replacement-search.html">Nvidia hasn't selected search firm for permanent Huang replacement, board tells CNBC</a> <span class="tier">— tier-1</span></li>
+  <li id="s2">OpenAI — <a href="https://openai.com/index/introducing-chatgpt-wallet/">Introducing ChatGPT Wallet</a> <span class="tier">— primary</span></li>
+  <li id="s3">Cloudflare — <a href="https://blog.cloudflare.com/kitesurf-open-source/">Kitesurf is now open source</a> <span class="tier">— primary</span></li>
+  <li id="s4">Google — <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/">Our newest TPUs: 8tx and 8i Max, built for the agentic era</a> <span class="tier">— primary</span></li>
+  <li id="s5">LangChain / Business Wire — <a href="https://www.financialcontent.com/article/bizwire-2026-11-13-langchain-raises-300m-to-enable-every-company-to-own-their-intelligence">LangChain Raises $300M to Enable Every Company to Own Their Intelligence</a> <span class="tier">— primary</span></li>
+  <li id="s6">Nebuly — <a href="https://www.nebuly.com/blog/nebuly-raises-21m-series-a">Nebuly raises $21 million Series A to help enterprises measure the ROI of their AI initiatives</a> <span class="tier">— primary</span></li>
+  <li id="s7">Nvidia Investor Relations — <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/">NVIDIA Announces CEO Transition</a> <span class="tier">— primary</span></li>
+  <li id="s8">Anthropic — <a href="https://www.anthropic.com/news/claude-for-manufacturing">Anthropic launches Claude for Manufacturing</a> (plugin with 17 skills, Infor / Autodesk / Microsoft 365 / Oracle NetSuite connectors) <span class="tier">— primary</span></li>
+  <li id="s9">Infor / Enterprise Times — <a href="https://www.enterprisetimes.co.uk/2026/11/13/infor-and-anthropic-bring-claude-to-manufacturing/">Infor and Anthropic Bring Claude to Manufacturing</a> <span class="tier">— trade</span></li>
+  <li id="s10">Thinking Machines Lab — <a href="https://thinkingmachines.ai/news/inkling-2-small/">Introducing Inkling 2 Small</a> (hosted + Apache 2.0 weights on Hugging Face) <span class="tier">— primary</span></li>
+  <li id="s11">CASRAI — <a href="https://casrai.org/news/smic-ai-chip-supply-tight-through-2027">SMIC: AI Chip Supply Tight Through 2027</a> (summarising SMIC co-CEO comments 13 November) <span class="tier">— trade</span></li>
+  <li id="s12">SiliconANGLE — <a href="https://siliconangle.com/2026/11/10/what-we-learned-about-the-hyperscalers-from-earnings-season/">What we learned about the hyperscalers from earnings season</a> <span class="tier">— trade</span></li>
+  <li id="s13">CNBC — <a href="https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html">AI buildout hits snag as Google and Microsoft put off raising capex forecasts</a> <span class="tier">— tier-1</span></li>
+  <li id="s14">Google — <a href="https://blog.google/products/gemini/gemini-4-hydrogen-model/">Gemini 4 Hydrogen</a> (model + pricing) <span class="tier">— primary</span></li>
+  <li id="s15">Masters of Scale — <a href="https://mastersofscale.com/demis-hassabis-society-is-not-ready-for-the-ai-future/">Demis Hassabis: Society is "not ready" for the AI future, with Demis Hassabis</a> (recorded Oct 2026, published Nov 2026) <span class="tier">— primary</span></li>
+</ol>
+
+<nav class="bar" style="margin-top: 36px;"><a href="2026-11-14.html">← YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW →</span></nav>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+<script>
+const S = "Above The Noise. Sunday, November fifteenth, twenty twenty-six. Signal over noise. " +
+"Lead story. The agent-era stack landed its rails this week. While the headline chair at Nvidia sat empty, the plumbing underneath A I agents quietly hardened. Over the last seventy-two hours, five distinct layers of the agents-that-do-things stack moved from research posture to shipped product. They did not ship as a coordinated package — nobody runs that playbook — but the week reads like one, because every piece answers the same question. What does an agent need in order to be trusted to act. " +
+"Start at the top of the stack. On November thirteenth OpenAI launched ChatGPT Wallet, in partnership with American Express, Mastercard, and Visa. Dots — OpenAI's always-on agents — can now complete purchases on a Pro subscriber's behalf without ever seeing the real card number; the wallet issues a payment token and requires a security check before each transaction. The three card networks co-signed it, which is what the headline is actually about. Agentic payments stopped being an aspiration slide the day Visa and Mastercard put their names on one. " +
+"Beneath payments sits the agent's web surface. Cloudflare, the same day, open-sourced Kitesurf, the browser engine it built for agents instead of shipping a full copy of Chrome. It is written in Rust, compiles to WebAssembly, runs entirely inside Cloudflare Workers isolates, and renders pages without a Chromium binary. Apache two point zero, inspectable, deployable to your own Cloudflare account. " +
+"Beneath the browser sits the compute. On November ninth Google added T P U eight i Max and T P U eight t x to its eighth-generation lineup. Eight i Max is two eight i chips on one package — built for long-context agentic inference. Eight t x builds confidential-compute isolation into hardware, aimed at federal and regulated workloads. " +
+"Beneath compute sits governance. On November thirteenth LangChain closed a three hundred million dollar Series C at a three billion dollar valuation, led by CapitalG. LangSmith — their observe, evaluate, govern plane — now runs across more than seven thousand organizations and processes over a billion agent events a day. " +
+"And beneath governance sits the thing enterprises actually pay for — did any of this work. On November twelfth, Nebuly raised a twenty one million dollar Series A led by Planven to measure A I-influenced revenue, churn risk, and deployment R O I. " +
+"Five layers, five shipped products, one week. The question for a builder is no longer can I build an agent that does things. It is whose rails am I standing on when it does. " +
+"So what. If you are shipping an agent that touches the web, holds a budget, or lives inside an enterprise, write down your dependency on each of these five layers this week. Decide which rail you want to be on before your competitors choose for you. " +
+"The briefs. One. Nvidia's permanent CEO search still at the search-firm stage. Two days after Jensen Huang's resignation and the appointment of C F O Colette Kress as interim CEO and Harvey C Jones as Board Chair, Nvidia told C N B C the board has not yet selected a search firm or formally engaged candidates. The Financial Times reports the board approached Arm CEO Rene Haas; Nvidia says no candidate has been formally engaged. " +
+"Two. Anthropic launches Claude for Manufacturing with Infor as preferred E R P. On November twelfth, mid-I P O-roadshow, Anthropic shipped Claude for Manufacturing — a plugin with seventeen skills for quoting, quality investigation, production reporting, and sourcing, connected to Autodesk Fusion, Infor, Microsoft three sixty-five and Oracle NetSuite. Infor designated Claude its preferred A I assistant across its Industry A I products. " +
+"Three. Thinking Machines opens Inkling two Small weights. A five hundred ninety four billion parameter Mixture-of-Experts, seventeen billion active, one million context, image inputs — now on Hugging Face under Apache two point zero. " +
+"Four. S M I C says A I chip supply will stay tight through twenty twenty-seven. The co-CEO's comment echoes Microsoft C F O Amy Hood's earnings call warning that third-party A I chip supply delays will push some capacity into first half twenty twenty-seven. " +
+"Model watch. Inkling two Small from Thinking Machines Lab, published November twelfth: five hundred ninety four billion total, seventeen billion active, Mixture-of-Experts, one million context, image inputs, Apache two point zero. Gemini four Hydrogen from Google, launched November twelfth: one dollar fifty per million input tokens, seven dollars fifty per million output, fifty seven percent on Terminal-Bench four point one, free tier in the Gemini app. Google T P U eight i Max and eight t x, announced November ninth: long-context agentic inference and confidential-compute isolation; availability dates not yet announced. " +
+"Voices. This edition's Voice is Demis Hassabis, co-founder and CEO of Google DeepMind. Recorded live at the Masters of Scale Summit at the Presidio Theatre in San Francisco in October and published in early November, his conversation with Reid Hoffman is the most senior frontier-lab leader to date giving a named prediction of the near-term failure mode. His framing. Quote. Some kind of incident, I sometimes call it like an oil spill, is going to happen on the current trajectory. End quote. He pairs the warning with what DeepMind is doing about it inside the lab — much more hardened sandboxes walling off what an agent can reach. The best fifteen minutes for a builder start roughly where Hoffman asks what an incident would actually look like. " +
+"Today's signal. The agentic stack has rails now. A week ago, agents that act in the world was still a research posture. This week, the browser, payments, compute, governance, and measurement layers all shipped in production form. None of these were announced together. All five answer the same question. The next twelve months of competition in this category will not be won by whoever has the smartest model — the model layer is already saturated — but by whoever stands on the right combination of rails. Choose your stack with the same care you once chose a database. " +
+"The ledger. Season one, nine hits, twelve misses, three unsettled, thirty two open. Eight calls graded today. Hits. September sixteenth, OpenAI delayed G P T six point one Astra citing safety test failures. September twentieth, Anthropic filed a consolidated motion to dismiss in Buist. September twenty third, Google launched Gemini four Hydrogen below the two dollar input tier. October third, Langflow patched prompt-injection-reachable code execution. Misses. August twenty seventh, only Amazon raised capex, not two hyperscalers. September third, no named vendor shipped a dual-agent closed loop. September eighteenth, no new peer framework landed in the fast-follow window. October tenth, no lab-owned incident disclosure in response to Anthropic's October ninth report. Today's new call. ChatGPT Wallet's architecture — tokenized card details the agent never sees, named rail partners, per-transaction security check — becomes the template that at least one other major platform matches inside four weeks. Horizon December thirteenth. " +
+"End of today's Above The Noise.";
+
+let utter = null;
+let synth = window.speechSynthesis || null;
+function pickVoice() {
+  if (!synth) return null;
+  const vs = synth.getVoices();
+  const prefs = ['Daniel', 'Alex'];
+  for (const name of prefs) {
+    const v = vs.find(v => v.name && v.name.includes(name));
+    if (v) return v;
+  }
+  return vs.find(v => v.lang && v.lang.startsWith('en')) || vs[0] || null;
+}
+if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+  synth.onvoiceschanged = () => {};
+}
+const btn = document.getElementById('listen-btn');
+const status = document.getElementById('listen-status');
+btn.addEventListener('click', () => {
+  if (!synth) { status.textContent = 'Speech synthesis not available in this browser.'; return; }
+  if (synth.speaking) { synth.cancel(); btn.textContent = '▶ LISTEN'; status.textContent = ''; return; }
+  utter = new SpeechSynthesisUtterance(S);
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  utter.rate = 0.93;
+  utter.onstart = () => { btn.textContent = '■ STOP'; status.textContent = 'playing…'; };
+  utter.onend = () => { btn.textContent = '▶ LISTEN'; status.textContent = ''; };
+  utter.onerror = () => { btn.textContent = '▶ LISTEN'; status.textContent = 'playback error'; };
+  synth.speak(utter);
+});
+</script>
+
+</body>
+</html>
