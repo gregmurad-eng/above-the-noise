@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise &mdash; 16 November 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --accent-dim: #8a7f63;
+    --text: #e0d4b8;
+    --muted: #a39878;
+    --miss: #c76b5a;
+    --unsettled: #8a7f63;
+    --rule: rgba(201,168,76,0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+    margin: 0;
+    font-size: 18px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 22px 72px; }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar a { color: var(--accent); text-decoration: none; white-space: nowrap; padding: 10px 2px; display: inline-block; min-height: 44px; line-height: 24px; }
+  .bar a:hover { text-decoration: underline; }
+  .nav-mid { display: inline-flex; gap: 18px; flex: 1; justify-content: center; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .next { color: var(--accent-dim); white-space: nowrap; padding: 10px 2px; display: inline-block; min-height: 44px; line-height: 24px; }
+  h1 {
+    color: var(--accent);
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    font-size: 36px;
+    margin: 0 0 4px;
+  }
+  .tagline {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+  }
+  .dateline {
+    color: var(--accent-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
+  .listen {
+    margin: 20px 0 32px;
+    padding: 14px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .listen button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .listen button:hover { background: rgba(201,168,76,0.08); }
+  .listen .listen-status { color: var(--muted); font-size: 14px; font-style: italic; }
+  h2 {
+    color: var(--accent);
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 44px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 {
+    color: var(--text);
+    font-weight: normal;
+    font-size: 22px;
+    margin: 20px 0 8px;
+    line-height: 1.3;
+  }
+  h3 a { color: var(--text); text-decoration: none; }
+  h3 a:hover { color: var(--accent); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); }
+  a:hover { text-decoration: underline; }
+  .brief { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .brief:last-child { border-bottom: 0; }
+  .brief .meta { color: var(--muted); font-size: 14px; font-style: italic; margin: 0 0 6px; }
+  .sowhat {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 16px;
+    border-left: 2px solid var(--accent);
+    padding-left: 12px;
+  }
+  .sowhat::before { content: "So what: "; font-weight: bold; font-style: normal; }
+  .signal {
+    background: rgba(201,168,76,0.05);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-size: 17px;
+  }
+  .ledger-head { font-weight: bold; }
+  .verdict {
+    font-family: Georgia, serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    margin-right: 6px;
+  }
+  .hit { color: var(--accent); }
+  .miss { color: var(--miss); }
+  .uns { color: var(--unsettled); }
+  .open { color: var(--muted); }
+  .ledger-row { margin: 14px 0; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .ledger-row:last-child { border-bottom: 0; }
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11px;
+    padding: 6px 4px;
+    margin: -6px -4px;
+    position: relative;
+  }
+  sup a:hover { text-decoration: underline; }
+  .sources { padding-left: 24px; font-size: 15px; line-height: 1.55; }
+  .sources li { margin: 8px 0; }
+  .sources .tier {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 4px;
+  }
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; font-style: italic; }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .wrap { padding: 22px 16px 48px; }
+    h1 { font-size: 28px; }
+    .tagline { font-size: 14px; }
+    .dateline { font-size: 13px; letter-spacing: 1.5px; }
+    .bar { font-size: 14px; gap: 8px 10px; }
+    .bar a, .next { padding: 10px 4px; }
+    .nav-mid { gap: 10px; justify-content: flex-start; }
+    .nav-mid a { margin: 0 6px; }
+    h2 { font-size: 14px; letter-spacing: 1.5px; margin-top: 34px; }
+    h3 { font-size: 19px; }
+    .signal { padding: 14px 16px; font-size: 16px; }
+    .sowhat { font-size: 15px; }
+    .sources { font-size: 14px; }
+    .sources .tier { font-size: 11px; }
+    .brief .meta { font-size: 13px; }
+    .listen button { padding: 12px 18px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="bar" aria-label="Edition navigation">
+    <a href="2026-11-15.html">&larr; Yesterday</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">Tomorrow &rarr;</span>
+  </nav>
+
+  <h1>Above The Noise</h1>
+  <div class="tagline">AI &amp; Tech &middot; Signal over noise</div>
+  <div class="dateline">Monday, 16 November 2026</div>
+
+  <div class="listen">
+    <button id="listen-btn" aria-label="Listen to a spoken version of this edition">&#9654; Listen (~4 min)</button>
+    <span class="listen-status" id="listen-status"></span>
+  </div>
+
+  <h2>Lead Story</h2>
+
+  <h3><a href="https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html">Anthropic prices its IPO at a $1.4 trillion ceiling &mdash; CNBC, Bloomberg, Yahoo Finance</a><sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup><sup><a href="#s3">[3]</a></sup></h3>
+  <p class="meta">Amended S-1/A filed with the SEC on 10&ndash;11 November 2026; roadshow live; trading expected to open on Nasdaq Thursday 19 November under ticker ANT.<sup><a href="#s1">[1]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+
+  <p>Anthropic&rsquo;s amended S-1/A sets a $70&ndash;$78 price range on 825 million shares, a top-of-range fully-diluted valuation of about $1.4 trillion, and a trading debut on Nasdaq this Thursday.<sup><a href="#s1">[1]</a></sup> Nine months of revenue through September totalled roughly $33.2 billion &mdash; a 12x year-over-year jump &mdash; and the filing reports an October run-rate of approximately $81 billion.<sup><a href="#s1">[1]</a></sup> The IPO is paired with a $26 billion private placement from seven cornerstone buyers: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, and TSMC.<sup><a href="#s1">[1]</a></sup><sup><a href="#s5">[5]</a></sup> Last week TSMC&rsquo;s board separately filed an SEC Form 6-K authorising up to $500 million each into Anthropic and OpenAI &mdash; a publicly reported chip foundry taking equity in both of its largest American model customers at the same moment.<sup><a href="#s5">[5]</a></sup></p>
+
+  <p>The number that matters to builders is not the headline valuation but the composition of that cornerstone list. In the IPO roadshow video dissected by Simon Willison, co-founder Tom Brown describes Anthropic training and serving Claude across four distinct silicon stacks &mdash; AWS Trainium, Google TPUs, Nvidia GPUs, and AMD GPUs &mdash; and three of those four vendors show up as cornerstone investors, alongside the foundry (TSMC) that fabricates for all of them.<sup><a href="#s6">[6]</a></sup> This is the first time a frontier-lab IPO has been publicly staged as a <em>supply-chain coalition</em>, not a bet on a single hyperscaler.</p>
+
+  <p>The counter-narrative is uglier. OpenAI&rsquo;s own quarterly data, reported to investors the same week Anthropic filed, shows Q3 revenue of $10 billion &mdash; a first &mdash; against a $10.9 billion operating loss.<sup><a href="#s7">[7]</a></sup> Anthropic&rsquo;s S-1/A does not disclose comparable operating losses in its marketed summary. Both labs are shipping growth at a rate that genuinely compounds, and both are losing roughly a dollar for every dollar of revenue they take in, on compute they cannot presently make themselves. The IPO is therefore a public test of whether Wall Street will fund the next round of that trade. Earlier reports had the deal priced near $2 trillion; the final range is roughly half that, which suggests even the bankers blinked.<sup><a href="#s4">[4]</a></sup></p>
+
+  <p>Also notable: the retail allocation is reportedly near 20%, roughly triple the typical IPO allocation.<sup><a href="#s1">[1]</a></sup> If ANT opens weak on Thursday, it will be weak in front of retail investors, not just institutions &mdash; a political variable the IPO class of 2026 has not yet had to price.</p>
+  <p class="sowhat">If you ship on Claude, the Anthropic compute story (four silicon vendors across two hyperscalers plus Nvidia plus AMD) is now a public document &mdash; use it when asking Anthropic about capacity and regional availability for Q1, because &ldquo;we&rsquo;re just on GCP&rdquo; is no longer a credible answer from either side of the call.</p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3><a href="https://www.nist.gov/news-events/news/2026/11/adversarial-machine-learning-taxonomy-and-terminology-draft-nist-sp-2400">NIST publishes a formal attack taxonomy for agentic AI &mdash; NIST (primary)</a><sup><a href="#s8">[8]</a></sup></h3>
+    <p class="meta">Initial public draft NIST SP 2400-102e2026, released 9 November 2026; comments due 18 December 2026.</p>
+    <p>NIST&rsquo;s draft is the first US federal document to name &mdash; as standards terminology &mdash; memory poisoning, tool-chain abuse, agent-to-agent prompt injection, and skill supply-chain attacks as distinct classes alongside the already-codified generative-AI attack types.<sup><a href="#s8">[8]</a></sup> Public comment is open through 18 December; what ships after that becomes the vocabulary your government auditor will use next year.</p>
+    <span class="sowhat">If you run an agent in production, map your tool permissions, retrieval sources, and inter-agent messages onto the NIST categories this month &mdash; then file a comment. The labs who file comments tend to end up with the terminology they can defend against.</span>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000797/tsm-boardx202611xx.htm">TSMC board authorises up to $500M each into Anthropic and OpenAI &mdash; SEC Form 6-K (primary)</a><sup><a href="#s5">[5]</a></sup></h3>
+    <p class="meta">Taiwan Semiconductor Manufacturing Company 6-K filing, 10 November 2026.</p>
+    <p>TSMC&rsquo;s 6-K authorises up to $500M to acquire Anthropic common shares at IPO price, up to $500M in OpenAI preferred stock, and a separate $500M strategic-investments vehicle for the broader semiconductor ecosystem.<sup><a href="#s5">[5]</a></sup> The foundry is taking equity in both of its largest American model customers at the same moment &mdash; a structural decision, not a treasury one.</p>
+    <span class="sowhat">If you are negotiating capacity on either model in 2027, be aware that your foundry now owns both sides of your supply-chain trade. Ask for pricing clauses that survive a public-company earnings cycle, not a private one.</span>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.hpcwire.com/2026/11/09/accelerating-time-to-insight-ai-powered-development-and-purpose-built-hpc-on-google-cloud/">Google Cloud ships Antigravity for HPC and AlphaEvolve on Cloud Batch at SC26 &mdash; HPCwire</a><sup><a href="#s9">[9]</a></sup></h3>
+    <p class="meta">Announced 9 November 2026; live demos at SC26 McCormick Place West through 20 November.</p>
+    <p>Google Cloud paired Antigravity (its agentic development platform) with reusable DeepMind Science Skills &mdash; validated-template skills for Slurm, GROMACS, OpenFOAM, Devito, and AlphaFold 3 &mdash; and shipped AlphaEvolve on Cloud Batch, which fans out hundreds of candidate evaluations across single-VM or multi-node MPI task groups.<sup><a href="#s9">[9]</a></sup> This is the first agentic-coding stack explicitly aimed at national-lab-grade workloads, not SaaS CRUD apps.</p>
+    <span class="sowhat">If your product uses an agent to write code against a scheduler, Google just moved the floor: &ldquo;we have a reusable skill and a validated template&rdquo; is now the baseline a scientific buyer will compare you to.</span>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/">OpenAI tops $10B in Q3 revenue; operating loss widens to $10.9B &mdash; TechCrunch</a><sup><a href="#s7">[7]</a></sup></h3>
+    <p class="meta">Figures reported to investors on 10 November 2026; not yet in a primary SEC filing (OpenAI is still private).</p>
+    <p>Quarterly revenue is up roughly 50% QoQ and ~3x YoY, reaching a $50B run-rate.<sup><a href="#s7">[7]</a></sup> Operating loss widened to $10.9B from $10.1B the previous quarter. Paid subscriptions crossed 100 million; weekly active users are 1.2 billion. OpenAI is &mdash; like Anthropic &mdash; losing roughly a dollar per dollar of revenue, on compute it buys from the same four or five vendors.<sup><a href="#s7">[7]</a></sup></p>
+    <span class="sowhat">If you forecast OpenAI&rsquo;s API prices falling linearly with scale, stop. A $10.9B quarterly operating loss is a model that tolerates <em>very</em> few further input-token price cuts before someone at the board asks hard questions.</span>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation">EU harmonised standard EN 18286:2026 lands; sandbox implementing rules take effect 1 December &mdash; European Commission (primary)</a><sup><a href="#s10">[10]</a></sup></h3>
+    <p class="meta">Commission Implementing Regulation (EU) 2026/2487 adopted 10 November 2026; EN 18286:2026 published in the Official Journal.</p>
+    <p>EN 18286:2026 is the first harmonised standard formally published under the EU AI Act &mdash; a quality management system for high-risk AI providers &mdash; and about 11 more AI Act standards are in flight.<sup><a href="#s10">[10]</a></sup> The AI-Act sandbox rules, adopted the same day, bind on 1 December 2026. Both matter because conformance with a harmonised standard creates a presumption of conformance with the regulation itself: it is the compliance path that is cheapest to document.</p>
+    <span class="sowhat">If you sell any high-risk system into the EU, decide this quarter whether you&rsquo;ll conform to EN 18286 or negotiate a bespoke conformity route &mdash; the former is cheaper and the latter is faster, and you cannot do both.</span>
+  </div>
+
+  <h2>Model Watch</h2>
+
+  <div class="brief">
+    <h3><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Claude Fable 5.2 / Mythos 5.2 &mdash; Anthropic (primary)</a><sup><a href="#s11">[11]</a></sup></h3>
+    <p class="meta">Released 9 November 2026. Same underlying model; Mythos gated through Cyber Verification and Life Sciences Verification programs.</p>
+    <p>Pricing $8 input / $40 output per million tokens on the standard tier; $16 / $80 on &ldquo;Fast&rdquo;. Anthropic reports Fable 5.2 outperforming Opus 5.5 on nearly every tested capability &mdash; FrontierCode 2.0 agentic coding at 49.1% (Xhigh effort), Terminal-Bench-Science at 74.6%, RoboDojo Sim at 64.9%, and 85.1 on de novo protein binder design &mdash; with 55% fewer safeguard blocks than Fable 5.1 and a reported 3.1% sandbox-escape attempt rate on their novel evaluation.<sup><a href="#s11">[11]</a></sup> Mythos reaches cybersecurity and life-sciences researchers only through verification programs.</p>
+    <span class="sowhat">If you hit safeguard false positives on Fable 5.1 workflows (red-team evals, security tooling, legitimate biology), re-test on 5.2 before adding your own jailbreak wrappers &mdash; 55% fewer blocks is big enough to kill some of the shims teams are shipping today.</span>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://deepmind.google/models/model-cards/gemini-4-carbon/">Google Gemini 4 Carbon GA &mdash; Google DeepMind model card (primary)</a><sup><a href="#s12">[12]</a></sup></h3>
+    <p class="meta">GA 10 November 2026; 1,048,576-token context window shared between input and output.</p>
+    <p>Multimodal in (text, image, audio, video) and text out, with up to 3,000 images per prompt and ~45 minutes of audio-video. Knowledge cutoff March 2026. Promotional pricing of $2 input / $10 output per million tokens runs through 30 November 2026, then rises to $4/$20.<sup><a href="#s12">[12]</a></sup> The two-week window is a deliberate adoption pull: rate-test it before the price doubles.</p>
+    <span class="sowhat">If you run any Gemini batch job, schedule a benchmark pass against Carbon before 30 November &mdash; your retrospective price comparison with GPT-5.x and Claude 5.2 will be structurally wrong if you measure it after the promo expires.</span>
+  </div>
+
+  <div class="brief">
+    <h3>No other notable frontier release in the last 48 hours</h3>
+    <p>The week&rsquo;s activity &mdash; Fable/Mythos 5.2 on the 9th, Gemini 4 Carbon on the 10th, and Anthropic&rsquo;s S-1/A on the 10th/11th &mdash; is a release cluster timed around the IPO roadshow window, not a steady cadence. Expect the next frontier post to come from OpenAI or Google DeepMind the week ANT begins trading.</p>
+    <span class="sowhat">If you planned a model-swap experiment for this week, do it on 5.2 and Carbon; if you planned one for next week, hold &mdash; the base rate of a competitor release the week of ANT&rsquo;s debut is non-trivial.</span>
+  </div>
+
+  <h2>Voices</h2>
+
+  <div class="brief" style="border-bottom: 0;">
+    <h3><a href="https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow">Simon Willison on Anthropic&rsquo;s IPO roadshow video &mdash; simonwillison.net, 11 November 2026</a><sup><a href="#s6">[6]</a></sup></h3>
+    <p class="meta">Blog post; Willison transcribed the roadshow himself using MacWhisper after Anthropic published no official transcript.</p>
+    <p>Writing about the roadshow Anthropic quietly released alongside its amended S-1, Willison flags one section specifically: <em>&ldquo;The section on &lsquo;Approach to compute&rsquo; with co-founder Tom Brown is particularly interesting, describing how Anthropic train and serve Claude across AWS Trainium, Google TPUs, NVIDIA GPUs, and AMD GPUs.&rdquo;</em><sup><a href="#s6">[6]</a></sup> It is a small sentence doing a lot of work: a frontier lab is publicly committing, in SEC-adjacent material, to a four-vendor silicon strategy, and the three GPU/accelerator vendors are all cornerstone IPO buyers.</p>
+    <p>Worth reading because Willison is the practitioner most people in this field trust to translate SEC-shaped documents into builder-shaped questions &mdash; and the compute-portability question is now the one that will matter when the next regional outage or export control hits.</p>
+    <span class="sowhat">If you&rsquo;re locked to one model and one region, assume your customers&rsquo; procurement teams will now ask about chip and region diversity by name, using this exact vocabulary, inside ninety days.</span>
+  </div>
+
+  <h2>Today&rsquo;s Signal</h2>
+
+  <div class="signal">
+    <p>An IPO is a disclosure event. The Anthropic S-1/A is now the most detailed public document we have about what it costs and what it takes to operate a frontier lab at scale &mdash; a four-vendor silicon footprint, a seven-company cornerstone coalition, a $26B private placement running alongside a public offering, a run-rate that grew 12x year-over-year, and an IPO valuation that came in at roughly half of what the private market thought it was worth four months ago. The story is no longer <em>who has the best model</em>. The story is <em>who can afford to keep training the next one</em>, and on whose silicon, and under whose regulatory gaze. Thursday&rsquo;s open will mark that shift in public, in dollars.</p>
+  </div>
+
+  <h2>The Ledger</h2>
+
+  <p><span class="ledger-head">Season 1 &middot; <span class="verdict hit">9 HIT</span> &mdash; <span class="verdict miss">12 MISS</span> &mdash; <span class="verdict uns">3 UNSETTLED</span> &middot; 32 open</span></p>
+
+  <div class="ledger-row">
+    <p><strong>Graded today:</strong> none due. The next calls to come up have horizons of 2026-11-18 and 2026-11-20.</p>
+  </div>
+
+  <div class="ledger-row">
+    <p><span class="verdict open">OPEN</span> &middot; <strong>Today&rsquo;s new call (horizon 2026-12-28):</strong> Anthropic&rsquo;s publicly staged IPO cornerstone roster &mdash; AMD, Broadcom, Google, Micron, Microsoft, Nvidia, TSMC, with a disclosed four-vendor training-and-serving footprint &mdash; sets a new market expectation for how frontier labs must be able to describe their compute. Within six weeks, at least one other frontier lab (OpenAI, Google DeepMind, Meta AI, xAI, Mistral) will publish a comparable primary-source disclosure.</p>
+    <p><strong>Basis:</strong> The Anthropic S-1/A and roadshow video name four distinct silicon stacks plus the cornerstone coalition; OpenAI&rsquo;s $10.9B operating loss sits against the same supply-chain pressure; the competitive pull is to signal diversification before year-end budget cycles close.<sup><a href="#s1">[1]</a></sup><sup><a href="#s6">[6]</a></sup><sup><a href="#s7">[7]</a></sup></p>
+    <p><strong>Test:</strong> By 2026-12-28, a primary-source blog post, SEC filing, model card, or engineering post from any of the five listed labs explicitly names three or more distinct silicon providers (among AWS Trainium, Google TPU, Nvidia GPU, AMD GPU, Intel Gaudi, Cerebras, Groq, Microsoft Maia/Cobalt, Meta MTIA, in-house ASIC, or equivalent) in its training or serving stack. Rate-card updates and partnership press releases that don&rsquo;t name three providers do not satisfy the test.</p>
+  </div>
+
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li id="s1">CNBC, &ldquo;Anthropic sets price range of $70 to $78 in upcoming IPO&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html">cnbc.com</a></li>
+    <li id="s2">NBC News, &ldquo;Anthropic sets modest $1 trillion IPO valuation target in test of Wall Street&rsquo;s AI fervor&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.nbcnews.com/business/corporations/anthropic-sets-modest-1-trillion-ipo-valuation-target-rcna608514">nbcnews.com</a></li>
+    <li id="s3">Yahoo Finance / Bloomberg, &ldquo;Anthropic Launches IPO Roadshow at $1.4 Trillion Valuation&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://finance.yahoo.com/technology/ai/articles/anthropic-launches-ipo-roadshow-1-162029558.html">finance.yahoo.com</a></li>
+    <li id="s4">The National News, &ldquo;Nvidia earnings and Anthropic IPO lead crucial week for AI bulls&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://www.thenationalnews.com/business/markets/2026/11/16/nvidia-earnings-anthropic-ipo/">thenationalnews.com</a></li>
+    <li id="s5">U.S. Securities and Exchange Commission, Taiwan Semiconductor Manufacturing Company Form 6-K, FY2026 <span class="tier">[primary]</span> &mdash; <a href="https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000797/tsm-boardx202611xx.htm">sec.gov</a></li>
+    <li id="s6">Simon Willison, &ldquo;Anthropic&rsquo;s IPO roadshow video&rdquo; <span class="tier">[practitioner]</span> &mdash; <a href="https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow">simonwillison.net</a></li>
+    <li id="s7">TechCrunch, &ldquo;OpenAI&rsquo;s quarterly revenue reportedly crosses $10B for the first time&rdquo; <span class="tier">[tier-1]</span> &mdash; <a href="https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/">techcrunch.com</a></li>
+    <li id="s8">NIST, &ldquo;Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations &mdash; NIST SP 2400-102e2026 (initial public draft)&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://www.nist.gov/news-events/news/2026/11/adversarial-machine-learning-taxonomy-and-terminology-draft-nist-sp-2400">nist.gov</a></li>
+    <li id="s9">HPCwire, &ldquo;Accelerating Time to Insight: AI-Powered Development and Purpose-Built HPC on Google Cloud&rdquo; <span class="tier">[trade]</span> &mdash; <a href="https://www.hpcwire.com/2026/11/09/accelerating-time-to-insight-ai-powered-development-and-purpose-built-hpc-on-google-cloud/">hpcwire.com</a></li>
+    <li id="s10">European Commission, &ldquo;Standardisation of the AI Act&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation">digital-strategy.ec.europa.eu</a></li>
+    <li id="s11">Anthropic, &ldquo;Introducing Claude Fable 5.2 and Claude Mythos 5.2&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">anthropic.com</a></li>
+    <li id="s12">Google DeepMind, &ldquo;Gemini 4 Carbon &mdash; Model Card&rdquo; <span class="tier">[primary]</span> &mdash; <a href="https://deepmind.google/models/model-cards/gemini-4-carbon/">deepmind.google</a></li>
+  </ol>
+
+  <nav class="bar" aria-label="Edition navigation" style="margin-top: 36px; border-top: 1px solid var(--rule); border-bottom: 0; padding-top: 14px;">
+    <a href="2026-11-15.html">&larr; Yesterday</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">Tomorrow &rarr;</span>
+  </nav>
+
+  <footer>
+    Content is AI-synthesized. Links point to original sources.
+  </footer>
+</div>
+
+<script>
+const S = "Above The Noise, Monday November sixteenth, twenty twenty six. " +
+"Lead story. Anthropic prices its I P O at a one point four trillion dollar ceiling. " +
+"Anthropic's amended S one slash A sets a seventy to seventy eight dollar price range on eight hundred twenty five million shares, a top of range fully diluted valuation of about one point four trillion dollars, and a trading debut on Nasdaq this Thursday under ticker A N T. Nine months of revenue through September totalled roughly thirty three point two billion dollars, a twelve times year over year jump, and the filing reports an October run rate near eighty one billion. The I P O is paired with a twenty six billion dollar private placement from seven cornerstone buyers: Google, Nvidia, A M D, Broadcom, Micron, Microsoft, and T S M C. Last week T S M C's board separately filed an S E C Form six K authorising up to five hundred million dollars each into Anthropic and OpenAI, a publicly reported chip foundry taking equity in both of its largest American model customers at the same moment. " +
+"The number that matters to builders is not the headline valuation but the composition of that cornerstone list. In the roadshow video Simon Willison dissected on the eleventh, co founder Tom Brown describes Anthropic training and serving Claude across four distinct silicon stacks: A W S Trainium, Google T P Us, Nvidia G P Us, and A M D G P Us. Three of those four vendors show up as cornerstone investors, alongside the foundry that fabricates for all of them. This is the first time a frontier lab I P O has been publicly staged as a supply chain coalition, not a bet on a single hyperscaler. " +
+"The counter narrative is uglier. OpenAI's own Q three revenue, reported the same week, is ten billion dollars for the first time, against an operating loss of ten point nine billion. Both labs are shipping growth that genuinely compounds and both are losing roughly a dollar for every dollar of revenue, on compute they cannot presently make themselves. Earlier reports had Anthropic's deal priced near two trillion. The final range is roughly half that. So what. If you ship on Claude, the Anthropic compute story is now a public document. Use it when asking about regional capacity for Q one, because, quote, we're just on G C P, end quote, is no longer a credible answer from either side of the call. " +
+"The briefs. One. N I S T releases the first US federal attack taxonomy for agentic A I, N I S T S P twenty four hundred dash one zero two e twenty twenty six, comments due December eighteenth. If you run an agent in production, map your tool permissions, retrieval sources, and inter agent messages onto the N I S T categories this month, then file a comment. " +
+"Two. T S M C's board, via S E C Form six K, authorises up to five hundred million dollars each in Anthropic and OpenAI, plus a five hundred million semiconductor ecosystem vehicle. If you're negotiating 2027 capacity, your foundry now owns both sides of your supply chain trade. " +
+"Three. Google Cloud ships Antigravity for H P C and AlphaEvolve on Cloud Batch at S C twenty six, with validated template skills for Slurm, GROMACS, OpenFOAM, Devito, and AlphaFold three. If your agent writes code against a scheduler, the national lab buyer baseline just moved. " +
+"Four. OpenAI tops ten billion in Q three revenue, operating loss ten point nine billion. If you forecast OpenAI A P I prices falling linearly with scale, stop. A ten point nine billion quarterly operating loss tolerates very few further token price cuts. " +
+"Five. The E U publishes E N eighteen two eight six, the first harmonised standard under the A I Act, and Commission Implementing Regulation twenty twenty six slash twenty four eighty seven, binding regulatory sandbox rules effective December first. If you sell any high risk system into the E U, pick your conformity route this quarter. " +
+"Model watch. Claude Fable five point two and Mythos five point two shipped November ninth, outperforming Opus five point five across agentic coding, scientific research, robotics simulation, and protein design, with fifty five percent fewer safeguard blocks than Fable five point one and a three point one percent sandbox escape attempt rate. Google Gemini four Carbon reached G A on November tenth with a one million token context window shared input and output, two dollars input ten output per million tokens through November thirtieth, doubling after. No other notable frontier release in the past forty eight hours. Expect the next lab post the week of A N T's debut. " +
+"Voices. Simon Willison, writing on November eleventh about the Anthropic I P O roadshow video. Quote. The section on Approach to Compute with co founder Tom Brown is particularly interesting, describing how Anthropic train and serve Claude across A W S Trainium, Google T P Us, Nvidia G P Us, and A M D G P Us. End quote. Worth reading because Willison is the practitioner most people in this field trust to translate S E C shaped documents into builder shaped questions, and the compute portability question is now the one that will matter when the next regional outage or export control hits. " +
+"Today's signal. An I P O is a disclosure event. The Anthropic S one slash A is now the most detailed public document we have about what it costs and what it takes to operate a frontier lab at scale: a four vendor silicon footprint, a seven company cornerstone coalition, a twenty six billion dollar private placement running alongside the public offering, a run rate that grew twelve times year over year, and a valuation that came in at roughly half what the private market thought it was worth four months ago. The story is no longer who has the best model. The story is who can afford to keep training the next one, on whose silicon, under whose regulatory gaze. Thursday's open will mark that shift in public, in dollars. " +
+"The ledger. Season one, nine hits, twelve misses, three unsettled, thirty two open. No calls graded today. Today's new call, open, horizon December twenty eighth. Within six weeks, at least one other frontier lab, OpenAI, Google DeepMind, Meta A I, x A I, or Mistral, will publish a primary source disclosure naming three or more distinct silicon providers in its training or serving stack. " +
+"That's today. Links in every item.";
+
+(function() {
+  const btn = document.getElementById('listen-btn');
+  const status = document.getElementById('listen-status');
+  let synth = window.speechSynthesis || null;
+  let utter = null;
+
+  function pickVoice() {
+    if (!synth) return null;
+    const voices = synth.getVoices();
+    const prefs = ['Daniel', 'Alex'];
+    for (const name of prefs) {
+      const v = voices.find(v => v.name && v.name.includes(name));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0] || null;
+  }
+
+  if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+    synth.onvoiceschanged = () => {};
+  }
+
+  btn.addEventListener('click', () => {
+    if (!synth) { status.textContent = 'Speech synthesis not available in this browser.'; return; }
+    if (synth.speaking) {
+      synth.cancel();
+      btn.textContent = '▶ Listen (~4 min)';
+      status.textContent = '';
+      return;
+    }
+    utter = new SpeechSynthesisUtterance(S);
+    const v = pickVoice();
+    if (v) utter.voice = v;
+    utter.rate = 0.93;
+    utter.onend = () => { btn.textContent = '▶ Listen (~4 min)'; status.textContent = ''; };
+    utter.onerror = () => { btn.textContent = '▶ Listen (~4 min)'; status.textContent = 'Playback error.'; };
+    synth.speak(utter);
+    btn.textContent = '■ Stop';
+    status.textContent = 'Playing...';
+  });
+})();
+</script>
+</body>
+</html>
