@@ -674,6 +674,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-16-1",
+      "date": "2026-11-16",
+      "call": "Anthropic's publicly staged IPO cornerstone roster (AMD, Broadcom, Google, Micron, Microsoft, Nvidia, TSMC) and the S-1/A disclosure of a four-vendor training-and-serving footprint (AWS Trainium, Google TPU, Nvidia GPU, AMD GPU) sets a new market expectation for how frontier labs must describe their compute. Within six weeks, at least one other frontier lab (OpenAI, Google DeepMind, Meta AI, xAI, or Mistral) publishes a comparable primary-source disclosure naming three or more distinct silicon providers.",
+      "basis": "The Anthropic S-1/A and roadshow video name four distinct silicon stacks plus a seven-company cornerstone coalition; OpenAI's $10.9B Q3 operating loss sits against the same supply-chain pressure; the competitive pull is to signal diversification before year-end budget cycles close.",
+      "horizon": "2026-12-28",
+      "test": "By 2026-12-28, a primary-source blog post, SEC filing, model card, or engineering post from any of the five listed labs explicitly names three or more distinct silicon providers (among AWS Trainium, Google TPU, Nvidia GPU, AMD GPU, Intel Gaudi, Cerebras, Groq, Microsoft Maia/Cobalt, Meta MTIA, in-house ASIC, or equivalent) in its training or serving stack. Rate-card updates and partnership press releases that do not name three providers do not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
