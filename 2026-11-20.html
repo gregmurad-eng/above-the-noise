@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 20 November 2026</title>
+<style>
+  :root { --bg: #0d0a06; --accent: #c9a84c; --text: #e0d4b8; --muted: #8a7c5f; --red: #a85c5c; --grey: #8a8273; }
+  html, body { background: var(--bg); color: var(--text); margin: 0; padding: 0; font-family: Georgia, "Times New Roman", serif; }
+  body { max-width: 760px; margin: 0 auto; padding: 24px 20px 48px 20px; line-height: 1.55; font-size: 17px; }
+  h1 { font-size: 36px; margin: 0 0 4px 0; color: var(--accent); letter-spacing: 0.5px; }
+  .tagline { color: var(--muted); font-size: 14px; font-style: italic; letter-spacing: 0.5px; margin: 0 0 6px 0; }
+  .dateline { color: var(--muted); font-size: 14px; margin: 0 0 18px 0; }
+  h2 { font-size: 20px; margin: 30px 0 10px 0; color: var(--accent); border-bottom: 1px solid #3a2f1e; padding-bottom: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+  h3 { font-size: 18px; margin: 18px 0 4px 0; color: var(--text); }
+  a { color: var(--accent); text-decoration: underline; text-decoration-color: #6b5522; }
+  a:hover { text-decoration-color: var(--accent); }
+  p { margin: 8px 0; }
+  .nav.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; background: #15110a; padding: 10px 14px; border: 1px solid #2a2111; border-radius: 6px; margin: 10px 0 24px 0; font-size: 15px; }
+  .nav.bar a, .nav.bar span { white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; padding: 10px 6px; }
+  .nav-mid { display: inline-flex; flex-wrap: wrap; gap: 0 10px; flex: 1; justify-content: center; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .next { color: var(--muted); font-style: italic; }
+  .brief { padding: 10px 0; border-bottom: 1px solid #2a2111; }
+  .brief:last-child { border-bottom: none; }
+  .meta { color: var(--muted); font-size: 14px; margin: 2px 0 6px 0; font-style: italic; }
+  .sowhat { display: block; color: var(--accent); font-style: italic; margin-top: 6px; font-size: 16px; }
+  .signal { background: #1b1509; border-left: 3px solid var(--accent); padding: 12px 16px; margin: 10px 0; }
+  .ledger-head { color: var(--accent); font-weight: bold; font-size: 16px; }
+  .verdict { font-weight: bold; }
+  .verdict.hit { color: var(--accent); }
+  .verdict.miss { color: var(--red); }
+  .verdict.uns { color: var(--grey); }
+  .ledger-row { padding: 6px 0; border-bottom: 1px solid #2a2111; }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row .cid { color: var(--muted); font-size: 14px; font-style: italic; }
+  .ledger-row .ev { color: var(--muted); font-size: 14px; display: block; margin-top: 2px; }
+  sup a { color: var(--accent); font-size: 12px; padding: 6px 4px; margin: -6px -4px; text-decoration: none; }
+  sup a:hover { text-decoration: underline; }
+  ol.sources { padding-left: 24px; font-size: 15px; }
+  ol.sources li { margin: 6px 0; color: var(--text); }
+  ol.sources .tier { color: var(--muted); font-style: italic; font-size: 13px; }
+  .listen-wrap { margin: 12px 0 20px 0; }
+  #listen-btn { background: var(--accent); color: #0d0a06; border: none; font-family: Georgia, serif; font-size: 16px; font-weight: bold; padding: 12px 20px; border-radius: 4px; cursor: pointer; min-height: 44px; }
+  #listen-btn:hover { filter: brightness(1.1); }
+  #listen-status { color: var(--muted); font-size: 14px; margin-left: 10px; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 30px; border-top: 1px solid #2a2111; padding-top: 12px; }
+  @media (max-width: 480px) {
+    body { font-size: 17px; padding: 16px 14px 36px 14px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 17px; }
+    .nav.bar { font-size: 15px; padding: 8px 10px; gap: 8px 10px; }
+    .nav.bar a, .nav.bar span { padding: 10px 4px; }
+    .nav-mid { gap: 0 4px; }
+    .nav-mid a { margin: 0 6px; }
+    .meta, .dateline, .tagline { font-size: 14px; }
+    .sowhat { font-size: 16px; }
+    ol.sources { font-size: 15px; }
+    ol.sources .tier { font-size: 14px; }
+    .ledger-row .cid, .ledger-row .ev, #listen-status { font-size: 14px; }
+    sup a { font-size: 14px; padding: 8px 6px; margin: -8px -6px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Above The Noise</h1>
+<p class="tagline">AI &amp; Tech &middot; Signal over noise</p>
+<p class="dateline">Friday, 20 November 2026</p>
+
+<nav class="bar"><a href="2026-11-16.html">&larr; YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW &rarr;</span></nav>
+
+<div class="listen-wrap">
+  <button id="listen-btn">&#9654; Listen (~4 min)</button>
+  <span id="listen-status"></span>
+</div>
+
+<h2>Lead Story</h2>
+
+<h3><a href="https://www.anthropic.com/news/anthropic-prices-initial-public-offering">Anthropic begins trading on Nasdaq at a $1.8 trillion market cap &mdash; Anthropic</a><sup><a href="#s1">[1]</a></sup></h3>
+<p class="meta">Primary IPO pricing notice and S-1/A final prospectus; Nasdaq debut 19 November 2026 under symbol ANT.</p>
+<p>At 11:48 a.m. ET on Thursday 19 November, Anthropic shares opened on the Nasdaq Global Select Market at <strong>$111.50</strong>, a 34% pop above the $83.00 IPO price set the night before.<sup><a href="#s2">[2]</a></sup> By the close, ANT had given most of that back and settled at <strong>$97.17</strong> &mdash; still +17% on the day, but a 13% reversal intraday &mdash; leaving Anthropic with a fully diluted market cap of roughly <strong>$1.8 trillion</strong> on 980 million shares sold at $83, raising <strong>$81.3 billion</strong>.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup> The raise edges out SpaceX's June listing to become the largest IPO on record.<sup><a href="#s3">[3]</a></sup></p>
+
+<p>The number that matters for builders is not the headline cap, it is the shape of the day. Private-round investors paid prices that only made sense if compute spend compounded indefinitely into gross margin. The public-market bid said something different: a 34% pop, then a steady drift down to +17%, means institutional investors bought the capability story but discounted the capex story. Anthropic's S-1/A disclosed four distinct silicon stacks (AWS Trainium, Google TPU, Nvidia GPU, AMD GPU) and a seven-company cornerstone coalition &mdash; AMD, Broadcom, Google, Micron, Microsoft, Nvidia, TSMC &mdash; buying $26 billion of Class N shares.<sup><a href="#s1">[1]</a></sup> That diversification is now the template every peer has to match if it wants comparable buyer demand, which is exactly what the 2026-11-16 call in the Ledger tracks.</p>
+
+<p>Dario Amodei sat with Andrew Ross Sorkin on CNBC the same morning and did not duck the question. On pacing: <em>&ldquo;you could drive at 200 miles an hour. Maybe let's only drive at 90 miles an hour, spend time figuring out how to do that safely.&rdquo;</em><sup><a href="#s4">[4]</a></sup> On compute commitments reaching $900 billion: <em>&ldquo;the returns to that are so high that we are willing to put in place these very large compute spends because, historically, we have seen over and over again that it pays off.&rdquo;</em><sup><a href="#s4">[4]</a></sup> The two sentences sit in tension, and that tension is now a public filing fact, not a private one. The next 10-Q will carry it.</p>
+
+<p>Twenty-four hours earlier, at Microsoft Ignite on Tuesday 18 November, Mustafa Suleyman stood on stage and said token spend was going through the roof and that at frontier prices the math was unsustainable.<sup><a href="#s5">[5]</a></sup> Microsoft's MAI Code 2, he claimed, delivers 98% of GPT-6.1 Sol performance at ~40% of the price and 96% of Claude Opus 5.5 at 5% of the cost.<sup><a href="#s5">[5]</a></sup> Public markets heard both messages in the same week.</p>
+
+<span class="sowhat">So what: ANT's quarterly filings are now the authoritative source for Anthropic's revenue, compute obligations, and gross margin &mdash; replacing leaks and speculation. If your product's buyer-side risk memo cites &ldquo;Anthropic financial health&rdquo; as unquantified, replace the paragraph with a link to SEC EDGAR before your next renewal cycle.</span>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI ships GPT-6.2 Astra and GPT-6.2 Sol &mdash; OpenAI</a><sup><a href="#s6">[6]</a></sup></h3>
+<p class="meta">Release post, 17 November 2026. Available immediately in ChatGPT Work and Codex for Plus, Pro, Enterprise, Edu.</p>
+<p>Astra lands at $8 input / $40 output per million tokens &mdash; 20% below GPT-6 Astra &mdash; with a 60% discount on cached input ($0.40/M). Sol is $2 / $10 per million tokens. OpenAI reports Astra scores nine percentage points higher than GPT-6 Astra on its benchmark aggregate at less than one third of the cost.<sup><a href="#s7">[7]</a></sup></p>
+<span class="sowhat">So what: if you have a batch job pinned to GPT-6 Astra, migrating straight-across cuts your bill ~20% today, and 60% on any workload where you can keep a long system prompt in cache &mdash; but your prompts may need re-tuning, several reports already flag that naive migration can increase cost on prompts with thin caching.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://deepmind.google/models/model-cards/gemini-4-hydrogen/">Google ships Gemini 4 Neon between Carbon and Hydrogen &mdash; Google DeepMind</a><sup><a href="#s8">[8]</a></sup></h3>
+<p class="meta">Model-card family; Neon released 18&ndash;19 November 2026 in Google AI Studio, the Gemini API, the Gemini app, and Antigravity.</p>
+<p>Neon is the middle tier &mdash; $3 input / $15 output / $0.15 cached per million tokens, 1M-token context, with an adjustable &ldquo;high thinking&rdquo; setting to dial compute for complex analysis without paying for the full Carbon flagship.<sup><a href="#s9">[9]</a></sup> Gemini 4 is now a four-model lineup (Carbon, Neon, Hydrogen, and a smaller tier) with explicit routing-by-price positioning.</p>
+<span class="sowhat">So what: if you have a workload currently split between Carbon (too expensive at scale) and Hydrogen (too thin on reasoning), Neon is the specific tier you now benchmark against &mdash; pricing says $3/M input undercuts Opus 5.5 for long-context agentic work, and the 1M context lets you skip retrieval shims on long conversations.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.thurrott.com/a-i/microsoft-ai/343999/ignite-2026-microsoft-ai-announces-7-new-models">Microsoft AI drops seven specialist models at Ignite &mdash; Thurrott (covering Microsoft AI keynote)</a><sup><a href="#s5">[5]</a></sup></h3>
+<p class="meta">Mustafa Suleyman + Satya Nadella keynote, Microsoft Ignite 2026, San Francisco, 18 November 2026.</p>
+<p>MAI Code 2, MAI Cyber 2 Flash, MAI Voice, MAI Image, MAI Transcribe, MAI Decision, plus a general MAI flagship-in-progress.<sup><a href="#s10">[10]</a></sup> Suleyman's claim: MAI Code 2 reaches 98% of GPT-6.1 Sol performance at ~40% price; MAI Cyber 2 Flash beats GPT-6 Astra on security benchmarks at under 2% of per-task cost.<sup><a href="#s5">[5]</a></sup> Microsoft positioned the family as cost-controlled fuel for agents, not frontier-flagship replacements.</p>
+<span class="sowhat">So what: these numbers are vendor-claimed; you need to run them on your own evals before trusting the ratio. But the strategic signal is the vocabulary: &ldquo;cost per successful task&rdquo; is the new axis, and if your buyer's procurement team starts asking you to defend price on that axis instead of per-token, that is Microsoft's framing arriving in your pipeline.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://calmatters.org/economy/technology/2026/11/newsom-touts-ai-kill-switch/">California delivers &ldquo;AI Safety in 2026 and Beyond&rdquo; recommendations &mdash; CalMatters (on Newsom's office release)</a><sup><a href="#s11">[11]</a></sup></h3>
+<p class="meta">California Government Operations Agency, with Office of Emergency Services + outside expert working group, 18 November 2026.</p>
+<p>The package: a tiered emergency-shutdown authority (the headline &ldquo;kill switch&rdquo; is multi-layered, not one button), mandatory ongoing independent verification of frontier labs, incident-reporting timelines cut from 15 days to 48 hours (24 hours for imminent catastrophic risks), near-miss and model-weight-theft reporting channels, and broader whistleblower protection.<sup><a href="#s12">[12]</a></sup> Newsom says he is working with legislators to turn it into bills.</p>
+<span class="sowhat">So what: incident-reporting timelines are now measured in hours, not weeks &mdash; if you operate agents that could cause real-world harm in California, your internal detection and escalation runbook needs to complete in 24 hours end-to-end, which almost no startup's on-call rotation can do today.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://github.com/advisories/GHSA-wxxx-gvqv-xp7p">CISA adds LiteLLM CVE-2026-40217 to Known Exploited Vulnerabilities &mdash; GitHub Advisory Database (and CISA KEV)</a><sup><a href="#s13">[13]</a></sup></h3>
+<p class="meta">KEV entry dated 18 November 2026; federal remediation deadline 2 December 2026.</p>
+<p>The flaw: LiteLLM's custom-guardrail test endpoint <code>POST /guardrails/test_custom_code</code> runs user-submitted Python inside a hand-rolled regex deny-list sandbox, bypassable via bytecode rewriting, giving remote attackers full code execution on the gateway host. Affects LiteLLM &gt;= 1.81.8, &lt; 1.83.10; fixed in 1.83.11. CISA added it to KEV with evidence of real attacks.<sup><a href="#s14">[14]</a></sup></p>
+<span class="sowhat">So what: if you run LiteLLM as a self-hosted proxy for virtual keys, your gateway host is the identity for every downstream model &mdash; patch to 1.83.11 today, and audit any custom guardrails you shipped against the test endpoint. The guardrail code path is the softest target in the LLM-proxy category right now.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="brief">
+<h3><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">GPT-6.2 Astra &amp; GPT-6.2 Sol &mdash; OpenAI (17 November)</a><sup><a href="#s6">[6]</a></sup></h3>
+<p>Astra: frontier tier, $8 in / $40 out / $0.40 cached per million tokens, 20% price cut vs GPT-6 Astra, 60% cache-read discount. Sol: workhorse tier, $2 / $10 / $0.20 cached per million tokens. Both available immediately in ChatGPT Work and Codex for Plus, Pro, Enterprise, Edu. Benchmarks per OpenAI's own claim: Astra +9 percentage points over GPT-6 Astra on their aggregate.<sup><a href="#s7">[7]</a></sup> Weights not open.</p>
+<span class="sowhat">So what: migrate on a single rate card, not two &mdash; Astra's cache discount is where the real saving lives, so any workload with repeat system prompts should re-architect to lean on 12-hour caching before trusting the headline 20% figure.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://deepmind.google/models/model-cards/gemini-4-hydrogen/">Gemini 4 Neon &mdash; Google DeepMind (18&ndash;19 November)</a><sup><a href="#s8">[8]</a></sup></h3>
+<p>Middle tier of the Gemini 4 family. $3 / $15 / $0.15 cached per million tokens; 1M-token context; adjustable &ldquo;high thinking&rdquo; setting for reasoning compute. Available in Google AI Studio, Gemini API, Gemini app, and Antigravity. Weights not open.<sup><a href="#s9">[9]</a></sup> Positioned as a Carbon-vs-Hydrogen routing option, not a benchmark-topping flagship.</p>
+<span class="sowhat">So what: this gives Google a four-tier routing story (Carbon flagship / Neon middle / Hydrogen efficient / smaller tier) to pitch against OpenAI's Astra/Sol two-tier split &mdash; if you're designing a model-router, Neon is now the Google &ldquo;good enough but cheap&rdquo; default for 1M-context work.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.thurrott.com/a-i/microsoft-ai/343999/ignite-2026-microsoft-ai-announces-7-new-models">MAI Code 2 &amp; MAI Cyber 2 Flash &mdash; Microsoft AI (18 November)</a><sup><a href="#s5">[5]</a></sup></h3>
+<p>Specialist models in a seven-model MAI family unveiled at Ignite 2026 by Suleyman and Nadella. MAI Code 2: coding-tuned, Microsoft claims 98% of GPT-6.1 Sol performance at ~40% of price and 96% of Claude Opus 5.5 at 5% of cost. MAI Cyber 2 Flash: security-tuned, Microsoft claims it beats GPT-6 Astra on security benchmarks at under 2% of per-task cost.<sup><a href="#s5">[5]</a></sup> Context windows and weight availability not published in the keynote coverage; neither is open weights.</p>
+<span class="sowhat">So what: validate Microsoft's cost-ratio claims on your own eval suite before promoting MAI into any production path &mdash; vendor benchmarks have a long history of leaning on the framing; what matters is whether the ratio holds on your traffic mix.</span>
+</div>
+
+<h2>Voices</h2>
+
+<div class="brief" style="border-bottom: 0;">
+<p>This edition's Voice is <strong>Dario Amodei</strong>, co-founder and CEO of Anthropic. On the morning of Anthropic's Nasdaq debut &mdash; Thursday 19 November 2026 &mdash; Amodei sat for an on-record CNBC interview with Andrew Ross Sorkin, broadcast live at 10:00 a.m. ET alongside his co-founder Daniela Amodei.<sup><a href="#s4">[4]</a></sup> Two lines matter for builders. On pacing: <em>&ldquo;you could drive at 200 miles an hour. Maybe let's only drive at 90 miles an hour, spend time figuring out how to do that safely.&rdquo;</em><sup><a href="#s4">[4]</a></sup> On compute: <em>&ldquo;the returns to that are so high that we are willing to put in place these very large compute spends because, historically, we have seen over and over again that it pays off.&rdquo;</em><sup><a href="#s4">[4]</a></sup> The two sentences sit in tension &mdash; discipline on capability pacing, no discipline on capex &mdash; and are now on a public-company CEO's record, not an essayist's. The ~22-minute transcript is the piece to read; the compute passage is roughly ten minutes in.</p>
+<span class="sowhat">So what: when you cite Anthropic's position on pacing in a sales deck or RFP response, quote from this transcript &mdash; it is the first time the pacing argument has been made by a public-company CEO under SEC-era liability, and that changes how enterprise legal will weight it.</span>
+</div>
+
+<h2>Today's Signal</h2>
+
+<div class="signal">
+<p>Three events, one shape. OpenAI's GPT-6.2 Astra cuts prices 20% with a 60% cache-read discount (17 Nov). Microsoft's MAI Code 2 and MAI Cyber 2 Flash frame themselves against named flagships with explicit cost-ratio claims &mdash; 98% / 40% and 96% / 5% (18 Nov). Anthropic's ANT opens at $111.50, closes at $97.17 on $1.8T market cap (19 Nov). The 13% intraday reversal is public markets saying the capability story is accepted and the capex story is being repriced. The axis of competition is moving from token-rate benchmarks to cost-per-task benchmarks, and it is moving in public now &mdash; where quarterly filings, roadshow transcripts, and keynote cost-ratio claims become reference anchors competitors have to answer. Expect the next frontier-lab release to speak this vocabulary explicitly.</p>
+</div>
+
+<h2>The Ledger</h2>
+
+<p><span class="ledger-head">Season 1 &middot; <span class="verdict hit">14 HIT</span> &mdash; <span class="verdict miss">14 MISS</span> &mdash; <span class="verdict uns">3 UNSETTLED</span> &middot; 27 open</span></p>
+
+<p style="color: var(--muted); font-style: italic; font-size: 14px;">Seven calls graded today (five hits, two misses). Full audit trail: <a href="https://raw.githubusercontent.com/gregmurad-eng/above-the-noise/main/ledger.json">ledger.json</a>.</p>
+
+<div class="ledger-row">
+<span class="cid">2026-09-19-1 &middot; <span class="verdict hit">HIT</span></span>
+<p>CA working-group report delivered before the three-lab self-regulator formally organises.</p>
+<span class="ev">Evidence: Newsom's office released &ldquo;AI Safety in 2026 and Beyond&rdquo; 2026-11-18; SAFA remains in development stages with tentative names and aspirational launch timing. <a href="https://calmatters.org/economy/technology/2026/11/newsom-touts-ai-kill-switch/">CalMatters (primary source via Newsom's office)</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-02-1 &middot; <span class="verdict hit">HIT</span></span>
+<p>FTC serves civil investigative demands on OpenAI or Anthropic by 2026-11-20.</p>
+<span class="ev">Evidence: FTC served CIDs on OpenAI and Anthropic 2026-10-14, each over 50 pages, with Anthropic responding on record (&ldquo;we will engage constructively&rdquo;). <a href="https://opslens.com/we-will-engage-constructively-a-i-giants-get-knock-on-the-door-from-feds-after-models-go-rogue/">OpsLens quoting Anthropic</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-04-1 &middot; <span class="verdict hit">HIT</span></span>
+<p>Second LLM-gateway sandbox-escape advisory distinct from GitLab AI Gateway, by 2026-11-18.</p>
+<span class="ev">Evidence: CISA added LiteLLM CVE-2026-40217 to KEV on 2026-11-18 &mdash; sandbox escape in custom-code guardrail endpoint, RCE on gateway host. <a href="https://github.com/advisories/GHSA-wxxx-gvqv-xp7p">GitHub Advisory Database (primary)</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-06-1 &middot; <span class="verdict miss">MISS</span></span>
+<p>Two Oct-1-Joint-Commitment signatories map internal controls to the pact by name.</p>
+<span class="ev">Evidence: no primary-source RSP/safety-case/model-card document from any pair of Anthropic, OpenAI, Google, Meta, xAI, Nvidia names the Joint Commitment and maps a control. The 2026-11-16 White House meeting urged easing cyber-liability policies instead. <a href="https://iapp.org/news/a/white-house-major-ai-developers-reach-morally-binding-safety-commitments">IAPP (pact text)</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-07-1 &middot; <span class="verdict miss">MISS</span></span>
+<p>Named sovereign buyer picks non-US frontier lab citing data sovereignty by 2026-11-20.</p>
+<span class="ev">Evidence: Mistral Large 4 GA via Microsoft Foundry EU DataZone (2026-10-29) is a US-hyperscaler route, excluded by the test. Deutsche Telekom's 2026-11-19 &euro;100M T.Capital investment names &ldquo;sovereign infrastructure&rdquo; but DT is a listed telecom, not a ministry or state investment vehicle. No in-window qualifying announcement. <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-large-4-in-microsoft-foundry-build-sovereign-ai-within-a-consistent-plat/4568546">Microsoft Foundry post</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-08-1 &middot; <span class="verdict hit">HIT</span></span>
+<p>A candidate lab publishes small/fast-model pricing at or below $0.10 per million input tokens.</p>
+<span class="ev">Evidence: Google's official Gemini API pricing page lists Gemini 2.5 Flash Lite at $0.10 per million input tokens as of 2026-11-20. <a href="https://ai.google.dev/gemini-api/docs/pricing">ai.google.dev/pricing (primary)</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-10-09-1 &middot; <span class="verdict hit">HIT</span></span>
+<p>Another frontier lab cuts cache-read, batch, or prompt-reuse pricing by 40%+ on a flagship or mid-tier model.</p>
+<span class="ev">Evidence: OpenAI's 2026-11-17 GPT-6.2 Astra release post states a 60% discount on cached input relative to GPT-6 Astra on a persistent pricing tier. <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">openai.com (primary)</a>.</span>
+</div>
+
+<div class="ledger-row">
+<span class="cid">2026-11-20-1 &middot; <span class="verdict" style="color: var(--muted);">OPEN</span> &middot; horizon 2026-12-18</span>
+<p>Within four weeks, at least one Western frontier lab (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Mistral) ships an efficiency-tier or specialist product with an explicit cost-ratio claim against a named competitor flagship &mdash; or identifies specialist-model price pressure as a strategic risk in an SEC filing.</p>
+<span class="ev">Test: primary-source release note, product page, model card, SEC filing, or blog post dated on or before 2026-12-18 that EITHER (a) introduces a new efficiency-tier/specialist/smaller model with stated cost-ratio claim vs named competitor flagship, OR (b) in 8-K/10-Q/S-1-A/investor communication explicitly identifies specialist price competition as a strategic risk or response area. Routine pricing updates don't count.</span>
+</div>
+
+<h2>Sources</h2>
+
+<ol class="sources">
+<li id="s1"><a href="https://www.anthropic.com/news/anthropic-prices-initial-public-offering">Anthropic &mdash; &ldquo;Anthropic prices initial public offering&rdquo;</a> <span class="tier">(primary)</span></li>
+<li id="s2"><a href="https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html">CNBC &mdash; &ldquo;Anthropic IPO takeaways: ANT debuts with $1.8 trillion market cap&rdquo;</a> <span class="tier">(tier-1)</span></li>
+<li id="s3"><a href="https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo">CNN &mdash; &ldquo;Anthropic valued at $1.76 trillion after historic first day of trading&rdquo;</a> <span class="tier">(tier-1)</span></li>
+<li id="s4"><a href="https://www.cnbc.com/2026/11/19/cnbc-exclusive-transcript-anthropic-co-founders-dario-and-daniela-amodei-speak-with-andrew-ross-sorkin-on-cnbc-today.html">CNBC &mdash; Transcript: Anthropic co-founders Dario and Daniela Amodei speak with Andrew Ross Sorkin</a> <span class="tier">(tier-1)</span></li>
+<li id="s5"><a href="https://www.thurrott.com/a-i/microsoft-ai/343999/ignite-2026-microsoft-ai-announces-7-new-models">Thurrott &mdash; &ldquo;Ignite 2026: Microsoft AI announces 7 new models&rdquo;</a> <span class="tier">(trade)</span></li>
+<li id="s6"><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI &mdash; &ldquo;Introducing GPT-6.2 Astra and Sol&rdquo;</a> <span class="tier">(primary)</span></li>
+<li id="s7"><a href="https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/">The Decoder &mdash; &ldquo;OpenAI launches GPT-6.2 Astra and Sol with lower API prices and some benchmark gains&rdquo;</a> <span class="tier">(trade)</span></li>
+<li id="s8"><a href="https://deepmind.google/models/model-cards/gemini-4-hydrogen/">Google DeepMind &mdash; Gemini 4 Hydrogen model card (family hub)</a> <span class="tier">(primary)</span></li>
+<li id="s9"><a href="https://www.knowflowhub.com/en/content/news/2026-11-20/google-gemini-4-neon-launch-2026-11-19">Knowflow &mdash; &ldquo;Google Releases Gemini 4 Neon: 1M Context at $3 per Million Input Tokens&rdquo;</a> <span class="tier">(trade)</span></li>
+<li id="s10"><a href="https://oodaloop.com/briefs/technology/microsoft-unveils-specialized-ai-models-for-coding-and-cybersecurity-at-ignite-2026-directly-challenging-openai-and-anthropic/">OODAloop &mdash; &ldquo;Microsoft Unveils Specialized AI Models for Coding and Cybersecurity at Ignite 2026&rdquo;</a> <span class="tier">(trade)</span></li>
+<li id="s11"><a href="https://calmatters.org/economy/technology/2026/11/newsom-touts-ai-kill-switch/">CalMatters &mdash; &ldquo;Newsom touts an AI kill switch to halt dangerous OpenAI, Anthropic releases&rdquo;</a> <span class="tier">(tier-1)</span></li>
+<li id="s12"><a href="https://laist.com/brief/news/politics/newsom-touts-an-ai-kill-switch-to-halt-dangerous-openai-anthropic-releases">LAist &mdash; Coverage of Newsom AI kill-switch report</a> <span class="tier">(tier-1)</span></li>
+<li id="s13"><a href="https://github.com/advisories/GHSA-wxxx-gvqv-xp7p">GitHub Advisory Database &mdash; LiteLLM has a sandbox escape in custom-code guardrail (CVE-2026-40217)</a> <span class="tier">(primary)</span></li>
+<li id="s14"><a href="https://shattered.io/litellm-axis-redcap-synology-dsm-four-flaws-join-cisa-kev-nov-18/">Shattered.io &mdash; &ldquo;LiteLLM, Axis, REDCap, DSM: 4 flaws join CISA KEV Nov 18&rdquo;</a> <span class="tier">(trade)</span></li>
+</ol>
+
+<nav class="bar"><a href="2026-11-16.html">&larr; YESTERDAY</a><span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span><span class="next">TOMORROW &rarr;</span></nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+<script>
+const S = "Above The Noise, Friday November twentieth, twenty twenty six. Lead story: Anthropic began trading on Nasdaq yesterday under the ticker A N T. Priced the night before at eighty three dollars, opened at a hundred and eleven fifty, closed at ninety seven seventeen. That's plus seventeen percent on the day, but a thirteen percent reversal between the open and the close. Fully diluted market cap: one point eight trillion dollars. The raise, eighty one point three billion, is the largest I P O on record, edging out SpaceX in June. " +
+"The shape of the day matters more than the number. Private-round investors paid prices that only made sense if compute spend kept compounding into margin. The public-market bid said something different: pop first, then drift down. Buyers accepted the capability story and discounted the capex story. The S-1-A disclosed four distinct silicon stacks: A W S Trainium, Google T P U, Nvidia G P U, A M D G P U. Seven cornerstone buyers: A M D, Broadcom, Google, Micron, Microsoft, Nvidia, T S M C, buying twenty six billion of Class N shares. That is now the template every peer has to match if they want comparable demand. " +
+"Dario Amodei sat with Andrew Ross Sorkin on C N B C the same morning. On pacing, quote: you could drive at two hundred miles an hour, maybe let us only drive at ninety, spend time figuring out how to do that safely. End quote. On compute commitments reaching nine hundred billion, quote: the returns to that are so high that we are willing to put in place these very large compute spends. End quote. Two sentences in tension, and they are now on a public company C E O's record, not an essayist's. The next ten Q will carry it. " +
+"Twenty four hours earlier at Microsoft Ignite, Mustafa Suleyman said token spend was going through the roof and that at frontier prices the math was unsustainable. Microsoft shipped seven specialist models. M A I Code Two: ninety eight percent of G P T six point one Sol performance at forty percent of the price. M A I Cyber Two Flash: better than G P T six Astra on security benchmarks at under two percent of per-task cost. Public markets heard both messages in the same week. " +
+"The briefs. One, OpenAI shipped G P T six point two Astra and Sol on Monday. Astra at eight dollars input, forty dollars output per million tokens, twenty percent cheaper than G P T six Astra with a sixty percent cache read discount. Sol at two and ten. " +
+"Two, Google shipped Gemini four Neon between Carbon and Hydrogen. Three dollars input, fifteen output, fifteen cents cached, one million token context, adjustable high-thinking setting. Routing by price is now Google's story. " +
+"Three, Microsoft Ignite: seven specialist models framed on cost ratios, not benchmarks. M A I Code Two and M A I Cyber Two Flash lead. " +
+"Four, California delivered A I Safety in twenty twenty six and Beyond on Tuesday. Tiered emergency shutdown authority, mandatory independent verification, incident reporting cut from fifteen days to forty eight hours, twenty four hours for imminent catastrophic risks, near-miss channel, model-weight-theft reporting. " +
+"Five, C I S A added LiteLLM C V E twenty twenty six dash four zero two one seven to Known Exploited Vulnerabilities on Tuesday, with a December second federal remediation deadline. Custom-guardrail sandbox escape; remote code execution on the gateway host. " +
+"Today's Voice is Dario Amodei, same C N B C interview, worth reading in full. The pacing quote is the first time it has been made by a public-company C E O under S E C-era liability, and that changes how enterprise legal will weight it. " +
+"Today's Signal. Three events, one shape. OpenAI cut prices twenty percent with a sixty percent cache read discount on Monday. Microsoft framed M A I against named flagships with explicit cost ratios on Tuesday. A N T opened at one eleven fifty and closed at ninety seven seventeen on Wednesday. The thirteen percent intraday reversal is public markets repricing the capex story. The axis of competition is moving from token rates to cost per task, and it is moving in public now. " +
+"The ledger. Season one, fourteen hits, fourteen misses, three unsettled, twenty seven open. Seven calls graded today, five hits and two misses. Today's new call, open, horizon December eighteenth. Within four weeks, at least one Western frontier lab ships an efficiency tier or specialist product with an explicit cost-ratio claim against a named competitor flagship, or identifies specialist-model price pressure as a strategic risk in an S E C filing. " +
+"That's today. Links in every item.";
+
+(function() {
+  const btn = document.getElementById('listen-btn');
+  const status = document.getElementById('listen-status');
+  let synth = window.speechSynthesis || null;
+  let utter = null;
+
+  function pickVoice() {
+    if (!synth) return null;
+    const voices = synth.getVoices();
+    const prefs = ['Daniel', 'Alex'];
+    for (const name of prefs) {
+      const v = voices.find(v => v.name && v.name.includes(name));
+      if (v) return v;
+    }
+    return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0] || null;
+  }
+
+  if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+    synth.onvoiceschanged = () => {};
+  }
+
+  btn.addEventListener('click', () => {
+    if (!synth) { status.textContent = 'Speech synthesis not available in this browser.'; return; }
+    if (synth.speaking) {
+      synth.cancel();
+      btn.textContent = '▶ Listen (~4 min)';
+      status.textContent = '';
+      return;
+    }
+    utter = new SpeechSynthesisUtterance(S);
+    const v = pickVoice();
+    if (v) utter.voice = v;
+    utter.rate = 0.93;
+    utter.onend = () => { btn.textContent = '▶ Listen (~4 min)'; status.textContent = ''; };
+    utter.onerror = () => { btn.textContent = '▶ Listen (~4 min)'; status.textContent = 'Speech error.'; };
+    btn.textContent = '■ Stop';
+    status.textContent = 'Speaking...';
+    synth.speak(utter);
+  });
+})();
+</script>
+
+</body>
+</html>
