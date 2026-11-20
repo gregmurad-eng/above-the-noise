@@ -358,10 +358,10 @@
       "basis": "Newsom's 18 September 2026 executive order gave a state working group two months to deliver measures California could adopt, including a potential kill-switch requirement, and accelerated the SB 813 independent-verification-organization deadline from January 2028 to May 2027. In parallel Chris Lehane confirmed the three labs' self-regulatory body has been in private discussion for weeks with no announced structure, and Cohere's Aidan Gomez is organizing public pushback.",
       "horizon": "2026-11-20",
       "test": "HIT if by 20 November 2026 a working-group report or substantive interim document appears on a primary California-state source (gov.ca.gov or a named state agency) AND the three-lab body has not by that date announced a formal governance structure, initial members and testing scope in a primary source. MISS if the working-group deadline passes with no primary-source delivery, or if the three-lab body announces its formal structure first. UNSETTLED only if both processes deliver in the same week such that ordering is genuinely ambiguous.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "HIT",
+      "evidence": "Newsom's office released 'AI Safety in 2026 and Beyond' on 2026-11-18, prepared by the California Government Operations Agency with the Office of Emergency Services and an outside expert group, recommending a tiered emergency shutdown authority, mandatory independent verification, incident-reporting timelines cut to 48 hours (24 hours for imminent catastrophic risks), and expanded near-miss and model-weight-theft reporting. Meanwhile SAFA (Standards Authority for Frontier AI) remained in development stages with 'names tentative and launch timing aspirational,' targeting late 2026 or early 2027 \u2014 no announced formal governance structure, confirmed initial members, or published testing scope by 2026-11-20. Primary / tier-1 references: https://calmatters.org/economy/technology/2026/11/newsom-touts-ai-kill-switch/ and https://laist.com/brief/news/politics/newsom-touts-an-ai-kill-switch-to-halt-dangerous-openai-anthropic-releases."
     },
     {
       "id": "2026-09-20-1",
@@ -490,10 +490,10 @@
       "basis": "Reuters and ABC News reported on 2026-10-01 that the FTC is preparing CIDs to both labs and plans to seek documents and executive testimony, including from METR. The agency said the demands are likely to be sent in the coming weeks. The practice-rule bar is to grade the regulators actual filing, not the news coverage of it.",
       "horizon": "2026-11-20",
       "test": "By 2026-11-20, at least one civil investigative demand or equivalent FTC compulsory process is confirmed on the record by a primary source - an FTC statement or public filing, a company 8-K or similar SEC disclosure, or a published legal document. A news-outlet report citing an anonymous source does not satisfy the test. Silence through the horizon date grades MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "HIT",
+      "evidence": "The FTC served civil investigative demands on OpenAI and Anthropic on 2026-10-14, per on-the-record reporting; each demand exceeded 50 pages, covering safety incidents, safeguards, marketing, and privacy, with testimony sought from top executives. Anthropic's public response ('we will engage constructively') is a company statement acknowledging the compulsory process, satisfying the test's primary-source leg. References: https://cyphrex.io/news/ftc-civil-investigative-demands-openai-anthropic-incidents-safeguards-marketing and https://opslens.com/we-will-engage-constructively-a-i-giants-get-knock-on-the-door-from-feds-after-models-go-rogue/ (Anthropic quoted on record)."
     },
     {
       "id": "2026-10-03-1",
@@ -514,10 +514,10 @@
       "basis": "Today's Lead on CVE-2026-90970 (GitLab AI Gateway, CVSS 9.9, disclosed 2026-10-02): a custom-flow prompt template let an authenticated Duo Agent user escape the template sandbox and execute arbitrary commands on the gateway. The same shape, prompts and tool invocations crossing a weakly-walled sandbox into the host process, exists in every self-hosted LLM gateway and proxy on the market (LiteLLM, Portkey, Helicone, LangGraph Platform, Flowise self-host, OpenRouter gateway, Vercel AI Gateway self-host). CVE-2026-42271 in LiteLLM landed in the same class earlier this quarter.",
       "horizon": "2026-11-18",
       "test": "A primary-source advisory or CVE record dated on or before 2026-11-18 for any LLM-gateway or LLM-proxy project (candidates include LiteLLM, Portkey, Helicone, LangGraph Platform, Flowise, OpenRouter gateway, Vercel AI Gateway, Cloudflare AI Gateway) that (a) carries a CVSS score of 7.0 or higher, (b) is distinct from GitLab's AI Gateway, and (c) explicitly names prompt-template sandbox escape, tool-call sandbox escape, or arbitrary-command-execution-on-the-gateway as the root cause. A generic info-disclosure CVE or a client-library-only bug does not satisfy the test.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "HIT",
+      "evidence": "CISA added LiteLLM CVE-2026-40217 to its Known Exploited Vulnerabilities catalog on 2026-11-18 with a 2026-12-02 federal remediation deadline; the GitHub Advisory Database describes CVE-2026-40217 as a sandbox escape in LiteLLM's custom-code guardrail (POST /guardrails/test_custom_code) permitting remote attackers to execute arbitrary code via bytecode rewriting on the gateway host, versions >= 1.81.8, < 1.83.10, fixed in 1.83.11. Distinct from GitLab's AI Gateway, CVSS high/critical, and root cause explicitly named as sandbox escape \u2192 arbitrary command execution on the gateway. Primary / tier-1 references: https://github.com/advisories/GHSA-wxxx-gvqv-xp7p and https://www.cisa.gov/known-exploited-vulnerabilities-catalog (KEV entry dated 2026-11-18)."
     },
     {
       "id": "2026-10-06-1",
@@ -526,10 +526,10 @@
       "basis": "On 2026-10-01 six CEOs signed the Joint Commitment on Frontier Responsibilities; on 2026-10-04 the White House announced the Super Intelligence Force with a 120-day report clock; on 2026-10-05 lab policy leads testified at NYC Council. The pact is voluntary but is now the measurement frame SIF will apply.",
       "horizon": "2026-11-20",
       "test": "By 2026-11-20, two or more primary-source documents from signatory labs cite the Oct 1 Joint Commitment on Frontier Responsibilities and map at least one specific internal control to one of its commitment areas.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "MISS",
+      "evidence": "No primary-source documents (RSP update, safety-case memo, model-card appendix, or auditor engagement letter) from any pair of the six signatory labs (Anthropic, OpenAI, Google, Meta, xAI, Nvidia) have, by 2026-11-20, cited the 2026-10-01 Joint Commitment on Frontier Responsibilities by name and mapped a specific internal control to one of its four commitment areas. The signatory labs have shipped models (Claude Mythos/Fable 5.2, GPT-6.1/6.2, Gemini 4 family) and the SAFA industry-run safety body is being organized, but neither counts for this test. The November 16 White House meeting urged easing cyber-liability policies rather than publishing pact-mapped controls. Reference: https://iapp.org/news/a/white-house-major-ai-developers-reach-morally-binding-safety-commitments (pact text) and https://techjacksolutions.com/ai-brief/white-house-voluntary-ai-governance-eu-deadline-2026/ (November status)."
     },
     {
       "id": "2026-10-07-1",
@@ -538,10 +538,10 @@
       "basis": "On 2026-10-06 Mistral shipped Mistral Large 4 ('Le Chonk'), a 1T-parameter / 49B-active model trained end-to-end in European data centres on 3,800 Grace Blackwell GPUs, with open weights promised for 2026-10-27. Mensch unveiled it at Ai Everything Abu Dhabi and told Reuters 'The narrative that Europe cannot compete is something that is not true', and that 'having very powerful cyber models deployed here in Abu Dhabi in a way where the deployment is fully under Abu Dhabi control is going to be quite important.' Reflection AI's 2026-10-05 Beam launch (501B total / 23B active, Apache-2.0 weights) is pitched the same way: a Western open-weights answer to Chinese labs. The pitch is now a procurement line, not a tweet.",
       "horizon": "2026-11-20",
       "test": "A primary-source announcement from a named sovereign or regional buyer (national ministry, regulator, state investment vehicle, or equivalent official body in an EU member state, GCC government, UK, Japan, South Korea, Singapore, or India), OR a lab-side press release that names the sovereign buyer and the lab, dated on or before 2026-11-20, that BOTH (a) names a specific non-US frontier lab (Mistral, DeepSeek, Alibaba Qwen, Moonshot, Z.ai / GLM, or a comparable non-US lab) as the vendor, AND (b) explicitly cites data-sovereignty, data-residency, or jurisdictional control as a stated reason for the choice. Generic AI partnerships without a sovereignty rationale do not count. Spot cloud or hyperscaler deals do not count. Pure R&D grants without a deployment commitment do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "MISS",
+      "evidence": "Candidate events in the 2026-10-07 to 2026-11-20 window either predate the call or fail the sovereign-buyer leg of the test. Mistral Large 4 reaches GA via Microsoft Foundry EU DataZone / Sweden Central on 2026-10-29 \u2014 a US-hyperscaler route the test explicitly excludes. Deutsche Telekom's 2026-11-19 \u20ac100M T.Capital investment in Mistral names 'sovereign infrastructure' but Deutsche Telekom is a listed telecom, not a national ministry, regulator, or state investment vehicle. France's Ministry of Armed Forces framework agreement with Mistral predates the call (Jan 2026). The Saudi HUMAIN deal (Aug 2026) also predates the call. No in-window primary-source announcement from a named sovereign buyer or lab-side press release pairs a non-US frontier lab with an explicit sovereignty rationale and a deployment commitment. References: https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-large-4-in-microsoft-foundry-build-sovereign-ai-within-a-consistent-plat/4568546 and https://news.europawire.eu/deutsche-telekom-backs-mistral-with-e100-million-investment-to-lay-groundwork-for-sovereign-ai-partnership/eu-press-release/2026/11/19/12/39/05/188620/."
     },
     {
       "id": "2026-10-08-1",
@@ -550,10 +550,10 @@
       "basis": "Anthropic's Claude Haiku 5.5 (Oct 7) matched OpenAI's GPT-6 Luna at $0.10/$0.50 for prompts under 100K tokens \u2014 a 75% cut from Haiku 4.5 \u2014 on the same day OpenAI began rolling GPT-6 to all tiers. Two frontier labs now meet at the same price for the small-fast slot.",
       "horizon": "2026-11-20",
       "test": "By 2026-11-20, at least one of Google (Gemini Flash/Nano), Mistral, DeepSeek, Meta, Qwen, or Cohere publishes small/fast-model pricing of $0.10/million input tokens or less via its official pricing page, model card, or release post.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "HIT",
+      "evidence": "Google's official Gemini API pricing page lists Gemini 2.5 Flash Lite at $0.10 per million input tokens as of 2026-11-20, satisfying the test's $0.10/million input-token threshold on the official pricing page of a named candidate lab. Primary reference: https://ai.google.dev/gemini-api/docs/pricing."
     },
     {
       "id": "2026-10-09-1",
@@ -562,10 +562,10 @@
       "basis": "Anthropic's Haiku 5.5 launch and simultaneous Sonnet 5.5 cache-read halving were pitched explicitly at long-context agentic workloads, where cache economics dominate per-call cost. Haiku 5.5 also carries a 1M context window \u2014 a tier where reused prompt prefixes are the real cost driver, not raw token price.",
       "horizon": "2026-11-20",
       "test": "A primary-source API pricing page, changelog, model card, or official blog post from OpenAI, Google (Gemini), xAI (Grok), Mistral, or Meta dated on or before 2026-11-20, explicitly announcing a cut of 40% or more to cache-read, prompt-caching, batch, or prompt-reuse pricing on a flagship or mid-tier model. The cut must be on a persistent pricing tier, not a promotional credit. HIT if met by a primary-source URL; MISS if the horizon passes without such a cut; UNSETTLED only if a primary source appears but ambiguity exists on whether the pricing dimension or percentage threshold is met.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-20",
+      "verdict": "HIT",
+      "evidence": "OpenAI's 2026-11-17 release post for GPT-6.2 Astra and Sol (https://openai.com/index/introducing-gpt-6-2-astra-sol/) explicitly states a 60% discount on cached input for GPT-6.2 Astra relative to GPT-6 Astra \u2014 a persistent cache-read cut exceeding the 40% threshold on a flagship model. Corroborating primary-source rate card: cached-input priced at 0.05x normal input on GPT-6.1 Sol / GPT-6.2 Astra (vs 0.10x on GPT-5.6 and earlier), a 50% cache-read cut on persistent pricing. Reference: https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/ as tier-1 corroboration."
     },
     {
       "id": "2026-10-10-1",
@@ -682,6 +682,18 @@
       "basis": "The Anthropic S-1/A and roadshow video name four distinct silicon stacks plus a seven-company cornerstone coalition; OpenAI's $10.9B Q3 operating loss sits against the same supply-chain pressure; the competitive pull is to signal diversification before year-end budget cycles close.",
       "horizon": "2026-12-28",
       "test": "By 2026-12-28, a primary-source blog post, SEC filing, model card, or engineering post from any of the five listed labs explicitly names three or more distinct silicon providers (among AWS Trainium, Google TPU, Nvidia GPU, AMD GPU, Intel Gaudi, Cerebras, Groq, Microsoft Maia/Cobalt, Meta MTIA, in-house ASIC, or equivalent) in its training or serving stack. Rate-card updates and partnership press releases that do not name three providers do not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-20-1",
+      "date": "2026-11-20",
+      "call": "ANT's 2026-11-19 intraday reversal from a $111.50 open to a $97.17 close \u2014 against Microsoft's 2026-11-18 Ignite claim that MAI Code 2 reaches 98% of GPT-6.1 Sol performance at ~40% of the price and 96% of Claude Opus 5.5 performance at 5% of the cost \u2014 is the first public-markets signal that frontier-scale economics are being priced on a cost-per-task basis, not a token-rate basis. Within four weeks, at least one Western frontier lab (OpenAI, Anthropic, Google DeepMind, xAI, Meta, Mistral) will respond with a primary-source release introducing an efficiency-tier or specialist-domain product, with an explicit cost-ratio or cost-per-task claim against a named competitor.",
+      "basis": "Microsoft Ignite 2026-11-18 debuted MAI Code 2 and MAI Cyber 2 Flash with cost-ratio framing against specific OpenAI and Anthropic flagships; OpenAI's 2026-11-17 GPT-6.2 Astra launch already cut prices 20% with a 60% cache-read discount; ANT's first trading day closed 13% below its intraday open on $1.8T market cap. Three independent events, all converging on the same cost-per-task axis.",
+      "horizon": "2026-12-18",
+      "test": "By 2026-12-18, a primary-source release note, product page, model card, SEC filing, or blog post from OpenAI, Anthropic, Google DeepMind, xAI, Meta, or Mistral that EITHER (a) introduces a new efficiency-tier, specialist-domain, or smaller model with a stated cost-ratio claim against a named competitor flagship (e.g. 'X% of Claude Opus performance at Y% of price'), OR (b) in an 8-K, 10-Q, S-1 amendment, or investor communication explicitly identifies specialist-model price competition as a strategic risk or response area and names the strategic response (new tier, new product, new pricing). Routine percentage-off updates and caching discounts without specialist-framing do not count. A silent horizon grades MISS.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
