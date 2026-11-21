@@ -698,6 +698,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-21-1",
+      "date": "2026-11-21",
+      "call": "Signal's 2026-11-20 move is the first major privacy brand to publicly treat OS-level AI assistants as an adversary, not a feature. In the next five weeks, at least one other privacy-serious app or platform will respond: either a second major encrypted-messaging or privacy app will ship comparable defensive measures, or Apple or Google will publish a documented opt-out mechanism of the kind Signal asked for.",
+      "basis": "On 2026-11-20 Signal shipped Block Siri AI on iOS 27 and auto Screen Security on Android. Meredith Whittaker's post named the OS-level AI wave an 'existential threat' and asked Apple, Google and Microsoft for a documented opt-out, 24 hours after Google launched Gemini computer use on the Mac. A move this public from Signal rarely goes answered: either peer apps match the posture or platforms respond on the record.",
+      "horizon": "2026-12-26",
+      "test": "By 2026-12-26, a primary-source blog post, release notes, developer-documentation page, or press release confirming EITHER (a) a second major encrypted-messaging or privacy-focused app (WhatsApp, iMessage, Telegram, ProtonMail/Proton apps, Threema, Session, Element/Matrix, or Wire) shipping a user-facing feature to block or restrict OS-level AI assistants from capturing its in-app content, OR (b) Apple or Google publishing a documented API or developer-facing opt-out mechanism allowing apps to prevent system AI agents from accessing their on-screen data. HIT if (a) or (b) is evidenced by a primary source dated on or before 2026-12-26; MISS if neither occurs by that date.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
