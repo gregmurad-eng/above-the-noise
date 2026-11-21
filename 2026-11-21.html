@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise &mdash; Saturday, 21 November 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f65;
+    --miss: #c76b5a;
+    --border: rgba(201, 168, 76, 0.18);
+    --card: rgba(255, 255, 255, 0.015);
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 28px 72px;
+  }
+  header.masthead {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 22px;
+    margin-bottom: 26px;
+  }
+  h1 {
+    font-size: 40px;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .tagline {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    letter-spacing: 0.4px;
+    margin: 0 0 14px;
+  }
+  .dateline {
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 0;
+  }
+  nav.bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 20px 0 28px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  nav.bar a {
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 12px 6px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  nav.bar a:hover { text-decoration: underline; }
+  nav.bar .nav-mid {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+  nav.bar .nav-mid a {
+    color: var(--accent);
+    margin: 0 9px;
+  }
+  nav.bar .next {
+    color: var(--muted);
+    white-space: nowrap;
+    padding: 12px 6px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .listen {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 12px 20px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    min-height: 44px;
+    margin-bottom: 30px;
+  }
+  .listen:hover { background: rgba(201, 168, 76, 0.1); }
+  .listen .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .listen.playing .dot { background: var(--miss); animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  h2 {
+    font-size: 15px;
+    color: var(--accent);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin: 42px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    font-weight: normal;
+  }
+  h3 {
+    font-size: 21px;
+    color: var(--text);
+    margin: 0 0 10px;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  h3 a:hover { color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .lead p { font-size: 17px; }
+  .brief {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .brief:last-child { border-bottom: 0; }
+  .sowhat {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--accent);
+  }
+  .signal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 20px 22px;
+    margin: 10px 0;
+  }
+  .signal p { margin: 0; font-size: 16px; }
+  sup a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11px;
+    padding: 6px 4px;
+    margin: -6px -4px;
+  }
+  sup a:hover { text-decoration: underline; }
+  a { color: var(--accent); }
+  .ledger-head {
+    font-size: 16px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+  .verdict {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+  .verdict.hit { color: var(--accent); }
+  .verdict.miss { color: var(--miss); }
+  .verdict.uns { color: var(--muted); }
+  .verdict.open { color: var(--muted); font-style: italic; }
+  .ledger-row {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .ledger-row:last-child { border-bottom: 0; }
+  .cid {
+    font-size: 14px;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .ledger-row p { margin: 4px 0; font-size: 16px; }
+  .ev {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    display: block;
+  }
+  ol.sources {
+    font-size: 15px;
+    padding-left: 24px;
+    line-height: 1.7;
+  }
+  ol.sources li { margin-bottom: 10px; }
+  .tier {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 6px;
+  }
+  footer {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 22px 16px 48px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 14px; letter-spacing: 1.8px; }
+    h3 { font-size: 19px; }
+    body { font-size: 16px; }
+    .lead p { font-size: 16px; }
+    .brief p { font-size: 16px; }
+    .signal p { font-size: 15px; }
+    .ledger-row p { font-size: 15px; }
+    ol.sources { font-size: 15px; }
+    .tier { font-size: 12px; }
+    .sowhat { font-size: 14px; }
+    .ev { font-size: 14px; }
+    .tagline { font-size: 14px; }
+    .dateline { font-size: 14px; }
+    nav.bar {
+      font-size: 14px;
+      gap: 6px 10px;
+      padding: 10px 0;
+    }
+    nav.bar a, nav.bar .next {
+      padding: 12px 8px;
+      min-height: 44px;
+    }
+    nav.bar .nav-mid { gap: 10px; flex: 1; justify-content: center; }
+    nav.bar .nav-mid a { margin: 0 4px; }
+    .listen { font-size: 15px; padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Above The Noise</h1>
+  <p class="tagline">AI &amp; Tech &middot; Signal over noise</p>
+  <p class="dateline">Saturday, 21 November 2026</p>
+</header>
+
+<nav class="bar">
+  <a href="2026-11-20.html">&larr; Yesterday</a>
+  <span class="nav-mid">
+    <a href="./">Today</a>
+    <a href="archive.html">Archive</a>
+  </span>
+  <span class="next">Tomorrow &rarr;</span>
+</nav>
+
+<button class="listen" id="listenBtn" aria-label="Play audio edition">
+  <span class="dot"></span><span id="listenLabel">Listen &middot; 4 min</span>
+</button>
+
+<h2>Lead Story</h2>
+<div class="lead">
+<h3><a href="https://signal.org/blog/protecting-your-privacy/">Signal says the OS AI wave is an existential threat &mdash; and starts blocking it &mdash; Signal (Meredith Whittaker)</a><sup><a href="#s1">[1]</a></sup></h3>
+
+<p>Twenty-four hours after Google shipped Gemini computer use on the Mac,<sup><a href="#s2">[2]</a></sup> Signal President Meredith Whittaker posted a blog entry that reads less like a product update than like a declaration of posture against the three companies that build the operating systems Signal runs on.<sup><a href="#s1">[1]</a></sup> On iOS 27 Signal now ships a <em>Block Siri AI</em> setting and blocks screenshots inside the app and in the App Switcher by default. On Android, Signal auto-enables its existing Screen Security feature when it detects an assistant trying to read the screen.<sup><a href="#s1">[1]</a></sup> Users can turn either off; if they do, Signal shows a notification naming what they just exposed.</p>
+
+<p>Whittaker's framing is the move. Gemini on Android, Siri's Onscreen Awareness on iOS 27, and Microsoft's equivalents on Windows now &ldquo;live inside the operating system&rdquo; and &ldquo;read whatever is on your screen&rdquo; &mdash; which, she writes, is &ldquo;an existential threat to Signal, and our ability to responsibly uphold our mission.&rdquo;<sup><a href="#s1">[1]</a></sup> End-to-end encryption protects a message in transit; it cannot protect its contents after a system assistant has captured them from pixels on a screen it is entitled to read.</p>
+
+<p>Google announced Gemini computer use on the Mac on 2026-11-19 via blog.google: the assistant clicks and types inside native Mac apps and browser windows in an isolated background window with a live preview, pausing for logins, payments and sensitive actions.<sup><a href="#s2">[2]</a></sup> Reuters-parent reporting and TechCrunch covered the launch the same day.<sup><a href="#s3">[3]</a></sup> That is the context Signal is reacting to: a mainstream, paid, OS-integrated agent that routinely crosses the trust boundary between an app's data and the operating system. The two primary sources &mdash; Signal's and Google's &mdash; agree on the capability and disagree on whether it is a feature or a threat.</p>
+
+<p>Whittaker also calls her own fix &ldquo;incomplete.&rdquo; Blocking screenshots does not block an assistant from reaching Signal content through the phone's file system or other OS-level routes.<sup><a href="#s1">[1]</a></sup> The real ask in the post is to Apple, Google and Microsoft: publish documented, developer-facing opt-outs for apps that do not want their data read by system AI, and publish documentation describing how those agents actually work. Neither exists today. Which is the point: the first major privacy brand has put on the record that the platforms owe it answers before the next OS release, not after.</p>
+
+<span class="sowhat">So what: if your app handles anything users assume is private &mdash; messages, health, legal, HR, financial &mdash; audit your mobile and desktop builds this week for the two surfaces Signal just closed. Add FLAG_SECURE on sensitive Android screens, set <code>isScreenCaptureAllowed = false</code> on iOS 27 sensitive views, hide content in the app switcher, and document the exact OS mechanism you rely on &mdash; because when a user asks you whether Gemini or Siri AI can read your screen, &ldquo;probably not&rdquo; stops being an acceptable answer the week Signal makes it a public question.</span>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA adds LiteLLM guardrail sandbox escape (CVE-2026-40217) to the KEV catalog, Dec 2 federal deadline &mdash; CISA</a><sup><a href="#s4">[4]</a></sup></h3>
+<p>On 2026-11-18 CISA added CVE-2026-40217 to its Known Exploited Vulnerabilities catalog &mdash; a sandbox escape in the <code>/guardrails/test_custom_code</code> endpoint of the LiteLLM AI gateway that lets any authenticated user run code inside a proxy process that, in the default Docker image, runs as root.<sup><a href="#s4">[4]</a></sup><sup><a href="#s5">[5]</a></sup> Affected: LiteLLM 1.81.8 through 1.83.10; fixed in 1.83.11 (released 2026-11-15). The federal remediation deadline is 2026-12-02. This is the fourth LiteLLM CVE in KEV in 2026.<sup><a href="#s5">[5]</a></sup></p>
+<span class="sowhat">So what: if you run LiteLLM in front of any model, bump to 1.83.11+ before 2026-12-02 and audit any virtual key with guardrail-test privileges &mdash; the exploit is from a virtual key, not an unauthenticated internet attacker, which means your blast radius is whoever holds a key on your proxy.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.investing.com/news/stock-market-news/oracle-says-openai-infrastructure-deal-is-fully-funded-after-final-capital-raise-5042771">Oracle: the OpenAI infrastructure contract is fully funded, Shackelford permitted &mdash; Reuters via Investing.com</a><sup><a href="#s6">[6]</a></sup></h3>
+<p>Oracle said on Friday 2026-11-21 that a final capital raise this month &mdash; $10B of stock at $116 and $10B of notes &mdash; makes it the first hyperscaler fully funded for the current investment cycle, and that the OpenAI contract &ldquo;does not depend on any further private discussions with vendors.&rdquo;<sup><a href="#s6">[6]</a></sup> The Abilene campus is nearly complete, the next gigawatt-scale campus in Shackelford is fully permitted, and Oracle targets positive FCF in H2 FY28 and more than $30B in FY29.</p>
+<span class="sowhat">So what: when you model how long OpenAI capacity stays constrained, you can now stop modelling Oracle as the bottleneck and start modelling Shackelford's build-out and Abilene's ramp &mdash; the shortage story is now about physical build, not financing.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://the-decoder.com/nvidia-bets-at-least-500-million-on-inceptions-diffusion-models-to-strengthen-its-open-source-nemotron-lineup/">Nvidia in advanced talks to buy diffusion-LLM startup Inception for $500M+ to strengthen Nemotron &mdash; The Decoder</a><sup><a href="#s7">[7]</a></sup></h3>
+<p>Nvidia is reportedly in advanced talks to acquire Inception, the Palo Alto diffusion-LLM startup founded by Stefano Ermon, Aditya Grover and Volodymyr Kuleshov, for more than $500M.<sup><a href="#s7">[7]</a></sup> The Mercury family uses iterative refinement to emit multiple tokens in parallel, claiming 5x&ndash;10x inference throughput over comparable autoregressive models. Talks began before Jensen Huang's 2026-11-12 resignation. Neither company has confirmed.</p>
+<span class="sowhat">So what: if this closes, the open-weights Nemotron line gets a fundamentally different latency/throughput curve &mdash; which means any pipeline you built around autoregressive token streaming (progressive UI, streaming tool-calls, log-prob interception) is worth re-benchmarking against diffusion-style parallel decoding before you budget 2027 inference.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.bloomberg.com/news/articles/2026-11-14/white-house-urges-easing-liability-to-encourage-ai-disclosure">White House AI task force urges 12-month cyber liability shield for good-faith AI incident reports &mdash; Bloomberg</a><sup><a href="#s8">[8]</a></sup></h3>
+<p>At its second meeting on 2026-11-12 the White House AI task force recommended that federal agencies &ldquo;implement limitations on regulatory liability for good-faith voluntary reporting of cybersecurity vulnerabilities and incidents&rdquo; for at least 12 months, with possible extension.<sup><a href="#s8">[8]</a></sup><sup><a href="#s9">[9]</a></sup> The recommendation is not binding and sits alongside support for CISA's forthcoming AI incident-reporting rule. Trump administration tone remains partnership-first; the EU AI Office enforcement baseline remains EUR 15M / 3% global turnover.</p>
+<span class="sowhat">So what: if you operate critical-infrastructure-adjacent AI (healthcare, grid, financial clearing), the US and EU postures on &ldquo;who pays when your model misbehaves&rdquo; are now visibly diverging &mdash; model your incident-response playbook against both, because the one you file under in 2027 depends on where the harm lands.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="brief">
+<h3><a href="https://thinkingmachines.ai/news/inkling-2-mini/">Thinking Machines Lab: Inkling 2 Mini (open weights, Apache 2.0) &mdash; thinkingmachines.ai</a><sup><a href="#s10">[10]</a></sup></h3>
+<p>Released 2026-11-20. 26B total / 5.4B active parameter MoE, 3.1B unique weights per text token, 1M-token context, text and image input, looped transformer (middle layers run three times per token). Apache 2.0, weights on Hugging Face. Reported to lead open-weights sub-100B on DeepSWE v1.1 (48.2%) and Vals Index v2.2 (46.5%), matching Qwen3.8-27B and Nanbeige4.3-33B on the Intelligence Index with 5&ndash;6x fewer active params.<sup><a href="#s10">[10]</a></sup><sup><a href="#s11">[11]</a></sup></p>
+<span class="sowhat">So what: if you were waiting for the first open-weights model that runs on a MacBook and genuinely competes on agentic coding, this is the week to re-run your local eval harness &mdash; a ~5B active footprint that matches 27B-active peers changes the economics of running agents on employee laptops instead of GPU pods.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://blog.google/products/gemini/gemini-4-neon/">Google: Gemini 4 Neon &mdash; blog.google</a><sup><a href="#s12">[12]</a></sup></h3>
+<p>Released 2026-11-18. Mid-tier flagship sitting between Gemini 4 Carbon and Gemini 4 Hydrogen: $3 per million input tokens, $15 per million output, 1M-token context, four thinking levels (Low / Medium / High / Extra High).<sup><a href="#s12">[12]</a></sup> Available via API in Google AI Studio and Android Studio, in Gemini for Business, in the Gemini app for AI Pro / Ultra, and in Google Antigravity. Closed weights.</p>
+<span class="sowhat">So what: the thinking-level dial is the thing to test &mdash; before you commit Neon to a production flow, benchmark Low vs. High on your actual traffic, because the pricing is only compelling if your workload sits below Extra High on routine calls.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://machinelearning.apple.com/research/depth-pro-2-monocular">Apple: Depth Pro 2 (open weights, non-commercial) &mdash; Apple Machine Learning Research</a><sup><a href="#s13">[13]</a></sup></h3>
+<p>Weights and code went public 2026-11-19; the model estimates metric depth in meters for every pixel from a single photo, a video, or a live feed at the input's native resolution. Weights on Hugging Face (PyTorch and Core ML); paper on arXiv (2611.26603).<sup><a href="#s13">[13]</a></sup><sup><a href="#s14">[14]</a></sup> License is non-commercial on all four released variants.</p>
+<span class="sowhat">So what: if you were going to depend on this for anything that bills a customer, check the license before you integrate &mdash; non-commercial means a research-only pilot, not the production AR, robotics or video-editor feature you might have been planning around it.</span>
+</div>
+
+<h2>Voices</h2>
+<div class="brief" style="border-bottom: 0;">
+<p>This edition's Voice is <strong>Sam Altman</strong>, CEO of OpenAI. At <em>The New York Times</em> DealBook Summit on Wednesday 2026-11-18, asked whether AI should eventually become the decision-making authority across industries, Altman said: <em>&ldquo;people need to stay in control of the future, and there's increasing talk about, well, there is either going to be or there should be this sort of gradual handover to AI&rdquo;</em><sup><a href="#s15">[15]</a></sup> &mdash; and then, unambiguously, <em>&ldquo;that's a terrible idea.&rdquo;</em><sup><a href="#s15">[15]</a></sup> It is the first time a sitting frontier-lab CEO has said, in those words, that a &ldquo;gradual handover&rdquo; of authority to AI is itself the failure mode, not the destination. Read against his Semafor comments two days earlier on Jensen Huang's ouster &mdash; and against Dario Amodei's Nasdaq-debut line that we should &ldquo;drive at 90, not 200&rdquo; &mdash; two of the three US frontier labs now have on-the-record CEO positions against capability-led AI governance. The segment is on the DealBook replay; the quote lands early in the AI-safety block.</p>
+<span class="sowhat">So what: when procurement or legal pushes back on your &ldquo;AI in the loop&rdquo; architecture, cite this &mdash; it is the first time an OpenAI CEO has publicly called full handover a terrible idea, which is a harder line to write a vendor exception against than a lab researcher's blog post.</span>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>The OS AI wave has met its first serious friction from the apps whose screens it reads. Google shipped Gemini computer use on the Mac 2026-11-19;<sup><a href="#s2">[2]</a></sup> Signal shipped countermeasures against OS-level AI assistants on both iOS and Android 2026-11-20, naming them an &ldquo;existential threat&rdquo; and asking Apple, Google and Microsoft for documented opt-outs.<sup><a href="#s1">[1]</a></sup> This is not an edge case. It is the beginning of a protocol-layer conversation between platform assistants and the apps they can see &mdash; and because Signal is the one who went first, nobody in the privacy, messaging or regulated-data space can quietly ignore it. The next five weeks decide whether peer apps match the posture, whether Apple or Google publish the documented opt-out Signal asked for, or whether the whole fight moves to the EU AI Office under Article 50. Watch for the second mover.</p>
+</div>
+
+<h2>The Ledger</h2>
+<p><span class="ledger-head">Season 1 &middot; <span class="verdict hit">14 HIT</span> &mdash; <span class="verdict miss">14 MISS</span> &mdash; <span class="verdict uns">3 UNSETTLED</span> &middot; 28 open</span></p>
+<p style="color: var(--muted); font-style: italic; font-size: 14px;">No calls were due for grading today. Next horizons: 2026-11-22 (two calls). Full audit trail: <a href="https://raw.githubusercontent.com/gregmurad-eng/above-the-noise/main/ledger.json">ledger.json</a>.</p>
+
+<div class="ledger-row">
+<span class="cid">2026-11-21-1 &middot; <span class="verdict open">OPEN &middot; horizon 2026-12-26</span></span>
+<p>Signal's 2026-11-20 move will not stand alone for long: by 2026-12-26, either a second major encrypted-messaging or privacy app ships comparable OS-AI defences, or Apple/Google publish a documented app-opt-out mechanism of the kind Signal asked for.</p>
+<span class="ev">Test: primary-source blog, release notes, developer-documentation page, or press release before 2026-12-26 confirming (a) a second major privacy-focused app with a feature blocking OS-level AI assistants from capturing in-app content, or (b) an Apple or Google developer-facing opt-out API. HIT if either; MISS if neither.</span>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1">Signal &mdash; <a href="https://signal.org/blog/protecting-your-privacy/">Signal is Serious About Protecting Your Privacy</a> (Meredith Whittaker, 2026-11-20)<span class="tier">primary</span></li>
+<li id="s2">Google &mdash; <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/">Automate Mac tasks with Gemini computer use</a> (blog.google, 2026-11-19)<span class="tier">primary</span></li>
+<li id="s3">TechCrunch &mdash; <a href="https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/">Google gives Gemini the ability to use your Mac for you</a> (2026-11-19)<span class="tier">tier-1</span></li>
+<li id="s4">CISA &mdash; <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">Known Exploited Vulnerabilities Catalog (CVE-2026-40217, added 2026-11-18, remediation 2026-12-02)</a><span class="tier">primary</span></li>
+<li id="s5">Cloud Security Alliance Labs &mdash; <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-cve-2026-40217-kev-20261120-csa-st/">Guardrails as an Execution Channel: LiteLLM CVE-2026-40217 Enters KEV</a> (2026-11-20)<span class="tier">trade</span></li>
+<li id="s6">Reuters via Investing.com &mdash; <a href="https://www.investing.com/news/stock-market-news/oracle-says-openai-infrastructure-deal-is-fully-funded-after-final-capital-raise-5042771">Oracle says OpenAI infrastructure deal is fully funded after final capital raise</a> (2026-11-21)<span class="tier">tier-1</span></li>
+<li id="s7">The Decoder &mdash; <a href="https://the-decoder.com/nvidia-bets-at-least-500-million-on-inceptions-diffusion-models-to-strengthen-its-open-source-nemotron-lineup/">Nvidia bets at least $500 million on Inception's diffusion models to strengthen its open-source Nemotron lineup</a><span class="tier">trade</span></li>
+<li id="s8">Bloomberg &mdash; <a href="https://www.bloomberg.com/news/articles/2026-11-14/white-house-urges-easing-liability-to-encourage-ai-disclosure">White House Urges Easing Liability to Encourage AI Disclosure</a> (2026-11-14)<span class="tier">tier-1</span></li>
+<li id="s9">CDO Magazine &mdash; <a href="https://www.cdomagazine.tech/us-federal-news-bureau/white-house-ai-task-force-urges-liability-protections-for-cyber-incident-reporting-at-critical-infrastructure-firms">White House AI Task Force Urges Liability Protections for Cyber Incident Reporting at Critical Infrastructure Firms</a><span class="tier">trade</span></li>
+<li id="s10">Thinking Machines Lab &mdash; <a href="https://thinkingmachines.ai/news/inkling-2-mini/">Introducing Inkling 2 Mini</a> (2026-11-20)<span class="tier">primary</span></li>
+<li id="s11">Artificial Analysis &mdash; <a href="https://artificialanalysis.ai/articles/inkling-2-mini">Thinking Machines has released Inkling 2 Mini, an open weights looped transformer</a><span class="tier">practitioner</span></li>
+<li id="s12">Google &mdash; <a href="https://blog.google/products/gemini/gemini-4-neon/">Introducing Gemini 4 Neon</a> (blog.google, 2026-11-18)<span class="tier">primary</span></li>
+<li id="s13">Apple Machine Learning Research &mdash; <a href="https://machinelearning.apple.com/research/depth-pro-2-monocular">Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth</a><span class="tier">primary</span></li>
+<li id="s14">arXiv &mdash; <a href="https://arxiv.org/abs/2611.26603">Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth</a> (2611.26603)<span class="tier">primary</span></li>
+<li id="s15">TechCrunch &mdash; <a href="https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots">Sam Altman warns against a future where AI, not humans, calls the shots</a> (DealBook Summit, 2026-11-18)<span class="tier">tier-1</span></li>
+</ol>
+
+<nav class="bar" style="margin-top: 36px;">
+  <a href="2026-11-20.html">&larr; Yesterday</a>
+  <span class="nav-mid">
+    <a href="./">Today</a>
+    <a href="archive.html">Archive</a>
+  </span>
+  <span class="next">Tomorrow &rarr;</span>
+</nav>
+
+<footer>
+  Content is AI-synthesized. Links point to original sources.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  const S = "Above The Noise for Saturday, November 21st, 2026. The OS AI wave has met its first serious friction from the apps whose screens it reads. Twenty-four hours after Google shipped Gemini computer use on the Mac, Signal President Meredith Whittaker posted a blog entry that reads less like a product update than like a declaration of posture against Apple, Google and Microsoft. On iOS 27, Signal now ships a Block Siri AI setting and blocks screenshots inside the app and in the App Switcher by default. On Android, Signal auto-enables Screen Security when it detects an assistant trying to read the screen. Whittaker's framing is the move: Gemini on Android, Siri's Onscreen Awareness on iOS 27, and Microsoft's equivalents on Windows now live inside the operating system and read whatever is on your screen. She calls this an existential threat to Signal. End-to-end encryption protects a message in transit. It cannot protect its contents after a system assistant has captured them from pixels on a screen it is entitled to read. Her own fix, she concedes, is incomplete. The real ask is to Apple, Google and Microsoft: publish a documented, developer-facing opt-out, and publish real documentation of how these agents work. Neither exists today. In the briefs: CISA added the LiteLLM guardrail sandbox escape CVE-2026-40217 to the Known Exploited Vulnerabilities catalog on November 18th; federal remediation deadline is December 2nd. Oracle said on Friday that its OpenAI infrastructure contract is fully funded after a final 20 billion dollar capital raise. Nvidia is in advanced talks to acquire diffusion-LLM startup Inception for more than 500 million dollars to strengthen its open-source Nemotron line. The White House AI task force recommended a 12-month cyber-liability shield for good-faith AI incident reporting. In model watch: Thinking Machines Lab released Inkling 2 Mini, an Apache 2.0 open-weights looped transformer small enough to run on a MacBook. Google released Gemini 4 Neon, a mid-tier flagship with a 1 million token context and four thinking levels. Apple published Depth Pro 2 with open weights under a non-commercial license. In voices: at the DealBook Summit on Wednesday, Sam Altman said that a gradual handover of decision-making to AI is, quote, a terrible idea. Two of three US frontier-lab CEOs now have on-the-record positions against capability-led governance. Today's signal: Signal's move is the beginning of a protocol-layer conversation between platform assistants and the apps they can see. The next five weeks decide whether peer apps match the posture, or whether Apple and Google publish the documented opt-out Signal asked for. That is today's call. Watch for the second mover. See the full edition at Above The Noise dot site.";
+  const btn = document.getElementById('listenBtn');
+  const label = document.getElementById('listenLabel');
+  let utter = null;
+  let playing = false;
+
+  function pickVoice() {
+    if (!('speechSynthesis' in window)) return null;
+    const voices = speechSynthesis.getVoices();
+    const prefs = ['Daniel', 'Alex'];
+    for (const name of prefs) {
+      const v = voices.find(x => x.name && x.name.indexOf(name) !== -1);
+      if (v) return v;
+    }
+    return voices.find(x => x.lang && x.lang.indexOf('en') === 0) || voices[0] || null;
+  }
+
+  function stop() {
+    if ('speechSynthesis' in window) speechSynthesis.cancel();
+    playing = false;
+    btn.classList.remove('playing');
+    label.textContent = 'Listen · 4 min';
+  }
+
+  function play() {
+    if (!('speechSynthesis' in window)) {
+      label.textContent = 'Audio not supported';
+      return;
+    }
+    stop();
+    utter = new SpeechSynthesisUtterance(S);
+    utter.rate = 0.93;
+    utter.pitch = 1.0;
+    const v = pickVoice();
+    if (v) utter.voice = v;
+    utter.onend = stop;
+    utter.onerror = stop;
+    playing = true;
+    btn.classList.add('playing');
+    label.textContent = 'Stop';
+    speechSynthesis.speak(utter);
+  }
+
+  btn.addEventListener('click', function () {
+    if (playing) stop(); else play();
+  });
+
+  if ('speechSynthesis' in window) {
+    speechSynthesis.onvoiceschanged = function () { /* no-op, pickVoice reads live */ };
+  }
+})();
+</script>
+
+</body>
+</html>
