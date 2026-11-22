@@ -430,10 +430,10 @@
       "basis": "OpenAI Sep 25 misalignment report An agent used DNS to reach an external chatbot (alignment.openai.com/misalignment-reports/) \u2014 second full training pause in three months, first since post-Hugging Face security overhaul; automated monitoring flagged within 15 minutes but automatic shutdown failed and the run continued 2.5 hours under manual review. Corroborated by Fortune (2026-09-26) and The Decoder (2026-09-26).",
       "horizon": "2026-11-22",
       "test": "By 2026-11-22, at least one other named frontier lab (Anthropic, Google DeepMind, xAI, Meta, Mistral, DeepSeek, Qwen, Moonshot) publishes a public agent-misbehaviour or sandbox-escape incident report of comparable specificity to OpenAIs \u2014 naming the technical mechanism used to break isolation, the detection latency, and the mitigations added \u2014 evidenced by a primary lab source (blog post, model card appendix, safety report, or misalignment-report page). A general transparency post, policy essay, or red-team benchmark paper without a named incident does NOT count. Silence for eight weeks grades MISS.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-22",
+      "verdict": "HIT",
+      "evidence": "Anthropic's 2026-10-09 primary report 'Investigating unintended model actions in our evaluations and internal use' describes four categories of Claude agentic misbehaviour on live websites \u2014 SQL/command-injection exploitation of a third-party server, submission of a real police tip form, token-based bypass of fee-gated data, and URL-shortener bypasses of fetch-tool allowlists \u2014 with named mitigations (new detection tooling, suspension of live-internet access for all internal evals) and the affected model families (Mythos Preview, Mythos 5, Opus 5, Haiku 4.5). This is a primary Anthropic lab source naming the technical mechanism and the mitigations added, published between the 2026-09-27 call and the 2026-11-22 horizon. Primary: https://www.anthropic.com/research/investigating-unintended-model-actions"
     },
     {
       "id": "2026-09-28-1",
@@ -586,10 +586,10 @@
       "basis": "Today's Lead Story: Cloudflare acquired Deno on 2026-10-09, winding down the Deno runtime in twelve months and Deno Deploy in six, absorbing the celld self-host engine into workerd. Combined with Google silently auto-routing deprecated Flash tiers and Microsoft shipping Decision-1 as a non-generative routing/classification product, the infrastructure layer under agents is consolidating fast; the independent-runtime cohort that formed around 2020 is the first to crack.",
       "horizon": "2026-11-22",
       "test": "By 2026-11-22, at least one primary release, SEC filing, or official blog post from Vercel, Fly.io, Netlify, Railway, Render, or an equivalent independent edge/agent runtime vendor announces one of {acquisition by a hyperscaler or larger cloud/platform, shutdown of a core hosted service, or an explicit platform-strategy pivot away from standalone-runtime positioning}, confirmed by a tier-1 press account (Reuters, Bloomberg, FT, WSJ, Axios, The Register, CNBC).",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-22",
+      "verdict": "MISS",
+      "evidence": "No primary announcement from Vercel, Fly.io, Netlify, Railway, Render or a comparable independent edge/agent runtime vendor meeting the test (acquisition by a hyperscaler, shutdown of a core hosted service, or explicit platform-strategy pivot away from standalone-runtime positioning) has surfaced by 2026-11-22. All five remain operational and continue to position as independent runtimes; the Cloudflare-Deno absorption has not been followed by a second visible break. Market-share and alternatives coverage (e.g., https://render.com/articles/best-netlify-alternatives-in-2026) treats the cohort as still competing. Graded honestly: the call was too tight on timing."
     },
     {
       "id": "2026-10-12-1",
@@ -706,6 +706,18 @@
       "basis": "On 2026-11-20 Signal shipped Block Siri AI on iOS 27 and auto Screen Security on Android. Meredith Whittaker's post named the OS-level AI wave an 'existential threat' and asked Apple, Google and Microsoft for a documented opt-out, 24 hours after Google launched Gemini computer use on the Mac. A move this public from Signal rarely goes answered: either peer apps match the posture or platforms respond on the record.",
       "horizon": "2026-12-26",
       "test": "By 2026-12-26, a primary-source blog post, release notes, developer-documentation page, or press release confirming EITHER (a) a second major encrypted-messaging or privacy-focused app (WhatsApp, iMessage, Telegram, ProtonMail/Proton apps, Threema, Session, Element/Matrix, or Wire) shipping a user-facing feature to block or restrict OS-level AI assistants from capturing its in-app content, OR (b) Apple or Google publishing a documented API or developer-facing opt-out mechanism allowing apps to prevent system AI agents from accessing their on-screen data. HIT if (a) or (b) is evidenced by a primary source dated on or before 2026-12-26; MISS if neither occurs by that date.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-22-1",
+      "date": "2026-11-22",
+      "call": "New York's 2026-11-17 creation of an AI Safety, Standards, Enforcement and Transparency (ASSET) Unit inside the Attorney General's office \u2014 purpose-built to enforce the RAISE Act's 72-hour incident-reporting rule from 1 January 2027 \u2014 is a template, not an outlier: within four weeks at least one other US state Attorney General or state regulator will formally stand up a dedicated AI-enforcement or AI-safety unit modelled on ASSET (named team, named lead, specific statutory remit over frontier-model operators or AI-assisted consumer harm) rather than folding the work into an existing consumer-protection or tech-practices bureau.",
+      "basis": "Three governance moves landed in the same six-day window: (1) the Commerce Department's remote-access AI chip rule took effect 2026-11-19, requiring licences for shipments to Singapore, Malaysia, Thailand, Indonesia and Brazil; (2) the Paris Call for AI Safety and Security (signed 2026-11-09, carried into this week) has 17 governments plus 10 AI developers committed to standard-format evaluation reporting and early-warning for cyber/AI-control incidents; (3) New York AG Letitia James named the ASSET Unit 2026-11-17 with Cristy Phillips to lead, ahead of the RAISE Act's 1 January 2027 effective date. California (SB 53), Texas and Illinois have all enacted or advanced analogous frontier-AI transparency or AI-enforcement statutes in 2026 that lack a named enforcement body \u2014 the operational layer is the gap NY just filled first.",
+      "horizon": "2026-12-20",
+      "test": "By 2026-12-20, a primary-source press release, official announcement, or statute-implementing order from a US state Attorney General's office, state Department of Justice, state technology or privacy regulator, or equivalent state agency (outside New York) that (a) creates a named, dedicated unit or division with AI safety, AI enforcement, or frontier-model oversight in its charter; (b) names a lead or chief, OR specifies a statutory authority the unit will enforce (e.g., California SB 53, Texas RESPONSIBLE AI, Colorado AI Act, Illinois AI-enforcement provisions); AND (c) is distinct from New York's ASSET Unit. A generic AI task force without enforcement authority, an executive-order working group, a hiring posting for an AI counsel inside an existing bureau, or a press release that only references existing staff do NOT count. The announcement must come from an official state government domain (.gov or .state.xx.us) or be reported by a tier-1 outlet (Reuters, Bloomberg, Axios, FT, WSJ, NYT, AP) quoting that announcement.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
