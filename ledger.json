@@ -722,6 +722,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-23-1",
+      "date": "2026-11-23",
+      "call": "The OpenRouter and Dragos disclosures of 22 November reframe inference as a supply-chain problem: 'Zero Data Retention' turned out to be a contract claim, not a measurable property, with roughly 67 percent of ZDR-flagged prompts still scraped by a Chinese lab across three provider breaches. The visible next move is a shift from flag-based trust to active monitoring: other gateways and enterprise inference buyers will have to show evidence rather than promises.",
+      "basis": "On 2026-11-22 OpenRouter off-boarded three providers and stripped 125 endpoints from ZDR eligibility; HD Moore at Dragos published five months of canary-token methodology on 2026-11-19; Phala, Together AI and Novita have each already published their own incident notices.",
+      "horizon": "2026-12-26",
+      "test": "By 2026-12-26, at least ONE of the following is evidenced by a primary source dated on or before that date: (a) a second AI inference gateway or model-router comparable to OpenRouter publishes a security advisory, incident report, or policy update that off-boards a provider, strips endpoints from Zero-Data-Retention eligibility, or discloses canary or active-probe findings against upstream providers; (b) an enterprise inference buyer (a named frontier lab, hyperscaler, cloud, or large enterprise) publishes an audit, blog post, or SEC filing announcing a canary-token or active-probing programme against third-party inference providers; (c) a frontier-lab acceptable-use policy, trust-centre page, or product update names reseller-marketplace monitoring, inference-path attestation, or verified-forwarding as a new requirement.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
