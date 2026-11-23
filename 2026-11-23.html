@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise &mdash; Monday, 23 November 2026</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f65;
+    --miss: #c76b5a;
+    --border: rgba(201, 168, 76, 0.18);
+    --card: rgba(255, 255, 255, 0.015);
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 28px 72px;
+  }
+  header.masthead {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 22px;
+    margin-bottom: 26px;
+  }
+  h1 {
+    font-size: 40px;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .tagline {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    letter-spacing: 0.4px;
+    margin: 0 0 14px;
+  }
+  .dateline {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 20px 0 32px;
+    font-size: 13px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+  }
+  .bar a { color: var(--accent); text-decoration: none; white-space: nowrap; padding: 10px 2px; }
+  .bar a:hover { text-decoration: underline; }
+  .bar .next { color: var(--muted); white-space: nowrap; padding: 10px 2px; }
+  .nav-mid { display: inline-flex; gap: 18px; align-items: center; }
+  .nav-mid a { margin: 0 9px; }
+  h2 {
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin: 42px 0 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    font-weight: normal;
+  }
+  h3 {
+    font-size: 20px;
+    color: var(--text);
+    margin: 22px 0 10px;
+    font-weight: normal;
+    line-height: 1.35;
+  }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--border); }
+  h3 a:hover { color: var(--accent); }
+  p { margin: 10px 0 16px; }
+  a { color: var(--accent); }
+  .lead {
+    background: var(--card);
+    border-left: 2px solid var(--accent);
+    padding: 20px 22px;
+    margin: 18px 0 24px;
+  }
+  .lead h3 { margin-top: 0; }
+  .brief {
+    padding: 14px 0 18px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .brief:last-child { border-bottom: 0; }
+  .brief p { margin: 8px 0 10px; }
+  .signal {
+    background: rgba(201, 168, 76, 0.07);
+    border: 1px solid var(--border);
+    padding: 20px 22px;
+    margin: 18px 0 24px;
+    font-style: italic;
+  }
+  .signal p { margin: 0; }
+  .sowhat {
+    color: var(--accent);
+    font-style: italic;
+    display: block;
+    margin-top: 6px;
+    font-size: 15.5px;
+  }
+  sup a { color: var(--muted); text-decoration: none; font-size: 11px; padding: 6px 4px; margin: -6px -4px; }
+  sup a:hover { color: var(--accent); }
+  .ledger-head { font-size: 15px; color: var(--muted); letter-spacing: 0.5px; }
+  .verdict { font-weight: bold; letter-spacing: 0.4px; }
+  .verdict.hit { color: var(--accent); }
+  .verdict.miss { color: var(--miss); }
+  .verdict.uns { color: var(--muted); }
+  .ledger-item { border-left: 2px solid var(--border); padding: 4px 0 4px 14px; margin: 14px 0; }
+  .ledger-item.hit { border-left-color: var(--accent); }
+  .ledger-item.miss { border-left-color: var(--miss); }
+  .ledger-item.open { border-left-color: var(--muted); }
+  .listen {
+    margin: 22px 0 10px;
+  }
+  .listen button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 11px 20px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .listen button:hover { background: rgba(201, 168, 76, 0.1); }
+  .listen .meta { color: var(--muted); font-size: 13px; margin-left: 12px; font-style: italic; }
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+  ol.sources { padding-left: 22px; font-size: 15px; }
+  ol.sources li { margin: 10px 0; }
+  ol.sources .tier {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    margin-left: 4px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+  ol.sources .tier.primary { color: var(--accent); border-color: var(--accent); }
+  ol.sources .tier.tier1 { color: var(--text); border-color: var(--text); }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .wrap { padding: 22px 16px 60px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 12px; letter-spacing: 1.8px; }
+    h3 { font-size: 18px; }
+    .bar { font-size: 12px; letter-spacing: 0.9px; }
+    .nav-mid { gap: 10px; }
+    .nav-mid a { margin: 0 4px; }
+    .dateline { font-size: 12px; }
+    .tagline { font-size: 13px; }
+    .sowhat { font-size: 15px; }
+    .listen button { padding: 12px 18px; font-size: 13px; }
+    ol.sources { font-size: 14px; }
+    .ledger-head { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Above The Noise</h1>
+  <p class="tagline">AI &amp; Tech &middot; Signal over noise</p>
+  <p class="dateline">Monday, 23 November 2026</p>
+</header>
+
+<nav class="bar">
+  <a href="2026-11-22.html">&larr; YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW &rarr;</span>
+</nav>
+
+<div class="listen">
+  <button id="playBtn" onclick="toggleSpeech()">&#9654; LISTEN</button>
+  <span class="meta" id="voiceMeta">voice: loading&hellip;</span>
+</div>
+
+<h2>Lead Story</h2>
+<div class="lead">
+<h3><a href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/">OpenRouter off-boards three AI hosts after researchers plant two million canary prompts &mdash; and show &ldquo;Zero Data Retention&rdquo; was not retained &mdash; OpenRouter &amp; Dragos</a></h3>
+<p>On Saturday 22 November, inference router OpenRouter announced that it had off-boarded three upstream providers, stripped 125 endpoints from Zero-Data-Retention eligibility, and notified every potentially affected customer.<sup><a href="#s1">[1]</a></sup> The trigger was a five-month experiment by HD Moore and his team at Dragos, published on 19 November, in which roughly two million prompts carrying unique canary tokens &mdash; AWS keys, trackable DNS names, one-shot URLs &mdash; were routed through live production inference endpoints and then watched for who called the bait.<sup><a href="#s2">[2]</a></sup> Three providers showed evidence of data exposure. The earliest breach reached back to mid-July. On one reseller marketplace, sellers advertised popular models at the lowest price, quietly enabled request logging, and sold what passed through.<sup><a href="#s3">[3]</a></sup></p>
+<p>The ugliest finding is not the thefts. It is the policy breach. One unidentified Chinese AI lab fetched the secret links from more than half of the prompts sent to its models between July and October &mdash; including about two-thirds of the prompts that had been explicitly tagged Zero Data Retention or no-data-collection.<sup><a href="#s2">[2]</a></sup> On the public internet, the ZDR flag looked like a privacy guarantee. Inside the supply chain, it was closer to a sticker. Phala, Together AI and Novita have each already published their own incident notices confirming the affected windows; a fourth provider, Atlas Cloud, is named in OpenRouter's post.<sup><a href="#s1">[1]</a></sup><sup><a href="#s4">[4]</a></sup></p>
+<p>The architectural lesson is more important than the four names. The modern AI stack is a chain: a developer calls a gateway, the gateway routes to a provider, the provider sometimes resells capacity from a sub-provider, and each handoff has its own logging posture, its own key rotation, its own employee with shell access. Dragos's work shows that contract flags do not survive that many hops. The Hacker News framed this bluntly as a &ldquo;prompt theft&rdquo; story;<sup><a href="#s3">[3]</a></sup> the more useful framing for builders is that inference is now a supply-chain-security problem, and &ldquo;ZDR&rdquo; is a claim that needs active verification &mdash; canary tokens, path probing, or vetted-provider allowlists &mdash; not a checkbox in an admin UI.</p>
+<span class="sowhat">So what: treat every third-party inference endpoint your product calls as a potential logger until you have evidence otherwise &mdash; seed your own cheap canary prompts on each route this week, keep a short allowlist of providers who publish incident disclosures of this shape, and if a regulated workload is sitting on a &ldquo;ZDR&rdquo; flag alone, move it behind a first-party key before your next SOC-2 cycle.</span>
+</div>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://www.federalregister.gov/documents/2026/11/19/2026-26655/">US Commerce AI-chip &ldquo;remote access&rdquo; rule took effect last Thursday, requiring overseas data centres to license their largest tenants &mdash; Lexology &amp; Ashurst / Perkins Coie</a></h3>
+<p>BIS's interim final rule amending the Export Administration Regulations came into force on 19 November. The new EAR Section 744.24 requires a US licence when an exporter has knowledge (or reason to know) that advanced AI chips will reach any data centre &mdash; wherever located &mdash; providing direct or indirect access of more than 12 million aggregate Total Processing Performance. Indonesia, Malaysia, Singapore, Thailand and Brazil are named as new covered destinations; non-US providers that were already supplying restricted entities have 90 days to come forward for a licence.<sup><a href="#s5">[5]</a></sup><sup><a href="#s6">[6]</a></sup></p>
+<span class="sowhat">So what: if your product orchestrates inference across a multi-region cloud footprint that touches Singapore, Malaysia, Indonesia, Thailand or Brazil on non-US-subsidiary capacity, your procurement team has until mid-February to either confirm a licence path or re-route &mdash; &ldquo;we thought it only applied to China&rdquo; is not a defence under the new 12M-TPP threshold.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.cnbc.com/2026/11/17/">Nvidia confirmed on last week's earnings call that it has stopped shipping licensed Hopper-generation chips to China &mdash; Business Day / Gulf Business</a></h3>
+<p>On Tuesday 17 November's FY2026 quarterly call, interim CEO Colette Kress said Nvidia sold $2.4 billion of licensed Hopper-generation data-centre product to China in the quarter ending 25 October, but has no current plans for further shipments.<sup><a href="#s7">[7]</a></sup><sup><a href="#s8">[8]</a></sup> Reporting on the sidelines put roughly 600,000 H200 chips in Hong Kong awaiting mainland approval that never arrived. The halt is being read as Nvidia pre-empting further BIS action rather than complying with one; the company did not commit to resuming shipments under any scenario.</p>
+<span class="sowhat">So what: if your capacity plan for 2027 assumes Chinese demand continues to pull hardware away from the rest of the market, re-price it &mdash; the same silicon is now looking for a Western data-centre home, and Hopper-class capacity on non-Chinese clouds should get slightly cheaper or easier to book over the next two quarters.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://replit.com/missions">Replit shipped Missions last week &mdash; agent-swarm work priced as an outcome and a spending cap, not as a seat &mdash; Replit</a></h3>
+<p>Replit's Missions, launched 17 November, lets a buyer set a goal, a hard budget, and an approvals list, and then runs a swarm of agents that plan, build, test and self-grade against success criteria. On a 13-task NumPy benchmark, Replit reported a 32-agent swarm hitting 19x the single-agent speedup;<sup><a href="#s9">[9]</a></sup> internally, the team used Missions to build DataCat, an application-monitoring platform shipped in two days for about $3,000 in agent spend, now open-sourced.<sup><a href="#s9">[9]</a></sup> The pricing model &mdash; dollars-per-mission, not seats-per-month &mdash; is the structural move; the benchmark numbers are secondary.</p>
+<span class="sowhat">So what: if you sell agent work by the seat, the business you are competing with is now priced by the outcome and auditable against a budget line &mdash; rehearse a procurement conversation where the buyer's finance team asks for a dollar cap per deliverable and a receipt, because by Q2 at least one of your enterprise RFPs will.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://openai.com/chatgpt/sales/">OpenAI launched ChatGPT for Sales with 30+ partner plugins and persistent &ldquo;dots&rdquo; agents for deal monitoring &mdash; OpenAI</a></h3>
+<p>Also on 17 November, OpenAI released ChatGPT for Sales, bundling account research, meeting prep, CRM write-back and follow-up into a single surface, with first-party plugins for Salesforce, HubSpot, Gong, Clay and Outreach among more than thirty launch partners. The &ldquo;dots&rdquo; agents &mdash; persistent, between-conversation monitors &mdash; watch connected tools and surface prepared next steps the moment a seller returns.<sup><a href="#s10">[10]</a></sup> The Sales plugin ships across all ChatGPT tiers, including Free, which puts the commodity version of sales-research AI on the desk of every incumbent vendor's customer base.</p>
+<span class="sowhat">So what: if your product sells into SDR or AE teams on &ldquo;we research prospects automatically,&rdquo; your demo is now competing with a free plugin inside the buyer's chat window &mdash; retool the pitch around the integration or the compliance posture, because the research itself is no longer a wedge.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.nga.org/">National Governors Association released a shared-principles framework for state AI regulation on Saturday &mdash; NGA (via PYMNTS)</a></h3>
+<p>On 22 November the National Governors Association &mdash; led by chair Wes Moore of Maryland and vice-chair Mike Braun of Indiana &mdash; released a set of principles for state AI regulation, timed to the new Congress convening in January. The framework names innovation-and-safety balance, human control, worker-and-consumer protection, and fair competition without favouring large incumbents; New York and California are both cited as live enforcement bellwethers.<sup><a href="#s11">[11]</a></sup> It is a bipartisan signal that governors do not expect federal preemption, and that the fifty-state patchwork will be the operating environment for AI product teams through at least 2027.</p>
+<span class="sowhat">So what: if your compliance posture still assumes a single federal AI regime is coming to supersede California and New York, drop that assumption &mdash; the governors have now said out loud that they will not wait, which means the 2027 deployment surface you need to design for is fifty jurisdictions concurrent, not one federal one.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="brief">
+<h3><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">GPT-6.2 Astra &amp; Sol &mdash; OpenAI &mdash; 17 November</a></h3>
+<p>Astra is the first externally released OpenAI model to meet the lab's own &ldquo;High&rdquo; threshold for AI self-improvement &mdash; defined as &ldquo;equivalent to giving every OpenAI researcher an additional, highly capable research engineer.&rdquo;<sup><a href="#s12">[12]</a></sup> Astra: $8 input / $0.40 cached / $40 output per million, a 20% cut on inputs and outputs and a 60% cached-input cut. Sol holds the GPT-6.1 Sol rates at $2 / $0.10 / $10. Context window is not named in the post. Both are available in ChatGPT Work, Codex, and the API; both ship an Ultrafast mode. Classifications are self-reported.</p>
+<span class="sowhat">So what: the cached-input price cut is the actionable half &mdash; if your Astra workload has any stable preamble (system prompt, retrieved corpus, instruction stack), the caching discount reshapes unit economics faster than any benchmark on the page; the &ldquo;High self-improvement&rdquo; label is for your legal team's file, not your roadmap.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">Gemini 4 Neon &mdash; Google DeepMind &mdash; 18 November</a></h3>
+<p>Gemini 4 Neon, the middle tier of the Gemini 4 family, prices at $3 input / $0.15 cached input / $15 output per million, with a 1M-token context window.<sup><a href="#s13">[13]</a></sup> Google reports it ranks #1 overall on the Artificial Analysis Coding Agent Index at 58.6 and scores 65.2% on Terminal-Bench 4.1; a SWE-sweep mini-harness score of 39.0% inside Google Antigravity is called &ldquo;state-of-the-art.&rdquo; Four thinking levels (including xhigh) let callers trade latency against intelligence per request. Available in the Gemini API, Antigravity, the Gemini app for paid tiers, and the Fairwind Program for cybersecurity partners.</p>
+<span class="sowhat">So what: if you run coding agents in production, Neon's price-per-task on Terminal-Bench puts the whole Gemini-4 family inside the band where you can justify a one-week shadow eval on your real traffic &mdash; don't migrate on the leaderboard, migrate on the eval.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://www.anthropic.com/claude/fable">Claude Fable 5.2 &mdash; Anthropic &mdash; 9 November (still the freshest Anthropic release)</a></h3>
+<p>Fable 5.2, released 9 November and now the default general-availability Anthropic model, lists at $8 / $40 per million input / output (20% below Fable 5.1), with a 1M context window, 128K maximum output, and an optional fast mode at $16 / $80. Anthropic reports 30% faster standard output generation vs 5.1.<sup><a href="#s14">[14]</a></sup> Available across the Claude apps, Claude Platform, Amazon Bedrock, Google Cloud and Microsoft Foundry; API model ID claude-fable-5-2. No new model has shipped from Anthropic in the past 48 hours; the week's Anthropic news was the IPO, not a release.</p>
+<span class="sowhat">So what: re-run your Anthropic unit-cost math against the new standard rate &mdash; the 20% input-and-output cut combined with the fast-mode escape valve is the first time you can hold the same budget line while enabling fast mode on your latency-sensitive paths.</span>
+</div>
+
+<h2>Voices</h2>
+<div class="brief" style="border-bottom: 0;">
+<p>This edition's Voice is <strong>Yann LeCun</strong>, Chief AI Scientist at Meta and now Executive Chairman of the newly spun-out Advanced Machine Intelligence Labs. At Semafor's <em>Silicon Valley &amp; The World</em> event in San Francisco on Tuesday 17 November, interviewed by Shelly Banjo, LeCun argued that the current moment where AI favours cyberattackers is <em>&ldquo;just a short period of transition&rdquo;</em><sup><a href="#s15">[15]</a></sup> &mdash; after which software will be, in his words, <em>&ldquo;hardened&rdquo;</em> by AI into an era of <em>&ldquo;unprecedented safety of software systems.&rdquo;</em><sup><a href="#s15">[15]</a></sup> It is a position worth sitting with for a week where the OpenRouter disclosures suggested the opposite, where Anthropic's Amodei debuted on Nasdaq arguing for pacing, and where LeCun himself has spent this weekend on X accusing Amodei of hyping danger to outlaw open models.<sup><a href="#s16">[16]</a></sup> Two of the three most prominent voices in US frontier-lab discourse now hold directly opposing public positions on whether defence or offence wins the next twelve months &mdash; and unlike a year ago, both positions are on the record under a journalist's byline, not a tweet. The Semafor segment is the one to watch; LeCun's cyberattack passage lands early in the interview.</p>
+<span class="sowhat">So what: when your security leadership asks whether to budget for AI-enabled offence or AI-enabled defence in the 2027 plan, the honest answer this month is that two credible lab principals are publicly disagreeing &mdash; so hedge both sides of the budget rather than citing one side as consensus, and revisit when a third serious voice stakes a position.</span>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>The OpenRouter and Dragos disclosures reframed inference. &ldquo;Zero Data Retention&rdquo; turned out to be a contract claim, not a measurable property &mdash; the kind of promise that cannot survive a supply chain of resellers, sub-tenants, and foreign labs quietly following the breadcrumbs. The visible next move is the one builders should be planning for: a shift from flag-based trust to active monitoring, where the question your buyer asks stops being &ldquo;does the vendor say ZDR?&rdquo; and starts being &ldquo;can the vendor show the canary logs?&rdquo; This is the week the inference supply chain became a thing you have to audit.</p>
+</div>
+
+<h2>The Ledger</h2>
+<p class="ledger-head">Season 1 &middot; 15&ndash;15 &middot; 3 unsettled &middot; 61 calls logged</p>
+
+<p>No calls were due for grading today &mdash; the earliest open horizon is 24 November. Full record at the repo.</p>
+
+<div class="ledger-item open">
+  <p><span class="verdict">OPEN</span> &middot; TODAY's CALL &middot; horizon 2026-12-26</p>
+  <p>The OpenRouter/Dragos disclosures reframe inference as a supply-chain problem: ZDR was a contract claim, not a measurable property, with roughly two-thirds of ZDR-flagged prompts still scraped by a Chinese lab across three provider breaches. The visible next move is a shift from flag-based trust to active monitoring &mdash; other gateways and enterprise inference buyers will have to show evidence rather than promises.</p>
+  <p class="ledger-head"><strong>Test:</strong> by 2026-12-26, HIT if at least ONE primary source dated on or before that date shows: (a) a second inference gateway off-boarding a provider, stripping endpoints from ZDR eligibility, or publishing canary-probe findings; (b) an enterprise inference buyer (frontier lab, hyperscaler, named cloud, or large enterprise) publishing a canary-token or active-probing audit programme; (c) a frontier-lab AUP or trust-centre page naming reseller-marketplace monitoring, inference-path attestation, or verified-forwarding as a new requirement.</p>
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1">OpenRouter &mdash; &ldquo;Data Processing Incidents on Inference Providers&rdquo; &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/">openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers</a></li>
+<li id="s2">Dragos &mdash; HD Moore, &ldquo;AI Supply Chain Security: Canary Tokens&rdquo; &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">dragos.com/blog/ai-supply-chain-security-canary-tokens</a></li>
+<li id="s3">The Hacker News &mdash; &ldquo;OpenRouter Drops 3 Providers After Researchers Catch Months of Prompt Theft at AI Hosting Firms&rdquo; &mdash; <span class="tier">trade</span> &mdash; <a href="https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html">thehackernews.com/2026/11/openrouter-drops-3-providers-after.html</a></li>
+<li id="s4">Together AI &mdash; &ldquo;Security event: prompt leakage for requests in June and July of 2026&rdquo; &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026</a></li>
+<li id="s5">Ashurst / Perkins Coie &mdash; &ldquo;BIS issues Interim Final Rule restricting remote access to advanced US AI chips&rdquo; &mdash; <span class="tier">trade</span> &mdash; <a href="https://www.ashurstperkinscoie.com/en/insights/bis-issues-interim-final-rule-restricting-remote-access-to-advanced-us-ai-chips/">ashurstperkinscoie.com/en/insights/bis-issues-interim-final-rule</a></li>
+<li id="s6">Lexology &mdash; &ldquo;US Commerce Department Adopts Rule Restricting Remote Access to Advanced AI Chips&rdquo; &mdash; <span class="tier">trade</span> &mdash; <a href="https://www.lexology.com/library/detail.aspx?g=4ab922f6-5000-40e5-82c3-75afbf549304">lexology.com/library/detail.aspx</a></li>
+<li id="s7">Gulf Business &mdash; &ldquo;Nvidia stops shipping US-approved AI chips to China&rdquo; &mdash; <span class="tier tier1">tier-1</span> &mdash; <a href="https://gulfbusiness.com/en/2026/news/nvidia-stops-shipping-us-approved-ai-chips-to-china/">gulfbusiness.com/en/2026/news/nvidia-stops-shipping-us-approved-ai-chips-to-china</a></li>
+<li id="s8">Business Day &mdash; &ldquo;Nvidia stops shipping US-approved AI chips to China&rdquo; &mdash; <span class="tier tier1">tier-1</span> &mdash; <a href="https://www.businessday.co.za/companies/2026-11-18-nvidia-stops-shipping-us-approved-ai-chips-to-china/">businessday.co.za/companies/2026-11-18-nvidia-stops-shipping-us-approved-ai-chips-to-china</a></li>
+<li id="s9">Replit &mdash; &ldquo;Missions&rdquo; (launch announcement, 17 November) &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://replit.com/missions">replit.com/missions</a></li>
+<li id="s10">TechRepublic &mdash; &ldquo;OpenAI Launches ChatGPT for Sales With 30+ Partner Plugins&rdquo; &mdash; <span class="tier">trade</span> &mdash; <a href="https://www.techrepublic.com/article/news-openai-chatgpt-for-sales-plugins/">techrepublic.com/article/news-openai-chatgpt-for-sales-plugins</a></li>
+<li id="s11">PYMNTS &mdash; &ldquo;Governors Want States to Have a Voice in Regulating AI&rdquo; (NGA principles release, 22 November) &mdash; <span class="tier tier1">tier-1</span> &mdash; <a href="https://www.pymnts.com/news/artificial-intelligence/2026/governors-want-states-to-have-a-voice-in-regulating-ai/">pymnts.com/news/artificial-intelligence/2026/governors-want-states-to-have-a-voice-in-regulating-ai</a></li>
+<li id="s12">OpenAI &mdash; &ldquo;Introducing GPT-6.2 Astra and Sol&rdquo; &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">openai.com/index/introducing-gpt-6-2-astra-sol</a></li>
+<li id="s13">Google &mdash; &ldquo;Introducing Gemini 4 Neon&rdquo; &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon</a></li>
+<li id="s14">Anthropic &mdash; Claude Fable 5.2 model page &mdash; <span class="tier primary">primary</span> &mdash; <a href="https://www.anthropic.com/claude/fable">anthropic.com/claude/fable</a></li>
+<li id="s15">Semafor &mdash; &ldquo;Recent AI cyberattacks are part of a 'short period of transition,' says Yann LeCun&rdquo; &mdash; <span class="tier tier1">tier-1</span> &mdash; <a href="https://www.semafor.com/article/11/17/2026/recent-ai-cyberattacks-are-part-of-a-short-period-of-transition-says-yann-lecun">semafor.com/article/11/17/2026/recent-ai-cyberattacks-are-part-of-a-short-period-of-transition-says-yann-lecun</a></li>
+<li id="s16">Digg &mdash; &ldquo;LeCun accuses Amodei of an AI power grab, calls it 'medieval obscurantism'&rdquo; &mdash; <span class="tier">trade</span> &mdash; <a href="https://digg.com/ai/yhgc3nhm">digg.com/ai/yhgc3nhm</a></li>
+</ol>
+
+<nav class="bar">
+  <a href="2026-11-22.html">&larr; YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW &rarr;</span>
+</nav>
+
+<footer>
+  <p>Content is AI-synthesized. Links point to original sources.</p>
+</footer>
+
+</div>
+
+<script>
+const S = "Above The Noise for Monday, November 23rd, 2026. Signal over noise. Today's lead: inference as a supply chain problem. On Saturday, OpenRouter, the AI gateway that routes developer requests to a pool of third-party model hosts, off-boarded three providers, stripped one hundred and twenty-five endpoints from Zero Data Retention eligibility, and notified every potentially affected customer. The trigger was a five-month experiment by HD Moore and his team at the security firm Dragos. They seeded roughly two million prompts with unique canary tokens, routed them through live inference endpoints, and watched for who called the bait. Three providers showed evidence of data exposure. The ugliest finding is not the thefts. It is the policy breach. One unidentified Chinese AI lab fetched the secret links from more than half of the prompts sent to its models between July and October, including about two-thirds of the prompts that had been explicitly tagged Zero Data Retention. On the public internet, ZDR looked like a guarantee. Inside the supply chain, it was a sticker. Phala, Together AI and Novita have each published their own incident notices. The lesson for builders is that contract flags do not survive this many hops. Inference is now a supply-chain-security problem, and ZDR is a claim that needs active verification, not a checkbox. The briefs. One. The US Commerce Department's interim final rule on AI chip remote access took effect on Thursday the nineteenth. Overseas data centres above twelve million aggregate processing performance now need a US license, and non-US providers already serving restricted entities have ninety days to come forward. Indonesia, Malaysia, Singapore, Thailand and Brazil are named. Two. Nvidia's interim CEO Colette Kress confirmed on last Tuesday's earnings call that the company has halted all shipments of licensed Hopper-generation chips to China, after selling two point four billion dollars' worth in the previous quarter. Three. Replit shipped Missions, an agent-swarm product priced as dollars-per-outcome against a hard budget, not dollars-per-seat. On an internal NumPy benchmark, a thirty-two agent swarm reached nineteen-times speedup. Four. OpenAI released ChatGPT for Sales with more than thirty partner plugins and persistent dots agents that monitor deal activity between conversations. Five. On Saturday the National Governors Association, led by Maryland's Wes Moore and Indiana's Mike Braun, released a bipartisan framework of state AI-regulation principles timed to the new Congress in January: a clear signal that governors do not expect federal preemption, and that the operating environment for AI teams through 2027 is a fifty-state patchwork. Model Watch. OpenAI's GPT-6.2 Astra is the first externally released OpenAI model to meet the lab's High threshold for AI self-improvement. Astra prices at eight dollars input, forty dollars output, and forty cents per million cached-input tokens. Google's Gemini 4 Neon prices at three and fifteen, with a ninety-five percent cached-input discount, a one-million-token context window, and the number one slot on the Artificial Analysis Coding Agent Index. Anthropic's Claude Fable 5.2, released November ninth, remains the freshest Anthropic release, now the standard general availability model at eight and forty. Voices. This edition's voice is Yann LeCun, chief AI scientist at Meta and executive chairman of the newly spun-out Advanced Machine Intelligence Labs. At Semafor's Silicon Valley and the World event in San Francisco on Tuesday, LeCun argued that the current moment where AI favours cyberattackers is, in his words, just a short period of transition, after which software will be hardened by AI into an era of unprecedented safety of software systems. Today's signal. This is the week the inference supply chain became a thing you have to audit. ZDR is a contract claim, not a measurable property. The shift builders should plan for is from flag-based trust to active monitoring. The ledger. Season one, fifteen and fifteen, three unsettled, sixty-one calls logged. No calls were due for grading today. Today's call, open through December twenty-sixth: that at least one of three specific supply-chain-monitoring developments will land from another gateway, an enterprise inference buyer, or a frontier lab AUP before that date. Full test in the written edition. That is the brief.";
+
+let speaking = false;
+function pickVoice() {
+  const synth = window.speechSynthesis;
+  const voices = synth.getVoices();
+  const prefs = ['Daniel', 'Alex'];
+  for (const name of prefs) {
+    const v = voices.find(v => v.name && v.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(v => v.lang && v.lang.startsWith('en')) || null;
+}
+function toggleSpeech() {
+  const btn = document.getElementById('playBtn');
+  const synth = window.speechSynthesis;
+  if (!synth) { btn.textContent = 'speech not supported'; return; }
+  if (speaking) {
+    synth.cancel();
+    speaking = false;
+    btn.innerHTML = '&#9654; LISTEN';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.innerHTML = '&#9654; LISTEN'; };
+  u.onerror = () => { speaking = false; btn.innerHTML = '&#9654; LISTEN'; };
+  speaking = true;
+  btn.innerHTML = '&#9632; STOP';
+  synth.speak(u);
+}
+if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    const v = pickVoice();
+    if (v) document.getElementById('voiceMeta').textContent = 'voice: ' + v.name;
+  };
+}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const v = pickVoice();
+    if (v) document.getElementById('voiceMeta').textContent = 'voice: ' + v.name;
+  }, 300);
+});
+</script>
+
+</body>
+</html>
