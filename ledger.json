@@ -454,10 +454,10 @@
       "basis": "NVIDIA shipped OpenShell (open-source runtime for Arm and Intel targets) plus Sentry (out-of-band DPU watchdog) on 2026-09-28 with governance via the Linux Foundation's Open Secure AI Alliance and 100+ named industry partners. The coalition breadth and the OSS/Foundation framing signal that hardware-anchored agent runtimes are a shared enterprise ask, not a proprietary NVIDIA moat - which historically triggers matching announcements from adjacent silicon and cloud suppliers within weeks.",
       "horizon": "2026-11-24",
       "test": "A primary-source press release, product page, blog post, engineering post, or SEC filing dated on or before 2026-11-24 from AMD, Intel, Arm Holdings, Broadcom, Marvell, AWS, Microsoft Azure, or Google Cloud that either (a) announces a hardware-based or silicon-anchored runtime, monitor, or policy layer specifically framed for AI agent safety, isolation, or containment; or (b) commits to shipping compatible/interoperable primitives inside their processors, DPU, NIC, or accelerator line for that purpose. Software-only agent-safety products (e.g. guardrails SDKs, prompt filters, agent frameworks) do not count. The commitment must name AI agents or agentic workloads as the target.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-24",
+      "verdict": "MISS",
+      "evidence": "No competing hardware-anchored agent-safety primitive shipped from AMD, Intel, Arm, Broadcom, Marvell, AWS, Microsoft Azure, or Google Cloud by 2026-11-24. AMD's 6th-generation EPYC SP7 (Venice) launched in November 2026 names agentic AI as a workload target and ships AMD Root of Trust (Caliptra), Secure Processor, Memory Guard and VM isolation, but those are general-purpose server-security primitives, not an out-of-band silicon watchdog or runtime explicitly framed for AI agent safety/isolation/containment per the test. No Intel, Arm, Broadcom, Marvell, AWS Nitro, Azure or GCP primary source in-window ships a silicon-anchored policy layer explicitly naming AI agents or agentic workloads as the containment target. Reference: https://newsroom.amd.com/press-kits/6th-gen-epyc-venice/ and https://newsroom.amd.com/news/6th-gen-epyc-lead-ai-enterprise-computing/"
     },
     {
       "id": "2026-09-30-1",
@@ -610,10 +610,10 @@
       "basis": "Yandex, Al Jazeera, The Register, The Moscow Times and Toms Hardware all confirmed on October 11-12 that drones struck three of six Yandex datacenters including the Galushkin supercomputer in Vladimir. Russian consumer internet services (Pay, Cloud) are degraded; LLM training capacity is materially reduced. No Western lab has responded publicly yet; insurers and government customers will not wait for a US or EU rerun to ask the question.",
       "horizon": "2026-11-24",
       "test": "By 2026-11-24, at least two primary-source operational responses from non-Russian frontier labs, hyperscalers, or sovereign-AI programs explicitly cite datacenter-resilience, geographic-redundancy, or physical-infrastructure risk as the rationale: a published multi-region training commitment, a datacenter-resilience line in a new SLA, a sovereignty-tier product, or a national-security procurement criterion. HIT if at least two such primary-source announcements land by the horizon; MISS if fewer than two.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-24",
+      "verdict": "MISS",
+      "evidence": "By 2026-11-24, fewer than two primary-source operational responses from non-Russian frontier labs, hyperscalers, or sovereign-AI programs explicitly cited datacenter-resilience, geographic-redundancy, or physical-infrastructure risk as the rationale per the test. Trade publications (Data Center Dynamics, TechTarget, Security Boulevard, ORF Middle East) discussed the physical-risk trend in October-November 2026, and Anthropic/OpenAI did expand compute geographically in-window (Anthropic Direct, Anthropic Australia data-center foothold, Anthropic's $3.4B gas-powered data-center deal on 2026-11-10, OpenAI's Firmus Malaysia expansion), but those primary-source announcements frame the move as capacity/power-autonomy and cloud-concentration-risk management, not as kinetic/physical-risk resilience in response to the Yandex strikes. The explicit linkage the test requires did not ship. Reference: https://www.datacenterdynamics.com/en/marketwatch/how-the-ai-boom-is-reshaping-security-and-resilience-for-data-centers/ (trade commentary) and https://fortune.com/2026/11/10/anthropic-3-4-billion-deal-gas-data-centers-ai-ipo/ (Anthropic's own framing is autonomy/IPO, not physical resilience)."
     },
     {
       "id": "2026-11-11-1",
@@ -730,6 +730,18 @@
       "basis": "On 2026-11-22 OpenRouter off-boarded three providers and stripped 125 endpoints from ZDR eligibility; HD Moore at Dragos published five months of canary-token methodology on 2026-11-19; Phala, Together AI and Novita have each already published their own incident notices.",
       "horizon": "2026-12-26",
       "test": "By 2026-12-26, at least ONE of the following is evidenced by a primary source dated on or before that date: (a) a second AI inference gateway or model-router comparable to OpenRouter publishes a security advisory, incident report, or policy update that off-boards a provider, strips endpoints from Zero-Data-Retention eligibility, or discloses canary or active-probe findings against upstream providers; (b) an enterprise inference buyer (a named frontier lab, hyperscaler, cloud, or large enterprise) publishes an audit, blog post, or SEC filing announcing a canary-token or active-probing programme against third-party inference providers; (c) a frontier-lab acceptable-use policy, trust-centre page, or product update names reseller-marketplace monitoring, inference-path attestation, or verified-forwarding as a new requirement.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-24-1",
+      "date": "2026-11-24",
+      "call": "OpenAI Chief Scientist Jakub Pachocki's 2026-11-22 post 'Perplexity and Intelligence' -- which published OpenAI's own pretraining log-loss curve (0.99 -> 0.76) and proposed 'common limits, based on perplexity and other measurements, that developers are committed to not crossing' -- is a template, not a one-lab manifesto. Within four weeks, at least one other frontier lab (Anthropic, Google DeepMind, xAI, Meta, Mistral, or an Anthropic-tier Chinese peer) will publish a primary-source response that either (a) endorses perplexity as a shared pacing variable with specific numeric thresholds, or (b) proposes an alternative publicly-measurable capability metric with specific numeric thresholds, framed for cross-lab coordination as a voluntary development ceiling.",
+      "basis": "Pachocki's post is the first time a frontier-lab chief scientist has nominated a specific, publicly-measurable scalar as a shared pacing variable and published their own internal pretraining numbers against it. Sam Altman endorsed it as 'the most important thing OpenAI has published in a while'. The timing sits alongside the New York ASSET Unit (2026-11-17), California AG's OpenAI lawsuit (2026-11-17), the Paris Call for AI Safety and Security (2026-11-09), and the Pax Silica San Francisco Declaration -- the governance envelope around pacing is tightening on multiple axes at once, raising the pressure on peer labs to publish a comparable metric or to publicly reject this one.",
+      "horizon": "2026-12-22",
+      "test": "By 2026-12-22, a primary-source blog post, paper, or statement from a named executive or chief scientist at Anthropic, Google DeepMind, xAI, Meta, Mistral, DeepSeek, Alibaba (Qwen), Moonshot, or Z.ai that either (a) states a specific numeric perplexity or log-loss band as a voluntary development ceiling, or (b) proposes a different publicly-measurable capability metric with a stated numeric threshold explicitly intended for cross-lab coordination. Generic safety-posture blog posts without numeric thresholds do not count. Rebuttals that argue AGAINST shared thresholds but nominate no alternative numeric metric do not count. Silent horizon grades MISS.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
