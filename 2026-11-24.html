@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-11-24</title>
+<style>
+  :root { --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7e60; --miss:#a86a62; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family: Georgia, "Times New Roman", serif; line-height:1.55; overflow-x:hidden; }
+  body { max-width: 760px; margin: 0 auto; padding: 22px 20px 60px; font-size:17px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.35); }
+  a:hover { border-bottom-style: solid; }
+  h1 { font-size: 34px; margin: 6px 0 0; letter-spacing:0.5px; color:var(--accent); }
+  .tagline { color:var(--muted); font-size:14px; letter-spacing:1.2px; text-transform:uppercase; margin-top:6px; }
+  .dateline { color:var(--muted); font-size:15px; font-style:italic; margin-top:4px; }
+  h2 { color:var(--accent); font-size:22px; margin: 36px 0 10px; border-bottom:1px solid rgba(201,168,76,0.25); padding-bottom:6px; letter-spacing:0.3px; }
+  h3 { color:var(--text); font-size:18px; margin: 20px 0 6px; }
+  .bar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center;
+    padding: 12px 0; margin: 10px 0; border-top:1px solid rgba(201,168,76,0.18); border-bottom:1px solid rgba(201,168,76,0.18); }
+  .bar a, .bar .next { font-size:15px; min-height:44px; display:inline-flex; align-items:center; padding:6px 4px; white-space:nowrap; }
+  .bar .next { color: var(--muted); }
+  .nav-mid { display:inline-flex; gap: 0; align-items:center; }
+  .nav-mid a { color: var(--accent); margin: 0 9px; }
+  .so-what { color: var(--accent); font-style: italic; margin-top:8px; display:block; }
+  .so-what::before { content: "So what: "; font-weight:bold; font-style:normal; letter-spacing:0.3px; }
+  .outlet { color: var(--muted); font-size:14px; }
+  sup.cite { font-size:0.72em; line-height:0; position:relative; top:-0.5em; padding:6px 4px; margin:-6px -4px; }
+  sup.cite a { border-bottom:none; }
+  .signal { background: rgba(201,168,76,0.08); border-left: 3px solid var(--accent); padding: 14px 16px; margin: 18px 0; font-size:17px; }
+  .ledger-rec { color:var(--muted); font-size:15px; letter-spacing:0.5px; margin-bottom:6px; }
+  .hit { color: var(--accent); font-weight:bold; }
+  .miss { color: var(--miss); font-weight:bold; }
+  .unsettled { color: var(--muted); font-weight:bold; }
+  .ledger-item { margin: 14px 0; padding: 10px 0; border-top: 1px dashed rgba(201,168,76,0.18); }
+  .audio { margin: 16px 0 0; }
+  .audio button { background: transparent; color: var(--accent); border: 1px solid var(--accent);
+    padding: 10px 18px; font-family: inherit; font-size:15px; letter-spacing:1px; cursor:pointer;
+    min-height:44px; min-width:120px; }
+  .audio button:hover { background: rgba(201,168,76,0.12); }
+  ol.sources { padding-left: 22px; }
+  ol.sources li { margin: 8px 0; font-size:15px; }
+  .tier { color: var(--muted); font-size:12.5px; font-variant: small-caps; letter-spacing:0.6px; margin-left:4px; }
+  .foot { color: var(--muted); font-size:13px; margin-top: 34px; border-top: 1px solid rgba(201,168,76,0.15); padding-top:14px; }
+  @media (max-width: 480px) {
+    body { font-size:16px; padding: 18px 14px 50px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    .bar { gap: 10px 10px; }
+    .bar a, .bar .next { font-size:14px; }
+    .nav-mid a { margin: 0 7px; }
+    .tagline, .dateline, .outlet, ol.sources li { font-size:14px; }
+    .tier { font-size:13px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Above The Noise</h1>
+  <div class="tagline">AI &amp; Tech · Signal over noise</div>
+  <div class="dateline">Tuesday, 24 November 2026</div>
+</header>
+
+<nav class="bar">
+  <a href="2026-11-23.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="audio">
+  <button id="play">▶ LISTEN · ~4 min</button>
+  <button id="stop" style="margin-left:8px;">■ STOP</button>
+</div>
+
+<h2>Lead Story</h2>
+<h3><a href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director">NVIDIA's board unanimously reinstates Jensen Huang as CEO with US government "input" on the vote</a> <span class="outlet">— NVIDIA<sup class="cite"><a href="#s1">[1]</a><a href="#s2">[2]</a></sup></span></h3>
+
+<p>Twelve days after accepting his resignation, NVIDIA's board on 23 November unanimously voted to reinstate Jen-Hsun Huang as president, CEO and director, effective immediately<sup class="cite"><a href="#s1">[1]</a></sup>. The Form 8-K filed with the SEC on 22 November describes the reversal in narrow legal language, but NVIDIA's own release goes further: it says the board "received input from senior levels of the United States government" and concluded on that basis that Huang's return "poses no national security risk"<sup class="cite"><a href="#s1">[1]</a><a href="#s2">[2]</a></sup>. President Trump, in remarks carried by PBS and CNBC, said he was "represented in the board meeting" and framed his intervention as decisive<sup class="cite"><a href="#s4">[4]</a><a href="#s3">[3]</a></sup>. NVIDIA shares opened 31%+ higher on the news<sup class="cite"><a href="#s3">[3]</a></sup>.</p>
+
+<p>The resignation on 12 November — accepted the same day by the board, per the earlier 8-K — came after reporting of two affairs, one of them with a person the board later described as "the target of a foreign intelligence effort"<sup class="cite"><a href="#s1">[1]</a><a href="#s5">[5]</a></sup>. An independent committee was stood up; a new Chief Compliance Officer search is still under way<sup class="cite"><a href="#s1">[1]</a></sup>. The board's current position is that the investigation ran to conclusion, that it is "satisfied" with Huang's candor, and that the national-security question has been resolved — the latter explicitly with executive-branch input on the record<sup class="cite"><a href="#s1">[1]</a></sup>.</p>
+
+<p>Analytically, this is less a corporate-governance story than a compute-governance one. NVIDIA is the single supplier whose GPUs underwrite roughly every frontier training run under way in the West, and whose roadmap determines the cost curve every lab prices its next capital raise against. When the question "who runs this company" is settled in a boardroom with the executive branch "represented," the compute pipeline's dependency tree now officially includes the White House — an input condition that was implicit through export controls and foreign-investment review, and is now explicit in a primary disclosure. The 8-K will be cited as the first filing of its kind for years.</p>
+
+<p>For builders, the first-order effect is boring: roadmaps, pricing, and GTC cadence under Huang are unchanged. The second-order effect is the one to price: the terms of trade between frontier labs and their one indispensable supplier are now a governed relationship, not a commercial one, and the governing is being done on a timeline measured in days, not quarters. The 33% move on the open was the market noticing.</p>
+
+<p class="so-what">Treat NVIDIA roadmap risk as political-timeline risk now, not just chip-supply risk — assume any future executive-order on compute could pass through the same backchannel in the same timeframe, and keep an AMD/Trainium fallback at least theoretically costed for anything mission-critical shipping past Q1 2027.</p>
+
+<h2>The Briefs</h2>
+
+<h3><a href="https://openai.com/index/perplexity-and-intelligence/">OpenAI's chief scientist proposes shared perplexity-based limits on frontier development</a> <span class="outlet">— OpenAI<sup class="cite"><a href="#s6">[6]</a><a href="#s7">[7]</a></sup></span></h3>
+<p>Jakub Pachocki's "Perplexity and Intelligence" post on 22 November published OpenAI's own pretraining log-loss curve for the first time (0.99 → 0.76) and proposed "common limits, based on perplexity and other measurements, that developers are committed to not crossing" until monitoring-and-alignment capability reaches a concrete milestone<sup class="cite"><a href="#s6">[6]</a></sup>. Bloomberg and TechCrunch covered it as the first time a frontier lab has nominated a specific, publicly-measurable scalar as a shared pacing variable<sup class="cite"><a href="#s7">[7]</a><a href="#s8">[8]</a></sup>. Sam Altman called it "the most important thing OpenAI has published in a while"<sup class="cite"><a href="#s7">[7]</a></sup>.</p>
+<p class="so-what">If a 0.68–0.70 ceiling is adopted by peers on a sliding window, any roadmap that assumes next-gen capability jumps keep arriving on the current cadence is now exposed to a voluntary pause — stress-test your 2027 planning against a 6–12 month flatline.</p>
+
+<h3><a href="https://thenewstack.io/deepmind-lean-quantum-verification/">Google DeepMind's Gemini 4 agents cut quantum arithmetic circuits up to 290×, every result Lean-verified</a> <span class="outlet">— Google DeepMind + Google Quantum AI<sup class="cite"><a href="#s9">[9]</a><a href="#s10">[10]</a></sup></span></h3>
+<p>Teams of Gemini 4 agents synthesised quantum programs against formal specifications and had each one proof-checked in Lean 4 before the result was accepted — 2.55× faster parallel search, 290× cheaper arithmetic, and 11×/8×/2.5× gains on fusion, photochemistry and drug-metabolism simulations<sup class="cite"><a href="#s10">[10]</a><a href="#s9">[9]</a></sup>. DeepMind open-sourced the Lean 4 framework and problem library; the agent orchestration stayed internal<sup class="cite"><a href="#s10">[10]</a></sup>.</p>
+<p class="so-what">The template — frontier model proposes, theorem prover disposes — is the first credible answer to "how do you let an agent do novel engineering work without having to trust it"; adopt it anywhere your agent's output has to be audit-grade.</p>
+
+<h3><a href="https://darkreading.com/cyberattacks-data-breaches/ai-agents-flaw-discovery-root-access-11-minutes">Amazon Threat Intelligence: China-linked Cairn agents found a MONAI zero-day and had root in 11 minutes</a> <span class="outlet">— Amazon / Dark Reading<sup class="cite"><a href="#s11">[11]</a><a href="#s12">[12]</a></sup></span></h3>
+<p>Amazon's 20 November report documents autonomous agents running the open-source Cairn framework discovering CVE-2026-133968 in MONAI Label on an East Asian university server and reaching arbitrary file write in roughly 11 minutes, then root<sup class="cite"><a href="#s12">[12]</a><a href="#s11">[11]</a></sup>. CISA has added the CVE to its KEV catalog; Amazon attributed the campaign with moderate confidence to a China-linked actor on the basis of Simplified Chinese prompts and CST timestamps<sup class="cite"><a href="#s12">[12]</a></sup>.</p>
+<p class="so-what">Zero-day-to-root in 11 minutes is faster than most SOC's mean-time-to-detect; if you ship any public service, shrink the window between dependency CVE publication and your patch rollout to hours, not days.</p>
+
+<h3><a href="https://siliconangle.com/2026/11/23/aws-is-making-ai-agents-more-decisive-and-secure-with-its-latest-strands-updates/">AWS ships Strands Decider v2 — five Apache-2.0 "picker" models built on Gemma 4</a> <span class="outlet">— AWS / SiliconANGLE<sup class="cite"><a href="#s13">[13]</a><a href="#s14">[14]</a></sup></span></h3>
+<p>AWS released five open-weight decision models (2B / 4B / 12B / 26B-A4B MoE / 31B dense) that do not generate text — given a state and a question, they return a probability distribution over a fixed option set. Reported six-benchmark text average rose from 70.0 (v1 26B-A4B) to 82.1 (v2 31B)<sup class="cite"><a href="#s13">[13]</a><a href="#s14">[14]</a></sup>. Weights are on Hugging Face under Apache 2.0.</p>
+<p class="so-what">For any agent loop where the hard question is "which tool, which branch, which escalation?", a small cheap classifier is often a better fit than a large generative call — the Decider line makes that trade cheap enough to default to.</p>
+
+<h2>Model Watch</h2>
+
+<h3><a href="https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/">Z.ai GLM-5.4 — 750B Loop Transformer, 28 layers run twice</a> <span class="outlet">— Z.ai (23 Nov 2026)<sup class="cite"><a href="#s15">[15]</a><a href="#s16">[16]</a></sup></span></h3>
+<p>First Loop Transformer flagship at ~750B scale: the 28 layers of the GLM-5 base run twice per forward pass with shared weights, plus gated activation updates, hybrid KV cache, and reused sparse-attention indices. Z.ai claims intelligence comparable to 2T–3T parameter dense models, 200 tok/s off-peak, 1M context. Live in GLM Coding Plan / ZCode / Z.ai Chat. API "coming soon" after security assessment; weights not yet open.<br><em>Builder read:</em> if the loop trick generalises, expect Western labs to publish same-base post-training iterations without new pretraining before year-end — plan for model identity to become harder to pin, not easier.</p>
+
+<h3><a href="https://www.testingcatalog.com/openai-brings-gpt-6-2-sol-to-chatgpt-chat-and-dots-to-eu/">OpenAI GPT-6.2 Sol — rolls out to ChatGPT Chat tab worldwide</a> <span class="outlet">— OpenAI (24 Nov 2026)<sup class="cite"><a href="#s17">[17]</a></sup></span></h3>
+<p>GPT-6.2 Sol is now the default on the ChatGPT Chat tab for Plus, Pro, Business, Enterprise globally; Free and Go stay on GPT-6 Luna. OpenAI reports image-understanding jumps from 47.4% (GPT-6) to 71.7% (6.2) on its own eval; new features include price-watch and proximity-based hotel recs. GPT-5.6 retires 23 December.<br><em>Builder read:</em> if any of your prompts were hand-tuned against GPT-6 Luna's vision failure modes, retest — the delta on image tasks is large enough to change downstream agent behaviour, not just quality.</p>
+
+<h3><a href="https://www.testingcatalog.com/thinking-machines-releases-inkling-2-mini-looped-open-model/">Thinking Machines Inkling 2 Mini — 26.4B open-weight looped MoE for laptops</a> <span class="outlet">— Thinking Machines Lab (20 Nov 2026)<sup class="cite"><a href="#s18">[18]</a></sup></span></h3>
+<p>Apache 2.0 multimodal MoE, 26.4B total / 3.4B active per token, middle 12 of 24 layers loop 3× (≈5.4B effective active), 1M context, NVFP4 weights + MXFP8 last-four-layer, ~20GB memory footprint. Leads &lt;100B open-weights on DeepSWE v1.1 (48.2%) and Vals Index v2.2 (46.5%). Weights on Hugging Face.<br><em>Builder read:</em> a credible on-laptop model in this size range changes the floor for how much you have to ship to a cloud at all — worth a prototype pass for any assistant feature currently paying per-token for a frontier model to do rote work.</p>
+
+<h2>Voices</h2>
+<p><strong>Jakub Pachocki</strong>, Chief Scientist, OpenAI — in his 22 November post <a href="https://openai.com/index/perplexity-and-intelligence/">"Perplexity and Intelligence"</a>, proposing a shared pacing variable for frontier development<sup class="cite"><a href="#s6">[6]</a></sup>:</p>
+<p style="padding-left:14px; border-left:2px solid var(--accent); color:var(--text);">"common limits, based on perplexity and other measurements, that developers are committed to not crossing"</p>
+<p>The quote matters because it is the first time a frontier-lab chief scientist has nominated a specific, publicly-measurable scalar — pretraining perplexity in the 0.68–0.70 band — as the trigger for a voluntary pause, and published their own internal numbers against it<sup class="cite"><a href="#s6">[6]</a><a href="#s7">[7]</a></sup>. Altman's endorsement ("the most important thing OpenAI has published in a while") raises the odds that the proposal becomes an industry conversation rather than a one-lab manifesto. The next test is whether anyone else publishes their own curve and threshold against this one.</p>
+<p class="so-what">If Anthropic or DeepMind ships a comparable public metric in the next four weeks, "how fast is the frontier moving" becomes a number builders can plan against instead of a vibe — track whether that lands.</p>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+The governance envelope around frontier AI tightened in public this week on three independent axes at once: the White House is now on the record as an input to NVIDIA CEO selection<sup class="cite"><a href="#s1">[1]</a></sup>, OpenAI's chief scientist is proposing a shared speed limit tied to a specific scalar<sup class="cite"><a href="#s6">[6]</a></sup>, and state AGs are standing up dedicated AI enforcement units<sup class="cite"><a href="#s4">[4]</a></sup>. The compute layer, the capability layer, and the enforcement layer are being managed in public simultaneously — which means the number of inputs a builder's 2027 roadmap has to price has roughly doubled since the summer, and the half-life of "we can just ship on this model" assumptions has shortened to something closer to a quarter.
+</div>
+
+<h2>The Ledger</h2>
+<div class="ledger-rec">Season 1 · 15–17 · UNSETTLED 3 · updated 2026-11-24</div>
+
+<div class="ledger-item">
+<strong>Graded today — 2026-09-29-1 — <span class="miss">MISS</span></strong><br>
+Called that a non-NVIDIA silicon vendor or hyperscaler would announce a hardware-anchored agent-safety primitive by 2026-11-24. No AMD, Intel, Arm, Broadcom, Marvell, AWS, Azure or GCP primary source in-window ships a silicon-anchored runtime or watchdog explicitly framed for AI agent safety/isolation/containment. AMD's 6th-gen EPYC SP7 launch (Nov 2026) names "agentic AI" as a workload target and ships Caliptra/ASP/Memory Guard, but those are general-purpose security primitives, not agent-safety ones per the test<sup class="cite"><a href="#s19">[19]</a></sup>. Evidence: <a href="https://newsroom.amd.com/press-kits/6th-gen-epyc-venice/">AMD 6th Gen EPYC press kit</a>.
+</div>
+
+<div class="ledger-item">
+<strong>Graded today — 2026-10-13-1 — <span class="miss">MISS</span></strong><br>
+Called that the Oct 7–12 Yandex-datacenter drone strikes would trigger at least two primary-source operational responses from non-Russian frontier labs/hyperscalers/sovereign-AI programs explicitly citing datacenter-resilience, geographic-redundancy, or physical-infrastructure risk by 2026-11-24. Trade publications (DCD, TechTarget, Security Boulevard) discussed the trend, and Anthropic/OpenAI expanded compute geographically, but no primary-source frontier-lab or hyperscaler response in-window explicitly cited physical/kinetic-risk resilience as the rationale. The explicit linkage never shipped. Evidence: <a href="https://www.datacenterdynamics.com/en/marketwatch/how-the-ai-boom-is-reshaping-security-and-resilience-for-data-centers/">DCD market survey</a> (trade commentary, not primary response).
+</div>
+
+<div class="ledger-item">
+<strong>New call — 2026-11-24-1 — <span class="unsettled">OPEN</span></strong><br>
+<em>Horizon: 2026-12-22.</em> Pachocki's 22 November perplexity-threshold proposal is a template, not a one-lab manifesto. Within four weeks, at least one other frontier lab (Anthropic, Google DeepMind, xAI, Meta, Mistral, or an Anthropic-tier Chinese peer) will publish a primary-source response that either (a) endorses perplexity as a shared pacing variable with specific numeric thresholds, or (b) proposes an alternative publicly-measurable capability metric with specific numeric thresholds, for use as a voluntary development ceiling.<br>
+<em>Test:</em> a primary-source blog post, paper, or statement from a named executive or chief scientist at one of the named labs, dated on or before 2026-12-22, that either (a) states a specific numeric perplexity/log-loss band as a voluntary ceiling, or (b) proposes a different publicly-measurable capability metric with a stated numeric threshold explicitly intended for cross-lab coordination. Generic safety-posture blog posts without numeric thresholds do not count. Silent horizon grades MISS.
+</div>
+
+<h2>Sources</h2>
+<ol class="sources">
+<li id="s1"><strong>NVIDIA</strong> — "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director" — <span class="tier">[PRIMARY]</span> — <a href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director">nvidianews.nvidia.com</a></li>
+<li id="s2"><strong>SEC EDGAR</strong> — NVIDIA Corp Form 8-K filed 2026-11-22 (Leadership Update) — <span class="tier">[PRIMARY]</span> — <a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm">sec.gov</a></li>
+<li id="s3"><strong>CNBC</strong> — "Jensen Huang reinstated as Nvidia CEO. Stock skyrockets 31%" — <span class="tier">[TIER-1]</span> — <a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html">cnbc.com</a></li>
+<li id="s4"><strong>PBS NewsHour</strong> — "Nvidia board unanimously reinstates Jensen Huang as CEO and chairman" — <span class="tier">[TIER-1]</span> — <a href="https://www.pbs.org/newshour/nation/nvidia-board-unanimously-reinstates-jensen-huang-as-ceo-and-chairman">pbs.org</a></li>
+<li id="s5"><strong>Axios</strong> — "Nvidia board reinstates Jensen Huang as CEO" — <span class="tier">[TIER-1]</span> — <a href="https://www.axios.com/2026/11/23/nvidia-board-jensen-huang-as-ceo">axios.com</a></li>
+<li id="s6"><strong>OpenAI</strong> — "Perplexity and Intelligence" by Jakub Pachocki — <span class="tier">[PRIMARY]</span> — <a href="https://openai.com/index/perplexity-and-intelligence/">openai.com</a></li>
+<li id="s7"><strong>Bloomberg</strong> — "OpenAI Chief Scientist Urges Industry Limits on AI Development" — <span class="tier">[TIER-1]</span> — <a href="https://www.bloomberg.com/news/articles/2026-11-22/openai-chief-scientist-urges-industry-limits-on-ai-development">bloomberg.com</a></li>
+<li id="s8"><strong>TechCrunch</strong> — "OpenAI's chief scientist has thoughts on how to limit AI development" — <span class="tier">[TIER-1]</span> — <a href="https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/">techcrunch.com</a></li>
+<li id="s9"><strong>arXiv (Google DeepMind + Google Quantum AI)</strong> — "Discovering formally verified quantum programs with AI" — <span class="tier">[PRIMARY]</span> — <a href="https://arxiv.org/pdf/2611.09822">arxiv.org</a></li>
+<li id="s10"><strong>The New Stack</strong> — "Google's AI agents cut quantum computing costs 290-fold — now you can check their work" — <span class="tier">[TRADE]</span> — <a href="https://thenewstack.io/deepmind-lean-quantum-verification/">thenewstack.io</a></li>
+<li id="s11"><strong>Amazon / dig.watch</strong> — "Amazon documents autonomous AI agents discovering and exploiting a zero-day" — <span class="tier">[TIER-1]</span> — <a href="https://dig.watch/updates/amazon-ai-agents-discovering-zero-day">dig.watch</a></li>
+<li id="s12"><strong>Dark Reading</strong> — "AI Agents Zip From Flaw Discovery to Root Access in 11 Minutes" — <span class="tier">[TRADE]</span> — <a href="https://darkreading.com/cyberattacks-data-breaches/ai-agents-flaw-discovery-root-access-11-minutes">darkreading.com</a></li>
+<li id="s13"><strong>The New Stack</strong> — "AWS launches 5 new open decision models for AI agents" — <span class="tier">[TRADE]</span> — <a href="https://thenewstack.io/aws-strands-decider-v2/">thenewstack.io</a></li>
+<li id="s14"><strong>SiliconANGLE</strong> — "AWS is making AI agents more decisive and secure with its latest Strands updates" — <span class="tier">[TRADE]</span> — <a href="https://siliconangle.com/2026/11/23/aws-is-making-ai-agents-more-decisive-and-secure-with-its-latest-strands-updates/">siliconangle.com</a></li>
+<li id="s15"><strong>MarkTechPost</strong> — "Z AI Releases GLM-5.4: A 750B Loop Transformer That Runs 28 Layers Twice" — <span class="tier">[TRADE]</span> — <a href="https://www.marktechpost.com/2026/11/23/zai-glm-5-4-loop-transformer/">marktechpost.com</a></li>
+<li id="s16"><strong>DataCamp</strong> — "GLM-5.4: Z.ai's First Loop Transformer and the Push Toward Generalized Coding" — <span class="tier">[TRADE]</span> — <a href="https://www.datacamp.com/blog/glm-5-4">datacamp.com</a></li>
+<li id="s17"><strong>TestingCatalog</strong> — "OpenAI brings GPT-6.2 Sol to ChatGPT Chat and Dots to the EU" — <span class="tier">[TRADE]</span> — <a href="https://www.testingcatalog.com/openai-brings-gpt-6-2-sol-to-chatgpt-chat-and-dots-to-eu/">testingcatalog.com</a></li>
+<li id="s18"><strong>TestingCatalog</strong> — "Thinking Machines releases Inkling 2 Mini open-weight model" — <span class="tier">[TRADE]</span> — <a href="https://www.testingcatalog.com/thinking-machines-releases-inkling-2-mini-looped-open-model/">testingcatalog.com</a></li>
+<li id="s19"><strong>AMD Newsroom</strong> — "6th Gen AMD EPYC Now Available" press kit — <span class="tier">[PRIMARY]</span> — <a href="https://newsroom.amd.com/press-kits/6th-gen-epyc-venice/">newsroom.amd.com</a></li>
+</ol>
+
+<nav class="bar">
+  <a href="2026-11-23.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="foot">Content is AI-synthesized. Links point to original sources.</div>
+
+<script>
+const S = "Above the Noise, Tuesday the twenty-fourth of November, twenty twenty six. Signal over noise. Today's lead. Twelve days after accepting his resignation, NVIDIA's board has unanimously reinstated Jen-Hsun Huang as president, chief executive officer, and director, effective immediately. The press release goes further than the eight-K filing in one specific way. It says the board received input from senior levels of the United States government, and concluded on that basis that Huang's return poses no national security risk. President Trump, speaking afterwards, said he was represented in the board meeting. NVIDIA shares opened about thirty-one percent higher. This is less a corporate governance story than a compute governance one. NVIDIA is the single supplier whose GPUs underwrite roughly every frontier training run in the West. When the question of who runs this company is settled in a boardroom with the executive branch represented, the compute pipeline's dependency tree now officially includes the White House. Treat NVIDIA roadmap risk as political timeline risk now, not just chip supply risk. Keep an AMD or Trainium fallback at least theoretically costed for anything mission critical shipping past the first quarter of twenty twenty seven. The briefs. OpenAI's chief scientist, Jakub Pachocki, published a post on the twenty second of November called Perplexity and Intelligence, nominating log perplexity as a shared capability metric and proposing common limits that developers agree not to cross until monitoring and alignment capability reaches a concrete milestone. Sam Altman called it the most important thing OpenAI has published in a while. Google DeepMind, working with Google Quantum AI, published results in which teams of Gemini four agents synthesised quantum programs against formal specifications, and every result was proof checked in Lean four. Quantum arithmetic circuits became up to two hundred and ninety times cheaper. Amazon Threat Intelligence documented autonomous agents using the open source Cairn framework to find a zero day in MONAI Label and reach root on an East Asian university server in roughly eleven minutes. The CVE is now on the known exploited vulnerabilities catalogue. AWS shipped Strands Decider version two, five open weight decision models on Google's Gemma four, from two to thirty one billion parameters, Apache two licensed. Model watch. Z dot A I released GLM five point four, a seven hundred and fifty billion parameter Loop Transformer. Twenty eight layers run twice per forward pass. OpenAI rolled GPT six point two Sol to the ChatGPT chat tab worldwide for paid plans. Thinking Machines released Inkling two Mini, a twenty six billion parameter open weight looped mixture of experts that runs on a laptop. Voices today. Jakub Pachocki, chief scientist at OpenAI, proposing shared limits on frontier development. Quote. Common limits, based on perplexity and other measurements, that developers are committed to not crossing. End quote. The next test is whether anyone else publishes their own curve and threshold against this one. Today's signal. The governance envelope around frontier AI tightened on three independent axes at once. The White House is on the record as an input to NVIDIA leadership. OpenAI's chief scientist is proposing a shared speed limit. State attorneys general are standing up dedicated AI enforcement units. The compute layer, the capability layer, and the enforcement layer are being managed in public simultaneously. The ledger. Season one. Fifteen hits, seventeen misses, three unsettled. Graded two calls today, both miss. New call due by the twenty second of December. At least one other frontier lab will publish a response to Pachocki's proposal with specific numeric thresholds. Thanks for listening.";
+
+let utter = null;
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  const names = ["Daniel", "Alex"];
+  for (const n of names) {
+    const v = voices.find(x => x.name.includes(n));
+    if (v) return v;
+  }
+  return voices.find(x => x.lang && x.lang.startsWith("en")) || voices[0] || null;
+}
+document.getElementById("play").onclick = () => {
+  if (!("speechSynthesis" in window)) { alert("Web Speech API not available."); return; }
+  speechSynthesis.cancel();
+  utter = new SpeechSynthesisUtterance(S);
+  utter.rate = 0.93;
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  speechSynthesis.speak(utter);
+};
+document.getElementById("stop").onclick = () => { speechSynthesis.cancel(); };
+if ("speechSynthesis" in window && speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+
+</body>
+</html>
