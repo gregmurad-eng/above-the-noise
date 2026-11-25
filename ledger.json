@@ -466,10 +466,10 @@
       "basis": "The accords own text names two operational external commitments (external audits and regular meetings) alongside two internal ones. Internal commitments duplicate language every signatory has used for eighteen months. The external ones are the novel and falsifiable part. Trumps framing as morally binding plus the accompanying executive order rebranding federal AI language to super intelligence means the political incentive to publish visible follow-through in Q4 is strong.",
       "horizon": "2026-11-25",
       "test": "A primary-source blog post, press release, transparency report, model card, safety-framework update, or SEC filing dated on or before 2026-11-25 from Anthropic, OpenAI, Google, Meta, xAI, or Nvidia that EITHER (a) names a specific independent external auditor engaged for AI-safeguard audit work explicitly referencing the White House Accord on Super Intelligence, OR (b) publishes a coordination-meeting readout or milestone report explicitly referencing the accord and disclosing at least the meeting date plus named participants. Generic responsible AI press releases without specific auditor names or specific meeting readouts do not count. Internal-team announcements or reiterated internal control policies do not count.",
-      "status": "OPEN",
-      "graded_on": null,
-      "verdict": null,
-      "evidence": null
+      "status": "GRADED",
+      "graded_on": "2026-11-25",
+      "verdict": "HIT",
+      "evidence": "OpenAI primary-source blog 'Our first phase of embedded assessments' (2026-11-16) names four specific independent external auditors engaged for AI-safeguard work -- Apollo Research (six evaluators embedded for four months on scheming and subversion evaluations), METR (largest RL training run), Transluce (post-training alignment coverage, follow-on scheduled for early 2027), and Goodfire (interpretability of training-run monitoring) -- and explicitly references the accord: 'These efforts also support our commitments under the White House Accord on Super Intelligence, where we agreed to independent assessments of our safety controls.' Primary source: https://openai.com/index/our-first-phase-of-embedded-assessments/"
     },
     {
       "id": "2026-10-01-1",
@@ -742,6 +742,18 @@
       "basis": "Pachocki's post is the first time a frontier-lab chief scientist has nominated a specific, publicly-measurable scalar as a shared pacing variable and published their own internal pretraining numbers against it. Sam Altman endorsed it as 'the most important thing OpenAI has published in a while'. The timing sits alongside the New York ASSET Unit (2026-11-17), California AG's OpenAI lawsuit (2026-11-17), the Paris Call for AI Safety and Security (2026-11-09), and the Pax Silica San Francisco Declaration -- the governance envelope around pacing is tightening on multiple axes at once, raising the pressure on peer labs to publish a comparable metric or to publicly reject this one.",
       "horizon": "2026-12-22",
       "test": "By 2026-12-22, a primary-source blog post, paper, or statement from a named executive or chief scientist at Anthropic, Google DeepMind, xAI, Meta, Mistral, DeepSeek, Alibaba (Qwen), Moonshot, or Z.ai that either (a) states a specific numeric perplexity or log-loss band as a voluntary development ceiling, or (b) proposes a different publicly-measurable capability metric with a stated numeric threshold explicitly intended for cross-lab coordination. Generic safety-posture blog posts without numeric thresholds do not count. Rebuttals that argue AGAINST shared thresholds but nominate no alternative numeric metric do not count. Silent horizon grades MISS.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
+    },
+    {
+      "id": "2026-11-25-1",
+      "date": "2026-11-25",
+      "call": "Anthropic Claude Opus 4.5 (released 2026-11-24) is the first mainstream frontier API to expose a numeric 'effort' knob (low/medium/high) that trades reasoning depth against output-token spend -- Anthropic claims Sonnet-4.5-equivalent quality at roughly 76% fewer output tokens on medium. This per-request compute dial is a visible primitive, not a hidden setting, and rival labs will copy it. Within four weeks, at least one other frontier lab (OpenAI, Google DeepMind, xAI, Meta, or Mistral) will ship a comparable publicly-documented per-request effort / depth / budget control in its primary API.",
+      "basis": "Anthropic Opus 4.5 release post (https://www.anthropic.com/news/claude-opus-4-5, 2026-11-24) introduces the 'effort' parameter as a first-class API feature; corroborated by Bloomberg, CNBC, and TechCrunch coverage. The capability-vs-cost knob is a competitive primitive that frontier labs historically copy within weeks once one lab ships it.",
+      "horizon": "2026-12-23",
+      "test": "A primary-source blog post, API reference, changelog entry, or model card dated on or before 2026-12-23 from OpenAI, Google DeepMind, xAI, Meta, or Mistral that documents a user-facing per-request numeric parameter (effort / depth / budget / reasoning-tokens or equivalent) exposing a speed-vs-depth tradeoff in the same shape as Anthropic 'effort'. The parameter must be public in official docs (not just an unannounced server-side flag), and it must apply to the lab's flagship or frontier model, not only a legacy or preview endpoint. A thinking-budget control that only toggles on/off does not count -- the test requires a graded or numeric control.",
       "status": "OPEN",
       "graded_on": null,
       "verdict": null,
