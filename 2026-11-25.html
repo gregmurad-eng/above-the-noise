@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise · Wednesday, 25 November 2026</title>
+<style>
+:root{
+  --bg:#0d0a06; --accent:#c9a84c; --text:#e0d4b8; --muted:#8a7f67;
+  --miss:#c46a6a; --unsettled:#8a8a8a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{padding:28px 20px 60px;max-width:760px;margin:0 auto;font-size:17px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:Georgia,serif;font-weight:normal;color:var(--accent)}
+h1{font-size:40px;margin:0 0 6px;letter-spacing:0.5px}
+.tagline{color:var(--muted);font-style:italic;font-size:15px;margin:0 0 4px}
+.dateline{color:var(--text);font-size:15px;margin:0 0 20px;letter-spacing:0.5px}
+h2{font-size:22px;margin:38px 0 14px;border-bottom:1px solid #2a2418;padding-bottom:6px;
+  text-transform:uppercase;letter-spacing:1.5px}
+h3{font-size:19px;margin:22px 0 8px;color:var(--text)}
+p{margin:12px 0}
+.bar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;
+  padding:12px 2px;border-top:1px solid #2a2418;border-bottom:1px solid #2a2418;
+  margin:14px 0 22px;font-size:15px;letter-spacing:1px;text-transform:uppercase}
+.bar a,.bar span{min-height:44px;display:inline-flex;align-items:center;
+  padding:0 6px;white-space:nowrap}
+.bar a{color:var(--accent)}
+.nav-mid{display:inline-flex;gap:14px;flex:1;justify-content:center}
+.nav-mid a{margin:0 9px;color:var(--accent)}
+.next{color:var(--muted)}
+.player{display:flex;align-items:center;gap:12px;margin:0 0 18px;flex-wrap:wrap}
+#playBtn{background:transparent;border:1px solid var(--accent);color:var(--accent);
+  font:inherit;font-size:16px;padding:0 18px;cursor:pointer;letter-spacing:1px;
+  text-transform:uppercase;min-height:44px}
+#playBtn:hover{background:var(--accent);color:var(--bg)}
+.voicemeta{color:var(--muted);font-size:13px}
+.brief{padding:8px 0 10px;border-bottom:1px dotted #2a2418}
+.brief:last-child{border-bottom:0}
+.src{color:var(--muted);font-style:italic;font-size:15px}
+.sowhat{display:block;color:var(--accent);font-style:italic;
+  font-size:15px;margin-top:8px;border-left:2px solid var(--accent);padding-left:12px}
+.cite a{color:var(--accent);padding:6px 4px;margin:-6px -4px;text-decoration:none}
+.cite{font-size:0.75em;vertical-align:super;line-height:0}
+.signal{border:1px solid var(--accent);padding:18px 22px;margin:22px 0;
+  background:rgba(201,168,76,0.05)}
+.signal h2{margin-top:0;border:none;padding:0}
+.quote{padding-left:14px;border-left:2px solid var(--accent);color:var(--text);
+  font-size:17px;margin:12px 0}
+.ledger-row{margin:14px 0;padding:10px 0;border-bottom:1px dotted #2a2418}
+.ledger-row:last-child{border-bottom:0}
+.verdict{font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:14px}
+.v-hit{color:var(--accent)}
+.v-miss{color:var(--miss)}
+.v-uns{color:var(--unsettled)}
+.v-open{color:var(--muted)}
+.sources ol{padding-left:22px;font-size:15px;color:var(--text)}
+.sources li{margin:8px 0}
+.sources .tier{color:var(--muted);font-style:italic;font-size:14px}
+footer{margin-top:40px;color:var(--muted);font-size:14px;font-style:italic;
+  text-align:center;border-top:1px solid #2a2418;padding-top:18px}
+
+@media (max-width:480px){
+  body{padding:20px 14px 50px;font-size:17px}
+  h1{font-size:30px}
+  h2{font-size:18px;letter-spacing:1px}
+  h3{font-size:17px}
+  .tagline,.dateline{font-size:14px}
+  .bar{font-size:14px;gap:8px 10px}
+  .bar a,.bar span{padding:0 4px}
+  .nav-mid{gap:6px}
+  .nav-mid a{margin:0 6px}
+  .src,.sowhat,.sources ol{font-size:15px}
+  .voicemeta,.sources .tier,.verdict{font-size:14px}
+  footer{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<h1>Above The Noise</h1>
+<p class="tagline">AI &amp; Tech · Signal over noise</p>
+<p class="dateline">Wednesday, 25 November 2026</p>
+
+<nav class="bar" aria-label="edition nav">
+  <a href="2026-11-24.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<div class="player">
+  <button id="playBtn" onclick="toggleSpeech()">▶ LISTEN</button>
+  <span class="voicemeta" id="voiceMeta">voice: loading…</span>
+</div>
+
+<h2>Lead Story</h2>
+<h3>Anthropic ships Claude Opus 4.5 — and the real feature is the dial, not the benchmark</h3>
+<p>Anthropic released <a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5</a> on Monday 24 November — <em>— Anthropic</em><sup class="cite"><a href="#s1">[1]</a></sup>. The topline is a benchmark victory: Opus 4.5 is the first model to clear 80% on SWE-bench Verified, beating Google's Gemini 3 Pro and OpenAI's GPT-5.1 on the lab's own agentic-coding comparisons<sup class="cite"><a href="#s2">[2]</a></sup>. Bloomberg leads with the office-work angle; CNBC frames it as the third major Anthropic release in two months and notes the $350B valuation backdrop<sup class="cite"><a href="#s3">[3]</a></sup>.</p>
+<p>Those are the headlines. The news for someone building on the API is lower in the post. Opus 4.5 introduces a new parameter called <code>effort</code> — three settings, low / medium / high — that lets the caller trade reasoning depth against output-token spend on a per-request basis. Anthropic claims that at <code>effort=medium</code>, Opus 4.5 matches Sonnet 4.5's intelligence quality at roughly 76% fewer output tokens; at <code>effort=high</code> it pushes the benchmark numbers but spends more<sup class="cite"><a href="#s1">[1]</a></sup>. Pricing drops to $5 input / $25 output per million tokens — the first time Anthropic has lowered Opus prices, and a two-thirds cut on input against the previous flagship<sup class="cite"><a href="#s1">[1]</a></sup>.</p>
+<p>Rolled in on the same day: Claude for Chrome is now available to all Max users, Claude for Excel opens up to Max, Team, and Enterprise, and the Claude app gets an "endless chat" mode that silently compresses context when the window fills<sup class="cite"><a href="#s2">[2]</a></sup>. The Chrome browser extension and the Excel add-in have been in a limited pilot since the summer; this is the first time either has been in general distribution across paid tiers.</p>
+<p>What matters about <code>effort</code> is the shape of the primitive, not Anthropic's marketing. OpenAI's reasoning models already expose a reasoning-effort field, but it is tuned around a specific family. Opus 4.5 is making the compute dial a first-class product surface on a flagship model intended for agentic work — the kind of job where a single run can burn through a thousand tool calls and where marginal token spend is the actual bill. A knob that advertises "same answer, fewer tokens" is a knob every finance review of an agent-heavy product is going to ask about by next month.</p>
+<p>The corollary is unflattering for anyone shipping on a fixed model spec. If your agent framework pins a single reasoning intensity by default, you are now a benchmark hostage in the other direction — paying for maximum thought on trivial steps. The teams who get ahead on cost in December will be the ones who treat <code>effort</code> as a planner-level decision, not a global default.</p>
+<span class="sowhat">So what: if you run anything agentic on Claude, add an <code>effort</code> column to your request logs this week, benchmark your p95 task at <code>low</code> vs <code>medium</code>, and set a per-step default — treating this as one global setting is the expensive mistake of December.</span>
+
+<h2>The Briefs</h2>
+
+<div class="brief">
+<h3><a href="https://blog.modelcontextprotocol.io/posts/mcp-turns-two/">MCP turns two: Skills over MCP in public beta, 700M+ SDK downloads per month</a> <span class="src">— Model Context Protocol / Anthropic<sup class="cite"><a href="#s4">[4]</a></sup></span></h3>
+<p>The Model Context Protocol marked its second anniversary on 24 November with Skills over MCP in public beta — servers can now ship workflow guides that an agent reads in with ~85% less context use — and headline numbers: 10,000+ connectors on the Claude platform and 700M+ SDK downloads in the last 30 days across Python, TypeScript, C#, Rust, and Ruby<sup class="cite"><a href="#s4">[4]</a></sup>.</p>
+<span class="sowhat">So what: if you maintain an MCP server, write a Skill for your top two workflows before January — Claude will pull your Skill instead of making a human user explain your tool, and that is where the next tranche of MCP-driven usage will land.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/">Anthropic launches Claude Ship — agents that review, fix, and approve GitHub PRs</a> <span class="src">— TechCrunch<sup class="cite"><a href="#s5">[5]</a></sup></span></h3>
+<p>On 23 November Anthropic launched Claude Ship, a set of three agents: Code Review (GA), PR Steward (beta), and Claude Approvals (beta). Together they can take a GitHub pull request through review, automated fixes, and merge approval under natural-language policy rules for what escalates to a human<sup class="cite"><a href="#s5">[5]</a></sup>.</p>
+<span class="sowhat">So what: this is the first frontier lab offering agent sign-off as a product, not a feature — write the escalation rule for your riskiest repo (anything touching auth, payments, migrations) before you turn Approvals on, or you will discover the policy by having a bad merge roll out.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/">Google DeepMind + Quantum AI: Gemini 4 agent teams find Lean-verified quantum speedups</a> <span class="src">— Google DeepMind<sup class="cite"><a href="#s6">[6]</a></sup></span></h3>
+<p>Teams of Gemini 4 agents produced faster quantum programs for five problems with every improvement machine-proved in the Lean theorem prover. Headline gains: 290× on an arcsin routine, 11.8× on a fusion simulation, 2.57× on a Grover-style search. The Lean library and verified solutions were released on GitHub<sup class="cite"><a href="#s6">[6]</a></sup>.</p>
+<span class="sowhat">So what: this is the template to copy for any agent system where correctness beats fluency — pair your agent's output with a verifier that fails closed. "Agent proposed, prover checked" is becoming the only scientific-discovery pattern labs are willing to ship.</span>
+</div>
+
+<div class="brief">
+<h3><a href="https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/">Meta launches Muse personal AI agent in the UK with retailer connectors; ICO warns on data</a> <span class="src">— Meta<sup class="cite"><a href="#s7">[7]</a></sup></span></h3>
+<p>Meta launched Muse in the UK on 24 November with named retailer integrations — M&amp;S, Sainsbury's, ASOS, Trainline, Argos, easyJet, Jet2, Currys, Ocado — across iOS, Android, WhatsApp, and muse.ai<sup class="cite"><a href="#s7">[7]</a></sup>. The UK's Information Commissioner issued a same-day public note urging users to review what Muse can access.</p>
+<span class="sowhat">So what: this is the first major consumer agent in a regulated Western market with retailer-side connectors — if you run a UK-facing ecommerce or booking stack, your MCP-or-equivalent endpoint is now a channel Meta expects to call on behalf of a buyer, and your rate-limit and auth story needs to handle an agent, not a browser.</span>
+</div>
+
+<h2>Model Watch</h2>
+
+<div class="brief">
+<h3>Claude Opus 4.5 — Anthropic, 24 November<sup class="cite"><a href="#s1">[1]</a></sup></h3>
+<p>Flagship. API ID <code>claude-opus-4-5</code>. $5 / $25 per million input/output tokens (down from $15 / $75 on Opus 4.1). New <code>effort</code> parameter: low / medium / high. First model to score &gt;80% on SWE-bench Verified. Weights closed. Default model for Claude.ai Pro, Max, Team, Enterprise from launch.</p>
+<span class="sowhat">So what: this is now the default for agentic coding; migrate your evals to Opus 4.5 at <code>effort=medium</code> and keep the Opus 4.1 numbers on file as the baseline for the price-cut narrative when procurement asks why your bill moved.</span>
+</div>
+
+<div class="brief">
+<h3>GPT-6.2 Sol — rolled to ChatGPT Chat tab, OpenAI, 23 November<sup class="cite"><a href="#s8">[8]</a></sup></h3>
+<p>Not a new model; OpenAI pushed GPT-6.2 Sol (the chat-tuned variant with sharper image understanding and tighter web-search instruction following) to the ChatGPT Chat tab for Plus, Pro, Business, and Enterprise users globally. The previous GPT-5.6 Sol / Terra workflows it replaces have an approximately 30-day deprecation window.</p>
+<span class="sowhat">So what: if anything you run — nightly summariser, document agent, migration co-pilot — is pinned to a GPT-5.6 Sol endpoint, diff your prompts against GPT-6.2 Sol this week and have the pin updated by 23 December, or your job will quietly route to a fallback model when the deprecation lands.</span>
+</div>
+
+<div class="brief">
+<h3>No significant open-weight frontier drops in the last 48 hours</h3>
+<p>Qwen, DeepSeek, Mistral, and Moonshot were quiet into the Thanksgiving week. The most notable in-flight development is the MCP 2026-07-28 release-candidate spec — stateless protocol core, Extensions framework, Tasks, MCP Apps, authorization hardening, and a formal deprecation policy — now in public comment on the protocol blog<sup class="cite"><a href="#s4">[4]</a></sup>.</p>
+<span class="sowhat">So what: read the MCP RC before it is final; the deprecation policy in particular changes what you can safely remove from a shipped server, and that is easier to shape now than to argue after.</span>
+</div>
+
+<h2>Voices</h2>
+
+<div class="brief" style="border-bottom:0;">
+<p>This edition's Voice is <strong>Fei-Fei Li</strong> — co-founder of World Labs, Executive Vice President and Chief Scientist at AMD as of 16 November, and longtime Stanford professor still helming Stanford HAI. Speaking on-stage with Semafor's Andrew Edgecliffe-Johnson at the <em>Silicon Valley &amp; The World</em> event on 17 November<sup class="cite"><a href="#s9">[9]</a></sup>:</p>
+<p class="quote">"I don't think universities and public sectors are keeping up because we're priced out… the resource[s] we have in terms of tokens and compute are extremely limited."</p>
+<p>Li's framing is worth sitting with in a week dominated by a frontier-model price cut (Opus 4.5), a 10,000-connector protocol hitting its second birthday (MCP), and a UK consumer-agent launch with named retailer connectors (Muse). The volume of product shipping is set by whoever can afford the compute to train and serve it — and Li is naming out loud that the second-largest research class in the Western world, universities, is now functionally priced out. That is the backdrop against which calls for independent assessments (OpenAI's embedded-auditor disclosure, see the Ledger below) have to be read: the people doing the independent work are themselves tiny compared to the labs they are auditing.</p>
+<span class="sowhat">So what: when someone — a reviewer, a procurement team, a board — asks you whether an "independent benchmark" has validated your AI feature, name the benchmark's compute budget. If it ran at a fraction of the vendor's, treat the result as directional, not conclusive, and plan your own in-stack eval.</span>
+</div>
+
+<h2>Today's Signal</h2>
+<div class="signal">
+<p>The item in today's news that will still matter in six months is the smallest one: Claude Opus 4.5's <code>effort</code> parameter. A frontier lab making the compute-vs-quality trade a visible, graded knob on a flagship API — alongside a price cut on the same model — is a template every other lab will match within weeks, because the finance teams buying agent infrastructure now know to ask for it by name. The spec expansion from MCP reinforces the direction of travel: agent plumbing is becoming a product surface, with knobs, discounts, and deprecation policies, rather than a stack of best-effort prompts. Build this week as if the 2027 flagship API has three effort tiers and a published deprecation policy — because by Q1 it probably does.</p>
+</div>
+
+<h2>The Ledger</h2>
+<p class="src">Season 1 · 16-17 · 3 unsettled · 63 calls logged</p>
+
+<div class="ledger-row">
+<p><span class="verdict v-hit">Hit</span> — 2026-09-30-1 (White House Accord auditor disclosure, horizon 2026-11-25)</p>
+<p>OpenAI's 16 November post <em>Our first phase of embedded assessments</em> names four independent auditors — Apollo Research, METR, Transluce, Goodfire — engaged for AI-safeguard work, and explicitly writes: <em>"These efforts also support our commitments under the White House Accord on Super Intelligence, where we agreed to independent assessments of our safety controls."</em> Evidence: <a href="https://openai.com/index/our-first-phase-of-embedded-assessments/">openai.com/index/our-first-phase-of-embedded-assessments/</a><sup class="cite"><a href="#s10">[10]</a></sup>.</p>
+</div>
+
+<div class="ledger-row">
+<p><span class="verdict v-open">Open</span> — 2026-11-25-1 · horizon 2026-12-23</p>
+<p>Anthropic's Opus 4.5 <code>effort</code> parameter (low / medium / high; ~76% output-token reduction at matched quality) is the first mainstream frontier API to expose a numeric compute-vs-depth dial on a flagship model. Within four weeks, at least one other frontier lab (OpenAI, Google DeepMind, xAI, Meta, or Mistral) will ship a comparable publicly-documented per-request effort / depth / budget control on its primary model. Thinking-budget toggles that are on/off do not count — test requires a graded or numeric control.</p>
+</div>
+
+<h2>Sources</h2>
+<div class="sources">
+<ol>
+<li id="s1">Anthropic — <a href="https://www.anthropic.com/news/claude-opus-4-5">Introducing Claude Opus 4.5</a>. <span class="tier">[primary]</span></li>
+<li id="s2">TechCrunch — <a href="https://techcrunch.com/2025/11/24/anthropic-releases-opus-4-5-with-new-chrome-and-excel-integrations/">Anthropic releases Opus 4.5 with new Chrome and Excel integrations</a>. <span class="tier">[tier-1 press]</span></li>
+<li id="s3">CNBC — <a href="https://www.cnbc.com/2025/11/24/anthropic-unveils-claude-opus-4point5-its-latest-ai-model.html">Anthropic unveils Claude Opus 4.5, its latest AI model following $350 billion valuation</a>. <span class="tier">[tier-1 press]</span></li>
+<li id="s4">Model Context Protocol / Anthropic — <a href="https://blog.modelcontextprotocol.io/posts/mcp-turns-two/">Two Years of MCP Builders</a>. <span class="tier">[primary]</span></li>
+<li id="s5">TechCrunch — <a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/">Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes</a>. <span class="tier">[tier-1 press]</span></li>
+<li id="s6">Google DeepMind — <a href="https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/">Finding faster quantum algorithms with agents and formal verification</a>. <span class="tier">[primary]</span></li>
+<li id="s7">Meta — <a href="https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/">Introducing Muse in the UK: a personal AI agent you control</a>. <span class="tier">[primary]</span></li>
+<li id="s8">TestingCatalog — <a href="https://www.testingcatalog.com/openai-brings-gpt-6-2-sol-to-chatgpt-chat-and-dots-to-eu/">OpenAI brings GPT-6.2 Sol to ChatGPT Chat and Dots to EU</a>. <span class="tier">[trade]</span></li>
+<li id="s9">Semafor — <a href="https://www.semafor.com/article/11/17/2026/universities-public-sector-are-priced-out-of-ai-fei-fei-li-says">Universities, public sector are 'priced out' of AI, Fei-Fei Li says</a>. <span class="tier">[tier-1 press]</span></li>
+<li id="s10">OpenAI — <a href="https://openai.com/index/our-first-phase-of-embedded-assessments/">Our first phase of embedded assessments</a>. <span class="tier">[primary]</span></li>
+</ol>
+</div>
+
+<nav class="bar" aria-label="edition nav bottom">
+  <a href="2026-11-24.html">← YESTERDAY</a>
+  <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+  <span class="next">TOMORROW →</span>
+</nav>
+
+<footer>Content is AI-synthesized. Links point to original sources.</footer>
+
+<script>
+const S = "Above The Noise, Wednesday the twenty-fifth of November, twenty twenty six. Signal over noise. Today's lead. Anthropic shipped Claude Opus four point five on Monday. The headline is a benchmark win: Opus four point five is the first model to clear eighty percent on SWE-bench Verified, beating Google Gemini three Pro and OpenAI GPT five point one on agentic coding tasks. The real news for builders is lower in the post. Opus four point five introduces a new parameter called effort, with three settings, low, medium, and high, that lets the caller trade reasoning depth against output-token spend on a per-request basis. Anthropic claims that at effort equals medium, Opus four point five matches Sonnet four point five's intelligence quality at roughly seventy-six percent fewer output tokens. Pricing drops to five dollars input and twenty-five dollars output per million tokens, the first time Anthropic has lowered Opus prices. The effort knob is the news. A frontier lab making the compute-versus-quality trade a visible, graded knob on a flagship API is a template every other lab will copy within weeks, because the finance teams buying agent infrastructure now know to ask for it by name. The briefs. One. The Model Context Protocol turned two on Monday. Skills over MCP is now in public beta, letting servers ship workflow guides that cut context use by about eighty-five percent. The platform now has over ten thousand connectors and seven hundred million SDK downloads in the last thirty days. Two. Anthropic launched Claude Ship on Sunday, three agents that can take a GitHub pull request from review through automated fixes to approval under natural-language policy rules. Three. Google DeepMind and Google Quantum AI published results from teams of Gemini four agents producing faster quantum programs with every improvement proved in Lean. Headline gain: two hundred ninety times speedup on an arcsine routine. Four. Meta launched its Muse personal AI agent in the UK on Monday with named retailer connectors from Marks and Spencer, Sainsbury's, ASOS, and others. The UK's Information Commissioner issued a same-day note on data access. Model watch. Opus four point five is the new Anthropic flagship, five dollars and twenty-five dollars per million tokens, down from fifteen and seventy-five on Opus four point one. OpenAI rolled GPT six point two Sol to the ChatGPT Chat tab globally for paid plans on Sunday, with a roughly thirty-day deprecation window on the previous Sol and Terra workflows. No significant open-weight frontier drops in the last forty-eight hours. Voices. This edition features Fei-Fei Li, cofounder of World Labs, chief scientist at AMD as of November sixteenth, longtime Stanford professor. Speaking with Semafor on November seventeenth, Li said, quote, I don't think universities and public sectors are keeping up because we're priced out. The resources we have in terms of tokens and compute are extremely limited, end quote. The volume of product shipping this week is set by who can afford the compute to train and serve it, and Li is naming out loud that universities are functionally priced out of frontier research. Today's signal. Agent plumbing is becoming a product surface, with knobs, discounts, and deprecation policies, rather than a stack of best-effort prompts. Build this week as if the twenty-twenty-seven flagship API has three effort tiers and a published deprecation policy. The ledger. Season one, sixteen hits, seventeen misses, three unsettled, sixty-three calls logged. Graded one call today: the White House Accord auditor-disclosure call from September thirtieth is a HIT. OpenAI's November sixteenth embedded-assessments post names Apollo Research, METR, Transluce, and Goodfire as independent auditors and explicitly references the accord. Today's new call, open through December twenty-third: that at least one other frontier lab will ship a publicly-documented per-request effort or budget control on its flagship API within four weeks. Thanks for listening.";
+
+let speaking = false;
+function pickVoice() {
+  const synth = window.speechSynthesis;
+  const voices = synth.getVoices();
+  const prefs = ['Daniel', 'Alex'];
+  for (const name of prefs) {
+    const v = voices.find(v => v.name && v.name.includes(name));
+    if (v) return v;
+  }
+  return voices.find(v => v.lang && v.lang.startsWith('en')) || null;
+}
+function toggleSpeech() {
+  const btn = document.getElementById('playBtn');
+  const synth = window.speechSynthesis;
+  if (!synth) { btn.textContent = 'speech not supported'; return; }
+  if (speaking) { synth.cancel(); speaking = false; btn.textContent = '▶ LISTEN'; return; }
+  const u = new SpeechSynthesisUtterance(S);
+  u.rate = 0.93;
+  const v = pickVoice();
+  if (v) u.voice = v;
+  u.onend = () => { speaking = false; btn.textContent = '▶ LISTEN'; };
+  u.onerror = () => { speaking = false; btn.textContent = '▶ LISTEN'; };
+  synth.speak(u);
+  speaking = true;
+  btn.textContent = '■ STOP';
+}
+if (window.speechSynthesis) {
+  const setMeta = () => {
+    const v = pickVoice();
+    const el = document.getElementById('voiceMeta');
+    if (el) el.textContent = v ? ('voice: ' + v.name) : 'voice: default';
+  };
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = setMeta;
+  }
+  setMeta();
+}
+</script>
+
+</body>
+</html>
