@@ -758,6 +758,18 @@
       "graded_on": null,
       "verdict": null,
       "evidence": null
+    },
+    {
+      "id": "2026-11-26-1",
+      "date": "2026-11-26",
+      "call": "The 23 November Entity-List addition of Megaspeed International and Alibaba's Singapore unit Apex Enterprise Solutions, combined with BIS's 19 November interim final rule restricting remote access to US AI chips routed through Singapore, Malaysia, Indonesia, Thailand, and Brazil, forces a near-term compliance-disclosure cascade from US AI cloud and hyperscaler providers. Within five weeks, at least one major US AI cloud, hyperscaler, or GPU-colocation provider (AWS, Microsoft Azure, Google Cloud, Oracle, CoreWeave, Lambda, Crusoe, Nebius) will publish a primary-source compliance disclosure, SEC filing, customer notice, or acceptable-use-policy update explicitly naming (a) Megaspeed International, (b) Apex Enterprise Solutions or Alibaba Singapore, or (c) the 19 November 2026 BIS interim final rule on remote access through the five covered jurisdictions.",
+      "basis": "CNBC reports Nvidia -5.9 percent and AMD -8.9 percent on 24 November after the Entity List additions, indicating broad market expectation of downstream customer impact. Al Jazeera confirms the Megaspeed listing and Alibaba's dispute. The Latham and Watkins client alert on the 19 November BIS interim final rule indicates the licensing presumption now reaches remote access through five covered jurisdictions. US hyperscalers and major GPU cloud providers have historically published compliance notices within weeks of BIS rule changes of this scope.",
+      "horizon": "2026-12-31",
+      "test": "By 2026-12-31, a primary-source document from AWS, Microsoft Azure, Google Cloud, Oracle, CoreWeave, Lambda, Crusoe, or Nebius (SEC filing including 8-K / 10-Q / S-1 amendment, compliance advisory, customer notice, blog post, or acceptable-use-policy update) that explicitly names at least one of: (a) Megaspeed International, (b) Apex Enterprise Solutions or Alibaba Singapore, or (c) the 19 November 2026 BIS interim final rule on remote access to US AI chips through Singapore, Malaysia, Indonesia, Thailand, or Brazil. A generic 'we comply with US export controls' statement without naming the specific entities or the specific rule does not satisfy the test.",
+      "status": "OPEN",
+      "graded_on": null,
+      "verdict": null,
+      "evidence": null
     }
   ]
 }
