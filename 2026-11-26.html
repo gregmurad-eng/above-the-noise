@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above The Noise — 2026-11-26</title>
+<style>
+  :root {
+    --bg: #0d0a06;
+    --accent: #c9a84c;
+    --text: #e0d4b8;
+    --muted: #8a7f63;
+    --miss: #c76b5a;
+    --unsettled: #8a7f63;
+  }
+  html, body { background: var(--bg); color: var(--text); margin: 0; padding: 0; overflow-x: hidden; }
+  body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.65; font-size: 17px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 28px 22px 60px; }
+  h1 { color: var(--accent); font-weight: normal; letter-spacing: 1px; font-size: 34px; margin: 0 0 2px; line-height: 1.1; }
+  .tag { color: var(--muted); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .date { color: var(--muted); font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; }
+  h2 { color: var(--accent); font-weight: normal; letter-spacing: 1px; font-size: 14px; text-transform: uppercase; margin: 36px 0 12px; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 6px; }
+  h3 { color: var(--text); font-weight: normal; font-size: 21px; margin: 18px 0 6px; line-height: 1.3; }
+  h3 a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.5); }
+  h3 a:hover { color: var(--accent); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .meta { color: var(--muted); font-size: 14px; letter-spacing: 0.5px; }
+  .sowhat { color: var(--accent); font-style: italic; margin-top: 10px; padding-left: 10px; border-left: 2px solid var(--accent); }
+  .sowhat::before { content: "So what: "; font-weight: bold; font-style: normal; letter-spacing: 0.5px; }
+  .brief { padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.15); }
+  .brief:last-child { border-bottom: 0; }
+  .brief h3 { font-size: 19px; margin-top: 6px; }
+  .signal { background: rgba(201,168,76,0.08); border-left: 3px solid var(--accent); padding: 14px 18px; margin: 14px 0; }
+  .signal p { margin: 6px 0; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 0 20px; border-bottom: 1px solid rgba(201,168,76,0.2); margin-bottom: 20px; }
+  .bar a, .bar .next { color: var(--accent); white-space: nowrap; padding: 10px 2px; display: inline-block; }
+  .bar .next { color: var(--muted); }
+  .nav-mid { display: inline-flex; gap: 0; flex-grow: 1; justify-content: center; }
+  .nav-mid a { margin: 0 9px; color: var(--accent); }
+  .barbot { border-bottom: 0; border-top: 1px solid rgba(201,168,76,0.2); margin-top: 40px; margin-bottom: 0; padding: 20px 0 12px; }
+  button.listen { background: transparent; color: var(--accent); border: 1px solid var(--accent); padding: 10px 16px; font-family: inherit; font-size: 14px; letter-spacing: 1px; cursor: pointer; margin: 10px 0; min-height: 44px; }
+  button.listen:hover { background: rgba(201,168,76,0.1); }
+  .cite { font-size: 12px; vertical-align: super; line-height: 0; }
+  .cite a { padding: 6px 4px; margin: -6px -4px; color: var(--accent); }
+  .ledger-row { padding: 10px 0; border-bottom: 1px solid rgba(201,168,76,0.12); }
+  .ledger-row:last-child { border-bottom: 0; }
+  .verdict { font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 13px; }
+  .v-hit { color: var(--accent); }
+  .v-miss { color: var(--miss); }
+  .v-unsettled { color: var(--unsettled); }
+  .v-open { color: var(--muted); }
+  ol.sources { padding-left: 24px; font-size: 15px; }
+  ol.sources li { padding: 4px 0; color: var(--muted); }
+  ol.sources li a { color: var(--accent); }
+  .srctier { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-left: 4px; }
+  .foot { color: var(--muted); font-size: 13px; margin-top: 30px; text-align: center; letter-spacing: 0.5px; }
+  blockquote { margin: 10px 0 10px 0; padding: 4px 14px; border-left: 2px solid var(--accent); color: var(--text); font-style: italic; }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .wrap { padding: 20px 16px 48px; }
+    h1 { font-size: 28px; }
+    h3 { font-size: 19px; }
+    .brief h3 { font-size: 17px; }
+    .bar { font-size: 14px; gap: 10px 14px; }
+    .bar a, .bar .next { padding: 10px 2px; }
+    .nav-mid a { margin: 0 8px; }
+    .meta, .srctier, .foot { font-size: 14px; }
+    .cite a { padding: 10px 6px; margin: -10px -6px; }
+    ol.sources { font-size: 16px; }
+    ol.sources li { padding: 6px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="bar">
+    <a href="2026-11-25.html">← YESTERDAY</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">TOMORROW →</span>
+  </nav>
+
+  <div class="tag">AI &amp; Tech · Signal over noise</div>
+  <h1>Above The Noise</h1>
+  <div class="date">Thursday, 26 November 2026</div>
+
+  <button class="listen" id="listenBtn" onclick="toggleListen()">▶ Listen (≈4 min)</button>
+
+  <h2>Lead Story</h2>
+  <h3><a href="https://www.cnbc.com/2026/11/24/us-adds-megaspeed-to-trade-blacklist-over-export-control-concerns-.html">US Entity-Lists Megaspeed and Alibaba's Singapore unit; Nvidia and AMD sell off</a> — CNBC<sup class="cite"><a href="#s1">[1]</a></sup></h3>
+  <p class="meta">Commerce / Bureau of Industry and Security · acted 2026-11-23, effective 2026-11-25</p>
+
+  <p>The Commerce Department's Bureau of Industry and Security added seven firms to the Entity List on Monday 23 November, with restrictions taking effect Tuesday 25 November under a presumption-of-denial licensing standard. Two names on the list reshape the AI compute supply chain. The first is Megaspeed International, a Singapore-based Nvidia cloud partner that had been under BIS investigation since 2024 for diverting advanced GPUs into the People's Republic of China.<sup class="cite"><a href="#s1">[1]</a></sup> The second is Apex Enterprise Solutions, a Singapore subsidiary of Alibaba. Alibaba disputed the designation on Tuesday.<sup class="cite"><a href="#s2">[2]</a></sup></p>
+
+  <p>The listings follow — and operationally tighten — the BIS interim final rule published on 19 November that restricts remote access to US-origin advanced AI chips when that access is routed through overseas data centres in Indonesia, Malaysia, Singapore, Thailand, and Brazil.<sup class="cite"><a href="#s3">[3]</a></sup> Taken together, the two actions name the jurisdictions that regulators believe have been doing the quiet work of chip diversion, and they attach a specific sanctions instrument to a named cloud partner inside one of them.</p>
+
+  <p>The market read was unambiguous. Nvidia closed down 5.9 per cent on Tuesday 24 November; AMD fell 8.9 per cent.<sup class="cite"><a href="#s1">[1]</a></sup> This is not a geopolitical headline that will fade by Friday. It is a structural change to how American silicon reaches an inference customer anywhere between California and Shenzhen, and it names a specific vendor that a non-trivial share of Western compute buyers had been renting from.</p>
+
+  <p>The shift from "export rule on chips" to "Entity-Listed cloud partner" is the one builders should internalise. Until this week, the controlled object was a GPU crossing a border. Now the controlled object is a named cloud tenant that might route your inference through a jurisdiction on BIS's new covered list. The compliance surface has moved from procurement to runtime.</p>
+
+  <p class="sowhat">If you lease GPU capacity, audit your provider's region map this week: any inference routed through Singapore, Malaysia, Indonesia, Thailand, or Brazil now carries remote-access licence exposure, and a named Nvidia cloud partner in that corridor is Entity-Listed. Price in a contract repricing event inside Q1 2027 for anything mission-critical.</p>
+
+  <h2>The Briefs</h2>
+
+  <div class="brief">
+    <h3><a href="https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html">FCC grants SpaceX conditional authority for up to 1M orbital AI data-centre satellites</a> — CNBC<sup class="cite"><a href="#s4">[4]</a></sup></h3>
+    <p class="meta">FCC Space Bureau · 2026-11-25</p>
+    <p>The FCC Space Bureau conditionally authorised SpaceX's "Starmind" plan: up to one million satellites at 500–1,002 km carrying Nvidia Vera Rubin NVL72-based compute modules, with first launch required by 25 November 2033 and 10 per cent deployment by 2035.<sup class="cite"><a href="#s4">[4]</a></sup> Petitions to deny from Amazon's Kuiper unit, Viasat, and the American Astronomical Society were rejected; debris-mitigation above 600 km is still open.<sup class="cite"><a href="#s5">[5]</a></sup></p>
+    <p class="sowhat">Nothing changes in your runtime this quarter, but add "orbital region" to the mental model of where your 2030-and-after inference might live — especially for workloads that need jurisdictional distance from a terrestrial regulator.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.anthropic.com/research/migrating-api-to-rust">Anthropic rewrote its Messages API in Rust using Claude agents — CPU down ~70%, memory down ~80%</a> — Anthropic<sup class="cite"><a href="#s6">[6]</a></sup></h3>
+    <p class="meta">Anthropic engineering · 2026-11-25</p>
+    <p>Anthropic published an engineering post describing a Claude-agent-authored rewrite of the <code>/v1/messages</code> front door from Python to Rust, with live traffic shadowing driving parity from 24 per cent in April to 99.6 per cent in August before a September cutover. Wire-level contract is unchanged; median time-to-first-token drops ~20 per cent, CPU-per-request ~70 per cent, memory-per-request &gt;80 per cent.<sup class="cite"><a href="#s6">[6]</a></sup> The post sits inside a broader twelve-month pattern of AI-assisted Rust rewrites catalogued by Simon Willison — Ladybird's LibJS port, Muru's ASGI server, Daniel Stenberg's commentary on the curl rewrites.<sup class="cite"><a href="#s7">[7]</a></sup></p>
+    <p class="sowhat">If you parse raw streaming JSON from the Messages API yourself, re-test: Anthropic notes subtle JSON-escape and field-presence deltas in tool-call and usage paths. And treat this as the documented playbook your own stack will be measured against — shadowed cutover, mechanical divergence triage, per-request cost disclosed as a number.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.cnbc.com/2026/11/23/amazon-decarts-ai-acquisition.html">Amazon reverse-acquihires Decart for ~$7.5B to squeeze more out of Trainium</a> — CNBC<sup class="cite"><a href="#s8">[8]</a></sup></h3>
+    <p class="meta">Amazon / Decart · 2026-11-23</p>
+    <p>Amazon is buying Decart's "Decart Optimization Stack" and hiring the three founders plus researchers and engineers — but not the corporate entity or its models, a structure increasingly common in Big-Tech AI deals.<sup class="cite"><a href="#s8">[8]</a></sup> The thesis: DOS lets models migrate across hardware, and Amazon wants to shrink the Nvidia-to-Trainium gap in software rather than silicon.<sup class="cite"><a href="#s9">[9]</a></sup></p>
+    <p class="sowhat">Expect Trainium-optimised variants of popular open-weight models to land in Bedrock at a lower per-token price inside two to four quarters. Your model router gets more useful; your single-vendor pricing floor gets less safe to assume.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.unite.ai/openai-begins-limited-customer-trials-of-alpha-private-inference/">OpenAI starts private-inference customer trials under its Private Intelligence framework</a> — Unite.AI<sup class="cite"><a href="#s10">[10]</a></sup></h3>
+    <p class="meta">Sam Altman (OpenAI) · 2026-11-25</p>
+    <p>Sam Altman posted on Tuesday that OpenAI is testing Private Inference — confidential-compute-backed inference where prompts never leave the enclave — with a small group of enterprise customers. OpenAI's Shekar framed it as a first step toward wider rollout for regulated industries.<sup class="cite"><a href="#s10">[10]</a></sup></p>
+    <p class="sowhat">If compliance has blocked you from routing PHI, PII, or MNPI to a hosted frontier API, ask for the trial list. Price in a meaningful premium and a different SLA, but this is the closest Tier-1 answer yet to "the data never leaves the enclave."</p>
+  </div>
+
+  <h2>Model Watch</h2>
+
+  <div class="brief">
+    <h3><a href="https://huggingface.co/inclusionAI/Ling-3.2-air">Ling-3.2-air</a> — Ant Group (inclusionAI)<sup class="cite"><a href="#s11">[11]</a></sup></h3>
+    <p class="meta">Released 2026-11-23 · 124B total / 5.5B active · hybrid linear-attention MoE · native multimodal · MIT license</p>
+    <p>Posted quietly to Hugging Face under MIT, with SGLang and vLLM deployment recipes and a reported 15.7 → 61 per cent jump on AutomationBench-AA versus Ling-3.0-flash-VL.<sup class="cite"><a href="#s12">[12]</a></sup></p>
+    <p class="sowhat">If you build agent workflows over screenshots or PDFs and want permissive self-hosting, this is a credible Qwen/Llama-Vision alternative at 5.5B active params. Caveat: review the Entity-List backdrop (lead story) before you let a PRC-origin model into regulated workloads.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5</a> — Anthropic<sup class="cite"><a href="#s13">[13]</a></sup></h3>
+    <p class="meta">Released 2026-11-24 · $5/$25 per M input/output · "effort" parameter (low/medium/high) · 80%+ SWE-bench Verified</p>
+    <p>Still the week's defining flagship: first mainstream API with a numeric effort knob, and the first time Anthropic has cut Opus pricing. Covered as the lead on 2026-11-25.</p>
+    <p class="sowhat">Add <code>effort: medium</code> to your cost-sensitive agent calls today — Anthropic's own disclosure says it matches Sonnet 4.5 quality at ~76% fewer output tokens.</p>
+  </div>
+
+  <div class="brief">
+    <h3><a href="https://z.ai/blog/glm-4.6">GLM-5.4 — Toward Generalized Coding with Our First Loop Transformer</a> — Z.AI<sup class="cite"><a href="#s14">[14]</a></sup></h3>
+    <p class="meta">Released 2026-11-23 · 750B params · Loop Transformer architecture (28 layers run twice per forward pass)</p>
+    <p>Architecture note rather than parameter-count headline: executing the same transformer layers twice per forward pass to trade latency for depth. Watch whether the pattern shows up in a Western flagship.</p>
+    <p class="sowhat">If you benchmark coding agents, add GLM-5.4 to your open-weight eval harness this week — the loop-transformer design is the most interesting non-MoE architectural move of the quarter.</p>
+  </div>
+
+  <h2>Voices</h2>
+  <p><strong>Simon Willison</strong>, independent developer and long-time LLM commentator — in his 24 November post <a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/">"Three LLM inflection points in twelve months"</a>, defining what he calls <em>Fable-class</em> models<sup class="cite"><a href="#s7">[7]</a></sup>:</p>
+  <blockquote>"Give it a goal, give it the right tools, and watch it cook."</blockquote>
+  <p>Willison's three inflection points — Opus 4.5 making Claude Code a daily driver last November, the arrival of Fable-class agents in June, and the 3D-modelling surge in September and October — form the cleanest field-notes summary of the year available from anyone outside a lab. The framing matters this week specifically because Anthropic's Rust migration post is the first time one of those labs has shown its own production team using its own Fable-class model to replace a core API — exactly the loop Willison is describing, running inside the company that shipped the model.</p>
+  <p class="sowhat">If you lead an engineering team, read the piece before your next planning session: it sets a baseline capability bar ("goal + tools + cook") that your staffing and architecture decisions should now assume, not aspire to.</p>
+
+  <h2>Today's Signal</h2>
+  <div class="signal">
+    <p><strong>The compute supply chain is becoming an enforcement surface, and the inference stack is becoming self-rewritable.</strong></p>
+    <p>Three different vectors converged this week. BIS named a specific Nvidia cloud partner inside Singapore and attached a license-denial presumption to remote access through five covered jurisdictions. The FCC blessed up to a million orbital AI compute satellites. And Anthropic used its own agents to rewrite the front door of its API in Rust, publishing a 70/80/20 per cent cost disclosure as a number rather than a claim. The physical location, the legal location, and the per-request cost of inference are all moving at the same time — and all three are now <em>reportable facts</em> instead of handwaved assumptions. Build for a world in which someone asks you to produce those three numbers for your own stack by the end of 2027.</p>
+  </div>
+
+  <h2>The Ledger</h2>
+  <p class="meta">Season 1 · 16-17 · 3 unsettled · 63 calls logged · one call added today, no graded verdicts (earliest open horizon is 2026-11-30).</p>
+
+  <div class="ledger-row">
+    <p><span class="verdict v-open">OPEN</span> · <strong>2026-11-26-1</strong> · horizon 2026-12-31</p>
+    <p>Within five weeks, at least one major US AI cloud, hyperscaler, or GPU colocation provider (AWS, Microsoft Azure, Google Cloud, Oracle, CoreWeave, Lambda, Crusoe, Nebius) publishes a primary-source compliance disclosure, SEC filing (8-K / 10-Q / S-1 amendment), customer notice, or acceptable-use policy update explicitly naming (a) Megaspeed International, (b) Apex Enterprise Solutions / Alibaba Singapore, or (c) the 19 November 2026 BIS interim final rule on remote access to US AI chips through the five covered jurisdictions (Singapore, Malaysia, Indonesia, Thailand, Brazil).</p>
+    <p class="meta">Test: a primary-source document from one of the named providers, dated on or before 2026-12-31, containing an explicit textual reference to (a), (b), or (c) above. A generic "we comply with US export controls" statement does not satisfy the test.</p>
+  </div>
+
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li id="s1"><a href="https://www.cnbc.com/2026/11/24/us-adds-megaspeed-to-trade-blacklist-over-export-control-concerns-.html">CNBC — US adds Megaspeed to trade blacklist over export-control concerns</a><span class="srctier">· tier-1</span></li>
+    <li id="s2"><a href="https://www.aljazeera.com/economy/2026/11/24/us-adds-megaspeed-firm-at-centre-of-nvidia-scandal-to-export-control-list">Al Jazeera — US adds Megaspeed firm at centre of Nvidia scandal to export control list</a><span class="srctier">· tier-1</span></li>
+    <li id="s3"><a href="https://www.lw.com/en/insights/us-commerce-department-adopts-rule-restricting-remote-access-to-advanced-ai-chips">Latham &amp; Watkins — US Commerce Department adopts rule restricting remote access to advanced AI chips</a><span class="srctier">· trade</span></li>
+    <li id="s4"><a href="https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html">CNBC — SpaceX receives FCC approval for up to 1M data-centre satellites</a><span class="srctier">· tier-1</span></li>
+    <li id="s5"><a href="https://www.npr.org/2026/11/26/g-s1-155940/fcc-spacex-satellites-data-centers-in-space">NPR — FCC SpaceX satellites data centers in space</a><span class="srctier">· tier-1</span></li>
+    <li id="s6"><a href="https://www.anthropic.com/research/migrating-api-to-rust">Anthropic — Migrating our Messages API to Rust</a><span class="srctier">· primary</span></li>
+    <li id="s7"><a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/">Simon Willison — Three LLM inflection points in twelve months</a><span class="srctier">· practitioner</span></li>
+    <li id="s8"><a href="https://www.cnbc.com/2026/11/23/amazon-decarts-ai-acquisition.html">CNBC — Amazon's Decart AI acquisition</a><span class="srctier">· tier-1</span></li>
+    <li id="s9"><a href="https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/">TechCrunch — Amazon's Decart acquisition is a bet on narrowing the Nvidia gap in software</a><span class="srctier">· trade</span></li>
+    <li id="s10"><a href="https://www.unite.ai/openai-begins-limited-customer-trials-of-alpha-private-inference/">Unite.AI — OpenAI begins limited customer trials of alpha Private Inference</a><span class="srctier">· practitioner</span></li>
+    <li id="s11"><a href="https://huggingface.co/inclusionAI/Ling-3.2-air">Hugging Face — inclusionAI/Ling-3.2-air model card</a><span class="srctier">· primary</span></li>
+    <li id="s12"><a href="https://technode.com/2026/11/25/ant-releases-ling-3-2-air-multimodal-model-under-mit-license/">TechNode — Ant releases Ling-3.2-air multimodal model under MIT license</a><span class="srctier">· trade</span></li>
+    <li id="s13"><a href="https://www.anthropic.com/news/claude-opus-4-5">Anthropic — Claude Opus 4.5</a><span class="srctier">· primary</span></li>
+    <li id="s14"><a href="https://z.ai/blog/glm-4.6">Z.AI — GLM blog (Loop Transformer release notes)</a><span class="srctier">· primary</span></li>
+  </ol>
+
+  <nav class="bar barbot">
+    <a href="2026-11-25.html">← YESTERDAY</a>
+    <span class="nav-mid"><a href="./">Today</a><a href="archive.html">Archive</a></span>
+    <span class="next">TOMORROW →</span>
+  </nav>
+
+  <p class="foot">Content is AI-synthesized. Links point to original sources.</p>
+
+</div>
+
+<script>
+const S = "Above The Noise, Thursday the twenty-sixth of November, twenty twenty six. Signal over noise. Today's lead. The United States Bureau of Industry and Security added seven firms to the Entity List on Monday, with restrictions in force from Tuesday the twenty-fifth. Two names reshape the compute supply chain. Megaspeed International, a Singapore-based Nvidia cloud partner under investigation since twenty twenty-four for diverting GPUs into China, and Apex Enterprise Solutions, a Singapore subsidiary of Alibaba. The listings operationally tighten a Bureau of Industry and Security interim rule from the nineteenth of November that restricts remote access to American AI chips routed through five covered jurisdictions: Singapore, Malaysia, Indonesia, Thailand, and Brazil. The market read was unambiguous. Nvidia closed down five point nine percent on Tuesday. AMD fell eight point nine percent. The shift to internalise is that until this week, the controlled object was a chip crossing a border. Now the controlled object is a named cloud tenant that might route your inference through one of those covered jurisdictions. The compliance surface has moved from procurement to runtime. If you lease GPU capacity, audit your provider's region map this week, and price in a contract repricing event inside the first quarter of twenty twenty-seven. The briefs. One. The Federal Communications Commission Space Bureau conditionally authorised SpaceX's Starmind plan on Tuesday: up to one million satellites at five hundred to one thousand kilometres carrying Nvidia Vera Rubin compute modules, with first launch required by twenty thirty-three. Petitions to deny from Amazon's Kuiper unit, Viasat, and the American Astronomical Society were rejected. Two. Anthropic published an engineering post Tuesday describing a Claude-agent-authored rewrite of its Messages API from Python to Rust. CPU per request fell about seventy percent, memory per request over eighty percent, and median time to first token about twenty percent. Wire-level contract is unchanged, but there are subtle JSON-escape and field-presence deltas in tool-call and usage paths. Three. Amazon is acquiring the Decart Optimization Stack and hiring its three founders for roughly seven and a half billion dollars, but not the corporate entity or its models. The thesis is to narrow the Nvidia-to-Trainium gap in software. Four. Sam Altman posted on Tuesday that OpenAI is testing Private Inference, confidential-compute-backed inference where prompts never leave the enclave, with a small group of enterprise customers. Model watch. Ant Group posted Ling-three-point-two-air to Hugging Face under MIT license on Sunday. One hundred twenty-four billion total parameters, five point five billion active, hybrid linear-attention mixture of experts, native multimodal. Claude Opus four point five remains the week's defining flagship, with an effort knob and the first Opus price cut. Z dot A I shipped GLM five point four with a loop transformer architecture: twenty-eight layers executed twice per forward pass. Voices. This edition features Simon Willison, writing on the twenty-fourth about what he calls Fable-class models. Quote. Give it a goal, give it the right tools, and watch it cook. End quote. The point matters this week because Anthropic's Rust migration post is the first time one of the labs has shown its own production team using its own Fable-class model to replace a core API: exactly the loop Willison is describing, running inside the company that shipped the model. Today's signal. The compute supply chain is becoming an enforcement surface, and the inference stack is becoming self-rewritable. The physical location, the legal location, and the per-request cost of inference are all moving at the same time, and all three are now reportable facts rather than handwaved assumptions. Build for a world in which someone asks you to produce those three numbers for your own stack by the end of twenty twenty-seven. The ledger. Season one, sixteen hits, seventeen misses, three unsettled, sixty-three calls logged. No verdicts today, earliest open horizon is the thirtieth. Today's new call, open through the thirty-first of December: that at least one major US AI cloud or hyperscaler will publish a compliance disclosure explicitly naming Megaspeed, Apex Enterprise Solutions, or the nineteenth of November Bureau of Industry and Security remote-access rule inside five weeks. Thanks for listening.";
+
+let utter = null;
+let speaking = false;
+function pickVoice() {
+  const voices = speechSynthesis.getVoices();
+  const names = ["Daniel", "Alex"];
+  for (const n of names) {
+    const v = voices.find(v => v.name && v.name.includes(n));
+    if (v) return v;
+  }
+  return voices.find(v => v.lang && v.lang.startsWith("en"));
+}
+function toggleListen() {
+  const btn = document.getElementById("listenBtn");
+  if (speaking) {
+    speechSynthesis.cancel();
+    speaking = false;
+    btn.textContent = "▶ Listen (≈4 min)";
+    return;
+  }
+  if (!("speechSynthesis" in window)) {
+    btn.textContent = "Audio not supported";
+    return;
+  }
+  utter = new SpeechSynthesisUtterance(S);
+  utter.rate = 0.93;
+  const v = pickVoice();
+  if (v) utter.voice = v;
+  utter.onend = () => { speaking = false; btn.textContent = "▶ Listen (≈4 min)"; };
+  speechSynthesis.speak(utter);
+  speaking = true;
+  btn.textContent = "■ Stop";
+}
+if ("speechSynthesis" in window && speechSynthesis.getVoices().length === 0) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+</html>
